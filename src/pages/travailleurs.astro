@@ -1,0 +1,77 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christine Rizzo - Accompagnement des Travailleurs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/tailwind.css">
+  <link rel="stylesheet" href="/styles/global.css">
+</head>
+<body class="font-sans">
+  <div class="container mx-auto px-4">
+    <Header />
+
+    <!-- Contenu principal -->
+    <div id="content" class="py-16">
+      <h1 class="text-4xl font-bold mb-8 text-dark-green text-center">Accompagnement des Travailleurs</h1>
+      <div class="flex flex-col md:flex-row gap-8">
+        <!-- Colonne de gauche -->
+        <div class="flex-1 bg-light-gray p-6 rounded-lg shadow-md">
+          <p class="mb-4">Je vous accompagne tout au long de votre parcours professionnel que ce soit pour une question ponctuelle, la négociation d’un départ ou l’introduction d’une procédure judiciaire devant le tribunal du travail contre votre employeur:</p>
+          <ul class="list-disc list-inside space-y-2">
+            <li>Vous êtes sur le point de signer un nouveau contrat de travail ?</li>
+            <li>Vous souhaitez quitter votre emploi?</li>
+            <li>Votre employeur vous propose une rupture conventionnelle mais vous ne savez pas si c’est dans votre intérêt ?</li>
+            <li>Votre employeur, un collègue vous harcèle ou adopte une attitude déplacée à votre égard ?</li>
+            <li>Vos conditions de travail sont modifiées pendant votre grossesse ou suite à votre accouchement?</li>
+            <li>Vous êtes mis à l'écart ?</li>
+            <li>Vous souhaitez prendre un crédit-temps et un congé parental pour vous occuper de votre enfant ?</li>
+            <li>Vous êtes victime de discrimination (du recrutement à la rupture de la relation de travail)?</li>
+            <li>Vous souffrez d’un burn-out?</li>
+            <li>Vous êtes victime d’un accident du travail?</li>
+            <li>Votre statut n’est pas clair? Vous pensez être un faux indépendant?</li>
+            <li>Vous souhaitez contester votre licenciement (licenciement manifestement déraisonnable, abusif ou discriminatoire)?</li>
+            <li>Vous voulez vérifier le calcul de votre indemnité compensatoire de préavis et le respect de vos droits suite à votre licenciement?</li>
+          </ul>
+          <p class="mt-4">Je suis particulièrement sensible aux questions concernant :</p>
+          <ul class="list-disc list-inside space-y-2">
+            <li>l’équilibre vie privée - vie professionnelle</li>
+            <li>le harcèlement, la discrimination et la violence au travail.</li>
+          </ul>
+        </div>
+
+        <!-- Colonne de droite -->
+        <div class="flex-1 md:w-1/3 bg-light-gray p-6 rounded-lg shadow-md">
+          <h2 class="text-2xl font-bold mb-4">Mes services</h2>
+          <ul class="space-y-4">
+            <li class="flex items-center">
+              <i data-feather="check-circle" class="mr-2 text-accent"></i> Conseils ponctuels du recrutement à la rupture de la relation de travail
+            </li>
+            <li class="flex items-center">
+              <i data-feather="check-circle" class="mr-2 text-accent"></i> Défense devant les cours et tribunaux du travail
+            </li>
+            <li class="flex items-center">
+              <i data-feather="check-circle" class="mr-2 text-accent"></i> Négociation d’accords amiables en direct ou en coulisses
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <Footer />
+  </div>
+
+  <script>
+    // Initialisation de Feather Icons
+    feather.replace();
+  </script>
+</body>
+</html>
