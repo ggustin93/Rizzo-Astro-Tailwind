@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const articleData = {
+  title: "Les nouveautés du droit du travail en 2024",
+  date: new Date("2024-01-15"),
+  author: "Christine Rizzo",
+  image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+  readTime: "5 min",
+  categories: ["Droit du travail", "Législation", "2024"]
+};
+
+const highlights = [
+  "Renforcement du droit à la déconnexion",
+  "Nouvelles modalités pour le télétravail",
+  "Évolution des congés parentaux"
+];
+
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('fr-FR', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+}
+---
+
+<BaseLayout title={articleData.title}>
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="relative mb-12">
+      <img src={articleData.image} alt={articleData.title} class="w-full h-[50vh] object-cover rounded-lg">
+      <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg">
+        <h1 class="text-4xl md:text-5xl font-light text-white text-center px-4">{articleData.title}</h1>
+      </div>
+    </header>
+
+    <div class="flex items-center justify-between text-dark-gray text-sm mb-8">
+      <div class="flex items-center">
+        <img src="https://via.placeholder.com/40" alt={articleData.author} class="w-10 h-10 rounded-full mr-3">
+        <span>{articleData.author}</span>
+      </div>
+      <div class="flex items-center space-x-4">
+        <span>{formatDate(articleData.date)}</span>
+        <span>·</span>
+        <span>{articleData.readTime}</span>
+      </div>
+    </div>
+
+    <div class="mb-8 flex flex-wrap gap-2">
+      {articleData.categories.map(category => (
+        <span class="bg-accent text-black px-3 py-1 rounded-full text-sm">{category}</span>
+      ))}
+    </div>
+
+    <div class="bg-light-accent p-6 rounded-lg mb-8">
+      <h2 class="text-xl font-semibold mb-4 text-black">Points clés :</h2>
+      <ul class="list-disc pl-5 space-y-2">
+        {highlights.map(highlight => <li>{highlight}</li>)}
+      </ul>
+    </div>
+
+    <div class="prose prose-lg max-w-none text-dark-gray">
+      <p>L'année 2024 apporte son lot de changements dans le domaine du droit du travail. Voici un aperçu des principales modifications législatives qui impactent les relations de travail cette année :</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-4 text-black">1. Renforcement du droit à la déconnexion</h2>
+      <p>La loi renforce le droit à la déconnexion en imposant aux entreprises de mettre en place des dispositifs concrets pour garantir le respect des temps de repos et de congé des salariés.</p>
+
+      <blockquote class="border-l-4 border-accent pl-4 italic my-6">
+        "Le droit à la déconnexion devient une priorité pour assurer le bien-être des employés."
+      </blockquote>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-4 text-black">2. Nouvelles modalités pour le télétravail</h2>
+      <p>Un cadre légal plus précis est mis en place pour encadrer le télétravail, notamment en ce qui concerne la prise en charge des frais et l'équilibre entre vie professionnelle et vie personnelle.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-4 text-black">3. Évolution des congés parentaux</h2>
+      <p>Les congés parentaux sont étendus et révisés pour offrir plus de flexibilité aux parents, avec notamment une augmentation de la durée du congé paternité.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-4 text-black">Conclusion</h2>
+      <p>Ces changements visent à adapter le droit du travail aux nouvelles réalités du monde professionnel. Il est crucial pour les employeurs comme pour les salariés de se tenir informés de ces évolutions pour assurer des relations de travail harmonieuses et conformes à la loi.</p>
+    </div>
+
+    <div class="flex justify-between items-center mt-12 pt-8 border-t border-light-gray">
+      <a href="/" class="inline-block bg-transparent text-black border border-black px-4 py-2 rounded-sm hover:bg-black hover:text-white transition duration-300 text-sm uppercase font-light">
+        ← Retour aux articles
+      </a>
+      <div class="flex space-x-4">
+        <a href="#" class="text-dark-gray hover:text-accent"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-dark-gray hover:text-accent"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="text-dark-gray hover:text-accent"><i class="fab fa-facebook"></i></a>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

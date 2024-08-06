@@ -56,7 +56,7 @@ import articlesData from './fr/articles.json';
         <img src="https://uploads-ssl.webflow.com/66a3633bf638ce4da95b8ad7/66a367d9f9bfc9b93e01c4a3_Christine_Apropos-b.jpeg" alt="Christine Rizzo" class="w-full md:w-1/2 h-auto object-cover rounded-sm">
         <div class="md:w-1/2">
           <p class="text-dark-gray font-light leading-relaxed mb-6">{texts.profil.description}</p>
-           <a href="#" class="bg-transparent text-black border border-black px-6 py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light"> En savoir plus →</a>
+           <a href="/profil" class="bg-transparent text-black border border-black px-6 py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light"> En savoir plus →</a>
           </a>
         </div>
       </div>
@@ -64,21 +64,25 @@ import articlesData from './fr/articles.json';
   </div>
 </section>
 
-  <!-- Honoraires Section -->
-  <section id="honoraires" class="py-20 bg-light-gray">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-light mb-12 text-center text-black">{texts.honoraires.title}</h2>
-      <ul class="honoraires-list text-center mb-12 space-y-4">
-        {texts.honoraires.list.map((item) => (
-          <li class="text-black font-light flex items-center justify-center"><i class="text-dark-green mr-2" data-feather="check-circle"></i> {item}</li>
-        ))}
-      </ul>
-      <div class="text-center">
-        <a href="#" class="bg-transparent text-black border border-black px-6 py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light">{texts.honoraires.cta}</a>
-      </div>
+<!-- Honoraires Section -->
+<section id="honoraires" class="py-12 md:py-20 bg-light-gray">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl md:text-3xl font-light mb-8 md:mb-12 text-center text-black">{texts.honoraires.title}</h2>
+    <ul class="honoraires-list text-left md:text-center mb-8 md:mb-12 space-y-4 max-w-xl mx-auto">
+      {texts.honoraires.list.map((item) => (
+        <li class="text-black font-light flex items-center md:justify-center">
+          <i class="text-dark-green mr-3 flex-shrink-0" data-feather="check-circle"></i>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+    <div class="text-center">
+      <a href="#" class="inline-block bg-transparent text-black border border-black px-4 md:px-6 py-2 md:py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light">
+        {texts.honoraires.cta}
+      </a>
     </div>
-  </section>
-
+  </div>
+</section>
   <CTA />
 
 <!-- Articles Section -->
@@ -93,7 +97,7 @@ import articlesData from './fr/articles.json';
             <h3 class="text-2xl font-light mb-2 text-black">{article.title}</h3>
             <p class="text-black mb-6 font-light leading-relaxed">{article.description}</p>
             <div class="relative">
-              <a href="#" class="inline-block text-black uppercase text-sm font-light hover:text-dark-green transition duration-300">
+              <a href="/nouveautes-droit-travail" class="inline-block text-black uppercase text-sm font-light hover:text-dark-green transition duration-300">
                 <span class="border-b border-black pb-1">LIRE LA SUITE</span> →
               </a>
             </div>

@@ -5,26 +5,62 @@ const navLinks = [
   { href: "#actualites", label: "ACTUALITÉS" },
 ];
 ---
-<header class="bg-beige">
-  <div class="container mx-auto px-4 flex justify-between items-center">
-    <nav class="flex space-x-8">
-      {navLinks.map(link => (
-        <a href={link.href} class="text-black uppercase text-base font-light hover:underline">{link.label}</a>
-      ))}
-    </nav>
-    <div class="logo text-center">
-      <a href="/">
-        <img src="/logo_crizzo_wbg.svg" alt="Christine Rizzo Logo" class="h-48 w-auto">
-      </a>
+
+<header class="bg-beige py-4">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-between items-center">
+      <!-- Menu hamburger pour mobile -->
+      <button id="menu-toggle" class="md:hidden text-black">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <!-- Navigation pour desktop -->
+      <nav class="hidden md:flex space-x-8">
+        {navLinks.map(link => (
+          <a href={link.href} class="text-black uppercase text-base font-light hover:underline">{link.label}</a>
+        ))}
+      </nav>
+
+      <div class="logo text-center">
+        <a href="/">
+          <img src="/logo_crizzo_wbg.svg" alt="Christine Rizzo Logo" class="h-24 md:h-48 w-auto">
+        </a>
+      </div>
+
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#honoraires" class="text-black uppercase text-base font-light hover:underline">HONORAIRES</a>
+        <a href="#contact" class="bg-transparent text-black border border-black px-4 py-2 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-base font-light">ME CONTACTER</a>
+        <select class="text-black text-base font-light bg-transparent border border-black rounded-full px-2 py-2 uppercase">
+          <option value="fr">FR</option>
+          <option value="en">EN</option>
+          <option value="it">IT</option>
+        </select>
+      </div>
     </div>
-    <div class="flex items-center space-x-8">
-      <a href="#honoraires" class="text-black uppercase text-base font-light hover:underline">HONORAIRES</a>
-      <a href="#contact" class="bg-transparent text-black border border-black px-4 py-2 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-base font-light">ME CONTACTER</a>
-      <select class="text-black text-base font-light bg-transparent border border-black rounded-full px-2 py-2 uppercase">
+
+    <!-- Menu mobile -->
+    <nav id="mobile-menu" class="hidden mt-4 md:hidden">
+      {navLinks.map(link => (
+        <a href={link.href} class="block py-2 text-black uppercase text-base font-light hover:underline">{link.label}</a>
+      ))}
+      <a href="#honoraires" class="block py-2 text-black uppercase text-base font-light hover:underline">HONORAIRES</a>
+      <a href="#contact" class="block py-2 text-black uppercase text-base font-light hover:underline">ME CONTACTER</a>
+      <select class="mt-2 w-full text-black text-base font-light bg-transparent border border-black rounded-full px-2 py-2 uppercase">
         <option value="fr">FR</option>
         <option value="en">EN</option>
         <option value="it">IT</option>
       </select>
-    </div>
+    </nav>
   </div>
 </header>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
