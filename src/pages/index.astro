@@ -1,102 +1,122 @@
 ---
 // src/pages/index.astro
 import BaseLayout from '../layouts/BaseLayout.astro';
-import CTA from '../components/CTA.astro'
+import CTA from '../components/CTA.astro';
+import texts from './fr/home.json';
+import articlesData from './fr/articles.json';
 ---
 
 <BaseLayout>
-    <!-- Hero section -->
-    <section class="py-16 text-center bg-light-gray">
-        <h1 class="text-4xl font-bold mb-4 text-dark-green">Christine Rizzo</h1>
-        <h2 class="text-2xl mb-6 text-dark-green">Avocate spécialisée en droit du travail</h2>
-        <p class="mb-8 text-dark-green max-w-2xl mx-auto">Vous suivez chaque étape de votre dossier et mes prestations grâce à une plateforme de partage en ligne.</p>
-        <button class="bg-white text-dark-green border border-dark-green px-6 py-3 rounded-full hover:bg-dark-green hover:text-white transition duration-300 shadow-md">Prenez rendez-vous en ligne</button>
-        <!-- Bouton de défilement -->
-        <div class="mt-4">
-            <a href="#expertise" class="text-dark-green hover:text-accent text-sm">scroll ↓</a>
-        </div>
-    </section>
+<!-- Hero Section -->
+<section class="pb-10  bg-beige">
+  <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+    <div class="md:w-1/2 text-left mb-8 md:mb-0">
+      <h1 class="text-6xl font-light mb-4 text-black">{texts.hero.title}</h1>
+      <h2 class="text-3xl mb-6 text-accent font-light">{texts.hero.subtitle}</h2>
+      <p class="mb-8 text-lg text-dark-gray max-w-xl font-light leading-relaxed">{texts.hero.description}</p>
+      <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/decarbonaction/meeting'})" class="bg-transparent text-black border border-black px-6 py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-base font-light">{texts.hero.cta}</button>
+      <div class="mt-12">
+        <a href="#expertise" class="text-black hover:text-accent text-sm uppercase font-light transition duration-300">scroll ↓</a>
+      </div>
+    </div>
+    <div class="md:w-1/2 flex justify-end">
+      <img src="hero_image.svg" alt="Christine Rizzo" class="w-full max-w-lg">
+    </div>
+  </div>
+</section>
 
-    <!-- Expertise -->
-    <section id="expertise" class="py-16 bg-dark-green text-white">
-        <h2 class="text-3xl font-bold mb-8 text-center">Expertise</h2>
-        <p class="text-center mb-12 max-w-3xl mx-auto">J'entretiens une expertise globale et actualisée du droit du travail en faisant le choix d'accompagner à la fois les salariés dans leurs problématiques du quotidien et les entreprises dans leurs projets de développement.</p>
-        <div class="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-8">
-            <div class="bg-white p-8 rounded-lg shadow-md flex-1 max-w-md text-dark-green">
-                <img src="https://www.pexels.com/fr-fr/photo/main-ordinateur-portable-cahier-bureau-4195397/" alt="Travailleurs" class="w-full h-48 object-cover rounded-t-lg mb-4">
-                <h3 class="text-xl font-semibold mb-4">Accompagnement et défense des travailleurs.euses</h3>
-                <p class="mb-4">Je conseille et défends les travailleurs tout au long de leur parcours professionnel et contre les abus, le harcèlement et les discriminations au travail.</p>
-                <a href="/travailleurs" class="text-accent hover:underline">→ En savoir plus</a>
-            </div>
-            <div class="bg-white p-8 rounded-lg shadow-md flex-1 max-w-md text-dark-green">
-                <img src="https://www.pexels.com/fr-fr/photo/femme-en-chemise-a-pois-noir-et-blanc-ecrit-sur-papier-blanc-7688453/" alt="Employeurs" class="w-full h-48 object-cover rounded-t-lg mb-4">
-                <h3 class="text-xl font-semibold mb-4">Accompagnement des employeurs</h3>
-                <p class="mb-4">Je collabore avec votre équipe RH pour la gestion des relations de travail au quotidien ainsi que pour tous vos projets visant à développer vos politiques bien-être au travail et équilibre vie privée-vie professionnelle.</p>
-                <a href="/employeurs" class="text-accent hover:underline">→ En savoir plus</a>
-            </div>
-        </div>
-    </section>
+<!-- Expertise Section -->
+<section id="expertise" class="py-20 bg-light-gray">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-light mb-8 text-center text-black">{texts.expertise.title}</h2>
+    <p class="text-center mb-12 max-w-3xl mx-auto text-dark-gray font-light leading-relaxed">{texts.expertise.description}</p>
+    <div class="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-12">
+      <div class="bg-beige p-8 rounded-sm flex-1 max-w-md">
+        <img src="https://images.pexels.com/photos/4195397/pexels-photo-4195397.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Travailleurs" class="w-full h-48 object-cover rounded-sm mb-4">
+        <h3 class="text-xl font-light mb-4 text-black">{texts.travailleurs.title}</h3>
+        <p class="mb-4 text-dark-gray font-light leading-relaxed">{texts.travailleurs.description}</p>
+        <a href="/travailleurs" class="inline-block bg-accent text-black px-4 py-2 rounded-sm hover:bg-black hover:text-accent transition duration-300 text-sm uppercase font-light">{texts.travailleurs.cta}</a>
+      </div>
+      <div class="bg-beige p-8 rounded-sm flex-1 max-w-md">
+        <img src="https://images.pexels.com/photos/7688453/pexels-photo-7688453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Employeurs" class="w-full h-48 object-cover rounded-sm mb-4">
+        <h3 class="text-xl font-light mb-4 text-black">{texts.employeurs.title}</h3>
+        <p class="mb-4 text-dark-gray font-light leading-relaxed">{texts.employeurs.description}</p>
+        <a href="/employeurs" class="inline-block bg-light-green text-black px-4 py-2 rounded-sm hover:bg-black hover:text-light-green transition duration-300 text-sm uppercase font-light">{texts.employeurs.cta}</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Profil -->
-    <section id="profil" class="py-16 bg-white">
-        <h2 class="text-3xl font-bold mb-8 text-center text-dark-green">Profil</h2>
-        <div class="flex flex-col md:flex-row items-center">
-            <img src="https://uploads-ssl.webflow.com/66a3633bf638ce4da95b8ad7/66a367d9f9bfc9b93e01c4a3_Christine_Apropos-b.jpeg" alt="Christine Rizzo" class="w-full md:w-1/2 mb-4 md:mb-0 md:mr-8">
-            <div class="w-full md:w-1/2">
-                <p class="text-dark-green">Avocate au Barreau de Bruxelles depuis 2010, habituée des négociations et des salles d'audience, j'ai acquis l'expérience de mon métier à la fois auprès d'une clientèle de particuliers qu'auprès d'entreprises locales et internationales.</p>
-                <div class="text-center mt-8">
-                    <a href="#" class="text-accent hover:underline">→ En savoir plus sur mon parcours</a>
-                </div>
-            </div>
+<!-- Profil Section -->
+<section id="profil" class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-light mb-12 text-center text-black">{texts.profil.title}</h2>
+    <div class="max-w-4xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+        <img src="https://uploads-ssl.webflow.com/66a3633bf638ce4da95b8ad7/66a367d9f9bfc9b93e01c4a3_Christine_Apropos-b.jpeg" alt="Christine Rizzo" class="w-full md:w-1/2 h-auto object-cover rounded-sm">
+        <div class="md:w-1/2">
+          <p class="text-dark-gray font-light leading-relaxed mb-6">{texts.profil.description}</p>
+           <a href="#" class="bg-transparent text-black border border-black px-6 py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light"> En savoir plus →</a>
+          </a>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Honoraires et dossier client -->
-    <section id="honoraires" class="py-16 bg-dark-green text-white">
-        <h2 class="text-3xl font-bold mb-8 text-center">Les honoraires et votre dossier client</h2>
-        <ul class="honoraires-list text-center mb-8 space-y-2">
-            <li><i data-feather="check-circle"></i> Devis transparents</li>
-            <li><i data-feather="check-circle"></i> Formules tarifaires pour les entreprises</li>
-            <li><i data-feather="check-circle"></i> Formules tarifaires pour les travailleurs.euses</li>
-            <li><i data-feather="check-circle"></i> Adaptées à vos besoins</li>
-            <li><i data-feather="check-circle"></i> Suivi en ligne de votre dossier et de mes prestations</li>
-        </ul>
-        <div class="text-center">
-            <a href="#" class="text-accent hover:underline bg-white text-dark-green px-4 py-2 rounded-full border border-dark-green">En savoir plus</a>
+  <!-- Honoraires Section -->
+  <section id="honoraires" class="py-20 bg-light-gray">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-light mb-12 text-center text-black">{texts.honoraires.title}</h2>
+      <ul class="honoraires-list text-center mb-12 space-y-4">
+        {texts.honoraires.list.map((item) => (
+          <li class="text-black font-light flex items-center justify-center"><i class="text-dark-green mr-2" data-feather="check-circle"></i> {item}</li>
+        ))}
+      </ul>
+      <div class="text-center">
+        <a href="#" class="bg-transparent text-black border border-black px-6 py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light">{texts.honoraires.cta}</a>
+      </div>
+    </div>
+  </section>
+
+  <CTA />
+
+<!-- Articles Section -->
+<section id="articles" class="py-20 bg-beige">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-light mb-12 text-center text-black">{texts.articlesTitle}</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {articlesData.articles.map((article) => (
+        <div class="bg-white rounded-sm overflow-hidden shadow-lg transition duration-300 hover:shadow-xl">
+          <img src={article.image} alt={article.title} class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-light mb-2 text-black">{article.title}</h3>
+            <p class="text-black mb-6 font-light leading-relaxed">{article.description}</p>
+            <div class="relative">
+              <a href="#" class="inline-block text-black uppercase text-sm font-light hover:text-dark-green transition duration-300">
+                <span class="border-b border-black pb-1">LIRE LA SUITE</span> →
+              </a>
+            </div>
+          </div>
         </div>
-    </section>
+      ))}
+    </div>
+  </div>
+</section>
 
-    <!-- CTA Banner -->
-    <CTA />
+  <!-- Intégration Calendly -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+  <script>
+    document.addEventListener('astro:page-load', () => {
+      Calendly.initBadgeWidget({ 
+        url: 'https://calendly.com/decarbonaction/meeting', 
+        text: 'Planifier du temps avec moi', 
+        color: '#0069ff', 
+        textColor: '#ffffff', 
+        branding: undefined 
+      });
+    });
+  </script>
 
-    <!-- Articles -->
-    <section id="articles" class="py-16 bg-light-gray px-8">
-        <h2 class="text-3xl font-bold mb-12 text-center text-dark-green">Articles</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Article image" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2 text-dark-green">Les nouveautés du droit du travail en 2024</h3>
-                    <p class="text-dark-green mb-4">Découvrez les principales modifications législatives qui impactent les relations de travail cette année...</p>
-                    <a href="#" class="text-accent hover:underline">Lire la suite</a>
-                </div>
-            </div>
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Article image" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2 text-dark-green">Comment gérer un conflit au travail ?</h3>
-                    <p class="text-dark-green mb-4">Des conseils pratiques pour résoudre les tensions professionnelles de manière constructive...</p>
-                    <a href="#" class="text-accent hover:underline">Lire la suite</a>
-                </div>
-            </div>
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Article image" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2 text-dark-green">Les droits des travailleurs en télétravail</h3>
-                    <p class="text-dark-green mb-4">Comprendre les droits et obligations des travailleurs en télétravail...</p>
-                    <a href="#" class="text-accent hover:underline">Lire la suite</a>
-                </div>
-            </div>
-        </div>
-    </section>
 </BaseLayout>

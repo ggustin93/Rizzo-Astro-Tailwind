@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url(https://db.onlinewebfonts.com/c/141d0930d88f0321d415e423e22c8883?family=Synonym-Regular);
 
 @tailwind base;
 @tailwind components;
@@ -7,31 +7,12 @@
 
 /* src/styles/global.css */
 
-
-body {
-    font-family: 'Inter', sans-serif;
+@layer base {
+  body {
+    @apply font-synonym;
+  }
 }
 
-.logo {
-    font-family: 'Dancing Script', cursive;
-    font-size: 3rem;
-    font-weight: bold;
-    text-align: center;
-}
-
-.honoraires-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.honoraires-list li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.5rem;
-}
-.honoraires-list i {
-    margin-right: 0.5rem;
-}
 html {
     scroll-behavior: smooth;
 }

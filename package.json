@@ -11,8 +11,11 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
+    "@mdi/font": "^7.4.47",
     "astro": "^4.5.16",
+    "astro-icon": "^1.1.0",
     "feather-icons": "^4.29.2",
+    "react-icons": "^5.2.1",
     "typescript": "^5.4.4"
   },
   "devDependencies": {

@@ -6,13 +6,18 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ["Poppins", "sans-serif"],
-                logo: ["Dancing Script", "cursive"], // Ajout de la police pour le logo
+                sans: ["Synonym-Regular", "Poppins", "sans-serif"], // Changez l'ordre ici
+                synonym: ["Synonym-Regular", "sans-serif"],
+                poppins: ["Poppins", "sans-serif"], // Ajoutez cette ligne pour garder Poppins accessible
             },
             colors: {
-                accent: "#edca82",
-                "light-gray": "#e1e2d4",
+                "accent": "#edca82",
+                "light-gray": "#d4d9d0",
                 "dark-green": "#06615b",
+                "beige": "#fffdf7",
+                "dark-gray": "#747873",
+                "light-green":"#b7c7a7",
+                "light-accent" :"#fcf3e1"
             },
         },
     },
