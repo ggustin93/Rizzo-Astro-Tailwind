@@ -32,13 +32,17 @@ import articlesData from './fr/articles.json';
     <p class="text-center mb-12 max-w-3xl mx-auto text-dark-gray font-light leading-relaxed">{texts.expertise.description}</p>
     <div class="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-12">
       <div class="bg-beige p-8 rounded-sm flex-1 max-w-md">
-        <img src="https://images.pexels.com/photos/4195397/pexels-photo-4195397.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Travailleurs" class="w-full h-48 object-cover rounded-sm mb-4">
+        <div class="h-48 mb-4 relative">
+          <img src="https://images.pexels.com/photos/4195397/pexels-photo-4195397.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Travailleurs" class="absolute inset-0 w-full h-full object-cover object-top">
+        </div>
         <h3 class="text-xl font-light mb-4 text-black">{texts.travailleurs.title}</h3>
         <p class="mb-4 text-dark-gray font-light leading-relaxed">{texts.travailleurs.description}</p>
         <a href="/travailleurs" class="inline-block bg-accent text-black px-4 py-2 rounded-sm hover:bg-black hover:text-accent transition duration-300 text-sm uppercase font-light">{texts.travailleurs.cta}</a>
       </div>
       <div class="bg-beige p-8 rounded-sm flex-1 max-w-md">
-        <img src="https://images.pexels.com/photos/7688453/pexels-photo-7688453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Employeurs" class="w-full h-48 object-cover rounded-sm mb-4">
+        <div class="h-48 mb-4 relative">
+          <img src="https://images.pexels.com/photos/7688453/pexels-photo-7688453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Employeurs" class="absolute inset-0 w-full h-full object-cover object-top">
+        </div>
         <h3 class="text-xl font-light mb-4 text-black">{texts.employeurs.title}</h3>
         <p class="mb-4 text-dark-gray font-light leading-relaxed">{texts.employeurs.description}</p>
         <a href="/employeurs" class="inline-block bg-light-green text-black px-4 py-2 rounded-sm hover:bg-black hover:text-light-green transition duration-300 text-sm uppercase font-light">{texts.employeurs.cta}</a>
