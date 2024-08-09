@@ -1,25 +1,25 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-    content: [
-        "./src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte}", // Chemins vers vos fichiers
-    ],
-    theme: {
-        extend: {
-            fontFamily: {
-                sans: ["Synonym-Regular", "Poppins", "sans-serif"], // Changez l'ordre ici
-                synonym: ["Synonym-Regular", "sans-serif"],
-                poppins: ["Poppins", "sans-serif"], // Ajoutez cette ligne pour garder Poppins accessible
-            },
-            colors: {
-                "accent": "#edca82",
-                "light-gray": "#d4d9d0",
-                "dark-green": "#06615b",
-                "beige": "#fffdf7",
-                "dark-gray": "#747873",
-                "light-green":"#b7c7a7",
-                "light-accent" :"#fcf3e1"
-            },
-        },
+  content: [
+    "./src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte}",
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ["Synonym-Regular", "Poppins", "sans-serif"],
+        synonym: ["Synonym-Regular", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+      },
+      colors: {
+        "accent": "#edca82",
+        "light-gray": "#d4d9d0",
+        "dark-green": "#06615b",
+        "beige": "#fffdf7",
+        "dark-gray": "#747873",
+        "light-green":"#b7c7a7",
+        "light-accent" :"#fcf3e1"
+      },
     },
-    plugins: [],
+  },
+  plugins: [],
 };

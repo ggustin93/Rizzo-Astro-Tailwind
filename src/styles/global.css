@@ -1,18 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 @import url(https://db.onlinewebfonts.com/c/141d0930d88f0321d415e423e22c8883?family=Synonym-Regular);
 
+@font-face {
+    font-family: "Synonym-Regular";
+    src: url("https://db.onlinewebfonts.com/t/141d0930d88f0321d415e423e22c8883.eot");
+    src: url("https://db.onlinewebfonts.com/t/141d0930d88f0321d415e423e22c8883.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/141d0930d88f0321d415e423e22c8883.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/141d0930d88f0321d415e423e22c8883.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/141d0930d88f0321d415e423e22c8883.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/141d0930d88f0321d415e423e22c8883.svg#Synonym-Regular")format("svg");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* src/styles/global.css */
-
 @layer base {
   body {
-    @apply font-synonym;
+    @apply font-sans;
   }
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }

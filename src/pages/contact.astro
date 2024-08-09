@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const contactButtons = [
+  { icon: 'calendar', text: 'PRENEZ RDV EN LIGNE', subtext: 'Le premier rdv est gratuit', action: "Calendly.showPopupWidget('https://calendly.com/decarbonaction/meeting');" },
+  { icon: 'mail', text: 'ENVOYEZ-MOI UN E-MAIL', subtext: 'c.rizzo@avocat.be', action: "window.location.href='mailto:c.rizzo@avocat.be'" },
+  { icon: 'phone', text: 'APPELEZ-MOI', subtext: 'numéro de téléphone (à venir)', action: "" },
+  { icon: 'message-circle', text: 'LAISSEZ UN MESSAGE ÉCRIT OU AUDIO', subtext: 'WhatsApp', action: "" },
+  { icon: 'linkedin', text: 'SUIVEZ-MOI SUR LINKEDIN', subtext: 'Restez informé', action: "window.open('https://www.linkedin.com/in/christine-rizzo-avocat', '_blank')" },
+  { icon: 'map-pin', text: 'TROUVEZ MON CABINET', subtext: 'Chaussée de Waterloo 1151, 1180 Bruxelles', action: "window.open('https://www.google.com/maps/search/?api=1&query=Chauss%C3%A9e+de+Waterloo+1151%2C+1180+Bruxelles', '_blank')" }
+];
+---
+
+<BaseLayout title="Contact - Christine Rizzo">
+  <main class="container mx-auto px-4 py-16">
+    <h1 class="text-4xl font-light mb-12 text-black text-center">Comment puis-je vous aider?</h1>
+    
+    <div class="grid md:grid-cols-2 gap-8">
+      {contactButtons.map((button) => (
+        <div class="bg-light-accent p-6 rounded-sm text-center">
+          <button onclick={button.action} class="w-full bg-transparent text-black border border-black px-6 py-4 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light flex flex-col items-center justify-center h-full">
+            <i data-feather={button.icon} class="w-8 h-8 mb-2"></i>
+            <span class="font-medium">{button.text}</span>
+            <span class="text-xs mt-1">{button.subtext}</span>
+          </button>
+        </div>
+      ))}
+    </div>
+  </main>
+</BaseLayout>
+
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+<script>
+  document.addEventListener('astro:page-load', () => {
+    Calendly.initBadgeWidget({ 
+      url: 'https://calendly.com/decarbonaction/meeting', 
+      text: 'Planifier du temps avec moi', 
+      color: '#0069ff', 
+      textColor: '#ffffff', 
+      branding: undefined 
+    });
+
+    // Initialisation des icônes Feather
+    feather.replace();
+
+    // Gestion des clics sur les boutons
+    document.querySelectorAll('button[onclick]').forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const action = button.getAttribute('onclick');
+        if (action) {
+          try {
+            eval(action);
+          } catch (error) {
+            console.error("Error executing button action:", error);
+          }
+        }
+      });
+    });
+  });
+</script>
