@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import feather from 'feather-icons';
 
 const profileData = {
   name: "Christine Rizzo",
@@ -143,7 +144,11 @@ const publications = [
 </BaseLayout>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    feather.replace();
+  document.addEventListener('astro:page-load', () => {
+    // @ts-ignore
+    if (typeof feather !== 'undefined') {
+      // @ts-ignore
+      feather.replace();
+    }
   });
 </script>

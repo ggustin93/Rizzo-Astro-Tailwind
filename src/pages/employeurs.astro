@@ -35,7 +35,7 @@ const questions = [
         <p class="mb-6 text-dark-gray font-light">Habituée des négociations et des salles d'audience et forte d'une expérience acquise auprès de clients internationaux, j'accompagne votre équipe RH dans la gestion de vos litiges et des relations de travail au quotidien:</p>
         <ul class="space-y-2 mb-6">
           {questions.map((question, index) => (
-            <li key={index} class="flex items-start">
+            <li set:key={index} class="flex items-start">
               <i data-feather="chevron-right" class="w-5 h-5 mr-2 text-black flex-shrink-0 mt-1" />
               <span class="text-dark-gray font-light">{question}</span>
             </li>
@@ -48,7 +48,7 @@ const questions = [
         <h2 class="text-2xl font-light mb-6 text-black">Mes prestations</h2>
         <ul class="space-y-6">
           {services.map((service, index) => (
-            <li key={index} class="flex items-start">
+            <li set:key={index} class="flex items-start">
               <i data-feather={service.icon} class="w-8 h-8 mr-4 text-dark-green flex-shrink-0" />
               <span class="text-dark-gray font-light">{service.text}</span>
             </li>

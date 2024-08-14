@@ -8,6 +8,7 @@ const rightNavLinks = [
   { href: "#honoraires", label: "HONORAIRES" },
 ];
 ---
+
 <header class="bg-beige py-4 my-8 lg:py-4">
   <div class="container mx-auto px-4">
     <div class="flex justify-between items-center">
@@ -17,21 +18,21 @@ const rightNavLinks = [
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
-
+      
       <!-- Logo (visible sur tous les écrans) -->
       <div class="logo text-center flex-grow lg:flex-grow-0 lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2">
         <a href="/">
           <img src="/logo_crizzo_calli3.svg" alt="Christine Rizzo Logo" class="h-16 sm:h-20 md:h-24 lg:h-28 w-auto mx-auto">
         </a>
       </div>
-
+      
       <!-- Navigation gauche pour desktop -->
       <nav class="hidden lg:flex space-x-8 items-center">
         {leftNavLinks.map(link => (
           <a href={link.href} class="text-black uppercase text-sm font-light hover:underline">{link.label}</a>
         ))}
       </nav>
-
+      
       <!-- Navigation droite pour desktop -->
       <div class="hidden lg:flex items-center space-x-6">
         {rightNavLinks.map(link => (
@@ -45,9 +46,9 @@ const rightNavLinks = [
         </select>
       </div>
     </div>
-
+    
     <!-- Menu mobile et tablette -->
-    <nav id="mobile-menu" class="hidden lg:hidden fixed inset-0 bg-beige bg-opacity-95 z-10 flex flex-col justify-center items-center">
+    <nav id="mobile-menu" class="lg:hidden fixed inset-0 bg-beige bg-opacity-95 z-10 flex flex-col justify-center items-center">
       {[...leftNavLinks, ...rightNavLinks].map(link => (
         <a href={link.href} class="block py-2 text-black uppercase text-lg font-light hover:underline">{link.label}</a>
       ))}
@@ -64,8 +65,9 @@ const rightNavLinks = [
 <script>
   const menuToggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
-  menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
+  
+  menuToggle?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
     document.body.classList.toggle('overflow-hidden');
   });
 </script>

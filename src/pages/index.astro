@@ -4,23 +4,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CTA from '../components/CTA.astro';
 import texts from './fr/home.json';
 import articlesData from './fr/articles.json';
+console.log('Contenu de texts:', JSON.stringify(texts, null, 2));
+import feather from 'feather-icons';
 ---
 
 <BaseLayout>
 <!-- Hero Section -->
-<section class="pb-10  bg-beige">
+<section class="pb-10 bg-beige">
   <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
     <div class="md:w-1/2 text-left mb-8 md:mb-0">
       <h1 class="text-6xl font-light mb-4 text-black">{texts.hero.title}</h1>
       <h2 class="text-3xl mb-6 text-accent font-light">{texts.hero.subtitle}</h2>
       <p class="mb-8 text-lg text-dark-gray max-w-xl font-light leading-relaxed">{texts.hero.description}</p>
-      <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/decarbonaction/meeting'})" class="bg-transparent text-black border border-black px-6 py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-base font-light">{texts.hero.cta}</button>
+      <button id="calendlyButton" class="bg-transparent text-black border border-black px-6 py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-base font-light">{texts.hero.cta}</button>
       <div class="mt-12">
         <a href="#expertise" class="text-black hover:text-accent text-sm uppercase font-light transition duration-300">scroll ↓</a>
       </div>
     </div>
     <div class="md:w-1/2 flex justify-end">
-      <img src="hero_image_wbg.svg" alt="Christine Rizzo" class="w-full max-w-lg">
+      <img src="/hero_image_wbg.svg" alt="Christine Rizzo" class="w-full max-w-lg">
     </div>
   </div>
 </section>
@@ -60,8 +62,7 @@ import articlesData from './fr/articles.json';
         <img src="/chrizzo-pp.avif" alt="Christine Rizzo" class="w-full md:w-1/2 h-auto object-cover rounded-sm">
         <div class="md:w-1/2">
           <p class="text-dark-gray font-light leading-relaxed mb-6">{texts.profil.description}</p>
-           <a href="/profil" class="bg-transparent text-black border border-black px-6 py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light"> En savoir plus →</a>
-          </a>
+           <a href="/profil" class="bg-transparent text-black border border-black px-6 py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light">{texts.honoraires.cta}</a>
         </div>
       </div>
     </div>
@@ -73,8 +74,8 @@ import articlesData from './fr/articles.json';
   <div class="container mx-auto px-4">
     <h2 class="text-2xl md:text-3xl font-light mb-8 md:mb-12 text-center text-black">{texts.honoraires.title}</h2>
     <ul class="honoraires-list text-left md:text-center mb-8 md:mb-12 space-y-4 max-w-xl mx-auto">
-      {texts.honoraires.list.map((item) => (
-        <li class="text-black font-light flex items-center md:justify-center">
+      {texts.honoraires.list.map((item, index) => (
+        <li set:key={index} class="text-black font-light flex items-center md:justify-center">
           <i class="text-dark-green mr-3 flex-shrink-0" data-feather="check-circle"></i>
           <span>{item}</span>
         </li>
@@ -87,22 +88,22 @@ import articlesData from './fr/articles.json';
     </div>
   </div>
 </section>
-  <CTA />
+<CTA />
 
 <!-- Articles Section -->
 <section id="articles" class="py-20 bg-beige">
   <div class="container mx-auto px-4">
     <h2 class="text-3xl font-light mb-12 text-center text-black">{texts.articlesTitle}</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {articlesData.articles.map((article) => (
-        <div class="bg-white rounded-sm overflow-hidden shadow-lg transition duration-300 hover:shadow-xl">
+      {articlesData.articles.map((article, index) => (
+        <div set:key={index} class="bg-white rounded-sm overflow-hidden shadow-lg transition duration-300 hover:shadow-xl">
           <img src={article.image} alt={article.title} class="w-full h-48 object-cover">
           <div class="p-6">
             <h3 class="text-2xl font-light mb-2 text-black">{article.title}</h3>
             <p class="text-black mb-6 font-light leading-relaxed">{article.description}</p>
             <div class="relative">
               <a href="/nouveautes-droit-travail" class="inline-block text-black uppercase text-sm font-light hover:text-dark-green transition duration-300">
-                <span class="border-b border-black pb-1">LIRE LA SUITE</span> →
+                <span class="border-b border-black pb-1">{texts.honoraires.cta}</span> →
               </a>
             </div>
           </div>
@@ -112,19 +113,20 @@ import articlesData from './fr/articles.json';
   </div>
 </section>
 
-  <!-- Intégration Calendly -->
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
-  <script>
-    document.addEventListener('astro:page-load', () => {
-      Calendly.initBadgeWidget({ 
-        url: 'https://calendly.com/decarbonaction/meeting', 
-        text: 'Planifier du temps avec moi', 
-        color: '#0069ff', 
-        textColor: '#ffffff', 
-        branding: undefined 
-      });
+<!-- Intégration Calendly -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script is:inline src="https://assets.calendly.com/assets/external/widget.js"></script>
+<script>
+  document.addEventListener('astro:page-load', () => {
+    document.getElementById('calendlyButton')?.addEventListener('click', function() {
+      window.Calendly.initPopupWidget({url: 'https://calendly.com/decarbonaction/meeting'});
     });
-  </script>
+    // @ts-ignore
+    if (typeof feather !== 'undefined') {
+      // @ts-ignore
+      feather.replace();
+    }
+  });
+</script>
 
 </BaseLayout>

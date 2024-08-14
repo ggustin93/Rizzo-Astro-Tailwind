@@ -36,7 +36,7 @@ const questions = [
         <p class="mb-6 text-dark-gray font-light">Je vous accompagne tout au long de votre parcours professionnel que ce soit pour une question ponctuelle, la négociation d'un départ ou l'introduction d'une procédure judiciaire devant le tribunal du travail contre votre employeur:</p>
         <ul class="space-y-2 mb-6">
           {questions.map((question, index) => (
-            <li key={index} class="flex items-start">
+            <li set:key={index} class="flex items-start">
               <i data-feather="chevron-right" class="w-5 h-5 mr-2 text-black flex-shrink-0 mt-1" />
               <span class="text-dark-gray font-light">{question}</span>
             </li>
@@ -60,7 +60,7 @@ const questions = [
         <h2 class="text-2xl font-light mb-6 text-black">Mes services</h2>
         <ul class="space-y-6">
           {services.map((service, index) => (
-            <li key={index} class="flex items-start">
+            <li set:key={index} class="flex items-start">
               <i data-feather={service.icon} class="w-8 h-8 mr-4 text-dark-green flex-shrink-0" />
               <span class="text-dark-gray font-light">{service.text}</span>
             </li>

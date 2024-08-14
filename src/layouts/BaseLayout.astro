@@ -33,9 +33,13 @@ import feather from 'feather-icons';
     </div>
     <script src="https://unpkg.com/feather-icons"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-            feather.replace();
-        }); 
-    </script>
+        document.addEventListener('astro:page-load', () => {
+           // @ts-ignore
+            if (typeof feather !== 'undefined') {
+                // @ts-ignore
+                feather.replace();
+            }
+        });
+      </script>
 </body>
 </html>
