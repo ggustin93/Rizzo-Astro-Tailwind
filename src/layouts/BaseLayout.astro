@@ -3,7 +3,6 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
-import feather from 'feather-icons';
 ---
 
 <!DOCTYPE html>
@@ -30,12 +29,5 @@ import feather from 'feather-icons';
         <!-- Pied de page -->
         <Footer />
     </div>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script>
-        document.addEventListener('astro:page-load', () => {
-           // @ts-ignore
-            feather.replace();
-        });
-      </script>
 </body>
 </html>
