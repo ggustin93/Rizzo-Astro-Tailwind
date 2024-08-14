@@ -8,3 +8,14 @@ declare module '*.json' {
   interface Window {
     Calendly: any;
   }
+
+  interface Calendly {
+    initPopupWidget(options: { url: string }): void;
+  }
+  
+  declare global {
+    interface Window {
+      Calendly: Calendly;
+    }
+    var Calendly: Calendly;
+  }

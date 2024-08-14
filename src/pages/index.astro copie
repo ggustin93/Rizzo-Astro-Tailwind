@@ -6,7 +6,6 @@ import texts from './data/home.json';
 import articlesData from './data/articles.json';
 import { CheckCircle } from 'astro-feather-icons';
 
-console.log('Contenu de texts:', JSON.stringify(texts, null, 2));
 ---
 
 <BaseLayout>

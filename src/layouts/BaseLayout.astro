@@ -3,31 +3,47 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+
+const { lang } = Astro.params;
 ---
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang={lang || 'fr'}>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Christine Rizzo - Avocate spécialisée en droit du travail</title>
     <link href="https://db.onlinewebfonts.com/c/141d0930d88f0321d415e423e22c8883?family=Synonym-Regular" rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <link rel="stylesheet" href="styles/tailwind.css">
     <link rel="stylesheet" href="styles/global.css">
 </head>
 <body class="bg-beige">
     <div class="container mx-auto px-4">
         <!-- En-tête -->
-        <Header />
-
+        <Header currentLang={lang || 'fr'} />
+        
         <!-- Contenu principal -->
         <div id="content">
             <slot />
         </div>
-
+        
         <!-- Pied de page -->
         <Footer />
     </div>
+    
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+          if (e.target instanceof HTMLElement && e.target.hasAttribute('data-calendly')) {
+            if (typeof window['Calendly'] !== 'undefined') {
+              window['Calendly'].initPopupWidget({url: 'https://calendly.com/decarbonaction/meeting'});
+            }
+          }
+        });
+      });
+    </script>
 </body>
 </html>

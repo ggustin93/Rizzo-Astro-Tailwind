@@ -1,1 +1,0 @@
-import"https://unpkg.com/feather-icons";import"./Header.astro_astro_type_script_index_0_lang.BFcQhyWK.js";document.addEventListener("astro:page-load",()=>{document.getElementById("calendlyButton")?.addEventListener("click",function(){window.Calendly.initPopupWidget({url:"https://calendly.com/decarbonaction/meeting"})})});

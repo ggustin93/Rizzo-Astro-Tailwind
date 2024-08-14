@@ -1,11 +1,52 @@
 ---
+export interface Props {
+  currentLang: string;
+}
+
+import LanguagePicker from '../components/LanguagePicker.astro';
+
+export async function getStaticPaths() {
+  return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
+}
+
+const { currentLang } = Astro.props as Props;
+
+const translations = {
+  fr: {
+    expertise: "EXPERTISE",
+    profil: "PROFIL",
+    ressources: "RESSOURCES",
+    honoraires: "HONORAIRES",
+    contact: "ME CONTACTER"
+  },
+  en: {
+    expertise: "EXPERTISE",
+    profil: "PROFILE",
+    ressources: "RESOURCES",
+    honoraires: "FEES",
+    contact: "CONTACT ME"
+  },
+  it: {
+    expertise: "COMPETENZA",
+    profil: "PROFILO",
+    ressources: "RISORSE",
+    honoraires: "ONORARI",
+    contact: "CONTATTAMI"
+  }
+};
+
+const t = translations[currentLang as keyof typeof translations] || translations.fr;
+
+const isHomePage = Astro.url.pathname === `/${currentLang}` || Astro.url.pathname === `/${currentLang}/`;
+
 const leftNavLinks = [
-  { href: "#expertise", label: "EXPERTISE" },
-  { href: "#profil", label: "PROFIL" },
-  { href: "/fr/blog", label: "RESSOURCES" },
+  { href: isHomePage ? "#expertise" : `/${currentLang}#expertise`, label: t.expertise },
+  { href: isHomePage ? "#profil" : `/${currentLang}#profil`, label: t.profil },
+  { href: `/${currentLang}/blog`, label: t.ressources },
 ];
+
 const rightNavLinks = [
-  { href: "#honoraires", label: "HONORAIRES" },
+  { href: isHomePage ? "#honoraires" : `/${currentLang}#honoraires`, label: t.honoraires },
 ];
 ---
 
@@ -21,7 +62,7 @@ const rightNavLinks = [
       
       <!-- Logo (visible sur tous les écrans) -->
       <div class="logo text-center flex-grow lg:flex-grow-0 lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2">
-        <a href="/">
+        <a href={`/${currentLang}`}>
           <img src="/logo_crizzo_calli3.svg" alt="Christine Rizzo Logo" class="h-16 sm:h-20 md:h-24 lg:h-28 w-auto mx-auto">
         </a>
       </div>
@@ -38,36 +79,47 @@ const rightNavLinks = [
         {rightNavLinks.map(link => (
           <a href={link.href} class="text-black uppercase text-sm font-light hover:underline">{link.label}</a>
         ))}
-        <a href="/contact" class="bg-transparent text-black border border-black px-3 py-1 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light">ME CONTACTER</a>
-        <select class="text-black text-sm font-light bg-transparent border border-black rounded-full px-2 py-1 uppercase">
-          <option value="fr">FR</option>
-          <option value="en">EN</option>
-          <option value="it">IT</option>
-        </select>
+        <a href={`/${currentLang}/contact`} class="bg-transparent text-black border border-black px-3 py-1 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light">{t.contact}</a>
+        
+        <LanguagePicker currentLang={currentLang} />
       </div>
     </div>
     
     <!-- Menu mobile et tablette -->
-    <nav id="mobile-menu" class="lg:hidden fixed inset-0 bg-beige bg-opacity-95 z-10 flex flex-col justify-center items-center">
+    <nav id="mobile-menu" class="lg:hidden fixed inset-0 bg-beige bg-opacity-95 z-10 flex flex-col justify-center items-center hidden">
       {[...leftNavLinks, ...rightNavLinks].map(link => (
         <a href={link.href} class="block py-2 text-black uppercase text-lg font-light hover:underline">{link.label}</a>
       ))}
-      <a href="/contact" class="mt-4 bg-transparent text-black border border-black px-4 py-2 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-lg font-light">ME CONTACTER</a>
-      <select class="mt-4 text-black text-lg font-light bg-transparent border border-black rounded-full px-2 py-2 uppercase">
-        <option value="fr">FR</option>
-        <option value="en">EN</option>
-        <option value="it">IT</option>
-      </select>
+      <a href={`/${currentLang}/contact`} class="mt-4 bg-transparent text-black border border-black px-4 py-2 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-lg font-light">{t.contact}</a>
+      <LanguagePicker currentLang={currentLang} />
     </nav>
   </div>
 </header>
 
-<script>
+<script is:inline>
   const menuToggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
   
-  menuToggle?.addEventListener('click', () => {
-    mobileMenu?.classList.toggle('hidden');
-    document.body.classList.toggle('overflow-hidden');
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      document.body.classList.toggle('overflow-hidden');
+    });
+  }
+
+  // Ajout d'un gestionnaire pour le défilement fluide
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      var href = this.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        var target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
   });
 </script>

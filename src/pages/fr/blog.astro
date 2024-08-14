@@ -4,21 +4,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 type Language = 'fr' | 'it' | 'en';
 
-interface BlogEntry {
-  slug: string;
-  data: {
-    title: string;
-    date: Date;
-    author: string;
-    thumbnail: string;
-    readTime: string;
-    categories: string[];
-    highlights?: string[];
-    summary?: string; // Ajout de la propriété summary ici si nécessaire
-  };
-  render: () => Promise<{ Content: any }>;
-}
-
 const lang: Language = 'fr'; // Changez cette valeur pour 'it', 'en', etc.
 const blogEntries = await getCollection(`blog_${lang}`);
 ---
