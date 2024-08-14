@@ -1,16 +1,19 @@
 ---
 // Importations
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { FileText, UserPlus, Shield, Search, ChevronRight } from 'astro-feather-icons';
+
 // Données
 const services = [
-  { icon: 'file-text', text: 'Rédaction et révision de vos contrats de travail ou de collaboration indépendante' },
-  { icon: 'file-text', text: 'Rédaction et révision de votre règlement de travail et de vos politiques RH' },
-  { icon: 'user-plus', text: 'Conseils dans la gestion de la relation individuelle de travail, du recrutement à la rupture' },
-  { icon: 'file-text', text: "Négociation d'accords amiables en direct ou en coulisses" },
-  { icon: 'shield', text: 'Défense devant les cours et tribunaux du travail' },
-  { icon: 'shield', text: "Défense devant les inspections du travail et de l'ONSS" },
-  { icon: 'search', text: 'Audit - Due Diligence en droit du travail et de la sécurité sociale' }
+  { icon: FileText, text: 'Rédaction et révision de vos contrats de travail ou de collaboration indépendante' },
+  { icon: FileText, text: 'Rédaction et révision de votre règlement de travail et de vos politiques RH' },
+  { icon: UserPlus, text: 'Conseils dans la gestion de la relation individuelle de travail, du recrutement à la rupture' },
+  { icon: FileText, text: "Négociation d'accords amiables en direct ou en coulisses" },
+  { icon: Shield, text: 'Défense devant les cours et tribunaux du travail' },
+  { icon: Shield, text: "Défense devant les inspections du travail et de l'ONSS" },
+  { icon: Search, text: 'Audit - Due Diligence en droit du travail et de la sécurité sociale' }
 ];
+
 const questions = [
   "Premier engagement en Belgique",
   "Démissions et licenciements",
@@ -26,6 +29,7 @@ const questions = [
   "Faux indépendants"
 ];
 ---
+
 <BaseLayout title="Accompagnement des Employeurs">
   <main class="container mx-auto px-4 py-16">
     <h1 class="text-4xl font-light mb-12 text-black text-center">Accompagnement des Employeurs</h1>
@@ -36,7 +40,7 @@ const questions = [
         <ul class="space-y-2 mb-6">
           {questions.map((question, index) => (
             <li set:key={index} class="flex items-start">
-              <i data-feather="chevron-right" class="w-5 h-5 mr-2 text-black flex-shrink-0 mt-1" />
+              <ChevronRight class="w-5 h-5 mr-2 text-black flex-shrink-0 mt-1" />
               <span class="text-dark-gray font-light">{question}</span>
             </li>
           ))}
@@ -49,7 +53,7 @@ const questions = [
         <ul class="space-y-6">
           {services.map((service, index) => (
             <li set:key={index} class="flex items-start">
-              <i data-feather={service.icon} class="w-8 h-8 mr-4 text-dark-green flex-shrink-0" />
+              <service.icon class="w-8 h-8 mr-4 text-dark-green flex-shrink-0" />
               <span class="text-dark-gray font-light">{service.text}</span>
             </li>
           ))}

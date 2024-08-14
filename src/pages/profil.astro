@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import feather from 'feather-icons';
+import { CheckCircle, Globe, Briefcase, Mic, Coffee, BookOpen } from 'astro-feather-icons';
 
 const profileData = {
   name: "Christine Rizzo",
@@ -76,7 +76,7 @@ const publications = [
         <h2 class="text-2xl font-light text-accent mb-4">{profileData.title}</h2>
         <p class="text-dark-gray mb-6">{profileData.bio}</p>
         
-        <h3 class="text-xl font-semibold text-black mb-3 flex items-center"><i data-feather="check-circle" class="mr-2"></i>Domaines de prédilection</h3>
+        <h3 class="text-xl font-semibold text-black mb-3 flex items-center"><CheckCircle class="mr-2" /> Domaines de prédilection</h3>
         <ul class="list-disc pl-5 mb-6">
           {profileData.specialties.map(specialty => (
             <li class="text-dark-gray">{specialty}</li>
@@ -90,7 +90,7 @@ const publications = [
           Je suis membre de la commission Bien-être psychosocial du Barreau de Bruxelles et je siège régulièrement au sein du jury des exercices de plaidoirie, examen auxquels les avocats stagiaires doivent se soumettre avant la fin de leur stage.
         </p>
         
-        <h3 class="text-xl font-semibold text-black mb-3 flex items-center"><i data-feather="globe" class="mr-2"></i>Langues</h3>
+        <h3 class="text-xl font-semibold text-black mb-3 flex items-center"><Globe class="mr-2" /> Langues</h3>
         <ul class="mb-6">
           {profileData.languages.map(lang => (
             <li class="text-dark-gray"><span class="font-semibold">{lang.name}:</span> {lang.level}</li>
@@ -104,7 +104,7 @@ const publications = [
     </div>
     
     <div class="mt-12">
-      <h2 class="text-3xl font-light text-black mb-6 flex items-center"><i data-feather="briefcase" class="mr-2"></i>Mon parcours</h2>
+      <h2 class="text-3xl font-light text-black mb-6 flex items-center"><Briefcase class="mr-2" /> Mon parcours</h2>
       <ul class="space-y-4">
         {careerPath.map(item => (
           <li class="flex">
@@ -116,9 +116,9 @@ const publications = [
     </div>
     
     <div class="mt-12">
-      <h2 class="text-3xl font-light text-black mb-6 flex items-center"><i data-feather="mic" class="mr-2"></i>Conférences et publications</h2>
+      <h2 class="text-3xl font-light text-black mb-6 flex items-center"><Mic class="mr-2" /> Conférences et publications</h2>
       
-      <h3 class="text-xl font-semibold text-black mb-4 flex items-center"><i data-feather="coffee" class="mr-2"></i>Conférences</h3>
+      <h3 class="text-xl font-semibold text-black mb-4 flex items-center"><Coffee class="mr-2" /> Conférences</h3>
       <ul class="space-y-4 mb-8">
         {conferences.map(conf => (
           <li>
@@ -129,7 +129,7 @@ const publications = [
         ))}
       </ul>
       
-      <h3 class="text-xl font-semibold text-black mb-4 flex items-center"><i data-feather="book-open" class="mr-2"></i>Publications</h3>
+      <h3 class="text-xl font-semibold text-black mb-4 flex items-center"><BookOpen class="mr-2" /> Publications</h3>
       <ul class="space-y-4">
         {publications.map(pub => (
           <li>
@@ -142,13 +142,3 @@ const publications = [
     </div>
   </div>
 </BaseLayout>
-
-<script>
-  document.addEventListener('astro:page-load', () => {
-    // @ts-ignore
-    if (typeof feather !== 'undefined') {
-      // @ts-ignore
-      feather.replace();
-    }
-  });
-</script>

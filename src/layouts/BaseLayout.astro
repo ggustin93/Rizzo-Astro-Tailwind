@@ -2,7 +2,6 @@
 // src/layouts/BaseLayout.astro
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import CTA from '../components/CTA.astro';
 import '../styles/global.css';
 import feather from 'feather-icons';
 ---
@@ -35,10 +34,7 @@ import feather from 'feather-icons';
     <script>
         document.addEventListener('astro:page-load', () => {
            // @ts-ignore
-            if (typeof feather !== 'undefined') {
-                // @ts-ignore
-                feather.replace();
-            }
+            feather.replace();
         });
       </script>
 </body>

@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import feather from 'feather-icons';
+import { Calendar, Mail, Phone, MessageCircle, Linkedin, MapPin } from 'astro-feather-icons';
 
 const contactButtons = [
   { icon: 'calendar', text: 'PRENEZ RDV EN LIGNE', subtext: 'Le premier rdv est gratuit', action: 'calendly' },
@@ -23,7 +23,14 @@ const contactButtons = [
             data-action={button.action}
             class="w-full bg-transparent text-black border border-black px-6 py-4 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light flex flex-col items-center justify-center h-full"
           >
-            <i data-feather={button.icon} class="w-8 h-8 mb-2"></i>
+            <i class="w-8 h-8 mb-2">
+              {button.icon === 'calendar' && <Calendar />}
+              {button.icon === 'mail' && <Mail />}
+              {button.icon === 'phone' && <Phone />}
+              {button.icon === 'message-circle' && <MessageCircle />}
+              {button.icon === 'linkedin' && <Linkedin />}
+              {button.icon === 'map-pin' && <MapPin />}
+            </i>
             <span class="font-medium">{button.text}</span>
             <span class="text-xs mt-1">{button.subtext}</span>
           </button>
@@ -37,12 +44,6 @@ const contactButtons = [
 <script is:inline src="https://assets.calendly.com/assets/external/widget.js"></script>
 <script>
   document.addEventListener('astro:page-load', () => {
-    // @ts-ignore
-    if (typeof feather !== 'undefined') {
-      // @ts-ignore
-      feather.replace();
-    }
-
     window.Calendly.initBadgeWidget({ 
       url: 'https://calendly.com/decarbonaction/meeting', 
       text: 'Planifier du temps avec moi', 

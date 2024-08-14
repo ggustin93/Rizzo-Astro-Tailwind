@@ -1,18 +1,19 @@
 ---
 // Importations
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Briefcase, Shield, FileText, ChevronRight, Check } from 'astro-feather-icons';
 
 // Données
 const services = [
-  { icon: 'briefcase', text: 'Conseils ponctuels du recrutement à la rupture de la relation de travail' },
-  { icon: 'shield', text: 'Défense devant les cours et tribunaux du travail' },
-  { icon: 'file-text', text: "Négociation d'accords amiables en direct ou en coulisses" }
+  { icon: Briefcase, text: 'Conseils ponctuels du recrutement à la rupture de la relation de travail' },
+  { icon: Shield, text: 'Défense devant les cours et tribunaux du travail' },
+  { icon: FileText, text: "Négociation d'accords amiables en direct ou en coulisses" }
 ];
 
 const questions = [
   "Vous êtes sur le point de signer un nouveau contrat de travail?",
   "Vous souhaitez quitter votre emploi?",
-  "Votre employeur vous propose une rupture conventionnelle mais vous ne savez pas si xc'est dans votre intérêt?",
+  "Votre employeur vous propose une rupture conventionnelle mais vous ne savez pas si c'est dans votre intérêt?",
   "Votre employeur, un collègue vous harcèle ou adopte une attitude déplacée à votre égard?",
   "Vos conditions de travail sont modifiées pendant votre grossesse ou suite à votre accouchement?",
   "Vous êtes mis à l'écart?",
@@ -29,7 +30,7 @@ const questions = [
 <BaseLayout title="Accompagnement des Travailleurs">
   <main class="container mx-auto px-4 py-16">
     <h1 class="text-4xl font-light mb-12 text-black text-center">Accompagnement des Travailleurs</h1>
-
+    
     <div class="flex flex-col md:flex-row">
       <!-- Colonne de gauche (2/3) -->
       <div class="md:w-2/3 bg-light-accent p-8 rounded-sm">
@@ -37,7 +38,7 @@ const questions = [
         <ul class="space-y-2 mb-6">
           {questions.map((question, index) => (
             <li set:key={index} class="flex items-start">
-              <i data-feather="chevron-right" class="w-5 h-5 mr-2 text-black flex-shrink-0 mt-1" />
+              <ChevronRight class="w-5 h-5 mr-2 text-black flex-shrink-0 mt-1" />
               <span class="text-dark-gray font-light">{question}</span>
             </li>
           ))}
@@ -45,23 +46,23 @@ const questions = [
         <p class="mb-4 text-dark-gray font-light">Je suis particulièrement sensible aux questions concernant :</p>
         <ul class="space-y-2">
           <li class="flex items-center">
-            <i data-feather="check" class="w-5 h-5 mr-2 text-black" />
+            <Check class="w-5 h-5 mr-2 text-black" />
             <span class="text-dark-gray font-light">l'équilibre vie privée - vie professionnelle</span>
           </li>
           <li class="flex items-center">
-            <i data-feather="check" class="w-5 h-5 mr-2 text-black" />
+            <Check class="w-5 h-5 mr-2 text-black" />
             <span class="text-dark-gray font-light">le harcèlement, la discrimination et la violence au travail.</span>
           </li>
         </ul>
       </div>
-
+      
       <!-- Colonne de droite (1/3) -->
       <div class="md:w-1/3 bg-white p-8 rounded-sm">
         <h2 class="text-2xl font-light mb-6 text-black">Mes services</h2>
         <ul class="space-y-6">
           {services.map((service, index) => (
             <li set:key={index} class="flex items-start">
-              <i data-feather={service.icon} class="w-8 h-8 mr-4 text-dark-green flex-shrink-0" />
+              <service.icon class="w-8 h-8 mr-4 text-dark-green flex-shrink-0" />
               <span class="text-dark-gray font-light">{service.text}</span>
             </li>
           ))}
