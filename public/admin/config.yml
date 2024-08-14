@@ -8,7 +8,7 @@ public_folder: "/assets/images"
 collections:
   - name: "blog_fr"
     label: "Blog (FR)"
-    folder: "src/content/blog/fr"
+    folder: "src/content/blog_fr"
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
@@ -22,7 +22,7 @@ collections:
       
   - name: "blog_it"
     label: "Blog (IT)"
-    folder: "src/content/blog/it"
+    folder: "src/content/blog_it"
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
@@ -36,7 +36,7 @@ collections:
 
   - name: "blog_en"
     label: "Blog (EN)"
-    folder: "src/content/blog/en"
+    folder: "src/content/blog_en"
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
