@@ -24,3 +24,7 @@
 html {
   scroll-behavior: smooth;
 }
+
+.prose blockquote {
+  @apply border-accent;
+}
