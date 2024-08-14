@@ -5,9 +5,7 @@ export default defineConfig({
     defaultLocale: 'fr',
     locales: ['fr', 'en', 'it'],
     routing: {
-      prefixDefaultLocale: false,
+      prefixDefaultLocale: true,
     }
   },
-  publicDir: './public'
 });
-

@@ -1,0 +1,38 @@
+{
+  "hero": {
+    "title": "Christine Rizzo",
+    "subtitle": "Avocate spécialisée en droit du travail",
+    "description": "Vous suivez chaque étape de votre dossier et mes prestations grâce à une plateforme de partage en ligne.",
+    "cta": "PRENEZ RDV EN LIGNE →"
+  },
+  "expertise": {
+    "title": "Expertise",
+    "description": "J'entretiens une expertise globale et actualisée du droit du travail en faisant le choix d'accompagner à la fois les salariés dans leurs problématiques du quotidien et les entreprises dans leurs projets de développement."
+  },
+  "travailleurs": {
+    "title": "Accompagnement et défense des travailleurs.euses",
+    "description": "Je conseille et défends les travailleurs tout au long de leur parcours professionnel et contre les abus, le harcèlement et les discriminations au travail.",
+    "cta": "→ En savoir plus"
+  },
+  "employeurs": {
+    "title": "Accompagnement des employeurs",
+    "description": "Je collabore avec votre équipe RH pour la gestion des relations de travail au quotidien ainsi que pour tous vos projets visant à développer vos politiques bien-être au travail et équilibre vie privée-vie professionnelle.",
+    "cta": "→ En savoir plus"
+  },
+  "profil": {
+    "title": "Profil",
+    "description": "Avocate au Barreau de Bruxelles depuis 2010, habituée des négociations et des salles d'audience, j'ai acquis l'expérience de mon métier à la fois auprès d'une clientèle de particuliers qu'auprès d’entreprises locales et internationales. "
+  },
+  "honoraires": {
+    "title": "Les honoraires et votre dossier client",
+    "list": [
+      "Devis transparents",
+      "Formules tarifaires pour les entreprises",
+      "Formules tarifaires pour les travailleurs.euses",
+      "Adaptées à vos besoins",
+      "Suivi en ligne de votre dossier et de mes prestations"
+    ],
+    "cta": "En savoir plus"
+  },
+  "articlesTitle": "Articles"
+}

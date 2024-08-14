@@ -1,0 +1,27 @@
+---
+// This is the root index.astro file in src/pages/
+export const prerender = false;
+
+// Redirect to the French version
+const frenchUrl = '/fr/';
+---
+
+<meta http-equiv="refresh" content={`0;url=${frenchUrl}`} />
+
+<script define:vars={{ frenchUrl }}>
+  window.location.href = frenchUrl;
+</script>
+
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirection vers la version française</title>
+  </head>
+  <body>
+    <p>
+      Si vous n'êtes pas redirigé automatiquement, veuillez cliquer 
+      <a href={frenchUrl}>ici</a> pour accéder à la version française.
+    </p>
+  </body>
+</html>

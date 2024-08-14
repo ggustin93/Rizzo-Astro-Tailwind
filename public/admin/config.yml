@@ -28,64 +28,67 @@ collections:
 
   - name: "home"
     label: "Page d'accueil"
-    file: "src/content/home/home.yml"
-    i18n: true
-    fields:
-      - label: "Hero Section"
-        name: "hero"
-        widget: "object"
+    files:
+      - file: "src/content/home/home.yml"
+        name: "home"
+        label: "Contenu de la page d'accueil"
         i18n: true
         fields:
-          - {label: "Titre", name: "title", widget: "string", i18n: true}
-          - {label: "Sous-titre", name: "subtitle", widget: "string", i18n: true}
-          - {label: "Description", name: "description", widget: "text", i18n: true}
-          - {label: "Texte du bouton CTA", name: "cta", widget: "string", i18n: true}
-
-      - label: "Section Expertise"
-        name: "expertise"
-        widget: "object"
-        i18n: true
-        fields:
-          - {label: "Titre", name: "title", widget: "string", i18n: true}
-          - {label: "Description", name: "description", widget: "text", i18n: true}
-      
-      - label: "Section Travailleurs"
-        name: "travailleurs"
-        widget: "object"
-        i18n: true
-        fields:
-          - {label: "Titre", name: "title", widget: "string", i18n: true}
-          - {label: "Description", name: "description", widget: "text", i18n: true}
-          - {label: "Texte du bouton CTA", name: "cta", widget: "string", i18n: true}
-
-      - label: "Section Employeurs"
-        name: "employeurs"
-        widget: "object"
-        i18n: true
-        fields:
-          - {label: "Titre", name: "title", widget: "string", i18n: true}
-          - {label: "Description", name: "description", widget: "text", i18n: true}
-          - {label: "Texte du bouton CTA", name: "cta", widget: "string", i18n: true}
-
-      - label: "Section Profil"
-        name: "profil"
-        widget: "object"
-        i18n: true
-        fields:
-          - {label: "Titre", name: "title", widget: "string", i18n: true}
-          - {label: "Description", name: "description", widget: "text", i18n: true}
-
-      - label: "Section Honoraires"
-        name: "honoraires"
-        widget: "object"
-        i18n: true
-        fields:
-          - {label: "Titre", name: "title", widget: "string", i18n: true}
-          - label: "Liste des points clés"
-            name: "list"
-            widget: "list"
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
             i18n: true
-            field: {label: Point, name: point, widget: string}
-          - {label: "Texte du bouton CTA", name: "cta", widget: "string", i18n: true}
+            fields:
+              - {label: "Titre", name: "title", widget: "string", i18n: true}
+              - {label: "Sous-titre", name: "subtitle", widget: "string", i18n: true}
+              - {label: "Description", name: "description", widget: "text", i18n: true}
+              - {label: "Texte du bouton CTA", name: "cta", widget: "string", i18n: true}
 
-      - {label: "Titre de la section Articles", name: "articlesTitle", widget: "string", i18n: true}
+          - label: "Section Expertise"
+            name: "expertise"
+            widget: "object"
+            i18n: true
+            fields:
+              - {label: "Titre", name: "title", widget: "string", i18n: true}
+              - {label: "Description", name: "description", widget: "text", i18n: true}
+          
+          - label: "Section Travailleurs"
+            name: "travailleurs"
+            widget: "object"
+            i18n: true
+            fields:
+              - {label: "Titre", name: "title", widget: "string", i18n: true}
+              - {label: "Description", name: "description", widget: "text", i18n: true}
+              - {label: "Texte du bouton CTA", name: "cta", widget: "string", i18n: true}
+
+          - label: "Section Employeurs"
+            name: "employeurs"
+            widget: "object"
+            i18n: true
+            fields:
+              - {label: "Titre", name: "title", widget: "string", i18n: true}
+              - {label: "Description", name: "description", widget: "text", i18n: true}
+              - {label: "Texte du bouton CTA", name: "cta", widget: "string", i18n: true}
+
+          - label: "Section Profil"
+            name: "profil"
+            widget: "object"
+            i18n: true
+            fields:
+              - {label: "Titre", name: "title", widget: "string", i18n: true}
+              - {label: "Description", name: "description", widget: "text", i18n: true}
+
+          - label: "Section Honoraires"
+            name: "honoraires"
+            widget: "object"
+            i18n: true
+            fields:
+              - {label: "Titre", name: "title", widget: "string", i18n: true}
+              - label: "Liste des points clés"
+                name: "list"
+                widget: "list"
+                i18n: true
+                field: {label: Point, name: point, widget: string}
+              - {label: "Texte du bouton CTA", name: "cta", widget: "string", i18n: true}
+
+          - {label: "Titre de la section Articles", name: "articlesTitle", widget: "string", i18n: true}

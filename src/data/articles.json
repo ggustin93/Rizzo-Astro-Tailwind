@@ -1,0 +1,19 @@
+{
+  "articles": [
+    {
+      "title": "Les nouveautés du droit du travail en 2024",
+      "description": "Découvrez les principales modifications législatives qui impactent les relations de travail cette année...",
+      "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+    },
+    {
+      "title": "Comment gérer un conflit au travail ?",
+      "description": "Des conseils pratiques pour résoudre les tensions professionnelles de manière constructive...",
+      "image": "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+    },
+    {
+      "title": "Les droits des travailleurs en télétravail",
+      "description": "Comprendre les droits et obligations des travailleurs en télétravail...",
+      "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+    }
+  ]
+}
