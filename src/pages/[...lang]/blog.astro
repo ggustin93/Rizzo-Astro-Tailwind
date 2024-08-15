@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
 
@@ -7,10 +7,15 @@ export async function getStaticPaths() {
   return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
 }
 
+type BlogEntry = CollectionEntry<'blog'> & { data: { lang: string } };
+
 const { lang } = Astro.params;
 
-// Récupération des articles dans la langue spécifiée
-const blogEntries = await getCollection(`blog_${lang}`);
+// Récupération de tous les articles
+const allBlogEntries = await getCollection('blog') as BlogEntry[];
+
+// Filtrage des articles pour la langue actuelle
+const blogEntries = allBlogEntries.filter(entry => entry.data.lang === lang);
 
 // Traductions
 const translations = {

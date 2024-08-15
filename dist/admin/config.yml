@@ -28,67 +28,64 @@ collections:
 
   - name: "home"
     label: "Page d'accueil"
-    files:
-      - file: "src/content/home/home.yml"
-        name: "home"
-        label: "Contenu de la page d'accueil"
-        i18n: true
-        fields:
+    file: "src/content/home/home.yml"
+    i18n:
+      structure: single_file
+    fields:
+      - label: "Français"
+        name: "fr"
+        widget: "object"
+        fields: &homeFields
           - label: "Hero Section"
             name: "hero"
             widget: "object"
-            i18n: true
             fields:
-              - {label: "Titre", name: "title", widget: "string", i18n: true}
-              - {label: "Sous-titre", name: "subtitle", widget: "string", i18n: true}
-              - {label: "Description", name: "description", widget: "text", i18n: true}
-              - {label: "Texte du bouton CTA", name: "cta", widget: "string", i18n: true}
-
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Sous-titre", name: "subtitle", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Texte du bouton CTA", name: "cta", widget: "string"}
           - label: "Section Expertise"
             name: "expertise"
             widget: "object"
-            i18n: true
             fields:
-              - {label: "Titre", name: "title", widget: "string", i18n: true}
-              - {label: "Description", name: "description", widget: "text", i18n: true}
-          
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
           - label: "Section Travailleurs"
             name: "travailleurs"
             widget: "object"
-            i18n: true
             fields:
-              - {label: "Titre", name: "title", widget: "string", i18n: true}
-              - {label: "Description", name: "description", widget: "text", i18n: true}
-              - {label: "Texte du bouton CTA", name: "cta", widget: "string", i18n: true}
-
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Texte du bouton CTA", name: "cta", widget: "string"}
           - label: "Section Employeurs"
             name: "employeurs"
             widget: "object"
-            i18n: true
             fields:
-              - {label: "Titre", name: "title", widget: "string", i18n: true}
-              - {label: "Description", name: "description", widget: "text", i18n: true}
-              - {label: "Texte du bouton CTA", name: "cta", widget: "string", i18n: true}
-
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Texte du bouton CTA", name: "cta", widget: "string"}
           - label: "Section Profil"
             name: "profil"
             widget: "object"
-            i18n: true
             fields:
-              - {label: "Titre", name: "title", widget: "string", i18n: true}
-              - {label: "Description", name: "description", widget: "text", i18n: true}
-
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
           - label: "Section Honoraires"
             name: "honoraires"
             widget: "object"
-            i18n: true
             fields:
-              - {label: "Titre", name: "title", widget: "string", i18n: true}
+              - {label: "Titre", name: "title", widget: "string"}
               - label: "Liste des points clés"
                 name: "list"
                 widget: "list"
-                i18n: true
                 field: {label: Point, name: point, widget: string}
-              - {label: "Texte du bouton CTA", name: "cta", widget: "string", i18n: true}
-
-          - {label: "Titre de la section Articles", name: "articlesTitle", widget: "string", i18n: true}
+              - {label: "Texte du bouton CTA", name: "cta", widget: "string"}
+          - {label: "Titre de la section Articles", name: "articlesTitle", widget: "string"}
+      - label: "English"
+        name: "en"
+        widget: "object"
+        fields: *homeFields
+      - label: "Italiano"
+        name: "it"
+        widget: "object"
+        fields: *homeFields
