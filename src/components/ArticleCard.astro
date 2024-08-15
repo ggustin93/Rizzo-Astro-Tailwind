@@ -1,0 +1,24 @@
+---
+const { article, lang } = Astro.props;
+
+const formattedDate = new Date(article.data.date).toLocaleDateString(lang, {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<article class="bg-white shadow-lg rounded-lg overflow-hidden">
+  <a href={`/${lang}/blog/${article.slug}`} class="block hover:shadow-xl transition-shadow duration-300">
+    <img src={article.data.thumbnail} alt={article.data.title} class="w-full h-48 object-cover" />
+    <div class="p-6">
+      <h3 class="text-2xl font-light text-black">{article.data.title}</h3>
+      <time class="block text-dark-gray mt-2">
+        {formattedDate}
+      </time>
+      <p class="mt-4 text-dark-gray font-light">
+        {article.data.description || 'Un aperçu captivant de cet article.'}
+      </p>
+    </div>
+  </a>
+</article>

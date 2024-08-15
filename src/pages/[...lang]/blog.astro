@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+
+export async function getStaticPaths() {
+  return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+
+// Récupération des articles dans la langue spécifiée
+const blogEntries = await getCollection(`blog_${lang}`);
+
+// Traductions
+const translations = {
+  fr: { title: "Articles", noArticles: "Aucun article trouvé." },
+  en: { title: "Blog Posts", noArticles: "No articles found." },
+  it: { title: "Articoli", noArticles: "Nessun articolo trovato." }
+};
+
+const t = translations[lang as keyof typeof translations];
+
+---
+
+<BaseLayout title={t.title} lang={lang}>
+  <main class="container mx-auto px-4 py-12">
+    <h2 class="text-4xl font-light mb-8 text-black text-center">
+      {t.title}
+    </h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {blogEntries.length > 0 ? (
+        blogEntries.map((entry) => (
+          <ArticleCard 
+            article={entry} 
+            lang={lang}
+          />
+        ))
+      ) : (
+        <p class="text-dark-gray col-span-full text-center">{t.noArticles}</p>
+      )}
+    </div>
+  </main>
+</BaseLayout>
