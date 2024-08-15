@@ -128,6 +128,55 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+"en/test-blog.md": {
+	id: "en/test-blog.md";
+  slug: "en/test-blog";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/test.md": {
+	id: "en/test.md";
+  slug: "en/test";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"fr/test-blog.md": {
+	id: "fr/test-blog.md";
+  slug: "fr/test-blog";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"fr/test.md": {
+	id: "fr/test.md";
+  slug: "fr/test";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"fr/yo.md": {
+	id: "fr/yo.md";
+  slug: "fr/yo";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"it/test-blog.md": {
+	id: "it/test-blog.md";
+  slug: "it/test-blog";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"it/test.md": {
+	id: "it/test.md";
+  slug: "it/test";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "test-blog.md": {
 	id: "test-blog.md";
   slug: "test-blog";
@@ -136,33 +185,30 @@ declare module 'astro:content' {
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 };
-"blog_en": {
-"test-blog.md": {
-	id: "test-blog.md";
-  slug: "test-blog";
+"blog_en": Record<string, {
+  id: string;
+  slug: string;
   body: string;
   collection: "blog_en";
-  data: InferEntrySchema<"blog_en">
-} & { render(): Render[".md"] };
-};
-"blog_fr": {
-"test-blog.md": {
-	id: "test-blog.md";
-  slug: "test-blog";
+  data: InferEntrySchema<"blog_en">;
+  render(): Render[".md"];
+}>;
+"blog_fr": Record<string, {
+  id: string;
+  slug: string;
   body: string;
   collection: "blog_fr";
-  data: InferEntrySchema<"blog_fr">
-} & { render(): Render[".md"] };
-};
-"blog_it": {
-"test-blog.md": {
-	id: "test-blog.md";
-  slug: "test-blog";
+  data: InferEntrySchema<"blog_fr">;
+  render(): Render[".md"];
+}>;
+"blog_it": Record<string, {
+  id: string;
+  slug: string;
   body: string;
   collection: "blog_it";
-  data: InferEntrySchema<"blog_it">
-} & { render(): Render[".md"] };
-};
+  data: InferEntrySchema<"blog_it">;
+  render(): Render[".md"];
+}>;
 
 	};
 
