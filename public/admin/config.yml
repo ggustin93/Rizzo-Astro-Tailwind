@@ -28,6 +28,7 @@ collections:
 
   - name: "home"
     label: "Page d'accueil"
+    i18n: true
     files:
       - file: "src/content/home/home.yml"
         name: "home"
