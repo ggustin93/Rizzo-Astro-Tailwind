@@ -1,5 +1,5 @@
 ---
-title: Les nouveautés du droit du travail en 2024 FR ^^
+title: "Les nouveautés du droit du travail en 2024 "
 date: 2024-01-15
 author: Christine Rizzo
 thumbnail: https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80
