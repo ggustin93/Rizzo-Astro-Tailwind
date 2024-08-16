@@ -1,6 +1,9 @@
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
+  redirects: {
+    '/': '/fr'
+  },
   typescript: {
     enabled: false
   },
