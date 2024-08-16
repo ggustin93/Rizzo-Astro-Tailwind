@@ -1,22 +1,85 @@
+---
+export interface Props {
+  currentLang: string;
+}
+
+const { currentLang } = Astro.props as Props;
+
+const translations = {
+  fr: {
+    copyright: "© 2023 Christine Rizzo. Tous droits réservés.",
+    expertise: "Expertise",
+    profil: "Profil",
+    honoraires: "Honoraires",
+    articles: "Articles",
+    contact: "Contact",
+    legalNotice: "Mentions légales",
+    privacyPolicy: "Politique de confidentialité",
+    design: "Design by Pwablo",
+    ecoDesign: "Eco-conception"
+  },
+  en: {
+    copyright: "© 2023 Christine Rizzo. All rights reserved.",
+    expertise: "Expertise",
+    profil: "Profile",
+    honoraires: "Fees",
+    articles: "Articles",
+    contact: "Contact",
+    legalNotice: "Legal Notice",
+    privacyPolicy: "Privacy Policy",
+    design: "Design by Pwablo",
+    ecoDesign: "Eco-design"
+  },
+  it: {
+    copyright: "© 2023 Christine Rizzo. Tutti i diritti riservati.",
+    expertise: "Competenza",
+    profil: "Profilo",
+    honoraires: "Onorari",
+    articles: "Articoli",
+    contact: "Contatto",
+    legalNotice: "Note legali",
+    privacyPolicy: "Politica sulla privacy",
+    design: "Design di Pwablo",
+    ecoDesign: "Eco-design"
+  }
+};
+
+const t = translations[currentLang as keyof typeof translations] || translations.fr;
+
+const isHomePage = Astro.url.pathname === `/${currentLang}` || Astro.url.pathname === `/${currentLang}/`;
+
+const mainLinks = [
+  { href: isHomePage ? "#expertise" : `/${currentLang}#expertise`, label: t.expertise },
+  { href: isHomePage ? "#profil" : `/${currentLang}#profil`, label: t.profil },
+  { href: isHomePage ? "#honoraires" : `/${currentLang}#honoraires`, label: t.honoraires },
+  { href: isHomePage ? "#articles" : `/${currentLang}#articles`, label: t.articles },
+  { href: isHomePage ? "#contact" : `/${currentLang}#contact`, label: t.contact },
+];
+
+const secondaryLinks = [
+  { href: "#", label: t.legalNotice },
+  { href: "#", label: t.privacyPolicy },
+  { href: "#", label: t.design },
+  { href: "#", label: t.ecoDesign },
+];
+---
+
 <footer class="bg-light-gray text-dark-gray py-8">
   <div class="container mx-auto px-4 text-center">
     <div class="flex flex-col items-center">
-      <p class="text-sm mb-4 text-dark-gray">&copy; 2023 Christine Rizzo. Tous droits réservés.</p>
+      <p class="text-sm mb-4 text-dark-gray">{t.copyright}</p>
       <div class="logo text-center mb-6">
           <img src="/logo_crizzo_calli3.svg" alt="Christine Rizzo Logo" class="h-24 md:h-48 w-auto">
       </div>
       <nav class="flex flex-wrap justify-center mb-6">
-        <a href="#expertise" class="text-black hover:underline transition duration-300 px-3 py-2">Expertise</a>
-        <a href="#profil" class="text-black hover:underline transition duration-300 px-3 py-2">Profil</a>
-        <a href="#honoraires" class="text-black hover:underline transition duration-300 px-3 py-2">Honoraires</a>
-        <a href="#articles" class="text-black hover:underline transition duration-300 px-3 py-2">Articles</a>
-        <a href="#contact" class="text-black hover:underline transition duration-300 px-3 py-2">Contact</a>
+        {mainLinks.map(link => (
+          <a href={link.href} class="text-black hover:underline transition duration-300 px-3 py-2">{link.label}</a>
+        ))}
       </nav>
       <nav class="flex flex-wrap justify-center">
-        <a href="#" class="text-dark-gray hover:underline transition duration-300 px-3 py-2">Mentions légales</a>
-        <a href="#" class="text-dark-gray hover:underline transition duration-300 px-3 py-2">Politique de confidentialité</a>
-        <a href="#" class="text-dark-gray hover:underline transition duration-300 px-3 py-2">Design by Pwablo</a>
-        <a href="#" class="text-dark-gray hover:underline transition duration-300 px-3 py-2">Eco-conception</a>
+        {secondaryLinks.map(link => (
+          <a href={link.href} class="text-dark-gray hover:underline transition duration-300 px-3 py-2">{link.label}</a>
+        ))}
       </nav>
     </div>
   </div>

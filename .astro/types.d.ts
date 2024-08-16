@@ -135,30 +135,23 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"en/test.md": {
-	id: "en/test.md";
-  slug: "en/test";
+"fr/harcelement.md": {
+	id: "fr/harcelement.md";
+  slug: "fr/harcelement";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"fr/test-blog.md": {
-	id: "fr/test-blog.md";
-  slug: "fr/test-blog";
+"fr/nouveautes-droit-travail.md": {
+	id: "fr/nouveautes-droit-travail.md";
+  slug: "fr/nouveautes-droit-travail";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"fr/test.md": {
-	id: "fr/test.md";
-  slug: "fr/test";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"fr/yo.md": {
-	id: "fr/yo.md";
-  slug: "fr/yo";
+"fr/reforme-pension.md": {
+	id: "fr/reforme-pension.md";
+  slug: "fr/reforme-pension";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -170,53 +163,43 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"it/test.md": {
-	id: "it/test.md";
-  slug: "it/test";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"test-blog.md": {
-	id: "test-blog.md";
-  slug: "test-blog";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
 };
-"blog_en": Record<string, {
-  id: string;
-  slug: string;
-  body: string;
-  collection: "blog_en";
-  data: InferEntrySchema<"blog_en">;
-  render(): Render[".md"];
-}>;
-"blog_fr": Record<string, {
-  id: string;
-  slug: string;
-  body: string;
-  collection: "blog_fr";
-  data: InferEntrySchema<"blog_fr">;
-  render(): Render[".md"];
-}>;
-"blog_it": Record<string, {
-  id: string;
-  slug: string;
-  body: string;
-  collection: "blog_it";
-  data: InferEntrySchema<"blog_it">;
-  render(): Render[".md"];
-}>;
 
 	};
 
 	type DataEntryMap = {
-		"home": {
+		"contact": {
+"contact": {
+	id: "contact";
+  collection: "contact";
+  data: any
+};
+};
+"employeurs": {
+"employeurs": {
+	id: "employeurs";
+  collection: "employeurs";
+  data: any
+};
+};
+"home": {
 "home": {
 	id: "home";
   collection: "home";
+  data: any
+};
+};
+"profile": {
+"profile": {
+	id: "profile";
+  collection: "profile";
+  data: any
+};
+};
+"travailleurs": {
+"travailleurs": {
+	id: "travailleurs";
+  collection: "travailleurs";
   data: any
 };
 };

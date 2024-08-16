@@ -92,3 +92,134 @@ collections:
             name: "it"
             widget: "object"
             fields: *homeFields
+
+  - name: "travailleurs"
+    label: "Page Travailleurs"
+    files:
+      - file: "src/content/travailleurs/travailleurs.yml"
+        name: "travailleurs"
+        label: "Contenu de la page Travailleurs"
+        i18n:
+          structure: single_file
+        fields:
+          - label: "Français"
+            name: "fr"
+            widget: "object"
+            fields: &travailleursFields
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - label: "Questions"
+                name: "questions"
+                widget: "list"
+                field: {label: Question, name: question, widget: "string"}
+              - {label: "Focus spécial", name: "specialFocus", widget: "string"}
+              - label: "Points de focus"
+                name: "focusPoints"
+                widget: "list"
+                field: {label: Point, name: point, widget: "string"}
+              - {label: "Titre des services", name: "servicesTitle", widget: "string"}
+              - label: "Services"
+                name: "services"
+                widget: "list"
+                fields:
+                  - {label: "Icône", name: "icon", widget: "select", options: ["Briefcase", "Shield", "FileText"]}
+                  - {label: "Texte", name: "text", widget: "string"}
+          - label: "English"
+            name: "en"
+            widget: "object"
+            fields: *travailleursFields
+          - label: "Italiano"
+            name: "it"
+            widget: "object"
+            fields: *travailleursFields
+  - name: "employeurs"
+      label: "Page Employeurs"
+      files:
+        - file: "src/content/employeurs/employeurs.yml"
+          name: "employeurs"
+          label: "Contenu de la page Employeurs"
+          i18n:
+            structure: single_file
+          fields:
+            - label: "Français"
+              name: "fr"
+              widget: "object"
+              fields: &employeursFields
+                - {label: "Titre", name: "title", widget: "string"}
+                - {label: "Description", name: "description", widget: "text"}
+                - label: "Questions"
+                  name: "questions"
+                  widget: "list"
+                  field: {label: Question, name: question, widget: "string"}
+                - {label: "Conclusion", name: "conclusion", widget: "text"}
+                - {label: "Titre des prestations", name: "servicesTitle", widget: "string"}
+                - label: "Prestations"
+                  name: "services"
+                  widget: "list"
+                  fields:
+                    - {label: "Icône", name: "icon", widget: "select", options: ["FileText", "UserPlus", "Shield", "Search"]}
+                    - {label: "Texte", name: "text", widget: "string"}
+            - label: "English"
+              name: "en"
+              widget: "object"
+              fields: *employeursFields
+            - label: "Italiano"
+              name: "it"
+              widget: "object"
+              fields: *employeursFields
+  - name: "profile"
+    label: "Profil"
+    files:
+      - file: "src/content/profile/profile.yml"
+        name: "profile"
+        label: "Contenu du profil"
+        i18n:
+          structure: single_file
+        fields:
+          - label: "Français"
+            name: "fr"
+            widget: "object"
+            fields: &profileFields
+              - {label: "Nom", name: "name", widget: "string"}
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Biographie", name: "bio", widget: "text"}
+              - label: "Spécialités"
+                name: "specialties"
+                widget: "list"
+              - label: "Langues"
+                name: "languages"
+                widget: "list"
+                fields:
+                  - {label: "Nom", name: "name", widget: "string"}
+                  - {label: "Niveau", name: "level", widget: "string"}
+              - label: "Parcours"
+                name: "careerPath"
+                widget: "list"
+                fields:
+                  - {label: "Année", name: "year", widget: "string"}
+                  - {label: "Événement", name: "event", widget: "string"}
+              - label: "Conférences"
+                name: "conferences"
+                widget: "list"
+                fields:
+                  - {label: "Date", name: "date", widget: "string"}
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Événement", name: "event", widget: "string"}
+                  - {label: "Co-intervenants", name: "coSpeakers", widget: "list"}
+              - label: "Publications"
+                name: "publications"
+                widget: "list"
+                fields:
+                  - {label: "Date", name: "date", widget: "string"}
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Éditeur", name: "publisher", widget: "string"}
+                  - {label: "Co-auteurs", name: "coAuthors", widget: "list"}
+          - label: "English"
+            name: "en"
+            widget: "object"
+            fields: *profileFields
+          - label: "Italiano"
+            name: "it"
+            widget: "object"
+            fields: *profileFields

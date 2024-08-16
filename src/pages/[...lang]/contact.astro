@@ -1,0 +1,79 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Calendar, Mail, Phone, MessageCircle, Linkedin, MapPin } from 'astro-feather-icons';
+
+export async function getStaticPaths() {
+  return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const contactEntry = await getEntry('contact', 'contact');
+const contactData = contactEntry.data[lang];
+
+const iconComponents = {
+  calendar: Calendar,
+  mail: Mail,
+  phone: Phone,
+  'message-circle': MessageCircle,
+  linkedin: Linkedin,
+  'map-pin': MapPin
+};
+
+const handleAction = (type: string) => {
+  switch(type) {
+    case 'calendly':
+      return "window.Calendly.showPopupWidget('https://calendly.com/decarbonaction/meeting')";
+    case 'email':
+      return `window.location.href = 'mailto:c.rizzo@avocat.be'`;
+    case 'phone':
+      return `alert('Numéro de téléphone à venir')`;
+    case 'whatsapp':
+      return `window.open('https://wa.me/yourwhatsappnumber', '_blank')`;
+    case 'linkedin':
+      return `window.open('https://www.linkedin.com/in/christine-rizzo-avocat', '_blank')`;
+    case 'maps':
+      return `window.open('https://www.google.com/maps/search/?api=1&query=Chauss%C3%A9e+de+Waterloo+1151%2C+1180+Bruxelles', '_blank')`;
+    default:
+      return '';
+  }
+};
+---
+
+<BaseLayout title={`${contactData.title} - Christine Rizzo`} lang={lang}>
+  <main class="container mx-auto px-4 py-16">
+    <h1 class="text-4xl font-light mb-12 text-black text-center">{contactData.heading}</h1>
+    
+    <div class="grid md:grid-cols-2 gap-8">
+      {contactData.buttons.map((button: { icon: string; text: string; subtext: string; type: string }) => {
+        const IconComponent = iconComponents[button.icon];
+        return (
+          <div class="bg-light-accent p-6 rounded-sm text-center">
+            <button
+              onclick={handleAction(button.type)}
+              class="w-full bg-transparent text-black border border-black px-6 py-4 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light flex flex-col items-center justify-center h-full"
+            >
+              <IconComponent class="w-8 h-8 mb-2" />
+              <span class="font-medium">{button.text}</span>
+              <span class="text-xs mt-1">{button.subtext}</span>
+            </button>
+          </div>
+        );
+      })}
+    </div>
+  </main>
+</BaseLayout>
+
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script is:inline src="https://assets.calendly.com/assets/external/widget.js"></script>
+<script>
+  document.addEventListener('astro:page-load', () => {
+  window.Calendly.initBadgeWidget({
+    url: 'https://calendly.com/decarbonaction/meeting',
+    text: 'Planifier du temps avec moi',
+    color: '#0069ff',
+    textColor: '#ffffff',
+    branding: undefined
+  });
+});
+</script>

@@ -6,7 +6,7 @@ en:
       online sharing platform.
     cta: BOOK AN APPOINTMENT ONLINE →
   expertise:
-    title: Expertise
+    title: Social law
     description: I maintain a comprehensive and up-to-date expertise in labor law by
       choosing to support both employees in their daily issues and companies in
       their development projects.
@@ -36,6 +36,8 @@ en:
       - Online tracking of your case and my services
     cta: Learn more
   articlesTitle: Articles
+  viewAllArticles: "View all articles"
+
 it:
   hero:
     title: Christine Rizzo
@@ -76,6 +78,8 @@ it:
       - Monitoraggio online del tuo caso e dei miei servizi
     cta: Scopri di più
   articlesTitle: Articoli
+  viewAllArticles: "Vedi tutti gli articoli"
+
 fr:
   hero:
     title: Christine Rizzo
@@ -84,7 +88,7 @@ fr:
       à une plateforme de partage en ligne.
     cta: PRENEZ RDV EN LIGNE →
   expertise:
-    title: Expertise
+    title: Mes services
     description: J'entretiens une expertise globale et actualisée du droit du
       travail en faisant le choix d'accompagner à la fois les salariés dans
       leurs problématiques du quotidien et les entreprises dans leurs projets de
@@ -117,29 +121,6 @@ fr:
       - Adaptées à vos besoins
       - Suivi en ligne de votre dossier et de mes prestations
     cta: En savoir plus
-  articlesTitle: Articles
-hero:
-  title: Helloo
-  subtitle: Salut
-  description: lorem
-  cta: lorem
-expertise:
-  title: Hello Expertise
-  description: Salut
-travailleurs:
-  title: lorem
-  description: lorem
-  cta: lorem
-employeurs:
-  title: lorem
-  description: lorem
-  cta: lorem
-profil:
-  title: lorem
-  description: lorem
-honoraires:
-  title: lorem
-  cta: lorem
-  list:
-    - lorem
-articlesTitle: lorem
+  articlesTitle: Ressources
+  viewAllArticles: "Voir toutes les ressources →"
+

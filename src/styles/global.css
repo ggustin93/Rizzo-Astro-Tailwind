@@ -28,3 +28,10 @@ html {
 .prose blockquote {
   @apply border-accent;
 }
+.separator {
+  width: 100%;
+  height: 2px;
+  background: #333; /* couleur pour rappeler le logo */
+  border-radius: 50px;
+  opacity: 0.2; /* Pour une ligne plus subtile */
+}

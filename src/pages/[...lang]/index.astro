@@ -4,6 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTA from '../../components/CTA.astro';
 import { CheckCircle } from 'astro-feather-icons';
 import { getArticles } from '../../utils/articles';
+import ArticleCard from '../../components/ArticleCard.astro';
 
 export async function getStaticPaths() {
   return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
@@ -14,17 +15,16 @@ const homeEntry = await getEntry('home', 'home');
 const content = homeEntry.data[lang] as any;
 
 // Récupération des articles
-const articles = await getArticles(lang) as any[];
+const recentArticles = await getArticles(lang, 3);
 
 ---
-
 <BaseLayout title={content.hero.title} lang={lang}>  
   <!-- Hero Section -->
   <section class="pb-10 bg-beige">
     <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
       <div class="md:w-1/2 text-left mb-8 md:mb-0">
-        <h1 class="text-6xl font-light mb-4 text-black">{content.hero.title}</h1>
-        <h2 class="text-3xl mb-6 text-accent font-light">{content.hero.subtitle}</h2>
+        <h1 class="text-7xl font-light mb-4 text-black">{content.hero.title}</h1>
+        <h2 class="text-4xl mb-6 text-accent font-light">{content.hero.subtitle}</h2>
         <p class="mb-8 text-lg text-dark-gray max-w-xl font-light leading-relaxed">{content.hero.description}</p>
         <button data-calendly class="bg-transparent text-black border border-black px-6 py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-base font-light">{content.hero.cta}</button>
         <div class="mt-12">
@@ -40,14 +40,15 @@ const articles = await getArticles(lang) as any[];
   <!-- Expertise Section -->
   <section id="expertise" class="py-20 bg-light-gray">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-light mb-8 text-center text-black">{content.expertise.title}</h2>
+       <!-- Ajoutez la ligne de séparation ici -->
+      <h2 class="text-4xl font-light mb-8 text-center text-black">{content.expertise.title}</h2>
       <p class="text-center mb-12 max-w-3xl mx-auto text-dark-gray font-light leading-relaxed">{content.expertise.description}</p>
       <div class="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-12">
         <div class="bg-beige p-8 rounded-sm flex-1 max-w-md">
           <div class="h-48 mb-4 relative">
             <img src="https://images.pexels.com/photos/4195397/pexels-photo-4195397.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Travailleurs" class="absolute inset-0 w-full h-full object-cover object-top">
           </div>
-          <h3 class="text-xl font-light mb-4 text-black">{content.travailleurs.title}</h3>
+          <h3 class="text-2xl font-light mb-4 text-black">{content.travailleurs.title}</h3>
           <p class="mb-4 text-dark-gray font-light leading-relaxed">{content.travailleurs.description}</p>
           <a href={`/${lang}/travailleurs`} class="inline-block bg-accent text-black px-4 py-2 rounded-sm hover:bg-black hover:text-accent transition duration-300 text-sm uppercase font-light">{content.travailleurs.cta}</a>
         </div>
@@ -55,7 +56,7 @@ const articles = await getArticles(lang) as any[];
           <div class="h-48 mb-4 relative">
             <img src="https://images.pexels.com/photos/7688453/pexels-photo-7688453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Employeurs" class="absolute inset-0 w-full h-full object-cover object-top">
           </div>
-          <h3 class="text-xl font-light mb-4 text-black">{content.employeurs.title}</h3>
+          <h3 class="text-2xl font-light mb-4 text-black">{content.employeurs.title}</h3>
           <p class="mb-4 text-dark-gray font-light leading-relaxed">{content.employeurs.description}</p>
           <a href={`/${lang}/employeurs`} class="inline-block bg-light-green text-black px-4 py-2 rounded-sm hover:bg-black hover:text-light-green transition duration-300 text-sm uppercase font-light">{content.employeurs.cta}</a>
         </div>
@@ -63,10 +64,10 @@ const articles = await getArticles(lang) as any[];
     </div>
   </section>
 
-  <!-- Profil Section -->
-  <section id="profil" class="py-20 bg-white">
+  
+  <section id="profil" class="py-20">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-light mb-12 text-center text-black">{content.profil.title}</h2>
+      <h2 class="text-4xl font-light mb-12 text-center text-black">{content.profil.title}</h2>
       <div class="max-w-4xl mx-auto">
         <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
           <img src="/chrizzo-pp.avif" alt="Christine Rizzo" class="w-full md:w-1/2 h-auto object-cover rounded-sm">
@@ -82,7 +83,7 @@ const articles = await getArticles(lang) as any[];
   <!-- Honoraires Section -->
   <section id="honoraires" class="py-12 md:py-20 bg-light-gray">
     <div class="container mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-light mb-8 md:mb-12 text-center text-black">{content.honoraires.title}</h2>
+      <h2 class="text-3xl md:text-4xl font-light mb-8 md:mb-12 text-center text-black">{content.honoraires.title}</h2>
       <ul class="honoraires-list text-left md:text-center mb-8 md:mb-12 space-y-4 max-w-xl mx-auto">
         {content.honoraires.list.map((item: string, index: number) => (
           <li set:key={index} class="text-black font-light flex items-center md:justify-center">
@@ -101,28 +102,28 @@ const articles = await getArticles(lang) as any[];
   
   <CTA lang={lang} />
 
-<!-- Articles Section -->
-<section id="articles" class="py-20 bg-beige">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-light mb-12 text-center text-black">{content.articlesTitle}</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {articles.map((article: any, index: number) => (
-        <div set:key={index} class="bg-white rounded-sm overflow-hidden shadow-lg transition duration-300 hover:shadow-xl">
-          <img src={article.data.thumbnail} alt={article.data.title} class="w-full h-48 object-cover">
-          <div class="p-6">
-            <h3 class="text-2xl font-light mb-2 text-black">{article.data.title}</h3>
-            <p class="text-black mb-6 font-light leading-relaxed">{article.data.description}</p>
-            <div class="relative">
-              <a href={`/${lang}/blog/${article.slug}`} class="inline-block text-black uppercase text-sm font-light hover:text-dark-green transition duration-300">
-                <span class="border-b border-black pb-1">Lire la suite</span> →
-              </a>
-            </div>
-          </div>
-        </div>
-      ))}
+  <!-- Articles Section -->
+  <section id="articles" class="pb-20 pt-5 bg-beige">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-light mb-12 text-center text-black">{content.articlesTitle}</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {recentArticles.map((article) => {
+          const slug = article.slug.split('/').slice(1).join('/');
+          return (
+            <ArticleCard
+              article={article}
+              lang={lang}
+              url={`/${lang}/blog/${slug}`}
+            />
+          );
+        })}
+      </div>
+      <div class="text-center mt-12">
+        <a href={`/${lang}/blog`} class="inline-block bg-transparent text-black border border-black px-6 py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light">
+          {content.viewAllArticles}
+        </a>
+      </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
 </BaseLayout>

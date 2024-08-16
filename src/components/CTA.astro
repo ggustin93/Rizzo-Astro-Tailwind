@@ -1,11 +1,19 @@
 ---
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+
 import { Calendar, Phone, MessageCircle, Mail } from 'astro-feather-icons';
 
-const { lang = 'fr' } = Astro.props;
+export async function getStaticPaths() {
+  return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
+}
 
 const translations = {
   fr: {
-    title: "Vous avez une question en droit du travail?",
+    title: "Une question en droit du travail?",
     subtitle: "Contactez-moi. Je suis à votre écoute.",
     takeAppointment: "Prendre RDV",
     call: "Appeler",
@@ -40,8 +48,11 @@ const currentLang = validLangs.includes(lang as ValidLang) ? lang as ValidLang :
 const t = translations[currentLang];
 ---
 
-<section id="contact" class="bg-white border border-black text-black py-16 px-8 my-16 text-center">
-  <h2 class="text-3xl mb-4 font-light">{t.title}</h2>
+<section id="contact" class="bg-white border border-gray-500 text-black py-16 px-8 my-16 text-center">
+  <h2 class="text-4xl mb-4 font-light">{t.title}</h2>
+  <div class="h-60 mb-4 relative max-w-full">
+    <img src="src/assets/images/illustration-cta.svg" alt="illustration cta" class="w-full h-full object-contain">
+  </div>
   <p class="mb-8 text-xl font-light">{t.subtitle}</p>
   <div class="flex flex-wrap justify-center gap-4">
     <button data-calendly class="bg-transparent text-black border border-black px-6 py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light flex items-center">

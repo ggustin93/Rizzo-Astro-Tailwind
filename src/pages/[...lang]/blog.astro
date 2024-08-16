@@ -1,21 +1,24 @@
 ---
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
 
 export async function getStaticPaths() {
-  return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
+  const languages = ['fr', 'en', 'it'];
+
+  const allBlogEntries = await getCollection('blog');
+
+  return languages.map(lang => {
+    const blogEntries = allBlogEntries.filter(entry => entry.slug.startsWith(`${lang}/`));
+    return {
+      params: { lang },
+      props: { blogEntries }
+    };
+  });
 }
 
-type BlogEntry = CollectionEntry<'blog'> & { data: { lang: string } };
-
 const { lang } = Astro.params;
-
-// Récupération de tous les articles
-const allBlogEntries = await getCollection('blog') as BlogEntry[];
-
-// Filtrage des articles pour la langue actuelle
-const blogEntries = allBlogEntries.filter(entry => entry.data.lang === lang);
+const { blogEntries } = Astro.props;
 
 // Traductions
 const translations = {
@@ -33,15 +36,19 @@ const t = translations[lang as keyof typeof translations];
     <h2 class="text-4xl font-light mb-8 text-black text-center">
       {t.title}
     </h2>
-    
+     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {blogEntries.length > 0 ? (
-        blogEntries.map((entry) => (
-          <ArticleCard 
-            article={entry} 
-            lang={lang}
-          />
-        ))
+        blogEntries.map((entry) => {
+          const slug = entry.slug.split('/').slice(1).join('/');
+          return (
+            <ArticleCard 
+              article={entry}
+              lang={lang}
+              url={`/${lang}/blog/${slug}`}
+            />
+          );
+        })
       ) : (
         <p class="text-dark-gray col-span-full text-center">{t.noArticles}</p>
       )}

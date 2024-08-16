@@ -4,50 +4,41 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 
 type Language = 'fr' | 'it' | 'en';
 
-interface BlogEntry {
-  slug: string;
-  data: {
-    title: string;
-    date: Date;
-    author: string;
-    thumbnail: string;
-    readTime: string;
-    categories: string[];
-    highlights?: string[];
-  };
-  render: () => Promise<{ Content: any }>;
-}
-
 export async function getStaticPaths() {
   const languages: Language[] = ['fr', 'it', 'en'];
-  const paths: { params: { lang: string; slug: string }; props: { entry: BlogEntry; lang: string } }[] = [];
+  const blogEntries = await getCollection('blog');
 
-  for (const lang of languages) {
-    const blogEntries = await getCollection(`blog_${lang}`);
-    blogEntries.forEach((entry) => {
-      paths.push({
-        params: { lang, slug: entry.slug },
-        props: { entry, lang },
-      });
-    });
-  }
-
-  return paths; // Retourne le tableau `paths` correctement typé
+  return blogEntries.map(entry => {
+    const [lang, ...slugParts] = entry.slug.split('/');
+    return {
+      params: { lang, slug: slugParts.join('/') },
+      props: { entry, lang },
+    };
+  });
 }
 
-const { entry, lang } = Astro.props as { entry: BlogEntry; lang: string };
+const { entry, lang } = Astro.props;
 const { Content } = await entry.render();
 
+
 function formatDate(date: Date): string {
-  return new Date(date).toLocaleDateString(lang, {
+  return date.toLocaleDateString(lang, {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
   });
 }
+
+const translations = {
+  fr: { backToArticles: "← Retour aux articles", keyPoints: "Points clés :" },
+  en: { backToArticles: "← Back to articles", keyPoints: "Key points:" },
+  it: { backToArticles: "← Torna agli articoli", keyPoints: "Punti chiave:" }
+};
+
+const t = translations[lang];
 ---
 
-<BaseLayout title={entry.data.title}>
+<BaseLayout title={entry.data.title} lang={lang}>
   <article class="max-w-4xl mx-auto px-4 py-12">
     <header class="relative mb-12">
       <img src={entry.data.thumbnail} alt={entry.data.title} class="w-full h-[50vh] object-cover rounded-lg" />
@@ -76,7 +67,7 @@ function formatDate(date: Date): string {
 
     {entry.data.highlights && (
       <div class="bg-light-accent p-6 rounded-lg mb-8">
-        <h2 class="text-xl font-semibold mb-4 text-black">Points clés :</h2>
+        <h2 class="text-xl font-semibold mb-4 text-black">{t.keyPoints}</h2>
         <ul class="list-disc pl-5 space-y-2">
           {entry.data.highlights.map((highlight: string) => (
             <li>{highlight}</li>
@@ -94,7 +85,7 @@ function formatDate(date: Date): string {
         href={`/${lang}/blog`}
         class="inline-block bg-transparent text-black border border-black px-4 py-2 rounded-sm hover:bg-black hover:text-white transition duration-300 text-sm uppercase font-light"
       >
-        ← Retour aux articles
+        {t.backToArticles}
       </a>
       <div class="flex space-x-4">
         <a href="#" class="text-dark-gray hover:text-accent">
@@ -107,6 +98,6 @@ function formatDate(date: Date): string {
           <i class="fab fa-facebook"></i>
         </a>
       </div>
-    </div>
+    </div>    
   </article>
 </BaseLayout>

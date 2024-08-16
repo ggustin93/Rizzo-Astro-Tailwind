@@ -1,0 +1,148 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { CheckCircle, Globe, Briefcase, Mic, Coffee, BookOpen } from 'astro-feather-icons';
+
+export async function getStaticPaths() {
+  return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const profileEntry = await getEntry('profile', 'profile');
+const profileData = profileEntry.data[lang];
+
+const {
+  name,
+  title,
+  image,
+  bio,
+  specialties,
+  languages,
+  careerPath,
+  conferences,
+  publications
+} = profileData;
+
+// Traductions
+const translations = {
+  fr: {
+    specialties: "Domaines de prédilection",
+    languages: "Langues",
+    career: "Mon parcours",
+    conferencesAndPublications: "Conférences et publications",
+    conferences: "Conférences",
+    publications: "Publications",
+    with: "avec",
+    inCollaborationWith: "En collaboration avec"
+  },
+  en: {
+    specialties: "Areas of expertise",
+    languages: "Languages",
+    career: "My career",
+    conferencesAndPublications: "Conferences and publications",
+    conferences: "Conferences",
+    publications: "Publications",
+    with: "with",
+    inCollaborationWith: "In collaboration with"
+  },
+  it: {
+    specialties: "Aree di specializzazione",
+    languages: "Lingue",
+    career: "Il mio percorso",
+    conferencesAndPublications: "Conferenze e pubblicazioni",
+    conferences: "Conferenze",
+    publications: "Pubblicazioni",
+    with: "con",
+    inCollaborationWith: "In collaborazione con"
+  }
+};
+
+const t = translations[lang as keyof typeof translations];
+---
+
+<BaseLayout title={`${name} - ${title}`} lang={lang}>
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <h1 class="text-4xl md:text-5xl font-light text-black mb-8">{name}</h1>
+    
+    <div class="flex flex-col md:flex-row gap-12">
+      <div class="md:w-2/3">
+        <h2 class="text-2xl font-light text-accent mb-4">{title}</h2>
+        <p class="text-dark-gray mb-6">{bio}</p>
+        
+        <h3 class="text-xl font-semibold text-black mb-3 flex items-center">
+          <CheckCircle class="mr-2" /> {t.specialties}
+        </h3>
+        <ul class="list-disc pl-5 mb-6">
+          {specialties.map((specialty: string) => (
+            <li class="text-dark-gray">{specialty}</li>
+          ))}
+        </ul>
+        
+        <h3 class="text-xl font-semibold text-black mb-3 flex items-center">
+          <Globe class="mr-2" /> {t.languages}
+        </h3>
+        <ul class="mb-6">
+          {languages.map((lang) => (
+            <li class="text-dark-gray">
+              <span class="font-semibold">{lang.name}:</span> {lang.level}
+            </li>
+          ))}
+        </ul>
+      </div>
+      
+      <div class="md:w-1/3">
+        <img src={image} alt={name} class="w-full rounded-lg shadow-lg mb-6">
+      </div>
+    </div>
+    
+    <div class="mt-12">
+      <h2 class="text-3xl font-light text-black mb-6 flex items-center">
+        <Briefcase class="mr-2" /> {t.career}
+      </h2>
+      <ul class="space-y-4">
+        {careerPath.map((item) => (
+          <li class="flex">
+            <span class="font-semibold text-accent w-24 flex-shrink-0">{item.year}</span>
+            <span class="text-dark-gray">{item.event}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+    
+    <div class="mt-12">
+      <h2 class="text-3xl font-light text-black mb-6 flex items-center">
+        <Mic class="mr-2" /> {t.conferencesAndPublications}
+      </h2>
+      
+      <h3 class="text-xl font-semibold text-black mb-4 flex items-center">
+        <Coffee class="mr-2" /> {t.conferences}
+      </h3>
+      <ul class="space-y-4 mb-8">
+        {conferences.map((conf) => (
+          <li>
+            <p class="font-semibold text-accent">{conf.date}</p>
+            <p class="text-dark-gray">{conf.title}</p>
+            <p class="text-dark-gray italic">{t.with} {conf.coSpeakers.join(', ')}</p>
+          </li>
+        ))}
+      </ul>
+      
+      <h3 class="text-xl font-semibold text-black mb-4 flex items-center">
+        <BookOpen class="mr-2" /> {t.publications}
+      </h3>
+      <ul class="space-y-4">
+        {publications.map((pub) => (
+          <li>
+            <p class="font-semibold text-accent">{pub.date}</p>
+            <p class="text-dark-gray">"{pub.title}", {pub.publisher}</p>
+            {pub.coAuthors && (
+              <p class="text-dark-gray italic">
+                {t.inCollaborationWith} {pub.coAuthors.join(', ')}
+              </p>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</BaseLayout>

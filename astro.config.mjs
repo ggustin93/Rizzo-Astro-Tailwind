@@ -1,6 +1,18 @@
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
+  typescript: {
+    enabled: false
+  },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@import "./src/styles/global.css";`,
+        },
+      },
+    },
+  },
   i18n: {
     defaultLocale: 'fr',
     locales: ['fr', 'en', 'it'],

@@ -31,7 +31,7 @@ const { lang } = Astro.params;
         </div>
         
         <!-- Pied de page -->
-        <Footer />
+        <Footer currentLang={lang || 'fr'} />
     </div>
     
     <script is:inline>

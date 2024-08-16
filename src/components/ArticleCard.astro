@@ -1,24 +1,37 @@
 ---
-const { article, lang } = Astro.props;
+const { article, lang, url } = Astro.props;
 
-const formattedDate = new Date(article.data.date).toLocaleDateString(lang, {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-});
+const categoryColors = {
+  'categorie1': 'bg-red-500',
+  'categorie2': 'bg-blue-500',
+  'categorie3': 'bg-green-500',
+  // Ajoutez d'autres catégories et couleurs selon vos besoins
+};
+
+function getCategoryColor(category) {
+  return categoryColors[category] || 'bg-accent';
+}
 ---
 
-<article class="bg-white shadow-lg rounded-lg overflow-hidden">
-  <a href={`/${lang}/blog/${article.slug}`} class="block hover:shadow-xl transition-shadow duration-300">
-    <img src={article.data.thumbnail} alt={article.data.title} class="w-full h-48 object-cover" />
-    <div class="p-6">
-      <h3 class="text-2xl font-light text-black">{article.data.title}</h3>
-      <time class="block text-dark-gray mt-2">
-        {formattedDate}
-      </time>
-      <p class="mt-4 text-dark-gray font-light">
-        {article.data.description || 'Un aperçu captivant de cet article.'}
-      </p>
+<div class="bg-white rounded-sm overflow-hidden shadow-lg transition duration-300 hover:shadow-xl">
+  <div class="relative">
+    <img src={article.data.thumbnail} alt={article.data.title} class="w-full h-72 object-cover">
+    <div class="absolute top-0 left-0 p-2 flex gap-2">
+      {article.data.categories.length > 0 && (
+        <span class={`text-xs font-semibold px-2 py-1 rounded text-black ${getCategoryColor(article.data.categories[0])}`}>
+          {article.data.categories[0]}
+        </span>
+      )}
     </div>
-  </a>
-</article>
+  </div>
+  <div class="p-6">
+    <h3 class="text-2xl font-light mb-2 text-gray-700">{article.data.title}</h3>
+    <p class="text-black mb-4 font-light leading-relaxed">{article.data.description}</p>
+    <div class="flex justify-between items-center">
+      <span class="text-sm text-gray-600">{article.data.readTime} min read</span>
+      <a href={url} class="text-black uppercase text-sm font-light hover:text-dark-green transition duration-300">
+        <span class="border-b border-accent pb-1">Read more</span> →
+      </a>
+    </div>
+  </div>
+</div>

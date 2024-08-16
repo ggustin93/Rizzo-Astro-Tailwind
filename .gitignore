@@ -1,0 +1,50 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+out/
+
+# Astro specific
+.astro/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDE/editor-specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# MacOS-specific files
+.AppleDouble
+.LSOverride
+
+# Windows-specific files
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# npm package lock files (if you use Yarn or another package manager, adjust accordingly)
+package-lock.json
+yarn.lock
+
+# Build artifacts and temporary files
+*.cache
+*.tmp
+*.bak
+*.swp
