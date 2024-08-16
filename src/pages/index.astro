@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-
+// TODO: get language from browser
 export const getStaticPaths = async () => {
   return [{ params: { lang: 'fr' } }];
 };
