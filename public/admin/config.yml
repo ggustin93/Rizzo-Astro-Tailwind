@@ -134,41 +134,41 @@ collections:
             fields: *travailleursFields
 
   - name: "employeurs"
-      label: "Page Employeurs"
-      files:
-        - file: "src/content/employeurs/employeurs.yml"
-          name: "employeurs"
-          label: "Contenu de la page Employeurs"
-          i18n:
-            structure: single_file
-          fields:
-            - label: "Français"
-              name: "fr"
-              widget: "object"
-              fields: &employeursFields
-                - {label: "Titre", name: "title", widget: "string"}
-                - {label: "Description", name: "description", widget: "text"}
-                - label: "Questions"
-                  name: "questions"
-                  widget: "list"
-                  field: {label: Question, name: question, widget: "string"}
-                - {label: "Conclusion", name: "conclusion", widget: "text"}
-                - {label: "Titre des prestations", name: "servicesTitle", widget: "string"}
-                - label: "Prestations"
-                  name: "services"
-                  widget: "list"
-                  fields:
-                    - {label: "Icône", name: "icon", widget: "select", options: ["FileText", "UserPlus", "Shield", "Search"]}
-                    - {label: "Texte", name: "text", widget: "string"}
-            - label: "English"
-              name: "en"
-              widget: "object"
-              fields: *employeursFields
-            - label: "Italiano"
-              name: "it"
-              widget: "object"
-              fields: *employeursFields
-              
+    label: "Page Employeurs"
+    files:
+      - file: "src/content/employeurs/employeurs.yml"
+        name: "employeurs"
+        label: "Contenu de la page Employeurs"
+        i18n:
+          structure: single_file
+        fields:
+          - label: "Français"
+            name: "fr"
+            widget: "object"
+            fields: &employeursFields
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - label: "Questions"
+                name: "questions"
+                widget: "list"
+                field: {label: Question, name: question, widget: "string"}
+              - {label: "Conclusion", name: "conclusion", widget: "text"}
+              - {label: "Titre des prestations", name: "servicesTitle", widget: "string"}
+              - label: "Prestations"
+                name: "services"
+                widget: "list"
+                fields:
+                  - {label: "Icône", name: "icon", widget: "select", options: ["FileText", "UserPlus", "Shield", "Search"]}
+                  - {label: "Texte", name: "text", widget: "string"}
+          - label: "English"
+            name: "en"
+            widget: "object"
+            fields: *employeursFields
+          - label: "Italiano"
+            name: "it"
+            widget: "object"
+            fields: *employeursFields
+
   - name: "profile"
     label: "Profil"
     files:
