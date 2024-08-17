@@ -5,7 +5,7 @@ import CTA from '../../components/CTA.astro';
 import { CheckCircle } from 'astro-feather-icons';
 import { getArticles } from '../../utils/articles';
 import ArticleCard from '../../components/ArticleCard.astro';
-import { Picture } from 'astro:assets';
+import { Picture, Image } from 'astro:assets';
 
 // Import des images locales
 import heroImage from '../../assets/images/hero_image_wbg.svg';
@@ -28,10 +28,11 @@ const { lang } = Astro.params;
 const homeEntry = await getEntry('home', 'home');
 const content = homeEntry.data[lang] as any;
 
-// R\u00e9cup\u00e9ration des articles
+// Récupération des articles
 const recentArticles = await getArticles(lang, 3);
 
 ---
+
 <BaseLayout title={content.hero.title} lang={currentLang}>  
   <!-- Hero Section -->
   <section class="pb-10 bg-beige">
@@ -42,11 +43,11 @@ const recentArticles = await getArticles(lang, 3);
         <p class="mb-8 text-lg text-dark-gray max-w-xl font-light leading-relaxed">{content.hero.description}</p>
         <button data-calendly class="bg-transparent text-black border border-black px-6 py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-base font-light">{content.hero.cta}</button>
         <div class="mt-12">
-          <a href="#expertise" class="text-black hover:text-accent text-sm uppercase font-light transition duration-300">scroll \u2193</a>
+          <a href="#expertise" class="text-black hover:text-accent text-sm uppercase font-light transition duration-300">scroll ↓</a>
         </div>
       </div>
       <div class="md:w-1/2 flex justify-end">
-        <Picture src={heroImage} formats={['avif', 'webp']} alt="Christine Rizzo" class="w-full max-w-lg" decoding="async" loading="lazy" }} />
+        <Picture src={heroImage} formats={['avif', 'webp']} alt="Christine Rizzo" class="w-full max-w-lg" decoding="async" loading="eager" />
       </div>
     </div>
   </section>
@@ -54,13 +55,12 @@ const recentArticles = await getArticles(lang, 3);
   <!-- Expertise Section -->
   <section id="expertise" class="py-20 bg-light-gray">
     <div class="container mx-auto px-4">
-       <!-- Ajoutez la ligne de s\u00e9paration ici -->
       <h2 class="text-4xl font-light mb-8 text-center text-black">{content.expertise.title}</h2>
       <p class="text-center mb-12 max-w-3xl mx-auto text-dark-gray font-light leading-relaxed">{content.expertise.description}</p>
       <div class="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-12">
         <div class="bg-beige p-8 rounded-sm flex-1 max-w-md">
           <div class="h-48 mb-4 relative">
-            <img src="https://images.pexels.com/photos/4195397/pexels-photo-4195397.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Travailleurs" class="absolute inset-0 w-full h-full object-cover object-top">
+            <img src="https://images.pexels.com/photos/4195397/pexels-photo-4195397.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Travailleurs" class="absolute inset-0 w-full h-full object-cover object-top" width="1260" height="750">
           </div>
           <h3 class="text-2xl font-light mb-4 text-black">{content.travailleurs.title}</h3>
           <p class="mb-4 text-dark-gray font-light leading-relaxed">{content.travailleurs.description}</p>
@@ -68,7 +68,7 @@ const recentArticles = await getArticles(lang, 3);
         </div>
         <div class="bg-beige p-8 rounded-sm flex-1 max-w-md">
           <div class="h-48 mb-4 relative">
-            <img src="https://images.pexels.com/photos/7688453/pexels-photo-7688453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Employeurs" class="absolute inset-0 w-full h-full object-cover object-top">
+            <img src="https://images.pexels.com/photos/7688453/pexels-photo-7688453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Employeurs" class="absolute inset-0 w-full h-full object-cover object-top" width="1260" height="750">
           </div>
           <h3 class="text-2xl font-light mb-4 text-black">{content.employeurs.title}</h3>
           <p class="mb-4 text-dark-gray font-light leading-relaxed">{content.employeurs.description}</p>
@@ -83,10 +83,10 @@ const recentArticles = await getArticles(lang, 3);
       <h2 class="text-4xl font-light mb-12 text-center text-black">{content.profil.title}</h2>
       <div class="max-w-4xl mx-auto">
         <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
-          <Picture src={profileImage} formats={['avif', 'webp']} alt="Christine Rizzo" class="w-full md:w-2/3 h-auto object-cover rounded-sm" decoding="async" loading="lazy" }} />
+          <Picture src={profileImage} formats={['avif', 'webp']} alt="Christine Rizzo" class="w-full md:w-2/3 h-auto object-cover rounded-sm" decoding="async" loading="lazy" />
           <div class="md:w-1/2">
             <p class="text-dark-gray font-light leading-relaxed mb-6">{content.profil.description}</p>
-            <a href={`/${lang}/profil`} class="bg-transparent text-black border border-black px-6 py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light">En savoir plus \u2192</a>
+            <a href={`/${lang}/profil`} class="bg-transparent text-black border border-black px-6 py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light">En savoir plus →</a>
           </div>
         </div>
       </div>
