@@ -3,3 +3,11 @@
   to = "/fr"
   status = 302
   force = true
+
+[[plugins]]
+package = "@netlify/plugin-netlify-cms"
+
+[build.processing]
+  skip_processing = false
+[build.processing.images]
+  compress = true

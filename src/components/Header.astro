@@ -1,4 +1,8 @@
 ---
+// Import de l'image depuis le dossier assets
+import logoImage from '../assets/images/logo_crizzo_calli3.svg';
+import { Image } from 'astro:assets';
+
 export interface Props {
   currentLang: string;
 }
@@ -63,7 +67,7 @@ const rightNavLinks = [
       <!-- Logo (visible sur tous les écrans) -->
       <div class="logo text-center flex-grow lg:flex-grow-0 lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2">
         <a href={`/${currentLang}`}>
-          <img src="/logo_crizzo_calli3.svg" alt="Christine Rizzo Logo" class="h-16 sm:h-20 md:h-24 lg:h-28 w-auto mx-auto">
+          <Image src={logoImage} alt="Christine Rizzo Logo" class="h-16 sm:h-20 md:h-24 lg:h-28 w-auto mx-auto" />
         </a>
       </div>
       

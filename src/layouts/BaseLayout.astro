@@ -1,14 +1,17 @@
 ---
-// src/layouts/BaseLayout.astro
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
+const supportedLanguages = ['fr', 'en', 'it'] as const;
+type SupportedLanguage = typeof supportedLanguages[number];
+
 const { lang } = Astro.params;
+const currentLang: SupportedLanguage = (typeof lang === 'string' && supportedLanguages.includes(lang as SupportedLanguage)) ? lang as SupportedLanguage : 'fr';
 ---
 
 <!DOCTYPE html>
-<html lang={lang || 'fr'}>
+<html lang={currentLang}>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +26,7 @@ const { lang } = Astro.params;
 <body class="bg-beige">
     <div class="container mx-auto px-4">
         <!-- En-tête -->
-        <Header currentLang={lang || 'fr'} />
+        <Header currentLang={currentLang} />
         
         <!-- Contenu principal -->
         <div id="content">
@@ -31,7 +34,7 @@ const { lang } = Astro.params;
         </div>
         
         <!-- Pied de page -->
-        <Footer currentLang={lang || 'fr'} />
+        <Footer currentLang={currentLang} />
     </div>
     
     <script is:inline>

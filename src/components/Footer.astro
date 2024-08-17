@@ -1,6 +1,12 @@
 ---
+import { Image } from 'astro:assets';
+import logoImage from '../assets/images/logo_crizzo_calli3.svg';
+
+const supportedLanguages = ['fr', 'en', 'it'] as const;
+type SupportedLanguage = typeof supportedLanguages[number];
+
 export interface Props {
-  currentLang: string;
+  currentLang: SupportedLanguage;
 }
 
 const { currentLang } = Astro.props as Props;
@@ -69,7 +75,7 @@ const secondaryLinks = [
     <div class="flex flex-col items-center">
       <p class="text-sm mb-4 text-dark-gray">{t.copyright}</p>
       <div class="logo text-center mb-6">
-          <img src="/logo_crizzo_calli3.svg" alt="Christine Rizzo Logo" class="h-24 md:h-48 w-auto">
+        <Image src={logoImage} alt="Christine Rizzo Logo" class="h-24 md:h-48 w-auto" />
       </div>
       <nav class="flex flex-wrap justify-center mb-6">
         {mainLinks.map(link => (

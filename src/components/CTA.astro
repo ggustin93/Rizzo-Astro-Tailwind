@@ -1,15 +1,13 @@
 ---
-interface Props {
-  lang: string;
-}
-
-const { lang } = Astro.props;
-
+import { Image } from 'astro:assets';
 import { Calendar, Phone, MessageCircle, Mail } from 'astro-feather-icons';
+import ctaIllustration from '../assets/images/illustration-cta.svg';
 
-export async function getStaticPaths() {
-  return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
+interface Props {
+  lang: 'fr' | 'en' | 'it';
 }
+
+const { lang = 'fr' } = Astro.props;
 
 const translations = {
   fr: {
@@ -19,7 +17,6 @@ const translations = {
     call: "Appeler",
     whatsapp: "WhatsApp",
     email: "Email",
-    scheduleTime: "Planifier du temps avec moi"
   },
   en: {
     title: "Do you have a question about labor law?",
@@ -28,7 +25,6 @@ const translations = {
     call: "Call",
     whatsapp: "WhatsApp",
     email: "Email",
-    scheduleTime: "Schedule time with me"
   },
   it: {
     title: "Hai una domanda sul diritto del lavoro?",
@@ -37,35 +33,41 @@ const translations = {
     call: "Chiamare",
     whatsapp: "WhatsApp",
     email: "Email",
-    scheduleTime: "Programma un appuntamento con me"
   }
 };
 
-const validLangs = ['fr', 'en', 'it'] as const;
-type ValidLang = typeof validLangs[number];
+const t = translations[lang];
 
-const currentLang = validLangs.includes(lang as ValidLang) ? lang as ValidLang : 'fr';
-const t = translations[currentLang];
+const buttons = [
+  { icon: Calendar, text: t.takeAppointment, attr: 'data-calendly' },
+  { icon: Phone, text: t.call },
+  { icon: MessageCircle, text: t.whatsapp },
+  { icon: Mail, text: t.email },
+];
 ---
 
 <section id="contact" class="bg-white border border-gray-500 text-black py-16 px-8 my-16 text-center">
   <h2 class="text-4xl mb-4 font-light">{t.title}</h2>
   <div class="h-60 mb-4 relative max-w-full">
-    <img src="/illustration-cta.svg" alt="illustration cta" class="w-full h-full object-contain">
+    <Image 
+      src={ctaIllustration} 
+      alt="illustration cta" 
+      class="w-full h-full object-contain"
+      width={600}
+      height={240}
+      loading="lazy"
+      format="avif"
+    />
   </div>
   <p class="mb-8 text-xl font-light">{t.subtitle}</p>
   <div class="flex flex-wrap justify-center gap-4">
-    <button data-calendly class="bg-transparent text-black border border-black px-6 py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light flex items-center">
-      <Calendar class="w-4 h-4 mr-2" /> {t.takeAppointment}
-    </button>
-    <button class="bg-transparent text-black border border-black px-6 py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light flex items-center">
-      <Phone class="w-4 h-4 mr-2" /> {t.call}
-    </button>
-    <button class="bg-transparent text-black border border-black px-6 py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light flex items-center">
-      <MessageCircle class="w-4 h-4 mr-2" /> {t.whatsapp}
-    </button>
-    <button class="bg-transparent text-black border border-black px-6 py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light flex items-center">
-      <Mail class="w-4 h-4 mr-2" /> {t.email}
-    </button>
+    {buttons.map(({ icon: Icon, text, attr }) => (
+      <button 
+        class="bg-transparent text-black border border-black px-6 py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light flex items-center"
+        {...attr && { [attr]: true }}
+      >
+        <Icon class="w-4 h-4 mr-2" /> {text}
+      </button>
+    ))}
   </div>
 </section>

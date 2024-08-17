@@ -1,37 +1,67 @@
 ---
-const { article, lang, url } = Astro.props;
+import { Image } from 'astro:assets';
+import { isExternalImage } from '../utils/imageHelpers';
 
-const categoryColors = {
-  'categorie1': 'bg-red-500',
-  'categorie2': 'bg-blue-500',
-  'categorie3': 'bg-green-500',
-  // Ajoutez d'autres catégories et couleurs selon vos besoins
+interface Props {
+  article: any;
+  lang: string;
+  url: string;
+  lazyLoad?: boolean;
+}
+
+const { article, lang, url, lazyLoad = false } = Astro.props;
+
+const isExternal = isExternalImage(article.data.thumbnail);
+const imageUrl = isExternal ? new URL(article.data.thumbnail, Astro.site) : article.data.thumbnail;
+
+const imageProps = {
+  src: isExternal ? imageUrl.href : imageUrl,
+  alt: article.data.title,
+  width: 800,
+  height: 500,
+  class: "w-full h-72 object-cover rounded-t-lg",
 };
 
-function getCategoryColor(category) {
-  return categoryColors[category] || 'bg-accent';
+const readMoreTranslations = {
+  en: "Read more",
+  fr: "Lire la suite",
+  it: "Leggi di più"
+};
+
+const readMoreText = readMoreTranslations[lang] || readMoreTranslations.en;
+
+function formatDate(date: Date, lang: string): string {
+  return new Intl.DateTimeFormat(lang, { 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  }).format(date);
 }
 ---
 
-<div class="bg-white rounded-sm overflow-hidden shadow-lg transition duration-300 hover:shadow-xl">
-  <div class="relative">
-    <img src={article.data.thumbnail} alt={article.data.title} class="w-full h-72 object-cover">
-    <div class="absolute top-0 left-0 p-2 flex gap-2">
+<article class="bg-white rounded-lg overflow-hidden shadow-sm transition-shadow duration-300 hover:shadow-md max-w-sm">
+  <a href={url} class="block">
+    <div class="relative">
+      <Image 
+        {...imageProps}
+        loading={lazyLoad ? "lazy" : "eager"}
+        decoding="async"
+      />
       {article.data.categories.length > 0 && (
-        <span class={`text-xs font-semibold px-2 py-1 rounded text-black ${getCategoryColor(article.data.categories[0])}`}>
-          {article.data.categories[0]}
-        </span>
+        <div class="absolute top-2 left-2">
+          <span class="text-xs font-semibold px-3 py-1 rounded-full text-black bg-accent">
+            {article.data.categories[0]}
+          </span>
+        </div>
       )}
     </div>
-  </div>
-  <div class="p-6">
-    <h3 class="text-2xl font-light mb-2 text-gray-700">{article.data.title}</h3>
-    <p class="text-black mb-4 font-light leading-relaxed">{article.data.description}</p>
-    <div class="flex justify-between items-center">
-      <span class="text-sm text-gray-600">{article.data.readTime} min read</span>
-      <a href={url} class="text-black uppercase text-sm font-light hover:text-dark-green transition duration-300">
-        <span class="border-b border-accent pb-1">Read more</span> →
-      </a>
+    <div class="p-4">
+      <h3 class="text-xl font-semibold mb-2 text-dark-gray line-clamp-2">{article.data.title}</h3>
+      <p class="text-dark-gray mb-4 font-light leading-relaxed text-sm line-clamp-3">{article.data.description}</p>
+      <div class="flex justify-between items-center text-xs text-dark-gray">
+        <time datetime={article.data.date.toISOString()}>{formatDate(article.data.date, lang)}</time>
+        <span>{article.data.readTime} min read</span>
+      </div>
     </div>
-  </div>
-</div>
+  </a>
+</article>
