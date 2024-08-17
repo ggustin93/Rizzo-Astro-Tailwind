@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/"
+  to = "/fr"
+  status = 302
+  force = true
