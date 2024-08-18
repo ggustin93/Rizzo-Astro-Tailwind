@@ -1,4 +1,5 @@
 ---
+// src/pages/blog/[lang]/[slug].astro
 import { getEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTA from '../../components/CTA.astro';
@@ -26,7 +27,6 @@ export async function getStaticPaths() {
 
 const { currentLang } = Astro.props as Props;
 
-
 const { lang } = Astro.params;
 const homeEntry = await getEntry('home', 'home');
 const content = homeEntry.data[lang] as any;
@@ -37,17 +37,23 @@ const recentArticles = await getArticles(lang, 3);
 // Paramètres SEO
 const pageTitle = content.hero.title;
 const pageDescription = content.hero.description;
+
+// Fonction pour générer des IDs uniques
+function generateUniqueId(prefix: string) {
+  return `${prefix}-${Math.random().toString(36).substr(2, 9)}`;
+}
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription} lang={currentLang}>  
   <!-- Hero Section -->
-  <section class="pb-10 bg-beige">
+   <div class="full-bleed bg-white">
+  <section class="py-10 bg-white">
     <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
       <div class="md:w-1/2 text-left mb-8 md:mb-0">
         <h1 class="text-4xl md:text-5xl lg:text-7xl font-light mb-4 text-black">{content.hero.title}</h1>
         <h2 class="text-2xl md:text-3xl lg:text-4xl mb-6 text-accent font-light">{content.hero.subtitle}</h2>
-        <p class="mb-8 text-base md:text-lg text-dark-gray max-w-xl font-light leading-relaxed">{content.hero.description}</p>
-        <button data-calendly class="bg-transparent text-black border border-black px-4 md:px-6 py-2 md:py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm md:text-base font-light">{content.hero.cta}</button>
+        <p class="mb-8 text-base md:text-lg text-dark-gray max-w-xl font-light leading-relaxed" style="color: #333333;">{content.hero.description}</p>
+        <button data-calendly class="bg-transparent text-black border border-black px-4 md:px-6 py-2 md:py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm md:text-base font-light" aria-label="Call to action">{content.hero.cta}</button>
         <div class="mt-8 md:mt-12">
           <a href="#expertise" class="text-black hover:text-accent text-sm uppercase font-light transition duration-300">scroll ↓</a>
         </div>
@@ -57,35 +63,41 @@ const pageDescription = content.hero.description;
       </div>
     </div>
   </section>
+</div>
 
-  <!-- Expertise Section -->
-  <div class="full-bleed bg-light-gray">
-    <section id="expertise" class="py-12 md:py-20">
-      <div class="container px-4">
-        <h2 class="text-3xl md:text-4xl font-light mb-6 md:mb-8 text-center text-black">{content.expertise.title}</h2>
-        <p class="text-center mb-8 md:mb-12 max-w-3xl mx-auto text-dark-gray font-light leading-relaxed">{content.expertise.description}</p>
-        <div class="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-8 lg:space-x-12">
-          <div class="bg-beige p-6 md:p-8 rounded-sm flex-1 max-w-md">
-            <div class="h-40 md:h-48 mb-4 relative">
-              <Image src={pexelService1} alt="Travailleurs" class="absolute inset-0 w-full h-full object-cover object-top" width="600" height="400" />
-            </div>
-            <h3 class="text-xl md:text-2xl font-light mb-4 text-black">{content.travailleurs.title}</h3>
-            <p class="mb-4 text-dark-gray font-light leading-relaxed">{content.travailleurs.description}</p>
+<!-- Expertise Section -->
+<div class="full-bleed bg-light-gray">
+  <section id="expertise" class="py-12 md:py-20">
+    <div class="container px-4">
+      <h2 class="text-3xl md:text-4xl font-light mb-6 md:mb-8 text-center text-black">{content.expertise.title}</h2>
+      <p class="text-center mb-8 md:mb-12 max-w-3xl mx-auto text-dark-gray font-light leading-relaxed" style="color: #333333;">{content.expertise.description}</p>
+      <div class="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-8">
+        <div class="bg-beige p-6 md:p-8 rounded-sm flex-1 max-w-md mx-auto md:mx-0 w-full">
+          <div class="h-40 md:h-48 mb-4 relative">
+            <Image src={pexelService1} alt="Travailleurs" class="absolute inset-0 w-full h-full object-cover object-top" width="600" height="400" />
+          </div>
+          <h3 class="text-xl md:text-2xl font-light mb-4 text-black text-center">{content.travailleurs.title}</h3>
+          <p class="mb-4 text-dark-gray font-light leading-relaxed text-center" style="color: #333333;">{content.travailleurs.description}</p>
+          <div class="text-center">
             <a href={`/${lang}/travailleurs`} class="inline-block bg-accent text-black px-4 py-2 rounded-sm hover:bg-black hover:text-accent transition duration-300 text-sm uppercase font-light">{content.travailleurs.cta}</a>
           </div>
-          <div class="bg-beige p-6 md:p-8 rounded-sm flex-1 max-w-md">
-            <div class="h-40 md:h-48 mb-4 relative">
-              <Image src={pexelService2} alt="Employeurs" class="absolute inset-0 w-full h-full object-cover object-top" width="600" height="400" />
-            </div>
-            <h3 class="text-xl md:text-2xl font-light mb-4 text-black">{content.employeurs.title}</h3>
-            <p class="mb-4 text-dark-gray font-light leading-relaxed">{content.employeurs.description}</p>
+        </div>
+        <div class="bg-beige p-6 md:p-8 rounded-sm flex-1 max-w-md mx-auto md:mx-0 w-full">
+          <div class="h-40 md:h-48 mb-4 relative">
+            <Image src={pexelService2} alt="Employeurs" class="absolute inset-0 w-full h-full object-cover object-top" width="600" height="400" />
+          </div>
+          <h3 class="text-xl md:text-2xl font-light mb-4 text-black text-center">{content.employeurs.title}</h3>
+          <p class="mb-4 text-dark-gray font-light leading-relaxed text-center" style="color: #333333;">{content.employeurs.description}</p>
+          <div class="text-center">
             <a href={`/${lang}/employeurs`} class="inline-block bg-light-green text-black px-4 py-2 rounded-sm hover:bg-black hover:text-light-green transition duration-300 text-sm uppercase font-light">{content.employeurs.cta}</a>
           </div>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
+</div>
   
+  <div class="full-bleed bg-white">
   <section id="profil" class="py-12 md:py-20">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl md:text-4xl font-light mb-8 md:mb-12 text-center text-black">{content.profil.title}</h2>
@@ -104,7 +116,7 @@ const pageDescription = content.hero.description;
             />
           </div>
           <div class="md:w-2/5 mt-4 md:mt-0">
-            <p class="text-dark-gray font-light leading-relaxed mb-6">{content.profil.description}</p>
+            <p class="text-dark-gray font-light leading-relaxed mb-6" style="color: #333333;">{content.profil.description}</p>
             <a 
               href={`/${lang}/profil`} 
               class="inline-block bg-transparent text-black border border-black px-4 md:px-6 py-2 md:py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light"
@@ -116,7 +128,7 @@ const pageDescription = content.hero.description;
       </div>
     </div>
   </section>
-
+</div>
 
   <!-- Honoraires Section -->
   <div class="full-bleed bg-light-gray">
@@ -126,7 +138,7 @@ const pageDescription = content.hero.description;
         <ul class="honoraires-list text-left md:text-center mb-8 md:mb-12 space-y-4 max-w-xl mx-auto">
           {content.honoraires.list.map((item: string, index: number) => (
             <li set:key={index} class="text-black font-light flex items-center md:justify-center">
-              <CheckCircle class="text-dark-green mr-3 flex-shrink-0 w-5 h-5" />
+              <CheckCircle class="text-dark-green mr-3 flex-shrink-0 w-5 h-5" aria-hidden="true" />
               <span>{item}</span>
             </li>
           ))}
@@ -143,7 +155,6 @@ const pageDescription = content.hero.description;
 
   <!-- CTA Section -->
   <CTA lang={currentLang} />
-
   <!-- Articles Section -->
   <div class="full-bleed bg-white">
     <section id="articles" class="py-12 md:py-20 bg-white">

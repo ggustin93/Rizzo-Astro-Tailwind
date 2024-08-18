@@ -1,5 +1,4 @@
 ---
-// Import de l'image depuis le dossier assets
 import logoImage from '../assets/images/logo_crizzo_calli3.svg';
 import { Image } from 'astro:assets';
 
@@ -57,7 +56,7 @@ const rightNavLinks = [
   <div class="container mx-auto px-4">
     <div class="flex justify-between items-center">
       <!-- Menu hamburger pour mobile et tablette -->
-      <button id="menu-toggle" class="lg:hidden text-black z-20">
+      <button id="menu-toggle" class="lg:hidden text-black z-20" aria-label="Toggle menu">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
@@ -66,7 +65,7 @@ const rightNavLinks = [
       <!-- Logo (visible sur tous les écrans) -->
       <div class="logo text-center flex-grow lg:flex-grow-0 lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2">
         <a href={`/${currentLang}`}>
-          <Image src={logoImage} alt="Christine Rizzo Logo" class="h-16 sm:h-20 md:h-24 lg:h-28 w-auto mx-auto" />
+          <Image src={logoImage} alt="Christine Rizzo Logo" class="h-20 sm:h-24 md:h-28 lg:h-32 w-auto mx-auto" />
         </a>
       </div>
       
@@ -90,7 +89,7 @@ const rightNavLinks = [
     
     <!-- Menu mobile et tablette -->
     <nav id="mobile-menu" class="lg:hidden fixed inset-0 bg-beige bg-opacity-95 z-10 flex flex-col justify-center items-center hidden">
-      <button id="close-menu" class="absolute top-4 right-4 text-black z-20">
+      <button id="close-menu" class="absolute top-4 right-4 text-black z-20" aria-label="Close menu">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>

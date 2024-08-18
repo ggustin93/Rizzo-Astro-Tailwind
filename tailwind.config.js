@@ -12,7 +12,7 @@ export default {
       },
       colors: {
         "accent": "#f7d081",
-        "light-gray": "#d4d9d0",
+        "light-gray": "#e5e8e3",//"#d4d9d0",
         "dark-green": "#06615b",
         "beige": "#fffdf7",
         "dark-gray": "#747873",
