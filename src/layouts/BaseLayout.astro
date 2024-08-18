@@ -2,12 +2,22 @@
 // src/layouts/BaseLayout.astro
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import SEO from '../components/SEO.astro';
 import '../styles/global.css';
 
 const supportedLanguages = ['fr', 'en', 'it'] as const;
 type SupportedLanguage = typeof supportedLanguages[number];
 
-const { lang } = Astro.params;
+interface Props {
+  title: string;
+  description: string;
+  lang: string; // Accept string type here
+  image?: string;
+}
+
+const { title, description, lang, image } = Astro.props;
+
+// Validate and set the current language
 const currentLang: SupportedLanguage = (typeof lang === 'string' && supportedLanguages.includes(lang as SupportedLanguage)) ? lang as SupportedLanguage : 'fr';
 ---
 
@@ -16,26 +26,30 @@ const currentLang: SupportedLanguage = (typeof lang === 'string' && supportedLan
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Christine Rizzo - Avocate spécialisée en droit du travail</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <SEO title={title} description={description} image={image} />
+    
     <link rel="preload" href="/fonts/Synonym-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="/fonts/Synonym-Regular.woff" as="font" type="font/woff" crossorigin="anonymous">
     <link rel="stylesheet" href="/styles/tailwind.css">
     <link rel="stylesheet" href="/styles/global.css">
+    
+    <link rel="preconnect" href="https://assets.calendly.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    
     <script src="https://unpkg.com/feather-icons" defer></script>
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 <body class="bg-beige">
     <div class="container mx-auto px-4">
-        <!-- En-tête -->
         <Header currentLang={currentLang} />
         
-        <!-- Contenu principal -->
-        <div id="content">
+        <main id="content">
             <slot />
-        </div>
+        </main>
         
-        <!-- Pied de page -->
         <Footer currentLang={currentLang} />
     </div>
     
@@ -48,6 +62,43 @@ const currentLang: SupportedLanguage = (typeof lang === 'string' && supportedLan
             }
           }
         });
+      });
+    </script>
+
+    <script is:inline>
+      // Accessibility improvement
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Tab') {
+          document.body.classList.add('user-is-tabbing');
+        }
+      });
+
+      document.addEventListener('mousedown', function() {
+        document.body.classList.remove('user-is-tabbing');
+      });
+    </script>
+
+    <script is:inline>
+      // Lazy loading images
+      document.addEventListener('DOMContentLoaded', function() {
+        var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+        if ("IntersectionObserver" in window) {
+          let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+              if (entry.isIntersecting) {
+                let lazyImage = entry.target;
+                lazyImage.src = lazyImage.dataset.src;
+                lazyImage.classList.remove("lazy");
+                lazyImageObserver.unobserve(lazyImage);
+              }
+            });
+          });
+
+          lazyImages.forEach(function(lazyImage) {
+            lazyImageObserver.observe(lazyImage);
+          });
+        }
       });
     </script>
 </body>

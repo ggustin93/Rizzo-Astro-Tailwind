@@ -22,22 +22,21 @@ const { entry, lang } = Astro.props;
 const { Content } = await entry.render();
 
 const translations = {
-  fr: { backToArticles: "\u2190 Retour aux articles", keyPoints: "Points clés :", readTime: "temps de lecture" },
-  en: { backToArticles: "\u2190 Back to articles", keyPoints: "Key points:", readTime: "read time" },
-  it: { backToArticles: "\u2190 Torna agli articoli", keyPoints: "Punti chiave:", readTime: "tempo di lettura" }
+  fr: { backToArticles: "← Retour aux articles", keyPoints: "Points clés :", readTime: "temps de lecture" },
+  en: { backToArticles: "← Back to articles", keyPoints: "Key points:", readTime: "read time" },
+  it: { backToArticles: "← Torna agli articoli", keyPoints: "Punti chiave:", readTime: "tempo di lettura" }
 };
 
 const t = translations[lang as Language];
 
-// Fonction pour générer le texte du post LinkedIn
+// Function to generate LinkedIn share text
 function generateLinkedInShareText(title: string, url: string) {
   return encodeURIComponent(`Je viens de lire cet article intéressant : "${title}"\n\n${url}`);
 }
 
-// Utiliser l'URL de base du site pour générer l'URL de partage correct
+// Use the base site URL to generate the correct share URL
 const fullUrl = `${Astro.site}${Astro.url}`;
 const shareText = generateLinkedInShareText(entry.data.title, fullUrl);
-
 
 function formatDate(date: Date, lang: string): string {
   return new Intl.DateTimeFormat(lang, { 
@@ -48,7 +47,7 @@ function formatDate(date: Date, lang: string): string {
 }
 ---
 
-<BaseLayout title={entry.data.title} lang={lang}>
+<BaseLayout title={entry.data.title} description={entry.data.title} lang={lang}>
   <article class="max-w-4xl mx-auto px-4 py-12">
     <header class="relative mb-12">
       <Image 
@@ -108,7 +107,6 @@ function formatDate(date: Date, lang: string): string {
       <Content />
     </div>
     
-    <!-- Dans la partie HTML -->
     <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mt-12 pt-8 border-t border-light-gray">
       <a href={`/${lang}/blog`}
         class="inline-block bg-transparent text-black border border-black px-4 py-2 rounded-sm hover:bg-black hover:text-white transition duration-300 text-sm uppercase font-light mb-4 sm:mb-0">

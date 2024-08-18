@@ -9,7 +9,11 @@ export async function getStaticPaths() {
 
 const { lang } = Astro.params;
 const profileEntry = await getEntry('profile', 'profile');
-const profileData = profileEntry.data[lang];
+const profileData = profileEntry.data[lang] || profileEntry.data['fr']; // Use French as fallback
+
+if (!profileData) {
+  throw new Error(`Content not found for language: ${lang}`);
+}
 
 const {
   name,
@@ -23,7 +27,7 @@ const {
   publications
 } = profileData;
 
-// Traductions
+// Translations
 const translations = {
   fr: {
     specialties: "Domaines de prédilection",
@@ -60,7 +64,7 @@ const translations = {
 const t = translations[lang as keyof typeof translations];
 ---
 
-<BaseLayout title={`${name} - ${title}`} lang={lang}>
+<BaseLayout title={`${name} - ${title}`} description={title} lang={lang}>
   <div class="max-w-6xl mx-auto px-4 py-12">
     <h1 class="text-4xl md:text-5xl font-light text-black mb-8">{name}</h1>
     

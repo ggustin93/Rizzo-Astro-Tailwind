@@ -1,4 +1,5 @@
 ---
+// src/pages/[...lang]/travailleurs.astro
 import { getEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { Briefcase, Shield, FileText, ChevronRight, Check } from 'astro-feather-icons';
@@ -7,32 +8,27 @@ export async function getStaticPaths() {
   return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
 }
 
-const lang = Astro.params.lang || 'fr'; // 'fr' comme langue par défaut
-console.log("Current language:", lang); 
-
+const { lang } = Astro.params;
 const travailleursEntry = await getEntry('travailleurs', 'travailleurs');
-console.log("Travailleurs entry:", travailleursEntry);
-
-const content = travailleursEntry?.data[lang] || travailleursEntry?.data['fr']; // Utilise le français comme fallback
-console.log("Content for language:", content);
+const content = travailleursEntry?.data[lang] || travailleursEntry?.data['fr']; // Use French as fallback
 
 if (!content) {
   throw new Error(`Content not found for language: ${lang}`);
 }
+
 const iconMap = {
   Briefcase,
   Shield,
   FileText
 };
-
 ---
 
-<BaseLayout title={content.title} lang={lang}>
+<BaseLayout title={content.title} description={content.title} lang={lang}>
   <main class="container mx-auto px-4 py-16">
     <h1 class="text-4xl font-light mb-12 text-black text-center">{content.title}</h1>
     
     <div class="flex flex-col md:flex-row">
-      <!-- Colonne de gauche (2/3) -->
+      <!-- Left Column (2/3) -->
       <div class="md:w-2/3 bg-light-accent p-8 rounded-sm">
         <p class="mb-6 text-dark-gray font-light">{content.description}</p>
         <ul class="space-y-2 mb-6">
@@ -54,7 +50,7 @@ const iconMap = {
         </ul>
       </div>
       
-      <!-- Colonne de droite (1/3) -->
+      <!-- Right Column (1/3) -->
       <div class="md:w-1/3 bg-white p-8 rounded-sm">
         <h2 class="text-2xl font-light mb-6 text-black">{content.servicesTitle}</h2>
         <ul class="space-y-6">

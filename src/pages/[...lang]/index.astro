@@ -26,6 +26,7 @@ export async function getStaticPaths() {
 
 const { currentLang } = Astro.props as Props;
 
+
 const { lang } = Astro.params;
 const homeEntry = await getEntry('home', 'home');
 const content = homeEntry.data[lang] as any;
@@ -33,9 +34,12 @@ const content = homeEntry.data[lang] as any;
 // Récupération des articles
 const recentArticles = await getArticles(lang, 3);
 
+// Paramètres SEO
+const pageTitle = content.hero.title;
+const pageDescription = content.hero.description;
 ---
 
-<BaseLayout title={content.hero.title} lang={currentLang}>  
+<BaseLayout title={pageTitle} description={pageDescription} lang={currentLang}>  
   <!-- Hero Section -->
   <section class="pb-10 bg-beige">
     <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">

@@ -1,9 +1,22 @@
 ---
 // src/pages/credits.astro
 import BaseLayout from '../layouts/BaseLayout.astro';
+const supportedLanguages = ['fr', 'en', 'it'] as const;
+type SupportedLanguage = typeof supportedLanguages[number];
+
+export interface Props {
+  currentLang: SupportedLanguage;
+}
+
+export async function getStaticPaths() {
+  return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+
 ---
 
-<BaseLayout title="Cr\u00e9dits">
+<BaseLayout title="Cr\u00e9dits" description="Crédits du site web de Christine Rizzo" lang={lang as SupportedLanguage}>
   <h1 class="text-4xl font-bold mb-4">Credits</h1>
   <p class="mb-4">Polices fournies par <a href="http://www.onlinewebfonts.com">Web Fonts</a> sous licence CC BY 4.0</p>
 </BaseLayout>
