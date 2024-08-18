@@ -1,4 +1,5 @@
 ---
+// src/layouts/BaseLayout.astro
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
@@ -16,12 +17,13 @@ const currentLang: SupportedLanguage = (typeof lang === 'string' && supportedLan
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Christine Rizzo - Avocate spécialisée en droit du travail</title>
-    <link href="https://db.onlinewebfonts.com/c/141d0930d88f0321d415e423e22c8883?family=Synonym-Regular" rel="stylesheet">
-    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="preload" href="/fonts/Synonym-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/fonts/Synonym-Regular.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/tailwind.css">
+    <link rel="stylesheet" href="/styles/global.css">
+    <script src="https://unpkg.com/feather-icons" defer></script>
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    <link rel="stylesheet" href="styles/tailwind.css">
-    <link rel="stylesheet" href="styles/global.css">
 </head>
 <body class="bg-beige">
     <div class="container mx-auto px-4">

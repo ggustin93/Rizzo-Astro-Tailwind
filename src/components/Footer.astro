@@ -1,4 +1,5 @@
 ---
+// src/components/Footer.astro
 import { Image } from 'astro:assets';
 import logoImage from '../assets/images/logo_crizzo_calli3.svg';
 
@@ -22,7 +23,8 @@ const translations = {
     legalNotice: "Mentions légales",
     privacyPolicy: "Politique de confidentialité",
     design: "Design by Pwablo",
-    ecoDesign: "Eco-conception"
+    ecoDesign: "Eco-conception",
+    credits: "Crédits"
   },
   en: {
     copyright: "© 2023 Christine Rizzo. All rights reserved.",
@@ -34,7 +36,8 @@ const translations = {
     legalNotice: "Legal Notice",
     privacyPolicy: "Privacy Policy",
     design: "Design by Pwablo",
-    ecoDesign: "Eco-design"
+    ecoDesign: "Eco-design",
+    credits: "Credits"
   },
   it: {
     copyright: "© 2023 Christine Rizzo. Tutti i diritti riservati.",
@@ -46,7 +49,8 @@ const translations = {
     legalNotice: "Note legali",
     privacyPolicy: "Politica sulla privacy",
     design: "Design di Pwablo",
-    ecoDesign: "Eco-design"
+    ecoDesign: "Eco-design",
+    credits: "Crediti"
   }
 };
 
@@ -67,6 +71,7 @@ const secondaryLinks = [
   { href: "#", label: t.privacyPolicy },
   { href: "#", label: t.design },
   { href: "#", label: t.ecoDesign },
+  { href: "/credits", label: t.credits } // Ajout du lien vers la page des crédits
 ];
 ---
 
