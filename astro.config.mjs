@@ -1,9 +1,11 @@
 import { defineConfig } from "astro/config";
+import robotsTxt from 'astro-robots-txt';
 
 // Set this to 'static' or 'hybrid' based on your needs
 const outputMode = 'static';
 
 export default defineConfig({
+  site:'https://chrizzo.netlify.app',
   output: outputMode,
   redirects: {
     '/': '/fr'
@@ -23,6 +25,11 @@ export default defineConfig({
   typescript: {
     enabled: false
   },
+  integrations: [
+    robotsTxt({
+      site: 'https://chrizzo.netlify.app',
+    }),
+  ],
   vite: {
     css: {
       preprocessorOptions: {

@@ -17,10 +17,12 @@
     "astro-feather-icons": "^1.0.2",
     "astro-icon": "^1.1.0",
     "astro-imagetools": "^0.2.12",
+    "astro-robots-txt": "^1.0.0",
     "feather-icons": "^4.29.2",
     "react-icons": "^5.2.1",
     "sharp": "^0.33.5",
-    "typescript": "^5.4.4"
+    "typescript": "^5.4.4",
+    "vite-plugin-remove-console": "^2.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
