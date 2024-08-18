@@ -45,26 +45,36 @@ function generateUniqueId(prefix: string) {
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription} lang={currentLang}>  
-  <!-- Hero Section -->
-   <div class="full-bleed bg-white">
-  <section class="py-10 bg-white">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-      <div class="md:w-1/2 text-left mb-8 md:mb-0">
-        <h1 class="text-4xl md:text-5xl lg:text-7xl font-light mb-4 text-black">{content.hero.title}</h1>
-        <h2 class="text-2xl md:text-3xl lg:text-4xl mb-6 text-accent font-light">{content.hero.subtitle}</h2>
-        <p class="mb-8 text-base md:text-lg text-dark-gray max-w-xl font-light leading-relaxed" style="color: #333333;">{content.hero.description}</p>
-        <button data-calendly class="bg-transparent text-black border border-black px-4 md:px-6 py-2 md:py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm md:text-base font-light" aria-label="Call to action">{content.hero.cta}</button>
-        <div class="mt-8 md:mt-12">
-          <a href="#expertise" class="text-black hover:text-accent text-sm uppercase font-light transition duration-300">scroll ↓</a>
+  <div class="full-bleed bg-white">
+    <section class="py-6 md:py-10 bg-white">
+      <div class="container mx-auto px-4 flex flex-col items-center md:flex-row md:items-center md:justify-between">
+        <div class="w-full md:w-1/2 text-center md:text-left">
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-light mb-2 md:mb-3 text-black">{content.hero.title}</h1>
+          <h2 class="text-3xl md:text-4xl lg:text-5xl mb-3 md:mb-4 text-accent font-light">{content.hero.subtitle}</h2>
+          <p class="mb-5 md:mb-6 text-sm md:text-base text-gray-600 max-w-xl mx-auto md:mx-0 font-light leading-relaxed">{content.hero.description}</p>
+          <button 
+            data-calendly 
+            class="w-auto min-w-[200px] max-w-[80%] mx-auto md:mx-0 bg-transparent text-black border border-black px-4 py-2 md:px-6 md:py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm md:text-base font-light mb-3 md:mb-0" 
+            aria-label="Call to action"
+          >
+            {content.hero.cta}
+          </button>
+        </div>
+        <div class="w-full md:w-1/2 flex justify-center md:justify-end mt-1 md:mt-0">
+          <Picture 
+            src={heroImage} 
+            formats={['avif', 'webp']} 
+            alt="Christine Rizzo" 
+            class="w-full h-auto max-w-xs md:max-w-lg object-contain" 
+            decoding="async" 
+            loading="eager" 
+            width="850" 
+            height="650"
+          />
         </div>
       </div>
-      <div class="md:w-1/2 flex justify-end">
-        <Picture src={heroImage} formats={['avif', 'webp']} alt="Christine Rizzo" class="w-full max-w-sm md:max-w-lg" decoding="async" loading="eager" width="850" height="650"/>
-      </div>
-    </div>
-  </section>
-</div>
-
+    </section>
+  </div>
 <!-- Expertise Section -->
 <div class="full-bleed bg-light-gray">
   <section id="expertise" class="py-12 md:py-20">
@@ -97,13 +107,13 @@ function generateUniqueId(prefix: string) {
   </section>
 </div>
   
-  <div class="full-bleed bg-white">
+<div class="full-bleed bg-white">
   <section id="profil" class="py-12 md:py-20">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl md:text-4xl font-light mb-8 md:mb-12 text-center text-black">{content.profil.title}</h2>
       <div class="max-w-4xl mx-auto">
         <div class="flex flex-col md:flex-row items-start gap-6 md:gap-8">
-          <div class="md:w-3/5">
+          <div class="md:w-3/5 w-full">
             <Picture 
               src={profileImage} 
               formats={['avif', 'webp']} 
@@ -115,14 +125,16 @@ function generateUniqueId(prefix: string) {
               width="800" 
             />
           </div>
-          <div class="md:w-2/5 mt-4 md:mt-0">
+          <div class="md:w-2/5 w-full mt-4 md:mt-0 text-center md:text-left">
             <p class="text-dark-gray font-light leading-relaxed mb-6" style="color: #333333;">{content.profil.description}</p>
-            <a 
-              href={`/${lang}/profil`} 
-              class="inline-block bg-transparent text-black border border-black px-4 md:px-6 py-2 md:py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light"
-            >
-              En savoir plus →
-            </a>
+            <div class="flex justify-center md:justify-start">
+              <a 
+                href={`/${lang}/profil`} 
+                class="inline-block bg-transparent text-black border border-black px-4 md:px-6 py-2 md:py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light"
+              >
+                En savoir plus →
+              </a>
+            </div>
           </div>
         </div>
       </div>
