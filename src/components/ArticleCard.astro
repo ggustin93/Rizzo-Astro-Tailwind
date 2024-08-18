@@ -3,9 +3,19 @@ import { Image } from 'astro:assets';
 import { isExternalImage } from '../utils/imageHelpers';
 
 interface Props {
-  article: any;
-  lang: string;
-  url: string;
+  article: {
+    data: {
+      thumbnail: string;
+      title: string;
+      categories: string[];
+      description: string;
+      date: Date;
+      readTime: number;
+    };
+    slug: string;
+  };
+  lang: 'en' | 'fr' | 'it';
+  url?: string;
   lazyLoad?: boolean;
 }
 
@@ -15,52 +25,68 @@ const isExternal = isExternalImage(article.data.thumbnail);
 const imageUrl = isExternal ? new URL(article.data.thumbnail, Astro.site) : article.data.thumbnail;
 
 const imageProps = {
-  src: isExternal ? imageUrl.href : imageUrl,
+  src: isExternal ? (imageUrl as URL).href : imageUrl as string,
   alt: article.data.title,
   width: 800,
   height: 500,
-  class: "w-full h-72 object-cover rounded-t-lg",
+  class: "w-full h-64 object-cover",
 };
 
-const readMoreTranslations = {
-  en: "Read more",
-  fr: "Lire la suite",
-  it: "Leggi di più"
+const translations = {
+  readMore: {
+    en: "Read more",
+    fr: "Lire la suite",
+    it: "Leggi di più"
+  },
+  readTime: {
+    en: "min read",
+    fr: "min de lecture",
+    it: "min di lettura"
+  }
 };
-
-const readMoreText = readMoreTranslations[lang] || readMoreTranslations.en;
 
 function formatDate(date: Date, lang: string): string {
-  return new Intl.DateTimeFormat(lang, { 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric' 
+  return new Intl.DateTimeFormat(lang, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
   }).format(date);
 }
+
+const articleUrl = url || `/${lang}/blog/${article.slug.split('/').pop()}`;
 ---
 
-<article class="bg-white rounded-lg overflow-hidden shadow-sm transition-shadow duration-300 hover:shadow-md max-w-sm">
-  <a href={url} class="block">
+<article class="bg-beige overflow-hidden transition-shadow duration-300 hover:shadow-md w-full max-w-sm mx-auto">
+  <a href={articleUrl} class="block">
     <div class="relative">
-      <Image 
-        {...imageProps}
+      <Image
+        src={imageProps.src}
+        alt={imageProps.alt}
+        width={imageProps.width}
+        height={imageProps.height}
+        class={imageProps.class}
         loading={lazyLoad ? "lazy" : "eager"}
         decoding="async"
       />
       {article.data.categories.length > 0 && (
         <div class="absolute top-2 left-2">
-          <span class="text-xs font-semibold px-3 py-1 rounded-full text-black bg-accent">
+          <span class="text-xs font-semibold px-3 py-1 text-black bg-accent rounded-full">
             {article.data.categories[0]}
           </span>
         </div>
       )}
     </div>
-    <div class="p-4">
-      <h3 class="text-xl font-semibold mb-2 text-dark-gray line-clamp-2">{article.data.title}</h3>
-      <p class="text-dark-gray mb-4 font-light leading-relaxed text-sm line-clamp-3">{article.data.description}</p>
-      <div class="flex justify-between items-center text-xs text-dark-gray">
+    <div class="p-5">
+      <h3 class="text-xl font-semibold mb-3 text-black line-clamp-2">{article.data.title}</h3>
+      <p class="text-gray-700 mb-4 font-light leading-relaxed text-sm line-clamp-3">{article.data.description}</p>
+      <div class="flex justify-between items-center text-xs text-gray-600">
         <time datetime={article.data.date.toISOString()}>{formatDate(article.data.date, lang)}</time>
-        <span>{article.data.readTime} min read</span>
+        <span class="text-black font-medium text-sm underline hover:no-underline inline-flex items-center">
+          {translations.readMore[lang]}
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </span>
       </div>
     </div>
   </a>

@@ -3,22 +3,26 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
 
+export const supportedLanguages = ['fr', 'en', 'it'] as const;
+type SupportedLanguage = typeof supportedLanguages[number];
+
+export interface Props {
+  blogEntries: any[];
+  currentLang: SupportedLanguage;
+}
+
 export async function getStaticPaths() {
-  const languages = ['fr', 'en', 'it'];
-
   const allBlogEntries = await getCollection('blog');
-
-  return languages.map(lang => {
+  return supportedLanguages.map(lang => {
     const blogEntries = allBlogEntries.filter(entry => entry.slug.startsWith(`${lang}/`));
     return {
       params: { lang },
-      props: { blogEntries }
+      props: { blogEntries, currentLang: lang as SupportedLanguage }
     };
   });
 }
 
-const { lang } = Astro.params;
-const { blogEntries } = Astro.props;
+const { blogEntries, currentLang } = Astro.props;
 
 // Traductions
 const translations = {
@@ -27,11 +31,11 @@ const translations = {
   it: { title: "Articoli", noArticles: "Nessun articolo trovato." }
 };
 
-const t = translations[lang as keyof typeof translations];
+const t = translations[currentLang as SupportedLanguage];
 
 ---
 
-<BaseLayout title={t.title} lang={lang}>
+<BaseLayout title={t.title} lang={currentLang}>
   <main class="container mx-auto px-4 py-12">
     <h2 class="text-4xl font-light mb-8 text-black text-center">
       {t.title}
@@ -44,8 +48,8 @@ const t = translations[lang as keyof typeof translations];
           return (
             <ArticleCard 
               article={entry}
-              lang={lang}
-              url={`/${lang}/blog/${slug}`}
+              lang={currentLang}
+              url={`/${currentLang}/blog/${slug}`}
             />
           );
         })

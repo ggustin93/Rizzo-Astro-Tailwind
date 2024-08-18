@@ -1,4 +1,5 @@
 ---
+// src/pages/blog/[lang]/[slug].astro
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
@@ -21,12 +22,22 @@ const { entry, lang } = Astro.props;
 const { Content } = await entry.render();
 
 const translations = {
-  fr: { backToArticles: "← Retour aux articles", keyPoints: "Points clés :", readTime: "temps de lecture" },
-  en: { backToArticles: "← Back to articles", keyPoints: "Key points:", readTime: "read time" },
-  it: { backToArticles: "← Torna agli articoli", keyPoints: "Punti chiave:", readTime: "tempo di lettura" }
+  fr: { backToArticles: "\u2190 Retour aux articles", keyPoints: "Points clés :", readTime: "temps de lecture" },
+  en: { backToArticles: "\u2190 Back to articles", keyPoints: "Key points:", readTime: "read time" },
+  it: { backToArticles: "\u2190 Torna agli articoli", keyPoints: "Punti chiave:", readTime: "tempo di lettura" }
 };
 
 const t = translations[lang as Language];
+
+// Fonction pour générer le texte du post LinkedIn
+function generateLinkedInShareText(title: string, url: string) {
+  return encodeURIComponent(`Je viens de lire cet article intéressant : "${title}"\n\n${url}`);
+}
+
+// Utiliser l'URL de base du site pour générer l'URL de partage correct
+const fullUrl = `${Astro.site}${Astro.url}`;
+const shareText = generateLinkedInShareText(entry.data.title, fullUrl);
+
 
 function formatDate(date: Date, lang: string): string {
   return new Intl.DateTimeFormat(lang, { 
@@ -35,7 +46,6 @@ function formatDate(date: Date, lang: string): string {
     day: 'numeric' 
   }).format(date);
 }
-
 ---
 
 <BaseLayout title={entry.data.title} lang={lang}>
@@ -97,23 +107,22 @@ function formatDate(date: Date, lang: string): string {
     <div class="prose prose-lg max-w-none text-dark-gray">
       <Content />
     </div>
-
+    
+    <!-- Dans la partie HTML -->
     <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mt-12 pt-8 border-t border-light-gray">
-      <a
-        href={`/${lang}/blog`}
-        class="inline-block bg-transparent text-black border border-black px-4 py-2 rounded-sm hover:bg-black hover:text-white transition duration-300 text-sm uppercase font-light mb-4 sm:mb-0"
-      >
+      <a href={`/${lang}/blog`}
+        class="inline-block bg-transparent text-black border border-black px-4 py-2 rounded-sm hover:bg-black hover:text-white transition duration-300 text-sm uppercase font-light mb-4 sm:mb-0">
         {t.backToArticles}
       </a>
       <div class="flex space-x-4">
-        <a href="#" class="text-dark-gray hover:text-accent" aria-label="Share on Twitter">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
-        </a>
-        <a href="#" class="text-dark-gray hover:text-accent" aria-label="Share on LinkedIn">
+        <a 
+          href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(Astro.url.toString())}&summary=${shareText}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-dark-gray hover:text-accent"
+          aria-label="Share on LinkedIn"
+        >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-        </a>
-        <a href="#" class="text-dark-gray hover:text-accent" aria-label="Share on Facebook">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
         </a>
       </div>
     </div>

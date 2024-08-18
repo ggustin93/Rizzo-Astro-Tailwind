@@ -1,10 +1,33 @@
 ---
+// Import des props
 const { currentLang } = Astro.props;
-const { pathname } = Astro.url;
-
 const langs = ['fr', 'en', 'it'];
-const currentPath = pathname.replace(`/${currentLang}`, '');
 ---
+
+<style>
+  /* Masquer le menu déroulant sur mobile */
+  @media (max-width: 768px) {
+    #language-select {
+      display: none;
+    }
+    .mobile-lang-links {
+      display: block;
+    }
+  }
+
+  /* Masquer les liens sur les écrans plus grands */
+  @media (min-width: 769px) {
+    .mobile-lang-links {
+      display: none;
+    }
+  }
+
+  /* Souligner la langue actuelle sur mobile */
+  .mobile-lang-links a.current-lang {
+    text-decoration: underline;
+    text-decoration-color: black;
+  }
+</style>
 
 <div class="relative inline-block group">
   <select 
@@ -24,13 +47,57 @@ const currentPath = pathname.replace(`/${currentLang}`, '');
   </div>
 </div>
 
+<div class="mobile-lang-links flex space-x-4">
+  {langs.map((lang) => (
+    <a 
+      href="#"
+      data-lang={lang}
+      class={`text-sm font-light uppercase ${lang === currentLang ? 'text-black current-lang' : 'text-gray-500'} hover:text-black transition-colors duration-300`}
+    >
+      {lang.toUpperCase()}
+    </a>
+  ))}
+</div>
+
 <script>
-  const select = document.getElementById('language-select');
-  select?.addEventListener('change', (event) => {
-    const target = event.target as HTMLSelectElement;
-    const newLang = target.value;
-    const currentPath = window.location.pathname;
-    const newPath = currentPath.replace(/^\/[^\/]+/, `/${newLang}`);
-    window.location.href = newPath;
+  document.addEventListener('DOMContentLoaded', () => {
+    const select = document.getElementById('language-select');
+    const langLinks = document.querySelectorAll('.mobile-lang-links a');
+
+    const handleLanguageChange = (newLang) => {
+      const currentPath = window.location.pathname;
+      const newPath = currentPath.replace(/^\/[^\/]+/, `/${newLang}`);
+
+      // Debugging
+      console.log(`Language selected: ${newLang}`);
+      console.log(`Redirecting to: ${newPath}`);
+
+      // Fermer le menu mobile
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileMenu) {
+        mobileMenu.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+
+      window.location.href = newPath;
+    };
+
+    if (select) {
+      console.log('Language select element found');  // Debugging
+      select.addEventListener('change', (event) => {
+        const target = event.target as HTMLSelectElement;
+        handleLanguageChange(target.value);
+      });
+    } else {
+      console.log('Language select element not found');  // Debugging
+    }
+
+    langLinks.forEach(link => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const target = event.target as HTMLAnchorElement;
+        handleLanguageChange(target.dataset.lang);
+      });
+    });
   });
 </script>

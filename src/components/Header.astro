@@ -53,7 +53,6 @@ const rightNavLinks = [
   { href: isHomePage ? "#honoraires" : `/${currentLang}#honoraires`, label: t.honoraires },
 ];
 ---
-
 <header class="bg-beige py-4 my-8 lg:py-4">
   <div class="container mx-auto px-4">
     <div class="flex justify-between items-center">
@@ -91,21 +90,41 @@ const rightNavLinks = [
     
     <!-- Menu mobile et tablette -->
     <nav id="mobile-menu" class="lg:hidden fixed inset-0 bg-beige bg-opacity-95 z-10 flex flex-col justify-center items-center hidden">
+      <button id="close-menu" class="absolute top-4 right-4 text-black z-20">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
       {[...leftNavLinks, ...rightNavLinks].map(link => (
-        <a href={link.href} class="block py-2 text-black uppercase text-lg font-light hover:underline">{link.label}</a>
+        <a 
+          href={link.href.startsWith('#') ? link.href : `/${currentLang}${link.href.replace(`/${currentLang}`, '')}`} 
+          class="block py-2 text-black uppercase text-lg font-light hover:underline"
+        >
+          {link.label}
+        </a>
       ))}
       <a href={`/${currentLang}/contact`} class="mt-4 bg-transparent text-black border border-black px-4 py-2 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-lg font-light">{t.contact}</a>
-      <LanguagePicker currentLang={currentLang} />
+      <div class="mt-4 py-4">
+        <LanguagePicker currentLang={currentLang} />
+      </div>
     </nav>
   </div>
 </header>
 
 <script is:inline>
   const menuToggle = document.getElementById('menu-toggle');
+  const closeMenu = document.getElementById('close-menu');
   const mobileMenu = document.getElementById('mobile-menu');
   
   if (menuToggle && mobileMenu) {
     menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      document.body.classList.toggle('overflow-hidden');
+    });
+  }
+
+  if (closeMenu && mobileMenu) {
+    closeMenu.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
       document.body.classList.toggle('overflow-hidden');
     });
