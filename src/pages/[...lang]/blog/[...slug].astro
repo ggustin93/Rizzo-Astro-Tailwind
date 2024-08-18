@@ -45,9 +45,14 @@ function formatDate(date: Date, lang: string): string {
     day: 'numeric' 
   }).format(date);
 }
+
+// Fetch SEO settings from the content
+const seoTitle = entry.data.title;
+const seoDescription =  entry.data.title;
+const seoImage = entry.data.thumbnail;
 ---
 
-<BaseLayout title={entry.data.title} description={entry.data.title} lang={lang}>
+<BaseLayout title={seoTitle} description={seoDescription} lang={lang} image={seoImage}>
   <article class="max-w-4xl mx-auto px-4 py-12">
     <header class="relative mb-12">
       <Image 
