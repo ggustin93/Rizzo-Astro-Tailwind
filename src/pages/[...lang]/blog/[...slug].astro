@@ -72,16 +72,6 @@ const seoImage = entry.data.thumbnail;
 
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-dark-gray text-sm mb-8">
       <div class="flex items-center mb-4 sm:mb-0">
-        <Image 
-          src={"https://via.placeholder.com/40"}
-          alt={entry.data.author}
-          width={40}
-          height={40}
-          class="w-10 h-10 rounded-full mr-3"
-          loading="lazy"
-          decoding="async"
-          format="avif"
-        />
         <span>{entry.data.author}</span>
       </div>
       <div class="flex items-center space-x-4">
@@ -117,17 +107,7 @@ const seoImage = entry.data.thumbnail;
         class="inline-block bg-transparent text-black border border-black px-4 py-2 rounded-sm hover:bg-black hover:text-white transition duration-300 text-sm uppercase font-light mb-4 sm:mb-0">
         {t.backToArticles}
       </a>
-      <div class="flex space-x-4">
-        <a 
-          href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(Astro.url.toString())}&summary=${shareText}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-dark-gray hover:text-accent"
-          aria-label="Share on LinkedIn"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-        </a>
-      </div>
+
     </div>
   </article>
 </BaseLayout>

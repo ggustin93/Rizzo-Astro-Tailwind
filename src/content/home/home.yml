@@ -98,14 +98,14 @@ fr:
     description: Je conseille et défends les travailleurs tout au long de leur
       parcours professionnel et contre les abus, le harcèlement et les
       discriminations au travail.
-    cta: → En savoir plus
+    cta: En savoir plus →
   employeurs:
     title: Accompagnement des employeurs
     description: Je collabore avec votre équipe RH pour la gestion des relations de
       travail au quotidien ainsi que pour tous vos projets visant à développer
       vos politiques bien-être au travail et équilibre vie privée-vie
       professionnelle.
-    cta: → En savoir plus
+    cta: En savoir plus →
   profil:
     title: Profil
     description: Avocate au Barreau de Bruxelles depuis 2010, habituée des
@@ -120,7 +120,7 @@ fr:
       - Formules tarifaires pour les travailleurs.euses
       - Adaptées à vos besoins
       - Suivi en ligne de votre dossier et de mes prestations
-    cta: En savoir plus
+    cta: En savoir plus →
   articlesTitle: Ressources
   viewAllArticles: "Voir toutes les ressources →"
 
