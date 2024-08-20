@@ -2,12 +2,23 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
+import { getUiTranslations } from '../../utils/ui-translations';
 
 export const supportedLanguages = ['fr', 'en', 'it'] as const;
 type SupportedLanguage = typeof supportedLanguages[number];
 
 export interface Props {
-  blogEntries: any[];
+  blogEntries: Array<{
+    slug: string;
+    data: {
+      thumbnail: string;
+      title: string;
+      categories: string[];
+      description: string;
+      date: Date;
+      readTime: number;
+    };
+  }>;
   currentLang: SupportedLanguage;
 }
 
@@ -23,34 +34,43 @@ export async function getStaticPaths() {
 }
 
 const { blogEntries, currentLang } = Astro.props;
+const t = getUiTranslations(currentLang);
 
-// Traductions
-const translations = {
-  fr: { title: "Articles", noArticles: "Aucun article trouvé." },
-  en: { title: "Blog Posts", noArticles: "No articles found." },
-  it: { title: "Articoli", noArticles: "Nessun articolo trovato." }
-};
-
-const t = translations[currentLang as SupportedLanguage];
-
+// Get unique categories
+const categories = [...new Set(blogEntries.flatMap(entry => entry.data.categories))];
 ---
 
-<BaseLayout title={t.title} lang={currentLang} description={t.title}>
+<BaseLayout title={t.blogTitle} lang={currentLang} description={t.blogTitle}>
   <main class="container mx-auto px-4 py-12">
     <h2 class="text-4xl font-light mb-8 text-black text-center">
-      {t.title}
+      {t.blogTitle}
     </h2>
-     
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <!-- Category filter -->
+    <div class="mb-8 flex flex-wrap justify-center gap-2">
+      <button class="category-filter active" data-category="all">
+        {t.allCategories}
+      </button>
+      {categories.map(category => (
+        <button class="category-filter" data-category={category}>
+          {category}
+        </button>
+      ))}
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="articles-grid">
       {blogEntries.length > 0 ? (
         blogEntries.map((entry) => {
           const slug = entry.slug.split('/').slice(1).join('/');
           return (
-            <ArticleCard 
-              article={entry}
-              lang={currentLang}
-              url={`/${currentLang}/blog/${slug}`}
-            />
+            <div class="article-card" data-categories={entry.data.categories.join(',')}>
+              <ArticleCard 
+                article={entry}
+                lang={currentLang}
+                url={`/${currentLang}/blog/${slug}`}
+                uiTranslations={t}
+              />
+            </div>
           );
         })
       ) : (
@@ -59,3 +79,51 @@ const t = translations[currentLang as SupportedLanguage];
     </div>
   </main>
 </BaseLayout>
+
+<style>
+  .category-filter {
+    @apply px-4 py-2 bg-gray-200 text-gray-700 rounded-full transition-colors duration-300;
+  }
+  .category-filter:hover, .category-filter.active {
+    @apply bg-accent text-black;
+  }
+  .hidden {
+    display: none;
+  }
+  .category-tag {
+    @apply px-2 py-1 bg-gray-100 text-gray-600 text-sm rounded;
+  }
+</style>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.category-filter');
+    const articleCards = document.querySelectorAll('.article-card');
+    const articlesGrid = document.getElementById('articles-grid');
+
+    if (articlesGrid) {
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const category = button.getAttribute('data-category');
+          
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+
+          articleCards.forEach(card => {
+            const cardCategories = card.getAttribute('data-categories')?.split(',') || [];
+            if (category === 'all' || (category && cardCategories.includes(category))) {
+              card.classList.remove('hidden');
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+
+          // Réorganiser la grille après le filtrage
+          const visibleCards = Array.from(articleCards).filter(card => !card.classList.contains('hidden'));
+          visibleCards.forEach(card => articlesGrid.appendChild(card));
+        });
+      });
+    }
+  });
+</script>

@@ -17,9 +17,10 @@ interface Props {
   lang: 'en' | 'fr' | 'it';
   url?: string;
   lazyLoad?: boolean;
+  uiTranslations: any; // Ajouté cette ligne
 }
 
-const { article, lang, url, lazyLoad = false } = Astro.props;
+const { article, lang, url, lazyLoad = false, uiTranslations } = Astro.props;
 
 const isExternal = isExternalImage(article.data.thumbnail);
 const imageUrl = isExternal ? new URL(article.data.thumbnail, Astro.site) : article.data.thumbnail;
@@ -30,19 +31,6 @@ const imageProps = {
   width: 800,
   height: 500,
   class: "w-full h-64 object-cover",
-};
-
-const translations = {
-  readMore: {
-    en: "Read more",
-    fr: "Lire la suite",
-    it: "Leggi di più"
-  },
-  readTime: {
-    en: "min read",
-    fr: "min de lecture",
-    it: "min di lettura"
-  }
 };
 
 function formatDate(date: Date, lang: string): string {
@@ -70,19 +58,18 @@ const articleUrl = url || `/${lang}/blog/${article.slug.split('/').pop()}`;
       />
       {article.data.categories.length > 0 && (
         <div class="absolute top-2 left-2">
-          <span class="text-xs font-semibold px-3 py-1 text-black bg-accent">
+          <span class="text-xs px-3 py-1 text-black bg-accent">
             {article.data.categories[0]}
           </span>
         </div>
       )}
     </div>
     <div class="p-5">
-      <h3 class="text-xl font-semibold mb-3 text-black line-clamp-2">{article.data.title}</h3>
-      <!--  <p class="text-gray-700 mb-4 font-light leading-relaxed text-sm line-clamp-3">{article.data.description}</p>-->
+      <h3 class="text-xl font-light mb-3 text-black line-clamp-3 min-h-[4.5rem]">{article.data.title}</h3>
       <div class="flex justify-between items-center text-xs text-gray-600">
         <time datetime={article.data.date.toISOString()}>{formatDate(article.data.date, lang)}</time>
         <span class="text-black font-medium text-sm underline hover:no-underline inline-flex items-center">
-          {translations.readMore[lang]}
+          {uiTranslations.readMore} {/* Modifié cette ligne */}
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
           </svg>

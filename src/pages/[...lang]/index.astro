@@ -26,6 +26,8 @@ export async function getStaticPaths() {
 }
 
 const { currentLang } = Astro.props as Props;
+import { getUiTranslations } from '../../utils/ui-translations';
+const uiTranslations = getUiTranslations(currentLang);
 
 const { lang } = Astro.params;
 const homeEntry = await getEntry('home', 'home');
@@ -45,8 +47,8 @@ function generateUniqueId(prefix: string) {
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription} lang={currentLang}>  
-  <div class="full-bleed bg-white">
-    <section class="py-6 md:py-10 bg-white">
+  <div class="full-bleed bg-beige bg-svg-pattern" >
+    <section class="py-6 md:py-10">
       <div class="container mx-auto px-4 flex flex-col items-center md:flex-row md:items-center md:justify-between">
         <div class="w-full md:w-1/2 text-center md:text-left">
           <h1 class="text-5xl md:text-6xl lg:text-7xl font-light mb-2 md:mb-3 text-black">{content.hero.title}</h1>
@@ -108,7 +110,7 @@ function generateUniqueId(prefix: string) {
 </div>
   
 <div class="full-bleed bg-white">
-  <section id="profil" class="py-12 md:py-20">
+  <section id="profil" class="py-12 md:py-20 bg-svg-pattern">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl md:text-4xl font-light mb-8 md:mb-12 text-center text-black">{content.profil.title}</h2>
       <div class="max-w-4xl mx-auto">
@@ -167,31 +169,33 @@ function generateUniqueId(prefix: string) {
 
   <!-- CTA Section -->
   <CTA lang={currentLang} />
+
   <!-- Articles Section -->
-  <div class="full-bleed bg-white">
-    <section id="articles" class="py-12 md:py-20 bg-white">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-light mb-8 md:mb-12 text-center text-black">{content.articlesTitle}</h2>
-        <div class="max-w-6xl mx-auto">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 justify-items-center">
-            {recentArticles.map((article) => {
-              const slug = article.slug.split('/').slice(1).join('/');
-              return (
-                <ArticleCard
-                  article={article}
-                  lang={currentLang}
-                  url={`/${lang}/blog/${slug}`}
-                />
-              );
-            })}
-          </div>
-        </div>
-        <div class="text-center mt-8 md:mt-12">
-          <a href={`/${lang}/blog`} class="inline-block bg-transparent text-black border border-black px-4 md:px-6 py-2 md:py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light">
-            {content.viewAllArticles}
-          </a>
+<div class="full-bleed bg-white">
+  <section id="articles" class="py-12 md:py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-light mb-8 md:mb-12 text-center text-black">{content.articlesTitle}</h2>
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 justify-items-center">
+          {recentArticles.map((article) => {
+            const slug = article.slug.split('/').slice(1).join('/');
+            return (
+              <ArticleCard
+                article={article}
+                lang={currentLang}
+                url={`/${lang}/blog/${slug}`}
+                uiTranslations={uiTranslations}
+              />
+            );
+          })}
         </div>
       </div>
-    </section>
-  </div>
+      <div class="text-center mt-8 md:mt-12">
+        <a href={`/${lang}/blog`} class="inline-block bg-transparent text-black border border-black px-4 md:px-6 py-2 md:py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light">
+          {content.viewAllArticles}
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
 </BaseLayout>
