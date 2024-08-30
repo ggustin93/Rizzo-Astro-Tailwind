@@ -17,11 +17,11 @@ const translations = {
     legalNotice: "Mentions légales",
     privacyPolicy: "Politique de confidentialité",
     design: "Design by Pwablo",
-    ecoDesign: "Eco-conception",
+    ecoDesign: "Score d'éco-conception",
     credits: "Crédits",
-    navigation: "Navigation",
+    navigation: "Menu",
     legalPages: "Pages légales",
-    ecoDesignPwablo: "Eco-design & Pwablo"
+    ecoDesignPwablo: "Site web écologique"
   },
   en: {
     copyright: "© 2024 Christine Rizzo",
@@ -33,11 +33,11 @@ const translations = {
     legalNotice: "Legal Notice",
     privacyPolicy: "Privacy Policy",
     design: "Design by Pwablo",
-    ecoDesign: "Eco-design",
+    ecoDesign: "Eco-design Score",
     credits: "Credits",
-    navigation: "Navigation",
+    navigation: "Menu",
     legalPages: "Legal Pages",
-    ecoDesignPwablo: "Eco-design & Pwablo"
+    ecoDesignPwablo: "Eco-friendly Website"
   },
   it: {
     copyright: "© 2024 Christine Rizzo",
@@ -49,11 +49,11 @@ const translations = {
     legalNotice: "Note legali",
     privacyPolicy: "Politica sulla privacy",
     design: "Design di Pwablo",
-    ecoDesign: "Eco-design",
+    ecoDesign: "Punteggio eco-design",
     credits: "Crediti",
-    navigation: "Navigazione",
+    navigation: "Menu",
     legalPages: "Pagine legali",
-    ecoDesignPwablo: "Eco-design & Pwablo"
+    ecoDesignPwablo: "Sito web ecologico"
   }
 };
 
@@ -75,9 +75,9 @@ const legalLinks = [
 ];
 
 const secondaryLinks = [
-  { href: "#", label: t.design },
-  { href: "#", label: t.ecoDesign },
-  { href: "/credits", label: t.credits } // Ajout du lien vers la page des crédits
+  { href: "https://pwablo.be", label: t.design },
+  { href: "https://www.ecoindex.fr/resultat/?id=19de93fb-067c-4682-a25e-e37636dd5e6d", label: t.ecoDesign },
+  { href: "/credits", label: t.credits }
 ];
 ---
 
@@ -113,6 +113,14 @@ const secondaryLinks = [
               <summary class="cursor-pointer text-black hover:underline transition duration-300 px-3 py-2 text-center">{t.legalPages}</summary>
               <nav class="flex flex-col items-center space-y-2">
                 {[...legalLinks, ...secondaryLinks].map(link => (
+                  <a href={link.href} class="text-dark-gray hover:underline transition duration-300 px-3 py-2 text-center">{link.label}</a>
+                ))}
+              </nav>
+            </details>
+            <details class="mb-4">
+              <summary class="cursor-pointer text-black hover:underline transition duration-300 px-3 py-2 text-center">{t.ecoDesignPwablo}</summary>
+              <nav class="flex flex-col items-center space-y-2">
+                {secondaryLinks.map(link => (
                   <a href={link.href} class="text-dark-gray hover:underline transition duration-300 px-3 py-2 text-center">{link.label}</a>
                 ))}
               </nav>
