@@ -1,0 +1,54 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const legalEntry = await getEntry('legal', 'legal');
+const content = legalEntry.data[lang as keyof typeof legalEntry.data];
+---
+
+<BaseLayout title={content.title} description={content.title} lang={lang}>
+  <main class="container mx-auto px-4 py-16 max-w-3xl">
+    <h1 class="text-4xl font-light mb-8 text-black">{content.title}</h1>
+    <div class="prose prose-lg max-w-none text-dark-gray">
+      {Array.isArray(content.content) ? (
+        content.content.map((section, index) => (
+          <div class="mb-8">
+            <h2 class="text-2xl font-semibold mt-8 mb-4 text-gray-800">{section.title}</h2>
+            <div class="whitespace-pre-wrap" set:html={section.text.replace(
+              /\bhttps?:\/\/\S+\b/g,
+              '<a href="$&" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">$&</a>'
+            )}></div>
+          </div>
+        ))
+      ) : (
+        <div class="mb-8">
+          <h2 class="text-2xl font-semibold mt-8 mb-4 text-gray-800">{content.title}</h2>
+          <div class="whitespace-pre-wrap" set:html={content.content.replace(
+            /\bhttps?:\/\/\S+\b/g,
+            '<a href="$&" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">$&</a>'
+          )}></div>
+        </div>
+      )}
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .prose h2 {
+    @apply text-2xl font-semibold mt-8 mb-4 text-gray-800;
+  }
+  .prose p {
+    @apply mb-4 leading-relaxed;
+  }
+  .prose ul {
+    @apply list-disc list-inside mb-4;
+  }
+  .prose a {
+    @apply text-blue-600 hover:underline;
+  }
+</style>

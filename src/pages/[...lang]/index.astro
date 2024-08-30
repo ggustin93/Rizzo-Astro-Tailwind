@@ -47,16 +47,16 @@ function generateUniqueId(prefix: string) {
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription} lang={currentLang}>  
-  <div class="full-bleed bg-beige bg-svg-pattern" >
+  <div class="full-bleed bg-white bg-svg-pattern">
     <section class="py-6 md:py-10">
       <div class="container mx-auto px-4 flex flex-col items-center md:flex-row md:items-center md:justify-between">
         <div class="w-full md:w-1/2 text-center md:text-left">
-          <h1 class="text-5xl md:text-6xl lg:text-7xl font-light mb-2 md:mb-3 text-black">{content.hero.title}</h1>
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-light mb-2 md:mb-3 text-gray-800">{content.hero.title}</h1>
           <h2 class="text-3xl md:text-4xl lg:text-5xl mb-3 md:mb-4 text-accent font-light">{content.hero.subtitle}</h2>
-          <p class="mb-5 md:mb-6 text-sm md:text-base text-gray-600 max-w-xl mx-auto md:mx-0 font-light leading-relaxed">{content.hero.description}</p>
+          <p class="mb-5 md:mb-6 text-sm md:text-base text-dark-gray max-w-xl mx-auto md:mx-0 font-light leading-relaxed">{content.hero.description}</p>
           <button 
             data-calendly 
-            class="w-auto min-w-[200px] max-w-[80%] mx-auto md:mx-0 bg-transparent text-black border border-black px-4 py-2 md:px-6 md:py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm md:text-base font-light mb-3 md:mb-0" 
+            class="w-auto min-w-[200px] max-w-[80%] mx-auto md:mx-0 bg-transparent text-black border border-dark-gray px-4 py-2 md:px-6 md:py-3 rounded-sm hover:bg-gray-700 hover:text-white transition duration-300 uppercase text-sm md:text-base font-light mb-3 md:mb-0" 
             aria-label="Call to action"
           >
             {content.hero.cta}
@@ -67,135 +67,147 @@ function generateUniqueId(prefix: string) {
             src={heroImage} 
             formats={['avif', 'webp']} 
             alt="Christine Rizzo" 
-            class="w-full h-auto max-w-xs md:max-w-lg object-contain" 
+            class="w-full h-auto max-w-sm md:max-w-xl object-contain" 
             decoding="async" 
             loading="eager" 
-            width="850" 
-            height="650"
+            width="950" 
+            height="750"
           />
         </div>
       </div>
     </section>
   </div>
-<!-- Expertise Section -->
-<div class="full-bleed bg-light-gray">
-  <section id="expertise" class="py-12 md:py-20">
-    <div class="container px-4">
-      <h2 class="text-3xl md:text-4xl font-light mb-6 md:mb-8 text-center text-black">{content.expertise.title}</h2>
-      <p class="text-center mb-8 md:mb-12 max-w-3xl mx-auto text-dark-gray font-light leading-relaxed" style="color: #333333;">{content.expertise.description}</p>
-      <div class="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-8">
-        <div class="bg-beige p-6 md:p-8 rounded-sm flex-1 max-w-md mx-auto md:mx-0 w-full">
-          <div class="h-40 md:h-48 mb-4 relative">
-            <Image src={pexelService1} alt="Travailleurs" class="absolute inset-0 w-full h-full object-cover object-top" width="600" height="400" />
-          </div>
-          <h3 class="text-xl md:text-2xl font-light mb-4 text-black text-center">{content.travailleurs.title}</h3>
-          <p class="mb-4 text-dark-gray font-light leading-relaxed text-center" style="color: #333333;">{content.travailleurs.description}</p>
-          <div class="text-center">
-            <a href={`/${lang}/travailleurs`} class="inline-block bg-accent text-black px-4 py-2 rounded-sm hover:bg-black hover:text-accent transition duration-300 text-sm uppercase font-light">{content.travailleurs.cta}</a>
-          </div>
+
+  <div class="full-bleed bg-beige">
+    <section id="expertise" class="py-16 md:py-24">
+      <div class="container px-4">
+        <div class="flex items-center mb-8 md:mb-12 justify-center">
+          <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
+          <h2 class="text-2xl font-light text-gray-600 mx-10 uppercase text-center">{content.expertise.title}</h2>
+          <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
         </div>
-        <div class="bg-beige p-6 md:p-8 rounded-sm flex-1 max-w-md mx-auto md:mx-0 w-full">
-          <div class="h-40 md:h-48 mb-4 relative">
-            <Image src={pexelService2} alt="Employeurs" class="absolute inset-0 w-full h-full object-cover object-top" width="600" height="400" />
+        <p class="text-center mb-8 md:mb-12 max-w-3xl mx-auto text-dark-gray font-light leading-relaxed">{content.expertise.description}</p>
+        <div class="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-8">
+          <div class="bg-travailleur bg-opacity-90 p-6 md:p-8 rounded-sm flex-1 max-w-md mx-auto md:mx-0 w-full flex flex-col">
+            <div class="h-40 md:h-48 mb-4 relative">
+              <Image src={pexelService1} alt="Travailleurs" class="absolute inset-0 w-full h-full object-cover object-top" width="600" height="400" />
+            </div>
+            <h3 class="text-xl md:text-2xl font-light mb-4 text-white text-center">{content.travailleurs.title}</h3>
+            <p class="mb-4 text-white font-light leading-relaxed text-center flex-grow">{content.travailleurs.description}</p>
+            <div class="text-center flex justify-center">
+              <a href={`/${lang}/travailleurs`} class="inline-block bg-transparent text-white border border-white px-4 py-2 rounded-sm hover:bg-gray-700 hover:text-white transition duration-300 text-sm uppercase font-light">{content.travailleurs.cta}</a>
+            </div>
           </div>
-          <h3 class="text-xl md:text-2xl font-light mb-4 text-black text-center">{content.employeurs.title}</h3>
-          <p class="mb-4 text-dark-gray font-light leading-relaxed text-center" style="color: #333333;">{content.employeurs.description}</p>
-          <div class="text-center">
-            <a href={`/${lang}/employeurs`} class="inline-block bg-light-green text-black px-4 py-2 rounded-sm hover:bg-black hover:text-light-green transition duration-300 text-sm uppercase font-light">{content.employeurs.cta}</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-  
-<div class="full-bleed bg-white">
-  <section id="profil" class="py-12 md:py-20 bg-svg-pattern">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-light mb-8 md:mb-12 text-center text-black">{content.profil.title}</h2>
-      <div class="max-w-4xl mx-auto">
-        <div class="flex flex-col md:flex-row items-start gap-6 md:gap-8">
-          <div class="md:w-3/5 w-full">
-            <Picture 
-              src={profileImage} 
-              formats={['avif', 'webp']} 
-              alt="Christine Rizzo" 
-              class="w-full h-auto object-cover rounded-sm" 
-              decoding="async" 
-              loading="lazy" 
-              height="800"
-              width="800" 
-            />
-          </div>
-          <div class="md:w-2/5 w-full mt-4 md:mt-0 text-center md:text-left">
-            <p class="text-dark-gray font-light leading-relaxed mb-6" style="color: #333333;">{content.profil.description}</p>
-            <div class="flex justify-center md:justify-start">
-              <a 
-                href={`/${lang}/profil`} 
-                class="inline-block bg-transparent text-black border border-black px-4 md:px-6 py-2 md:py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light"
-              >
-                En savoir plus →
-              </a>
+          <div class="bg-employeur bg-opacity-90 p-6 md:p-8 rounded-sm flex-1 max-w-md mx-auto md:mx-0 w-full flex flex-col">
+            <div class="h-40 md:h-48 mb-4 relative">
+              <Image src={pexelService2} alt="Employeurs" class="absolute inset-0 w-full h-full object-cover object-top" width="600" height="400" />
+            </div>
+            <h3 class="text-xl md:text-2xl font-light mb-4 text-white text-center">{content.employeurs.title}</h3>
+            <p class="mb-4 text-white font-light leading-relaxed text-center flex-grow">{content.employeurs.description}</p>
+            <div class="text-center flex justify-center">
+              <a href={`/${lang}/employeurs`} class="inline-block bg-transparent text-white border border-white px-4 py-2 rounded-sm hover:bg-gray-700 hover:text-white transition duration-300 text-sm uppercase font-light">{content.employeurs.cta}</a>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-</div>
-
-  <!-- Honoraires Section -->
-  <div class="full-bleed bg-light-gray">
-    <section id="honoraires" class="py-12 md:py-20">
+    </section>
+  </div>
+  
+  <div class="full-bleed bg-white">
+    <section id="profil" class="py-16 md:py-24 bg-svg-pattern">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-light mb-6 md:mb-12 text-center text-black">{content.honoraires.title}</h2>
+        <div class="flex items-center mb-8 md:mb-12 justify-center">
+          <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
+          <h2 class="text-2xl font-light text-gray-600 mx-10 uppercase text-center">{content.profil.title}</h2>
+          <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
+        </div>
+        <div class="max-w-4xl mx-auto">
+          <div class="flex flex-col md:flex-row items-start gap-6 md:gap-8">
+            <div class="md:w-3/5 w-full">
+              <Picture 
+                src={profileImage} 
+                formats={['avif', 'webp']} 
+                alt="Christine Rizzo" 
+                class="w-full h-auto object-cover rounded-sm" 
+                decoding="async" 
+                loading="lazy" 
+                height="800"
+                width="800" 
+              />
+            </div>
+            <div class="md:w-2/5 w-full mt-4 md:mt-0 text-center md:text-left">
+              <p class="text-dark-gray font-light leading-relaxed mb-6">{content.profil.description}</p>
+              <div class="flex justify-center md:justify-start">
+                <a 
+                  href={`/${lang}/profil`} 
+                  class="inline-block bg-transparent text-dark-gray border border-dark-gray px-4 md:px-6 py-2 md:py-3 rounded-sm hover:bg-gray-700 hover:text-white transition duration-300 uppercase text-sm font-light"
+                >
+                {content.profil.cta}
+              </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="full-bleed bg-beige">
+    <section id="honoraires" class="py-16 md:py-24">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center mb-8 md:mb-12 justify-center">
+          <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
+          <h2 class="text-2xl font-light text-gray-600 mx-10 uppercase text-center">{content.honoraires.title}</h2>
+          <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
+        </div>
         <ul class="honoraires-list text-left md:text-center mb-8 md:mb-12 space-y-4 max-w-xl mx-auto">
           {content.honoraires.list.map((item: string, index: number) => (
-            <li set:key={index} class="text-black font-light flex items-center md:justify-center">
-              <CheckCircle class="text-dark-green mr-3 flex-shrink-0 w-5 h-5" aria-hidden="true" />
+            <li set:key={index} class="text-dark-gray font-light flex items-center md:justify-center">
+              <CheckCircle class="text-travailleur mr-3 flex-shrink-0 w-5 h-5" aria-hidden="true" />
               <span>{item}</span>
             </li>
           ))}
         </ul>
-      <div class="text-center">
-        <a href="#" class="inline-block bg-transparent text-black border border-black px-4 md:px-6 py-2 md:py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light">
-          {content.honoraires.cta}
-        </a>
-      </div>
-    </div>
-  </section>
-  </div>
-  
-
-  <!-- CTA Section -->
-  <CTA lang={currentLang} />
-
-  <!-- Articles Section -->
-<div class="full-bleed bg-white">
-  <section id="articles" class="py-12 md:py-20 bg-white">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-light mb-8 md:mb-12 text-center text-black">{content.articlesTitle}</h2>
-      <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 justify-items-center">
-          {recentArticles.map((article) => {
-            const slug = article.slug.split('/').slice(1).join('/');
-            return (
-              <ArticleCard
-                article={article}
-                lang={currentLang}
-                url={`/${lang}/blog/${slug}`}
-                uiTranslations={uiTranslations}
-              />
-            );
-          })}
+        <div class="text-center">
+          <a href="#" class="inline-block bg-transparent text-dark-gray border border-dark-gray px-4 md:px-6 py-2 md:py-3 rounded-sm hover:bg-gray-700 hover:text-white transition duration-300 uppercase text-sm font-light">
+            {content.honoraires.cta}
+          </a>
         </div>
       </div>
-      <div class="text-center mt-8 md:mt-12">
-        <a href={`/${lang}/blog`} class="inline-block bg-transparent text-black border border-black px-4 md:px-6 py-2 md:py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-sm font-light">
-          {content.viewAllArticles}
-        </a>
+    </section>
+  </div>
+
+  <CTA lang={currentLang} uiTranslations={uiTranslations} />
+
+  <div class="full-bleed bg-white">
+    <section id="articles" class="py-16 md:py-24">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center mb-8 md:mb-12 justify-center">
+          <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
+          <h2 class="text-2xl font-light text-gray-600 mx-10 uppercase text-center">{content.articlesTitle}</h2>
+          <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
+        </div>
+        <div class="max-w-6xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 justify-items-center">
+            {recentArticles.map((article) => {
+              const slug = article.slug.split('/').slice(1).join('/');
+              return (
+                <ArticleCard
+                  article={article}
+                  lang={currentLang}
+                  url={`/${lang}/blog/${slug}`}
+                  uiTranslations={uiTranslations}
+                />
+              );
+            })}
+          </div>
+        </div>
+        <div class="text-center mt-8 md:mt-12">
+          <a href={`/${lang}/blog`} class="inline-block bg-transparent text-dark-gray border border-dark-gray px-4 md:px-6 py-2 md:py-3 rounded-sm hover:bg-gray-700 hover:text-white transition duration-300 uppercase text-sm font-light">
+            {content.viewAllArticles}
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
-</div>
+    </section>
+  </div>
 </BaseLayout>

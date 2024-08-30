@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+
+import { Briefcase, Shield, FileText, Check } from 'astro-feather-icons';
+
+
+const honoraires = [
+  {
+    title: "Mon licenciement contester - négocier",
+    icon: Briefcase,
+    description: "Négociation amiable et/ou procédure pour motif grave, licenciement abusif, discriminatoire, manifestement déraisonnable",
+    pricing: "FORFAIT 1 mois de salaire fixe brut",
+    details: [
+      "min = 3000 € htva",
+      "max = 7000 € htva",
+      "paiement mensualisé",
+      "+10% htva du résultat obtenu (tva 21%)"
+    ],
+    services: [
+      "Analyse du dossier",
+      "Calcul des indemnités",
+      "Négociation d'un accord (coaching si négociation par vous en direct)",
+      "Rédaction ou revue de la transaction",
+      "Introduction de la procédure",
+      "Rédaction des conclusions",
+      "Plaidoiries",
+      "Vérification des documents de sortie",
+      "Suivi de l'exécution",
+      "Relations avec l'avocat adverse et la juridiction"
+    ]
+  },
+  {
+    title: "Calculer mon indemnité compensatoire de préavis",
+    icon: FileText,
+    pricing: "FORFAIT 130 € htva (tva 21%)",
+    services: [
+      "Analyse des pièces",
+      "Calcul de l'ICP",
+      "Estimation du net"
+    ]
+  },
+  {
+    title: ["Harcèlement au travail", "Accident du travail"],
+    icon: Shield,
+    pricing: "FORFAIT Sur demande (TVA à 21%)",
+    services: []
+  },
+  {
+    title: "Vérifier",
+    icon: Check,
+    pricing: ["Tarif horaire: 125 € htva", "Forfait sur demande (TVA à 21%)"],
+    services: [
+      "Mon contrat de travail",
+      "Ma clause de non concurrence",
+      "La modification de mon contrat",
+      "Mon statut",
+      "Ma lettre de démission et durée de mon préavis",
+      "Mon droit au congé parental, crédit-temps,….",
+      "Les conditions de mon télétravail",
+      "etc."
+    ]
+  }
+];
+---
+
+<BaseLayout 
+  title="Honoraires - Christine Rizzo"
+  description="Informations sur les honoraires et tarifs de Christine Rizzo"
+  lang={lang}>
+  <main class="container mx-auto px-4 py-12">
+    <h1 class="text-4xl font-light mb-12 text-center text-black">Honoraires et tarifs</h1>
+    
+    {honoraires.map((service) => (
+      <div class="mb-12 rounded-lg overflow-hidden shadow-lg flex flex-col md:flex-row">
+        <div class="md:w-1/2 p-6 bg-travailleur text-white">
+          <div class="flex items-start mb-4">
+            <service.icon class="w-8 h-8 mr-4 mt-1 flex-shrink-0" />
+            <div>
+              {Array.isArray(service.title) ? (
+                service.title.map((line, index) => (
+                  <h2 class={`text-2xl font-semibold ${index > 0 ? 'mt-2' : ''}`}>{line}</h2>
+                ))
+              ) : (
+                <h2 class="text-2xl font-semibold">{service.title}</h2>
+              )}
+            </div>
+          </div>
+          {service.description && <p class="mb-4 opacity-90">{service.description}</p>}
+          {Array.isArray(service.pricing) ? (
+            service.pricing.map((line, index) => (
+              <p class={`font-medium text-accent ${index > 0 ? 'mt-2' : 'mb-4'}`}>{line}</p>
+            ))
+          ) : (
+            <p class="font-medium text-accent mb-4">{service.pricing}</p>
+          )}
+          {service.details && (
+            <ul class="list-disc list-inside mb-4 opacity-90">
+              {service.details.map((detail) => (
+                <li>{detail}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+        <div class="md:w-1/2 p-6 bg-white">
+          {service.services.length > 0 && (
+            <div>
+              <h3 class="font-medium mb-4 text-black">Services inclus :</h3>
+              <ul class="space-y-2">
+                {service.services.map((item) => (
+                  <li class="flex items-start">
+                    <span class="text-travailleur mr-3 text-xl">•</span>
+                    <span class="text-dark-gray">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </div>
+    ))}
+    
+    <p class="mt-12 text-center text-dark-gray">
+      Pour plus d'informations sur nos tarifs ou pour obtenir un devis personnalisé, n'hésitez pas à nous contacter.
+    </p>
+
+    <div class="mt-8 text-center">
+      <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/decarbonaction/meeting'})" class="bg-accent text-black px-6 py-3 rounded-sm hover:bg-black hover:text-accent transition duration-300 uppercase text-sm font-light">
+        Demander un devis
+      </button>
+    </div>
+  </main>
+  
+</BaseLayout>
+
+<style>
+  .bg-travailleur {
+    background-color: #068D9D;
+  }
+  .text-travailleur {
+    color: #068D9D;
+  }
+</style>

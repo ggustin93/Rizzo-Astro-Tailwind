@@ -1,5 +1,4 @@
 ---
-// src/pages/[...lang]/travailleurs.astro
 import { getEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { Briefcase, Shield, FileText, ChevronRight, Check } from 'astro-feather-icons';
@@ -27,15 +26,15 @@ const iconMap = {
   <main class="container mx-auto px-4 py-16">
     <h1 class="text-4xl font-light mb-12 text-black text-center">{content.title}</h1>
     
-    <div class="flex flex-col md:flex-row">
+    <div class="flex flex-col md:flex-row bg-light-travailleur">
       <!-- Left Column (2/3) -->
-      <div class="md:w-2/3 bg-light-accent p-8 rounded-sm">
+      <div class="md:w-2/3 bg-light-accent p-8 rounded-sm text-white">
         <p class="mb-6 text-dark-gray font-light">{content.description}</p>
         <ul class="space-y-2 mb-6">
           {content.questions.map((question: string, index: number) => (
             <li set:key={index} class="flex items-start">
-              <ChevronRight class="w-5 h-5 mr-2 text-black flex-shrink-0 mt-1" />
-              <span class="text-dark-gray font-light">{question}</span>
+              <ChevronRight class="w-5 h-5 mr-2 text-travailleur flex-shrink-0 mt-1" />
+              <span class="text-gray-900 font-light">{question}</span>
             </li>
           ))}
         </ul>
@@ -43,8 +42,8 @@ const iconMap = {
         <ul class="space-y-2">
           {content.focusPoints.map((point: string, index: number) => (
             <li set:key={index} class="flex items-center">
-              <Check class="w-5 h-5 mr-2 text-black" />
-              <span class="text-dark-gray font-light">{point}</span>
+              <Check class="w-5 h-5 mr-2 text-travailleur" />
+              <span class="text-gray-900 font-light">{point}</span>
             </li>
           ))}
         </ul>
@@ -58,7 +57,7 @@ const iconMap = {
             const IconComponent = iconMap[service.icon as keyof typeof iconMap];
             return (
               <li set:key={index} class="flex items-start">
-                <IconComponent class="w-8 h-8 mr-4 text-dark-green flex-shrink-0" />
+                <IconComponent class="w-8 h-8 mr-4 text-travailleur flex-shrink-0" />
                 <span class="text-dark-gray font-light">{service.text}</span>
               </li>
             );

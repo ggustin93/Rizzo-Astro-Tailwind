@@ -3,18 +3,12 @@
 import { Image } from 'astro:assets';
 import logoImage from '../assets/images/logo_crizzo_calli3.svg';
 
-const supportedLanguages = ['fr', 'en', 'it'] as const;
-type SupportedLanguage = typeof supportedLanguages[number];
-
-export interface Props {
-  currentLang: SupportedLanguage;
-}
-
-const { currentLang } = Astro.props as Props;
+const { pathname } = Astro.url;
+const currentLang = pathname.split('/')[1] || 'fr'; // Par défaut à 'fr' si aucune langue n'est trouvée
 
 const translations = {
   fr: {
-    copyright: "© 2023 Christine Rizzo. Tous droits réservés.",
+    copyright: "© 2024 Christine Rizzo",
     expertise: "Expertise",
     profil: "Profil",
     honoraires: "Honoraires",
@@ -30,7 +24,7 @@ const translations = {
     ecoDesignPwablo: "Eco-design & Pwablo"
   },
   en: {
-    copyright: "© 2023 Christine Rizzo. All rights reserved.",
+    copyright: "© 2024 Christine Rizzo",
     expertise: "Expertise",
     profil: "Profile",
     honoraires: "Fees",
@@ -46,7 +40,7 @@ const translations = {
     ecoDesignPwablo: "Eco-design & Pwablo"
   },
   it: {
-    copyright: "© 2023 Christine Rizzo. Tutti i diritti riservati.",
+    copyright: "© 2024 Christine Rizzo",
     expertise: "Competenza",
     profil: "Profilo",
     honoraires: "Onorari",
@@ -65,7 +59,7 @@ const translations = {
 
 const t = translations[currentLang as keyof typeof translations] || translations.fr;
 
-const isHomePage = Astro.url.pathname === `/${currentLang}` || Astro.url.pathname === `/${currentLang}/`;
+const isHomePage = pathname === `/${currentLang}` || pathname === `/${currentLang}/`;
 
 const mainLinks = [
   { href: isHomePage ? "#expertise" : `/${currentLang}#expertise`, label: t.expertise },
@@ -76,8 +70,8 @@ const mainLinks = [
 ];
 
 const legalLinks = [
-  { href: "#", label: t.legalNotice },
-  { href: "#", label: t.privacyPolicy }
+  { href: `/${currentLang}/legal`, label: t.legalNotice },
+  { href: `/${currentLang}/privacy`, label: t.privacyPolicy }
 ];
 
 const secondaryLinks = [
@@ -86,37 +80,40 @@ const secondaryLinks = [
   { href: "/credits", label: t.credits } // Ajout du lien vers la page des crédits
 ];
 ---
-<div class="full-bleed bg-light-gray">
-  <footer class="bg-light-gray text-dark-gray py-8">
+
+<div class="full-bleed bg-beige">
+  <footer class="bg-beige text-dark-gray py-8">
     <div class="container mx-auto px-4 text-center">
       <div class="flex flex-col items-center">
-        <p class="text-sm mb-4 text-gray-600">© 2024 Christine Rizzo</p>
+        <p class="text-sm mb-4 text-dark-gray">{t.copyright}</p>
         <div class="logo text-center mb-6">
           <Image src={logoImage} alt="Christine Rizzo Logo" class="h-16 md:h-24 w-auto" />
         </div>
-        <div class="w-full md:w-auto">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <details class="mb-4 md:mb-0">
-              <summary class="cursor-pointer text-black hover:underline transition duration-300 px-3 py-2 text-center">{t.legalPages}</summary>
-              <nav class="flex flex-col items-center space-y-2">
-                {legalLinks.map(link => (
-                  <a href={link.href} class="text-gray-600 hover:underline transition duration-300 px-3 py-2 text-center">{link.label}</a>
-                ))}
-              </nav>
-            </details>
-            <details class="mb-4 md:mb-0">
+        <div class="w-full">
+          <div class="hidden md:flex justify-center space-x-4 mb-4">
+            {mainLinks.map(link => (
+              <a href={link.href} class="text-dark-gray hover:underline transition duration-300">{link.label}</a>
+            ))}
+          </div>
+          <div class="hidden md:flex justify-center space-x-4">
+            {[...legalLinks, ...secondaryLinks].map(link => (
+              <a href={link.href} class="text-dark-gray hover:underline transition duration-300">{link.label}</a>
+            ))}
+          </div>
+          <div class="md:hidden">
+            <details class="mb-4">
               <summary class="cursor-pointer text-black hover:underline transition duration-300 px-3 py-2 text-center">{t.navigation}</summary>
               <nav class="flex flex-col items-center space-y-2">
                 {mainLinks.map(link => (
-                  <a href={link.href} class="text-gray-600 hover:underline transition duration-300 px-3 py-2 text-center">{link.label}</a>
+                  <a href={link.href} class="text-dark-gray hover:underline transition duration-300 px-3 py-2 text-center">{link.label}</a>
                 ))}
               </nav>
             </details>
-            <details>
-              <summary class="cursor-pointer text-black hover:underline transition duration-300 px-3 py-2 text-center">{t.ecoDesignPwablo}</summary>
+            <details class="mb-4">
+              <summary class="cursor-pointer text-black hover:underline transition duration-300 px-3 py-2 text-center">{t.legalPages}</summary>
               <nav class="flex flex-col items-center space-y-2">
-                {secondaryLinks.map(link => (
-                  <a href={link.href} class="text-gray-600 hover:underline transition duration-300 px-3 py-2 text-center">{link.label}</a>
+                {[...legalLinks, ...secondaryLinks].map(link => (
+                  <a href={link.href} class="text-dark-gray hover:underline transition duration-300 px-3 py-2 text-center">{link.label}</a>
                 ))}
               </nav>
             </details>

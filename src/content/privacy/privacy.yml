@@ -1,0 +1,116 @@
+fr:
+  title: "Politique de confidentialité"
+  content:
+    - title: "Objet"
+      text: "La présente politique de confidentialité définit et informe les utilisateurs du site internet www.crizzo-avocate.be des modalités de traitement de leurs données personnelles par la responsable du traitement, Maître Christine Rizzo."
+
+    - title: "Identité et coordonnées de la responsable du traitement"
+      text: "Maître Christine Rizzo\nAvocate au Barreau de Bruxelles\n[Adresse à compléter]\nAdresse mail : [adresse email à compléter]"
+
+    - title: "Données personnelles traitées"
+      text: "Dans le cadre de l'utilisation du site web et de ses services, la responsable du traitement est amenée à traiter les données personnelles suivantes :\n- Données techniques : adresse IP, données de connexion et de navigation\n- Données communiquées volontairement par l'utilisateur : nom, prénom, adresse email, numéro de téléphone, informations transmises via les formulaires de contact"
+
+    - title: "Finalités du traitement"
+      text: "Les données personnelles sont traitées par la responsable du traitement dans le cadre des finalités suivantes :\n- Fourniture des services proposés sur le site web\n- Gestion des demandes de contact des utilisateurs\n- Amélioration de la qualité du site web et des services proposés"
+
+    - title: "Fondement légal du traitement"
+      text: "Le traitement des données est fondé sur :\n- L'intérêt légitime de la responsable du traitement\n- Le contrat entre la responsable du traitement et l'utilisateur pour la fourniture des services"
+
+    - title: "Destinataires des données personnelles"
+      text: "Les données personnelles peuvent être partagées avec des prestataires soumis à des clauses de confidentialité assurant la protection des données personnelles."
+
+    - title: "Durée de conservation"
+      text: "Les données à caractère personnel sont conservées pendant la durée nécessaire aux finalités poursuivies et conformément aux exigences légales et réglementaires."
+
+    - title: "Sécurité"
+      text: "La responsable du traitement met en œuvre des mesures de sécurité pour protéger les données personnelles contre les altérations, destructions et accès non autorisés."
+
+    - title: "Exercice des droits"
+      text: "Conformément au RGPD, l'utilisateur dispose des droits d'accès, de rectification, d'effacement, de limitation du traitement, d'opposition et de portabilité de ses données."
+
+    - title: "Modifications de la politique de confidentialité"
+      text: "La présente politique de confidentialité peut être amenée à évoluer. La responsable du traitement invitera les utilisateurs à consulter la dernière version mise à jour sur le site web."
+
+    - title: "Réclamations"
+      text: "L'utilisateur dispose du droit d'introduire une réclamation auprès de l'Autorité de protection des données (Rue de la Presse, 35, 1000 Bruxelles) s'il considère que le traitement de ses données personnelles constitue une violation du RGPD."
+
+    - title: "Droit applicable et juridiction compétente"
+      text: "La présente politique de confidentialité est régie par le droit belge. En cas de litige, les tribunaux belges seront compétents, sauf dispositions d'ordre public contraires."
+
+en:
+  title: "Privacy Policy"
+  content:
+    - title: "Purpose"
+      text: "This privacy policy defines and informs users of the website www.crizzo-avocate.be about the processing of their personal data by the data controller, Maître Christine Rizzo."
+
+    - title: "Identity and contact details of the data controller"
+      text: "Maître Christine Rizzo\nLawyer at the Brussels Bar\n[Address to be completed]\nEmail address: [email address to be completed]"
+
+    - title: "Personal data processed"
+      text: "In the context of using the website and its services, the data controller processes the following personal data:\n- Technical data: IP address, connection and navigation data\n- Data voluntarily provided by the user: name, first name, email address, phone number, information transmitted via contact forms"
+
+    - title: "Purposes of processing"
+      text: "Personal data is processed by the data controller for the following purposes:\n- Provision of services offered on the website\n- Management of user contact requests\n- Improvement of the quality of the website and services offered"
+
+    - title: "Legal basis for processing"
+      text: "The processing of data is based on:\n- The legitimate interest of the data controller\n- The contract between the data controller and the user for the provision of services"
+
+    - title: "Recipients of personal data"
+      text: "Personal data may be shared with service providers subject to confidentiality clauses ensuring the protection of personal data."
+
+    - title: "Retention period"
+      text: "Personal data is retained for the period necessary for the purposes pursued and in accordance with legal and regulatory requirements."
+
+    - title: "Security"
+      text: "The data controller implements security measures to protect personal data against alteration, destruction and unauthorized access."
+
+    - title: "Exercise of rights"
+      text: "In accordance with the GDPR, the user has the rights of access, rectification, erasure, restriction of processing, opposition and portability of their data."
+
+    - title: "Changes to the privacy policy"
+      text: "This privacy policy may evolve. The data controller will invite users to consult the latest updated version on the website."
+
+    - title: "Complaints"
+      text: "The user has the right to lodge a complaint with the Data Protection Authority (Rue de la Presse, 35, 1000 Brussels) if they consider that the processing of their personal data constitutes a violation of the GDPR."
+
+    - title: "Applicable law and jurisdiction"
+      text: "This privacy policy is governed by Belgian law. In case of dispute, Belgian courts will have jurisdiction, unless otherwise provided by public policy provisions."
+
+it:
+  title: "Politica sulla privacy"
+  content:
+    - title: "Oggetto"
+      text: "La presente politica sulla privacy definisce e informa gli utenti del sito web www.crizzo-avocate.be sulle modalità di trattamento dei loro dati personali da parte del responsabile del trattamento, Maître Christine Rizzo."
+
+    - title: "Identità e contatti del responsabile del trattamento"
+      text: "Maître Christine Rizzo\nAvvocato presso il Foro di Bruxelles\n[Indirizzo da completare]\nIndirizzo email: [indirizzo email da completare]"
+
+    - title: "Dati personali trattati"
+      text: "Nell'ambito dell'utilizzo del sito web e dei suoi servizi, il responsabile del trattamento tratta i seguenti dati personali:\n- Dati tecnici: indirizzo IP, dati di connessione e di navigazione\n- Dati forniti volontariamente dall'utente: nome, cognome, indirizzo email, numero di telefono, informazioni trasmesse tramite i moduli di contatto"
+
+    - title: "Finalità del trattamento"
+      text: "I dati personali sono trattati dal responsabile del trattamento per le seguenti finalità:\n- Fornitura dei servizi offerti sul sito web\n- Gestione delle richieste di contatto degli utenti\n- Miglioramento della qualità del sito web e dei servizi offerti"
+
+    - title: "Base giuridica del trattamento"
+      text: "Il trattamento dei dati si basa su:\n- L'interesse legittimo del responsabile del trattamento\n- Il contratto tra il responsabile del trattamento e l'utente per la fornitura dei servizi"
+
+    - title: "Destinatari dei dati personali"
+      text: "I dati personali possono essere condivisi con fornitori di servizi soggetti a clausole di riservatezza che garantiscono la protezione dei dati personali."
+
+    - title: "Periodo di conservazione"
+      text: "I dati personali sono conservati per il periodo necessario alle finalità perseguite e in conformità con i requisiti legali e normativi."
+
+    - title: "Sicurezza"
+      text: "Il responsabile del trattamento implementa misure di sicurezza per proteggere i dati personali da alterazioni, distruzioni e accessi non autorizzati."
+
+    - title: "Esercizio dei diritti"
+      text: "In conformità con il GDPR, l'utente dispone dei diritti di accesso, rettifica, cancellazione, limitazione del trattamento, opposizione e portabilità dei propri dati."
+
+    - title: "Modifiche alla politica sulla privacy"
+      text: "La presente politica sulla privacy può essere soggetta a modifiche. Il responsabile del trattamento inviterà gli utenti a consultare l'ultima versione aggiornata sul sito web."
+
+    - title: "Reclami"
+      text: "L'utente ha il diritto di presentare un reclamo all'Autorità per la protezione dei dati (Rue de la Presse, 35, 1000 Bruxelles) se ritiene che il trattamento dei suoi dati personali costituisca una violazione del GDPR."
+
+    - title: "Legge applicabile e giurisdizione competente"
+      text: "La presente politica sulla privacy è regolata dal diritto belga. In caso di controversia, i tribunali belgi saranno competenti, salvo disposizioni di ordine pubblico contrarie."

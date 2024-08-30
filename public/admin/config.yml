@@ -225,3 +225,51 @@ collections:
             name: "it"
             widget: "object"
             fields: *profileFields
+
+  - name: "legal"
+    label: "Mentions légales"
+    files:
+      - file: "src/content/legal/legal.yml"
+        name: "legal"
+        label: "Contenu des mentions légales"
+        i18n:
+          structure: single_file
+        fields:
+          - label: "Français"
+            name: "fr"
+            widget: "object"
+            fields: &legalFields
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Contenu", name: "content", widget: "markdown"}
+          - label: "English"
+            name: "en"
+            widget: "object"
+            fields: *legalFields
+          - label: "Italiano"
+            name: "it"
+            widget: "object"
+            fields: *legalFields
+
+  - name: "privacy"
+    label: "Politique de confidentialité"
+    files:
+      - file: "src/content/privacy/privacy.yml"
+        name: "privacy"
+        label: "Contenu de la politique de confidentialité"
+        i18n:
+          structure: single_file
+        fields:
+          - label: "Français"
+            name: "fr"
+            widget: "object"
+            fields: &privacyFields
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Contenu", name: "content", widget: "markdown"}
+          - label: "English"
+            name: "en"
+            widget: "object"
+            fields: *privacyFields
+          - label: "Italiano"
+            name: "it"
+            widget: "object"
+            fields: *privacyFields

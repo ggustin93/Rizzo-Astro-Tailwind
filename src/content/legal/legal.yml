@@ -1,0 +1,99 @@
+fr:
+  title: "Mentions légales"
+  content:
+    - title: "Éditeur"
+      text: |
+        Le site crizzo-avocate.be est édité par :
+
+        Maître Christine Rizzo
+        Avocate au Barreau de Bruxelles
+        [Adresse à compléter]
+        [Numéro de téléphone à compléter]
+        Numéro d'entreprise : [à compléter]
+    - title: "Hébergeur"
+      text: "Le Site est hébergé par [Nom de l'hébergeur à compléter], dont le siège social est situé [Adresse de l'hébergeur à compléter]."
+    - title: "Contact"
+      text: "Pour toute question ou demande concernant le site, vous pouvez contacter l'éditeur à l'adresse mail suivante : [adresse email à compléter]"
+    - title: "Propriété intellectuelle"
+      text: "L'intégralité du contenu du site crizzo-avocate.be (textes, images, vidéos...) est la propriété de l'éditeur et est protégée par le droit d'auteur. La reproduction, diffusion ou copie de tout ou partie du contenu est strictement interdite et est susceptible de constituer un délit de contrefaçon."
+    - title: "Données personnelles"
+      text: "Le traitement des données personnelles collectées par le biais du site web est défini dans la Politique de confidentialité consultable sur le site."
+    - title: "Cookies"
+      text: "Le site crizzo-avocate.be n'utilise que des cookies techniques et fonctionnels nécessaires au bon fonctionnement du site."
+    - title: "Responsabilité"
+      text: "Bien que le contenu du site soit rédigé avec soin, l'éditeur décline toute responsabilité concernant les éventuelles inexactitudes ou omissions."
+    - title: "Droit applicable et juridiction compétente"
+      text: "Les présentes mentions légales sont régies par le droit belge. En cas de différend, les tribunaux belges seront seuls compétents."
+    - title: "Crédits"
+      text: "Le site crizzo-avocate.be a été créé par Guillaume Gustin (https://guillaumegustin.com/, https://pwablo.be/)"
+en:
+  title: "Legal Notice"
+  content: |
+    ## Publisher
+    The website crizzo-avocate.be is published by:
+
+    Maître Christine Rizzo
+    Lawyer at the Brussels Bar
+    [Address to be completed]
+    [Phone number to be completed]
+    Company number: [to be completed]
+
+    ## Hosting
+    The Site is hosted by [Host name to be completed], whose registered office is located at [Host address to be completed].
+
+    ## Contact
+    For any questions or requests regarding the site, you can contact the publisher at the following email address: [email address to be completed]
+
+    ## Intellectual property
+    The entire content of the crizzo-avocate.be website (texts, images, videos...) is the property of the publisher and is protected by copyright. Reproduction, distribution or copying of all or part of the content is strictly prohibited and may constitute a copyright infringement.
+
+    ## Personal data
+    The processing of personal data collected through the website is defined in the Privacy Policy available on the site.
+
+    ## Cookies
+    The crizzo-avocate.be website only uses technical and functional cookies necessary for the proper functioning of the site.
+
+    ## Liability
+    Although the content of the site is carefully written, the publisher declines all responsibility for any inaccuracies or omissions.
+
+    ## Applicable law and jurisdiction
+    These legal notices are governed by Belgian law. In case of dispute, Belgian courts will have sole jurisdiction.
+
+    ## Credits
+    The crizzo-avocate.be website was created by Guillaume Gustin (https://guillaumegustin.com/, https://pwablo.be/)
+
+it:
+  title: "Note legali"
+  content: |
+    ## Editore
+    Il sito crizzo-avocate.be è pubblicato da:
+
+    Maître Christine Rizzo
+    Avvocato presso il Foro di Bruxelles
+    [Indirizzo da completare]
+    [Numero di telefono da completare]
+    Numero di impresa: [da completare]
+
+    ## Hosting
+    Il Sito è ospitato da [Nome dell'host da completare], la cui sede legale si trova a [Indirizzo dell'host da completare].
+
+    ## Contatto
+    Per qualsiasi domanda o richiesta riguardante il sito, è possibile contattare l'editore al seguente indirizzo email: [indirizzo email da completare]
+
+    ## Proprietà intellettuale
+    L'intero contenuto del sito crizzo-avocate.be (testi, immagini, video...) è di proprietà dell'editore ed è protetto dal diritto d'autore. La riproduzione, la distribuzione o la copia di tutto o parte del contenuto è severamente vietata e può costituire una violazione del diritto d'autore.
+
+    ## Dati personali
+    Il trattamento dei dati personali raccolti attraverso il sito web è definito nella Politica sulla privacy consultabile sul sito.
+
+    ## Cookie
+    Il sito crizzo-avocate.be utilizza solo cookie tecnici e funzionali necessari per il corretto funzionamento del sito.
+
+    ## Responsabilità
+    Sebbene il contenuto del sito sia redatto con cura, l'editore declina ogni responsabilità per eventuali inesattezze o omissioni.
+
+    ## Legge applicabile e giurisdizione competente
+    Le presenti note legali sono regolate dal diritto belga. In caso di controversia, i tribunali belgi saranno gli unici competenti.
+
+    ## Crediti
+    Il sito crizzo-avocate.be è stato creato da Guillaume Gustin (https://guillaumegustin.com/, https://pwablo.be/)

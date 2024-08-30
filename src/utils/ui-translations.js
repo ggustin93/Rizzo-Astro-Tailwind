@@ -12,6 +12,12 @@ export const uiTranslations = {
       blogTitle: "Articles",
       noArticles: "Aucun article trouvé.",
       allCategories: "Toutes catégories",
+      ctaTitle: "Une question en droit du travail?",
+      ctaSubtitle: "Contactez-moi. Je suis à votre écoute.",
+      takeAppointment: "Prendre RDV",
+      call: "Appeler",
+      whatsapp: "WhatsApp",
+      email: "Email",
 
       // Ajoutez d'autres traductions UI nécessaires ici
     },
@@ -26,7 +32,12 @@ export const uiTranslations = {
       blogTitle: "Blog Posts",
       noArticles: "No articles found.",
       allCategories: "All categories",
-
+      ctaTitle: "Do you have a question about labor law?",
+      ctaSubtitle: "Contact me. I'm here to listen.",
+      takeAppointment: "Schedule Appointment",
+      call: "Call",
+      whatsapp: "WhatsApp",
+      email: "Email",
       // Ajoutez d'autres traductions UI nécessaires ici
     },
     it: {
@@ -39,7 +50,13 @@ export const uiTranslations = {
       copyright: "© 2024 Christine Rizzo",
       blogTitle: "Articoli",
       noArticles: "Nessun articolo trovato.",
-      allCategories: "Tutte le categorie"
+      allCategories: "Tutte le categorie",
+      ctaTitle: "Hai una domanda sul diritto del lavoro?",
+      ctaSubtitle: "Contattami. Sono qui per ascoltarti.",
+      takeAppointment: "Prendere Appuntamento",
+      call: "Chiamare",
+      whatsapp: "WhatsApp",
+      email: "Email",
       // Ajoutez d'autres traductions UI nécessaires ici
     }
   };

@@ -56,9 +56,13 @@
     @apply w-full h-px bg-black/20 rounded-full;
   }
 
+  .bg-opacity-30 {
+    opacity: 0.3;
+  }
+  
   .bg-svg-pattern {
-    background-image: url('/src/assets/images/waves-pattern.svg');
-    background-repeat: repeat;
+    /* background-image: url('/src/assets/images/waves-pattern.svg');
+    background-repeat: repeat;*/
   }
 
 }

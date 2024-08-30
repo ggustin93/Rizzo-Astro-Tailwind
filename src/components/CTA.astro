@@ -1,42 +1,40 @@
 ---
+// src/components/CTA.astro
 import { Image } from 'astro:assets';
 import { Calendar, Phone, MessageCircle, Mail } from 'astro-feather-icons';
 import ctaIllustration from '../assets/images/illustration-cta.svg';
 
-interface Props {
-  lang: 'fr' | 'en' | 'it';
-}
-
-const { lang = 'fr' } = Astro.props;
+const { pathname } = Astro.url;
+const lang = pathname.split('/')[1] || 'fr'; // Par défaut à 'fr' si aucune langue n'est trouvée
 
 const translations = {
   fr: {
-    title: "Une question en droit du travail?",
-    subtitle: "Contactez-moi. Je suis à votre écoute.",
-    takeAppointment: "Prendre RDV",
+    takeAppointment: "Prendre rendez-vous",
     call: "Appeler",
     whatsapp: "WhatsApp",
     email: "Email",
+    ctaTitle: "Contactez-moi",
+    ctaSubtitle: "Je suis disponible pour discuter de vos besoins."
   },
   en: {
-    title: "Do you have a question about labor law?",
-    subtitle: "Contact me. I'm here to listen.",
-    takeAppointment: "Schedule Appointment",
+    takeAppointment: "Take Appointment",
     call: "Call",
     whatsapp: "WhatsApp",
     email: "Email",
+    ctaTitle: "Contact Me",
+    ctaSubtitle: "I am available to discuss your needs."
   },
   it: {
-    title: "Hai una domanda sul diritto del lavoro?",
-    subtitle: "Contattami. Sono qui per ascoltarti.",
-    takeAppointment: "Prendere Appuntamento",
+    takeAppointment: "Prendi appuntamento",
     call: "Chiamare",
     whatsapp: "WhatsApp",
     email: "Email",
+    ctaTitle: "Contattami",
+    ctaSubtitle: "Sono disponibile per discutere delle tue esigenze."
   }
 };
 
-const t = translations[lang];
+const t = translations[lang as keyof typeof translations] || translations.fr;
 
 const buttons = [
   { icon: Calendar, text: t.takeAppointment, attr: 'data-calendly' },
@@ -46,21 +44,20 @@ const buttons = [
 ];
 ---
 
-<div class="full-bleed bg-beige bg-svg-pattern">
+<div class="full-bleed bg-employeur">
   <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8">
     <div class="container mx-auto">
       <div class="flex flex-col md:flex-row items-center justify-between">
-        
         <div class="md:w-1/2 text-center md:text-left">
-          <h2 class="text-3xl md:text-4xl mb-4 font-light">{t.title}</h2>
-          <p class="mb-8 text-lg md:text-xl font-light">{t.subtitle}</p>
+          <h2 class="text-3xl md:text-4xl mb-4 font-light text-white">{t.ctaTitle}</h2>
+          <p class="mb-8 text-lg md:text-xl font-light text-white">{t.ctaSubtitle}</p>
           <div class="grid grid-cols-2 gap-4 max-w-xl mx-auto md:mx-0">
             {buttons.map(({ icon: Icon, text, attr }) => (
               <button
-                class="bg-transparent text-black border border-black px-3 py-2 md:px-4 md:py-3 rounded-sm hover:bg-black hover:text-white transition duration-300 uppercase text-xs md:text-sm font-light flex items-center justify-center"
+                class="bg-transparent text-white border border-white px-3 py-2 md:px-4 md:py-3 rounded-sm hover:bg-accent hover:text-employeur hover:border-accent transition duration-300 uppercase text-xs md:text-sm font-light flex items-center justify-center group"
                 {...attr && { [attr]: true }}
               >
-                <Icon class="w-6 h-6 mr-2 text-black font-bold" /> {text}
+                <Icon class="w-6 h-6 mr-2 text-white group-hover:text-employeur transition-colors duration-300" /> {text}
               </button>
             ))}
           </div>
