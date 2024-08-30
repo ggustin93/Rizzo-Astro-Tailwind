@@ -62,11 +62,11 @@ const t = translations[currentLang as keyof typeof translations] || translations
 const isHomePage = pathname === `/${currentLang}` || pathname === `/${currentLang}/`;
 
 const mainLinks = [
-  { href: isHomePage ? "#expertise" : `/${currentLang}#expertise`, label: t.expertise },
-  { href: isHomePage ? "#profil" : `/${currentLang}#profil`, label: t.profil },
-  { href: isHomePage ? "#honoraires" : `/${currentLang}#honoraires`, label: t.honoraires },
-  { href: isHomePage ? "#articles" : `/${currentLang}#articles`, label: t.articles },
-  { href: isHomePage ? "#contact" : `/${currentLang}#contact`, label: t.contact },
+  { href: isHomePage ? "#expertise" : `/${currentLang}#expertise`, label: t.expertise.toUpperCase() },
+  { href: isHomePage ? "#profil" : `/${currentLang}#profil`, label: t.profil.toUpperCase() },
+  { href: isHomePage ? "#honoraires" : `/${currentLang}#honoraires`, label: t.honoraires.toUpperCase() },
+  { href: isHomePage ? "#articles" : `/${currentLang}#articles`, label: t.articles.toUpperCase() },
+  { href: isHomePage ? "#contact" : `/${currentLang}#contact`, label: t.contact.toUpperCase() },
 ];
 
 const legalLinks = [
@@ -76,8 +76,7 @@ const legalLinks = [
 
 const secondaryLinks = [
   { href: "https://pwablo.be", label: t.design },
-  { href: "https://www.ecoindex.fr/resultat/?id=19de93fb-067c-4682-a25e-e37636dd5e6d", label: t.ecoDesign },
-  { href: "/credits", label: t.credits }
+  { href: "https://www.ecoindex.fr/resultat/?id=19de93fb-067c-4682-a25e-e37636dd5e6d", label: t.ecoDesign }
 ];
 ---
 
@@ -92,12 +91,13 @@ const secondaryLinks = [
         <div class="w-full">
           <div class="hidden md:flex justify-center space-x-4 mb-4">
             {mainLinks.map(link => (
-              <a href={link.href} class="text-dark-gray hover:underline transition duration-300">{link.label}</a>
+              <a href={link.href} class="text-gray-950 text-sm hover:underline transition duration-300">{link.label}</a>
             ))}
           </div>
+          <br>
           <div class="hidden md:flex justify-center space-x-4">
             {[...legalLinks, ...secondaryLinks].map(link => (
-              <a href={link.href} class="text-dark-gray hover:underline transition duration-300">{link.label}</a>
+              <a href={link.href} class="text-dark-gray text-sm hover:underline transition duration-300">{link.label}</a>
             ))}
           </div>
           <div class="md:hidden">

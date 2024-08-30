@@ -94,3 +94,7 @@ fr:
     cta: En savoir plus
   articlesTitle: Ressources
   viewAllArticles: "Voir toutes les ressources"
+  mentionsLegales:
+    title: Mentions Légales
+    content:
+      - Polices fournies par Web Fonts sous licence CC BY 4.0
