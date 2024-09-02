@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { Briefcase, Shield, FileText, UserPlus, Search, AlertTriangle } from 'astro-feather-icons';
+import { Briefcase, Shield, FileText, UserPlus, Search } from 'astro-feather-icons';
 
 export async function getStaticPaths() {
   return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
@@ -117,7 +117,7 @@ const services = [
   },
   {
     title: ["Plainte pour harcèlement au travail", "Inspection", "Accident du travail"],
-    icon: AlertTriangle,
+    icon: Shield,
     pricing: "FORFAIT Sur demande",
     details: [
       "(TVA à 21%)"
