@@ -2,7 +2,7 @@
 // src/components/CTA.astro
 import { Image } from 'astro:assets';
 import { Calendar, Phone, MessageCircle, Mail } from 'astro-feather-icons';
-import ctaIllustration from '../assets/images/illustration-cta.svg';
+import ctaIllustration from '../assets/images/illustration_cta_2.svg';
 
 const { pathname } = Astro.url;
 const lang = pathname.split('/')[1] || 'fr'; // Par défaut à 'fr' si aucune langue n'est trouvée
@@ -54,10 +54,10 @@ const buttons = [
           <div class="grid grid-cols-2 gap-4 max-w-xl mx-auto md:mx-0">
             {buttons.map(({ icon: Icon, text, attr }) => (
               <button
-                class="bg-transparent text-white border border-white px-3 py-2 md:px-4 md:py-3 rounded-sm hover:bg-accent hover:text-employeur hover:border-accent transition duration-300 uppercase text-xs md:text-sm font-light flex items-center justify-center group"
+                class="bg-transparent text-white border border-white px-3 py-2 md:px-4 md:py-3 rounded-sm hover:bg-travailleur  hover:text-white transition duration-300 uppercase text-xs md:text-sm font-light flex items-center justify-center group"
                 {...attr && { [attr]: true }}
               >
-                <Icon class="w-6 h-6 mr-2 text-white group-hover:text-employeur transition-colors duration-300" /> {text}
+                <Icon class="w-6 h-6 mr-2 text-white group-hover:text-white transition-colors duration-300" /> {text}
               </button>
             ))}
           </div>

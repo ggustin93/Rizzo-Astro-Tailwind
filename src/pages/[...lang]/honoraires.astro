@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import { FileText, Briefcase, User, Shield, AlertTriangle, YouTube, Users as UsersIcon } from 'astro-feather-icons2';
+
+export async function getStaticPaths() {
+  return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const honoraires = await getEntry('honoraires', 'honoraires');
+const content = honoraires.data[lang as keyof typeof honoraires.data];
+
+const iconMap = {
+  FileText,
+  Briefcase,
+  UsersIcon,
+  User,
+  Shield,
+  AlertTriangle,
+  YouTube
+};
+
+function getYouTubeID(url: string) {
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  const match = url.match(regExp);
+  return (match && match[2].length === 11) ? match[2] : null;
+}
+---
+
+<BaseLayout title={content.title} description={content.subtitle} lang={lang}>
+  <main class="container mx-auto px-4 py-12">
+    <h1 class="text-4xl font-light mb-4 text-center text-black">{content.title}</h1>
+    <p class="text-xl mb-12 text-center text-dark-gray">{content.subtitle}</p>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-light mb-6 text-black flex items-center">
+        <Briefcase class="w-6 h-6 mr-2 text-employeur" />
+        {content.tarifs.title}
+      </h2>
+      <div class="flex flex-col md:flex-row gap-4">
+        <a href={`/${lang}/tarif_travailleur`} class="flex-1 bg-travailleur text-white p-6 rounded-sm text-center hover:bg-opacity-90 transition duration-300">
+          {content.tarifs.travailleur}
+        </a>
+        <a href={`/${lang}/tarif_employeur`} class="flex-1 bg-employeur text-white p-6 rounded-sm text-center hover:bg-opacity-90 transition duration-300">
+          {content.tarifs.employeur}
+        </a>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-light mb-6 text-black flex items-center">
+        <FileText class="w-6 h-6 mr-2 text-employeur" />
+        {content.transparence.title}
+      </h2>
+      <ul class="list-disc list-inside space-y-2 text-dark-gray">
+        {content.transparence.points.map((point: string) => (
+          <li>{point}</li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-light mb-6 text-black flex items-center">
+        <User class="w-6 h-6 mr-2 text-employeur" />
+        {content.previsibilite.title}
+      </h2>
+      <p class="mb-4 text-dark-gray">{content.previsibilite.content}</p>
+      <ul class="list-disc list-inside space-y-2 text-dark-gray">
+        {content.previsibilite.points.map((point: string) => (
+          <li>{point}</li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-light mb-6 text-black flex items-center">
+        <Shield class="w-6 h-6 mr-2 text-employeur" />
+        {content.assurance.title}
+      </h2>
+      <div class="flex flex-col md:flex-row gap-8">
+        <div class="w-full md:w-1/2">
+          <p class="text-dark-gray whitespace-pre-line">{content.assurance.content}</p>
+        </div>
+        <div class="w-full md:w-1/2">
+          <div class="relative w-full pb-[56.25%]">
+            <button 
+              class="absolute inset-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 group"
+              onclick="this.nextElementSibling.src += '&autoplay=1'; this.remove();"
+            >
+              <img 
+                src={`https://img.youtube.com/vi/${getYouTubeID(content.video.url)}/maxresdefault.jpg`} 
+                alt="Miniature vidéo" 
+                class="absolute inset-0 w-full h-full object-cover"
+              />
+              <svg class="w-16 h-16 md:w-20 md:h-20 text-white opacity-70 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </button>
+            <iframe 
+              class="absolute top-0 left-0 w-full h-full"
+              src={`https://www.youtube.com/embed/${getYouTubeID(content.video.url)}?rel=0`} 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <script>
+    function getYouTubeID(url) {
+      const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+      const match = url.match(regExp);
+      return (match && match[2].length === 11) ? match[2] : null;
+    }
+    </script>
+  </main>
+</BaseLayout>

@@ -5,8 +5,16 @@ en:
     description: You can follow each step of your case and my services through an online sharing platform.
     cta: BOOK AN APPOINTMENT ONLINE
   expertise:
-    title: Labor Law Expertise
+    title: My Services
     description: I maintain a comprehensive and up-to-date expertise in labor law by supporting both employees in their daily issues and companies in their development projects.
+    honoraires:
+      intro: "Transparent and tailored fees are offered"
+      linkText: "learn more"
+      advantages:
+        - "Detailed and free quote"
+        - "Fixed rates for better predictability"
+        - "Monthly payment option available"
+      cta: "Learn more about our fees"
   travailleurs:
     title: Support and Defense of Workers
     description: I advise and defend workers throughout their professional careers and against abuse, harassment, and discrimination at work.
@@ -19,15 +27,6 @@ en:
     title: Profile
     description: As a lawyer at the Brussels Bar since 2010, accustomed to negotiations and courtrooms, I have gained experience with both individual clients and local and international companies.
     cta: Learn More
-  honoraires:
-    title: Fees and Your Client File
-    list:
-      - Transparent quotes
-      - Pricing options for companies
-      - Pricing options for workers
-      - Tailored to your needs
-      - Online tracking of your case and my services
-    cta: Learn More
   articlesTitle: Resources
   viewAllArticles: "View All Resources"
 it:
@@ -37,8 +36,15 @@ it:
     description: Puoi seguire ogni fase del tuo caso e dei miei servizi attraverso una piattaforma di condivisione online.
     cta: PRENOTA UN APPUNTAMENTO ONLINE
   expertise:
-    title: Competenza in Diritto del Lavoro
+    title: "I miei servizi"
     description: Mantengo una competenza globale e aggiornata nel diritto del lavoro supportando sia i dipendenti nelle loro problematiche quotidiane che le aziende nei loro progetti di sviluppo.
+    honoraires:
+      intro: "Sono offerti onorari trasparenti e su misura"
+      linkText: "scopri di più"
+      advantages:
+        - "Preventivo dettagliato e gratuito"
+        - "Tariffe fisse per una migliore prevedibilità"
+        - "Opzione di pagamento mensile disponibile"
   travailleurs:
     title: Supporto e Difesa dei Lavoratori
     description: Consiglio e difendo i lavoratori durante tutto il loro percorso professionale e contro abusi, molestie e discriminazioni sul lavoro.
@@ -51,15 +57,6 @@ it:
     title: Profilo
     description: Avvocato presso il foro di Bruxelles dal 2010, abituata a negoziazioni e aule di tribunale, ho acquisito esperienza sia con clienti privati che con aziende locali e internazionali.
     cta: Scopri di più
-  honoraires:
-    title: Onorari e il Tuo Fascicolo Cliente
-    list:
-      - Preventivi trasparenti
-      - Opzioni tariffarie per le aziende
-      - Opzioni tariffarie per i lavoratori
-      - Adattate alle tue esigenze
-      - Monitoraggio online del tuo caso e dei miei servizi
-    cta: Scopri di più
   articlesTitle: Risorse
   viewAllArticles: "Visualizza tutte le risorse"
 fr:
@@ -71,6 +68,13 @@ fr:
   expertise:
     title: Mes services
     description: J'entretiens une expertise globale et actualisée du droit du travail en accompagnant à la fois les salariés dans leurs problématiques quotidiennes et les entreprises dans leurs projets de développement.
+    honoraires:
+      intro: "Des honoraires transparents et adaptés vous sont proposés"
+      linkText: "en savoir plus"
+      advantages:
+        - "Devis détaillé et gratuit"
+        - "Tarifs forfaitaires pour une meilleure prévisibilité"
+        - "Paiement mensualisé possible"
   travailleurs:
     title: Accompagnement et Défense des Travailleurs
     description: Je conseille et défends les travailleurs tout au long de leur parcours professionnel et contre les abus, le harcèlement et les discriminations au travail.
@@ -82,15 +86,6 @@ fr:
   profil:
     title: Profil
     description: Avocate au Barreau de Bruxelles depuis 2010, habituée des négociations et des salles d'audience, j'ai acquis de l'expérience tant auprès d'une clientèle de particuliers que d'entreprises locales et internationales.
-    cta: En savoir plus
-  honoraires:
-    title: Les Honoraires et Votre Dossier Client
-    list:
-      - Devis transparents
-      - Formules tarifaires pour les entreprises
-      - Formules tarifaires pour les travailleurs
-      - Adaptées à vos besoins
-      - Suivi en ligne de votre dossier et de mes prestations
     cta: En savoir plus
   articlesTitle: Ressources
   viewAllArticles: "Voir toutes les ressources"

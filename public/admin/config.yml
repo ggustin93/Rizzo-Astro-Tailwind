@@ -273,3 +273,44 @@ collections:
             name: "it"
             widget: "object"
             fields: *privacyFields
+
+  - name: "honoraires"
+    label: "Honoraires"
+    folder: "src/content/honoraires"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Subtitle", name: "subtitle", widget: "string"}
+      - label: "Tarifs"
+        name: "tarifs"
+        widget: "object"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Travailleur", name: "travailleur", widget: "string"}
+          - {label: "Employeur", name: "employeur", widget: "string"}
+      - label: "Transparence"
+        name: "transparence"
+        widget: "object"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Points", name: "points", widget: "list"}
+      - label: "Prévisibilité"
+        name: "previsibilite"
+        widget: "object"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Content", name: "content", widget: "text"}
+          - {label: "Points", name: "points", widget: "list"}
+      - label: "Assurance"
+        name: "assurance"
+        widget: "object"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Content", name: "content", widget: "text"}
+      - label: "Video"
+        name: "video"
+        widget: "object"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "URL", name: "url", widget: "string"}

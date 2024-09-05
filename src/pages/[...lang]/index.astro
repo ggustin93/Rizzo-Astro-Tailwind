@@ -86,7 +86,23 @@ function generateUniqueId(prefix: string) {
           <h2 class="text-2xl font-light text-gray-600 mx-10 uppercase text-center">{content.expertise.title}</h2>
           <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
         </div>
-        <p class="text-center mb-8 md:mb-12 max-w-3xl mx-auto text-dark-gray font-light leading-relaxed">{content.expertise.description}</p>
+        <p class="text-center mb-4 max-w-3xl mx-auto text-dark-gray font-light leading-relaxed">
+          {content.expertise.description}
+        </p>
+        <p class="text-center mb-8 max-w-3xl mx-auto text-dark-gray font-light leading-relaxed">
+          {content.expertise.honoraires.intro} <a href={`/${lang}/honoraires`} class="text-travailleur hover:underline">{content.expertise.honoraires.linkText}</a>.
+        </p>
+        
+        <!-- Liste des avantages -->
+        <ul class="list-none space-y-2 mb-12 flex flex-col items-center">
+          {content.expertise.honoraires.advantages.map((advantage: string) => (
+            <li class="text-dark-gray font-light flex items-center">
+              <CheckCircle class="text-travailleur mr-2 w-4 h-4" />
+              <span>{advantage}</span>
+            </li>
+          ))}
+        </ul>
+
         <div class="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-8">
           <div class="bg-travailleur bg-opacity-90 p-6 md:p-8 rounded-sm flex-1 max-w-md mx-auto md:mx-0 w-full flex flex-col">
             <div class="h-40 md:h-48 mb-4 relative">
@@ -147,31 +163,6 @@ function generateUniqueId(prefix: string) {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <div class="full-bleed bg-beige">
-    <section id="honoraires" class="py-16 md:py-24">
-      <div class="container mx-auto px-4">
-        <div class="flex items-center mb-8 md:mb-12 justify-center">
-          <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
-          <h2 class="text-2xl font-light text-gray-600 mx-10 uppercase text-center">{content.honoraires.title}</h2>
-          <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
-        </div>
-        <ul class="honoraires-list text-left md:text-center mb-8 md:mb-12 space-y-4 max-w-xl mx-auto">
-          {content.honoraires.list.map((item: string, index: number) => (
-            <li set:key={index} class="text-dark-gray font-light flex items-center md:justify-center">
-              <CheckCircle class="text-travailleur mr-3 flex-shrink-0 w-5 h-5" aria-hidden="true" />
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-        <div class="text-center">
-          <a href="/honoraires" class="inline-block bg-transparent text-dark-gray border border-dark-gray px-4 md:px-6 py-2 md:py-3 rounded-sm hover:bg-gray-700 hover:text-white transition duration-300 uppercase text-sm font-light">
-            {content.honoraires.cta}
-          </a>
         </div>
       </div>
     </section>

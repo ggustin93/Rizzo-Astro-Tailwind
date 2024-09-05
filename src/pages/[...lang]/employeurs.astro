@@ -2,7 +2,9 @@
 // src/pages/[...lang]/employeurs.astro
 import { getEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { FileText, UserPlus, Shield, Search, ChevronRight } from 'astro-feather-icons';
+import IconHandshake from '../../components/IconHandshake.astro';
+import { FileText, UserPlus, Shield, Search, ChevronRight } from 'astro-feather-icons2';
+
 
 export async function getStaticPaths() {
   return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
@@ -16,7 +18,8 @@ const iconMap = {
   FileText,
   UserPlus,
   Shield,
-  Search
+  Search,
+  Handshake: IconHandshake
 };
 ---
 
@@ -51,6 +54,16 @@ const iconMap = {
             );
           })}
         </ul>
+        <div class="mt-8">
+          <h3 class="text-xl font-light mb-4 text-black">Honoraires</h3>
+          <p class="text-dark-gray font-light mb-4">Découvrez nos avantages :</p>
+          <ul class="list-disc list-inside text-dark-gray font-light mb-4">
+            <li>Devis transparents</li>
+            <li>Formules tarifaires adaptées</li>
+            <li>Suivi en ligne de votre dossier</li>
+          </ul>
+          <a href={`/${lang}/tarif_employeur`} class="text-employeur hover:underline">Voir les tarifs pour employeurs →</a>
+        </div>
       </div>
     </div>
   </main>

@@ -7,7 +7,7 @@ export async function getStaticPaths() {
 
 const { lang } = Astro.params;
 
-import { Briefcase, Shield, FileText, Check } from 'astro-feather-icons';
+import { Briefcase, Shield, FileText, Check, ArrowLeft } from 'astro-feather-icons2';
 
 
 const honoraires = [
@@ -74,6 +74,10 @@ const honoraires = [
   description="Informations sur les honoraires et tarifs de Christine Rizzo"
   lang={lang}>
   <main class="container mx-auto px-4 py-12">
+    <a href={`/${lang}/honoraires`} class="inline-flex items-center text-travailleur hover:underline mb-6">
+      <ArrowLeft class="w-4 h-4 mr-2" />
+      Retour aux honoraires
+    </a>
     <h1 class="text-4xl font-light mb-12 text-center text-black">Honoraires et tarifs</h1>
     
     {honoraires.map((service) => (
@@ -108,7 +112,7 @@ const honoraires = [
           )}
         </div>
         <div class="md:w-1/2 p-6 bg-white">
-          {service.services.length > 0 && (
+          {service.services.length > 0 ? (
             <div>
               <h3 class="font-medium mb-4 text-black">Services inclus :</h3>
               <ul class="space-y-2">
@@ -120,6 +124,8 @@ const honoraires = [
                 ))}
               </ul>
             </div>
+          ) : (
+            <p class="text-dark-gray">Services inclus : sur demande, adaptés à votre situation spécifique.</p>
           )}
         </div>
       </div>
@@ -130,7 +136,7 @@ const honoraires = [
     </p>
 
     <div class="mt-8 text-center">
-      <a href={`/${lang}/contact`} class="inline-block bg-accent text-black px-6 py-3 rounded-sm hover:bg-black hover:text-accent transition duration-300 uppercase text-sm font-light">
+      <a href={`/${lang}/contact`} class="inline-block bg-transparent text-dark-gray border border-dark-gray px-4 md:px-6 py-2 md:py-3 rounded-sm hover:bg-gray-700 hover:text-white transition duration-300 uppercase text-sm font-light">
         Nous contacter
       </a>
     </div>

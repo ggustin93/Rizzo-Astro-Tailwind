@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { Briefcase, Shield, FileText, UserPlus, Search } from 'astro-feather-icons';
+import { Briefcase, Shield, FileText, UserPlus, Search, ArrowLeft } from 'astro-feather-icons2';
 
 export async function getStaticPaths() {
   return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
@@ -132,6 +132,10 @@ const services = [
   description="Informations sur les services et tarifs pour employeurs de Christine Rizzo"
   lang={lang}>
   <main class="container mx-auto px-4 py-12">
+    <a href={`/${lang}/honoraires`} class="inline-flex items-center text-employeur hover:underline mb-6">
+      <ArrowLeft class="w-4 h-4 mr-2" />
+      Retour aux honoraires
+    </a>
     <h1 class="text-4xl font-light mb-12 text-center text-black">Services et tarifs pour employeurs</h1>
     
     {services.map((service) => (
@@ -152,18 +156,20 @@ const services = [
           )}
         </div>
         <div class="md:w-1/2 p-6 bg-white">
-          {service.services && service.services.length > 0 && (
+          {service.services.length > 0 ? (
             <div>
               <h3 class="font-medium mb-4 text-black">Services inclus :</h3>
               <ul class="space-y-2">
                 {service.services.map((item) => (
                   <li class="flex items-start">
-                    <span class="text-employeur mr-3 text-xl">•</span>
+                    <span class="text-travailleur mr-3 text-xl">•</span>
                     <span class="text-dark-gray">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
+          ) : (
+            <p class="text-dark-gray">Services inclus : sur demande, adaptés à votre situation spécifique.</p>
           )}
         </div>
       </div>
@@ -174,7 +180,7 @@ const services = [
     </p>
 
     <div class="mt-8 text-center">
-      <a href={`/${lang}/contact`} class="inline-block bg-accent text-black px-6 py-3 rounded-sm hover:bg-black hover:text-accent transition duration-300 uppercase text-sm font-light">
+      <a href={`/${lang}/contact`} class="inline-block bg-transparent text-dark-gray border border-dark-gray px-4 md:px-6 py-2 md:py-3 rounded-sm hover:bg-gray-700 hover:text-white transition duration-300 uppercase text-sm font-light">
         Nous contacter
       </a>
     </div>

@@ -1,0 +1,116 @@
+fr:
+  title: "Honoraires"
+  subtitle: "Les honoraires de l'avocat constituent la contrepartie du travail qu'il accomplit pour vous."
+  tarifs:
+    title: "Tarifs"
+    travailleur: "Vous êtes un.e travailleur.euse"
+    employeur: "Vous êtes un employeur"
+  transparence:
+    title: "Transparence"
+    points:
+      - "Le premier contact vise généralement à identifier vos besoins et si je suis la bonne personne pour y répondre. Il est gratuit."
+      - "Nous discutons des conditions financières dès la première rencontre. Vous recevez une proposition de prix écrite sous forme de devis."
+      - "Si vous décidez de travailler avec moi, nous signons ensemble une convention reprenant toutes les conditions de mon intervention."
+  previsibilite:
+    title: "Prévisibilité et paiement mensualisé"
+    content: |
+      Ne pas savoir combien va coûter l'intervention de votre avocat peut être une source d'inquiétude. 
+      Je vous propose la plupart de mes prestations à un tarif forfaitaire fixe "tout compris" payable par mois.
+      Vous savez donc exactement ce que vous allez payer par mois et ce que vous allez payer au total. 
+      Le nombre de mensualités est déterminé ensemble en fonction de votre situation personnelle et de votre dossier (par exemple la durée estimée de la procédure devant le tribunal).
+    points:
+      - "L'honoraire de résultat convenu est facturé après la réception des sommes obtenues."
+      - "Si nous choisissons de travailler ensemble sur base d'un tarif horaire, mes prestations vous sont facturées chaque mois, au fur et à mesure des prestations."
+      - "Il n'y a pas de frais de dossier ou de bureau excepté les frais postaux."
+      - "Les frais liés à l'intervention de tiers (huissiers, experts, traducteurs, avocats spécialisés dans d'autres domaines) ou les frais de justice (droits de greffe) sont refacturés au prix coûtant ou directement payables au tiers intervenant."
+  assurance:
+    title: "Pensez à l'assurance protection juridique"
+    content: |
+      L'assurance Protection Juridique (ou « défense en justice ») peut vous permettre d'économiser beaucoup d'argent. 
+
+      Plusieurs assureurs en Belgique proposent une assurance protection juridique qui couvre les conflits dans le cadre d'une relation de travail (Ethias, Arag, Das, Arces), que vous soyez travailleur.euse ou employeur.
+
+      Vérifiez avec votre courtier ou votre assureur si vous êtes couverts ou si une telle assurance peut être souscrite et le délai d'attente.
+       
+      Dans ce cas, tout ou une partie de vos frais d'avocat seront payés par votre assurance et non par vous.
+  video:
+    title: "En savoir plus"
+    url: "https://youtu.be/Y-SKuT-XqGk"
+
+en:
+  title: "Fees"
+  subtitle: "The lawyer's fees constitute the compensation for the work performed on your behalf."
+  tarifs:
+    title: "Rates"
+    travailleur: "You are an employee"
+    employeur: "You are an employer"
+  transparence:
+    title: "Transparency"
+    points:
+      - "The initial contact is generally aimed at identifying your needs and determining if I am the right person to address them. It is free of charge."
+      - "We discuss financial terms from the first meeting. You receive a written price proposal in the form of a quote."
+      - "If you decide to work with me, we sign an agreement together outlining all the conditions of my intervention."
+  previsibilite:
+    title: "Predictability and monthly payment"
+    content: |
+      Not knowing how much your lawyer's intervention will cost can be a source of concern.
+      I offer most of my services at a fixed, all-inclusive rate payable monthly.
+      Therefore, you know exactly what you will pay per month and in total.
+      The number of monthly installments is determined together based on your personal situation and your case (for example, the estimated duration of the court proceedings).
+    points:
+      - "The agreed success fee is invoiced after the receipt of the obtained amounts."
+      - "If we choose to work together on an hourly rate basis, my services are billed to you each month as the work progresses."
+      - "There are no file or office fees except for postal expenses."
+      - "Costs related to third-party interventions (bailiffs, experts, translators, lawyers specialized in other fields) or court fees (registry fees) are re-invoiced at cost or directly payable to the intervening third party."
+  assurance:
+    title: "Consider legal protection insurance"
+    content: |
+      Legal Protection Insurance (or "legal defense") can save you a lot of money.
+
+      Several insurers in Belgium offer legal protection insurance that covers conflicts within the framework of an employment relationship (Ethias, Arag, Das, Arces), whether you are an employee or an employer.
+
+      Check with your broker or insurer if you are covered or if such insurance can be taken out and the waiting period.
+       
+      In this case, all or part of your lawyer's fees will be paid by your insurance and not by you.
+  video:
+    title: "Learn more"
+    url: "https://youtu.be/Y-SKuT-XqGk"
+
+it:
+  title: "Onorari"
+  subtitle: "Gli onorari dell'avvocato costituiscono il compenso per il lavoro svolto per voi."
+  tarifs:
+    title: "Tariffe"
+    travailleur: "Sei un lavoratore dipendente"
+    employeur: "Sei un datore di lavoro"
+  transparence:
+    title: "Trasparenza"
+    points:
+      - "Il primo contatto mira generalmente a identificare le vostre esigenze e a determinare se sono la persona giusta per rispondervi. È gratuito."
+      - "Discutiamo delle condizioni finanziarie fin dal primo incontro. Riceverete una proposta di prezzo scritta sotto forma di preventivo."
+      - "Se decidete di lavorare con me, firmiamo insieme una convenzione che riprende tutte le condizioni del mio intervento."
+  previsibilite:
+    title: "Prevedibilità e pagamento mensile"
+    content: |
+      Non sapere quanto costerà l'intervento del vostro avvocato può essere fonte di preoccupazione.
+      Vi propongo la maggior parte delle mie prestazioni a una tariffa forfettaria fissa "tutto incluso" pagabile mensilmente.
+      Saprete quindi esattamente quanto pagherete al mese e in totale.
+      Il numero di rate mensili viene determinato insieme in base alla vostra situazione personale e al vostro caso (ad esempio, la durata stimata del procedimento in tribunale).
+    points:
+      - "L'onorario di risultato concordato viene fatturato dopo il ricevimento delle somme ottenute."
+      - "Se scegliamo di lavorare insieme sulla base di una tariffa oraria, le mie prestazioni vi vengono fatturate ogni mese, man mano che vengono effettuate."
+      - "Non ci sono spese di fascicolo o di ufficio, ad eccezione delle spese postali."
+      - "Le spese legate all'intervento di terzi (ufficiali giudiziari, esperti, traduttori, avvocati specializzati in altri settori) o le spese di giustizia (diritti di cancelleria) sono rifatturate al costo o direttamente pagabili al terzo interveniente."
+  assurance:
+    title: "Considerate l'assicurazione di protezione giuridica"
+    content: |
+      L'assicurazione di Protezione Giuridica (o "difesa in giudizio") può farvi risparmiare molto denaro.
+
+      Diverse compagnie assicurative in Belgio offrono un'assicurazione di protezione giuridica che copre i conflitti nell'ambito di un rapporto di lavoro (Ethias, Arag, Das, Arces), che siate lavoratori dipendenti o datori di lavoro.
+
+      Verificate con il vostro broker o assicuratore se siete coperti o se tale assicurazione può essere sottoscritta e il periodo di attesa.
+       
+      In questo caso, tutte o parte delle vostre spese legali saranno pagate dalla vostra assicurazione e non da voi.
+  video:
+    title: "Per saperne di più"
+    url: "https://youtu.be/Y-SKuT-XqGk"
