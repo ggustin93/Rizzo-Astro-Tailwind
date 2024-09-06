@@ -8,29 +8,32 @@ export interface Props {
 }
 
 const { pathname } = Astro.url;
-const currentLang = pathname.split('/')[1] || 'fr'; // Par d\u00e9faut \u00e0 'fr' si aucune langue n'est trouv\u00e9e
+const currentLang = pathname.split('/')[1] || 'fr'; // Par défaut à 'fr' si aucune langue n'est trouvée
 
 const translations = {
   fr: {
-    expertise: "EXPERTISE",
+    services: "EXPERTISE & SERVICES",
     profil: "PROFIL",
-    ressources: "RESSOURCES",
-    honoraires: "HONORAIRES",
-    contact: "ME CONTACTER"
+    tarifs: "TARIFS",
+    articles: "ARTICLES",
+    contact: "ME CONTACTER",
+    honoraires: "HONORAIRES"
   },
   en: {
-    expertise: "EXPERTISE",
+    services: "SERVICES",
     profil: "PROFILE",
-    ressources: "RESOURCES",
-    honoraires: "FEES",
-    contact: "CONTACT ME"
+    tarifs: "FEES",
+    articles: "ARTICLES",
+    contact: "CONTACT ME",
+    honoraires: "FEES"
   },
   it: {
-    expertise: "COMPETENZA",
+    services: "SERVIZI",
     profil: "PROFILO",
-    ressources: "RISORSE",
-    honoraires: "ONORARI",
-    contact: "CONTATTAMI"
+    tarifs: "TARIFFE",
+    articles: "ARTICOLI",
+    contact: "CONTATTAMI",
+    honoraires: "ONORARI"
   }
 };
 
@@ -39,13 +42,13 @@ const t = translations[currentLang as keyof typeof translations] || translations
 const isHomePage = pathname === `/${currentLang}` || pathname === `/${currentLang}/`;
 
 const leftNavLinks = [
-  { href: isHomePage ? "#expertise" : `/${currentLang}#expertise`, label: t.expertise },
+  { href: isHomePage ? "#expertise" : `/${currentLang}#expertise`, label: t.services },
   { href: isHomePage ? "#profil" : `/${currentLang}#profil`, label: t.profil },
-  { href: `/${currentLang}/blog`, label: t.ressources },
+  { href: `/${currentLang}/honoraires`, label: t.tarifs },
 ];
 
 const rightNavLinks = [
-  { href: isHomePage ? "#honoraires" : `/${currentLang}#honoraires`, label: t.honoraires },
+  { href: `/${currentLang}/blog`, label: t.articles },
 ];
 ---
   <header class="py-2 my-4 lg:py-6 lg:my-8">

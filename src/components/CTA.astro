@@ -1,47 +1,61 @@
 ---
-// src/components/CTA.astro
 import { Image } from 'astro:assets';
-import { Calendar, Phone, MessageCircle, Mail } from 'astro-feather-icons';
+import { Calendar, Mail, Phone, MessageCircle } from 'astro-feather-icons';
 import ctaIllustration from '../assets/images/illustration_cta_2.svg';
 
 const { pathname } = Astro.url;
-const lang = pathname.split('/')[1] || 'fr'; // Par défaut à 'fr' si aucune langue n'est trouvée
+const lang = pathname.split('/')[1] || 'fr';
 
 const translations = {
   fr: {
-    takeAppointment: "Prendre rendez-vous",
-    call: "Appeler",
-    whatsapp: "WhatsApp",
-    email: "Email",
     ctaTitle: "Contactez-moi",
-    ctaSubtitle: "Je suis disponible pour discuter de vos besoins."
+    ctaSubtitle: "Je suis disponible pour discuter de vos besoins.",
+    email: "EMAIL",
+    appointment: "RDV",
+    call: "APPEL",
+    whatsapp: "WHATSAPP"
   },
   en: {
-    takeAppointment: "Take Appointment",
-    call: "Call",
-    whatsapp: "WhatsApp",
-    email: "Email",
-    ctaTitle: "Contact Me",
-    ctaSubtitle: "I am available to discuss your needs."
+    ctaTitle: "Contact me",
+    ctaSubtitle: "I'm available to discuss your needs.",
+    email: "EMAIL",
+    appointment: "APPOINTMENT",
+    call: "CALL",
+    whatsapp: "WHATSAPP"
   },
   it: {
-    takeAppointment: "Prendi appuntamento",
-    call: "Chiamare",
-    whatsapp: "WhatsApp",
-    email: "Email",
     ctaTitle: "Contattami",
-    ctaSubtitle: "Sono disponibile per discutere delle tue esigenze."
+    ctaSubtitle: "Sono disponibile per discutere le tue esigenze.",
+    email: "EMAIL",
+    appointment: "APPUNTAMENTO",
+    call: "CHIAMA",
+    whatsapp: "WHATSAPP"
   }
 };
 
 const t = translations[lang as keyof typeof translations] || translations.fr;
 
-const buttons = [
-  { icon: Calendar, text: t.takeAppointment, attr: 'data-calendly' },
-  { icon: Phone, text: t.call },
-  { icon: MessageCircle, text: t.whatsapp },
-  { icon: Mail, text: t.email },
+const buttonConfig = [
+  { icon: Mail, text: t.email, action: 'c.rizzo@avocat.be', type: 'email' },
+  { icon: Calendar, text: t.appointment, action: 'Réserver', type: 'calendly' },
+  { icon: Phone, text: t.call, action: '+32 488 40 45 49', type: 'phone' },
+  { icon: MessageCircle, text: t.whatsapp, action: 'Discuter', type: 'whatsapp' },
 ];
+
+const handleAction = (type: string, action: string) => {
+  switch(type) {
+    case 'email':
+      return `window.location.href = 'mailto:${action}'`;
+    case 'calendly':
+      return "window.Calendly.showPopupWidget('https://calendly.com/decarbonaction/meeting')";
+    case 'phone':
+      return `window.location.href = 'tel:${action}'`;
+    case 'whatsapp':
+      return `window.open('https://wa.me/32488404549', '_blank')`;
+    default:
+      return '';
+  }
+};
 ---
 
 <div class="full-bleed bg-employeur">
@@ -51,24 +65,28 @@ const buttons = [
         <div class="md:w-1/2 text-center md:text-left">
           <h2 class="text-3xl md:text-4xl mb-4 font-light text-white">{t.ctaTitle}</h2>
           <p class="mb-8 text-lg md:text-xl font-light text-white">{t.ctaSubtitle}</p>
-          <div class="grid grid-cols-2 gap-4 max-w-xl mx-auto md:mx-0">
-            {buttons.map(({ icon: Icon, text, attr }) => (
-              <button
-                class="bg-transparent text-white border border-white px-3 py-2 md:px-4 md:py-3 rounded-sm hover:bg-travailleur  hover:text-white transition duration-300 uppercase text-xs md:text-sm font-light flex items-center justify-center group"
-                {...attr && { [attr]: true }}
-              >
-                <Icon class="w-6 h-6 mr-2 text-white group-hover:text-white transition-colors duration-300" /> {text}
-              </button>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto md:mx-0">
+            {buttonConfig.map(({ icon: Icon, text, action, type }) => (
+              <div class="flex flex-col items-center">
+                <button
+                  class="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-4 hover:bg-travailleur transition-colors duration-300 group"
+                  onclick={handleAction(type, action)}
+                >
+                  <Icon class="w-12 h-12 text-employeur group-hover:text-white transition-colors duration-300" />
+                </button>
+                <span class="text-sm uppercase text-accent font-extrabold leading-relaxed tracking-wide mb-2 px-2">{text}</span>
+                <a href="#" class="text-sm text-white hover:underline font-medium">{action}</a>
+              </div>
             ))}
           </div>
         </div>
-        <div class="md:w-2/5 md:mb-0">
+        <div class="md:w-1/2 md:mb-0 flex justify-end mt-8 md:mt-0">
           <Image
             src={ctaIllustration}
             alt="illustration cta"
-            class="w-full h-auto max-w-sm mx-auto"
-            width={400}
-            height={160}
+            class="w-full h-auto max-w-md"
+            width={500}
+            height={200}
             loading="lazy"
             format="avif"
           />
@@ -77,3 +95,4 @@ const buttons = [
     </div>
   </section>
 </div>
+

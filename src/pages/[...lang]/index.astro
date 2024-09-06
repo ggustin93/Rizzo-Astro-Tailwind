@@ -11,8 +11,7 @@ import { Picture, Image } from 'astro:assets';
 // Import des images locales
 import heroImage from '../../assets/images/hero_image_wbg.svg';
 import profileImage from '../../assets/images/chrizzo-pp.avif';
-import pexelService1 from '../../assets/images/pexels-service1.webp';
-import pexelService2 from '../../assets/images/pexels-service2.webp';
+import illustrationServices from '../../assets/images/illustration_services.svg';
 
 const supportedLanguages = ['fr', 'en', 'it'] as const;
 type SupportedLanguage = typeof supportedLanguages[number];
@@ -31,7 +30,12 @@ const uiTranslations = getUiTranslations(currentLang);
 
 const { lang } = Astro.params;
 const homeEntry = await getEntry('home', 'home');
-const content = homeEntry.data[lang] as any;
+const content = homeEntry.data[lang as keyof typeof homeEntry.data] || homeEntry.data['fr'];
+
+if (!content || !content.expertise || !content.expertise.travailleurs) {
+  console.error('Structure de contenu invalide:', content);
+  // Vous pouvez définir un contenu par défaut ici si nécessaire
+}
 
 // Récupération des articles
 const recentArticles = await getArticles(lang, 3);
@@ -79,52 +83,62 @@ function generateUniqueId(prefix: string) {
   </div>
 
   <div class="full-bleed bg-beige">
-    <section id="expertise" class="py-16 md:py-24">
+    <section id="expertise" class="py-10 md:py-14">
       <div class="container px-4">
-        <div class="flex items-center mb-8 md:mb-12 justify-center">
+        <div class="flex items-center mb-6 justify-center">
           <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
           <h2 class="text-2xl font-light text-gray-600 mx-10 uppercase text-center">{content.expertise.title}</h2>
           <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
         </div>
-        <p class="text-center mb-4 max-w-3xl mx-auto text-dark-gray font-light leading-relaxed">
-          {content.expertise.description}
-        </p>
-        <p class="text-center mb-8 max-w-3xl mx-auto text-dark-gray font-light leading-relaxed">
-          {content.expertise.honoraires.intro} <a href={`/${lang}/honoraires`} class="text-travailleur hover:underline">{content.expertise.honoraires.linkText}</a>.
+        
+        <p class="text-center mb-8 max-w-3xl mx-auto text-dark-gray font-light">
+          Accompagnement et défense tant des entreprises que des travailleurs.euses dans leurs projets et leurs préoccupations du quotidien liés à l'emploi.
+        </p> 
+        
+        <div class="flex flex-col md:flex-row gap-8 mb-0">
+          <div class="md:w-1/2 bg-travailleur p-6 rounded-sm text-white flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-semibold mb-4">Vous êtes un.e travailleur.euse</h3>
+              <p class="font-light mb-4">{content.expertise?.travailleurs?.description ?? "Description non disponible"}</p>
+            </div>
+            <a href={`/${lang}/travailleurs`} class="self-end bg-white text-travailleur px-4 py-2 rounded-sm hover:bg-gray-800 hover:text-white transition duration-300 mt-4">
+              En savoir plus →
+            </a>
+          </div>
+          
+          <div class="md:w-1/2 bg-employeur p-6 rounded-sm text-white flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-semibold mb-4">Vous êtes un employeur</h3>
+              <p class="font-light mb-4">{content.expertise.employeurs.description}</p>
+            </div>
+            <a href={`/${lang}/employeurs`} class="self-end bg-white text-employeur px-4 py-2 rounded-sm hover:bg-gray-800 hover:text-white transition duration-300 mt-4">
+              En savoir plus →
+            </a>
+          </div>
+        </div>
+
+        <Picture 
+          src={illustrationServices} 
+          formats={['avif', 'webp', 'svg']}
+          alt="Illustration des services" 
+          class="w-full max-w-3xl md:max-w-4xl mx-auto mb-8"
+          widths={[400, 800, 1200]}
+          sizes="(max-width: 768px) 95vw, (max-width: 1200px) 80vw, 1200px"
+        />
+        
+        <p class="text-center mb-6 max-w-3xl mx-auto text-dark-gray font-light leading-relaxed">
+          Des honoraires transparents et adaptés vous sont proposés - 
+          <a href={`/${lang}/honoraires`} class="text-travailleur hover:underline">en savoir plus</a>.
         </p>
         
-        <!-- Liste des avantages -->
-        <ul class="list-none space-y-2 mb-12 flex flex-col items-center">
+        <ul class="list-none space-y-2 flex flex-col items-start max-w-md mx-auto">
           {content.expertise.honoraires.advantages.map((advantage: string) => (
-            <li class="text-dark-gray font-light flex items-center">
-              <CheckCircle class="text-travailleur mr-2 w-4 h-4" />
+            <li class="text-dark-gray font-light flex items-center w-full">
+              <CheckCircle class="text-travailleur mr-2 w-4 h-4 flex-shrink-0" />
               <span>{advantage}</span>
             </li>
           ))}
         </ul>
-
-        <div class="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-8">
-          <div class="bg-travailleur bg-opacity-90 p-6 md:p-8 rounded-sm flex-1 max-w-md mx-auto md:mx-0 w-full flex flex-col">
-            <div class="h-40 md:h-48 mb-4 relative">
-              <Image src={pexelService1} alt="Travailleurs" class="absolute inset-0 w-full h-full object-cover object-top" width="600" height="400" />
-            </div>
-            <h3 class="text-xl md:text-2xl font-light mb-4 text-white text-center">{content.travailleurs.title}</h3>
-            <p class="mb-4 text-white font-light leading-relaxed text-center flex-grow">{content.travailleurs.description}</p>
-            <div class="text-center flex justify-center">
-              <a href={`/${lang}/travailleurs`} class="inline-block bg-transparent text-white border border-white px-4 py-2 rounded-sm hover:bg-gray-700 hover:text-white transition duration-300 text-sm uppercase font-light">{content.travailleurs.cta}</a>
-            </div>
-          </div>
-          <div class="bg-employeur bg-opacity-90 p-6 md:p-8 rounded-sm flex-1 max-w-md mx-auto md:mx-0 w-full flex flex-col">
-            <div class="h-40 md:h-48 mb-4 relative">
-              <Image src={pexelService2} alt="Employeurs" class="absolute inset-0 w-full h-full object-cover object-top" width="600" height="400" />
-            </div>
-            <h3 class="text-xl md:text-2xl font-light mb-4 text-white text-center">{content.employeurs.title}</h3>
-            <p class="mb-4 text-white font-light leading-relaxed text-center flex-grow">{content.employeurs.description}</p>
-            <div class="text-center flex justify-center">
-              <a href={`/${lang}/employeurs`} class="inline-block bg-transparent text-white border border-white px-4 py-2 rounded-sm hover:bg-gray-700 hover:text-white transition duration-300 text-sm uppercase font-light">{content.employeurs.cta}</a>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   </div>

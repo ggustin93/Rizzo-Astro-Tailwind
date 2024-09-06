@@ -63,32 +63,44 @@ const translations = {
 
 const t = translations[lang as keyof typeof translations];
 ---
-
 <BaseLayout title={`${name} - ${title}`} description={title} lang={lang}>
+  <div class="bg-white md:my-20">
+
   <div class="max-w-6xl mx-auto px-4 py-12">
-    <h1 class="text-4xl md:text-5xl font-light text-black mb-8">{name}</h1>
-    
-    <div class="flex flex-col md:flex-row gap-12">
+    <div class="flex flex-col-reverse md:flex-row gap-12">
       <div class="md:w-2/3">
+        <h1 class="text-4xl md:text-5xl font-light text-black mb-8">{name}</h1>
         <h2 class="text-2xl font-light text-accent mb-4">{title}</h2>
-        <p class="text-dark-gray mb-6">{bio}</p>
+        {bio.map((paragraph) => (
+          <p class="text-dark-gray mb-6">{paragraph}</p>
+        ))}
         
-        <h3 class="text-xl font-semibold text-black mb-3 flex items-center">
-          <CheckCircle class="mr-2" /> {t.specialties}
-        </h3>
-        <ul class="list-disc pl-5 mb-6">
-          {specialties.map((specialty: string) => (
-            <li class="text-dark-gray">{specialty}</li>
+        <h3 class="text-xl font-semibold text-black mb-3">{t.career}</h3>
+        <ul class="space-y-2 mb-6">
+          {careerPath.map((item) => (
+            <li class="flex">
+              <span class="font-semibold text-accent w-24 flex-shrink-0">{item.year}</span>
+              <span class="text-dark-gray">{item.event}</span>
+            </li>
           ))}
         </ul>
         
-        <h3 class="text-xl font-semibold text-black mb-3 flex items-center">
-          <Globe class="mr-2" /> {t.languages}
-        </h3>
-        <ul class="mb-6">
-          {languages.map((lang) => (
+        <h3 class="text-xl font-semibold text-black mb-3">{t.languages}</h3>
+        <p class="text-dark-gray mb-6">{languages}</p>
+        
+        <h3 class="text-2xl font-semibold text-black mb-4">Conférences</h3>
+<ul class="space-y-2 mb-8">
+  {conferences.map((conf) => (
+    <li class="text-dark-gray">{conf}</li>
+  ))}
+</ul>
+        
+        <h3 class="text-xl font-semibold text-black mb-3">{t.publications}</h3>
+        <ul class="space-y-2">
+          {publications.map((pub) => (
             <li class="text-dark-gray">
-              <span class="font-semibold">{lang.name}:</span> {lang.level}
+              <span class="font-semibold">{pub.date}:</span> "{pub.title}", {pub.publisher}
+              {pub.coAuthors && <span class="italic"> ({t.inCollaborationWith} {pub.coAuthors.join(', ')})</span>}
             </li>
           ))}
         </ul>
@@ -98,55 +110,6 @@ const t = translations[lang as keyof typeof translations];
         <img src={image} alt={name} class="w-full rounded-lg shadow-lg mb-6">
       </div>
     </div>
-    
-    <div class="mt-12">
-      <h2 class="text-3xl font-light text-black mb-6 flex items-center">
-        <Briefcase class="mr-2" /> {t.career}
-      </h2>
-      <ul class="space-y-4">
-        {careerPath.map((item) => (
-          <li class="flex">
-            <span class="font-semibold text-accent w-24 flex-shrink-0">{item.year}</span>
-            <span class="text-dark-gray">{item.event}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-    
-    <div class="mt-12">
-      <h2 class="text-3xl font-light text-black mb-6 flex items-center">
-        <Mic class="mr-2" /> {t.conferencesAndPublications}
-      </h2>
-      
-      <h3 class="text-xl font-semibold text-black mb-4 flex items-center">
-        <Coffee class="mr-2" /> {t.conferences}
-      </h3>
-      <ul class="space-y-4 mb-8">
-        {conferences.map((conf) => (
-          <li>
-            <p class="font-semibold text-accent">{conf.date}</p>
-            <p class="text-dark-gray">{conf.title}</p>
-            <p class="text-dark-gray italic">{t.with} {conf.coSpeakers.join(', ')}</p>
-          </li>
-        ))}
-      </ul>
-      
-      <h3 class="text-xl font-semibold text-black mb-4 flex items-center">
-        <BookOpen class="mr-2" /> {t.publications}
-      </h3>
-      <ul class="space-y-4">
-        {publications.map((pub) => (
-          <li>
-            <p class="font-semibold text-accent">{pub.date}</p>
-            <p class="text-dark-gray">"{pub.title}", {pub.publisher}</p>
-            {pub.coAuthors && (
-              <p class="text-dark-gray italic">
-                {t.inCollaborationWith} {pub.coAuthors.join(', ')}
-              </p>
-            )}
-          </li>
-        ))}
-      </ul>
-    </div>
   </div>
+</div>
 </BaseLayout>

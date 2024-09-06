@@ -2,17 +2,10 @@ fr:
   name: "Christine Rizzo"
   title: "Avocate spécialisée en droit du travail"
   image: "https://uploads-ssl.webflow.com/66a3633bf638ce4da95b8ad7/66a367d9f9bfc9b93e01c4a3_Christine_Apropos-b.jpeg"
-  bio: "Avocate au Barreau de Bruxelles depuis 2010 et forte d'une expérience auprès de clients internationaux et dans un cabinet de niche, je propose à mes clients - à la fois employeurs et travailleurs.euses - des services d'accompagnement, conseil, négociation et défense en justice en droit des relations du travail."
-  specialties:
-    - "Bien-être au travail"
-    - "Équilibre vie privée-vie professionnelle"
-    - "Discrimination"
-    - "Faux indépendants"
-  languages:
-    - { name: "Français", level: "Langue maternelle" }
-    - { name: "Italien", level: "Courant" }
-    - { name: "Anglais", level: "Courant" }
-    - { name: "Néerlandais", level: "Bonne connaissance" }
+  bio: 
+    - "Avocate au Barreau de Bruxelles depuis 2010 et forte d'une expérience auprès de clients internationaux et dans un cabinet de niche, je propose à mes clients - à la fois employeurs et travailleurs.euses - des services d'accompagnement, conseil, négociation et défense en justice en droit des relations du travail."
+    - "Les questions juridiques qui me passionnent sont le bien-être au travail, les outils destinés à améliorer l'équilibre vie privée-vie professionnelle, les questions de discrimination et les faux indépendants."
+    - "Je suis actuellement membre de la commission Bien-être psychosocial du Barreau de Bruxelles et je siège régulièrement au sein du jury des exercices de plaidoirie, examen auxquels les avocats stagiaires doivent se soumettre avant la fin de leur stage."
   careerPath:
     - { year: "2024", event: "Création de mon cabinet" }
     - { year: "2017-2024", event: "Avocate Senior chez Reliance Littler" }
@@ -24,15 +17,13 @@ fr:
     - { year: "2018", event: "Master complémentaire en droit social - Vrije Universiteit Brussel" }
     - { year: "2010", event: "LLM en droit européen et international - Universiteit Gent" }
     - { year: "2009", event: "Master en droit - finalité contentieux - Université Libre de Bruxelles" }
+  languages: "Je travaille en français, italien et anglais. J'ai également une bonne connaissance du néerlandais."
   conferences:
-    - date: "17 avril 2024"
-      title: "Le licenciement des travailleurs contractuels du secteur public. La loi du 13 mars 2024"
-      event: "Abilways"
-      coSpeakers: ["Fabienne Raepsaet"]
-    - date: "25 mars 2021"
-      title: "Les heures supplémentaires: actualités"
-      event: "Conférence du Jeune Barreau de Bruxelles"
-      coSpeakers: ["Pierre Van Achter", "Nicolas Tancredi"]
+    - "17 avril 2024, Abilways : \"Le licenciement des travailleurs contractuels du secteur public. La loi du 13 mars 2024\", oratrice avec Fabienne Raepsaet"
+    - "25 mars 2021, Conférence du Jeune Barreau de Bruxelles: \"Les heures supplémentaires: actualités\", oratrice avec Pierre Van Achter et Nicolas Tancredi"
+    - "23 mars 2020, Conférence du Jeune Barreau de Bruxelles: \"Coronavirus: la vie au travail continue-t-elle?\", oratrice avec Erwin Crabeels"
+    - "19 novembre 2019, Conférence du Jeune Barreau de Bruxelles: \"Les élections sociales: les notions clés\", oratrice avec Erwin Crabeels"
+    - "5 juillet 2018, Carrefour de la formation: \"La CCT 109: 4 années d'application et 245 décisions judiciaires\", oratrice avec Sophie Gérard et Sophie Sottiaux"
   publications:
     - date: "Décembre 2020"
       title: "La rémunération variable. Approche en droit du travail, droit de la sécurité sociale, droit fiscal et pratique des ressources humaines"
@@ -47,17 +38,10 @@ en:
   name: "Christine Rizzo"
   title: "Lawyer specialized in labor law"
   image: "https://uploads-ssl.webflow.com/66a3633bf638ce4da95b8ad7/66a367d9f9bfc9b93e01c4a3_Christine_Apropos-b.jpeg"
-  bio: "A member of the Brussels Bar since 2010 and with experience with international clients and in a niche firm, I offer my clients - both employers and employees - support services, advice, negotiation, and legal defense in labor relations law."
-  specialties:
-    - "Workplace well-being"
-    - "Work-life balance"
-    - "Discrimination"
-    - "False self-employment"
-  languages:
-    - { name: "French", level: "Native" }
-    - { name: "Italian", level: "Fluent" }
-    - { name: "English", level: "Fluent" }
-    - { name: "Dutch", level: "Good knowledge" }
+  bio: 
+    - "A member of the Brussels Bar since 2010 and with experience with international clients and in a niche firm, I offer my clients - both employers and employees - support services, advice, negotiation, and legal defense in labor relations law."
+    - "The legal issues I am passionate about are workplace well-being, tools to improve work-life balance, discrimination issues, and false self-employment."
+    - "I am currently a member of the Psychosocial Well-being Commission of the Brussels Bar and regularly sit on the jury for pleading exercises, an examination that trainee lawyers must undergo before the end of their internship."
   careerPath:
     - { year: "2024", event: "Establishment of my own law firm" }
     - { year: "2017-2024", event: "Senior Lawyer at Reliance Littler" }
@@ -69,15 +53,33 @@ en:
     - { year: "2018", event: "Advanced Master in Social Law - Vrije Universiteit Brussel" }
     - { year: "2010", event: "LLM in European and International Law - Ghent University" }
     - { year: "2009", event: "Master of Laws - Litigation focus - Université Libre de Bruxelles" }
+  languages: "I work in French, Italian, and English. I also have a good knowledge of Dutch."
   conferences:
     - date: "April 17, 2024"
       title: "Dismissal of contractual workers in the public sector. The law of March 13, 2024"
       event: "Abilways"
+      role: "oratrice"
       coSpeakers: ["Fabienne Raepsaet"]
     - date: "March 25, 2021"
       title: "Overtime: updates"
       event: "Young Brussels Bar Conference"
+      role: "oratrice"
       coSpeakers: ["Pierre Van Achter", "Nicolas Tancredi"]
+    - date: "March 23, 2020"
+      title: "Coronavirus: does work life continue?"
+      event: "Young Brussels Bar Conference"
+      role: "oratrice"
+      coSpeakers: ["Erwin Crabeels"]
+    - date: "November 19, 2019"
+      title: "Social elections: key concepts"
+      event: "Young Brussels Bar Conference"
+      role: "oratrice"
+      coSpeakers: ["Erwin Crabeels"]
+    - date: "July 5, 2018"
+      title: "CBA 109: 4 years of application and 245 court decisions"
+      event: "Training Crossroads"
+      role: "oratrice"
+      coSpeakers: ["Sophie Gérard", "Sophie Sottiaux"]
   publications:
     - date: "December 2020"
       title: "Variable remuneration. Approach in labor law, social security law, tax law and human resources practice"
@@ -92,17 +94,10 @@ it:
   name: "Christine Rizzo"
   title: "Avvocato specializzato in diritto del lavoro"
   image: "https://uploads-ssl.webflow.com/66a3633bf638ce4da95b8ad7/66a367d9f9bfc9b93e01c4a3_Christine_Apropos-b.jpeg"
-  bio: "Membro dell'Ordine degli Avvocati di Bruxelles dal 2010 e con esperienza con clienti internazionali e in uno studio specializzato, offro ai miei clienti - sia datori di lavoro che dipendenti - servizi di supporto, consulenza, negoziazione e difesa legale nel diritto delle relazioni di lavoro."
-  specialties:
-    - "Benessere sul posto di lavoro"
-    - "Equilibrio vita-lavoro"
-    - "Discriminazione"
-    - "Falso lavoro autonomo"
-  languages:
-    - { name: "Francese", level: "Madrelingua" }
-    - { name: "Italiano", level: "Fluente" }
-    - { name: "Inglese", level: "Fluente" }
-    - { name: "Olandese", level: "Buona conoscenza" }
+  bio: 
+    - "Membro dell'Ordine degli Avvocati di Bruxelles dal 2010 e con esperienza con clienti internazionali e in uno studio specializzato, offro ai miei clienti - sia datori di lavoro che dipendenti - servizi di supporto, consulenza, negoziazione e difesa legale nel diritto delle relazioni di lavoro."
+    - "Le questioni legali che mi appassionano sono il benessere sul posto di lavoro, gli strumenti per migliorare l'equilibrio tra vita privata e professionale, le questioni di discriminazione e il falso lavoro autonomo."
+    - "Attualmente sono membro della Commissione per il Benessere Psicosociale dell'Ordine degli Avvocati di Bruxelles e siedo regolarmente nella giuria degli esercizi di arringa, un esame che gli avvocati tirocinanti devono sostenere prima della fine del loro tirocinio."
   careerPath:
     - { year: "2024", event: "Fondazione del mio studio legale" }
     - { year: "2017-2024", event: "Avvocato Senior presso Reliance Littler" }
@@ -114,18 +109,16 @@ it:
     - { year: "2018", event: "Master avanzato in Diritto Sociale - Vrije Universiteit Brussel" }
     - { year: "2010", event: "LLM in Diritto Europeo e Internazionale - Università di Gand" }
     - { year: "2009", event: "Laurea Magistrale in Giurisprudenza - indirizzo Contenzioso - Université Libre de Bruxelles" }
+  languages: "Lavoro in francese, italiano e inglese. Ho anche una buona conoscenza dell'olandese."
   conferences:
-    - date: "17 aprile 2024"
-      title: "Il licenziamento dei lavoratori contrattuali nel settore pubblico. La legge del 13 marzo 2024"
-      event: "Abilways"
-      coSpeakers: ["Fabienne Raepsaet"]
-    - date: "25 marzo 2021"
-      title: "Straordinari: aggiornamenti"
-      event: "Conferenza del Giovane Ordine degli Avvocati di Bruxelles"
-      coSpeakers: ["Pierre Van Achter", "Nicolas Tancredi"]
+    - "17 aprile 2024, Abilways : \"Il licenziamento dei lavoratori contrattuali nel settore pubblico. La legge del 13 marzo 2024\", oratrice con Fabienne Raepsaet"
+    - "25 marzo 2021, Conferenza del Giovane Ordine degli Avvocati di Bruxelles: \"Straordinari: aggiornamenti\", oratrice con Pierre Van Achter e Nicolas Tancredi"
+    - "23 marzo 2020, Conferenza del Giovane Ordine degli Avvocati di Bruxelles: \"Coronavirus: la vita lavorativa continua?\", oratrice con Erwin Crabeels"
+    - "19 novembre 2019, Conferenza del Giovane Ordine degli Avvocati di Bruxelles: \"Elezioni sociali: concetti chiave\", oratrice con Erwin Crabeels"
+    - "5 luglio 2018, Carrefour della formazione: \"CCT 109: 4 anni di applicazione e 245 decisioni giudiziarie\", oratrice con Sophie Gérard e Sophie Sottiaux"
   publications:
     - date: "Dicembre 2020"
-      title: "Retribuzione variabile. Approccio nel diritto del lavoro, diritto della sicurezza sociale, diritto tributario e pratica delle risorse umane"
+      title: "La remunerazione variabile. Approccio nel diritto del lavoro, diritto della sicurezza sociale, diritto fiscale e pratica delle risorse umane"
       publisher: "Larcier"
       coAuthors: ["Stéphanie Michiels"]
     - date: "Marzo 2020"

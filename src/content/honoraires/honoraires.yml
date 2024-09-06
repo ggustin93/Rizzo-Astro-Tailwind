@@ -81,36 +81,36 @@ it:
   subtitle: "Gli onorari dell'avvocato costituiscono il compenso per il lavoro svolto per voi."
   tarifs:
     title: "Tariffe"
-    travailleur: "Sei un lavoratore dipendente"
+    travailleur: "Sei un lavoratore"
     employeur: "Sei un datore di lavoro"
   transparence:
     title: "Trasparenza"
     points:
-      - "Il primo contatto mira generalmente a identificare le vostre esigenze e a determinare se sono la persona giusta per rispondervi. È gratuito."
+      - "Il primo contatto mira generalmente a identificare le vostre esigenze e se sono la persona giusta per rispondervi. È gratuito."
       - "Discutiamo delle condizioni finanziarie fin dal primo incontro. Riceverete una proposta di prezzo scritta sotto forma di preventivo."
-      - "Se decidete di lavorare con me, firmiamo insieme una convenzione che riprende tutte le condizioni del mio intervento."
+      - "Se decidete di lavorare con me, firmiamo insieme un accordo che riporta tutte le condizioni del mio intervento."
   previsibilite:
     title: "Prevedibilità e pagamento mensile"
     content: |
       Non sapere quanto costerà l'intervento del vostro avvocato può essere fonte di preoccupazione.
       Vi propongo la maggior parte delle mie prestazioni a una tariffa forfettaria fissa "tutto incluso" pagabile mensilmente.
-      Saprete quindi esattamente quanto pagherete al mese e in totale.
+      Sapete quindi esattamente quanto pagherete al mese e quanto pagherete in totale.
       Il numero di rate mensili viene determinato insieme in base alla vostra situazione personale e al vostro caso (ad esempio, la durata stimata del procedimento in tribunale).
     points:
       - "L'onorario di risultato concordato viene fatturato dopo il ricevimento delle somme ottenute."
-      - "Se scegliamo di lavorare insieme sulla base di una tariffa oraria, le mie prestazioni vi vengono fatturate ogni mese, man mano che vengono effettuate."
-      - "Non ci sono spese di fascicolo o di ufficio, ad eccezione delle spese postali."
-      - "Le spese legate all'intervento di terzi (ufficiali giudiziari, esperti, traduttori, avvocati specializzati in altri settori) o le spese di giustizia (diritti di cancelleria) sono rifatturate al costo o direttamente pagabili al terzo interveniente."
+      - "Se scegliamo di lavorare insieme sulla base di una tariffa oraria, le mie prestazioni vi vengono fatturate ogni mese, man mano che vengono eseguite."
+      - "Non ci sono spese di fascicolo o di ufficio eccetto le spese postali."
+      - "I costi relativi all'intervento di terzi (ufficiali giudiziari, esperti, traduttori, avvocati specializzati in altri settori) o le spese giudiziarie (diritti di cancelleria) vengono rifatturati al costo o sono direttamente pagabili al terzo interveniente."
   assurance:
-    title: "Considerate l'assicurazione di protezione giuridica"
+    title: "Pensate all'assicurazione di protezione giuridica"
     content: |
       L'assicurazione di Protezione Giuridica (o "difesa in giudizio") può farvi risparmiare molto denaro.
 
-      Diverse compagnie assicurative in Belgio offrono un'assicurazione di protezione giuridica che copre i conflitti nell'ambito di un rapporto di lavoro (Ethias, Arag, Das, Arces), che siate lavoratori dipendenti o datori di lavoro.
+      Diversi assicuratori in Belgio offrono un'assicurazione di protezione giuridica che copre i conflitti nell'ambito di un rapporto di lavoro (Ethias, Arag, Das, Arces), sia che siate lavoratori o datori di lavoro.
 
       Verificate con il vostro broker o assicuratore se siete coperti o se tale assicurazione può essere sottoscritta e il periodo di attesa.
        
-      In questo caso, tutte o parte delle vostre spese legali saranno pagate dalla vostra assicurazione e non da voi.
+      In questo caso, tutti o parte dei vostri onorari legali saranno pagati dalla vostra assicurazione e non da voi.
   video:
     title: "Per saperne di più"
     url: "https://youtu.be/Y-SKuT-XqGk"

@@ -16,6 +16,7 @@ export default {
         'accent': '#FFCC33',
         'light-gray': '#F5F5F5',
         'dark-gray': '#333333',
+        'light-blue': '#c2dae0',
         'beige': '#faf5f0',
         'light-travailleur': '#91bfc4',
         'light-employeur':'#9397c7' //'#FDFCFB'

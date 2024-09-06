@@ -1,20 +1,27 @@
 fr:
-  title: "Accompagnement des Employeurs"
+  title: "Accompagnement et défense des entreprises"
   description: "Habituée des négociations et des salles d'audience et forte d'une expérience acquise auprès de clients internationaux, j'accompagne votre équipe RH dans la gestion de vos litiges et des relations de travail au quotidien:"
-  questions:
+  topics:
     - "Premier engagement en Belgique"
+    - "Contrats de salariés ou indépendants"
     - "Démissions et licenciements"
     - "Horaires de travail flexibles"
     - "Télétravail"
     - "Droit à la déconnexion"
-    - "Crédit-temps et congés thématiques (congé parental, assistance médicale, soins palliatifs, aidant proche)"
+    - "Crédit-temps et congés thématiques (congé parental, aide médicale, soins palliatifs, aidant proche) et protections contre le licenciement"
     - "Droit à la formation"
     - "Reconnaissance et incentives bonus"
     - "Gestion des absences (de longue durée)"
     - "Harcèlement, stress et violence au travail (risque psychosociaux)"
     - "Discrimination au travail"
     - "Faux indépendants"
-  conclusion: "Je vous accompagne également pour que la réglementation sur le bien-être au travail, les lois anti-discrimination et les outils juridiques visant à améliorer l'équilibre vie privée-vie professionnelle deviennent des ressources pour valoriser l'image de votre entreprise, attirer et retenir vos talents."
+  additionalSupport:
+    intro: "Je vous accompagne également pour que"
+    points:
+      - "la réglementation sur le bien-être au travail"
+      - "les lois anti-discrimination"
+      - "et les outils juridiques visant à améliorer l'équilibre vie privée-vie professionnelle"
+    conclusion: "deviennent des ressources pour valoriser l'image de votre entreprise, attirer et retenir vos talents."
   servicesTitle: "Mes services"
   services:
     - icon: "Search"
@@ -26,28 +33,35 @@ fr:
     - icon: "Handshake"
       text: "Négociation d'accords amiables en direct ou en coulisses"
     - icon: "Shield"
-      text: "Défense devant les cours et tribunaux du travail et les inspections du travail et de l'ONSS"
+      text: "Défense devant les cours et tribunaux du travail et devant les inspections du travail et de l'ONSS"
   ctaText: "En savoir plus sur les tarifs pour les entreprises"
   imageUrl: "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
   imageAlt: "Poignée de main entre professionnels"
 
 en:
-  title: "Support for Employers"
+  title: "Support and Defense for Companies"
   description: "Experienced in negotiations and courtrooms, with expertise gained from international clients, I assist your HR team in managing your disputes and daily work relationships:"
-  questions:
+  topics:
     - "First hiring in Belgium"
+    - "Employee or independent contractor agreements"
     - "Resignations and dismissals"
     - "Flexible working hours"
     - "Remote work"
     - "Right to disconnect"
-    - "Time credit and thematic leaves (parental leave, medical assistance, palliative care, caregivers)"
+    - "Time credit and thematic leaves (parental leave, medical assistance, palliative care, caregivers) and protection against dismissal"
     - "Right to training"
     - "Recognition and bonus incentives"
     - "Management of (long-term) absences"
     - "Harassment, stress, and violence at work (psychosocial risks)"
     - "Workplace discrimination"
     - "False self-employment"
-  conclusion: "I also assist you in leveraging workplace well-being regulations, anti-discrimination laws, and legal tools aimed at improving work-life balance as resources to enhance your company's image and attract and retain talent."
+  additionalSupport:
+    intro: "I also assist you in ensuring that"
+    points:
+      - "workplace well-being regulations"
+      - "anti-discrimination laws"
+      - "and legal tools aimed at improving work-life balance"
+    conclusion: "become resources to enhance your company's image and attract and retain talent."
   servicesTitle: "My Services"
   services:
     - icon: "Search"
@@ -59,28 +73,35 @@ en:
     - icon: "Handshake"
       text: "Negotiation of amicable agreements directly or behind the scenes"
     - icon: "Shield"
-      text: "Defense before labor courts and tribunaux, and labor and social security inspections"
+      text: "Defense before labor courts and tribunals, and labor and social security inspections"
   ctaText: "Learn more about rates for companies"
   imageUrl: "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
   imageAlt: "Professional handshake"
 
 it:
-  title: "Supporto ai Datori di Lavoro"
+  title: "Supporto e Difesa per le Aziende"
   description: "Esperta in negoziazioni e udienze in tribunale, con esperienza acquisita da clienti internazionali, assisto il vostro team HR nella gestione delle controversie e delle relazioni di lavoro quotidiane:"
-  questions:
+  topics:
     - "Prima assunzione in Belgio"
+    - "Contratti di dipendenti o autonomi"
     - "Dimissioni e licenziamenti"
     - "Orari di lavoro flessibili"
     - "Lavoro da remoto"
     - "Diritto alla disconnessione"
-    - "Credito d'orario e congedi tematici (congedo parentale, assistenza medica, cure palliative, assistenza familiare)"
+    - "Credito d'orario e congedi tematici (congedo parentale, assistenza medica, cure palliative, assistenza familiare) e protezioni contro il licenziamento"
     - "Diritto alla formazione"
     - "Riconoscimenti e incentivi bonus"
     - "Gestione delle assenze (di lunga durata)"
     - "Molestie, stress e violenza sul lavoro (rischi psicosociali)"
     - "Discriminazione sul lavoro"
     - "Falso lavoro autonomo"
-  conclusion: "Vi assisto anche nell'utilizzo delle normative sul benessere sul lavoro, le leggi antidiscriminazione e gli strumenti giuridici volti a migliorare l'equilibrio tra vita privata e professionale come risorse per valorizzare l'immagine della vostra azienda, attrarre e trattenere i talenti."
+  additionalSupport:
+    intro: "Vi assisto anche nell'utilizzo delle normative sul benessere sul lavoro, le leggi antidiscriminazione e gli strumenti giuridici volti a migliorare l'equilibrio tra vita privata e professionale come risorse per valorizzare l'immagine della vostra azienda, attrarre e trattenere i talenti."
+    points:
+      - "la regolamentazione sul benessere sul lavoro"
+      - "le leggi antidiscriminazione"
+      - "e gli strumenti giuridici volti a migliorare l'equilibrio tra vita privata e professionale"
+    conclusion: "diventano risorse per valorizzare l'immagine della vostra azienda, attrarre e trattenere i talenti."
   servicesTitle: "I Miei Servizi"
   services:
     - icon: "Search"

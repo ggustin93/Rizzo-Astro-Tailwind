@@ -1,10 +1,11 @@
 ---
-// src/components/Footer.astro
 import { Image } from 'astro:assets';
+import { Phone, Mail, MapPin, ChevronDown } from 'astro-feather-icons2';
 import logoImage from '../assets/images/logo_crizzo_calli3.svg';
+import logoPwablo from '../assets/images/logo_pwablo.svg';
 
 const { pathname } = Astro.url;
-const currentLang = pathname.split('/')[1] || 'fr'; // Par défaut à 'fr' si aucune langue n'est trouvée
+const currentLang = pathname.split('/')[1] || 'fr';
 
 const translations = {
   fr: {
@@ -18,43 +19,10 @@ const translations = {
     privacyPolicy: "Politique de confidentialité",
     design: "Design by Pwablo",
     ecoDesign: "Score d'éco-conception",
-    credits: "Crédits",
-    navigation: "Menu",
-    legalPages: "Pages légales",
-    ecoDesignPwablo: "Site web écologique"
+    ecoDesignPwablo: "Site web écologique",
+    menu: "Menu"
   },
-  en: {
-    copyright: "© 2024 Christine Rizzo",
-    expertise: "Expertise",
-    profil: "Profile",
-    honoraires: "Fees",
-    articles: "Articles",
-    contact: "Contact",
-    legalNotice: "Legal Notice",
-    privacyPolicy: "Privacy Policy",
-    design: "Design by Pwablo",
-    ecoDesign: "Eco-design Score",
-    credits: "Credits",
-    navigation: "Menu",
-    legalPages: "Legal Pages",
-    ecoDesignPwablo: "Eco-friendly Website"
-  },
-  it: {
-    copyright: "© 2024 Christine Rizzo",
-    expertise: "Competenza",
-    profil: "Profilo",
-    honoraires: "Onorari",
-    articles: "Articoli",
-    contact: "Contatto",
-    legalNotice: "Note legali",
-    privacyPolicy: "Politica sulla privacy",
-    design: "Design di Pwablo",
-    ecoDesign: "Punteggio eco-design",
-    credits: "Crediti",
-    navigation: "Menu",
-    legalPages: "Pagine legali",
-    ecoDesignPwablo: "Sito web ecologico"
-  }
+  // ... (autres traductions)
 };
 
 const t = translations[currentLang as keyof typeof translations] || translations.fr;
@@ -74,60 +42,114 @@ const legalLinks = [
   { href: `/${currentLang}/privacy`, label: t.privacyPolicy }
 ];
 
-const secondaryLinks = [
-  { href: "https://pwablo.be", label: t.design },
-  { href: "https://www.ecoindex.fr/resultat/?id=19de93fb-067c-4682-a25e-e37636dd5e6d", label: t.ecoDesign }
-];
 ---
 
-<div class="full-bleed bg-beige">
-  <footer class="bg-beige text-dark-gray py-8">
-    <div class="container mx-auto px-4 text-center">
-      <div class="flex flex-col items-center">
-        <p class="text-sm mb-4 text-dark-gray">{t.copyright}</p>
-        <div class="logo text-center mb-6">
-          <Image src={logoImage} alt="Christine Rizzo Logo" class="h-16 md:h-24 w-auto" />
-        </div>
-        <div class="w-full">
-          <div class="hidden md:flex justify-center space-x-4 mb-4">
+<footer class="bg-beige text-dark-gray py-4 md:py-8">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-wrap justify-between items-start">
+      <div class="w-full md:w-1/3 mb-4 md:mb-0 pr-8 flex justify-center md:justify-start items-center md:items-start md:self-start">
+        <Image src={logoImage} alt="Christine Rizzo Logo" class="h-48 md:h-96 w-auto mt-0 md:mt-[-4rem]" />
+      </div>
+      
+      <div class="w-full md:w-1/5 mt-8 xs:mt-0 mb-8  md:mb-0">
+        <h3 class="font-medium mb-4 text-lg hidden md:block">{t.menu}</h3>
+        <ul class="space-y-2 hidden md:block">
+          {mainLinks.map(link => (
+            <li><a href={link.href} class="text-sm hover:underline transition-colors duration-300 hover:text-travailleur">{link.label}</a></li>
+          ))}
+        </ul>
+        <details class="md:hidden">
+          <summary class="font-medium mb-4 text-lg flex justify-between items-center cursor-pointer text-center">
+            <span class="w-full">{t.menu}</span>
+            <ChevronDown class="w-5 h-5 absolute right-0" />
+          </summary>
+          <ul class="space-y-2 mt-2 text-center">
             {mainLinks.map(link => (
-              <a href={link.href} class="text-gray-950 text-sm hover:underline transition duration-300">{link.label}</a>
+              <li><a href={link.href} class="text-sm hover:underline">{link.label}</a></li>
             ))}
-          </div>
-          <br>
-          <div class="hidden md:flex justify-center space-x-4">
-            {[...legalLinks, ...secondaryLinks].map(link => (
-              <a href={link.href} class="text-dark-gray text-sm hover:underline transition duration-300">{link.label}</a>
-            ))}
-          </div>
-          <div class="md:hidden">
-            <details class="mb-4">
-              <summary class="cursor-pointer text-black hover:underline transition duration-300 px-3 py-2 text-center">{t.navigation}</summary>
-              <nav class="flex flex-col items-center space-y-2">
-                {mainLinks.map(link => (
-                  <a href={link.href} class="text-dark-gray hover:underline transition duration-300 px-3 py-2 text-center">{link.label}</a>
-                ))}
-              </nav>
-            </details>
-            <details class="mb-4">
-              <summary class="cursor-pointer text-black hover:underline transition duration-300 px-3 py-2 text-center">{t.legalPages}</summary>
-              <nav class="flex flex-col items-center space-y-2">
-                {[...legalLinks, ...secondaryLinks].map(link => (
-                  <a href={link.href} class="text-dark-gray hover:underline transition duration-300 px-3 py-2 text-center">{link.label}</a>
-                ))}
-              </nav>
-            </details>
-            <details class="mb-4">
-              <summary class="cursor-pointer text-black hover:underline transition duration-300 px-3 py-2 text-center">{t.ecoDesignPwablo}</summary>
-              <nav class="flex flex-col items-center space-y-2">
-                {secondaryLinks.map(link => (
-                  <a href={link.href} class="text-dark-gray hover:underline transition duration-300 px-3 py-2 text-center">{link.label}</a>
-                ))}
-              </nav>
-            </details>
-          </div>
+          </ul>
+        </details>
+      </div>
+      
+      <div class="w-full md:w-1/5 mb-8 mt-8 xs:mt-0 md:mb-0">
+        <h3 class="font-medium mb-4 text-lg hidden md:block">{t.contact}</h3>
+        <div class="hidden md:block">
+          <p class="text-sm flex items-center mb-2"><Phone class="w-4 h-4 mr-2" /> +32 488 40 45 49</p>
+          <p class="text-sm flex items-center mb-2"><Mail class="w-4 h-4 mr-2" /> c.rizzo@avocat.be</p>
+          <p class="text-sm flex items-start">
+            <MapPin class="w-4 h-4 mr-2 mt-1" /> 
+            <span>
+              Chaussée de Waterloo 1151,<br/>
+              1180 Bruxelles
+            </span>
+          </p>
         </div>
+        <details class="md:hidden">
+          <summary class="font-medium mb-4 text-lg flex justify-between items-center cursor-pointer text-center">
+            <span class="w-full">{t.contact}</span>
+            <ChevronDown class="w-5 h-5 absolute right-0" />
+          </summary>
+          <div class="mt-2 text-center">
+            <p class="text-sm mb-2">+32 488 40 45 49</p>
+            <p class="text-sm mb-2">c.rizzo@avocat.be</p>
+            <p class="text-sm">
+              Chaussée de Waterloo 1151,<br/>
+              1180 Bruxelles
+            </p>
+          </div>
+        </details>
+      </div>
+      
+      <div class="w-full md:w-1/5 mb-8 mt-8 xs:mt-0 md:mb-0">
+        <h3 class="font-medium mb-4 text-lg hidden md:block">{t.ecoDesignPwablo}</h3>
+        <div class="hidden md:block">
+          <a href="https://www.ecoindex.fr/resultat/?id=19de93fb-067c-4682-a25e-e37636dd5e6d" class="text-sm hover:underline mb-2 block">{t.ecoDesign}</a>
+          <a href="https://pwablo.be" class="hover:underline flex flex-col items-start">
+            <span class="text-sm mb-2">{t.design}</span>
+            <Image src={logoPwablo} alt="Pwablo Logo" class="h-16 w-auto" />
+          </a>
+        </div>
+        <details class="md:hidden">
+          <summary class="font-medium mb-4 text-lg flex justify-between items-center cursor-pointer text-center">
+            <span class="w-full">{t.ecoDesignPwablo}</span>
+            <ChevronDown class="w-5 h-5 absolute right-0" />
+          </summary>
+          <div class="mt-2 text-center">
+            <a href="https://www.ecoindex.fr/resultat/?id=19de93fb-067c-4682-a25e-e37636dd5e6d" class="text-sm hover:underline mb-2 block">{t.ecoDesign}</a>
+            <a href="https://pwablo.be" class="hover:underline flex flex-col items-center">
+              <span class="text-sm mb-2">{t.design}</span>
+              <Image src={logoPwablo} alt="Pwablo Logo" class="h-12 w-auto" />
+            </a>
+          </div>
+        </details>
       </div>
     </div>
-  </footer>
-</div>
+    
+    <div class="mt-4 pt-4 border-t border-gray-300 text-center">
+      <p class="text-sm mb-4">{t.copyright}</p>
+      <p class="text-xs">
+        <a href={legalLinks[0].href} class="hover:underline">{legalLinks[0].label}</a>
+        <span class="mx-2">|</span>
+        <a href={legalLinks[1].href} class="hover:underline">{legalLinks[1].label}</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  @media (max-width: 768px) {
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+    details[open] summary .w-5 {
+      transform: rotate(180deg);
+    }
+    details > summary {
+      list-style: none;
+      position: relative;
+    }
+    details > summary::-webkit-details-marker {
+      display: none;
+    }
+  }
+</style>
