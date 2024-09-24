@@ -14,6 +14,7 @@ export default {
         'travailleur': '#068D9D',
         'employeur': '#53599A',
         'accent': '#FFCC33',
+        'light-accent' :"#fcf3e1",
         'light-gray': '#F5F5F5',
         'dark-gray': '#333333',
         'light-blue': '#c2dae0',
@@ -24,7 +25,7 @@ export default {
         "dark-green": "#06615b",
         "dark-gray": "#747873",
         "light-green":"#b7c7a7",
-        "light-accent" :"#fcf3e1" */
+        */
       },
     },
   },

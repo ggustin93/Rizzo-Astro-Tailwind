@@ -11,21 +11,23 @@ const privacyEntry = await getEntry('privacy', 'privacy');
 const content = privacyEntry.data[lang as keyof typeof privacyEntry.data];
 ---
 
-<BaseLayout title={content.title} description={content.title} lang={lang}>
-  <main class="container mx-auto px-4 py-16 max-w-3xl">
-    <h1 class="text-4xl font-light mb-8 text-black">{content.title}</h1>
-    <div class="prose prose-lg max-w-none text-dark-gray">
-      {content.content.map((section, index) => (
-        <div class="mb-8">
-          <h2 class="text-2xl font-semibold mt-8 mb-4 text-gray-800">{section.title}</h2>
-          <div class="whitespace-pre-wrap" set:html={section.text.replace(
+<BaseLayout title={content.title} lang={lang} description={content.title}>
+  <div class="bg-white md:my-20 p-8">
+  <main class="container mx-auto px-4 py-16">
+    <h1 class="text-4xl font-light mb-12 text-black text-center">{content.title}</h1>
+    <div class="space-y-8">
+      {content.sections.map((section) => (
+        <section>
+          <h2 class="text-2xl font-light mb-4 text-black">{section.title}</h2>
+          <p class="text-dark-gray font-light whitespace-pre-line" set:html={section.text.replace(
             /\bhttps?:\/\/\S+\b/g,
             '<a href="$&" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">$&</a>'
-          )}></div>
-        </div>
+          )}></p>
+        </section>
       ))}
     </div>
   </main>
+  </div>
 </BaseLayout>
 
 <style>

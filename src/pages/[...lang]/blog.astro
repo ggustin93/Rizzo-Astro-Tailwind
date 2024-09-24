@@ -41,6 +41,8 @@ const categories = [...new Set(blogEntries.flatMap(entry => entry.data.categorie
 ---
 
 <BaseLayout title={t.blogTitle} lang={currentLang} description={t.blogTitle}>
+  <div class="bg-white md:my-20 p-8">
+
   <main class="container mx-auto px-4 py-12">
     <h2 class="text-4xl font-light mb-8 text-black text-center">
       {t.blogTitle}
@@ -78,6 +80,7 @@ const categories = [...new Set(blogEntries.flatMap(entry => entry.data.categorie
       )}
     </div>
   </main>
+  </div>
 </BaseLayout>
 
 <style>
@@ -85,7 +88,7 @@ const categories = [...new Set(blogEntries.flatMap(entry => entry.data.categorie
     @apply px-4 py-2 bg-gray-200 text-gray-700 rounded-full transition-colors duration-300;
   }
   .category-filter:hover, .category-filter.active {
-    @apply bg-accent text-black;
+    @apply bg-travailleur text-white;
   }
   .hidden {
     display: none;

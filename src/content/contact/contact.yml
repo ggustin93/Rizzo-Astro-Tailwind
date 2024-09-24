@@ -4,7 +4,7 @@ fr:
   buttons:
     - icon: "calendar"
       text: "PRENEZ RDV EN LIGNE"
-      subtext: "Le premier rdv est gratuit"
+      subtext: "Le premier contact est gratuit"
       type: "calendly"
       action: "https://calendly.com/decarbonaction/meeting"
     - icon: "mail"

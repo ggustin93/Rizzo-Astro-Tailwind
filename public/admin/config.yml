@@ -93,138 +93,118 @@ collections:
             widget: "object"
             fields: *homeFields
 
-  - name: "travailleurs"
-    label: "Page Travailleurs"
+  - name: "honoraires"
+    label: "Honoraires"
     files:
-      - file: "src/content/travailleurs/travailleurs.yml"
-        name: "travailleurs"
-        label: "Contenu de la page Travailleurs"
+      - file: "src/content/honoraires/honoraires.yml"
+        name: "honoraires"
+        label: "Page principale des honoraires"
+        i18n:
+          structure: single_file
+        fields: &honorairesFields
+          - {label: "Titre", name: "title", widget: "string"}
+          - {label: "Sous-titre", name: "subtitle", widget: "string"}
+          - label: "Tarifs"
+            name: "tarifs"
+            widget: "object"
+            fields:
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Travailleur", name: "travailleur", widget: "string"}
+              - {label: "Employeur", name: "employeur", widget: "string"}
+          - label: "Transparence"
+            name: "transparence"
+            widget: "object"
+            fields:
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Points", name: "points", widget: "list"}
+          - label: "Prévisibilité"
+            name: "previsibilite"
+            widget: "object"
+            fields:
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Contenu", name: "content", widget: "text"}
+              - {label: "Points", name: "points", widget: "list"}
+          - label: "Assurance"
+            name: "assurance"
+            widget: "object"
+            fields:
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Contenu", name: "content", widget: "text"}
+      - file: "src/content/honoraires/tarif_travailleur.yml"
+        name: "tarif_travailleur"
+        label: "Tarifs pour travailleurs"
         i18n:
           structure: single_file
         fields:
           - label: "Français"
             name: "fr"
             widget: "object"
-            fields: &travailleursFields
+            fields:
               - {label: "Titre", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
-              - label: "Questions"
-                name: "questions"
-                widget: "list"
-                field: {label: Question, name: question, widget: "string"}
-              - {label: "Focus spécial", name: "specialFocus", widget: "string"}
-              - label: "Points de focus"
-                name: "focusPoints"
-                widget: "list"
-                field: {label: Point, name: point, widget: "string"}
-              - {label: "Titre des services", name: "servicesTitle", widget: "string"}
+              - {label: "Lien retour", name: "backLink", widget: "string"}
               - label: "Services"
                 name: "services"
                 widget: "list"
                 fields:
-                  - {label: "Icône", name: "icon", widget: "select", options: ["Briefcase", "Shield", "FileText"]}
-                  - {label: "Texte", name: "text", widget: "string"}
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Icône", name: "icon", widget: "select", options: ["Briefcase", "FileText", "Shield", "Check"]}
+                  - {label: "Description", name: "description", widget: "text", required: false}
+                  - {label: "Tarification", name: "pricing", widget: "string"}
+                  - label: "Détails"
+                    name: "details"
+                    widget: "list"
+                    field: {label: "Détail", name: "detail", widget: "string"}
+                  - label: "Services inclus"
+                    name: "services"
+                    widget: "list"
+                    field: {label: "Service", name: "service", widget: "string"}
           - label: "English"
             name: "en"
             widget: "object"
-            fields: *travailleursFields
+            fields: *honorairesFields
           - label: "Italiano"
             name: "it"
             widget: "object"
-            fields: *travailleursFields
+            fields: *honorairesFields
 
-  - name: "employeurs"
-    label: "Page Employeurs"
-    files:
-      - file: "src/content/employeurs/employeurs.yml"
-        name: "employeurs"
-        label: "Contenu de la page Employeurs"
+      - file: "src/content/honoraires/tarif_employeur.yml"
+        name: "tarif_employeur"
+        label: "Tarifs pour employeurs"
         i18n:
           structure: single_file
         fields:
           - label: "Français"
             name: "fr"
             widget: "object"
-            fields: &employeursFields
+            fields:
               - {label: "Titre", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
-              - label: "Questions"
-                name: "questions"
-                widget: "list"
-                field: {label: Question, name: question, widget: "string"}
-              - {label: "Conclusion", name: "conclusion", widget: "text"}
-              - {label: "Titre des prestations", name: "servicesTitle", widget: "string"}
-              - label: "Prestations"
+              - {label: "Lien retour", name: "backLink", widget: "string"}
+              - label: "Services"
                 name: "services"
                 widget: "list"
                 fields:
-                  - {label: "Icône", name: "icon", widget: "select", options: ["FileText", "UserPlus", "Shield", "Search"]}
-                  - {label: "Texte", name: "text", widget: "string"}
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Icône", name: "icon", widget: "select", options: ["Briefcase", "FileText", "Shield", "Check"]}
+                  - {label: "Description", name: "description", widget: "text", required: false}
+                  - {label: "Tarification", name: "pricing", widget: "string"}
+                  - label: "Détails"
+                    name: "details"
+                    widget: "list"
+                    field: {label: "Détail", name: "detail", widget: "string"}
+                  - label: "Services inclus"
+                    name: "services"
+                    widget: "list"
+                    field: {label: "Service", name: "service", widget: "string"}
           - label: "English"
             name: "en"
             widget: "object"
-            fields: *employeursFields
+            fields: *honorairesFields
           - label: "Italiano"
             name: "it"
             widget: "object"
-            fields: *employeursFields
-
-  - name: "profile"
-    label: "Profil"
-    files:
-      - file: "src/content/profile/profile.yml"
-        name: "profile"
-        label: "Contenu du profil"
-        i18n:
-          structure: single_file
-        fields:
-          - label: "Français"
-            name: "fr"
-            widget: "object"
-            fields: &profileFields
-              - {label: "Nom", name: "name", widget: "string"}
-              - {label: "Titre", name: "title", widget: "string"}
-              - {label: "Image", name: "image", widget: "image"}
-              - {label: "Biographie", name: "bio", widget: "text"}
-              - label: "Spécialités"
-                name: "specialties"
-                widget: "list"
-              - label: "Langues"
-                name: "languages"
-                widget: "list"
-                fields:
-                  - {label: "Nom", name: "name", widget: "string"}
-                  - {label: "Niveau", name: "level", widget: "string"}
-              - label: "Parcours"
-                name: "careerPath"
-                widget: "list"
-                fields:
-                  - {label: "Année", name: "year", widget: "string"}
-                  - {label: "Événement", name: "event", widget: "string"}
-              - label: "Conférences"
-                name: "conferences"
-                widget: "list"
-                fields:
-                  - {label: "Date", name: "date", widget: "string"}
-                  - {label: "Titre", name: "title", widget: "string"}
-                  - {label: "Événement", name: "event", widget: "string"}
-                  - {label: "Co-intervenants", name: "coSpeakers", widget: "list"}
-              - label: "Publications"
-                name: "publications"
-                widget: "list"
-                fields:
-                  - {label: "Date", name: "date", widget: "string"}
-                  - {label: "Titre", name: "title", widget: "string"}
-                  - {label: "Éditeur", name: "publisher", widget: "string"}
-                  - {label: "Co-auteurs", name: "coAuthors", widget: "list"}
-          - label: "English"
-            name: "en"
-            widget: "object"
-            fields: *profileFields
-          - label: "Italiano"
-            name: "it"
-            widget: "object"
-            fields: *profileFields
+            fields: *honorairesFields
 
   - name: "legal"
     label: "Mentions légales"
@@ -234,13 +214,14 @@ collections:
         label: "Contenu des mentions légales"
         i18n:
           structure: single_file
-        fields:
-          - label: "Français"
-            name: "fr"
-            widget: "object"
-            fields: &legalFields
+        fields: &legalFields
+          - {label: "Titre", name: "title", widget: "string"}
+          - label: "Sections"
+            name: "sections"
+            widget: "list"
+            fields:
               - {label: "Titre", name: "title", widget: "string"}
-              - {label: "Contenu", name: "content", widget: "markdown"}
+              - {label: "Texte", name: "text", widget: "markdown"}
           - label: "English"
             name: "en"
             widget: "object"
@@ -258,13 +239,14 @@ collections:
         label: "Contenu de la politique de confidentialité"
         i18n:
           structure: single_file
-        fields:
-          - label: "Français"
-            name: "fr"
-            widget: "object"
-            fields: &privacyFields
+        fields: &privacyFields
+          - {label: "Titre", name: "title", widget: "string"}
+          - label: "Sections"
+            name: "sections"
+            widget: "list"
+            fields:
               - {label: "Titre", name: "title", widget: "string"}
-              - {label: "Contenu", name: "content", widget: "markdown"}
+              - {label: "Texte", name: "text", widget: "markdown"}
           - label: "English"
             name: "en"
             widget: "object"
@@ -273,44 +255,3 @@ collections:
             name: "it"
             widget: "object"
             fields: *privacyFields
-
-  - name: "honoraires"
-    label: "Honoraires"
-    folder: "src/content/honoraires"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Subtitle", name: "subtitle", widget: "string"}
-      - label: "Tarifs"
-        name: "tarifs"
-        widget: "object"
-        fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Travailleur", name: "travailleur", widget: "string"}
-          - {label: "Employeur", name: "employeur", widget: "string"}
-      - label: "Transparence"
-        name: "transparence"
-        widget: "object"
-        fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Points", name: "points", widget: "list"}
-      - label: "Prévisibilité"
-        name: "previsibilite"
-        widget: "object"
-        fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Content", name: "content", widget: "text"}
-          - {label: "Points", name: "points", widget: "list"}
-      - label: "Assurance"
-        name: "assurance"
-        widget: "object"
-        fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Content", name: "content", widget: "text"}
-      - label: "Video"
-        name: "video"
-        widget: "object"
-        fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "URL", name: "url", widget: "string"}

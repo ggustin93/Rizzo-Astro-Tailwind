@@ -69,8 +69,8 @@ const t = translations[lang as keyof typeof translations];
   <div class="max-w-6xl mx-auto px-4 py-12">
     <div class="flex flex-col-reverse md:flex-row gap-12">
       <div class="md:w-2/3">
-        <h1 class="text-4xl md:text-5xl font-light text-black mb-8">{name}</h1>
-        <h2 class="text-2xl font-light text-accent mb-4">{title}</h2>
+        <h1 class="text-4xl md:text-5xl font-light text-accent mb-8">{name}</h1>
+        <h2 class="text-3xl font-light text-black mb-4">{title}</h2>
         {bio.map((paragraph) => (
           <p class="text-dark-gray mb-6">{paragraph}</p>
         ))}
@@ -88,19 +88,24 @@ const t = translations[lang as keyof typeof translations];
         <h3 class="text-xl font-semibold text-black mb-3">{t.languages}</h3>
         <p class="text-dark-gray mb-6">{languages}</p>
         
-        <h3 class="text-2xl font-semibold text-black mb-4">Conférences</h3>
+        <h3 class="text-xl font-semibold text-black mb-4">{t.conferences}</h3>
 <ul class="space-y-2 mb-8">
   {conferences.map((conf) => (
-    <li class="text-dark-gray">{conf}</li>
+    <li class="text-dark-gray flex items-start">
+      <span class="text-accent mr-2 text-4xl">•</span> {conf}
+    </li>
   ))}
 </ul>
         
-        <h3 class="text-xl font-semibold text-black mb-3">{t.publications}</h3>
+        <h3 class="text-xl font-bold text-black mb-3">{t.publications}</h3>
         <ul class="space-y-2">
           {publications.map((pub) => (
-            <li class="text-dark-gray">
-              <span class="font-semibold">{pub.date}:</span> "{pub.title}", {pub.publisher}
-              {pub.coAuthors && <span class="italic"> ({t.inCollaborationWith} {pub.coAuthors.join(', ')})</span>}
+            <li class="text-dark-gray flex items-start">
+              <span class="text-accent mr-2 text-4xl">•</span>
+              <div>
+                <span class="font-semibold">{pub.date}:</span> "{pub.title}", {pub.publisher}
+                {pub.coAuthors && <span class="italic"> ({t.inCollaborationWith} {pub.coAuthors.join(', ')})</span>}
+              </div>
             </li>
           ))}
         </ul>
