@@ -55,7 +55,7 @@ const seoImage = entry.data.thumbnail;
 <BaseLayout title={seoTitle} description={seoDescription} lang={lang} image={seoImage}>
 
   <article class="max-w-5xl mx-auto">
-    <div class="bg-white md:my-20 p-8">
+    <div class="bg-white md:my-20 p-8 rounded-lg">
 
     <header class="relative mb-12">
       <Image 
@@ -86,7 +86,7 @@ const seoImage = entry.data.thumbnail;
 
     <div class="mb-8 flex flex-wrap gap-2">
       {entry.data.categories.map((category: string) => (
-        <span class="bg-accent text-black px-3 py-1 rounded-full text-sm">{category}</span>
+        <span class="bg-travailleur text-white px-3 py-1 rounded-full text-sm">{category}</span>
       ))}
     </div>
 
