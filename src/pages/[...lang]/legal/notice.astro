@@ -1,6 +1,6 @@
 ---
 import { getEntry } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
   return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
