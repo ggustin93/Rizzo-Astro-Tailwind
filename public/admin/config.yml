@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: v5
 
 media_folder: "src/assets/images"
 public_folder: "/assets/images"
@@ -170,7 +170,7 @@ collections:
             fields: *employeursFields
 
   - name: "profile"
-    label: "Profil"
+    label: "Page Profil"
     files:
       - file: "src/content/profile/profile.yml"
         name: "profile"
@@ -227,11 +227,11 @@ collections:
             fields: *profileFields
 
   - name: "legal"
-    label: "Pages Légales"
+    label: "Mentions légales"
     files:
       - file: "src/content/legal/legal.yml"
         name: "legal"
-        label: "Mentions légales"
+        label: "Contenu des mentions légales"
         i18n:
           structure: single_file
         fields:
