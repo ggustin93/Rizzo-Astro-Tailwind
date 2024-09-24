@@ -1,27 +1,70 @@
 fr:
-  title: "Politique de confidentialité"
+  title: Politique de confidentialité
   sections:
-    - title: "Objet"
-      text: "La présente politique de confidentialité définit et informe les utilisateurs du site internet www.crizzo-avocate.be des modalités de traitement de leurs données personnelles par la responsable du traitement, Maître Christine Rizzo."
-    - title: "Identité et coordonnées de la responsable du traitement"
-      text: "Maître Christine Rizzo\nAvocate au Barreau de Bruxelles\n[Adresse à compléter]\nAdresse mail : [adresse email à compléter]"
-    - title: "Données personnelles traitées"
-      text: "Dans le cadre de l'utilisation du site web et de ses services, la responsable du traitement est amenée à traiter les données personnelles suivantes :\n- Données techniques : adresse IP, données de connexion et de navigation\n- Données communiquées volontairement par l'utilisateur : nom, prénom, adresse email, numéro de téléphone, informations transmises via les formulaires de contact"
+    - title: Objet
+      text: La présente politique de confidentialité définit et informe les
+        utilisateurs du site internet www.crizzo-avocate.be des modalités de
+        traitement de leurs données personnelles par la responsable du
+        traitement, Maître Christine Rizzo.
+    - title: Identité et coordonnées de la responsable du traitement
+      text: |-
+        Maître Christine Rizzo
+        Avocate au Barreau de Bruxelles
+        Bd. Brand Whitlock 87 - 10\
+        1200 - Woluwe-Saint-Lambert (BE)\
+        n° BCE : 0829577949
+        Adresse mail : \[adresse email à compléter]
+    - title: Données personnelles traitées
+      text: >-
+        Dans le cadre de l'utilisation du site web et de ses services, la
+        responsable du traitement est amenée à traiter les données personnelles
+        suivantes :
+
+        - Données techniques : adresse IP, données de connexion et de navigation
+
+        - Données communiquées volontairement par l'utilisateur : nom, prénom, adresse email, numéro de téléphone, informations transmises via les formulaires de contact
 en:
-  title: "Privacy Policy"
+  title: Privacy Policy
   sections:
-    - title: "Purpose"
-      text: "This privacy policy defines and informs users of the website www.crizzo-avocate.be about the methods of processing their personal data by the data controller, Maître Christine Rizzo."
-    - title: "Identity and contact details of the data controller"
-      text: "Maître Christine Rizzo\nLawyer at the Brussels Bar\n[Address to be completed]\nEmail address: [email address to be completed]"
-    - title: "Personal data processed"
-      text: "As part of the use of the website and its services, the data controller may process the following personal data:\n- Technical data: IP address, connection and navigation data\n- Data voluntarily provided by the user: name, first name, email address, phone number, information transmitted via contact forms"
+    - title: Purpose
+      text: This privacy policy defines and informs users of the website
+        www.crizzo-avocate.be about the methods of processing their personal
+        data by the data controller, Maître Christine Rizzo.
+    - title: Identity and contact details of the data controller
+      text: |-
+        Maître Christine Rizzo
+        Lawyer at the Brussels Bar
+        Bd. Brand Whitlock 87 - 10\
+        1200 - Woluwe-Saint-Lambert (BE)\
+        n° BCE : 0829577949
+        Email address: \[email address to be completed]
+    - title: Personal data processed
+      text: >-
+        As part of the use of the website and its services, the data controller
+        may process the following personal data:
+
+        - Technical data: IP address, connection and navigation data
+
+        - Data voluntarily provided by the user: name, first name, email address, phone number, information transmitted via contact forms
 it:
-  title: "Politica sulla privacy"
+  title: Politica sulla privacy
   sections:
-    - title: "Scopo"
-      text: "La presente politica sulla privacy definisce e informa gli utenti del sito web www.crizzo-avocate.be sui metodi di trattamento dei loro dati personali da parte del responsabile del trattamento, Maître Christine Rizzo."
-    - title: "Identità e dati di contatto del responsabile del trattamento"
-      text: "Maître Christine Rizzo\nAvvocato presso il Foro di Bruxelles\n[Indirizzo da completare]\nIndirizzo email: [indirizzo email da completare]"
-    - title: "Dati personali trattati"
-      text: "Nell'ambito dell'utilizzo del sito web e dei suoi servizi, il responsabile del trattamento può trattare i seguenti dati personali:\n- Dati tecnici: indirizzo IP, dati di connessione e di navigazione\n- Dati forniti volontariamente dall'utente: nome, cognome, indirizzo email, numero di telefono, informazioni trasmesse tramite i moduli di contatto"
+    - title: Scopo
+      text: La presente politica sulla privacy definisce e informa gli utenti del sito
+        web www.crizzo-avocate.be sui metodi di trattamento dei loro dati
+        personali da parte del responsabile del trattamento, Maître Christine
+        Rizzo.
+    - title: Identità e dati di contatto del responsabile del trattamento
+      text: |-
+        Maître Christine Rizzo
+        Avvocato presso il Foro di Bruxelles
+        [Indirizzo da completare]
+        Indirizzo email: [indirizzo email da completare]
+    - title: Dati personali trattati
+      text: >-
+        Nell'ambito dell'utilizzo del sito web e dei suoi servizi, il
+        responsabile del trattamento può trattare i seguenti dati personali:
+
+        - Dati tecnici: indirizzo IP, dati di connessione e di navigazione
+
+        - Dati forniti volontariamente dall'utente: nome, cognome, indirizzo email, numero di telefono, informazioni trasmesse tramite i moduli di contatto
