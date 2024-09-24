@@ -342,10 +342,11 @@ collections:
           - label: "Français"
             name: "fr"
             widget: "object"
-            fields:
+            fields: &tarifEmployeurFields
               - {label: "Titre", name: "title", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
-              - {label: "Lien retour", name: "backLink", widget: "string"}
+              - {label: "Lien retour", name: "backLinkText", widget: "string"}
+              - {label: "Texte de contact", name: "contactText", widget: "string"}
+              - {label: "Bouton de contact", name: "contactButton", widget: "string"}
               - label: "Services"
                 name: "services"
                 widget: "list"
@@ -354,43 +355,47 @@ collections:
                   - {label: "Icône", name: "icon", widget: "select", options: ["Briefcase", "FileText", "Shield", "Check"]}
                   - {label: "Description", name: "description", widget: "text", required: false}
                   - {label: "Tarification", name: "pricing", widget: "string"}
-                  - label: "Détails"
-                    name: "details"
-                    widget: "list"
-                    field: {label: "Détail", name: "detail", widget: "string"}
-                  - label: "Services inclus"
-                    name: "services"
-                    widget: "list"
-                    field: {label: "Service", name: "service", widget: "string"}
+                  - {label: "Détails", name: "details", widget: "list"}
+                  - {label: "Services inclus", name: "services", widget: "list"}
           - label: "English"
             name: "en"
             widget: "object"
-            fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Subtitle", name: "subtitle", widget: "string"}
-              - label: "Rates"
-                name: "tarifs"
-                widget: "object"
+            fields: *tarifEmployeurFields
+          - label: "Italiano"
+            name: "it"
+            widget: "object"
+            fields: *tarifEmployeurFields
+      - file: "src/content/honoraires/tarif_travailleur.yml"
+        name: "tarif_travailleur"
+        label: "Tarifs pour travailleurs"
+        i18n:
+          structure: single_file
+        fields:
+          - label: "Français"
+            name: "fr"
+            widget: "object"
+            fields: &tarifTravailleurFields
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Lien retour", name: "backLinkText", widget: "string"}
+              - {label: "Texte de contact", name: "contactText", widget: "string"}
+              - {label: "Bouton de contact", name: "contactButton", widget: "string"}
+              - {label: "Titre des services inclus", name: "includedServicesTitle", widget: "string"}
+              - {label: "Services inclus par défaut", name: "includedServicesDefault", widget: "string"}
+              - label: "Services"
+                name: "services"
+                widget: "list"
                 fields:
-                  - {label: "Title", name: "title", widget: "string"}
-                  - {label: "Worker", name: "travailleur", widget: "string"}
-                  - {label: "Employer", name: "employeur", widget: "string"}
-              - label: "Transparency"
-                name: "transparence"
-                widget: "object"
-                fields:
-                  - {label: "Title", name: "title", widget: "string"}
-                  - {label: "Points", name: "points", widget: "list"}
-              - label: "Predictability"
-                name: "previsibilite"
-                widget: "object"
-                fields:
-                  - {label: "Title", name: "title", widget: "string"}
-                  - {label: "Content", name: "content", widget: "text"}
-                  - {label: "Points", name: "points", widget: "list"}
-              - label: "Insurance"
-                name: "assurance"
-                widget: "object"
-                fields:
-                  - {label: "Title", name: "title", widget: "string"}
-                  - {label: "Content", name: "content", widget: "text"}
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Icône", name: "icon", widget: "select", options: ["Briefcase", "FileText", "Shield", "Check"]}
+                  - {label: "Description", name: "description", widget: "text", required: false}
+                  - {label: "Tarification", name: "pricing", widget: "string"}
+                  - {label: "Détails", name: "details", widget: "list"}
+                  - {label: "Services inclus", name: "services", widget: "list"}
+          - label: "English"
+            name: "en"
+            widget: "object"
+            fields: *tarifTravailleurFields
+          - label: "Italiano"
+            name: "it"
+            widget: "object"
+            fields: *tarifTravailleurFields
