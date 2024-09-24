@@ -8,7 +8,7 @@ export async function getStaticPaths() {
 
 const { lang } = Astro.params;
 const privacyEntry = await getEntry('privacy', 'privacy');
-const content = privacyEntry.data[lang as keyof typeof privacyEntry.data];
+const content = privacyEntry.data[lang as keyof typeof privacyEntry.data] || privacyEntry.data['fr'];
 ---
 
 <BaseLayout title={content.title} lang={lang} description={content.title}>

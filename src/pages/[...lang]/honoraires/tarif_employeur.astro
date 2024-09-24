@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { Briefcase, Shield, FileText, ArrowLeft } from 'astro-feather-icons2';
+import { Briefcase, Shield, FileText, ArrowLeft, Check } from 'astro-feather-icons2';
 import { getEntry } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -41,18 +41,19 @@ const t = translations[lang as keyof typeof translations];
 const iconMap = {
   Briefcase,
   Shield,
-  FileText
+  FileText,
+  Check
 };
 ---
 
 <BaseLayout 
-  title={`Services et Tarifs Employeurs - Christine Rizzo`}
-  description={`Informations sur les services et tarifs pour employeurs de Christine Rizzo`}
+  title={`Honoraires et Tarifs - Christine Rizzo`}
+  description={`Informations sur les honoraires et tarifs de Christine Rizzo pour les employeurs`}
   lang={lang}>
   <main class="container mx-auto px-4 py-12">
     <a href={`/${lang}/honoraires`} class="inline-flex items-center text-employeur hover:underline mb-6">
       <ArrowLeft class="w-4 h-4 mr-2" />
-      {t.backLinkText}
+      {content.backLinkText}
     </a>
     <h1 class="text-4xl font-light mb-12 text-center text-black">{content.title}</h1>
     
@@ -60,7 +61,10 @@ const iconMap = {
       <div class="mb-12 rounded-lg overflow-hidden shadow-lg flex flex-col md:flex-row">
         <div class="md:w-1/2 p-6 bg-employeur text-white">
           <div class="flex items-start mb-4">
-            <iconMap[service.icon] class="w-8 h-8 mr-4 mt-1 flex-shrink-0" />
+            {(() => {
+              const Icon = iconMap[service.icon];
+              return <Icon class="w-8 h-8 mr-4 mt-1 flex-shrink-0" />;
+            })()}
             <h2 class="text-2xl font-semibold">{Array.isArray(service.title) ? service.title.join(', ') : service.title}</h2>
           </div>
           {service.description && <p class="mb-4 opacity-90">{service.description}</p>}
@@ -74,32 +78,31 @@ const iconMap = {
           )}
         </div>
         <div class="md:w-1/2 p-6 bg-white">
-          {service.services.length > 0 ? (
+          {service.services && service.services.length > 0 ? (
             <div>
-              <h3 class="font-medium mb-4 text-black">{t.includedServicesTitle}</h3>
+              <h3 class="font-medium mb-4 text-black">{content.includedServicesTitle}</h3>
               <ul class="space-y-2">
                 {service.services.map((item) => (
                   <li class="flex items-start">
-                    <span class="text-travailleur mr-3 text-xl">•</span>
+                    <span class="text-employeur mr-3 text-xl">•</span>
                     <span class="text-dark-gray">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
           ) : (
-            <p class="text-dark-gray">{t.includedServicesDefault}</p>
+            <p class="text-dark-gray">{content.includedServicesDefault}</p>
           )}
         </div>
       </div>
     ))}
     
     <p class="mt-12 text-center text-dark-gray">
-      {t.contactText}
+      {content.contactText}
     </p>
-
-    <div class="mt-8 text-center">
-      <a href={`/${lang}/contact`} class="inline-block bg-transparent text-dark-gray border border-dark-gray px-4 md:px-6 py-2 md:py-3 rounded-sm hover:bg-gray-700 hover:text-white transition duration-300 uppercase text-sm font-light">
-        {t.contactButton}
+    <div class="text-center mt-6">
+      <a href={`/${lang}/contact`} class="inline-block bg-employeur text-white py-2 px-6 rounded-full hover:bg-opacity-90 transition duration-300">
+        {content.contactButton}
       </a>
     </div>
   </main>

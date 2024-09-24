@@ -61,7 +61,10 @@ const iconMap = {
       <div class="mb-12 rounded-lg overflow-hidden shadow-lg flex flex-col md:flex-row">
         <div class="md:w-1/2 p-6 bg-travailleur text-white">
           <div class="flex items-start mb-4">
-            <iconMap[service.icon] class="w-8 h-8 mr-4 mt-1 flex-shrink-0" />
+            {(() => {
+              const Icon = iconMap[service.icon];
+              return <Icon class="w-8 h-8 mr-4 mt-1 flex-shrink-0" />;
+            })()}
             <h2 class="text-2xl font-semibold">{Array.isArray(service.title) ? service.title.join(', ') : service.title}</h2>
           </div>
           {service.description && <p class="mb-4 opacity-90">{service.description}</p>}

@@ -8,25 +8,30 @@ export async function getStaticPaths() {
 
 const { lang } = Astro.params;
 const legalEntry = await getEntry('legal', 'legal');
-const content = legalEntry.data[lang as keyof typeof legalEntry.data];
+const content = legalEntry.data[lang as keyof typeof legalEntry.data] || legalEntry.data['fr'];
+
+// Ajoutez cette vérification
+if (!content) {
+  throw new Error(`Content not found for language: ${lang}`);
+}
 ---
 
 <BaseLayout title={content.title} lang={lang} description={content.title}>
   <div class="bg-white md:my-20 p-8">
-  <main class="container mx-auto px-4 py-16">
-    <h1 class="text-4xl font-light mb-12 text-black text-center">{content.title}</h1>
-    <div class="space-y-8">
-      {content.sections.map((section) => (
-        <section>
-          <h2 class="text-2xl font-light mb-4 text-black">{section.title}</h2>
-          <p class="text-dark-gray font-light whitespace-pre-line" set:html={section.text.replace(
-            /\bhttps?:\/\/\S+\b/g,
-            '<a href="$&" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">$&</a>'
-          )}></p>
-        </section>
-      ))}
-    </div>
-  </main>
+    <main class="container mx-auto px-4 py-16">
+      <h1 class="text-4xl font-light mb-12 text-black text-center">{content.title}</h1>
+      <div class="space-y-8">
+        {content.sections.map((section) => (
+          <section>
+            <h2 class="text-2xl font-light mb-4 text-black">{section.title}</h2>
+            <p class="text-dark-gray font-light whitespace-pre-line" set:html={section.text.replace(
+              /\bhttps?:\/\/\S+\b/g,
+              '<a href="$&" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">$&</a>'
+            )}></p>
+          </section>
+        ))}
+      </div>
+    </main>
   </div>
 </BaseLayout>
 
