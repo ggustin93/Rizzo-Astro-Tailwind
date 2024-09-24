@@ -226,7 +226,7 @@ collections:
             widget: "object"
             fields: *profileFields
 
-    - name: "legal"
+  - name: "legal"
     label: "Pages Légales"
     files:
       - file: "src/content/legal/legal.yml"
