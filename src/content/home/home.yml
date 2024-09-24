@@ -8,9 +8,13 @@ fr:
     title: "Expertise & Services"
     description: J'entretiens une expertise globale et actualisée du droit du travail en accompagnant à la fois les salariés dans leurs problématiques quotidiennes et les entreprises dans leurs projets de développement.
     travailleurs:
+      title: Vous êtes un.e travailleur.euse
       description: "Je vous conseille et vous défends tout au long de votre parcours professionnel et contre les abus, le harcèlement et les discriminations au travail."
+      cta: En savoir plus
     employeurs:
+      title: Vous êtes un employeur
       description: "Je vous défends devant les tribunaux et je collabore avec votre équipe RH pour la gestion des relations de travail au quotidien ainsi que pour vos projets visant à développer vos politiques bien-être au travail et équilibre vie privée-vie professionnelle."
+      cta: En savoir plus
     honoraires:
       intro: "Des honoraires transparents et adaptés vous sont proposés"
       linkText: "en savoir plus"
@@ -19,14 +23,6 @@ fr:
         - "Tarifs forfaitaires pour une meilleure prévisibilité"
         - "Paiement mensualisé possible"
       cta: "En savoir plus sur nos honoraires"
-  travailleurs:
-    title: Accompagnement et Défense des Travailleurs
-    description: Je conseille et défends les travailleurs tout au long de leur parcours professionnel et contre les abus, le harcèlement et les discriminations au travail.
-    cta: En savoir plus
-  employeurs:
-    title: Accompagnement des Employeurs
-    description: Je collabore avec votre équipe RH pour la gestion des relations de travail au quotidien ainsi que pour tous vos projets visant à développer vos politiques de bien-être au travail et d'équilibre vie privée-vie professionnelle.
-    cta: En savoir plus
   profil:
     title: Profil
     description: "Avocate au Barreau de Bruxelles depuis 2010, habituée des négociations et des salles d'audience, j'ai acquis l'expérience de mon métier à la fois auprès d'une clientèle de particuliers qu'auprès d'entreprises locales et internationales. Les questions juridiques qui me passionnent sont le bien-être au travail, les outils destinés à améliorer l'équilibre vie privée-vie professionnelle, les questions de discrimination et les faux indépendants."
@@ -48,9 +44,13 @@ en:
     title: My Services
     description: I maintain a comprehensive and up-to-date expertise in labor law by supporting both employees in their daily issues and companies in their development projects.
     travailleurs:
+      title: You are a worker
       description: I advise and defend workers throughout their professional careers and against abuse, harassment, and discrimination at work.
+      cta: Learn More
     employeurs:
+      title: You are an employer
       description: I collaborate with your HR team for the management of daily work relationships and for all your projects aimed at developing workplace well-being and work-life balance policies.
+      cta: Learn More
     honoraires:
       intro: "Transparent and tailored fees are offered"
       linkText: "learn more"
@@ -59,14 +59,6 @@ en:
         - "Fixed rates for better predictability"
         - "Monthly payment option available"
       cta: "Learn more about our fees"
-  travailleurs:
-    title: Support and Defense of Workers
-    description: I advise and defend workers throughout their professional careers and against abuse, harassment, and discrimination at work.
-    cta: Learn More
-  employeurs:
-    title: Employer Support
-    description: I collaborate with your HR team for the management of daily work relationships and for all your projects aimed at developing workplace well-being and work-life balance policies.
-    cta: Learn More
   profil:
     title: Profile
     description: "As a lawyer at the Brussels Bar since 2010, accustomed to negotiations and courtrooms, I have gained experience in my profession with both individual clients and local and international companies. The legal issues I am passionate about are workplace well-being, tools to improve work-life balance, discrimination issues, and false self-employment."
@@ -74,7 +66,6 @@ en:
   articlesTitle: Resources
   viewAllArticles: "View All Resources"
 
-  
 it:
   hero:
     title: Christine Rizzo
@@ -85,9 +76,13 @@ it:
     title: "I miei servizi"
     description: Mantengo una competenza globale e aggiornata nel diritto del lavoro supportando sia i dipendenti nelle loro problematiche quotidiane che le aziende nei loro progetti di sviluppo.
     travailleurs:
+      title: Sei un lavoratore
       description: Consiglio e difendo i lavoratori durante tutto il loro percorso professionale e contro abusi, molestie e discriminazioni sul lavoro.
+      cta: Scopri di più
     employeurs:
+      title: Sei un datore di lavoro
       description: Collaboro con il vostro team HR per la gestione delle relazioni di lavoro quotidiane e per tutti i vostri progetti volti a sviluppare le vostre politiche di benessere sul lavoro e di equilibrio tra vita professionale e privata.
+      cta: Scopri di più
     honoraires:
       intro: "Sono offerti onorari trasparenti e su misura"
       linkText: "scopri di più"
@@ -96,14 +91,6 @@ it:
         - "Tariffe fisse per una migliore prevedibilità"
         - "Opzione di pagamento mensile disponibile"
       cta: "Scopri di più sui nostri onorari"
-  travailleurs:
-    title: Supporto e Difesa dei Lavoratori
-    description: Consiglio e difendo i lavoratori durante tutto il loro percorso professionale e contro abusi, molestie e discriminazioni sul lavoro.
-    cta: Scopri di più
-  employeurs:
-    title: Supporto ai Datori di Lavoro
-    description: Collaboro con il vostro team HR per la gestione delle relazioni di lavoro quotidiane e per tutti i vostri progetti volti a sviluppare le vostre politiche di benessere sul lavoro e di equilibrio tra vita professionale e privata.
-    cta: Scopri di più
   profil:
     title: Profilo
     description: "Avvocato presso il foro di Bruxelles dal 2010, abituata a negoziazioni e aule di tribunale, ho acquisito esperienza nella mia professione sia con clienti privati che con aziende locali e internazionali. Le questioni legali che mi appassionano sono il benessere sul lavoro, gli strumenti per migliorare l'equilibrio tra vita lavorativa e privata, le questioni di discriminazione e il falso lavoro autonomo."

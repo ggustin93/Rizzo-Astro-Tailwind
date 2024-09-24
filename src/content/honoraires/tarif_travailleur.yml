@@ -1,10 +1,13 @@
 fr:
   title: "Honoraires et tarifs"
-  description: "Informations sur les honoraires et tarifs de Christine Rizzo pour les travailleurs"
-  backLink: "Retour aux honoraires"
+  backLinkText: "Retour aux honoraires"
+  contactText: "Pour plus d'informations sur nos tarifs ou pour obtenir un devis personnalisé, n'hésitez pas à nous contacter."
+  contactButton: "Nous contacter"
+  includedServicesTitle: "Services inclus :"
+  includedServicesDefault: "Services inclus : sur demande, adaptés à votre situation spécifique."
   services:
     - title: "Mon licenciement contester - négocier"
-      icon: "Briefcase"
+      icon: Briefcase
       description: "Négociation amiable et/ou procédure pour motif grave, licenciement abusif, discriminatoire, manifestement déraisonnable"
       pricing: "FORFAIT 1 mois de salaire fixe brut"
       details:
@@ -24,7 +27,7 @@ fr:
         - "Suivi de l'exécution"
         - "Relations avec l'avocat adverse et la juridiction"
     - title: "Calculer mon indemnité compensatoire de préavis"
-      icon: "FileText"
+      icon: FileText
       pricing: "FORFAIT 130 € htva (tva 21%)"
       services:
         - "Analyse des pièces"
@@ -33,10 +36,10 @@ fr:
     - title: 
         - "Harcèlement au travail"
         - "Accident du travail"
-      icon: "Shield"
+      icon: Shield
       pricing: "FORFAIT Sur demande (TVA à 21%)"
     - title: "Vérifier"
-      icon: "Check"
+      icon: Check
       pricing: 
         - "Tarif horaire: 125 € htva"
         - "Forfait sur demande (TVA à 21%)"
@@ -49,113 +52,111 @@ fr:
         - "Mon droit au congé parental, crédit-temps,…."
         - "Les conditions de mon télétravail"
         - "etc."
-  contactText: "Pour plus d'informations sur nos tarifs ou pour obtenir un devis personnalisé, n'hésitez pas à nous contacter."
-  contactButton: "Nous contacter"
-
 en:
   title: "Fees and rates"
-  description: "Information on Christine Rizzo's fees and rates for workers"
-  backLink: "Back to fees"
+  backLinkText: "Back to fees"
+  contactText: "For more information on our rates or to get a personalized quote, please contact us."
+  contactButton: "Contact us"
+  includedServicesTitle: "Included services:"
+  includedServicesDefault: "Included services: on request, tailored to your specific situation."
   services:
-    - title: "Contesting - negotiating my dismissal"
-      icon: "Briefcase"
-      description: "Amicable negotiation and/or procedure for serious misconduct, abusive dismissal, discriminatory dismissal, manifestly unreasonable dismissal"
-      pricing: "FIXED PRICE 1 month of gross fixed salary"
+    - title: "Challenge my dismissal - negotiate"
+      icon: Briefcase
+      description: "Amicable negotiation and/or procedure for serious reasons, abusive, discriminatory, manifestly unreasonable dismissal"
+      pricing: "FLAT RATE 1 month of gross fixed salary"
       details:
         - "min = 3000 € excl. VAT"
         - "max = 7000 € excl. VAT"
         - "monthly payment"
         - "+10% excl. VAT of the result obtained (VAT 21%)"
       services:
-        - "Case analysis"
-        - "Calculation of indemnities"
-        - "Negotiation of an agreement (coaching if direct negotiation by you)"
+        - "File analysis"
+        - "Calculation of compensation"
+        - "Negotiation of an agreement (coaching if negotiation by you directly)"
         - "Drafting or review of the transaction"
         - "Introduction of the procedure"
         - "Drafting of conclusions"
         - "Pleadings"
         - "Verification of exit documents"
         - "Follow-up of execution"
-        - "Relations with the opposing lawyer and the jurisdiction"
-    - title: "Calculate my compensatory severance pay"
-      icon: "FileText"
-      pricing: "FIXED PRICE 130 € excl. VAT (VAT 21%)"
+        - "Relations with the opposing lawyer and the court"
+    - title: "Calculate my compensatory notice indemnity"
+      icon: FileText
+      pricing: "FLAT RATE 130 € excl. VAT (VAT 21%)"
       services:
-        - "Analysis of documents"
-        - "Calculation of compensatory severance pay"
+        - "Document analysis"
+        - "Calculation of ICP"
         - "Net estimation"
     - title: 
         - "Workplace harassment"
         - "Work accident"
-      icon: "Shield"
-      pricing: "FIXED PRICE On request (VAT 21%)"
+      icon: Shield
+      pricing: "FLAT RATE On request (VAT 21%)"
     - title: "Verify"
-      icon: "Check"
+      icon: Check
       pricing: 
         - "Hourly rate: 125 € excl. VAT"
-        - "Fixed price on request (VAT 21%)"
+        - "Flat rate on request (VAT 21%)"
       services:
         - "My employment contract"
         - "My non-compete clause"
-        - "The modification of my contract"
+        - "Modification of my contract"
         - "My status"
         - "My resignation letter and notice period"
-        - "My right to parental leave, time credit,..."
-        - "My teleworking conditions"
+        - "My right to parental leave, time credit, etc."
+        - "Conditions of my telework"
         - "etc."
-  contactText: "For more information about our rates or to get a personalized quote, don't hesitate to contact us."
-  contactButton: "Contact us"
-
 it:
-  title: "Onorari e tariffe"
-  description: "Informazioni sugli onorari e le tariffe di Christine Rizzo per i lavoratori"
-  backLink: "Torna alle tariffe"
+  title: "Tariffe e onorari"
+  backLinkText: "Torna alle tariffe"
+  contactText: "Per ulteriori informazioni sulle nostre tariffe o per ottenere un preventivo personalizzato, non esitate a contattarci."
+  contactButton: "Contattaci"
+  includedServicesTitle: "Servizi inclusi:"
+  includedServicesDefault: "Servizi inclusi: su richiesta, adattati alla vostra situazione specifica."
   services:
-    - title: "Contestare - negoziare il mio licenziamento"
-      icon: "Briefcase"
-      description: "Negoziazione amichevole e/o procedura per grave inadempienza, licenziamento abusivo, discriminatorio, manifestamente irragionevole"
-      pricing: "PREZZO FISSO 1 mese di stipendio fisso lordo"
+    - title: "Contestare il mio licenziamento - negoziare"
+      icon: Briefcase
+      description: "Negoziazione amichevole e/o procedura per motivo grave, licenziamento abusivo, discriminatorio, manifestamente irragionevole"
+      pricing: "TARIFFA FISSA 1 mese di stipendio fisso lordo"
       details:
-        - "min = 3000 € IVA esclusa"
-        - "max = 7000 € IVA esclusa"
+        - "min = 3000 € escl. IVA"
+        - "max = 7000 € escl. IVA"
         - "pagamento mensile"
-        - "+10% IVA esclusa del risultato ottenuto (IVA 21%)"
+        - "+10% escl. IVA del risultato ottenuto (IVA 21%)"
       services:
-        - "Analisi del caso"
+        - "Analisi del dossier"
         - "Calcolo delle indennità"
-        - "Negoziazione di un accordo (coaching se negoziazione diretta da parte tua)"
+        - "Negoziazione di un accordo (coaching se negoziazione diretta da parte vostra)"
         - "Redazione o revisione della transazione"
         - "Introduzione della procedura"
         - "Redazione delle conclusioni"
         - "Arringhe"
         - "Verifica dei documenti di uscita"
         - "Follow-up dell'esecuzione"
-        - "Relazioni con l'avvocato avversario e la giurisdizione"
-    - title: "Calcolare la mia indennità di preavviso"
-      icon: "FileText"
-      pricing: "PREZZO FISSO 130 € IVA esclusa (IVA 21%)"
+        - "Relazioni con l'avvocato avversario e il tribunale"
+    - title: "Calcolare la mia indennità di preavviso compensativa"
+      icon: FileText
+      pricing: "TARIFFA FISSA 130 € escl. IVA (IVA 21%)"
       services:
         - "Analisi dei documenti"
-        - "Calcolo dell'indennità di preavviso"
+        - "Calcolo dell'ICP"
         - "Stima del netto"
     - title: 
         - "Molestie sul lavoro"
         - "Infortunio sul lavoro"
-      icon: "Shield"
-      pricing: "PREZZO FISSO Su richiesta (IVA 21%)"
+      icon: Shield
+      pricing: "TARIFFA FISSA Su richiesta (IVA 21%)"
     - title: "Verificare"
-      icon: "Check"
+      icon: Check
       pricing: 
-        - "Tariffa oraria: 125 € IVA esclusa"
-        - "Prezzo fisso su richiesta (IVA 21%)"
+        - "Tariffa oraria: 125 € escl. IVA"
+        - "Tariffa forfettaria su richiesta (IVA 21%)"
       services:
         - "Il mio contratto di lavoro"
         - "La mia clausola di non concorrenza"
         - "La modifica del mio contratto"
         - "Il mio status"
         - "La mia lettera di dimissioni e il periodo di preavviso"
-        - "Il mio diritto al congedo parentale, al credito d'orario,..."
+        - "Il mio diritto al congedo parentale, credito di tempo, ecc."
         - "Le condizioni del mio telelavoro"
         - "ecc."
-  contactText: "Per maggiori informazioni sulle nostre tariffe o per ottenere un preventivo personalizzato, non esitate a contattarci."
-  contactButton: "Contattaci"

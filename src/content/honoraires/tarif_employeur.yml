@@ -1,50 +1,55 @@
 fr:
-  title: "Services et tarifs pour les employeurs"
-  description: "Informations sur les services et tarifs de Christine Rizzo pour les employeurs"
-  backLink: "Retour aux honoraires"
+  title: "Services et tarifs pour employeurs"
+  backLinkText: "Retour aux honoraires"
+  contactText: "Pour plus d'informations sur nos tarifs ou pour obtenir un devis personnalisé, n'hésitez pas à nous contacter."
+  contactButton: "Nous contacter"
+  includedServicesTitle: "Services inclus :"
+  includedServicesDefault: "Services inclus : sur demande, adaptés à votre situation spécifique."
   services:
-    - title: "Audit - Rapport de Due Diligence"
-      icon: "FileText"
+    - title: "Audit - Rapport Due Diligence"
+      icon: FileText
       pricing: "FORFAIT sur demande"
       details:
-        - "selon le nombre de salariés"
-        - "(TVA 21%)"
+        - "en fonction du nombre de collaborateurs"
+        - "(tva 21%)"
       services:
         - "Analyse du dossier"
-        - "Q&R"
+        - "Q&A"
         - "Rédaction du rapport"
-        - "Résumé des points d'attention"
+        - "Synthèse red flags"
     - title: "Contrat de travail"
-      icon: "FileText"
-      pricing: "FORFAIT 800 € HTVA"
+      icon: FileText
+      pricing: "FORFAIT 800 € htva"
       details:
-        - "(TVA 21%)"
+        - "(tva 21%)"
+      services: []
     - title: "Règlement de travail"
-      icon: "Shield"
-      pricing: "FORFAIT 1500 € HTVA"
+      icon: Shield
+      pricing: "FORFAIT 1500 € htva"
       details:
-        - "(TVA 21%)"
+        - "(tva 21%)"
+      services: []
     - title: "Licenciement"
-      icon: "Briefcase"
-      pricing: "FORFAIT 725 € HTVA"
+      icon: Briefcase
+      pricing: "FORFAIT 725 € htva"
       details:
-        - "Faute grave 1000 € HTVA"
-        - "(TVA 21%)"
+        - "Motif grave 1000 € htva"
+        - "(tva 21%)"
       services:
-        - "Analyse des documents"
+        - "Analyse des pièces"
         - "Calcul de l'ICP"
         - "Estimation du coût employeur"
-        - "Calcul des risques financiers en cas de litige"
+        - "Calcul des risques financiers en cas de contentieux"
         - "Rédaction des courriers"
         - "Vérification des documents de sortie"
-    - title: "Licenciement : négociation - contentieux"
-      icon: "Briefcase"
+    - title: "Licenciement: négociation - contentieux"
+      icon: Briefcase
       description: "Négociation amiable et/ou procédure pour motif grave, licenciement abusif, discriminatoire, manifestement déraisonnable"
-      pricing: "6000 € HTVA"
+      pricing: "6000 € htva"
       details:
-        - "min = 4000 € HTVA"
-        - "max = 8000 € HTVA"
-        - "(TVA 21%)"
+        - "mini = 4000 € htva"
+        - "maxi = 8000 € htva"
+        - "(tva 21%)"
       services:
         - "Analyse du dossier"
         - "Calcul des indemnités"
@@ -55,186 +60,186 @@ fr:
         - "Vérification des documents de sortie"
         - "Suivi de l'exécution"
         - "Relations avec l'avocat adverse et la juridiction"
-    - title: "Conseil"
-      icon: "FileText"
-      pricing: "Tarif horaire : 175 € HTVA"
+    - title: "Conseils"
+      icon: FileText
+      pricing: "Tarif horaire: 175 € htva"
       details:
-        - "Prix fixe/abonnement sur demande"
-        - "(TVA 21%)"
+        - "Forfait/abonnement sur demande"
+        - "(TVA à 21%)"
       services:
         - "Télétravail"
         - "Droit à la déconnexion"
         - "Temps de travail flexible"
-        - "Crédit-temps et congés thématiques et protection contre le licenciement"
+        - "Crédit-temps et congés thématiques et protections contre le licenciement"
         - "Droit à la formation"
-        - "Reconnaissance et incitants bonus"
+        - "Reconnaissance et incentives bonus"
         - "Gestion des absences (de longue durée)"
         - "Discrimination"
         - "Examen du statut salarié/indépendant"
     - title: "Policy"
-      icon: "Shield"
-      pricing: "FORFAIT à partir de 800 € HTVA"
+      icon: Shield
+      pricing: "FORFAIT à partir de 800 € htva"
       details:
-        - "(TVA 21%)"
+        - "(tva 21%)"
       services:
         - "Remboursement de frais"
         - "Télétravail"
         - "Car policy"
         - "..."
-    - title: 
-        - "Plainte pour harcèlement au travail"
-        - "Inspection"
-        - "Accident de travail"
-      icon: "Shield"
+    - title: ["Plainte pour harcèlement au travail", "Inspection", "Accident du travail"]
+      icon: Shield
       pricing: "FORFAIT Sur demande"
       details:
-        - "(TVA 21%)"
-  contactText: "Pour plus d'informations sur nos tarifs ou pour obtenir un devis personnalisé, n'hésitez pas à nous contacter."
-  contactButton: "Nous contacter"
-
+        - "(TVA à 21%)"
+      services: []
 en:
   title: "Services and rates for employers"
-  description: "Information on Christine Rizzo's services and rates for employers"
-  backLink: "Back to fees"
+  backLinkText: "Back to fees"
+  contactText: "For more information on our rates or to get a personalized quote, please contact us."
+  contactButton: "Contact us"
+  includedServicesTitle: "Included services:"
+  includedServicesDefault: "Included services: on request, tailored to your specific situation."
   services:
     - title: "Audit - Due Diligence Report"
-      icon: "FileText"
-      pricing: "FIXED PRICE on request"
+      icon: FileText
+      pricing: "FLAT RATE on request"
       details:
         - "depending on the number of employees"
         - "(VAT 21%)"
       services:
-        - "Case analysis"
+        - "File analysis"
         - "Q&A"
         - "Report writing"
-        - "Summary of red flags"
+        - "Red flags summary"
     - title: "Employment contract"
-      icon: "FileText"
-      pricing: "FIXED PRICE 800 € excl. VAT"
+      icon: FileText
+      pricing: "FLAT RATE 800 € excl. VAT"
       details:
         - "(VAT 21%)"
+      services: []
     - title: "Work regulations"
-      icon: "Shield"
-      pricing: "FIXED PRICE 1500 € excl. VAT"
+      icon: Shield
+      pricing: "FLAT RATE 1500 € excl. VAT"
       details:
         - "(VAT 21%)"
+      services: []
     - title: "Dismissal"
-      icon: "Briefcase"
-      pricing: "FIXED PRICE 725 € excl. VAT"
+      icon: Briefcase
+      pricing: "FLAT RATE 725 € excl. VAT"
       details:
-        - "Serious misconduct 1000 € excl. VAT"
+        - "Serious reason 1000 € excl. VAT"
         - "(VAT 21%)"
       services:
         - "Document analysis"
         - "ICP calculation"
         - "Employer cost estimation"
-        - "Calculation of financial risks in case of litigation"
+        - "Risk calculation in case of litigation"
         - "Drafting of letters"
         - "Verification of exit documents"
     - title: "Dismissal: negotiation - litigation"
-      icon: "Briefcase"
-      description: "Amicable negotiation and/or procedure for serious misconduct, abusive dismissal, discriminatory dismissal, manifestly unreasonable dismissal"
+      icon: Briefcase
+      description: "Amicable negotiation and/or procedure for serious reason, abusive, discriminatory, manifestly unreasonable dismissal"
       pricing: "6000 € excl. VAT"
       details:
-        - "min = 4000 € excl. VAT"
-        - "max = 8000 € excl. VAT"
+        - "minimum = 4000 € excl. VAT"
+        - "maximum = 8000 € excl. VAT"
         - "(VAT 21%)"
       services:
-        - "Case analysis"
-        - "Calculation of indemnities"
-        - "Negotiation of an agreement (coaching if direct negotiation by you)"
+        - "File analysis"
+        - "Compensation calculation"
+        - "Negotiation of an agreement (coaching if negotiation by you directly)"
         - "Drafting or review of the transaction"
         - "Drafting of conclusions"
         - "Pleadings"
         - "Verification of exit documents"
-        - "Follow-up of execution"
-        - "Relations with the opposing lawyer and the jurisdiction"
+        - "Execution follow-up"
+        - "Relations with the opposing lawyer and the court"
     - title: "Advice"
-      icon: "FileText"
+      icon: FileText
       pricing: "Hourly rate: 175 € excl. VAT"
       details:
-        - "Fixed price/subscription on request"
+        - "Flat rate/subscription on request"
         - "(VAT 21%)"
       services:
-        - "Teleworking"
+        - "Telework"
         - "Right to disconnect"
-        - "Flexible working time"
-        - "Time credit and thematic leave and protection against dismissal"
+        - "Flexible working hours"
+        - "Time credit and thematic leave and protections against dismissal"
         - "Right to training"
         - "Recognition and bonus incentives"
         - "Management of (long-term) absences"
         - "Discrimination"
         - "Examination of employee/self-employed status"
     - title: "Policy"
-      icon: "Shield"
-      pricing: "FIXED PRICE from 800 € excl. VAT"
+      icon: Shield
+      pricing: "FLAT RATE from 800 € excl. VAT"
       details:
         - "(VAT 21%)"
       services:
         - "Expense reimbursement"
-        - "Teleworking"
+        - "Telework"
         - "Car policy"
         - "..."
-    - title: 
-        - "Workplace harassment complaint"
-        - "Inspection"
-        - "Work accident"
-      icon: "Shield"
-      pricing: "FIXED PRICE On request"
+    - title: ["Workplace harassment complaint", "Inspection", "Work accident"]
+      icon: Shield
+      pricing: "FLAT RATE On request"
       details:
         - "(VAT 21%)"
-  contactText: "For more information about our rates or to get a personalized quote, don't hesitate to contact us."
-  contactButton: "Contact us"
-
+      services: []
 it:
   title: "Servizi e tariffe per i datori di lavoro"
-  description: "Informazioni sui servizi e le tariffe di Christine Rizzo per i datori di lavoro"
-  backLink: "Torna alle tariffe"
+  backLinkText: "Torna alle tariffe"
+  contactText: "Per ulteriori informazioni sulle nostre tariffe o per ottenere un preventivo personalizzato, non esitate a contattarci."
+  contactButton: "Contattaci"
+  includedServicesTitle: "Servizi inclusi:"
+  includedServicesDefault: "Servizi inclusi: su richiesta, adattati alla vostra situazione specifica."
   services:
-    - title: "Audit - Rapporto Due Diligence"
-      icon: "FileText"
-      pricing: "PREZZO FISSO su richiesta"
+    - title: "Audit - Rapporto di Due Diligence"
+      icon: FileText
+      pricing: "TARIFFA FISSA su richiesta"
       details:
-        - "in base al numero di dipendenti"
+        - "a seconda del numero di dipendenti"
         - "(IVA 21%)"
       services:
-        - "Analisi del caso"
+        - "Analisi del dossier"
         - "Q&A"
         - "Redazione del rapporto"
-        - "Sintesi dei punti critici"
+        - "Sintesi dei red flags"
     - title: "Contratto di lavoro"
-      icon: "FileText"
-      pricing: "PREZZO FISSO 800 € IVA esclusa"
+      icon: FileText
+      pricing: "TARIFFA FISSA 800 € escl. IVA"
       details:
         - "(IVA 21%)"
-    - title: "Regolamento di lavoro"
-      icon: "Shield"
-      pricing: "PREZZO FISSO 1500 € IVA esclusa"
+      services: []
+    - title: "Regolamento del lavoro"
+      icon: Shield
+      pricing: "TARIFFA FISSA 1500 € escl. IVA"
       details:
         - "(IVA 21%)"
+      services: []
     - title: "Licenziamento"
-      icon: "Briefcase"
-      pricing: "PREZZO FISSO 725 € IVA esclusa"
+      icon: Briefcase
+      pricing: "TARIFFA FISSA 725 € escl. IVA"
       details:
-        - "Giusta causa 1000 € IVA esclusa"
+        - "Motivo grave 1000 € escl. IVA"
         - "(IVA 21%)"
       services:
         - "Analisi dei documenti"
         - "Calcolo dell'ICP"
         - "Stima del costo per il datore di lavoro"
-        - "Calcolo dei rischi finanziari in caso di contenzioso"
+        - "Calcolo dei rischi in caso di contenzioso"
         - "Redazione delle lettere"
         - "Verifica dei documenti di uscita"
     - title: "Licenziamento: negoziazione - contenzioso"
-      icon: "Briefcase"
-      description: "Negoziazione amichevole e/o procedura per giusta causa, licenziamento abusivo, discriminatorio, manifestamente irragionevole"
-      pricing: "6000 € IVA esclusa"
+      icon: Briefcase
+      description: "Negoziazione amichevole e/o procedura per motivo grave, licenziamento abusivo, discriminatorio, manifestamente irragionevole"
+      pricing: "6000 € escl. IVA"
       details:
-        - "min = 4000 € IVA esclusa"
-        - "max = 8000 € IVA esclusa"
+        - "minimo = 4000 € escl. IVA"
+        - "massimo = 8000 € escl. IVA"
         - "(IVA 21%)"
       services:
-        - "Analisi del caso"
+        - "Analisi del dossier"
         - "Calcolo delle indennità"
         - "Negoziazione di un accordo (coaching se negoziazione diretta da parte vostra)"
         - "Redazione o revisione della transazione"
@@ -242,26 +247,26 @@ it:
         - "Arringhe"
         - "Verifica dei documenti di uscita"
         - "Follow-up dell'esecuzione"
-        - "Relazioni con l'avvocato avversario e la giurisdizione"
-    - title: "Consulenza"
-      icon: "FileText"
-      pricing: "Tariffa oraria: 175 € IVA esclusa"
+        - "Relazioni con l'avvocato avversario e il tribunale"
+    - title: "Consigli"
+      icon: FileText
+      pricing: "Tariffa oraria: 175 € escl. IVA"
       details:
-        - "Prezzo fisso/abbonamento su richiesta"
+        - "Tariffa forfettaria/abbonamento su richiesta"
         - "(IVA 21%)"
       services:
         - "Telelavoro"
         - "Diritto alla disconnessione"
         - "Orario di lavoro flessibile"
-        - "Credito d'orario e congedi tematici e protezione contro il licenziamento"
+        - "Credito di tempo e congedi tematici e protezioni contro il licenziamento"
         - "Diritto alla formazione"
         - "Riconoscimento e incentivi bonus"
-        - "Gestione delle assenze (di lunga durata)"
+        - "Gestione delle assenze (a lungo termine)"
         - "Discriminazione"
-        - "Esame dello status dipendente/autonomo"
+        - "Esame dello status di dipendente/autonomo"
     - title: "Policy"
-      icon: "Shield"
-      pricing: "PREZZO FISSO a partire da 800 € IVA esclusa"
+      icon: Shield
+      pricing: "TARIFFA FISSA a partire da 800 € escl. IVA"
       details:
         - "(IVA 21%)"
       services:
@@ -269,13 +274,9 @@ it:
         - "Telelavoro"
         - "Car policy"
         - "..."
-    - title: 
-        - "Denuncia per molestie sul lavoro"
-        - "Ispezione"
-        - "Infortunio sul lavoro"
-      icon: "Shield"
-      pricing: "PREZZO FISSO Su richiesta"
+    - title: ["Denuncia di molestie sul lavoro", "Ispezione", "Infortunio sul lavoro"]
+      icon: Shield
+      pricing: "TARIFFA FISSA Su richiesta"
       details:
         - "(IVA 21%)"
-  contactText: "Per maggiori informazioni sulle nostre tariffe o per ottenere un preventivo personalizzato, non esitate a contattarci."
-  contactButton: "Contattaci"
+      services: []

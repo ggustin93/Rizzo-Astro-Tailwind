@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import { Phone, Mail, MapPin, ChevronDown } from 'astro-feather-icons2';
 import logoImage from '../assets/images/logo_crizzo_calli3.svg';
 import logoPwablo from '../assets/images/logo_pwablo.svg';
+import LanguagePicker from '../components/LanguagePicker.astro';
 
 const { pathname } = Astro.url;
 const currentLang = pathname.split('/')[1] || 'fr';
@@ -22,7 +23,34 @@ const translations = {
     ecoDesignPwablo: "Site web écologique",
     menu: "Menu"
   },
-  // ... (autres traductions)
+  en: {
+    copyright: "© 2024 Christine Rizzo",
+    expertise: "Expertise",
+    profil: "Profile",
+    honoraires: "Fees",
+    articles: "Articles",
+    contact: "Contact",
+    legalNotice: "Legal Notice",
+    privacyPolicy: "Privacy Policy",
+    design: "Design by Pwablo",
+    ecoDesign: "Eco-design Score",
+    ecoDesignPwablo: "Eco-friendly Website",
+    menu: "Menu"
+  },
+  it: {
+    copyright: "© 2024 Christine Rizzo",
+    expertise: "Esperienza",
+    profil: "Profilo",
+    honoraires: "Onorari",
+    articles: "Articoli",
+    contact: "Contatto",
+    legalNotice: "Note legali",
+    privacyPolicy: "Politica sulla riservatezza",
+    design: "Design di Pwablo",
+    ecoDesign: "Punteggio di eco-design",
+    ecoDesignPwablo: "Sito web ecologico",
+    menu: "Menu"
+  }
 };
 
 const t = translations[currentLang as keyof typeof translations] || translations.fr;
@@ -106,7 +134,7 @@ const legalLinks = [
           <a href="https://www.ecoindex.fr/resultat/?id=19de93fb-067c-4682-a25e-e37636dd5e6d" class="text-sm hover:underline mb-2 block">{t.ecoDesign}</a>
           <a href="https://pwablo.be" class="hover:underline flex flex-col items-start">
             <span class="text-sm mb-2">{t.design}</span>
-            <Image src={logoPwablo} alt="Pwablo Logo" class="h-16 w-auto" />
+            <Image src={logoPwablo} alt="Pwablo Logo" class="h-16 w-auto bg-white p-2" />
           </a>
         </div>
         <details class="md:hidden">
@@ -118,7 +146,7 @@ const legalLinks = [
             <a href="https://www.ecoindex.fr/resultat/?id=19de93fb-067c-4682-a25e-e37636dd5e6d" class="text-sm hover:underline mb-2 block">{t.ecoDesign}</a>
             <a href="https://pwablo.be" class="hover:underline flex flex-col items-center">
               <span class="text-sm mb-2">{t.design}</span>
-              <Image src={logoPwablo} alt="Pwablo Logo" class="h-12 w-auto" />
+              <Image src={logoPwablo} alt="Pwablo Logo" class="h-12 w-auto bg-white p-2" />
             </a>
           </div>
         </details>

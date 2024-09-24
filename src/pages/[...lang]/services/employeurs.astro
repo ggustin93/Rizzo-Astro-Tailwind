@@ -1,8 +1,21 @@
 ---
 import { getEntry } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { ChevronRight, Search, FileText, UserPlus, Shield } from 'astro-feather-icons';
-import IconHandshake from '../../components/IconHandshake.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { ChevronRight, Search, FileText, UserPlus, Shield, ArrowLeft } from 'astro-feather-icons2';
+import IconHandshake from '../../../components/IconHandshake.astro';
+
+// Translations
+const translations = {
+  fr: {
+    backLinkText: "Retour aux services"
+  },
+  en: {
+    backLinkText: "Back to services"
+  },
+  it: {
+    backLinkText: "Torna ai servizi"
+  }
+};
 
 export async function getStaticPaths() {
   return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
@@ -16,6 +29,8 @@ if (!content) {
   throw new Error(`Content not found for language: ${lang}`);
 }
 
+const t = translations[lang as keyof typeof translations];
+
 const iconMap = {
   Search,
   FileText,
@@ -27,6 +42,10 @@ const iconMap = {
 
 <BaseLayout title={content.title} lang={lang} description={content.title}>
   <main class="container mx-auto px-4 py-16">
+    <a href={`/${lang}#services`} class="inline-flex items-center text-employeur hover:underline mb-6">
+      <ArrowLeft class="w-4 h-4 mr-2" />
+      {t.backLinkText}
+    </a>
     <h1 class="text-4xl font-light mb-12 text-black text-center">{content.title}</h1>
     
     <div class="flex flex-col md:flex-row">
@@ -68,7 +87,7 @@ const iconMap = {
           })}
         </ul>
         <div class="mt-8">
-          <a href={`/${lang}/tarif_employeur`} class="text-employeur hover:underline">{content.ctaText}</a>
+          <a href={`/${lang}/honoraires/tarif_employeur`} class="text-employeur hover:underline">{content.ctaText}</a>
         </div>
       </div>
     </div>

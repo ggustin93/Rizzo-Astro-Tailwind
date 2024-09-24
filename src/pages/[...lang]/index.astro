@@ -34,7 +34,6 @@ const content = homeEntry.data[lang as keyof typeof homeEntry.data] || homeEntry
 
 if (!content || !content.expertise || !content.expertise.travailleurs) {
   console.error('Structure de contenu invalide:', content);
-  // Vous pouvez définir un contenu par défaut ici si nécessaire
 }
 
 // Récupération des articles
@@ -83,7 +82,7 @@ function generateUniqueId(prefix: string) {
   </div>
 
   <div class="full-bleed bg-beige">
-    <section id="expertise" class="py-10 md:py-14">
+    <section id="services" class="py-10 md:py-14">
       <div class="container px-4">
         <div class="flex items-center mb-6 justify-center">
           <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
@@ -92,27 +91,27 @@ function generateUniqueId(prefix: string) {
         </div>
         
         <p class="text-center mb-8 max-w-3xl mx-auto text-dark-gray font-light">
-          Accompagnement et défense tant des entreprises que des travailleurs.euses dans leurs projets et leurs préoccupations du quotidien liés à l'emploi.
+          {content.expertise.description}
         </p> 
         
         <div class="flex flex-col md:flex-row gap-8 mb-0">
           <div class="md:w-1/2 bg-travailleur p-6 rounded-sm text-white flex flex-col justify-between">
             <div>
-              <h3 class="text-xl font-semibold mb-4">Vous êtes un.e travailleur.euse</h3>
-              <p class="font-light mb-4">{content.expertise?.travailleurs?.description ?? "Description non disponible"}</p>
+              <h3 class="text-xl font-semibold mb-4">{content.expertise.travailleurs.title}</h3>
+              <p class="font-light mb-4">{content.expertise.travailleurs.description}</p>
             </div>
-            <a href={`/${lang}/travailleurs`} class="self-end bg-white text-travailleur px-4 py-2 rounded-sm hover:bg-gray-800 hover:text-white transition duration-300 mt-4">
-              En savoir plus →
+            <a href={`/${lang}/services/travailleurs`} class="self-end bg-white text-travailleur px-4 py-2 rounded-sm hover:bg-gray-800 hover:text-white transition duration-300 mt-4">
+              {content.expertise.travailleurs.cta} →
             </a>
           </div>
           
           <div class="md:w-1/2 bg-employeur p-6 rounded-sm text-white flex flex-col justify-between">
             <div>
-              <h3 class="text-xl font-semibold mb-4">Vous êtes un employeur</h3>
+              <h3 class="text-xl font-semibold mb-4">{content.expertise.employeurs.title}</h3>
               <p class="font-light mb-4">{content.expertise.employeurs.description}</p>
             </div>
-            <a href={`/${lang}/employeurs`} class="self-end bg-white text-employeur px-4 py-2 rounded-sm hover:bg-gray-800 hover:text-white transition duration-300 mt-4">
-              En savoir plus →
+            <a href={`/${lang}/services/employeurs`} class="self-end bg-white text-employeur px-4 py-2 rounded-sm hover:bg-gray-800 hover:text-white transition duration-300 mt-4">
+              {content.expertise.employeurs.cta} →
             </a>
           </div>
         </div>
@@ -127,8 +126,8 @@ function generateUniqueId(prefix: string) {
         />
         
         <p class="text-center mb-6 max-w-3xl mx-auto text-dark-gray font-light leading-relaxed">
-          Des honoraires transparents et adaptés vous sont proposés - 
-          <a href={`/${lang}/honoraires`} class="text-travailleur hover:underline">en savoir plus</a>.
+          {content.expertise.honoraires.intro} - 
+          <a href={`/${lang}/honoraires`} class="text-travailleur hover:underline">{content.expertise.honoraires.linkText}</a>.
         </p>
         
         <ul class="list-none space-y-2 flex flex-col items-start max-w-md mx-auto">
