@@ -59,9 +59,9 @@ const handleAction = (type: string, action: string) => {
                 <div class="flex flex-col items-center">
                   <button
                     onclick={handleAction(button.type, button.action || button.subtext)}
-                    class="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-4 hover:bg-travailleur transition-colors duration-300 group shadow-md"
+                    class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4 hover:bg-travailleur transition-colors duration-300 group shadow-md"
                   >
-                    <IconComponent class="w-12 h-12 text-employeur group-hover:text-white transition-colors duration-300" />
+                    <IconComponent class="w-9 h-9 text-employeur group-hover:text-white transition-colors duration-300" />
                   </button>
                   <span class="text-sm uppercase text-accent font-extrabold leading-relaxed tracking-wide mb-2 px-2 text-center">{button.text}</span>
                   <a href="#" class="text-sm text-white hover:underline font-medium text-center">{button.subtext}</a>
@@ -69,7 +69,7 @@ const handleAction = (type: string, action: string) => {
               );
             })}
           </div>
-          <div class="w-full lg:w-1/3 flex justify-center lg:justify-end">
+          <div class="w-full lg:w-1/3 pl-12 flex justify-center lg:justify-end">
             <Image
               src={ctaIllustration}
               alt="illustration contact"
