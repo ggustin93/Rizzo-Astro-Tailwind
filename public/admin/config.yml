@@ -5,26 +5,48 @@ backend:
 media_folder: "src/assets/images"
 public_folder: "/assets/images"
 
-i18n:
-  structure: multiple_folders
-  locales: [fr, en, it]
-  default_locale: fr
-
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "src/content/blog"
+  - name: "blog-fr"
+    label: "Blog FR"
+    folder: "src/content/blog/fr"
     create: true
-    i18n: true
     fields:
-      - { label: "Title", name: "title", widget: "string", i18n: true }
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Date de publication", name: "date", widget: "datetime" }
+      - { label: "Auteur", name: "author", widget: "string" }
+      - { label: "Image à la une", name: "thumbnail", widget: "image" }
+      - { label: "Temps de lecture", name: "readTime", widget: "string" }
+      - { label: "Catégories", name: "categories", widget: "list" }
+      - { label: "Points forts", name: "highlights", widget: "list", required: false }
+      - { label: "Contenu", name: "body", widget: "markdown" }
+
+  - name: "blog-en"
+    label: "Blog EN"
+    folder: "src/content/blog/en"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Featured Image", name: "thumbnail", widget: "image" }
       - { label: "Read Time", name: "readTime", widget: "string" }
       - { label: "Categories", name: "categories", widget: "list" }
       - { label: "Highlights", name: "highlights", widget: "list", required: false }
-      - { label: "Body", name: "body", widget: "markdown", i18n: true }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "blog-it"
+    label: "Blog IT"
+    folder: "src/content/blog/it"
+    create: true
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Data di pubblicazione", name: "date", widget: "datetime" }
+      - { label: "Autore", name: "author", widget: "string" }
+      - { label: "Immagine in evidenza", name: "thumbnail", widget: "image" }
+      - { label: "Tempo di lettura", name: "readTime", widget: "string" }
+      - { label: "Categorie", name: "categories", widget: "list" }
+      - { label: "Punti salienti", name: "highlights", widget: "list", required: false }
+      - { label: "Contenuto", name: "body", widget: "markdown" }
 
   - name: "home"
     label: "Page d'accueil"
