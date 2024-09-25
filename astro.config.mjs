@@ -10,7 +10,6 @@ export default defineConfig({
   output: outputMode,
   redirects: {
     '/': '/fr/',
-    '/fr': '/fr/'
   },
   image: {
     service: {
