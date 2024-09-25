@@ -15,17 +15,19 @@ const {
   title,
   description,
   canonical,
-  image = 'https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg',
+  image,
   keywords,
   type = 'website',
   lang = 'fr',
 } = Astro.props;
 
-const siteUrl = import.meta.env.SITE || 'https://crizzo-avocate.be/';
-const fullImageUrl = new URL(image, siteUrl).toString() ||  'https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg';
+const siteUrl = import.meta.env.SITE ?? 'https://crizzo-avocate.be/';
+const defaultImage = '/images/default-social-image.png'; // Assurez-vous que cette image existe dans votre dossier public
+const fullImageUrl = image ? new URL(image, siteUrl).toString() : new URL(defaultImage, siteUrl).toString();
 
-// Traitement des mots-clés
 const keywordsString = Array.isArray(keywords) ? keywords.join(', ') : keywords;
+
+const languages = ['fr', 'en', 'it'];
 ---
 
 <AstroSEO
@@ -37,30 +39,51 @@ const keywordsString = Array.isArray(keywords) ? keywords.join(', ') : keywords;
       title: title,
       type: type,
       image: fullImageUrl,
+      url: canonical || siteUrl,
     },
     optional: {
       description: description,
       locale: lang,
       siteName: "Christine Rizzo - Avocate",
     },
+    image: {
+      url: fullImageUrl,
+      secureUrl: fullImageUrl,
+      alt: "Christine Rizzo - Avocate",
+      type: "image/jpeg",
+      width: 1200,
+      height: 630,
+    },
+    article: type === 'article' ? {
+      publishedTime: new Date().toISOString(),
+      authors: ["Christine Rizzo"],
+    } : undefined,
   }}
   twitter={{
     card: "summary_large_image",
     site: "@ChristineRizzo",
     creator: "@ChristineRizzo",
+    title: title,
+    description: description,
+    image: fullImageUrl,
+    imageAlt: "Christine Rizzo - Avocate",
   }}
   extend={{
     link: [
       { rel: "icon", href: "/favicon.ico" },
-      { rel: "alternate", hreflang: "fr", href: `${siteUrl}/fr` },
-      { rel: "alternate", hreflang: "en", href: `${siteUrl}/en` },
-      { rel: "alternate", hreflang: "it", href: `${siteUrl}/it` },
+      ...languages.map(l => ({ rel: "alternate", hreflang: l, href: `${siteUrl}/${l}` })),
     ],
     meta: [
-      ...(keywordsString ? [{ name: "keywords", content: keywordsString }] : []),
       { name: "author", content: "Christine Rizzo" },
       { name: "robots", content: "index, follow" },
       { name: "language", content: lang },
+      ...(keywordsString ? [{ name: "keywords", content: keywordsString }] : []),
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
+      { name: "twitter:image", content: fullImageUrl },
     ],
   }}
 />
