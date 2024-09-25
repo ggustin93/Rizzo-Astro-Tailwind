@@ -17,7 +17,15 @@ collections:
       - { label: "Image à la une", name: "thumbnail", widget: "image" }
       - { label: "Temps de lecture (en minutes)", name: "readTime", widget: "string", hint: "Entrez le nombre de minutes, par exemple: 5" }
       - { label: "Catégories", name: "categories", widget: "string", hint: "Entrez les catégories séparées par des virgules, par exemple: Droit du travail, Protection sociale, Contentieux" }
-      - { label: "Points forts (optionnel)", name: "highlights", widget: "list", required: false, hint: "Résumé en quelques points clés de l'article. Ils apparaîtront dans un encadré au début de l'article." }
+      - label: "Points forts (optionnel)"
+        name: "highlights"
+        widget: "list"
+        required: false
+        field: 
+          label: "Point"
+          name: "point"
+          widget: "text"
+        hint: "Résumé en quelques points clés de l'article. Chaque point peut être sur plusieurs lignes. Ils apparaîtront dans un encadré au début de l'article."
       - { label: "Description SEO", name: "description", widget: "text", required: true, pattern: ['^.{0,160}$', "La description doit faire 160 caractères maximum"], hint: "Description courte pour le SEO (max 160 caractères)" }
       - { label: "Mots-clés SEO", name: "keywords", widget: "string", hint: "Entrez les mots-clés séparés par des virgules pour aider au référencement Google, par exemple: licenciement, contrat de travail, indemnités" }
       - { label: "Contenu", name: "body", widget: "markdown" }
@@ -33,7 +41,15 @@ collections:
       - { label: "Featured Image", name: "thumbnail", widget: "image" }
       - { label: "Read Time (in minutes)", name: "readTime", widget: "string", hint: "Enter the number of minutes, e.g. 5" }
       - { label: "Categories", name: "categories", widget: "string", hint: "Enter categories separated by commas, e.g. Labor Law, Social Protection, Litigation" }
-      - { label: "Highlights (optional)", name: "highlights", widget: "list", required: false, hint: "Summary of the article in a few key points. They will appear in a box at the beginning of the article." }
+      - label: "Highlights (optional)"
+        name: "highlights"
+        widget: "list"
+        required: false
+        field: 
+          label: "Point"
+          name: "point"
+          widget: "text"
+        hint: "Summary of the article in a few key points. Each point can be multiple lines. They will appear in a box at the beginning of the article."
       - { label: "SEO Description", name: "description", widget: "text", required: true, pattern: ['^.{0,160}$', "Description must be 160 characters or less"], hint: "Short description for SEO (max 160 characters)" }
       - { label: "SEO Keywords", name: "keywords", widget: "string", hint: "Enter keywords separated by commas to help with Google indexing, e.g. dismissal, employment contract, compensation" }
       - { label: "Body", name: "body", widget: "markdown" }
@@ -49,7 +65,15 @@ collections:
       - { label: "Immagine in evidenza", name: "thumbnail", widget: "image" }
       - { label: "Tempo di lettura (in minuti)", name: "readTime", widget: "string", hint: "Inserisci il numero di minuti, ad esempio: 5" }
       - { label: "Categorie", name: "categories", widget: "string", hint: "Inserisci le categorie separate da virgole, ad esempio: Diritto del lavoro, Protezione sociale, Contenzioso" }
-      - { label: "Punti salienti (opzionale)", name: "highlights", widget: "list", required: false, hint: "Riassunto dell'articolo in alcuni punti chiave. Appariranno in un riquadro all'inizio dell'articolo." }
+      - label: "Punti salienti (opzionale)"
+        name: "highlights"
+        widget: "list"
+        required: false
+        field: 
+          label: "Punto"
+          name: "point"
+          widget: "text"
+        hint: "Riassunto dell'articolo in alcuni punti chiave. Ogni punto può essere su più righe. Appariranno in un riquadro all'inizio dell'articolo."
       - { label: "Descrizione SEO", name: "description", widget: "text", required: true, pattern: ['^.{0,160}$', "La descrizione deve essere di massimo 160 caratteri"], hint: "Breve descrizione per SEO (max 160 caratteri)" }
       - { label: "Parole chiave SEO", name: "keywords", widget: "string", hint: "Inserisci le parole chiave separate da virgole per aiutare l'indicizzazione su Google, ad esempio: licenziamento, contratto di lavoro, indennità" }
       - { label: "Contenuto", name: "body", widget: "markdown" }
