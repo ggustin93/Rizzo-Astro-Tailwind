@@ -3,15 +3,20 @@ title: La protection contre le harcèlement au travail renforcée en Belgique
 date: 2024-03-10
 author: Christine Rizzo
 thumbnail: https://images.unsplash.com/photo-1573497620053-ea5300f94f21
-readTime: 4 min
-categories:
-  - Droit du travail
-  - Harcèlement
-  - Bien-être au travail
+readTime: "4 min"
+categories: 
+  - "Droit du travail"
+  - "Harcèlement"
+  - "Bien-être au travail"
 highlights:
-  - Nouvelles mesures préventives obligatoires
-  - Renforcement des sanctions
-  - Soutien accru aux victimes
+  - "Nouvelles mesures préventives obligatoires"
+  - "Renforcement des sanctions"
+  - "Soutien accru aux victimes"
+description: "La Belgique renforce sa législation contre le harcèlement au travail en 2024, introduisant de nouvelles mesures préventives, des sanctions plus lourdes et un meilleur soutien aux victimes."
+keywords:
+  - "harcèlement au travail"
+  - "législation belge"
+  - "prévention"
 ---
 
 La Belgique renforce sa législation contre le harcèlement au travail en 2024. Ces nouvelles dispositions visent à créer un environnement de travail plus sûr et respectueux.

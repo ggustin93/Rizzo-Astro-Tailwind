@@ -1,17 +1,23 @@
 ---
-title: "Les nouveautés du droit du travail en 2024 "
+title: "Les nouveautés du droit du travail en 2024"
 date: 2024-01-15
 author: Christine Rizzo
 thumbnail: https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80
-readTime: 5 min
+readTime: "5 min"
 categories:
-  - Droit du travail
-  - Législation
+  - "Droit du travail"
+  - "Législation"
   - "2024"
 highlights:
-  - Renforcement du droit à la déconnexion
-  - Nouvelles modalités pour le télétravail
-  - Évolution des congés parentaux
+  - "Renforcement du droit à la déconnexion"
+  - "Nouvelles modalités pour le télétravail"
+  - "Évolution des congés parentaux"
+description: "Découvrez les changements majeurs en droit du travail pour 2024 : droit à la déconnexion renforcé, nouvelles règles pour le télétravail et évolution des congés parentaux."
+keywords:
+  - "droit du travail"
+  - "législation 2024"
+  - "télétravail"
+  - "congés parentaux"
 ---
 
 L'année 2024 apporte son lot de changements dans le domaine du droit du travail. Voici un aperçu des principales modifications législatives qui impactent les relations de travail cette année :

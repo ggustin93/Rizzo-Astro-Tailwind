@@ -12,6 +12,13 @@ highlights:
   - "Nouveau calcul de la pension minimale"
   - "Introduction de la pension à temps partiel"
   - "Mesures pour l'égalité hommes-femmes"
+description: "Découvrez les changements majeurs de la réforme des pensions en Belgique en 2024 : nouveau calcul de la pension minimale, introduction de la pension à temps partiel et mesures pour l'égalité."
+keywords:
+  - "réforme des pensions"
+  - "Belgique"
+  - "pension minimale"
+  - "pension à temps partiel"
+  - "égalité hommes-femmes"
 ---
 
 La réforme des pensions en Belgique, entrée en vigueur en 2024, apporte des changements significatifs au système de retraite. Voici les principaux points à retenir :
