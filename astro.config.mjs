@@ -6,10 +6,11 @@ import sitemap from '@astrojs/sitemap';
 const outputMode = 'static';
 
 export default defineConfig({
-  site:'https://crizzo-avocate.be',
+  site: 'https://crizzo-avocate.be',
   output: outputMode,
   redirects: {
-    '/': '/fr'
+    '/': '/fr/',
+    '/fr': '/fr/'
   },
   image: {
     service: {

@@ -3,7 +3,6 @@ import { Image } from 'astro:assets';
 import { Phone, Mail, MapPin, ChevronDown } from 'astro-feather-icons2';
 import logoImage from '../assets/images/logo_crizzo_calli3.svg';
 import logoPwablo from '../assets/images/logo_pwablo.svg';
-import LanguagePicker from '../components/LanguagePicker.astro';
 
 const { pathname } = Astro.url;
 const currentLang = pathname.split('/')[1] || 'fr';
@@ -131,7 +130,7 @@ const legalLinks = [
       <div class="w-full md:w-1/5 mb-8 mt-8 xs:mt-0 md:mb-0">
         <h3 class="font-medium mb-4 text-lg hidden md:block">{t.ecoDesignPwablo}</h3>
         <div class="hidden md:block">
-          <a href="https://www.ecoindex.fr/resultat/?id=19de93fb-067c-4682-a25e-e37636dd5e6d" class="text-sm hover:underline mb-2 block">{t.ecoDesign}</a>
+          <a href="https://www.websitecarbon.com/website/crizzo-avocate-be-fr/" class="text-sm hover:underline mb-2 block">{t.ecoDesign}</a>
           <a href="https://pwablo.be" class="hover:underline flex flex-col items-start">
             <span class="text-sm mb-2">{t.design}</span>
             <Image src={logoPwablo} alt="Pwablo Logo" class="h-20 my-2  w-auto bg-white p-2" />
