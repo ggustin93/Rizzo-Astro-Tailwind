@@ -33,6 +33,17 @@ fr:
     title: Mentions Légales
     content:
       - Polices fournies par Web Fonts sous licence CC BY 4.0
+  seo:
+    title: "Christine Rizzo | Avocate spécialisée en droit du travail à Bruxelles"
+    description: "Expertise en droit du travail pour salariés et employeurs. Conseils, défense et accompagnement juridique personnalisé à Bruxelles."
+    image: "https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg"
+    keywords:
+      - avocat droit du travail Bruxelles
+      - expertise droit social
+      - conseil juridique employeur
+      - défense salarié
+      - litige travail Belgique
+      - accompagnement juridique personnalisé
 
 en:
   hero:
@@ -65,6 +76,18 @@ en:
     cta: Learn More
   articlesTitle: Resources
   viewAllArticles: "View All Resources"
+  seo:
+    title: "Christine Rizzo | Labor Law Specialist Lawyer in Brussels"
+    description: "Expert in labor law for employees and employers. Legal advice, defense, and personalized legal support in Brussels."
+    keywords: "lawyer, labor law, Brussels, legal advice, employee defense, employer support"
+    image: "https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg"
+  keywords:
+    - employment lawyer Brussels
+    - labor law expert Belgium
+    - legal advice for employers
+    - employee rights defense
+    - workplace dispute resolution
+    - personalized legal support
 
 it:
   hero:
@@ -97,3 +120,15 @@ it:
     cta: Scopri di più
   articlesTitle: Risorse
   viewAllArticles: "Visualizza tutte le risorse"
+  seo:
+    title: "Christine Rizzo | Avvocato specializzato in diritto del lavoro a Bruxelles"
+    description: "Esperta in diritto del lavoro per dipendenti e datori di lavoro. Consulenza legale, difesa e supporto giuridico personalizzato a Bruxelles."
+    keywords: "avvocato, diritto del lavoro, Bruxelles, consulenza legale, difesa dei dipendenti, supporto ai datori di lavoro"
+    image: "https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg"
+  keywords:
+    - avvocato diritto del lavoro Bruxelles
+    - esperto diritto del lavoro Belgio
+    - consulenza legale datori di lavoro
+    - difesa diritti dei lavoratori
+    - risoluzione controversie lavorative
+    - assistenza legale personalizzata

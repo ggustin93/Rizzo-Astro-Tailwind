@@ -27,8 +27,8 @@ const iconComponents = {
 
 const handleAction = (type: string, action: string) => {
   switch(type) {
-    case 'calendly':
-      return `window.Calendly.showPopupWidget('${action}')`;
+    case 'appointment':
+      return `Cal('ui', {"styles":{"branding":{"brandColor":"#000000"}},"hideEventTypeDetails":false,"layout":"month_view"})`;
     case 'email':
       return `window.location.href = 'mailto:${action}'`;
     case 'phone':
@@ -43,9 +43,22 @@ const handleAction = (type: string, action: string) => {
       return '';
   }
 };
+
+const seoData = {
+  title: contactData.seo?.title || `Contact - Christine Rizzo`,
+  description: contactData.seo?.description || contactEntry.data.description,
+  image: contactData.seo?.image || 'https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg',
+  keywords: contactData.seo?.keywords?.join(', ') || ''
+};
 ---
 
-<BaseLayout title={`${contactData.title} - Christine Rizzo`} lang={lang} description={contactData.title}>
+<BaseLayout 
+  title={seoData.title}
+  description={seoData.description}
+  image={seoData.image}
+  keywords={seoData.keywords}
+  lang={lang}
+>
   <main class="container mx-auto px-4 py-16">
     <h1 class="text-4xl font-light mb-12 text-black text-center">{contactData.heading}</h1>
     
@@ -59,9 +72,11 @@ const handleAction = (type: string, action: string) => {
                 <div class="flex flex-col items-center">
                   <button
                     onclick={handleAction(button.type, button.action || button.subtext)}
-                    class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4 hover:bg-travailleur transition-colors duration-300 group shadow-md"
+                    class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4 hover:bg-travailleur transition-colors duration-300 group shadow-md cursor-pointer"
+                    data-cal-link={button.type === 'appointment' ? "c.rizzo-avocat.be/premier-contact" : undefined}
+                    data-cal-config={button.type === 'appointment' ? '{"layout":"month_view"}' : undefined}
                   >
-                    <IconComponent class="w-9 h-9 text-employeur group-hover:text-white transition-colors duration-300" />
+                    <IconComponent class="w-9 h-9 text-employeur group-hover:text-white transition-colors duration-300 pointer-events-none" />
                   </button>
                   <span class="text-sm uppercase text-accent font-extrabold leading-relaxed tracking-wide mb-2 px-2 text-center">{button.text}</span>
                   <a href="#" class="text-sm text-white hover:underline font-medium text-center">{button.subtext}</a>
@@ -86,16 +101,21 @@ const handleAction = (type: string, action: string) => {
   </main>
 </BaseLayout>
 
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script is:inline src="https://assets.calendly.com/assets/external/widget.js"></script>
 <script>
   document.addEventListener('astro:page-load', () => {
-    window.Calendly.initBadgeWidget({
-      url: 'https://calendly.com/decarbonaction/meeting',
-      text: 'Planifier du temps avec moi',
-      color: '#0069ff',
-      textColor: '#ffffff',
-      branding: undefined
+    const appointmentButtons = document.querySelectorAll('[data-cal-link]');
+    appointmentButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        // @ts-ignore
+        if (typeof Cal !== 'undefined') {
+          (window as any).Cal("ui", {
+            styles: {branding: {brandColor: "#000000"}},
+            hideEventTypeDetails: false,
+            layout: "month_view"
+          });
+        }
+      });
     });
   });
 </script>

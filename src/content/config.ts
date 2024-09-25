@@ -9,6 +9,8 @@ const blog = defineCollection({
     readTime: z.string(),
     categories: z.array(z.string()),
     highlights: z.array(z.string()).optional(),
+    description: z.string().optional(),
+    keywords: z.array(z.string()).optional(),
     // Pas besoin de champ `lang` ici, car la langue est déterminée par le dossier
   }),
 });

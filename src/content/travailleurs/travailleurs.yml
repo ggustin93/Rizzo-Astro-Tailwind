@@ -24,12 +24,23 @@ fr:
     - icon: "Handshake"
       text: "Négociation d'accords amiables en direct ou en coulisses"
   ctaText: "En savoir plus sur les tarifs pour les travailleurs.euses"
+  seo:
+    title: "Services juridiques pour travailleurs | Christine Rizzo Avocate"
+    description: "Expertise en droit du travail pour les employés. Conseils, défense et accompagnement juridique personnalisé à Bruxelles."
+    image: "https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg"
+    keywords:
+      - avocat droit du travail employés Bruxelles
+      - expertise droit social travailleurs
+      - conseil juridique salarié
+      - défense employé tribunal du travail
+      - litige travail Belgique
+      - accompagnement juridique personnalisé travailleurs
 
 en:
   title: "Support and defense for workers"
   description: "I accompany you throughout your professional journey, whether for a specific question, negotiating a departure, or initiating legal proceedings before the labor court against your employer."
   questions:
-    - "Do you want your employment contract reviewed?"
+    - "Do you want to have your employment contract reviewed?"
     - "Is your employer offering you a mutual termination agreement but you're not sure if it's in your best interest?"
     - "Do you want to resign?"
     - "Do you want to contest your dismissal (manifestly unreasonable, abusive, or discriminatory dismissal)?"
@@ -37,44 +48,66 @@ en:
     - "Is your manager or a colleague harassing you or behaving inappropriately?"
     - "Have your working conditions changed during or after a pregnancy?"
     - "Are you being sidelined?"
-    - "Do you want to take time credit and parental leave to care for your child?"
-    - "Are you a victim of discrimination (from recruitment to termination of employment)?"
+    - "Do you wish to take time credit and parental leave to care for your child?"
+    - "Are you a victim of discrimination (from recruitment to termination of the employment relationship)?"
     - "Are you suffering from burnout?"
     - "Are you the victim of a work accident?"
     - "Is your status unclear? Do you think you might be a false self-employed?"
   servicesTitle: "My services"
   services:
-    - icon: "Check"
-      text: "Specific advice from recruitment to termination of employment"
-    - icon: "Check"
+    - icon: "BriefCase"
+      text: "Specific advice from recruitment to termination of the employment relationship"
+    - icon: "Shield"
       text: "Defense before labor courts and tribunals"
     - icon: "Handshake"
       text: "Negotiation of amicable agreements directly or behind the scenes"
   ctaText: "Learn more about rates for workers"
+  seo:
+    title: "Legal Services for Employees | Christine Rizzo Lawyer"
+    description: "Labor law expertise for employees. Legal advice, defense, and personalized support in Brussels."
+    image: "https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg"
+    keywords:
+      - labor law attorney for employees Brussels
+      - employment law expertise for workers
+      - employee legal counsel
+      - worker defense labor court
+      - workplace dispute resolution Belgium
+      - personalized legal support for employees
 
 it:
   title: "Supporto e difesa dei lavoratori"
-  description: "Vi accompagno durante tutto il vostro percorso professionale, sia per una domanda specifica, la negoziazione di una partenza o l'avvio di un procedimento legale davanti al tribunale del lavoro contro il vostro datore di lavoro."
+  description: "Ti accompagno durante tutto il tuo percorso professionale, sia per una domanda specifica, la negoziazione di una partenza o l'avvio di un procedimento giudiziario davanti al tribunale del lavoro contro il tuo datore di lavoro."
   questions:
-    - "Volete far rileggere il vostro contratto di lavoro?"
-    - "Il vostro datore di lavoro vi propone una risoluzione consensuale ma non sapete se è nel vostro interesse?"
-    - "Volete dimettervi?"
-    - "Volete contestare il vostro licenziamento (licenziamento manifestamente irragionevole, abusivo o discriminatorio)?"
-    - "Volete verificare il calcolo della vostra indennità di preavviso e il rispetto dei vostri diritti in seguito al licenziamento?"
-    - "Il vostro manager o un collega vi molesta o adotta un atteggiamento inappropriato?"
-    - "Le vostre condizioni di lavoro sono state modificate durante o dopo una gravidanza?"
-    - "Siete stati messi da parte sul lavoro?"
-    - "Volete prendere un congedo parentale per prendervi cura di vostro figlio?"
-    - "Siete vittime di discriminazione (dall'assunzione alla cessazione del rapporto di lavoro)?"
-    - "Soffrite di burnout?"
-    - "Siete stati vittime di un infortunio sul lavoro?"
-    - "Il vostro status non è chiaro? Pensate di essere un falso lavoratore autonomo?"
-  servicesTitle: "I Miei Servizi"
+    - "Vuoi far rivedere il tuo contratto di lavoro?"
+    - "Il tuo datore di lavoro ti propone una risoluzione consensuale ma non sei sicuro se sia nel tuo interesse?"
+    - "Vuoi dimetterti?"
+    - "Vuoi contestare il tuo licenziamento (licenziamento manifestamente irragionevole, abusivo o discriminatorio)?"
+    - "Vuoi verificare il calcolo della tua indennità di preavviso e il rispetto dei tuoi diritti in seguito al tuo licenziamento?"
+    - "Il tuo manager o un collega ti molesta o ha un comportamento inappropriato?"
+    - "Le tue condizioni di lavoro sono cambiate durante o dopo una gravidanza?"
+    - "Sei stato messo da parte?"
+    - "Desideri prendere un congedo parentale per prenderti cura di tuo figlio?"
+    - "Sei vittima di discriminazione (dal reclutamento alla cessazione del rapporto di lavoro)?"
+    - "Soffri di burnout?"
+    - "Sei vittima di un infortunio sul lavoro?"
+    - "Il tuo status non è chiaro? Pensi di essere un falso lavoratore autonomo?"
+  servicesTitle: "I miei servizi"
   services:
-    - icon: "Check"
-      text: "Consigli specifici dal reclutamento alla cessazione del rapporto di lavoro"
-    - icon: "Check"
+    - icon: "BriefCase"
+      text: "Consulenza specifica dal reclutamento alla cessazione del rapporto di lavoro"
+    - icon: "Shield"
       text: "Difesa davanti ai tribunali del lavoro"
     - icon: "Handshake"
       text: "Negoziazione di accordi amichevoli direttamente o dietro le quinte"
-  ctaText: "Scoprite di più sui tariffari per i lavoratori"
+  ctaText: "Scopri di più sulle tariffe per i lavoratori"
+  seo:
+    title: "Servizi legali per lavoratori | Avvocato Christine Rizzo"
+    description: "Esperienza in diritto del lavoro per dipendenti. Consulenza legale, difesa e supporto personalizzato a Bruxelles."
+    image: "https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg"
+    keywords:
+      - avvocato diritto del lavoro dipendenti Bruxelles
+      - esperienza diritto sociale lavoratori
+      - consulenza legale dipendenti
+      - difesa lavoratori tribunale del lavoro
+      - controversie lavoro Belgio
+      - supporto legale personalizzato lavoratori

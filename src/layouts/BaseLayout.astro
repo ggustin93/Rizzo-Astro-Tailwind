@@ -4,43 +4,127 @@ import Footer from '../components/Footer.astro';
 import SEO from '../components/SEO.astro';
 import '../styles/global.css';
 
-const supportedLanguages = ['fr', 'en', 'it'] as const;
-type SupportedLanguage = typeof supportedLanguages[number];
+// Définition des langues supportées
+type SupportedLanguage = 'en' | 'fr' | 'it';
+const supportedLanguages: SupportedLanguage[] = ['en', 'fr', 'it'];
 
-interface Props {
+// Définition du type pour la prop 'type'
+type SEOType = 'article' | 'website' | undefined;
+
+// Interface pour les props du composant
+export interface Props {
   title: string;
   description: string;
-  lang: string; // Accept string type here
   image?: string;
+  keywords?: string;
+  type?: SEOType;  // Mise à jour du type ici
+  canonical?: string;
+  lang?: string;
 }
 
-const { title, description, lang, image } = Astro.props;
+// Destructuration des props
+const { 
+  title, 
+  description, 
+  image, 
+  keywords, 
+  type = 'website', 
+  canonical, 
+  lang: propLang 
+} = Astro.props;
 
-// Validate and set the current language
-const currentLang: SupportedLanguage = (typeof lang === 'string' && supportedLanguages.includes(lang as SupportedLanguage)) ? lang as SupportedLanguage : 'fr';
+const { pathname } = Astro.url;
+const urlLang = pathname.split('/')[1];
+
+// Utiliser la langue passée en prop si elle existe, sinon utiliser celle de l'URL
+const rawLang = propLang || urlLang;
+
+// Validation et définition de la langue actuelle
+const currentLang: SupportedLanguage = supportedLanguages.includes(rawLang as SupportedLanguage) 
+  ? rawLang as SupportedLanguage 
+  : 'fr';
+
+// URL principale du site
+const mainSiteUrl = 'https://crizzo-avocate.be';
+
+// Génération de l'URL canonique
+const path = Astro.url.pathname;
+const autoCanonical = new URL(path, mainSiteUrl).toString();
+const finalCanonical = canonical || autoCanonical;
 ---
 
 <!DOCTYPE html>
 <html lang={currentLang}>
 <head>
     <meta charset="UTF-8">
-    <meta name="robots" content="index, follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-    <SEO title={title} description={description} image={image} />
+    <!-- Composant SEO -->
+    <SEO
+        title={title}
+        description={description}
+        canonical={finalCanonical}
+        image={image}
+        keywords={keywords}
+        type={type}
+        lang={currentLang}
+    />
     
+    <!-- Préchargement des polices -->
     <link rel="preload" href="/fonts/Synonym-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="/fonts/Synonym-Regular.woff" as="font" type="font/woff" crossorigin="anonymous">
+    
+    <!-- Feuilles de style -->
     <link rel="stylesheet" href="/styles/tailwind.css">
     <link rel="stylesheet" href="/styles/global.css">
     
-    <link rel="preconnect" href="https://assets.calendly.com">
+    <!-- Préconnexions -->
+    <link rel="preconnect" href="https://app.cal.com">
     <link rel="preconnect" href="https://unpkg.com">
     
+    <!-- Favicons et manifeste -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Scripts externes -->
     <script src="https://unpkg.com/feather-icons" defer></script>
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    
+    <!-- Cal.com Script -->
+    <script type="text/javascript">
+    (function (C, A, L) {
+      let p = function (a, ar) { a.q.push(ar); };
+      let d = C.document;
+      C.Cal = C.Cal || function () {
+        let cal = C.Cal;
+        let ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {};
+          cal.q = cal.q || [];
+          d.head.appendChild(d.createElement("script")).src = A;
+          cal.loaded = true;
+        }
+        if (ar[0] === L) {
+          const api = function () { p(api, arguments); };
+          const namespace = ar[1];
+          api.q = api.q || [];
+          typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar);
+          return;
+        }
+        p(cal, ar);
+      };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", {origin:"https://cal.com"});
+
+    Cal("ui", {
+      styles: {branding: {brandColor: "#000000"}},
+      hideEventTypeDetails: false,
+      layout: "month_view"
+    });
+    </script>
 </head>
 <body class="bg-beige bg-svg-pattern">
     <div class="container mx-auto px-4">
@@ -53,20 +137,23 @@ const currentLang: SupportedLanguage = (typeof lang === 'string' && supportedLan
         <Footer currentLang={currentLang} />
     </div>
     
+    <!-- Script for Cal.com -->
     <script is:inline>
-      document.addEventListener('DOMContentLoaded', function() {
-        document.body.addEventListener('click', function(e) {
-          if (e.target instanceof HTMLElement && e.target.hasAttribute('data-calendly')) {
-            if (typeof window['Calendly'] !== 'undefined') {
-              window['Calendly'].initPopupWidget({url: 'https://calendly.com/decarbonaction/meeting'});
-            }
-          }
-        });
+    document.addEventListener('DOMContentLoaded', function() {
+      document.body.addEventListener('click', function(e) {
+        if (e.target instanceof HTMLElement && e.target.hasAttribute('data-cal-link')) {
+          Cal("ui", {
+            styles: {branding: {brandColor: "#000000"}},
+            hideEventTypeDetails: false,
+            layout: "month_view"
+          });
+        }
       });
+    });
     </script>
 
+    <!-- Script pour l'amélioration de l'accessibilité -->
     <script is:inline>
-      // Accessibility improvement
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Tab') {
           document.body.classList.add('user-is-tabbing');
@@ -78,8 +165,8 @@ const currentLang: SupportedLanguage = (typeof lang === 'string' && supportedLan
       });
     </script>
 
+    <!-- Script pour le chargement paresseux des images -->
     <script is:inline>
-      // Lazy loading images
       document.addEventListener('DOMContentLoaded', function() {
         var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
 

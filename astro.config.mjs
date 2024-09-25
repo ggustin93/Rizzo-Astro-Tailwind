@@ -1,11 +1,12 @@
 import { defineConfig } from "astro/config";
 import robotsTxt from 'astro-robots-txt';
+import sitemap from '@astrojs/sitemap';
 
 // Set this to 'static' or 'hybrid' based on your needs
 const outputMode = 'static';
 
 export default defineConfig({
-  site:'https://chrizzo.netlify.app',
+  site:'https://crizzo-avocate.be',
   output: outputMode,
   redirects: {
     '/': '/fr'
@@ -27,8 +28,9 @@ export default defineConfig({
   },
   integrations: [
     robotsTxt({
-      site: 'https://chrizzo.netlify.app',
+      site: 'https://crizzo-avocate.be',
     }),
+    sitemap(),
   ],
   vite: {
     css: {

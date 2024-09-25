@@ -4,10 +4,11 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { ChevronRight, Check, Briefcase, Shield, FileText, ArrowLeft } from 'astro-feather-icons2';
 import IconHandshake from '../../../components/IconHandshake.astro'; // Assurez-vous que ce composant existe
 
-const { lang } = Astro.params;
 export async function getStaticPaths() {
   return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
 }
+const { lang } = Astro.params;
+
 const travailleursEntry = await getEntry('travailleurs', 'travailleurs');
 const content = travailleursEntry.data[lang] || travailleursEntry.data['fr']; // Use French as fallback
 
@@ -34,10 +35,22 @@ const iconMap = {
   Shield
 };
 const t = translations[lang as keyof typeof translations];
-
+// SEO data
+const seoData = {
+  title: content.seo?.title || `Services pour travailleurs - Christine Rizzo`,
+  description: content.seo?.description || content.description,
+  image: content.seo?.image || 'https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg',
+  keywords: content.keywords?.join(', ') || content.seo?.keywords || ''
+};
 ---
 
-<BaseLayout title={content.title} lang={lang} description={content.title}>
+<BaseLayout 
+  title={seoData.title}
+  description={seoData.description}
+  image={seoData.image}
+  keywords={seoData.keywords}
+  lang={lang}
+>
   <main class="container mx-auto px-4 py-16">
     <a href={`/${lang}#services`} class="inline-flex items-center text-travailleur hover:underline mb-6">
       <ArrowLeft class="w-4 h-4 mr-2" />

@@ -37,7 +37,7 @@ const t = translations[lang as keyof typeof translations] || translations.fr;
 
 const buttonConfig = [
   { icon: Mail, text: t.email, action: 'c.rizzo@avocat.be', type: 'email' },
-  { icon: Calendar, text: t.appointment, action: 'Réserver', type: 'calendly' },
+  { icon: Calendar, text: t.appointment, action: 'Réserver', type: 'appointment' },
   { icon: Phone, text: t.call, action: '+32 488 40 45 49', type: 'phone' },
   { icon: MessageCircle, text: t.whatsapp, action: 'Discuter', type: 'whatsapp' },
 ];
@@ -46,8 +46,8 @@ const handleAction = (type: string, action: string) => {
   switch(type) {
     case 'email':
       return `window.location.href = 'mailto:${action}'`;
-    case 'calendly':
-      return "window.Calendly.showPopupWidget('https://calendly.com/decarbonaction/meeting')";
+    case 'appointment':
+      return `Cal('ui', {"styles":{"branding":{"brandColor":"#000000"}},"hideEventTypeDetails":false,"layout":"month_view"})`;
     case 'phone':
       return `window.location.href = 'tel:${action}'`;
     case 'whatsapp':
@@ -69,10 +69,12 @@ const handleAction = (type: string, action: string) => {
             {buttonConfig.map(({ icon: Icon, text, action, type }) => (
               <div class="flex flex-col items-center">
                 <button
-                  class="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-4 hover:bg-travailleur transition-colors duration-300 group"
+                  class="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-4 hover:bg-travailleur transition-colors duration-300 group cursor-pointer"
                   onclick={handleAction(type, action)}
+                  data-cal-link={type === 'appointment' ? "c.rizzo-avocat.be/premier-contact" : undefined}
+                  data-cal-config={type === 'appointment' ? '{"layout":"month_view"}' : undefined}
                 >
-                  <Icon class="w-12 h-12 text-employeur group-hover:text-white transition-colors duration-300" />
+                  <Icon class="w-12 h-12 text-employeur group-hover:text-white transition-colors duration-300 pointer-events-none" />
                 </button>
                 <span class="text-sm uppercase text-accent font-extrabold leading-relaxed tracking-wide mb-2 px-2">{text}</span>
                 <a href="#" class="text-sm text-white hover:underline font-medium">{action}</a>
@@ -96,3 +98,21 @@ const handleAction = (type: string, action: string) => {
   </section>
 </div>
 
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const appointmentButtons = document.querySelectorAll('[data-cal-link]');
+    appointmentButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        // @ts-ignore
+        if (typeof Cal !== 'undefined') {
+          (window as any).Cal("ui", {
+            styles: {branding: {brandColor: "#000000"}},
+            hideEventTypeDetails: false,
+            layout: "month_view"
+          });
+        }
+      });
+    });
+  });
+</script>

@@ -1,11 +1,22 @@
 fr:
   title: "Contact"
   heading: "Comment puis-je vous aider?"
+  seo:
+    title: "Contact | Christine Rizzo Avocate en droit du travail à Bruxelles"
+    description: "Contactez Christine Rizzo, avocate spécialisée en droit du travail à Bruxelles. Conseils juridiques personnalisés pour employés et employeurs."
+    image: "https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg"
+    keywords:
+      - contact avocat droit du travail Bruxelles
+      - consultation juridique emploi
+      - rendez-vous avocat travail
+      - conseil juridique employé employeur
+      - assistance légale travail Belgique
+      - contact Christine Rizzo avocate
   buttons:
     - icon: "calendar"
       text: "PRENEZ RDV EN LIGNE"
       subtext: "Le premier contact est gratuit"
-      type: "calendly"
+      type: "appointment"
       action: "https://calendly.com/decarbonaction/meeting"
     - icon: "mail"
       text: "ENVOYEZ-MOI UN E-MAIL"
@@ -32,11 +43,22 @@ fr:
 en:
   title: "Contact"
   heading: "How can I help you?"
+  seo:
+    title: "Contact | Christine Rizzo Employment Lawyer in Brussels"
+    description: "Contact Christine Rizzo, an employment law specialist in Brussels. Personalized legal advice for employees and employers."
+    image: "https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg"
+    keywords:
+      - contact employment lawyer Brussels
+      - legal consultation employment
+      - appointment labor lawyer
+      - legal advice employee employer
+      - legal assistance work Belgium
+      - contact Christine Rizzo lawyer
   buttons:
     - icon: "calendar"
       text: "BOOK AN APPOINTMENT ONLINE"
       subtext: "The first appointment is free"
-      type: "calendly"
+      type: "appointment"
       action: "https://calendly.com/decarbonaction/meeting"
     - icon: "mail"
       text: "SEND ME AN EMAIL"
@@ -63,11 +85,22 @@ en:
 it:
   title: "Contatto"
   heading: "Come posso aiutarti?"
+  seo:
+    title: "Contatto | Christine Rizzo Avvocato del lavoro a Bruxelles"
+    description: "Contatta Christine Rizzo, avvocato specializzato in diritto del lavoro a Bruxelles. Consulenza legale personalizzata per dipendenti e datori di lavoro."
+    image: "https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg"
+    keywords:
+      - contatto avvocato diritto del lavoro Bruxelles
+      - consulenza legale impiego
+      - appuntamento avvocato lavoro
+      - consulenza legale dipendente datore di lavoro
+      - assistenza legale lavoro Belgio
+      - contatto Christine Rizzo avvocato
   buttons:
     - icon: "calendar"
       text: "PRENOTA UN APPUNTAMENTO ONLINE"
       subtext: "Il primo appuntamento è gratuito"
-      type: "calendly"
+      type: "appointment"
       action: "https://calendly.com/decarbonaction/meeting"
     - icon: "mail"
       text: "INVIAMI UN'EMAIL"

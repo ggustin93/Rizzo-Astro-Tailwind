@@ -38,9 +38,35 @@ const t = getUiTranslations(currentLang);
 
 // Get unique categories
 const categories = [...new Set(blogEntries.flatMap(entry => entry.data.categories))];
+// SEO information
+const seoInfo = {
+  fr: {
+    title: "Blog | Christine Rizzo - Avocate en droit du travail à Bruxelles",
+    description: "Découvrez les derniers articles sur le droit du travail en Belgique. Conseils juridiques, analyses et actualités par Christine Rizzo, avocate spécialisée.",
+    keywords: ["blog droit du travail", "articles juridiques Belgique", "conseils avocat emploi", "actualités droit social", "Christine Rizzo blog"]
+  },
+  en: {
+    title: "Blog | Christine Rizzo - Employment Lawyer in Brussels",
+    description: "Explore the latest articles on Belgian employment law. Legal advice, analysis, and news by Christine Rizzo, specialized employment lawyer.",
+    keywords: ["employment law blog", "legal articles Belgium", "labor lawyer advice", "social law news", "Christine Rizzo blog"]
+  },
+  it: {
+    title: "Blog | Christine Rizzo - Avvocato del lavoro a Bruxelles",
+    description: "Scopri gli ultimi articoli sul diritto del lavoro in Belgio. Consigli legali, analisi e notizie di Christine Rizzo, avvocato specializzato.",
+    keywords: ["blog diritto del lavoro", "articoli legali Belgio", "consigli avvocato impiego", "notizie diritto sociale", "Christine Rizzo blog"]
+  }
+};
+
+const currentSeo = seoInfo[currentLang];
 ---
 
-<BaseLayout title={t.blogTitle} lang={currentLang} description={t.blogTitle}>
+<BaseLayout 
+  title={currentSeo.title} 
+  lang={currentLang} 
+  description={currentSeo.description}
+  keywords={currentSeo.keywords.join(', ')}
+>
+
   <div class="bg-white md:my-20 p-8 rounded-lg">
 
   <main class="container mx-auto px-4 py-12">

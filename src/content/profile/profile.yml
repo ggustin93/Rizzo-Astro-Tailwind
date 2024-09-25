@@ -33,6 +33,17 @@ fr:
       title: "Droit social et COVID-19: analyse et questions pratiques"
       publisher: "Larcier"
       coAuthors: ["Erwin Crabeels", "Anne-Valérie Michaux"]
+  seo:
+    title: "Profil | Christine Rizzo - Avocate spécialisée en droit du travail à Bruxelles"
+    description: "Découvrez le parcours et l'expertise de Christine Rizzo, avocate spécialisée en droit du travail à Bruxelles. Conseil et représentation pour employés et employeurs."
+    image: "https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg"
+    keywords:
+      - avocat droit du travail Bruxelles
+      - Christine Rizzo profil
+      - expertise juridique emploi
+      - conseil droit social
+      - défense employés employeurs
+      - spécialiste litiges travail Belgique
 
 en:
   name: "Christine Rizzo"
@@ -89,6 +100,17 @@ en:
       title: "Social law and COVID-19: analysis and practical questions"
       publisher: "Larcier"
       coAuthors: ["Erwin Crabeels", "Anne-Valérie Michaux"]
+  seo:
+    title: "Profile | Christine Rizzo - Labor Law Attorney in Brussels"
+    description: "Discover the background and expertise of Christine Rizzo, a specialized labor law attorney in Brussels. Counsel and representation for employees and employers."
+    image: "https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg"
+    keywords:
+      - labor law attorney Brussels
+      - Christine Rizzo profile
+      - employment legal expertise
+      - social law counsel
+      - employee employer defense
+      - workplace litigation specialist Belgium
 
 it:
   name: "Christine Rizzo"
@@ -125,3 +147,14 @@ it:
       title: "Diritto sociale e COVID-19: analisi e questioni pratiche"
       publisher: "Larcier"
       coAuthors: ["Erwin Crabeels", "Anne-Valérie Michaux"]
+  seo:
+    title: "Profilo | Christine Rizzo - Avvocato specializzato in diritto del lavoro a Bruxelles"
+    description: "Scopri il percorso e l'esperienza di Christine Rizzo, avvocato specializzato in diritto del lavoro a Bruxelles. Consulenza e rappresentanza per dipendenti e datori di lavoro."
+    image: "https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg"
+    keywords:
+      - avvocato diritto del lavoro Bruxelles
+      - profilo Christine Rizzo
+      - esperienza giuridica lavoro
+      - consulenza diritto sociale
+      - difesa dipendenti datori di lavoro
+      - specialista controversie lavoro Belgio

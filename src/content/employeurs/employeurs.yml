@@ -37,6 +37,18 @@ fr:
   ctaText: "En savoir plus sur les tarifs pour les entreprises"
   imageUrl: "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
   imageAlt: "Poignée de main entre professionnels"
+  seo:
+    title: "Services juridiques pour employeurs | Christine Rizzo Avocate"
+    description: "Expertise en droit du travail pour les entreprises. Conseils, défense et accompagnement juridique personnalisé à Bruxelles."
+    keywords:
+    - avocat droit du travail entreprises Bruxelles
+    - expertise droit social employeurs
+    - conseil juridique RH
+    - défense employeur tribunal du travail
+    - litige travail Belgique
+    - accompagnement juridique personnalisé entreprises
+    image: "https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg"
+  
 
 en:
   title: "Support and Defense for Companies"
@@ -77,6 +89,18 @@ en:
   ctaText: "Learn more about rates for companies"
   imageUrl: "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
   imageAlt: "Professional handshake"
+  seo:
+    title: "Legal Services for Employers | Christine Rizzo Lawyer"
+    description: "Labor law expertise for companies. Legal advice, defense, and personalized support for employers in Brussels."
+    keywords: "company lawyer, labor law, Brussels, legal advice, employer defense, HR support"
+    image: "https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg"
+  keywords:
+    - labor law attorney for companies Brussels
+    - employment law expertise for employers
+    - HR legal counsel
+    - employer defense labor court
+    - workplace dispute resolution Belgium
+    - personalized legal support for businesses
 
 it:
   title: "Supporto e Difesa per le Aziende"

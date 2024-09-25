@@ -7,6 +7,7 @@ import { CheckCircle } from 'astro-feather-icons';
 import { getArticles } from '../../utils/articles';
 import ArticleCard from '../../components/ArticleCard.astro';
 import { Picture, Image } from 'astro:assets';
+import SEO from '../../components/SEO.astro';
 
 // Import des images locales
 import heroImage from '../../assets/images/hero_image_wbg.svg';
@@ -39,9 +40,8 @@ if (!content || !content.expertise || !content.expertise.travailleurs) {
 // Récupération des articles
 const recentArticles = await getArticles(lang, 3);
 
-// Paramètres SEO
-const pageTitle = content.hero.title;
-const pageDescription = content.hero.description;
+// Ajout des métadonnées SEO
+const { title, description, keywords, image } = content.seo;
 
 // Fonction pour générer des IDs uniques
 function generateUniqueId(prefix: string) {
@@ -49,7 +49,7 @@ function generateUniqueId(prefix: string) {
 }
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription} lang={currentLang}>  
+<BaseLayout title={title} description={description} keywords={keywords} image={image} lang={currentLang}>  
   <div class="full-bleed bg-white bg-svg-pattern">
     <section class="py-6 md:py-10">
       <div class="container mx-auto px-4 flex flex-col items-center md:flex-row md:items-center md:justify-between">
@@ -58,9 +58,10 @@ function generateUniqueId(prefix: string) {
           <h2 class="text-3xl md:text-4xl lg:text-5xl mb-3 md:mb-4 text-accent font-light">{content.hero.subtitle}</h2>
           <p class="mb-5 md:mb-6 text-sm md:text-base text-dark-gray max-w-xl mx-auto md:mx-0 font-light leading-relaxed">{content.hero.description}</p>
           <button 
-            data-calendly 
             class="w-auto min-w-[200px] max-w-[80%] mx-auto md:mx-0 bg-transparent text-black border border-dark-gray px-4 py-2 md:px-6 md:py-3 rounded-sm hover:bg-gray-700 hover:text-white transition duration-300 uppercase text-sm md:text-base font-light mb-3 md:mb-0" 
             aria-label="Call to action"
+            data-cal-link="c.rizzo-avocat.be/premier-contact"
+            data-cal-config='{"layout":"month_view"}'
           >
             {content.hero.cta}
           </button>

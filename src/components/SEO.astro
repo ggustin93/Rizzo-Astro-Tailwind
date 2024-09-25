@@ -1,29 +1,66 @@
 ---
+import { SEO as AstroSEO } from 'astro-seo';
+
 export interface Props {
   title: string;
   description: string;
   canonical?: string;
   image?: string;
+  keywords?: string | string[];
+  type?: 'article' | 'website';
+  lang?: string;
 }
 
-const { title, description, canonical, image = '/assets/images/logo-crizzo-call3.svg' } = Astro.props;
-const siteUrl = 'https://crizzo.netlify.app'; // Remplacez par l'URL de votre site
+const {
+  title,
+  description,
+  canonical,
+  image = 'https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg',
+  keywords,
+  type = 'website',
+  lang = 'fr',
+} = Astro.props;
+
+const siteUrl = import.meta.env.SITE || 'https://crizzo-avocate.be/';
+const fullImageUrl = new URL(image, siteUrl).toString() ||  'https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg';
+
+// Traitement des mots-clés
+const keywordsString = Array.isArray(keywords) ? keywords.join(', ') : keywords;
 ---
 
-<title>{title}</title>
-<meta name="description" content={description}>
-{canonical && <link rel="canonical" href={canonical}>}
-
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content={Astro.url}>
-<meta property="og:title" content={title}>
-<meta property="og:description" content={description}>
-<meta property="og:image" content={new URL(image, siteUrl)}>
-
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content={Astro.url}>
-<meta property="twitter:title" content={title}>
-<meta property="twitter:description" content={description}>
-<meta property="twitter:image" content={new URL(image, siteUrl)}>
+<AstroSEO
+  title={title}
+  description={description}
+  canonical={canonical || siteUrl}
+  openGraph={{
+    basic: {
+      title: title,
+      type: type,
+      image: fullImageUrl,
+    },
+    optional: {
+      description: description,
+      locale: lang,
+      siteName: "Christine Rizzo - Avocate",
+    },
+  }}
+  twitter={{
+    card: "summary_large_image",
+    site: "@ChristineRizzo",
+    creator: "@ChristineRizzo",
+  }}
+  extend={{
+    link: [
+      { rel: "icon", href: "/favicon.ico" },
+      { rel: "alternate", hreflang: "fr", href: `${siteUrl}/fr` },
+      { rel: "alternate", hreflang: "en", href: `${siteUrl}/en` },
+      { rel: "alternate", hreflang: "it", href: `${siteUrl}/it` },
+    ],
+    meta: [
+      ...(keywordsString ? [{ name: "keywords", content: keywordsString }] : []),
+      { name: "author", content: "Christine Rizzo" },
+      { name: "robots", content: "index, follow" },
+      { name: "language", content: lang },
+    ],
+  }}
+/>

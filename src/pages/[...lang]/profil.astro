@@ -62,8 +62,22 @@ const translations = {
 };
 
 const t = translations[lang as keyof typeof translations];
+// SEO data
+const seoData = {
+  title: profileData.seo?.title || `Profil - Christine Rizzo`,
+  description: profileData.seo?.description || profileData.description,
+  image: profileData.seo?.image || 'https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg',
+  keywords: profileData.seo?.keywords?.join(', ') || ''
+};
 ---
-<BaseLayout title={`${name} - ${title}`} description={title} lang={lang}>
+
+<BaseLayout 
+  title={seoData.title}
+  description={seoData.description}
+  image={seoData.image}
+  keywords={seoData.keywords}
+  lang={lang}
+>
   <div class="bg-white md:my-20">
 
   <div class="max-w-6xl mx-auto px-4 py-12">
