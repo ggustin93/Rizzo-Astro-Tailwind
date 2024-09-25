@@ -7,11 +7,10 @@ const blog = defineCollection({
     author: z.string(),
     thumbnail: z.string(),
     readTime: z.string(),
-    categories: z.array(z.string()),
+    categories: z.array(z.string()).nonempty(),
     highlights: z.array(z.string()).optional(),
-    description: z.string().optional(),
+    description: z.string().max(160),
     keywords: z.array(z.string()).optional(),
-    // Pas besoin de champ `lang` ici, car la langue est déterminée par le dossier
   }),
 });
 
