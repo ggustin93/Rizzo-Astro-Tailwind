@@ -8,6 +8,11 @@ const outputMode = 'static';
 export default defineConfig({
   site: 'https://crizzo-avocate.be',
   output: outputMode,
+  assets: {
+    mount: {
+      './src/assets': '/assets'
+    }
+  },
   redirects: {
     '/': '/fr/',
   },
@@ -16,7 +21,7 @@ export default defineConfig({
       entrypoint: 'astro/assets/services/sharp',
     },
     remotePatterns: [{ protocol: "https" }],
-    domains: ['pexels.com', 'unsplash.com', 'images.pexels.com'],
+    domains: ['pexels.com', 'unsplash.com', 'images.pexels.com', 'src'],
     format: ['avif', 'webp'],
     fallbackFormat: 'png',
     quality: 80,
