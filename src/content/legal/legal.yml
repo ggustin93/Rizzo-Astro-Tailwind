@@ -7,13 +7,14 @@ fr:
 
         Maître Christine Rizzo
         Avocate au Barreau de Bruxelles
-        [Adresse à compléter]
-        [Numéro de téléphone à compléter]
-        Numéro d'entreprise : [à compléter]
+        Bd. Brand Whitlock 87 - 10
+        1200 - Woluwe-Saint-Lambert (BE)
+        Téléphone : +32 488 40 45 49
+        Numéro d'entreprise : 0829577949
     - title: "Hébergeur"
-      text: "Le Site est hébergé par [Nom de l'hébergeur à compléter], dont le siège social est situé [Adresse de l'hébergeur à compléter]."
+      text: "Le Site est hébergé par Netlify, dont le siège social est situé 2325 3rd Street, Suite 215, San Francisco, California 94107, USA."
     - title: "Contact"
-      text: "Pour toute question ou demande concernant le site, vous pouvez contacter l'éditeur à l'adresse mail suivante : [adresse email à compléter]"
+      text: "Pour toute question ou demande concernant le site, vous pouvez contacter l'éditeur à l'adresse mail suivante : c.rizzo@avocat.be"
     - title: "Propriété intellectuelle"
       text: "L'intégralité du contenu du site crizzo-avocate.be (textes, images, vidéos...) est la propriété de l'éditeur et est protégée par le droit d'auteur. La reproduction, diffusion ou copie de tout ou partie du contenu est strictement interdite et est susceptible de constituer un délit de contrefaçon."
     - title: "Données personnelles"
@@ -26,6 +27,7 @@ fr:
       text: "Les présentes mentions légales sont régies par le droit belge. En cas de différend, les tribunaux belges seront seuls compétents."
     - title: "Crédits"
       text: "Le site crizzo-avocate.be a été créé par Guillaume Gustin (https://guillaumegustin.com/, https://pwablo.be/). Police Synonym Regular fournie par Web Fonts sous licence CC BY 4.0"
+
 en:
   title: "Legal Notice"
   sections:
@@ -35,13 +37,14 @@ en:
 
         Maître Christine Rizzo
         Lawyer at the Brussels Bar
-        [Address to be completed]
-        [Phone number to be completed]
-        Company number: [to be completed]
+        Bd. Brand Whitlock 87 - 10
+        1200 - Woluwe-Saint-Lambert (BE)
+        Phone: +32 488 40 45 49
+        Company number: 0829577949
     - title: "Hosting"
-      text: "The Site is hosted by [Host name to be completed], whose registered office is located at [Host address to be completed]."
+      text: "The Site is hosted by Netlify, whose registered office is located at 2325 3rd Street, Suite 215, San Francisco, California 94107, USA."
     - title: "Contact"
-      text: "For any questions or requests regarding the site, you can contact the publisher at the following email address: [email address to be completed]"
+      text: "For any questions or requests regarding the site, you can contact the publisher at the following email address: c.rizzo@avocat.be"
     - title: "Intellectual property"
       text: "The entire content of the crizzo-avocate.be website (texts, images, videos...) is the property of the publisher and is protected by copyright. Reproduction, distribution or copying of all or part of the content is strictly prohibited and may constitute a copyright infringement."
     - title: "Personal data"
@@ -54,6 +57,7 @@ en:
       text: "These legal notices are governed by Belgian law. In case of dispute, Belgian courts will have sole jurisdiction."
     - title: "Credits"
       text: "The crizzo-avocate.be website was created by Guillaume Gustin (https://guillaumegustin.com/, https://pwablo.be/). Synonym Regular font provided by Web Fonts under CC BY 4.0 license"
+
 it:
   title: "Note legali"
   sections:
@@ -63,13 +67,14 @@ it:
 
         Maître Christine Rizzo
         Avvocato presso il Foro di Bruxelles
-        [Indirizzo da completare]
-        [Numero di telefono da completare]
-        Numero di impresa: [da completare]
+        Bd. Brand Whitlock 87 - 10
+        1200 - Woluwe-Saint-Lambert (BE)
+        Telefono: +32 488 40 45 49
+        Numero di impresa: 0829577949
     - title: "Hosting"
-      text: "Il Sito è ospitato da [Nome dell'host da completare], la cui sede legale si trova a [Indirizzo dell'host da completare]."
+      text: "Il Sito è ospitato da Netlify, la cui sede legale si trova a 2325 3rd Street, Suite 215, San Francisco, California 94107, USA."
     - title: "Contatto"
-      text: "Per qualsiasi domanda o richiesta riguardante il sito, è possibile contattare l'editore al seguente indirizzo email: [indirizzo email da completare]"
+      text: "Per qualsiasi domanda o richiesta riguardante il sito, è possibile contattare l'editore al seguente indirizzo email: c.rizzo@avocat.be"
     - title: "Proprietà intellettuale"
       text: "L'intero contenuto del sito crizzo-avocate.be (testi, immagini, video...) è di proprietà dell'editore ed è protetto dal diritto d'autore. La riproduzione, la distribuzione o la copia di tutto o parte del contenuto è severamente vietata e può costituire una violazione del diritto d'autore."
     - title: "Dati personali"

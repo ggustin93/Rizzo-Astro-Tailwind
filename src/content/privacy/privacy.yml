@@ -2,10 +2,15 @@ fr:
   title: Politique de confidentialité
   sections:
     - title: Objet
-      text: La présente politique de confidentialité définit et informe les
+      text: >-
+        La présente politique de confidentialité définit et informe les
         utilisateurs du site internet www.crizzo-avocate.be des modalités de
         traitement de leurs données personnelles par la responsable du
-        traitement, Maître Christine Rizzo.
+        traitement, Maître Christine Rizzo. Ce site a été conçu par Maître Christine Rizzo
+        en collaboration avec Guillaume Gustin, dans une démarche responsable
+        et respectueuse de la vie privée des utilisateurs. Notre approche est fondée
+        sur le respect de la vie privée et une utilisation minimale des données,
+        conformément aux principes du numérique responsable.
     - title: Identité et coordonnées de la responsable du traitement
       text: |-
         Maître Christine Rizzo
@@ -13,58 +18,203 @@ fr:
         Bd. Brand Whitlock 87 - 10
         1200 - Woluwe-Saint-Lambert (BE)
         n° BCE : 0829577949
-        Adresse mail : [adresse email à compléter]
+        Adresse mail : c.rizzo@avocat.be
     - title: Données personnelles traitées
       text: >-
-        Dans le cadre de l'utilisation du site web et de ses services, la
-        responsable du traitement est amenée à traiter les données personnelles
-        suivantes :
+        Dans le cadre de l'utilisation du site web, la responsable du traitement
+        s'engage à minimiser la collecte de données personnelles :
 
-        - Données techniques : adresse IP, données de connexion et de navigation
+        - Aucune donnée n'est collectée via le site web www.crizzo-avocate.be
+        - Aucun cookie n'est utilisé sur le site
+        - Les seules données personnelles traitées sont celles fournies
+        volontairement par les utilisateurs lors de la prise de rendez-vous via
+        le service externe Cal.com
 
-        - Données communiquées volontairement par l'utilisateur : nom, prénom, adresse email, numéro de téléphone, informations transmises via les formulaires de contact
+        Cette approche minimaliste vise à respecter au maximum la vie privée
+        des utilisateurs tout en permettant la fourniture des services
+        essentiels.
+    - title: Hébergement du site
+      text: >-
+        Le site web www.crizzo-avocate.be est hébergé par Netlify, un service d'hébergement
+        reconnu pour sa fiabilité et sa sécurité. Netlify peut collecter certaines données
+        techniques (comme les adresses IP) à des fins de sécurité et de performance du site.
+        Pour plus d'informations sur les pratiques de confidentialité de Netlify, vous pouvez
+        consulter leur politique de confidentialité sur leur site officiel.
+    - title: Finalité du traitement
+      text: >-
+        Les données personnelles, lorsqu'elles sont collectées via Cal.com,
+        sont utilisées uniquement dans le but de gérer les rendez-vous et
+        de communiquer avec les clients dans le cadre de la relation
+        professionnelle.
+    - title: Base légale du traitement
+      text: >-
+        Le traitement des données personnelles est basé sur le consentement
+        de l'utilisateur lors de la prise de rendez-vous, ainsi que sur
+        l'intérêt légitime de Maître Christine Rizzo à fournir ses services
+        juridiques.
+    - title: Durée de conservation
+      text: >-
+        Les données personnelles sont conservées uniquement pour la durée
+        nécessaire à la gestion de la relation professionnelle et conformément
+        aux obligations légales applicables à la profession d'avocat.
+    - title: Droits des utilisateurs
+      text: >-
+        Conformément au Règlement Général sur la Protection des Données (RGPD),
+        les utilisateurs disposent de droits sur leurs données personnelles,
+        notamment les droits d'accès, de rectification, d'effacement, et
+        d'opposition au traitement. Ces droits peuvent être exercés en
+        contactant Maître Christine Rizzo à l'adresse c.rizzo@avocat.be.
+    - title: Sécurité
+      text: >-
+        Des mesures de sécurité appropriées sont mises en place pour protéger
+        les données personnelles contre tout accès, modification, divulgation
+        ou destruction non autorisés.
+    - title: Mise à jour de la politique
+      text: >-
+        Cette politique de confidentialité peut être mise à jour périodiquement.
+        Les utilisateurs sont invités à la consulter régulièrement.
+
 en:
   title: Privacy Policy
   sections:
     - title: Purpose
-      text: This privacy policy defines and informs users of the website
+      text: >-
+        This privacy policy defines and informs users of the website
         www.crizzo-avocate.be about the methods of processing their personal
-        data by the data controller, Maître Christine Rizzo.
+        data by the data controller, Maître Christine Rizzo. This site was designed
+        by Maître Christine Rizzo in collaboration with Guillaume Gustin, with a 
+        responsible approach that respects users' privacy. Our approach is
+        based on respect for privacy and minimal data use, in accordance with
+        the principles of responsible digital practices.
     - title: Identity and contact details of the data controller
       text: |-
         Maître Christine Rizzo
         Lawyer at the Brussels Bar
-        Bd. Brand Whitlock 87 - 10\
-        1200 - Woluwe-Saint-Lambert (BE)\
+        Bd. Brand Whitlock 87 - 10
+        1200 - Woluwe-Saint-Lambert (BE)
         n° BCE : 0829577949
-        Email address: \[email address to be completed]
+        Email address: c.rizzo@avocat.be
     - title: Personal data processed
       text: >-
-        As part of the use of the website and its services, the data controller
-        may process the following personal data:
+        As part of the use of the website, the data controller is committed to
+        minimizing the collection of personal data:
 
-        - Technical data: IP address, connection and navigation data
+        - No data is collected via the website www.crizzo-avocate.be
+        - No cookies are used on the site
+        - The only personal data processed is that voluntarily provided by users
+        when making appointments via the external Cal.com service
 
-        - Data voluntarily provided by the user: name, first name, email address, phone number, information transmitted via contact forms
+        This minimalist approach aims to respect users' privacy as much as
+        possible while allowing the provision of essential services.
+    - title: Website Hosting
+      text: >-
+        The website www.crizzo-avocate.be is hosted by Netlify, a hosting service
+        known for its reliability and security. Netlify may collect certain technical
+        data (such as IP addresses) for site security and performance purposes.
+        For more information on Netlify's privacy practices, you can consult their
+        privacy policy on their official website.
+    - title: Purpose of processing
+      text: >-
+        Personal data, when collected via Cal.com, is used solely for the
+        purpose of managing appointments and communicating with clients within
+        the framework of the professional relationship.
+    - title: Legal basis for processing
+      text: >-
+        The processing of personal data is based on the user's consent when
+        making an appointment, as well as on Maître Christine Rizzo's legitimate
+        interest in providing her legal services.
+    - title: Retention period
+      text: >-
+        Personal data is retained only for the duration necessary for managing
+        the professional relationship and in accordance with the legal
+        obligations applicable to the legal profession.
+    - title: User rights
+      text: >-
+        In accordance with the General Data Protection Regulation (GDPR), users
+        have rights over their personal data, including the rights of access,
+        rectification, erasure, and opposition to processing. These rights can
+        be exercised by contacting Maître Christine Rizzo at c.rizzo@avocat.be.
+    - title: Security
+      text: >-
+        Appropriate security measures are in place to protect personal data
+        against any unauthorized access, modification, disclosure or
+        destruction.
+    - title: Policy updates
+      text: >-
+        This privacy policy may be updated periodically. Users are invited to
+        consult it regularly.
+
 it:
   title: Politica sulla privacy
   sections:
     - title: Scopo
-      text: La presente politica sulla privacy definisce e informa gli utenti del sito
-        web www.crizzo-avocate.be sui metodi di trattamento dei loro dati
-        personali da parte del responsabile del trattamento, Maître Christine
-        Rizzo.
+      text: >-
+        La presente politica sulla privacy definisce e informa gli utenti del
+        sito web www.crizzo-avocate.be sui metodi di trattamento dei loro dati
+        personali da parte del responsabile del trattamento, Maître Christine Rizzo.
+        Questo sito è stato progettato da Maître Christine Rizzo in collaborazione
+        con Guillaume Gustin, con un approccio responsabile e rispettoso della
+        privacy degli utenti. Il nostro approccio si basa sul rispetto della privacy
+        e sull'uso minimo dei dati, in conformità con i principi delle pratiche
+        digitali responsabili.
     - title: Identità e dati di contatto del responsabile del trattamento
       text: |-
         Maître Christine Rizzo
         Avvocato presso il Foro di Bruxelles
-        [Indirizzo da completare]
-        Indirizzo email: [indirizzo email da completare]
+        Bd. Brand Whitlock 87 - 10
+        1200 - Woluwe-Saint-Lambert (BE)
+        n° BCE : 0829577949
+        Indirizzo email: c.rizzo@avocat.be
     - title: Dati personali trattati
       text: >-
-        Nell'ambito dell'utilizzo del sito web e dei suoi servizi, il
-        responsabile del trattamento può trattare i seguenti dati personali:
+        Nell'ambito dell'utilizzo del sito web, il responsabile del trattamento
+        si impegna a minimizzare la raccolta di dati personali:
 
-        - Dati tecnici: indirizzo IP, dati di connessione e di navigazione
+        - Nessun dato viene raccolto tramite il sito web www.crizzo-avocate.be
+        - Nessun cookie viene utilizzato sul sito
+        - Gli unici dati personali trattati sono quelli forniti volontariamente
+        dagli utenti durante la prenotazione di appuntamenti tramite il servizio
+        esterno Cal.com
 
-        - Dati forniti volontariamente dall'utente: nome, cognome, indirizzo email, numero di telefono, informazioni trasmesse tramite i moduli di contatto
+        Questo approccio minimalista mira a rispettare al massimo la privacy
+        degli utenti, consentendo al contempo la fornitura dei servizi
+        essenziali.
+    - title: Hosting del sito web
+      text: >-
+        Il sito web www.crizzo-avocate.be è ospitato da Netlify, un servizio di
+        hosting noto per la sua affidabilità e sicurezza. Netlify può raccogliere
+        alcuni dati tecnici (come gli indirizzi IP) per scopi di sicurezza e
+        prestazioni del sito. Per ulteriori informazioni sulle pratiche di privacy
+        di Netlify, è possibile consultare la loro politica sulla privacy sul loro
+        sito ufficiale.
+    - title: Finalità del trattamento
+      text: >-
+        I dati personali, quando raccolti tramite Cal.com, vengono utilizzati
+        esclusivamente allo scopo di gestire gli appuntamenti e comunicare con
+        i clienti nell'ambito del rapporto professionale.
+    - title: Base giuridica del trattamento
+      text: >-
+        Il trattamento dei dati personali si basa sul consenso dell'utente al
+        momento della prenotazione dell'appuntamento, nonché sul legittimo
+        interesse di Maître Christine Rizzo a fornire i suoi servizi legali.
+    - title: Periodo di conservazione
+      text: >-
+        I dati personali vengono conservati solo per il tempo necessario alla
+        gestione del rapporto professionale e in conformità con gli obblighi
+        legali applicabili alla professione legale.
+    - title: Diritti degli utenti
+      text: >-
+        In conformità con il Regolamento Generale sulla Protezione dei Dati
+        (GDPR), gli utenti hanno diritti sui propri dati personali, tra cui i
+        diritti di accesso, rettifica, cancellazione e opposizione al
+        trattamento. Questi diritti possono essere esercitati contattando
+        Maître Christine Rizzo all'indirizzo c.rizzo@avocat.be.
+    - title: Sicurezza
+      text: >-
+        Sono in atto misure di sicurezza appropriate per proteggere i dati
+        personali da qualsiasi accesso, modifica, divulgazione o distruzione
+        non autorizzati.
+    - title: Aggiornamenti della politica
+      text: >-
+        Questa politica sulla privacy può essere aggiornata periodicamente.
+        Gli utenti sono invitati a consultarla regolarmente.
