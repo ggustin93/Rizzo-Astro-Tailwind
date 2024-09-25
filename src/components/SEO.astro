@@ -22,7 +22,7 @@ const {
 } = Astro.props;
 
 const siteUrl = import.meta.env.SITE ?? 'https://crizzo-avocate.be/';
-const defaultImage = '/images/default-social-image.png'; // Assurez-vous que cette image existe dans votre dossier public
+const defaultImage = 'default-social-image.png'; 
 const fullImageUrl = image ? new URL(image, siteUrl).toString() : new URL(defaultImage, siteUrl).toString();
 
 const keywordsString = Array.isArray(keywords) ? keywords.join(', ') : keywords;
