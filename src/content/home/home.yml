@@ -36,7 +36,7 @@ fr:
   seo:
     title: "Christine Rizzo | Avocate spécialisée en droit du travail à Bruxelles"
     description: "Expertise en droit du travail pour salariés et employeurs. Conseils, défense et accompagnement juridique personnalisé à Bruxelles."
-    image: "https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg"
+    image: "https://github.com/ggustin93/Rizzo-Astro-Tailwind/blob/main/public/default-social-image.png"
     keywords:
       - avocat droit du travail Bruxelles
       - expertise droit social
@@ -80,7 +80,7 @@ en:
     title: "Christine Rizzo | Labor Law Specialist Lawyer in Brussels"
     description: "Expert in labor law for employees and employers. Legal advice, defense, and personalized legal support in Brussels."
     keywords: "lawyer, labor law, Brussels, legal advice, employee defense, employer support"
-    image: "https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg"
+    image: "https://github.com/ggustin93/Rizzo-Astro-Tailwind/blob/main/public/default-social-image.png"
   keywords:
     - employment lawyer Brussels
     - labor law expert Belgium
@@ -124,7 +124,7 @@ it:
     title: "Christine Rizzo | Avvocato specializzato in diritto del lavoro a Bruxelles"
     description: "Esperta in diritto del lavoro per dipendenti e datori di lavoro. Consulenza legale, difesa e supporto giuridico personalizzato a Bruxelles."
     keywords: "avvocato, diritto del lavoro, Bruxelles, consulenza legale, difesa dei dipendenti, supporto ai datori di lavoro"
-    image: "https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg"
+    image: "https://github.com/ggustin93/Rizzo-Astro-Tailwind/blob/main/public/default-social-image.png"
   keywords:
     - avvocato diritto del lavoro Bruxelles
     - esperto diritto del lavoro Belgio
