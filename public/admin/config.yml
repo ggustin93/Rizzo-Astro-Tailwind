@@ -6,22 +6,24 @@ media_folder: "src/assets/images"
 public_folder: "/assets/images"
 
 collections:
-  - name: "blog-fr"
+  - &blogCollection
+    name: "blog-fr"
     label: "Blog FR"
     folder: "src/content/blog/fr"
     create: true
     fields:
-      - { label: "Titre", name: "title", widget: "string" }
-      - { label: "Date de publication", name: "date", widget: "datetime" }
-      - { label: "Auteur", name: "author", widget: "string" }
-      - { label: "Image à la une", name: "thumbnail", widget: "image" }
-      - { label: "Temps de lecture (en minutes)", name: "readTime", widget: "string", hint: "Entrez le nombre de minutes, par exemple: 5" }
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Date de publication", name: "date", widget: "datetime"}
+      - {label: "Auteur", name: "author", widget: "string"}
+      - {label: "Image à la une", name: "thumbnail", widget: "image"}
+      - {label: "Temps de lecture (en minutes)", name: "readTime", widget: "string", hint: "Entrez le nombre de minutes, par exemple: 5"}
       - label: "Catégories"
         name: "categories"
         widget: "list"
-        allow_add: false
+        allow_add: true
+        min: 1
         field: {label: Catégorie, name: categorie, widget: string}
-        default: [""]
+        hint: "Au moins une catégorie est requise."
       - label: "Points forts (optionnel)"
         name: "highlights"
         widget: "list"
@@ -30,83 +32,60 @@ collections:
           label: "Point"
           name: "point"
           widget: "text"
-        hint: "Résumé en quelques points clés de l'article. Chaque point peut être sur plusieurs lignes. Ils apparaîtront dans un encadré au début de l'article."
-      - { label: "Description SEO", name: "description", widget: "text", required: true, pattern: ['^.{0,160}$', "La description doit faire 160 caractères maximum"], hint: "Description courte pour le SEO (max 160 caractères)" }
-      - label: "Mots-clés SEO"
+        hint: "Optionnel. Résumé en quelques points clés de l'article. Chaque point peut être sur plusieurs lignes. Ils apparaîtront dans un encadré au début de l'article."
+      - {label: "Description SEO", name: "description", widget: "text", required: true, pattern: ['^.{0,160}$', "La description doit faire 160 caractères maximum"], hint: "Description courte pour le SEO (max 160 caractères)"}
+      - label: "Mots-clés SEO (optionnel)"
         name: "keywords"
         widget: "list"
-        allow_add: false
+        required: false
+        allow_add: true
         field: {label: "Mot-clé", name: keyword, widget: string}
-        default: [""]
-      - { label: "Contenu", name: "body", widget: "markdown" }
+        hint: "Optionnel. Ajoutez des mots-clés pertinents pour le SEO."
+      - {label: "Contenu", name: "body", widget: "markdown"}
 
-  - name: "blog-en"
+  - <<: *blogCollection
+    name: "blog-en"
     label: "Blog EN"
     folder: "src/content/blog/en"
-    create: true
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Author", name: "author", widget: "string" }
-      - { label: "Featured Image", name: "thumbnail", widget: "image" }
-      - { label: "Read Time (in minutes)", name: "readTime", widget: "string", hint: "Enter the number of minutes, e.g. 5" }
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Read Time (in minutes)", name: "readTime", widget: "string", hint: "Enter the number of minutes, e.g. 5"}
       - label: "Categories"
         name: "categories"
-        widget: "list"
-        allow_add: false
-        field: {label: Category, name: category, widget: string}
-        default: [""]
+        hint: "At least one category is required."
       - label: "Highlights (optional)"
         name: "highlights"
-        widget: "list"
-        required: false
-        field: 
-          label: "Point"
-          name: "point"
-          widget: "text"
-        hint: "Summary of the article in a few key points. Each point can be multiple lines. They will appear in a box at the beginning of the article."
-      - { label: "SEO Description", name: "description", widget: "text", required: true, pattern: ['^.{0,160}$', "Description must be 160 characters or less"], hint: "Short description for SEO (max 160 characters)" }
-      - label: "SEO Keywords"
+        hint: "Optional. Summary of the article in a few key points. Each point can be multiple lines. They will appear in a box at the beginning of the article."
+      - {label: "SEO Description", name: "description", widget: "text", required: true, pattern: ['^.{0,160}$', "Description must be 160 characters or less"], hint: "Short description for SEO (max 160 characters)"}
+      - label: "SEO Keywords (optional)"
         name: "keywords"
-        widget: "list"
-        allow_add: false
-        field: {label: "Keyword", name: keyword, widget: string}
-        default: [""]
-      - { label: "Body", name: "body", widget: "markdown" }
+        hint: "Optional. Add relevant keywords for SEO."
+      - {label: "Body", name: "body", widget: "markdown"}
 
-  - name: "blog-it"
+  - <<: *blogCollection
+    name: "blog-it"
     label: "Blog IT"
     folder: "src/content/blog/it"
-    create: true
     fields:
-      - { label: "Titolo", name: "title", widget: "string" }
-      - { label: "Data di pubblicazione", name: "date", widget: "datetime" }
-      - { label: "Autore", name: "author", widget: "string" }
-      - { label: "Immagine in evidenza", name: "thumbnail", widget: "image" }
-      - { label: "Tempo di lettura (in minuti)", name: "readTime", widget: "string", hint: "Inserisci il numero di minuti, ad esempio: 5" }
+      - {label: "Titolo", name: "title", widget: "string"}
+      - {label: "Data di pubblicazione", name: "date", widget: "datetime"}
+      - {label: "Autore", name: "author", widget: "string"}
+      - {label: "Immagine in evidenza", name: "thumbnail", widget: "image"}
+      - {label: "Tempo di lettura (in minuti)", name: "readTime", widget: "string", hint: "Inserisci il numero di minuti, ad esempio: 5"}
       - label: "Categorie"
         name: "categories"
-        widget: "list"
-        allow_add: false
-        field: {label: Categoria, name: categoria, widget: string}
-        default: [""]
+        hint: "Almeno una categoria è richiesta."
       - label: "Punti salienti (opzionale)"
         name: "highlights"
-        widget: "list"
-        required: false
-        field: 
-          label: "Punto"
-          name: "point"
-          widget: "text"
-        hint: "Riassunto dell'articolo in alcuni punti chiave. Ogni punto può essere su più righe. Appariranno in un riquadro all'inizio dell'articolo."
-      - { label: "Descrizione SEO", name: "description", widget: "text", required: true, pattern: ['^.{0,160}$', "La descrizione deve essere di massimo 160 caratteri"], hint: "Breve descrizione per SEO (max 160 caratteri)" }
-      - label: "Parole chiave SEO"
+        hint: "Opzionale. Riassunto dell'articolo in alcuni punti chiave. Ogni punto può essere su più righe. Appariranno in un riquadro all'inizio dell'articolo."
+      - {label: "Descrizione SEO", name: "description", widget: "text", required: true, pattern: ['^.{0,160}$', "La descrizione deve essere di massimo 160 caratteri"], hint: "Breve descrizione per SEO (max 160 caratteri)"}
+      - label: "Parole chiave SEO (opzionale)"
         name: "keywords"
-        widget: "list"
-        allow_add: false
-        field: {label: "Parola chiave", name: keyword, widget: string}
-        default: [""]
-      - { label: "Contenuto", name: "body", widget: "markdown" }
+        hint: "Opzionale. Aggiungi parole chiave rilevanti per il SEO."
+      - {label: "Contenuto", name: "body", widget: "markdown"}
 
   - name: "home"
     label: "Page d'accueil"
