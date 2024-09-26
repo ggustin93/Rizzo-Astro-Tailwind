@@ -2,7 +2,7 @@
 title: "Le licenciement abusif : comprendre vos droits et recours en Belgique"
 date: 2024-09-25
 author: Christine Rizzo
-thumbnail: https://images.unsplash.com/photo-1542744094-3a31f272c490
+thumbnail: /assets/images/photo-4370.jpg
 readTime: 5 min
 categories:
   - Droit du travail
