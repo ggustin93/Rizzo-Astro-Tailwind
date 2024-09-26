@@ -8,3 +8,8 @@
   skip_processing = false
 [build.processing.images]
   compress = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
