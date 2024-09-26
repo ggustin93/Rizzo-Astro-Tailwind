@@ -6,13 +6,14 @@ import sitemap from '@astrojs/sitemap';
 const outputMode = 'static';
 
 export default defineConfig({
-  site: 'https://crizzo-avocate.be',
+  // site: 'https://crizzo-avocate.be',
+  publicDir: './public',
   output: outputMode,
-  assets: {
+  /* assets: {
     mount: {
       './src/assets': '/assets'
     }
-  },
+  },*/
   redirects: {
     '/': '/fr/',
   },
