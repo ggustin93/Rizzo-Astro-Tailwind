@@ -3,20 +3,22 @@ title: "Le licenciement abusif : comprendre vos droits et recours en Belgique"
 date: 2024-09-25
 author: Christine Rizzo
 thumbnail: https://images.unsplash.com/photo-1542744094-3a31f272c490
-readTime: "5 min"
+readTime: 5 min
 categories:
-   - "Droit du travail"
-   - "Licenciement"
-   - "Protection des employés"
+  - Droit du travail
+  - Licenciement
+  - Protection des employés
 highlights:
-  - "Définition et critères du licenciement abusif"
-  - "Procédures de contestation et délais"
-  - "Indemnités et réparations possibles"
-description: "Cet article explore le concept de licenciement abusif en Belgique, détaillant les critères légaux, les procédures de contestation et les indemnités auxquelles les victimes peuvent prétendre."
+  - Définition et critères du licenciement abusif
+  - Procédures de contestation et délais
+  - Indemnités et réparations possibles
+description: Cet article explore le concept de licenciement abusif en Belgique,
+  détaillant les critères légaux, les procédures de contestation et les
+  indemnités.
 keywords:
-  - "licenciement abusif"
-  - "droit du travail belge"
-  - "protection des employés"
+  - licenciement abusif
+  - droit du travail belge
+  - protection des employés
 ---
 
 Le licenciement abusif reste une préoccupation majeure dans le monde du travail belge. Comprendre ce concept et les protections légales associées est crucial pour les employés comme pour les employeurs.
