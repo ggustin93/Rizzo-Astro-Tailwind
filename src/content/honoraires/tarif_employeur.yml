@@ -73,25 +73,6 @@ fr:
         - Vérification des documents de sortie
         - Suivi de l'exécution
         - Relations avec l'avocat adverse et la juridiction
-    - title: Policy
-      icon: Shield
-      pricing: FORFAIT à partir de 800 € htva
-      details:
-        - (tva 21%)
-      services:
-        - Remboursement de frais
-        - Télétravail
-        - Car policy
-        - ...
-    - title:
-        - Plainte pour harcèlement au travail
-        - Inspection
-        - Accident du travail
-      icon: Shield
-      pricing: FORFAIT Sur demande
-      details:
-        - (TVA à 21%)
-      services: []
 en:
   title: Services and rates for employers
   backLinkText: Back to fees
