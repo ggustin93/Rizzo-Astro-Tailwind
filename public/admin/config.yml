@@ -267,7 +267,7 @@ collections:
                 field: {label: "Paragraphe", name: "paragraph", widget: "text"}
               - label: "Langues"
                 name: "languages"
-                widget: "string"}
+                widget: "string"
               - label: "Parcours"
                 name: "careerPath"
                 widget: "list"
