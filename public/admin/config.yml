@@ -99,22 +99,41 @@ collections:
           - label: "Français"
             name: "fr"
             widget: "object"
-            fields:
+            fields: &homeFields
               - label: "Expertise"
                 name: "expertise"
                 widget: "object"
                 fields:
                   - {label: "Titre", name: "title", widget: "string"}
                   - {label: "Description", name: "description", widget: "text"}
-              - label: "Travailleurs"
-                name: "travailleurs"
+                  - label: "Travailleurs"
+                    name: "travailleurs"
+                    widget: "object"
+                    fields:
+                      - {label: "Titre", name: "title", widget: "string"}
+                      - {label: "Description", name: "description", widget: "text"}
+                      - {label: "CTA", name: "cta", widget: "string"}
+                  - label: "Employeurs"
+                    name: "employeurs"
+                    widget: "object"
+                    fields:
+                      - {label: "Titre", name: "title", widget: "string"}
+                      - {label: "Description", name: "description", widget: "text"}
+                      - {label: "CTA", name: "cta", widget: "string"}
+              - label: "Honoraires"
+                name: "honoraires"
                 widget: "object"
                 fields:
                   - {label: "Titre", name: "title", widget: "string"}
-                  - {label: "Description", name: "description", widget: "text"}
+                  - {label: "Introduction", name: "intro", widget: "text"}
+                  - {label: "Texte du lien", name: "linkText", widget: "string"}
+                  - label: "Avantages"
+                    name: "advantages"
+                    widget: "list"
+                    field: {label: "Avantage", name: "advantage", widget: "string"}
                   - {label: "CTA", name: "cta", widget: "string"}
-              - label: "Employeurs"
-                name: "employeurs"
+              - label: "Travailleurs"
+                name: "travailleurs"
                 widget: "object"
                 fields:
                   - {label: "Titre", name: "title", widget: "string"}
@@ -123,51 +142,11 @@ collections:
           - label: "English"
             name: "en"
             widget: "object"
-            fields:
-              - label: "Expertise"
-                name: "expertise"
-                widget: "object"
-                fields:
-                  - {label: "Titre", name: "title", widget: "string"}
-                  - {label: "Description", name: "description", widget: "text"}
-              - label: "Travailleurs"
-                name: "travailleurs"
-                widget: "object"
-                fields:
-                  - {label: "Titre", name: "title", widget: "string"}
-                  - {label: "Description", name: "description", widget: "text"}
-                  - {label: "CTA", name: "cta", widget: "string"}
-              - label: "Employeurs"
-                name: "employeurs"
-                widget: "object"
-                fields:
-                  - {label: "Titre", name: "title", widget: "string"}
-                  - {label: "Description", name: "description", widget: "text"}
-                  - {label: "CTA", name: "cta", widget: "string"}
+            fields: *homeFields
           - label: "Italiano"
             name: "it"
             widget: "object"
-            fields:
-              - label: "Expertise"
-                name: "expertise"
-                widget: "object"
-                fields:
-                  - {label: "Titre", name: "title", widget: "string"}
-                  - {label: "Description", name: "description", widget: "text"}
-              - label: "Travailleurs"
-                name: "travailleurs"
-                widget: "object"
-                fields:
-                  - {label: "Titre", name: "title", widget: "string"}
-                  - {label: "Description", name: "description", widget: "text"}
-                  - {label: "CTA", name: "cta", widget: "string"}
-              - label: "Employeurs"
-                name: "employeurs"
-                widget: "object"
-                fields:
-                  - {label: "Titre", name: "title", widget: "string"}
-                  - {label: "Description", name: "description", widget: "text"}
-                  - {label: "CTA", name: "cta", widget: "string"}
+            fields: *homeFields
 
   - name: "travailleurs"
     label: "Page Travailleurs"
