@@ -7,30 +7,26 @@ fr:
   questions:
     - Vous voulez faire relire votre contrat de travail ?
     - Votre employeur vous propose une rupture conventionnelle mais vous ne
-      savez pas si c'est dans votre intérêt ?
-    - Vous voulez démissionner ?
+      savez pas si c'est dans votre intérêt ? Vous voulez démissionner ?
     - Vous voulez contester votre licenciement (licenciement manifestement
       déraisonnable, abusif ou discriminatoire) ?
     - Vous voulez vérifier le calcul de votre indemnité de préavis et le respect
-      de vos droits suite à votre licenciement ?
-    - Votre manager, un collègue vous harcèle ou a une attitude déplacée ?
+      de vos droits suite à un licenciement ?
     - Vos conditions de travail ont changé pendant ou suite à une grossesse ?
-    - Vous êtes mis.e à l'écart ?
-    - Vous souhaitez prendre un crédit-temps et un congé parental pour vous
-      occuper de votre enfant ?
-    - Vous êtes victime de discrimination (du recrutement à la rupture de la
-      relation de travail)?
+      Vous souhaitez prendre un crédit-temps et un congé parental ?
+    - Vous êtes victime de discrimination, de harcèlement ? Vous êtes mis à
+      l'écart ?
     - Vous souffrez d'un burn-out?
     - Vous êtes victime d'un accident du travail?
     - Votre statut n'est pas clair? Vous pensez être un faux indépendant?
   servicesTitle: Mes services
   services:
     - icon: BriefCase
-      text: Conseils ponctuels du recrutement à la rupture de la relation de travail
+      text: Conseils juridiques du recrutement à la rupture de la relation de travail
     - icon: Shield
       text: Défense devant les cours et tribunaux du travail
     - icon: Handshake
-      text: Négociation d'accords amiables en direct ou en coulisses
+      text: Négociation d'accords amiables
   ctaText: En savoir plus sur les tarifs pour les travailleurs.euses
   seo:
     title: Services juridiques pour travailleurs | Christine Rizzo Avocate
