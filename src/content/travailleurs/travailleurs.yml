@@ -68,7 +68,7 @@ en:
     - icon: Shield
       text: Defense before labor courts and tribunals
     - icon: Handshake
-      text: Negotiation of amicable agreements
+      text: Negotiation of settlement agreements
   ctaText: Learn more about rates for workers
   seo:
     title: Legal Services for Employees | Christine Rizzo Lawyer
@@ -109,12 +109,11 @@ it:
   servicesTitle: I miei servizi
   services:
     - icon: BriefCase
-      text: Consulenza specifica dal reclutamento alla cessazione del rapporto di
-        lavoro
+      text: "Consulenza legale dal l'assunzione alla fine del contratto "
     - icon: Shield
       text: Difesa davanti ai tribunali del lavoro
     - icon: Handshake
-      text: Negoziazione di accordi amichevoli direttamente o dietro le quinte
+      text: Negoziazione di accordi di transazione
   ctaText: Scopri di più sulle tariffe per i lavoratori
   seo:
     title: Servizi legali per lavoratori | Avvocato Christine Rizzo
