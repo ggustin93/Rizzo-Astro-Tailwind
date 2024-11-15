@@ -23,9 +23,10 @@ fr:
         Dans le cadre de l'utilisation du site web, la responsable du traitement
         s'engage à minimiser la collecte de données personnelles :
 
-        - Aucune donnée n'est collectée via le site web www.crizzo-avocate.be - Aucun cookie n'est utilisé sur le site - Les seules données personnelles traitées sont celles fournies volontairement par les utilisateurs lors de la prise de rendez-vous via le service externe Cal.com
 
-        Cette approche minimaliste vise à respecter au maximum la vie privée des utilisateurs tout en permettant la fourniture des services essentiels.
+        * Aucune donnée n'est collectée via le site web www.crizzo-avocate.be - 
+          Le site crizzo-avocate.be n'utilise que des cookies techniques et fonctionnels nécessaires au bon fonctionnement du site. - Les seules données personnelles traitées sont celles fournies volontairement par les utilisateurs lors de la prise de rendez-vous via le service externe Cal.com
+          Cette approche minimaliste vise à respecter au maximum la vie privée des utilisateurs tout en permettant la fourniture des services essentiels.
     - title: Hébergement du site
       text: Le site web www.crizzo-avocate.be est hébergé par Netlify, un service
         d'hébergement reconnu pour sa fiabilité et sa sécurité. Netlify peut
