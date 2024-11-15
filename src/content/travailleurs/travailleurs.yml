@@ -47,23 +47,20 @@ en:
     question, negotiating a departure or taking legal action against your
     employer before the labor courts.
   questions:
-    - Do you want to have your employment contract reviewed?
-    - Is your employer offering you a mutual termination agreement but you're
-      not sure if it's in your best interest?
-    - Do you want to resign?
-    - Do you want to contest your dismissal (manifestly unreasonable, abusive,
-      or discriminatory dismissal)?
-    - Do you want to verify the calculation of your severance pay and the
-      respect of your rights following your dismissal?
-    - Is your manager or a colleague harassing you or behaving inappropriately?
-    - Have your working conditions changed during or after a pregnancy?
-    - Are you being sidelined?
-    - Do you wish to take time credit and parental leave to care for your child?
-    - Are you a victim of discrimination (from recruitment to termination of the
-      employment relationship)?
-    - Are you suffering from burnout?
-    - Are you the victim of a work accident?
-    - Is your status unclear? Do you think you might be a false self-employed?
+    - Do you need your employment contract reviewed?
+    - Is your employer offering you a contractual severance package, but you are
+      not sure whether it is in your best interests? Do you want to resign?
+    - Do you want to contest your dismissal (manifestly unreasonable, abusive or
+      discriminatory dismissal)?
+    - Would you like to verify the calculation of your severance payment and
+      whether your rights have been respected following dismissal?
+    - Have your working conditions changed during or because of pregnancy? Would
+      you like to take parental leave ?
+    - Are you a victim of discrimination or harassment? Are you being sidelined?
+    - Are you suffering from burn-out?
+    - Are you the victim of a workplace accident?
+    - "Is your status unclear? You are an independent contractor, but you think
+      you should be reclassified as an employee? "
   servicesTitle: My services
   services:
     - icon: BriefCase
@@ -86,7 +83,7 @@ en:
       - worker defense labor court
       - workplace dispute resolution Belgium
       - personalized legal support for employees
-  specialFocus: Legal fees
+  specialFocus: "*"
 it:
   title: Supporto e difesa dei lavoratori
   description: Ti accompagno durante tutto il tuo percorso professionale, sia per
