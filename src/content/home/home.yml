@@ -1,39 +1,18 @@
 fr:
-  travailleurs:
-    title: Vous êtes travailleur
-    description: Je vous accompagne tout au long de votre parcours professionnel que
-      ce soit pour une question ponctuelle, la négociation d'un départ ou
-      l'introduction d'une procédure judiciaire devant le tribunal du travail
-      contre votre employeur.
-    cta: En savoir plus
   honoraires:
     title: Honoraires
     cta: En savoir plus
   expertise:
-    title: Expertise & Services
-    description: J'accompagne à la fois les salariés et les entreprises dans leurs
-      problématiques quotidiennes et leurs projets liés à l'emploi.
+    title: "Expertise & Services"
+    description: "J'accompagne à la fois les salariés et les entreprises dans leurs problématiques quotidiennes et leurs projets liés à l'emploi."
     travailleurs:
-      title: Vous êtes un.e travailleur.euse
-      description: Je vous conseille et vous défends tout au long de votre parcours
-        professionnel et contre les abus, le harcèlement et les discriminations
-        au travail.
-      cta: En savoir plus
+      title: "Vous êtes un.e travailleur.euse"
+      description: "Je vous conseille et vous défends tout au long de votre parcours professionnel et contre les abus, le harcèlement et les discriminations au travail."
+      cta: "En savoir plus"
     employeurs:
-      title: Vous êtes un employeur
-      description: Je vous défends devant les tribunaux et je collabore avec votre
-        équipe RH pour la gestion des relations de travail au quotidien ainsi
-        que pour vos projets visant à développer vos politiques bien-être au
-        travail et équilibre vie privée-vie professionnelle.
-      cta: En savoir plus
-    honoraires:
-      intro: Des honoraires transparents et adaptés vous sont proposés
-      linkText: en savoir plus
-      advantages:
-        - Devis détaillé et gratuit
-        - Tarifs forfaitaires pour une meilleure prévisibilité
-        - Paiement mensualisé possible
-      cta: En savoir plus sur nos honoraires
+      title: "Vous êtes un employeur"
+      description: "Je vous défends devant les tribunaux et je collabore avec votre équipe RH pour la gestion des relations de travail au quotidien ainsi que pour vos projets."
+      cta: "En savoir plus"
   viewAllArticles: Lire plus d'articles
   hero:
     title: Christine Rizzo
