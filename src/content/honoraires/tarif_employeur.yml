@@ -10,8 +10,7 @@ fr:
     - title: Conseils illimités
       icon: FileText
       pricing: Tarif horaire de 180 € htva ou abonnement sur demande
-      details:
-        - tva 21%
+      details: []
       services:
         - Rédiger ou réviser un contrat ou une politique
         - Préparer un licenciement et évaluer les risques
