@@ -1,99 +1,86 @@
 fr:
-  title: "Accompagnement et défense des entreprises"
-  description: "Habituée des négociations et des salles d'audience et forte d'une expérience acquise auprès de clients internationaux, j'accompagne votre équipe RH dans la gestion de vos litiges et des relations de travail au quotidien:"
   topics:
-    - "Premier engagement en Belgique"
-    - "Contrats de salariés ou indépendants"
-    - "Démissions et licenciements"
-    - "Horaires de travail flexibles"
-    - "Télétravail"
-    - "Droit à la déconnexion"
-    - "Crédit-temps et congés thématiques (congé parental, aide médicale, soins palliatifs, aidant proche) et protections contre le licenciement"
-    - "Droit à la formation"
-    - "Reconnaissance et incentives bonus"
-    - "Gestion des absences (de longue durée)"
-    - "Harcèlement, stress et violence au travail (risque psychosociaux)"
-    - "Discrimination au travail"
-    - "Faux indépendants"
+    - Premier engagement en Belgique
+    - Contrats de salariés ou indépendants
+    - Démissions et licenciements
+    - Horaires de travail flexibles
+    - Télétravail
+    - Droit à la déconnexion
+    - Crédit-temps et congés thématiques (congé parental, aide médicale, soins
+      palliatifs, aidant proche) et protections contre le licenciement
+    - Droit à la formation
+    - Reconnaissance et incentives bonus
+    - Gestion des absences (de longue durée)
+    - Harcèlement, stress et violence au travail (risque psychosociaux)
+    - Discrimination au travail
+    - Faux indépendants
   additionalSupport:
-    intro: "Je vous accompagne également pour que"
+    intro: Je vous accompagne également pour que
     points:
-      - "la réglementation sur le bien-être au travail"
-      - "les lois anti-discrimination"
-      - "et les outils juridiques visant à améliorer l'équilibre vie privée-vie professionnelle"
-    conclusion: "deviennent des ressources pour valoriser l'image de votre entreprise, attirer et retenir vos talents."
-  servicesTitle: "Mes services"
-  services:
-    - icon: "Search"
-      text: "Audit - Due Diligence en droit du travail et de la sécurité sociale"
-    - icon: "FileText"
-      text: "Rédaction et révision de vos contrats de travail, règlement de travail et politiques RH"
-    - icon: "UserPlus"
-      text: "Conseils dans la gestion de la relation individuelle de travail, du recrutement à la rupture"
-    - icon: "Handshake"
-      text: "Négociation d'accords amiables en direct ou en coulisses"
-    - icon: "Shield"
-      text: "Défense devant les cours et tribunaux du travail et devant les inspections du travail et de l'ONSS"
-  ctaText: "En savoir plus sur les tarifs pour les entreprises"
-  imageUrl: "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
-  imageAlt: "Poignée de main entre professionnels"
+      - la réglementation sur le bien-être au travail
+      - les lois anti-discrimination
+      - et les outils juridiques visant à améliorer l'équilibre vie privée-vie
+        professionnelle
+    conclusion: deviennent des ressources pour valoriser l'image de votre
+      entreprise, attirer et retenir vos talents.
+  imageAlt: Poignée de main entre professionnels
+  imageUrl: https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80
+  title: Accompagnement et défense des entreprises
+  servicesTitle: Mes services
+  description: J'accompagne votre équipe RH dans la gestion de vos litiges et des
+    relations de travail au quotidien.
   seo:
-    title: "Services juridiques pour employeurs | Christine Rizzo Avocate"
-    description: "Expertise en droit du travail pour les entreprises. Conseils, défense et accompagnement juridique personnalisé à Bruxelles."
+    title: Services juridiques pour employeurs | Christine Rizzo Avocate
+    description: Expertise en droit du travail pour les entreprises. Conseils,
+      défense et accompagnement juridique personnalisé à Bruxelles.
     keywords:
-    - avocat droit du travail entreprises Bruxelles
-    - expertise droit social employeurs
-    - conseil juridique RH
-    - défense employeur tribunal du travail
-    - litige travail Belgique
-    - accompagnement juridique personnalisé entreprises
-    image: "https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg"
-  
-
-en:
-  title: "Support and Defense for Companies"
-  description: "Experienced in negotiations and courtrooms, with expertise gained from international clients, I assist your HR team in managing your disputes and daily work relationships:"
-  topics:
-    - "First hiring in Belgium"
-    - "Employee or independent contractor agreements"
-    - "Resignations and dismissals"
-    - "Flexible working hours"
-    - "Remote work"
-    - "Right to disconnect"
-    - "Time credit and thematic leaves (parental leave, medical assistance, palliative care, caregivers) and protection against dismissal"
-    - "Right to training"
-    - "Recognition and bonus incentives"
-    - "Management of (long-term) absences"
-    - "Harassment, stress, and violence at work (psychosocial risks)"
-    - "Workplace discrimination"
-    - "False self-employment"
-  additionalSupport:
-    intro: "I also assist you in ensuring that"
-    points:
-      - "workplace well-being regulations"
-      - "anti-discrimination laws"
-      - "and legal tools aimed at improving work-life balance"
-    conclusion: "become resources to enhance your company's image and attract and retain talent."
-  servicesTitle: "My Services"
+      - avocat droit du travail entreprises Bruxelles
+      - expertise droit social employeurs
+      - conseil juridique RH
+      - défense employeur tribunal du travail
+      - litige travail Belgique
+      - accompagnement juridique personnalisé entreprises
+    image: https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg
+  ctaText: En savoir plus sur les tarifs pour les entreprises
   services:
-    - icon: "Search"
-      text: "Audit - Due Diligence in labor and social security law"
-    - icon: "FileText"
-      text: "Drafting and revision of your employment contracts, work regulations, and HR policies"
-    - icon: "UserPlus"
-      text: "Advice on managing individual employment relationships, from recruitment to termination"
-    - icon: "Handshake"
-      text: "Negotiation of amicable agreements directly or behind the scenes"
-    - icon: "Shield"
-      text: "Defense before labor courts and tribunals, and labor and social security inspections"
-  ctaText: "Learn more about rates for companies"
-  imageUrl: "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
-  imageAlt: "Professional handshake"
-  seo:
-    title: "Legal Services for Employers | Christine Rizzo Lawyer"
-    description: "Labor law expertise for companies. Legal advice, defense, and personalized support for employers in Brussels."
-    keywords: "company lawyer, labor law, Brussels, legal advice, employer defense, HR support"
-    image: "https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg"
+    - icon: Search
+      text: Audit - Due Diligence en droit du travail et de la sécurité sociale
+    - icon: FileText
+      text: Rédaction et révision de vos contrats de travail, règlement de travail et
+        politiques RH
+    - icon: UserPlus
+      text: Conseils juridiques pour la gestion de la relation individuelle de
+        travail, du recrutement à la rupture
+    - icon: Handshake
+      text: Négociation d'accords amiables
+    - icon: Shield
+      text: Défense devant les cours et tribunaux du travail et devant les inspections
+        du travail et de l'ONSS
+  conclusion: "***"
+en:
+  topics:
+    - First hiring in Belgium
+    - Employee or independent contractor agreements
+    - Resignations and dismissals
+    - Flexible working hours
+    - Remote work
+    - Right to disconnect
+    - Time credit and thematic leaves (parental leave, medical assistance,
+      palliative care, caregivers) and protection against dismissal
+    - Right to training
+    - Recognition and bonus incentives
+    - Management of (long-term) absences
+    - Harassment, stress, and violence at work (psychosocial risks)
+    - Workplace discrimination
+    - False self-employment
+  additionalSupport:
+    intro: I also assist you in ensuring that
+    points:
+      - workplace well-being regulations
+      - anti-discrimination laws
+      - and legal tools aimed at improving work-life balance
+    conclusion: become resources to enhance your company's image and attract and
+      retain talent.
   keywords:
     - labor law attorney for companies Brussels
     - employment law expertise for employers
@@ -101,43 +88,85 @@ en:
     - employer defense labor court
     - workplace dispute resolution Belgium
     - personalized legal support for businesses
-
-it:
-  title: "Supporto e Difesa per le Aziende"
-  description: "Esperta in negoziazioni e udienze in tribunale, con esperienza acquisita da clienti internazionali, assisto il vostro team HR nella gestione delle controversie e delle relazioni di lavoro quotidiane:"
-  topics:
-    - "Prima assunzione in Belgio"
-    - "Contratti di dipendenti o autonomi"
-    - "Dimissioni e licenziamenti"
-    - "Orari di lavoro flessibili"
-    - "Lavoro da remoto"
-    - "Diritto alla disconnessione"
-    - "Credito d'orario e congedi tematici (congedo parentale, assistenza medica, cure palliative, assistenza familiare) e protezioni contro il licenziamento"
-    - "Diritto alla formazione"
-    - "Riconoscimenti e incentivi bonus"
-    - "Gestione delle assenze (di lunga durata)"
-    - "Molestie, stress e violenza sul lavoro (rischi psicosociali)"
-    - "Discriminazione sul lavoro"
-    - "Falso lavoro autonomo"
-  additionalSupport:
-    intro: "Vi assisto anche nell'utilizzo delle normative sul benessere sul lavoro, le leggi antidiscriminazione e gli strumenti giuridici volti a migliorare l'equilibrio tra vita privata e professionale come risorse per valorizzare l'immagine della vostra azienda, attrarre e trattenere i talenti."
-    points:
-      - "la regolamentazione sul benessere sul lavoro"
-      - "le leggi antidiscriminazione"
-      - "e gli strumenti giuridici volti a migliorare l'equilibrio tra vita privata e professionale"
-    conclusion: "diventano risorse per valorizzare l'immagine della vostra azienda, attrarre e trattenere i talenti."
-  servicesTitle: "I Miei Servizi"
+  imageAlt: Professional handshake
+  imageUrl: https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80
+  title: Support and Defense for Companies
+  servicesTitle: My Services
+  description: "Experienced in negotiations and courtrooms, with expertise gained
+    from international clients, I assist your HR team in managing your disputes
+    and daily work relationships:"
+  seo:
+    title: Legal Services for Employers | Christine Rizzo Lawyer
+    description: Labor law expertise for companies. Legal advice, defense, and
+      personalized support for employers in Brussels.
+    keywords: company lawyer, labor law, Brussels, legal advice, employer defense,
+      HR support
+    image: https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg
+  ctaText: Learn more about rates for companies
   services:
-    - icon: "Search"
-      text: "Audit - Due Diligence in diritto del lavoro e della previdenza sociale"
-    - icon: "FileText"
-      text: "Redazione e revisione dei vostri contratti di lavoro o di collaborazione indipendente"
-    - icon: "UserPlus"
-      text: "Consulenza nella gestione dei rapporti di lavoro individuali, dall'assunzione alla cessazione"
-    - icon: "Handshake"
-      text: "Negoziazione di accordi amichevoli direttamente o dietro le quinte"
-    - icon: "Shield"
-      text: "Difesa davanti ai tribunali del lavoro, alle ispezioni del lavoro e della previdenza sociale"
-  ctaText: "Scoprite di più sui tariffari per le aziende"
-  imageUrl: "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
-  imageAlt: "Stretta di mano tra professionisti"
+    - icon: Search
+      text: Audit - Due Diligence in labor and social security law
+    - icon: FileText
+      text: Drafting and revision of your employment contracts, work regulations, and
+        HR policies
+    - icon: UserPlus
+      text: Advice on managing individual employment relationships, from recruitment
+        to termination
+    - icon: Handshake
+      text: Negotiation of amicable agreements directly or behind the scenes
+    - icon: Shield
+      text: Defense before labor courts and tribunals, and labor and social security
+        inspections
+  conclusion: "***"
+it:
+  topics:
+    - Prima assunzione in Belgio
+    - Contratti di dipendenti o autonomi
+    - Dimissioni e licenziamenti
+    - Orari di lavoro flessibili
+    - Lavoro da remoto
+    - Diritto alla disconnessione
+    - Credito d'orario e congedi tematici (congedo parentale, assistenza medica,
+      cure palliative, assistenza familiare) e protezioni contro il
+      licenziamento
+    - Diritto alla formazione
+    - Riconoscimenti e incentivi bonus
+    - Gestione delle assenze (di lunga durata)
+    - Molestie, stress e violenza sul lavoro (rischi psicosociali)
+    - Discriminazione sul lavoro
+    - Falso lavoro autonomo
+  additionalSupport:
+    intro: Vi assisto anche nell'utilizzo delle normative sul benessere sul lavoro,
+      le leggi antidiscriminazione e gli strumenti giuridici volti a migliorare
+      l'equilibrio tra vita privata e professionale come risorse per valorizzare
+      l'immagine della vostra azienda, attrarre e trattenere i talenti.
+    points:
+      - la regolamentazione sul benessere sul lavoro
+      - le leggi antidiscriminazione
+      - e gli strumenti giuridici volti a migliorare l'equilibrio tra vita
+        privata e professionale
+    conclusion: diventano risorse per valorizzare l'immagine della vostra azienda,
+      attrarre e trattenere i talenti.
+  imageAlt: Stretta di mano tra professionisti
+  imageUrl: https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80
+  title: Supporto e Difesa per le Aziende
+  servicesTitle: I Miei Servizi
+  description: "Esperta in negoziazioni e udienze in tribunale, con esperienza
+    acquisita da clienti internazionali, assisto il vostro team HR nella
+    gestione delle controversie e delle relazioni di lavoro quotidiane:"
+  ctaText: Scoprite di più sui tariffari per le aziende
+  services:
+    - icon: Search
+      text: Audit - Due Diligence in diritto del lavoro e della previdenza sociale
+    - icon: FileText
+      text: Redazione e revisione dei vostri contratti di lavoro o di collaborazione
+        indipendente
+    - icon: UserPlus
+      text: Consulenza nella gestione dei rapporti di lavoro individuali,
+        dall'assunzione alla cessazione
+    - icon: Handshake
+      text: Negoziazione di accordi amichevoli direttamente o dietro le quinte
+    - icon: Shield
+      text: Difesa davanti ai tribunali del lavoro, alle ispezioni del lavoro e della
+        previdenza sociale
+  conclusion: "***"
