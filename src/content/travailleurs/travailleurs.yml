@@ -15,10 +15,9 @@ fr:
     - Vos conditions de travail ont changé pendant ou suite à une grossesse ?
       Vous souhaitez prendre un crédit-temps et un congé parental ?
     - Vous êtes victime de discrimination, de harcèlement ? Vous êtes mis à
-      l'écart ?
-    - Vous souffrez d'un burn-out?
-    - Vous êtes victime d'un accident du travail?
-    - Votre statut n'est pas clair? Vous pensez être un faux indépendant?
+      l'écart à cause d'un burn-out ?
+    - Vous êtes victime d'un accident du travail ?
+    - Votre statut n'est pas clair ? Vous pensez être un faux indépendant ?
   servicesTitle: Mes services
   services:
     - icon: BriefCase
@@ -47,20 +46,20 @@ en:
     one-shot question, for negotiating a departure or for taking legal action
     against your employer before the labor courts.
   questions:
-    - Do you need your employment contract reviewed?
+    - Do you need your employment contract reviewed ?
     - Is your employer offering you a negotiated severance package, but you are
-      not sure whether it is in your best interests? Do you want to resign?
+      not sure whether it is in your best interests? Do you want to resign ?
     - Do you want to contest your dismissal (manifestly unreasonable, abusive or
-      discriminatory dismissal)?
+      discriminatory dismissal) ?
     - Would you like to verify the calculation of your severance pay and whether
-      your rights have been respected following dismissal?
-    - Have your working conditions changed during or because of pregnancy? Would
-      you like to take parental leave ?
-    - Are you a victim of discrimination or harassment? Are you being sidelined?
-    - Are you suffering from burn-out?
-    - Are you the victim of a workplace accident?
-    - "Is your status unclear? You are an independent contractor, but you think
-      you should be reclassified as an employee? "
+      your rights have been respected following dismissal ?
+    - Have your working conditions changed during or because of pregnancy ?
+      Would you like to take parental leave ?
+    - Are you a victim of discrimination or harassment ? Are you being sidelined
+      because of a burn-out ?
+    - Are you the victim of a workplace accident ?
+    - "Is your status unclear ? You are an independent contractor, but you think
+      you should be reclassified as an employee ? "
   servicesTitle: My services
   services:
     - icon: BriefCase
