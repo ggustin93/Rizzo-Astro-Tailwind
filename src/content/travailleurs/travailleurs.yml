@@ -64,12 +64,11 @@ en:
   servicesTitle: My services
   services:
     - icon: BriefCase
-      text: Specific advice from recruitment to termination of the employment
-        relationship
+      text: Legal advice from recruitment to termination
     - icon: Shield
       text: Defense before labor courts and tribunals
     - icon: Handshake
-      text: Negotiation of amicable agreements directly or behind the scenes
+      text: Negotiation of amicable agreements
   ctaText: Learn more about rates for workers
   seo:
     title: Legal Services for Employees | Christine Rizzo Lawyer
@@ -91,23 +90,22 @@ it:
     procedimento giudiziario davanti al tribunale del lavoro contro il tuo
     datore di lavoro.
   questions:
-    - Vuoi far rivedere il tuo contratto di lavoro?
-    - Il tuo datore di lavoro ti propone una risoluzione consensuale ma non sei
-      sicuro se sia nel tuo interesse?
-    - Vuoi dimetterti?
-    - Vuoi contestare il tuo licenziamento (licenziamento manifestamente
-      irragionevole, abusivo o discriminatorio)?
-    - Vuoi verificare il calcolo della tua indennità di preavviso e il rispetto
-      dei tuoi diritti in seguito al tuo licenziamento?
-    - Il tuo manager o un collega ti molesta o ha un comportamento inappropriato?
-    - Le tue condizioni di lavoro sono cambiate durante o dopo una gravidanza?
-    - Sei stato messo da parte?
-    - Desideri prendere un congedo parentale per prenderti cura di tuo figlio?
-    - Sei vittima di discriminazione (dal reclutamento alla cessazione del
-      rapporto di lavoro)?
-    - Soffri di burnout?
-    - Sei vittima di un infortunio sul lavoro?
-    - Il tuo status non è chiaro? Pensi di essere un falso lavoratore autonomo?
+    - Occorre che il contratto di lavoro sia riesaminato?
+    - Il vostro datore di lavoro vi offre un pacchetto di licenziamento
+      contrattuale, ma non siete sicuri se è nel vostro interesse? Volete
+      dimettervi?
+    - Intende contestare il suo licenziamento (palesemente irragionevole,
+      abusivo o discriminatorio)?
+    - Desiderate verificare il calcolo della vostra indennità di licenziamento e
+      se i vostri diritti sono stati rispettati dopo il licenziamento?
+    - Le condizioni di lavoro sono cambiate durante o a causa della gravidanza?
+      Desidera prendere il congedo parentale?
+    - "Sei vittima di discriminazione o molestie? Stai per essere messo da
+      parte? "
+    - Soffri di esaurimento?
+    - Siete vittime di un infortunio sul lavoro?
+    - La tua situazione non è chiara? Sei un imprenditore indipendente, ma pensi
+      di dover essere riclassificato come dipendente?
   servicesTitle: I miei servizi
   services:
     - icon: BriefCase
@@ -130,4 +128,4 @@ it:
       - difesa lavoratori tribunale del lavoro
       - controversie lavoro Belgio
       - supporto legale personalizzato lavoratori
-  specialFocus: Le tariffe
+  specialFocus: "*"
