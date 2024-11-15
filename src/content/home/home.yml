@@ -1,42 +1,63 @@
 fr:
-  hero:
-    title: Christine Rizzo
-    subtitle: Avocate spécialisée en droit du travail
-    description: Vous suivez chaque étape de votre dossier et mes prestations en ligne.
-    cta: PRENEZ RDV EN LIGNE
+  travailleurs:
+    title: Vous êtes travailleur
+    description: Je vous accompagne tout au long de votre parcours professionnel que
+      ce soit pour une question ponctuelle, la négociation d'un départ ou
+      l'introduction d'une procédure judiciaire devant le tribunal du travail
+      contre votre employeur.
+    cta: En savoir plus
+  honoraires:
+    title: Honoraires
+    cta: En savoir plus
   expertise:
-    title: "Expertise & Services"
-    description: J'entretiens une expertise globale et actualisée du droit du travail en accompagnant à la fois les salariés dans leurs problématiques quotidiennes et les entreprises dans leurs projets de développement.
+    title: Expertise & Services
+    description: J'accompagne à la fois les salariés et les entreprises dans leurs
+      problématiques quotidiennes et leurs projets liés à l'emploi.
     travailleurs:
       title: Vous êtes un.e travailleur.euse
-      description: "Je vous conseille et vous défends tout au long de votre parcours professionnel et contre les abus, le harcèlement et les discriminations au travail."
+      description: Je vous conseille et vous défends tout au long de votre parcours
+        professionnel et contre les abus, le harcèlement et les discriminations
+        au travail.
       cta: En savoir plus
     employeurs:
       title: Vous êtes un employeur
-      description: "Je vous défends devant les tribunaux et je collabore avec votre équipe RH pour la gestion des relations de travail au quotidien ainsi que pour vos projets visant à développer vos politiques bien-être au travail et équilibre vie privée-vie professionnelle."
+      description: Je vous défends devant les tribunaux et je collabore avec votre
+        équipe RH pour la gestion des relations de travail au quotidien ainsi
+        que pour vos projets visant à développer vos politiques bien-être au
+        travail et équilibre vie privée-vie professionnelle.
       cta: En savoir plus
     honoraires:
-      intro: "Des honoraires transparents et adaptés vous sont proposés"
-      linkText: "en savoir plus"
+      intro: Des honoraires transparents et adaptés vous sont proposés
+      linkText: en savoir plus
       advantages:
-        - "Devis détaillé et gratuit"
-        - "Tarifs forfaitaires pour une meilleure prévisibilité"
-        - "Paiement mensualisé possible"
-      cta: "En savoir plus sur nos honoraires"
+        - Devis détaillé et gratuit
+        - Tarifs forfaitaires pour une meilleure prévisibilité
+        - Paiement mensualisé possible
+      cta: En savoir plus sur nos honoraires
+  viewAllArticles: Lire plus d'articles
+  hero:
+    title: Christine Rizzo
+    subtitle: Avocate en droit du travail
+    description: Vous suivez chaque étape de votre dossier et mes prestations en ligne.
+    cta: PRENEZ RDV EN LIGNE
+  articlesTitle: Articles
   profil:
     title: Profil
-    description: "Avocate au Barreau de Bruxelles depuis 2010, habituée des négociations et des salles d'audience, j'ai acquis l'expérience de mon métier à la fois auprès d'une clientèle de particuliers qu'auprès d'entreprises locales et internationales. Les questions juridiques qui me passionnent sont le bien-être au travail, les outils destinés à améliorer l'équilibre vie privée-vie professionnelle, les questions de discrimination et les faux indépendants."
+    description: Avocate au Barreau de Bruxelles depuis 2010, habituée des
+      négociations et des salles d'audience, j'ai acquis l'expérience de mon
+      métier en accompagnant à la fois des particuliers et des entreprises
+      locales et internationales. La gestion de la relation de travail du
+      recrutement à la rupture, la rédaction de rapports d'audit dans le cadre
+      de projets d'acquisition, le bien-être au travail, les outils destinés à
+      améliorer l'équilibre vie privée-vie professionnelle, les questions de
+      discrimination et les faux indépendants font partie de ma pratique
+      quotidienne.
     cta: En savoir plus
-  articlesTitle: Articles
-  viewAllArticles: "Lire plus d'articles"
-  mentionsLegales:
-    title: Mentions Légales
-    content:
-      - Polices fournies par Web Fonts sous licence CC BY 4.0
   seo:
-    title: "Christine Rizzo | Avocate spécialisée en droit du travail à Bruxelles"
-    description: "Expertise en droit du travail pour salariés et employeurs. Conseils, défense et accompagnement juridique personnalisé à Bruxelles."
-    image: "https://github.com/ggustin93/Rizzo-Astro-Tailwind/blob/main/public/default-social-image.png"
+    title: Christine Rizzo | Avocate spécialisée en droit du travail à Bruxelles
+    description: Expertise en droit du travail pour salariés et employeurs.
+      Conseils, défense et accompagnement juridique personnalisé à Bruxelles.
+    image: https://github.com/ggustin93/Rizzo-Astro-Tailwind/blob/main/public/default-social-image.png
     keywords:
       - avocat droit du travail Bruxelles
       - expertise droit social
@@ -44,43 +65,16 @@ fr:
       - défense salarié
       - litige travail Belgique
       - accompagnement juridique personnalisé
-
+  mentionsLegales:
+    title: Mentions Légales
+    content:
+      - Polices fournies par Web Fonts sous licence CC BY 4.0
+  employeurs:
+    title: Vous êtes employeur
+    description: J'accompagne votre équipe RH dans la gestion de vos litiges et des
+      relations de travail au quotidien.
+    cta: En savoir plus
 en:
-  hero:
-    title: Christine Rizzo
-    subtitle: Lawyer specialized in labor law
-    description: You can follow each step of your case and my services through an online sharing platform.
-    cta: BOOK AN APPOINTMENT ONLINE
-  expertise:
-    title: My Services
-    description: I maintain a comprehensive and up-to-date expertise in labor law by supporting both employees in their daily issues and companies in their development projects.
-    travailleurs:
-      title: You are a worker
-      description: I advise and defend workers throughout their professional careers and against abuse, harassment, and discrimination at work.
-      cta: Learn More
-    employeurs:
-      title: You are an employer
-      description: I collaborate with your HR team for the management of daily work relationships and for all your projects aimed at developing workplace well-being and work-life balance policies.
-      cta: Learn More
-    honoraires:
-      intro: "Transparent and tailored fees are offered"
-      linkText: "learn more"
-      advantages:
-        - "Detailed and free quote"
-        - "Fixed rates for better predictability"
-        - "Monthly payment option available"
-      cta: "Learn more about our fees"
-  profil:
-    title: Profile
-    description: "As a lawyer at the Brussels Bar since 2010, accustomed to negotiations and courtrooms, I have gained experience in my profession with both individual clients and local and international companies. The legal issues I am passionate about are workplace well-being, tools to improve work-life balance, discrimination issues, and false self-employment."
-    cta: Learn More
-  articlesTitle: Resources
-  viewAllArticles: "View All Resources"
-  seo:
-    title: "Christine Rizzo | Labor Law Specialist Lawyer in Brussels"
-    description: "Expert in labor law for employees and employers. Legal advice, defense, and personalized legal support in Brussels."
-    keywords: "lawyer, labor law, Brussels, legal advice, employee defense, employer support"
-    image: "https://github.com/ggustin93/Rizzo-Astro-Tailwind/blob/main/public/default-social-image.png"
   keywords:
     - employment lawyer Brussels
     - labor law expert Belgium
@@ -88,43 +82,69 @@ en:
     - employee rights defense
     - workplace dispute resolution
     - personalized legal support
-
-it:
+  travailleurs:
+    title: You are an employee
+    description: I assist you at every stage of your career, whether it's a one-shot
+      question, negotiating a departure or taking legal action against your
+      employer before the labor courts.
+    cta: Here are more details
+  honoraires:
+    title: Fees
+    cta: Here are more details
+  expertise:
+    title: Services
+    description: I support and advise both employees and companies in their
+      day-to-day issues and employment-related projects.
+    travailleurs:
+      title: You are a worker
+      description: I advise and defend workers throughout their professional careers
+        and against abuse, harassment, and discrimination at work.
+      cta: Learn More
+    employeurs:
+      title: You are an employer
+      description: I collaborate with your HR team for the management of daily work
+        relationships and for all your projects aimed at developing workplace
+        well-being and work-life balance policies.
+      cta: Learn More
+    honoraires:
+      intro: Transparent and tailored fees are offered
+      linkText: learn more
+      advantages:
+        - Detailed and free quote
+        - Fixed rates for better predictability
+        - Monthly payment option available
+      cta: Learn more about our fees
+  viewAllArticles: View All Resources
   hero:
     title: Christine Rizzo
-    subtitle: Avvocato specializzato in diritto del lavoro
-    description: Puoi seguire ogni fase del tuo caso e dei miei servizi attraverso una piattaforma di condivisione online.
-    cta: PRENOTA UN APPUNTAMENTO ONLINE
-  expertise:
-    title: "I miei servizi"
-    description: Mantengo una competenza globale e aggiornata nel diritto del lavoro supportando sia i dipendenti nelle loro problematiche quotidiane che le aziende nei loro progetti di sviluppo.
-    travailleurs:
-      title: Sei un lavoratore
-      description: Consiglio e difendo i lavoratori durante tutto il loro percorso professionale e contro abusi, molestie e discriminazioni sul lavoro.
-      cta: Scopri di più
-    employeurs:
-      title: Sei un datore di lavoro
-      description: Collaboro con il vostro team HR per la gestione delle relazioni di lavoro quotidiane e per tutti i vostri progetti volti a sviluppare le vostre politiche di benessere sul lavoro e di equilibrio tra vita professionale e privata.
-      cta: Scopri di più
-    honoraires:
-      intro: "Sono offerti onorari trasparenti e su misura"
-      linkText: "scopri di più"
-      advantages:
-        - "Preventivo dettagliato e gratuito"
-        - "Tariffe fisse per una migliore prevedibilità"
-        - "Opzione di pagamento mensile disponibile"
-      cta: "Scopri di più sui nostri onorari"
+    subtitle: Employment lawyer
+    description: Follow every step of your case and my services through an online platform
+    cta: BOOK A CONSULTATION
+  articlesTitle: Articles
   profil:
-    title: Profilo
-    description: "Avvocato presso il foro di Bruxelles dal 2010, abituata a negoziazioni e aule di tribunale, ho acquisito esperienza nella mia professione sia con clienti privati che con aziende locali e internazionali. Le questioni legali che mi appassionano sono il benessere sul lavoro, gli strumenti per migliorare l'equilibrio tra vita lavorativa e privata, le questioni di discriminazione e il falso lavoro autonomo."
-    cta: Scopri di più
-  articlesTitle: Risorse
-  viewAllArticles: "Visualizza tutte le risorse"
+    title: Profile
+    description: Admitted to the Brussels Bar in 2010, I am used to negotiating
+      settlements agreements and to defend cases in courtrooms. I have gained
+      experience in my profession by working with both individuals and local and
+      international companies. Managing employment relationships from
+      recruitment to termination, drafting audit reports for acquisition
+      projects, well-being at work, tools for improving work-life balance,
+      discrimination issues and classifying employees versus independent
+      contractors are all part of my daily practice.
+    cta: Learn More
   seo:
-    title: "Christine Rizzo | Avvocato specializzato in diritto del lavoro a Bruxelles"
-    description: "Esperta in diritto del lavoro per dipendenti e datori di lavoro. Consulenza legale, difesa e supporto giuridico personalizzato a Bruxelles."
-    keywords: "avvocato, diritto del lavoro, Bruxelles, consulenza legale, difesa dei dipendenti, supporto ai datori di lavoro"
-    image: "https://github.com/ggustin93/Rizzo-Astro-Tailwind/blob/main/public/default-social-image.png"
+    title: Christine Rizzo | Labor Law Specialist Lawyer in Brussels
+    description: Expert in labor law for employees and employers. Legal advice,
+      defense, and personalized legal support in Brussels.
+    keywords: lawyer, labor law, Brussels, legal advice, employee defense, employer
+      support
+    image: https://github.com/ggustin93/Rizzo-Astro-Tailwind/blob/main/public/default-social-image.png
+  employeurs:
+    title: You are an employer
+    description: I support your HR team in managing your disputes and day-to-day
+      employment relationships.
+    cta: Here are more details
+it:
   keywords:
     - avvocato diritto del lavoro Bruxelles
     - esperto diritto del lavoro Belgio
@@ -132,3 +152,65 @@ it:
     - difesa diritti dei lavoratori
     - risoluzione controversie lavorative
     - assistenza legale personalizzata
+  travailleurs:
+    title: Sei un lavoratore
+    description: Ti accompagno durante tutto il tuo percorso professionale, sia per
+      una domanda specifica, la negoziazione di una partenza o l'avvio di un
+      procedimento giudiziario davanti al tribunale del lavoro contro il tuo
+      datore di lavoro.
+    cta: Ecco maggiori dettagli sulle tariffe
+  honoraires:
+    title: Onorari
+    cta: Scorpi di più
+  expertise:
+    title: Servizi
+    description: Assistenza e consulenza a dipendenti e aziende su questioni e
+      progetti quotidiani relativi al diritto del lavoro.
+    travailleurs:
+      title: Sei un lavoratore
+      description: Consiglio e difendo i lavoratori durante tutto il loro percorso
+        professionale e contro abusi, molestie e discriminazioni sul lavoro.
+      cta: Scopri di più
+    employeurs:
+      title: Sei un datore di lavoro
+      description: Collaboro con il vostro team HR per la gestione delle relazioni di
+        lavoro quotidiane e per tutti i vostri progetti volti a sviluppare le
+        vostre politiche di benessere sul lavoro e di equilibrio tra vita
+        professionale e privata.
+      cta: Scopri di più
+    honoraires:
+      intro: Sono offerti onorari trasparenti e su misura
+      linkText: scopri di più
+      advantages:
+        - Preventivo dettagliato e gratuito
+        - Tariffe fisse per una migliore prevedibilità
+        - Opzione di pagamento mensile disponibile
+      cta: Scopri di più sui nostri onorari
+  viewAllArticles: Visualizza tutte le risorse
+  hero:
+    title: Christine Rizzo
+    subtitle: Avvocato del lavoro
+    description: Seguite ogni fase del vostro caso e dei miei servizi online
+    cta: PRENOTA UNA CONSULZENZA
+  articlesTitle: Articoli
+  profil:
+    title: Profilo
+    description: Avvocato presso il foro di Bruxelles dal 2010, abituata a
+      negoziazioni e aule di tribunale, ho acquisito esperienza nella mia
+      professione sia con clienti privati che con aziende locali e
+      internazionali. Le questioni legali che mi appassionano sono il benessere
+      sul lavoro, gli strumenti per migliorare l'equilibrio tra vita lavorativa
+      e privata, le questioni di discriminazione e il falso lavoro autonomo.
+    cta: Scopri di più
+  seo:
+    title: Christine Rizzo | Avvocato specializzato in diritto del lavoro a Bruxelles
+    description: Esperta in diritto del lavoro per dipendenti e datori di lavoro.
+      Consulenza legale, difesa e supporto giuridico personalizzato a Bruxelles.
+    keywords: avvocato, diritto del lavoro, Bruxelles, consulenza legale, difesa dei
+      dipendenti, supporto ai datori di lavoro
+    image: https://github.com/ggustin93/Rizzo-Astro-Tailwind/blob/main/public/default-social-image.png
+  employeurs:
+    title: Sei un datore di lavoro
+    cta: Ecco maggiori dettagli sulle tariffe
+    description: Assisto il vostro team HR nella gestione delle controversie e delle
+      relazioni di lavoro quotidiane
