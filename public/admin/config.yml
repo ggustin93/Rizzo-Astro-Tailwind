@@ -100,6 +100,15 @@ collections:
             name: "fr"
             widget: "object"
             fields: &homeFields
+              - label: "Hero"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Sous-titre", name: "subtitle", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+                  - {label: "CTA", name: "cta", widget: "string"}
+              
               - label: "Expertise"
                 name: "expertise"
                 widget: "object"
@@ -120,25 +129,37 @@ collections:
                       - {label: "Titre", name: "title", widget: "string"}
                       - {label: "Description", name: "description", widget: "text"}
                       - {label: "CTA", name: "cta", widget: "string"}
-              - label: "Honoraires"
-                name: "honoraires"
-                widget: "object"
-                fields:
-                  - {label: "Titre", name: "title", widget: "string"}
-                  - {label: "Introduction", name: "intro", widget: "text"}
-                  - {label: "Texte du lien", name: "linkText", widget: "string"}
-                  - label: "Avantages"
-                    name: "advantages"
-                    widget: "list"
-                    field: {label: "Avantage", name: "advantage", widget: "string"}
-                  - {label: "CTA", name: "cta", widget: "string"}
-              - label: "Travailleurs"
-                name: "travailleurs"
+                  - label: "Honoraires"
+                    name: "honoraires"
+                    widget: "object"
+                    fields:
+                      - {label: "Introduction", name: "intro", widget: "text"}
+                      - {label: "Texte du lien", name: "linkText", widget: "string"}
+                      - label: "Avantages"
+                        name: "advantages"
+                        widget: "list"
+                        field: {label: "Avantage", name: "advantage", widget: "string"}
+
+              - label: "Profil"
+                name: "profil"
                 widget: "object"
                 fields:
                   - {label: "Titre", name: "title", widget: "string"}
                   - {label: "Description", name: "description", widget: "text"}
                   - {label: "CTA", name: "cta", widget: "string"}
+
+              - {label: "Titre des articles", name: "articlesTitle", widget: "string"}
+              - {label: "Voir tous les articles", name: "viewAllArticles", widget: "string"}
+
+              - label: "SEO"
+                name: "seo"
+                widget: "object"
+                fields:
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+                  - {label: "Mots-clés", name: "keywords", widget: "list"}
+                  - {label: "Image", name: "image", widget: "string"}
+
           - label: "English"
             name: "en"
             widget: "object"
@@ -246,7 +267,7 @@ collections:
                 field: {label: "Paragraphe", name: "paragraph", widget: "text"}
               - label: "Langues"
                 name: "languages"
-                widget: "string"
+                widget: "string"}
               - label: "Parcours"
                 name: "careerPath"
                 widget: "list"
