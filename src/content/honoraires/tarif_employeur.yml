@@ -9,19 +9,16 @@ fr:
   services:
     - title: Conseils illimités
       icon: FileText
-      pricing: Tarif horaire de 180 € htva ou abonnement sur demande
+      pricing: Abonnement sur demande
       details: []
       services:
+        - Pour toutes vos questions du quotidien
         - Rédiger ou réviser un contrat ou une politique
         - Préparer un licenciement et évaluer les risques
         - Mettre en place des horaires de travail flexibles
         - Organiser le télétravail ou le droit à la déconnexion dans l'entreprise
-        - Offrir des formations
-        - Proposer des incentives bonus
         - Gérer une absence (de longue durée)
-        - Répondre à une plainte pour discrimination ou harcèlement
-        - Examiner le statut salarié/indépendant
-        - ...
+        - Inspections et contentieux exclus
     - title: Audit - Rapport Due Diligence
       icon: FileText
       pricing: FORFAIT sur demande
@@ -36,8 +33,7 @@ fr:
     - title: Contrat de travail
       icon: FileText
       pricing: FORFAIT 800 € htva
-      details:
-        - (tva 21%)
+      details: []
       services: []
     - title: Règlement de travail
       icon: Shield
