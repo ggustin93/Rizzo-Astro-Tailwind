@@ -246,16 +246,13 @@ collections:
               - {label: "Nom", name: "name", widget: "string"}
               - {label: "Titre", name: "title", widget: "string"}
               - {label: "Image", name: "image", widget: "image"}
-              - {label: "Biographie", name: "bio", widget: "text"}
-              - label: "Spécialités"
-                name: "specialties"
+              - label: "Biographie"
+                name: "bio"
                 widget: "list"
+                field: {label: "Paragraphe", name: "paragraph", widget: "text"}
               - label: "Langues"
                 name: "languages"
-                widget: "list"
-                fields:
-                  - {label: "Nom", name: "name", widget: "string"}
-                  - {label: "Niveau", name: "level", widget: "string"}
+                widget: "string"
               - label: "Parcours"
                 name: "careerPath"
                 widget: "list"
@@ -265,11 +262,7 @@ collections:
               - label: "Conférences"
                 name: "conferences"
                 widget: "list"
-                fields:
-                  - {label: "Date", name: "date", widget: "string"}
-                  - {label: "Titre", name: "title", widget: "string"}
-                  - {label: "Événement", name: "event", widget: "string"}
-                  - {label: "Co-intervenants", name: "coSpeakers", widget: "list"}
+                field: {label: "Conférence", name: "conference", widget: "text"}
               - label: "Publications"
                 name: "publications"
                 widget: "list"
@@ -277,7 +270,10 @@ collections:
                   - {label: "Date", name: "date", widget: "string"}
                   - {label: "Titre", name: "title", widget: "string"}
                   - {label: "Éditeur", name: "publisher", widget: "string"}
-                  - {label: "Co-auteurs", name: "coAuthors", widget: "list"}
+                  - label: "Co-auteurs"
+                    name: "coAuthors"
+                    widget: "list"
+                    field: {label: "Auteur", name: "author", widget: "string"}
           - label: "English"
             name: "en"
             widget: "object"
