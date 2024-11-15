@@ -4,8 +4,8 @@ fr:
     qu'il accomplit pour vous.
   tarifs:
     title: Tarifs
-    travailleur: Vous êtes travailleur
-    employeur: Vous êtes employeur
+    travailleur: Vous êtes un travailleur
+    employeur: Vous êtes un employeur
   transparence:
     title: Transparence
     points:
