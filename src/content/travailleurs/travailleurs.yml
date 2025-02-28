@@ -80,18 +80,15 @@ en:
       - personalized legal support for employees
   specialFocus: "*"
 it:
-  title: Supporto e difesa dei lavoratori
-  description: Ti accompagno durante tutto il tuo percorso professionale, sia per
-    una domanda specifica, la negoziazione di una partenza o l'avvio di un
-    procedimento giudiziario davanti al tribunale del lavoro contro il tuo
-    datore di lavoro.
+  title: Consiglio e difesa dei lavoratori
+  description: "*"
   questions:
-    - Occorre che il contratto di lavoro sia riesaminato?
-    - Il vostro datore di lavoro vi offre un pacchetto di licenziamento
-      contrattuale, ma non siete sicuri se è nel vostro interesse? Volete
-      dimettervi?
-    - Intende contestare il suo licenziamento (palesemente irragionevole,
-      abusivo o discriminatorio)?
+    - Vuole far rileggere il vostro contratto di lavoro?
+    - "Il suo datore di lavoro Le propone licenziamento concordato ma non è
+      sicuro se è nel Suo interesse? "
+    - Vuole dare le dimissioni?
+    - Intende contestare il suo licenziamento (motivo insufficiente, abusivo o
+      discriminatorio)?
     - Desiderate verificare il calcolo della vostra indennità di licenziamento e
       se i vostri diritti sono stati rispettati dopo il licenziamento?
     - Le condizioni di lavoro sono cambiate durante o a causa della gravidanza?
