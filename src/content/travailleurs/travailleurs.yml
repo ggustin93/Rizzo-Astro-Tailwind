@@ -43,8 +43,9 @@ en:
   description: "*"
   questions:
     - Do you need your employment contract reviewed ?
-    - Is your employer offering you a negotiated severance package, but you are
-      not sure whether it is in your best interests? Do you want to resign ?
+    - "Is your employer offering you a negotiated severance package, but you are
+      not sure whether it is in your best interests? "
+    - Do you want to resign ?
     - Do you want to contest your dismissal (manifestly unreasonable, abusive or
       discriminatory dismissal) ?
     - Would you like to verify the calculation of your severance pay and whether
