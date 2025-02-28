@@ -1,13 +1,11 @@
 fr:
   title: Accompagnement et défense des travailleurs
-  description: Je vous accompagne tout au long de votre parcours professionnel que
-    ce soit pour une question ponctuelle, la négociation d'un départ ou
-    l'introduction d'une procédure judiciaire devant le tribunal du travail
-    contre votre employeur.
+  description: "*"
   questions:
     - Vous voulez faire relire votre contrat de travail ?
-    - Votre employeur vous propose une rupture conventionnelle mais vous ne
-      savez pas si c'est dans votre intérêt ? Vous voulez démissionner ?
+    - "Votre employeur vous propose une rupture conventionnelle mais vous ne
+      savez pas si c'est dans votre intérêt ? "
+    - Vous voulez démissionner ?
     - Vous voulez contester votre licenciement (licenciement manifestement
       déraisonnable, abusif ou discriminatoire) ?
     - Vous voulez vérifier le calcul de votre indemnité de préavis et le respect
@@ -42,9 +40,7 @@ fr:
   specialFocus: "*"
 en:
   title: Support and defense of employees
-  description: I assist you at every stage of your career, whether it is for a
-    one-shot question, for negotiating a departure or for taking legal action
-    against your employer before the labor courts.
+  description: "*"
   questions:
     - Do you need your employment contract reviewed ?
     - Is your employer offering you a negotiated severance package, but you are
