@@ -125,16 +125,15 @@ en:
     - icon: Search
       text: Audit - Due Diligence in labor and social security law
     - icon: FileText
-      text: Drafting and revision of your employment contracts, work regulations, and
-        HR policies
+      text: Drafting and revision of employment contracts, work regulations, and HR
+        policies
     - icon: UserPlus
       text: Advice on managing individual employment relationships, from recruitment
         to termination
     - icon: Handshake
-      text: Negotiation of amicable agreements directly or behind the scenes
+      text: "Negotiation of settlement agreements "
     - icon: Shield
-      text: Defense before labor courts and tribunals, and labor and social security
-        inspections
+      text: Defense before labor courts, and labor and social security inspections
   conclusion: "\n\n\n\n\n\n"
 it:
   topics:
