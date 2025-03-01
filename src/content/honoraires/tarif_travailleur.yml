@@ -11,19 +11,20 @@ fr:
       icon: Briefcase
       description: Négociation amiable et/ou procédure pour motif grave, licenciement
         abusif, discriminatoire, manifestement déraisonnable
-      pricing: FORFAIT de 290 € htva / mois pendant 24 mois (soit 6.960 € htva) + 10%
-        htva du résultat net obtenu
+      pricing: 290 € htva / mois + 10% du résultat
       details:
+        - Montant payable pendant 24 mois (soit 6.960 € htva).
         - Facturation des heures prestées au tarif horaire convenu en cas
           d'accord amiable conclu entre les parties.
         - L'honoraire de résultat est calculé sur tous les montants nets obtenus
           suite à un accord ou une décision judiciaire et facturé après le
-          paiement par la partie adverse.
+          paiement par la partie adverse. Il est également soumis à la tva.
+        - L'éventuel appel n'est pas inclus.
         - La tva est de 21%.
       services:
         - Analyse du dossier
         - Calcul des indemnités
-        - Négociation d'un accord (coaching si négociation par vous en direct)
+        - Négociation d'un accord
         - Rédaction ou revue de la transaction
         - Introduction de la procédure
         - Rédaction des conclusions
