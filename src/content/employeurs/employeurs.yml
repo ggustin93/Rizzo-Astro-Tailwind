@@ -164,13 +164,21 @@ it:
         privata e professionale
     conclusion: diventano risorse per valorizzare l'immagine della vostra azienda,
       attrarre e trattenere i talenti.
+  questions:
+    - Prima assunzione in Belgio
+    - "Contratti di lavoro dipendente o autonomo (e falsi lavoratori autonomi) "
+    - Dimissioni e licenziamenti
+    - Protezioni contro il licenziamento
+    - Pacchetti retributivi e bonus
+    - Orari flessibili, telelavoro, diritto alla disconnessione
+    - Gestione delle assenze
+    - Benessere sul lavoro (molestie e altri rischi psicosociali)
+    - Discriminazione
   imageAlt: Stretta di mano tra professionisti
   imageUrl: https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80
-  title: Supporto e Difesa per le Aziende
+  title: Consulenza e difesa per le aziende
   servicesTitle: I Miei Servizi
-  description: "Esperta in negoziazioni e udienze in tribunale, con esperienza
-    acquisita da clienti internazionali, assisto il vostro team HR nella
-    gestione delle controversie e delle relazioni di lavoro quotidiane:"
+  description: "*"
   ctaText: Scoprite di più sui tariffari per le aziende
   services:
     - icon: Search
@@ -186,4 +194,10 @@ it:
     - icon: Shield
       text: Difesa davanti ai tribunali del lavoro, alle ispezioni del lavoro e della
         previdenza sociale
-  conclusion: "***"
+  conclusion: |+
+    
+    Tutela contro il licenziamento
+    Pacchetti, bonus
+
+
+
