@@ -182,7 +182,7 @@ it:
   ctaText: Scoprite di più sui tariffari per le aziende
   services:
     - icon: Search
-      text: Audit - Due Diligence in diritto del lavoro e della previdenza sociale
+      text: Audit - Due Diligence in diritto del lavoro
     - icon: FileText
       text: Redazione e revisione dei vostri contratti di lavoro o di collaborazione
         indipendente
@@ -190,7 +190,7 @@ it:
       text: Consulenza nella gestione dei rapporti di lavoro individuali,
         dall'assunzione alla cessazione
     - icon: Handshake
-      text: Negoziazione di accordi amichevoli direttamente o dietro le quinte
+      text: Negoziazione di accordi transattivi
     - icon: Shield
       text: Difesa davanti ai tribunali del lavoro, alle ispezioni del lavoro e della
         previdenza sociale
