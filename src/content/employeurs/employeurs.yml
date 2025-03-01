@@ -23,12 +23,22 @@ fr:
         professionnelle
     conclusion: deviennent des ressources pour valoriser l'image de votre
       entreprise, attirer et retenir vos talents.
+  questions:
+    - Premier engagement en Belgique
+    - Contrats de salariés ou indépendants (et faux indépendants)
+    - "Démissions et licenciements "
+    - Protections contre le licenciement
+    - Packages, bonus
+    - Horaires de travail flexibles, télétravail, déconnexion
+    - Gestion des absences (de longue durée)
+    - Bien-être au travail (problématiques liées au harcèlement et autres
+      risques psychosociaux)
+    - Discrimination
   imageAlt: Poignée de main entre professionnels
   imageUrl: https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80
   title: Accompagnement et défense des entreprises
   servicesTitle: Mes services
-  description: J'accompagne votre équipe RH dans la gestion de vos litiges et des
-    relations de travail au quotidien.
+  description: "*"
   seo:
     title: Services juridiques pour employeurs | Christine Rizzo Avocate
     description: Expertise en droit du travail pour les entreprises. Conseils,
