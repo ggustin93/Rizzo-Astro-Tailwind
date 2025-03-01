@@ -18,7 +18,7 @@ fr:
       cta: En savoir plus
     honoraires:
       title: Honoraires
-      intro: Des honoraires transparents et adaptés à votre situation
+      intro: Des honoraires transparents et adaptés à votre situation.
       linkText: En savoir plus
       advantages:
         - Devis détaillé et gratuit
@@ -84,7 +84,7 @@ en:
   expertise:
     title: Services
     description: I support and advise both employees and companies in their
-      day-to-day issues and employment-related projects.
+      employment-related day-to-day issues and projects.
     travailleurs:
       title: You are a worker
       description: I can help you at every stage of your career, whether it's a
@@ -98,7 +98,7 @@ en:
       cta: Learn More
     honoraires:
       intro: Transparent and tailored fees
-      linkText: learn more
+      linkText: Learn more
       advantages:
         - Detailed and free quote
         - Fixed rates for better predictability
@@ -108,7 +108,7 @@ en:
   hero:
     title: Christine Rizzo
     subtitle: Employment lawyer
-    description: Follow your case and my services online
+    description: Follow your case and my services online.
     cta: BOOK A CONSULTATION
   articlesTitle: Articles
   profil:
@@ -181,7 +181,7 @@ it:
   hero:
     title: Christine Rizzo
     subtitle: Avvocato del lavoro
-    description: Seguite il vostro caso e i miei servizi online
+    description: Seguite il vostro caso e i miei servizi online.
     cta: PRENOTA UNA CONSULZENZA LEGALE
   articlesTitle: Articoli
   profil:
