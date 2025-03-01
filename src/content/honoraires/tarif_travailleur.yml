@@ -1,162 +1,168 @@
 fr:
-  title: "Honoraires et tarifs"
-  backLinkText: "Retour aux honoraires"
-  contactText: "Pour plus d'informations sur nos tarifs ou pour obtenir un devis personnalisé, n'hésitez pas à nous contacter."
-  contactButton: "Nous contacter"
+  title: Honoraires et tarifs
+  backLinkText: Retour aux honoraires
+  contactText: Pour plus d'informations sur nos tarifs ou pour obtenir un devis
+    personnalisé, n'hésitez pas à nous contacter.
+  contactButton: Nous contacter
   includedServicesTitle: "Services inclus :"
   includedServicesDefault: "Services inclus : sur demande, adaptés à votre situation spécifique."
   services:
-    - title: "Mon licenciement contester - négocier"
+    - title: Mon licenciement contester - négocier
       icon: Briefcase
-      description: "Négociation amiable et/ou procédure pour motif grave, licenciement abusif, discriminatoire, manifestement déraisonnable"
-      pricing: "FORFAIT 1 mois de salaire fixe brut"
+      description: Négociation amiable et/ou procédure pour motif grave, licenciement
+        abusif, discriminatoire, manifestement déraisonnable
+      pricing: 290 € htva / mois +10% htva du résultat net obtenu
       details:
-        - "min = 3000 € htva"
-        - "max = 7000 € htva"
-        - "paiement mensualisé"
-        - "+10% htva du résultat obtenu (tva 21%)"
+        - soit 6960 € htva
+        - paiement mensualisé pendant 24 mois maximum
+        - tva 21%
       services:
-        - "Analyse du dossier"
-        - "Calcul des indemnités"
-        - "Négociation d'un accord (coaching si négociation par vous en direct)"
-        - "Rédaction ou revue de la transaction"
-        - "Introduction de la procédure"
-        - "Rédaction des conclusions"
-        - "Plaidoiries"
-        - "Vérification des documents de sortie"
-        - "Suivi de l'exécution"
-        - "Relations avec l'avocat adverse et la juridiction"
-    - title: "Calculer mon indemnité compensatoire de préavis"
+        - Analyse du dossier
+        - Calcul des indemnités
+        - Négociation d'un accord (coaching si négociation par vous en direct)
+        - Rédaction ou revue de la transaction
+        - Introduction de la procédure
+        - Rédaction des conclusions
+        - Plaidoiries
+        - Vérification des documents de sortie
+        - Suivi de l'exécution
+        - Relations avec l'avocat adverse et la juridiction
+    - title: Calculer mon indemnité compensatoire de préavis
       icon: FileText
-      pricing: "FORFAIT 130 € htva (tva 21%)"
+      pricing: FORFAIT 130 € htva (tva 21%)
       services:
-        - "Analyse des pièces"
-        - "Calcul de l'ICP"
-        - "Estimation du net"
-    - title: 
-        - "Harcèlement au travail"
-        - "Accident du travail"
+        - Analyse des pièces
+        - Calcul de l'ICP
+        - Estimation du net
+    - title:
+        - Harcèlement au travail
+        - Accident du travail
       icon: Shield
-      pricing: "FORFAIT Sur demande (TVA à 21%)"
-    - title: "Vérifier"
+      pricing: FORFAIT Sur demande (TVA à 21%)
+    - title: Vérifier
       icon: Check
-      pricing: 
+      pricing:
         - "Tarif horaire: 125 € htva"
-        - "Forfait sur demande (TVA à 21%)"
+        - Forfait sur demande (TVA à 21%)
       services:
-        - "Mon contrat de travail"
-        - "Ma clause de non concurrence"
-        - "La modification de mon contrat"
-        - "Mon statut"
-        - "Ma lettre de démission et durée de mon préavis"
-        - "Mon droit au congé parental, crédit-temps,…."
-        - "Les conditions de mon télétravail"
-        - "etc."
+        - Mon contrat de travail
+        - Ma clause de non concurrence
+        - La modification de mon contrat
+        - Mon statut
+        - Ma lettre de démission et durée de mon préavis
+        - Mon droit au congé parental, crédit-temps,….
+        - Les conditions de mon télétravail
+        - etc.
 en:
-  title: "Fees and rates"
-  backLinkText: "Back to fees"
-  contactText: "For more information on our rates or to get a personalized quote, please contact us."
-  contactButton: "Contact us"
+  title: Fees and rates
+  backLinkText: Back to fees
+  contactText: For more information on our rates or to get a personalized quote,
+    please contact us.
+  contactButton: Contact us
   includedServicesTitle: "Included services:"
   includedServicesDefault: "Included services: on request, tailored to your specific situation."
   services:
-    - title: "Challenge my dismissal - negotiate"
+    - title: Challenge my dismissal - negotiate
       icon: Briefcase
-      description: "Amicable negotiation and/or procedure for serious reasons, abusive, discriminatory, manifestly unreasonable dismissal"
-      pricing: "FLAT RATE 1 month of gross fixed salary"
+      description: Amicable negotiation and/or procedure for serious reasons, abusive,
+        discriminatory, manifestly unreasonable dismissal
+      pricing: FLAT RATE 1 month of gross fixed salary
       details:
-        - "min = 3000 € excl. VAT"
-        - "max = 7000 € excl. VAT"
-        - "monthly payment"
-        - "+10% excl. VAT of the result obtained (VAT 21%)"
+        - min = 3000 € excl. VAT
+        - max = 7000 € excl. VAT
+        - monthly payment
+        - +10% excl. VAT of the result obtained (VAT 21%)
       services:
-        - "File analysis"
-        - "Calculation of compensation"
-        - "Negotiation of an agreement (coaching if negotiation by you directly)"
-        - "Drafting or review of the transaction"
-        - "Introduction of the procedure"
-        - "Drafting of conclusions"
-        - "Pleadings"
-        - "Verification of exit documents"
-        - "Follow-up of execution"
-        - "Relations with the opposing lawyer and the court"
-    - title: "Calculate my compensatory notice indemnity"
+        - File analysis
+        - Calculation of compensation
+        - Negotiation of an agreement (coaching if negotiation by you directly)
+        - Drafting or review of the transaction
+        - Introduction of the procedure
+        - Drafting of conclusions
+        - Pleadings
+        - Verification of exit documents
+        - Follow-up of execution
+        - Relations with the opposing lawyer and the court
+    - title: Calculate my compensatory notice indemnity
       icon: FileText
-      pricing: "FLAT RATE 130 € excl. VAT (VAT 21%)"
+      pricing: FLAT RATE 130 € excl. VAT (VAT 21%)
       services:
-        - "Document analysis"
-        - "Calculation of ICP"
-        - "Net estimation"
-    - title: 
-        - "Workplace harassment"
-        - "Work accident"
+        - Document analysis
+        - Calculation of ICP
+        - Net estimation
+    - title:
+        - Workplace harassment
+        - Work accident
       icon: Shield
-      pricing: "FLAT RATE On request (VAT 21%)"
-    - title: "Verify"
+      pricing: FLAT RATE On request (VAT 21%)
+    - title: Verify
       icon: Check
-      pricing: 
+      pricing:
         - "Hourly rate: 125 € excl. VAT"
-        - "Flat rate on request (VAT 21%)"
+        - Flat rate on request (VAT 21%)
       services:
-        - "My employment contract"
-        - "My non-compete clause"
-        - "Modification of my contract"
-        - "My status"
-        - "My resignation letter and notice period"
-        - "My right to parental leave, time credit, etc."
-        - "Conditions of my telework"
-        - "etc."
+        - My employment contract
+        - My non-compete clause
+        - Modification of my contract
+        - My status
+        - My resignation letter and notice period
+        - My right to parental leave, time credit, etc.
+        - Conditions of my telework
+        - etc.
 it:
-  title: "Tariffe e onorari"
-  backLinkText: "Torna alle tariffe"
-  contactText: "Per ulteriori informazioni sulle nostre tariffe o per ottenere un preventivo personalizzato, non esitate a contattarci."
-  contactButton: "Contattaci"
+  title: Tariffe e onorari
+  backLinkText: Torna alle tariffe
+  contactText: Per ulteriori informazioni sulle nostre tariffe o per ottenere un
+    preventivo personalizzato, non esitate a contattarci.
+  contactButton: Contattaci
   includedServicesTitle: "Servizi inclusi:"
   includedServicesDefault: "Servizi inclusi: su richiesta, adattati alla vostra situazione specifica."
   services:
-    - title: "Contestare il mio licenziamento - negoziare"
+    - title: Contestare il mio licenziamento - negoziare
       icon: Briefcase
-      description: "Negoziazione amichevole e/o procedura per motivo grave, licenziamento abusivo, discriminatorio, manifestamente irragionevole"
-      pricing: "TARIFFA FISSA 1 mese di stipendio fisso lordo"
+      description: Negoziazione amichevole e/o procedura per motivo grave,
+        licenziamento abusivo, discriminatorio, manifestamente irragionevole
+      pricing: TARIFFA FISSA 1 mese di stipendio fisso lordo
       details:
-        - "min = 3000 € escl. IVA"
-        - "max = 7000 € escl. IVA"
-        - "pagamento mensile"
-        - "+10% escl. IVA del risultato ottenuto (IVA 21%)"
+        - min = 3000 € escl. IVA
+        - max = 7000 € escl. IVA
+        - pagamento mensile
+        - +10% escl. IVA del risultato ottenuto (IVA 21%)
       services:
-        - "Analisi del dossier"
-        - "Calcolo delle indennità"
-        - "Negoziazione di un accordo (coaching se negoziazione diretta da parte vostra)"
-        - "Redazione o revisione della transazione"
-        - "Introduzione della procedura"
-        - "Redazione delle conclusioni"
-        - "Arringhe"
-        - "Verifica dei documenti di uscita"
-        - "Follow-up dell'esecuzione"
-        - "Relazioni con l'avvocato avversario e il tribunale"
-    - title: "Calcolare la mia indennità di preavviso compensativa"
+        - Analisi del dossier
+        - Calcolo delle indennità
+        - Negoziazione di un accordo (coaching se negoziazione diretta da parte
+          vostra)
+        - Redazione o revisione della transazione
+        - Introduzione della procedura
+        - Redazione delle conclusioni
+        - Arringhe
+        - Verifica dei documenti di uscita
+        - Follow-up dell'esecuzione
+        - Relazioni con l'avvocato avversario e il tribunale
+    - title: Calcolare la mia indennità di preavviso compensativa
       icon: FileText
-      pricing: "TARIFFA FISSA 130 € escl. IVA (IVA 21%)"
+      pricing: TARIFFA FISSA 130 € escl. IVA (IVA 21%)
       services:
-        - "Analisi dei documenti"
-        - "Calcolo dell'ICP"
-        - "Stima del netto"
-    - title: 
-        - "Molestie sul lavoro"
-        - "Infortunio sul lavoro"
+        - Analisi dei documenti
+        - Calcolo dell'ICP
+        - Stima del netto
+    - title:
+        - Molestie sul lavoro
+        - Infortunio sul lavoro
       icon: Shield
-      pricing: "TARIFFA FISSA Su richiesta (IVA 21%)"
-    - title: "Verificare"
+      pricing: TARIFFA FISSA Su richiesta (IVA 21%)
+    - title: Verificare
       icon: Check
-      pricing: 
+      pricing:
         - "Tariffa oraria: 125 € escl. IVA"
-        - "Tariffa forfettaria su richiesta (IVA 21%)"
+        - Tariffa forfettaria su richiesta (IVA 21%)
       services:
-        - "Il mio contratto di lavoro"
-        - "La mia clausola di non concorrenza"
-        - "La modifica del mio contratto"
-        - "Il mio status"
-        - "La mia lettera di dimissioni e il periodo di preavviso"
-        - "Il mio diritto al congedo parentale, credito di tempo, ecc."
-        - "Le condizioni del mio telelavoro"
-        - "ecc."
+        - Il mio contratto di lavoro
+        - La mia clausola di non concorrenza
+        - La modifica del mio contratto
+        - Il mio status
+        - La mia lettera di dimissioni e il periodo di preavviso
+        - Il mio diritto al congedo parentale, credito di tempo, ecc.
+        - Le condizioni del mio telelavoro
+        - ecc.
