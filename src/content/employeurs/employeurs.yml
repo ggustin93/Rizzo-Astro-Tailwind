@@ -98,13 +98,21 @@ en:
     - employer defense labor court
     - workplace dispute resolution Belgium
     - personalized legal support for businesses
+  questions:
+    - First engagement in Belgium
+    - "Employee or self-employed contracts (and bogus self-employed) "
+    - Resignations and dismissals
+    - Protections against dismissal
+    - Packages, bonuses
+    - Flexible working hours, teleworking, right to disconnection
+    - Managing (long-term) absences
+    - Well-being at work (harassment and other psychosocial risks)
+    - Discrimination
   imageAlt: Professional handshake
   imageUrl: https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80
-  title: Support and Defense for Companies
+  title: Legal counsel and defense for employers
   servicesTitle: My Services
-  description: "Experienced in negotiations and courtrooms, with expertise gained
-    from international clients, I assist your HR team in managing your disputes
-    and daily work relationships:"
+  description: "*"
   seo:
     title: Legal Services for Employers | Christine Rizzo Lawyer
     description: Labor law expertise for companies. Legal advice, defense, and
@@ -127,7 +135,7 @@ en:
     - icon: Shield
       text: Defense before labor courts and tribunals, and labor and social security
         inspections
-  conclusion: "***"
+  conclusion: "\n\n\n\n\n\n"
 it:
   topics:
     - Prima assunzione in Belgio
