@@ -7,7 +7,7 @@ fr:
   includedServicesTitle: "Services inclus :"
   includedServicesDefault: "Services inclus : sur demande, adaptés à votre situation spécifique."
   services:
-    - title: Mon licenciement contester - négocier
+    - title: "Mon licenciement: contester - négocier"
       icon: Briefcase
       description: Négociation amiable et/ou procédure pour motif grave, licenciement
         abusif, discriminatoire, manifestement déraisonnable
@@ -38,11 +38,6 @@ fr:
         - Analyse des pièces
         - Calcul de l'ICP
         - Estimation du net
-    - title:
-        - Harcèlement au travail
-        - Accident du travail
-      icon: Shield
-      pricing: FORFAIT Sur demande (TVA à 21%)
     - title: Vérifier
       icon: Check
       pricing:
