@@ -14,12 +14,12 @@ fr:
       pricing: FORFAIT de 290 € htva / mois pendant 24 mois (soit 6.960 € htva) + 10%
         htva du résultat net obtenu
       details:
-        - Facturation des heures prestées au tarif horaire convenhu en cas
-          d'accord amiable conclu entre les parties
+        - Facturation des heures prestées au tarif horaire convenu en cas
+          d'accord amiable conclu entre les parties.
         - L'honoraire de résultat est calculé sur tous les montants nets obtenus
           suite à un accord ou une décision judiciaire et facturé après le
-          paiement par la partie adverse
-        - tva 21%
+          paiement par la partie adverse.
+        - La tva est de 21%.
       services:
         - Analyse du dossier
         - Calcul des indemnités
