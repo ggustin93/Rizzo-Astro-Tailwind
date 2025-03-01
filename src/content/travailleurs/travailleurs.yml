@@ -83,21 +83,21 @@ it:
   title: Consiglio e difesa dei lavoratori
   description: "*"
   questions:
-    - Vuole far rileggere il vostro contratto di lavoro?
-    - "Il suo datore di lavoro Le propone licenziamento concordato ma non è
-      sicuro se è nel Suo interesse? "
+    - Vuole far controllare un contratto di lavoro prima di firmarlo ?
+    - "Il datore di lavoro Le propone un licenziamento concordato ma non sa se è
+      nel propio interesse? "
     - Vuole dare le dimissioni?
-    - Intende contestare il suo licenziamento (motivo insufficiente, abusivo o
+    - Intende contestare il licenziamento (motivo insufficiente, abusivo o
       discriminatorio)?
-    - Vuole fare verificare il calcolo dell'indennità di licenziamento ?
+    - Vuole fare verificare il calcolo dell'Indennità sostitutiva del preavviso
+      e degli altri importi di fine rapporto??
     - Le condizioni di lavoro sono cambiate durante o a causa della gravidanza?
-      Desidera prendere il congedo parentale?
-    - "Sei vittima di discriminazione o molestie? Stai per essere messo da
-      parte? "
-    - Soffri di esaurimento?
-    - Siete vittime di un infortunio sul lavoro?
-    - La tua situazione non è chiara? Sei un imprenditore indipendente, ma pensi
-      di dover essere riclassificato come dipendente?
+      Desidera prendere un congedo parentale?
+    - É vittima di discriminazione o molestie? Soffri di esaurimento (burn out)
+      professionale ?
+    - Ha avuto un infortunio sul lavoro?
+    - La Sua situazione non è chiara? pensa di dover essere riclassificato come
+      dipendente (lavoro subordinato)?
   servicesTitle: I miei servizi
   services:
     - icon: BriefCase
