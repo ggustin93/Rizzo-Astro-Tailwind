@@ -325,12 +325,12 @@ collections:
             fields: *profileFields
 
   # Pages légales
-  - name: "legal"
-    label: "Mentions légales"
+  - name: "legal-pages"
+    label: "Pages légales"
     files:
       - file: "src/content/legal/legal.yml"
-        name: "legal"
-        label: "Contenu des mentions légales"
+        name: "legal-notice"
+        label: "Mentions légales"
         i18n:
           structure: single_file
         fields:
@@ -354,12 +354,9 @@ collections:
             widget: "object"
             fields: *legalFields
 
-  - name: "privacy"
-    label: "Politique de confidentialité"
-    files:
       - file: "src/content/privacy/privacy.yml"
-        name: "privacy"
-        label: "Contenu de la politique de confidentialité"
+        name: "privacy-policy"
+        label: "Politique de confidentialité"
         i18n:
           structure: single_file
         fields:
@@ -383,12 +380,9 @@ collections:
             widget: "object"
             fields: *privacyFields
 
-  - name: "legal-info"
-    label: "Informations légales"
-    files:
       - file: "src/content/legal-info/legal-info.yml"
         name: "legal-info"
-        label: "Contenu des informations légales"
+        label: "Infos légales & CGV"
         i18n:
           structure: single_file
         fields:
