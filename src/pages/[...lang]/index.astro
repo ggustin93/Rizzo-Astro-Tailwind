@@ -4,10 +4,13 @@ import { getEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTA from '../../components/CTA.astro';
 import { CheckCircle } from 'astro-feather-icons';
+import { ChevronDown } from 'astro-feather-icons2';
+import { Calendar } from 'astro-feather-icons';
 import { getArticles } from '../../utils/articles';
 import ArticleCard from '../../components/ArticleCard.astro';
 import { Picture, Image } from 'astro:assets';
 import SEO from '../../components/SEO.astro';
+import Button from '../../components/Button.astro';
 
 // Import des images locales
 import heroImage from '../../assets/images/hero_image_wbg.svg';
@@ -36,6 +39,7 @@ const content = homeEntry.data[lang as keyof typeof homeEntry.data] || homeEntry
 // Récupérer la configuration du site
 const siteConfigEntry = await getEntry('config', 'site-config');
 const showArticlesSection = siteConfigEntry?.data?.sectionsVisibility?.articlesSection || false;
+const calendarLink = siteConfigEntry?.data?.calendarConfig?.calendarLink || 'https://cal.com/pwablo/30min';
 
 if (!content || !content.expertise || !content.expertise.travailleurs) {
   console.error('Structure de contenu invalide:', content);
@@ -55,22 +59,35 @@ function generateUniqueId(prefix: string) {
 
 <BaseLayout title={title} description={description} keywords={keywords} image={image} lang={currentLang}>  
   <div class="full-bleed bg-white bg-svg-pattern">
-    <section class="py-6 md:py-10">
+    <section class="py-6 md:py-10 relative">
       <div class="container mx-auto px-4 flex flex-col items-center md:flex-row md:items-center md:justify-between">
         <div class="w-full md:w-1/2 text-center md:text-left">
           <h1 class="text-5xl md:text-6xl lg:text-7xl font-light mb-2 md:mb-3 text-gray-800">{content.hero.title}</h1>
           <h2 class="text-3xl md:text-4xl lg:text-5xl mb-3 md:mb-4 text-accent font-light">{content.hero.subtitle}</h2>
           <p class="mb-5 md:mb-6 text-sm md:text-base text-dark-gray max-w-xl mx-auto md:mx-0 font-light leading-relaxed">{content.hero.description}</p>
-          <button 
-            class="w-auto min-w-[200px] max-w-[80%] mx-auto md:mx-0 bg-transparent text-black border border-dark-gray px-4 py-2 md:px-6 md:py-3 rounded-sm hover:bg-gray-700 hover:text-white transition duration-300 uppercase text-sm md:text-base font-light mb-3 md:mb-0" 
-            aria-label="Call to action"
-            data-cal-link="c.rizzo-avocat.be/premier-contact"
-            data-cal-config='{"layout":"month_view"}'
-          >
-            {content.hero.cta}
-          </button>
+          <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start space-y-3 sm:space-y-0 sm:space-x-4">
+            <Button 
+              text={content.hero.cta}
+              variant="primary"
+              icon={Calendar}
+              iconPosition="left"
+              ariaLabel="Call to action"
+              dataAttr={{
+                "cal-link": calendarLink.replace('https://cal.com/', ''),
+                "cal-config": '{"layout":"month_view"}'
+              }}
+              class="w-auto min-w-[200px]"
+            />
+            <Button 
+              text={uiTranslations.learnMore}
+              variant="secondary"
+              icon={ChevronDown}
+              onClick="document.getElementById('expertise').scrollIntoView({behavior: 'smooth'})"
+              class="font-medium min-w-[120px]"
+            />
+          </div>
         </div>
-        <div class="w-full md:w-1/2 flex justify-center md:justify-end mt-1 md:mt-0">
+        <div class="w-full md:w-1/2 flex justify-center md:justify-end mt-6 md:mt-0">
           <Picture 
             src={heroImage} 
             formats={['avif', 'webp']} 
@@ -87,7 +104,7 @@ function generateUniqueId(prefix: string) {
   </div>
 
   <div class="full-bleed bg-beige">
-    <section id="services" class="py-10 md:py-14">
+    <section id="expertise" class="py-10 md:py-14">
       <div class="container px-4">
         <div class="flex items-center mb-6 justify-center">
           <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
@@ -105,9 +122,12 @@ function generateUniqueId(prefix: string) {
               <h3 class="text-xl font-semibold mb-4">{content.expertise.travailleurs.title}</h3>
               <p class="font-light mb-4">{content.expertise.travailleurs.description}</p>
             </div>
-            <a href={`/${lang}/services/travailleurs`} class="self-end bg-white text-travailleur px-4 py-2 rounded-sm hover:bg-gray-800 hover:text-white transition duration-300 mt-4">
-              {content.expertise.travailleurs.cta} →
-            </a>
+            <Button 
+              href={`/${lang}/services/travailleurs`}
+              text={`${content.expertise.travailleurs.cta} →`} 
+              variant="secondary"
+              class="self-end bg-white text-travailleur hover:bg-gray-800 hover:text-white border-white"
+            />
           </div>
           
           <div class="md:w-1/2 bg-employeur p-6 rounded-sm text-white flex flex-col justify-between">
@@ -115,9 +135,12 @@ function generateUniqueId(prefix: string) {
               <h3 class="text-xl font-semibold mb-4">{content.expertise.employeurs.title}</h3>
               <p class="font-light mb-4">{content.expertise.employeurs.description}</p>
             </div>
-            <a href={`/${lang}/services/employeurs`} class="self-end bg-white text-employeur px-4 py-2 rounded-sm hover:bg-gray-800 hover:text-white transition duration-300 mt-4">
-              {content.expertise.employeurs.cta} →
-            </a>
+            <Button 
+              href={`/${lang}/services/employeurs`}
+              text={`${content.expertise.employeurs.cta} →`} 
+              variant="secondary"
+              class="self-end bg-white text-employeur hover:bg-gray-800 hover:text-white border-white"
+            />
           </div>
         </div>
 
@@ -172,12 +195,12 @@ function generateUniqueId(prefix: string) {
             <div class="md:w-2/5 w-full mt-4 md:mt-0 text-center md:text-left">
               <p class="text-dark-gray font-light leading-relaxed mb-6">{content.profil.description}</p>
               <div class="flex justify-center md:justify-start">
-                <a 
+                <Button 
                   href={`/${lang}/profil`} 
-                  class="inline-block bg-transparent text-dark-gray border border-dark-gray px-4 md:px-6 py-2 md:py-3 rounded-sm hover:bg-gray-700 hover:text-white transition duration-300 uppercase text-sm font-light"
-                >
-                {content.profil.cta}
-              </a>
+                  text={content.profil.cta}
+                  variant="secondary"
+                  class="uppercase text-sm font-light"
+                />
               </div>
             </div>
           </div>
@@ -209,9 +232,12 @@ function generateUniqueId(prefix: string) {
             ))}
           </div>
           <div class="text-center mt-12">
-            <a href={`/${currentLang}/blog`} class="inline-block bg-transparent text-dark-gray border border-dark-gray px-4 md:px-6 py-2 md:py-3 rounded-sm hover:bg-gray-700 hover:text-white transition duration-300 uppercase text-sm font-light">
-              {content.viewAllArticles} →
-            </a>
+            <Button 
+              href={`/${currentLang}/blog`} 
+              text={`${content.viewAllArticles} →`}
+              variant="secondary"
+              class="uppercase text-sm font-light"
+            />
           </div>
         </div>
       </section>
@@ -219,3 +245,17 @@ function generateUniqueId(prefix: string) {
   )}
 
 </BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const scrollBtn = document.querySelector('.scroll-btn');
+    if (scrollBtn) {
+      scrollBtn.addEventListener('click', () => {
+        const servicesSection = document.getElementById('services');
+        if (servicesSection) {
+          servicesSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    }
+  });
+</script>

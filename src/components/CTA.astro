@@ -2,9 +2,14 @@
 import { Image } from 'astro:assets';
 import { Calendar, Mail, Phone, MessageCircle } from 'astro-feather-icons';
 import ctaIllustration from '../assets/images/illustration_cta_2.svg';
+import { getEntry } from 'astro:content';
 
 const { pathname } = Astro.url;
 const lang = pathname.split('/')[1] || 'fr';
+
+// Récupérer la configuration du site pour le lien Cal.com
+const siteConfigEntry = await getEntry('config', 'site-config');
+const calendarLink = siteConfigEntry?.data?.calendarConfig?.calendarLink || 'https://cal.com/pwablo/30min';
 
 const translations = {
   fr: {
@@ -77,7 +82,7 @@ const handleAction = (type: string, action: string) => {
                 <button
                   class="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-4 hover:bg-travailleur transition-colors duration-300 group cursor-pointer"
                   onclick={handleAction(type, action)}
-                  data-cal-link={type === 'appointment' ? "c.rizzo-avocat.be/premier-contact" : undefined}
+                  data-cal-link={type === 'appointment' ? calendarLink.replace('https://cal.com/', '') : undefined}
                   data-cal-config={type === 'appointment' ? '{"layout":"month_view"}' : undefined}
                 >
                   <Icon class="w-12 h-12 text-employeur group-hover:text-white transition-colors duration-300 pointer-events-none" />

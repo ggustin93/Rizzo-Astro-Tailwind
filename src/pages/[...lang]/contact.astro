@@ -16,6 +16,10 @@ const { lang } = Astro.params;
 const contactEntry = await getEntry('contact', 'contact');
 const contactData = contactEntry.data[lang];
 
+// Récupérer la configuration du site pour le lien Cal.com
+const siteConfigEntry = await getEntry('config', 'site-config');
+const calendarLink = siteConfigEntry?.data?.calendarConfig?.calendarLink || 'https://cal.com/pwablo/30min';
+
 const iconComponents = {
   calendar: Calendar,
   mail: Mail,
@@ -73,7 +77,7 @@ const seoData = {
                   <button
                     onclick={handleAction(button.type, button.action || button.subtext)}
                     class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4 hover:bg-travailleur transition-colors duration-300 group shadow-md cursor-pointer"
-                    data-cal-link={button.type === 'appointment' ? "c.rizzo-avocat.be/premier-contact" : undefined}
+                    data-cal-link={button.type === 'appointment' ? calendarLink.replace('https://cal.com/', '') : undefined}
                     data-cal-config={button.type === 'appointment' ? '{"layout":"month_view"}' : undefined}
                   >
                     <IconComponent class="w-9 h-9 text-employeur group-hover:text-white transition-colors duration-300 pointer-events-none" />
