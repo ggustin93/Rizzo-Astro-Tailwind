@@ -1,0 +1,72 @@
+---
+export interface Props {
+  text: string;
+  href?: string;
+  variant?: 'primary' | 'secondary';
+  class?: string;
+  onClick?: string;
+  icon?: any;
+  iconPosition?: 'left' | 'right';
+  type?: 'button' | 'submit' | 'reset';
+  ariaLabel?: string;
+  id?: string;
+  dataAttr?: Record<string, string>;
+}
+
+const { 
+  text, 
+  href, 
+  variant = 'secondary', 
+  class: className = '',
+  onClick,
+  icon: Icon = null,
+  iconPosition = 'right',
+  type = 'button',
+  ariaLabel,
+  id,
+  dataAttr = {}
+} = Astro.props;
+
+// Define styles based on variant
+const baseStyles = "inline-block rounded-lg uppercase text-sm font-medium transition duration-300";
+const variantStyles = {
+  primary: "bg-travailleur text-white border border-travailleur hover:bg-opacity-90 shadow-sm px-4 py-2 md:px-6 md:py-3",
+  secondary: "bg-transparent text-gray-800 border border-gray-500 hover:bg-gray-700 hover:text-white px-4 py-2 md:px-6 md:py-3"
+};
+
+// Combine styles
+const styles = `${baseStyles} ${variantStyles[variant]} ${className}`;
+
+// Handle data attributes
+const dataAttributes = Object.entries(dataAttr).reduce((acc, [key, value]) => {
+  acc[`data-${key}`] = value;
+  return acc;
+}, {} as Record<string, string>);
+---
+
+{href ? (
+  <a 
+    href={href} 
+    class={styles}
+    aria-label={ariaLabel || text}
+    id={id}
+    {...dataAttributes}
+  >
+    {iconPosition === 'left' && Icon && <Icon class="w-4 h-4 mr-2 inline-block" />}
+    <span class="inline-block">{text}</span>
+    {iconPosition === 'right' && Icon && <Icon class="w-4 h-4 ml-2 inline-block" />}
+  </a>
+) : (
+  <button 
+    type={type}
+    class={styles}
+    onclick={onClick}
+    aria-label={ariaLabel || text}
+    id={id}
+    {...dataAttributes}
+  >
+    {iconPosition === 'left' && Icon && <Icon class="w-4 h-4 mr-2 inline-block" />}
+    <span class="inline-block">{text}</span>
+    {iconPosition === 'right' && Icon && <Icon class="w-4 h-4 ml-2 inline-block" />}
+  </button>
+)} 

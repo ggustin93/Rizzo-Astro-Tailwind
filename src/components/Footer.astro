@@ -3,9 +3,14 @@ import { Image } from 'astro:assets';
 import { Phone, Mail, MapPin, ChevronDown } from 'astro-feather-icons2';
 import logoImage from '../assets/images/logo_crizzo_calli3.svg';
 import logoPwablo from '../assets/images/logo_pwablo.svg';
+import { getEntry } from 'astro:content';
 
 const { pathname } = Astro.url;
 const currentLang = pathname.split('/')[1] || 'fr';
+
+// Récupérer la configuration du site
+const siteConfigEntry = await getEntry('config', 'site-config');
+const showArticlesSection = siteConfigEntry?.data?.sectionsVisibility?.articlesSection || false;
 
 const translations = {
   fr: {
@@ -59,12 +64,55 @@ const t = translations[currentLang as keyof typeof translations] || translations
 
 const isHomePage = pathname === `/${currentLang}` || pathname === `/${currentLang}/`;
 
+// Fonction pour vérifier si un lien est actif
+const isActivePage = (href: string) => {
+  // Si c'est la page d'accueil
+  if (href === `/${currentLang}` && isHomePage) {
+    return true;
+  }
+  
+  // Cas spécial pour le lien "profil"
+  if (href.includes('#profil') && pathname === `/${currentLang}/profil`) {
+    return true;
+  }
+  
+  // Ignorer les autres liens avec ancre pour l'activation
+  if (href.includes('#')) {
+    return false;
+  }
+  
+  // Pour les autres pages, vérifier exactement le chemin
+  const hrefPath = href.split('#')[0]; // Enlever l'ancre
+  return pathname === hrefPath;
+};
+
+// Liens principaux du menu
 const mainLinks = [
-  { href: isHomePage ? "#expertise" : `/${currentLang}#expertise`, label: t.expertise.toUpperCase() },
-  { href: isHomePage ? "#profil" : `/${currentLang}#profil`, label: t.profil.toUpperCase() },
-  { href: isHomePage ? "#honoraires" : `/${currentLang}#honoraires`, label: t.honoraires.toUpperCase() },
-  { href: isHomePage ? "#articles" : `/${currentLang}#articles`, label: t.articles.toUpperCase() },
-  { href: isHomePage ? "#contact" : `/${currentLang}#contact`, label: t.contact.toUpperCase() },
+  { 
+    href: isHomePage ? "#expertise" : `/${currentLang}#expertise`, 
+    label: t.expertise.toUpperCase(),
+    isActive: pathname.includes('/services/')
+  },
+  { 
+    href: isHomePage ? "#profil" : `/${currentLang}/profil`, 
+    label: t.profil.toUpperCase(),
+    isActive: pathname === `/${currentLang}/profil`
+  },
+  { 
+    href: `/${currentLang}/honoraires`, 
+    label: t.honoraires.toUpperCase(),
+    isActive: pathname === `/${currentLang}/honoraires`
+  },
+  ...(showArticlesSection ? [{ 
+    href: `/${currentLang}/blog`, 
+    label: t.articles.toUpperCase(),
+    isActive: pathname === `/${currentLang}/blog` || pathname.includes(`/${currentLang}/blog/`) 
+  }] : []),
+  { 
+    href: `/${currentLang}/contact`, 
+    label: t.contact.toUpperCase(),
+    isActive: pathname === `/${currentLang}/contact`
+  },
 ];
 
 const legalLinks = [
@@ -75,40 +123,54 @@ const legalLinks = [
 
 ---
 
-<footer class="bg-beige text-dark-gray py-4 md:py-8">
+<footer class="bg-beige text-dark-gray py-6 md:py-10">
   <div class="container mx-auto px-4">
     <div class="flex flex-wrap justify-between items-start">
-      <div class="w-full md:w-1/3 mb-4 md:mb-0 pr-8 flex justify-center md:justify-start items-center md:items-start md:self-start">
+      <div class="w-full md:w-1/3 mb-6 md:mb-0 pr-4 flex justify-center md:justify-start items-center md:items-start md:self-start">
         <Image src={logoImage} alt="Christine Rizzo Logo" class="h-48 md:h-96 w-auto mt-0 md:mt-[-4rem]" />
       </div>
       
-      <div class="w-full md:w-1/5 mt-8 xs:mt-0 mb-8  md:mb-0">
-        <h3 class="font-medium mb-4 text-lg hidden md:block">{t.menu}</h3>
-        <ul class="space-y-2 hidden md:block">
+      <div class="w-full md:w-1/5 mt-6 mb-6 md:mb-0">
+        <h3 class="font-medium mb-5 text-xl hidden md:block">{t.menu}</h3>
+        <ul class="space-y-3 hidden md:block">
           {mainLinks.map(link => (
-            <li><a href={link.href} class="text-sm hover:underline transition-colors duration-300 hover:text-travailleur">{link.label}</a></li>
+            <li>
+              <a 
+                href={link.href} 
+                class={`text-base hover:underline transition-colors duration-300 hover:text-travailleur ${link.isActive ? 'font-medium' : ''}`}
+              >
+                {link.label}
+              </a>
+            </li>
           ))}
         </ul>
         <details class="md:hidden">
-          <summary class="font-medium mb-4 text-lg flex justify-between items-center cursor-pointer text-center">
+          <summary class="font-medium mb-4 text-xl flex justify-between items-center cursor-pointer text-center">
             <span class="w-full">{t.menu}</span>
             <ChevronDown class="w-5 h-5 absolute right-0" />
           </summary>
-          <ul class="space-y-2 mt-2 text-center">
+          <ul class="space-y-3 mt-3 text-center">
             {mainLinks.map(link => (
-              <li><a href={link.href} class="text-sm hover:underline">{link.label}</a></li>
+              <li>
+                <a 
+                  href={link.href} 
+                  class={`text-base hover:underline ${link.isActive ? 'font-medium' : ''}`}
+                >
+                  {link.label}
+                </a>
+              </li>
             ))}
           </ul>
         </details>
       </div>
       
-      <div class="w-full md:w-1/5 mb-8 mt-8 xs:mt-0 md:mb-0">
-        <h3 class="font-medium mb-4 text-lg hidden md:block">{t.contact}</h3>
+      <div class="w-full md:w-1/5 mb-6 mt-6 md:mb-0">
+        <h3 class="font-medium mb-5 text-xl hidden md:block">{t.contact}</h3>
         <div class="hidden md:block">
-          <p class="text-sm flex items-center mb-2"><Phone class="w-4 h-4 mr-2" /> +32 488 40 45 49</p>
-          <p class="text-sm flex items-center mb-2"><Mail class="w-4 h-4 mr-2" /> c.rizzo@avocat.be</p>
-          <p class="text-sm flex items-start">
-            <MapPin class="w-4 h-4 mr-2 mt-1" /> 
+          <p class="text-base flex items-center mb-3"><Phone class="w-5 h-5 mr-3" /> +32 488 40 45 49</p>
+          <p class="text-base flex items-center mb-3"><Mail class="w-5 h-5 mr-3" /> c.rizzo@avocat.be</p>
+          <p class="text-base flex items-start">
+            <MapPin class="w-5 h-5 mr-3 mt-1" /> 
             <span>
               Chaussée de Waterloo 1151,<br/>
               1180 Bruxelles
@@ -116,14 +178,14 @@ const legalLinks = [
           </p>
         </div>
         <details class="md:hidden">
-          <summary class="font-medium mb-4 text-lg flex justify-between items-center cursor-pointer text-center">
+          <summary class="font-medium mb-4 text-xl flex justify-between items-center cursor-pointer text-center">
             <span class="w-full">{t.contact}</span>
             <ChevronDown class="w-5 h-5 absolute right-0" />
           </summary>
-          <div class="mt-2 text-center">
-            <p class="text-sm mb-2">+32 488 40 45 49</p>
-            <p class="text-sm mb-2">c.rizzo@avocat.be</p>
-            <p class="text-sm">
+          <div class="mt-3 text-center">
+            <p class="text-base mb-3">+32 488 40 45 49</p>
+            <p class="text-base mb-3">c.rizzo@avocat.be</p>
+            <p class="text-base">
               Chaussée de Waterloo 1151,<br/>
               1180 Bruxelles
             </p>
@@ -131,24 +193,24 @@ const legalLinks = [
         </details>
       </div>
       
-      <div class="w-full md:w-1/5 mb-8 mt-8 xs:mt-0 md:mb-0">
-        <h3 class="font-medium mb-4 text-lg hidden md:block">{t.ecoDesignPwablo}</h3>
+      <div class="w-full md:w-1/5 mb-6 mt-6 md:mb-0">
+        <h3 class="font-medium mb-5 text-xl hidden md:block">{t.ecoDesignPwablo}</h3>
         <div class="hidden md:block">
-          <a href="https://www.websitecarbon.com/website/crizzo-avocate-be-fr/" class="text-sm hover:underline mb-2 block">{t.ecoDesign}</a>
+          <a href="https://www.websitecarbon.com/website/crizzo-avocate-be-fr/" class="text-base hover:underline mb-3 block">{t.ecoDesign}</a>
           <a href="https://pwablo.be" class="hover:underline flex flex-col items-start">
-            <span class="text-sm mb-2">{t.design}</span>
-            <Image src={logoPwablo} alt="Pwablo Logo" class="h-20 my-2  w-auto bg-white p-2" />
+            <span class="text-base mb-3">{t.design}</span>
+            <Image src={logoPwablo} alt="Pwablo Logo" class="h-20 my-2 w-auto bg-white p-2" />
           </a>
         </div>
         <details class="md:hidden">
-          <summary class="font-medium mb-4 text-lg flex justify-between items-center cursor-pointer text-center">
+          <summary class="font-medium mb-4 text-xl flex justify-between items-center cursor-pointer text-center">
             <span class="w-full">{t.ecoDesignPwablo}</span>
             <ChevronDown class="w-5 h-5 absolute right-0" />
           </summary>
-          <div class="mt-2 text-center">
-            <a href="https://www.ecoindex.fr/resultat/?id=19de93fb-067c-4682-a25e-e37636dd5e6d" class="text-sm hover:underline mb-2 block">{t.ecoDesign}</a>
+          <div class="mt-3 text-center">
+            <a href="https://www.websitecarbon.com/website/crizzo-avocate-be-fr/" class="text-base hover:underline mb-3 block">{t.ecoDesign}</a>
             <a href="https://pwablo.be" class="hover:underline flex flex-col items-center">
-              <span class="text-sm mb-2">{t.design}</span>
+              <span class="text-base mb-3">{t.design}</span>
               <Image src={logoPwablo} alt="Pwablo Logo" class="h-20 my-4 w-auto bg-white p-2" />
             </a>
           </div>
@@ -156,14 +218,15 @@ const legalLinks = [
       </div>
     </div>
     
-    <div class="mt-4 pt-4 border-t border-gray-300 text-center">
-      <p class="text-sm mb-4">{t.copyright}</p>
-      <p class="text-xs">
-        <a href={legalLinks[0].href} class="hover:underline">{legalLinks[0].label}</a>
-        <span class="mx-2">|</span>
-        <a href={legalLinks[1].href} class="hover:underline">{legalLinks[1].label}</a>
-        <span class="mx-2">|</span>
-        <a href={legalLinks[2].href} class="hover:underline">{legalLinks[2].label}</a>
+    <div class="mt-6 pt-4 border-t border-gray-300 text-center">
+      <p class="text-base mb-4">{t.copyright}</p>
+      <p class="text-sm">
+        {legalLinks.map((link, index) => (
+          <>
+            <a href={link.href} class="hover:underline">{link.label}</a>
+            {index < legalLinks.length - 1 && <span class="mx-2">|</span>}
+          </>
+        ))}
       </p>
     </div>
   </div>
@@ -176,6 +239,7 @@ const legalLinks = [
     }
     details[open] summary .w-5 {
       transform: rotate(180deg);
+      transition: transform 0.3s ease;
     }
     details > summary {
       list-style: none;
@@ -184,5 +248,65 @@ const legalLinks = [
     details > summary::-webkit-details-marker {
       display: none;
     }
+    details .w-5 {
+      transition: transform 0.3s ease;
+    }
   }
 </style>
+
+<script is:inline>
+  // Smooth scrolling for anchor links - improved version
+  document.addEventListener('click', function(e) {
+    const link = e.target.closest('a');
+    if (!link) return;
+    
+    const href = link.getAttribute('href');
+    if (!href || !href.includes('#')) return;
+    
+    const isCurrentPage = link.pathname === window.location.pathname || 
+                          !link.pathname || 
+                          link.pathname === '/';
+
+    // Only handle anchor links on the current page
+    if (!isCurrentPage && !href.startsWith('#')) return;
+
+    const hash = href.includes('#') ? href.substring(href.indexOf('#')) : '';
+    if (!hash) return;
+    
+    const targetElement = document.querySelector(hash);
+    if (!targetElement) return;
+    
+    e.preventDefault();
+    
+    // Safari-friendly animation
+    const headerOffset = 0;
+    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    
+    const duration = 300;
+    let startTime = null;
+    
+    function easeOutCubic(t) {
+      return 1 - Math.pow(1 - t, 3);
+    }
+    
+    function step(currentTime) {
+      if (startTime === null) {
+        startTime = currentTime;
+      }
+      
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeOutCubic(progress);
+      
+      window.scrollTo(0, startPosition + distance * easedProgress);
+      
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    }
+    
+    window.requestAnimationFrame(step);
+  });
+</script>

@@ -18,6 +18,7 @@ export const uiTranslations = {
       call: "Appeler",
       whatsapp: "WhatsApp",
       email: "Email",
+      learnMore: "En savoir plus",
 
       // Ajoutez d'autres traductions UI nécessaires ici
     },
@@ -38,6 +39,7 @@ export const uiTranslations = {
       call: "Call",
       whatsapp: "WhatsApp",
       email: "Email",
+      learnMore: "Learn more",
       // Ajoutez d'autres traductions UI nécessaires ici
     },
     it: {
@@ -57,6 +59,7 @@ export const uiTranslations = {
       call: "Chiamare",
       whatsapp: "WhatsApp",
       email: "Email",
+      learnMore: "Scopri di più",
       // Ajoutez d'autres traductions UI nécessaires ici
     }
   };
