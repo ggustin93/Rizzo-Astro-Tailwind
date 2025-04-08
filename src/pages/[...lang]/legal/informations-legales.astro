@@ -1,0 +1,55 @@
+import { getEntry } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const legalInfoEntry = await getEntry('legal-info', 'legal-info');
+const content = legalInfoEntry.data[lang as keyof typeof legalInfoEntry.data] || legalInfoEntry.data['fr'];
+
+// Ajoutez cette vérification
+if (!content) {
+  throw new Error(`Content not found for language: ${lang}`);
+}
+
+// SEO data
+const seoData = {
+  title: content.title || `Informations légales - Christine Rizzo`,
+  description: `Informations légales et conditions générales de Christine Rizzo, avocate au Barreau de Bruxelles`,
+};
+
+<BaseLayout title={seoData.title} description={seoData.description} lang={lang}>
+  <div class="bg-white md:my-20 p-8">
+    <main class="container mx-auto px-4 py-16">
+      <h1 class="text-4xl font-light mb-12 text-black text-center">{content.title}</h1>
+      <div class="space-y-8">
+        {content.sections.map((section: any) => (
+          <section>
+            <h2 class="text-2xl font-light mb-4 text-black">{section.title}</h2>
+            <p class="text-dark-gray font-light whitespace-pre-line" set:html={section.text.replace(
+              /\bhttps?:\/\/\S+\b/g,
+              '<a href="$&" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">$&</a>'
+            )}></p>
+          </section>
+        ))}
+      </div>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .prose h2 {
+    @apply text-2xl font-semibold mt-8 mb-4 text-gray-800;
+  }
+  .prose p {
+    @apply mb-4 leading-relaxed;
+  }
+  .prose ul {
+    @apply list-disc list-inside mb-4;
+  }
+  .prose a {
+    @apply text-blue-600 hover:underline;
+  }
+</style> 

@@ -1,16 +1,497 @@
 backend:
   name: git-gateway
-  branch: v6
+  branch: test-avril-2025
 
 media_folder: "public/assets/images"
 public_folder: "/assets/images"
 
-# Import des collections depuis des fichiers séparés
 collections:
-  - import: collections/site-config.yml
-  - import: collections/blog.yml
-  - import: collections/home.yml
-  - import: collections/services.yml
-  - import: collections/profile.yml
-  - import: collections/legal.yml
-  - import: collections/honoraires.yml 
+  # Configuration du site
+  - name: "siteConfig"
+    label: "Configuration du site"
+    files:
+      - file: "src/content/config/site-config.yml"
+        name: "site-config"
+        label: "Paramètres généraux"
+        i18n:
+          structure: single_file
+        fields:
+          - label: "Visibilité des sections"
+            name: "sectionsVisibility"
+            widget: "object"
+            fields:
+              - label: "Section Articles"
+                name: "articlesSection"
+                widget: "boolean"
+                default: false
+                hint: "Activer ou désactiver l'affichage de la section Articles sur la page d'accueil et dans la navigation"
+          - label: "Options globales"
+            name: "globalOptions"
+            widget: "object"
+            fields:
+              - label: "Maintenance"
+                name: "maintenanceMode"
+                widget: "boolean"
+                default: false
+                hint: "Activer le mode maintenance (seuls les administrateurs peuvent accéder au site)"
+              - label: "Message de maintenance"
+                name: "maintenanceMessage"
+                widget: "text"
+                required: false
+                hint: "Message affiché aux visiteurs lorsque le mode maintenance est activé"
+  
+  # Collection Blog
+  - &blogCollection
+    name: "blog-fr"
+    label: "Blog FR"
+    folder: "src/content/blog/fr"
+    create: true
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Date de publication", name: "date", widget: "datetime"}
+      - {label: "Auteur", name: "author", widget: "string"}
+      - {label: "Image à la une", name: "thumbnail", widget: "image"}
+      - {label: "Temps de lecture (en minutes)", name: "readTime", widget: "string", hint: "Entrez le nombre de minutes, par exemple: 5"}
+      - label: "Catégories"
+        name: "categories"
+        widget: "list"
+        allow_add: true
+        min: 1
+        field: {label: Catégorie, name: categorie, widget: string}
+        hint: "Au moins une catégorie est requise."
+      - label: "Points forts (optionnel)"
+        name: "highlights"
+        widget: "list"
+        required: false
+        field: 
+          label: "Point"
+          name: "point"
+          widget: "text"
+        hint: "Optionnel. Résumé en quelques points clés de l'article. Chaque point peut être sur plusieurs lignes. Ils apparaîtront dans un encadré au début de l'article."
+      - {label: "Description SEO", name: "description", widget: "text", required: true, pattern: ['^.{0,160}$', "La description doit faire 160 caractères maximum"], hint: "Description courte pour le SEO (max 160 caractères)"}
+      - label: "Mots-clés SEO (optionnel)"
+        name: "keywords"
+        widget: "list"
+        required: false
+        allow_add: true
+        field: {label: "Mot-clé", name: keyword, widget: string}
+        hint: "Optionnel. Ajoutez des mots-clés pertinents pour le SEO."
+      - {label: "Contenu", name: "body", widget: "markdown"}
+
+  - <<: *blogCollection
+    name: "blog-en"
+    label: "Blog EN"
+    folder: "src/content/blog/en"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Read Time (in minutes)", name: "readTime", widget: "string", hint: "Enter the number of minutes, e.g. 5"}
+      - label: "Categories"
+        name: "categories"
+        hint: "At least one category is required."
+      - label: "Highlights (optional)"
+        name: "highlights"
+        hint: "Optional. Summary of the article in a few key points. Each point can be multiple lines. They will appear in a box at the beginning of the article."
+      - {label: "SEO Description", name: "description", widget: "text", required: true, pattern: ['^.{0,160}$', "Description must be 160 characters or less"], hint: "Short description for SEO (max 160 characters)"}
+      - label: "SEO Keywords (optional)"
+        name: "keywords"
+        hint: "Optional. Add relevant keywords for SEO."
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - <<: *blogCollection
+    name: "blog-it"
+    label: "Blog IT"
+    folder: "src/content/blog/it"
+    fields:
+      - {label: "Titolo", name: "title", widget: "string"}
+      - {label: "Data di pubblicazione", name: "date", widget: "datetime"}
+      - {label: "Autore", name: "author", widget: "string"}
+      - {label: "Immagine in evidenza", name: "thumbnail", widget: "image"}
+      - {label: "Tempo di lettura (in minuti)", name: "readTime", widget: "string", hint: "Inserisci il numero di minuti, ad esempio: 5"}
+      - label: "Categorie"
+        name: "categories"
+        hint: "Almeno una categoria è richiesta."
+      - label: "Punti salienti (opzionale)"
+        name: "highlights"
+        hint: "Opzionale. Riassunto dell'articolo in alcuni punti chiave. Ogni punto può essere su più righe. Appariranno in un riquadro all'inizio dell'articolo."
+      - {label: "Descrizione SEO", name: "description", widget: "text", required: true, pattern: ['^.{0,160}$', "La descrizione deve essere di massimo 160 caratteri"], hint: "Breve descrizione per SEO (max 160 caratteri)"}
+      - label: "Parole chiave SEO (opzionale)"
+        name: "keywords"
+        hint: "Opzionale. Aggiungi parole chiave rilevanti per il SEO."
+      - {label: "Contenuto", name: "body", widget: "markdown"}
+
+  # Page d'accueil
+  - name: "home"
+    label: "Page d'accueil"
+    files:
+      - file: "src/content/home/home.yml"
+        name: "home"
+        label: "Contenu de la page d'accueil"
+        i18n:
+          structure: single_file
+        fields:
+          - label: "Français"
+            name: "fr"
+            widget: "object"
+            fields: &homeFields
+              - label: "Hero"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Sous-titre", name: "subtitle", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+                  - {label: "CTA", name: "cta", widget: "string"}
+              
+              - label: "Expertise"
+                name: "expertise"
+                widget: "object"
+                fields:
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+                  - label: "Travailleurs"
+                    name: "travailleurs"
+                    widget: "object"
+                    fields:
+                      - {label: "Titre", name: "title", widget: "string"}
+                      - {label: "Description", name: "description", widget: "text"}
+                      - {label: "CTA", name: "cta", widget: "string"}
+                  - label: "Employeurs"
+                    name: "employeurs"
+                    widget: "object"
+                    fields:
+                      - {label: "Titre", name: "title", widget: "string"}
+                      - {label: "Description", name: "description", widget: "text"}
+                      - {label: "CTA", name: "cta", widget: "string"}
+                  - label: "Honoraires"
+                    name: "honoraires"
+                    widget: "object"
+                    fields:
+                      - {label: "Introduction", name: "intro", widget: "text"}
+                      - {label: "Texte du lien", name: "linkText", widget: "string"}
+                      - label: "Avantages"
+                        name: "advantages"
+                        widget: "list"
+                        field: {label: "Avantage", name: "advantage", widget: "string"}
+
+              - label: "Profil"
+                name: "profil"
+                widget: "object"
+                fields:
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+                  - {label: "CTA", name: "cta", widget: "string"}
+
+              - {label: "Titre des articles", name: "articlesTitle", widget: "string"}
+              - {label: "Voir tous les articles", name: "viewAllArticles", widget: "string"}
+
+              - label: "SEO"
+                name: "seo"
+                widget: "object"
+                fields:
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+                  - {label: "Mots-clés", name: "keywords", widget: "list"}
+                  - {label: "Image", name: "image", widget: "string"}
+
+          - label: "English"
+            name: "en"
+            widget: "object"
+            fields: *homeFields
+          - label: "Italiano"
+            name: "it"
+            widget: "object"
+            fields: *homeFields
+
+  # Pages Services
+  - name: "travailleurs"
+    label: "Page Travailleurs"
+    files:
+      - file: "src/content/travailleurs/travailleurs.yml"
+        name: "travailleurs"
+        label: "Contenu de la page Travailleurs"
+        i18n:
+          structure: single_file
+        fields:
+          - label: "Français"
+            name: "fr"
+            widget: "object"
+            fields: &travailleursFields
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - label: "Questions"
+                name: "questions"
+                widget: "list"
+                field: {label: Question, name: question, widget: "string"}
+              - {label: "Focus spécial", name: "specialFocus", widget: "string"}
+              - label: "Points de focus"
+                name: "focusPoints"
+                widget: "list"
+                field: {label: Point, name: point, widget: "string"}
+              - {label: "Titre des services", name: "servicesTitle", widget: "string"}
+              - label: "Services"
+                name: "services"
+                widget: "list"
+                fields:
+                  - {label: "Icône", name: "icon", widget: "select", options: ["Briefcase", "Shield", "FileText"]}
+                  - {label: "Texte", name: "text", widget: "string"}
+              - {label: "Texte du bouton CTA", name: "ctaText", widget: "string"}
+          - label: "English"
+            name: "en"
+            widget: "object"
+            fields: *travailleursFields
+          - label: "Italiano"
+            name: "it"
+            widget: "object"
+            fields: *travailleursFields
+
+  - name: "employeurs"
+    label: "Page Employeurs"
+    files:
+      - file: "src/content/employeurs/employeurs.yml"
+        name: "employeurs"
+        label: "Contenu de la page Employeurs"
+        i18n:
+          structure: single_file
+        fields:
+          - label: "Français"
+            name: "fr"
+            widget: "object"
+            fields: &employeursFields
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - label: "Questions"
+                name: "questions"
+                widget: "list"
+                field: {label: Question, name: question, widget: "string"}
+              - {label: "Conclusion", name: "conclusion", widget: "text"}
+              - {label: "Titre des prestations", name: "servicesTitle", widget: "string"}
+              - label: "Prestations"
+                name: "services"
+                widget: "list"
+                fields:
+                  - {label: "Icône", name: "icon", widget: "select", options: ["FileText", "UserPlus", "Shield", "Search"]}
+                  - {label: "Texte", name: "text", widget: "string"}
+              - {label: "Texte du bouton CTA", name: "ctaText", widget: "string"}
+          - label: "English"
+            name: "en"
+            widget: "object"
+            fields: *employeursFields
+          - label: "Italiano"
+            name: "it"
+            widget: "object"
+            fields: *employeursFields
+
+  # Page Profil
+  - name: "profile"
+    label: "Page Profil"
+    files:
+      - file: "src/content/profile/profile.yml"
+        name: "profile"
+        label: "Contenu du profil"
+        i18n:
+          structure: single_file
+        fields:
+          - label: "Français"
+            name: "fr"
+            widget: "object"
+            fields: &profileFields
+              - {label: "Nom", name: "name", widget: "string"}
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Image", name: "image", widget: "image"}
+              - label: "Biographie"
+                name: "bio"
+                widget: "list"
+                field: {label: "Paragraphe", name: "paragraph", widget: "text"}
+              - label: "Langues"
+                name: "languages"
+                widget: "string"
+              - label: "Parcours"
+                name: "careerPath"
+                widget: "list"
+                fields:
+                  - {label: "Année", name: "year", widget: "string"}
+                  - {label: "Événement", name: "event", widget: "string"}
+              - label: "Conférences"
+                name: "conferences"
+                widget: "list"
+                field: {label: "Conférence", name: "conference", widget: "text"}
+              - label: "Publications"
+                name: "publications"
+                widget: "list"
+                fields:
+                  - {label: "Date", name: "date", widget: "string"}
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Éditeur", name: "publisher", widget: "string"}
+                  - label: "Co-auteurs"
+                    name: "coAuthors"
+                    widget: "list"
+                    field: {label: "Auteur", name: "author", widget: "string"}
+          - label: "English"
+            name: "en"
+            widget: "object"
+            fields: *profileFields
+          - label: "Italiano"
+            name: "it"
+            widget: "object"
+            fields: *profileFields
+
+  # Pages légales
+  - name: "legal"
+    label: "Mentions légales"
+    files:
+      - file: "src/content/legal/legal.yml"
+        name: "legal"
+        label: "Contenu des mentions légales"
+        i18n:
+          structure: single_file
+        fields:
+          - label: "Français"
+            name: "fr"
+            widget: "object"
+            fields: &legalFields
+              - {label: "Titre", name: "title", widget: "string"}
+              - label: "Sections"
+                name: "sections"
+                widget: "list"
+                fields:
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Texte", name: "text", widget: "markdown"}
+          - label: "English"
+            name: "en"
+            widget: "object"
+            fields: *legalFields
+          - label: "Italiano"
+            name: "it"
+            widget: "object"
+            fields: *legalFields
+
+  - name: "privacy"
+    label: "Politique de confidentialité"
+    files:
+      - file: "src/content/privacy/privacy.yml"
+        name: "privacy"
+        label: "Contenu de la politique de confidentialité"
+        i18n:
+          structure: single_file
+        fields:
+          - label: "Français"
+            name: "fr"
+            widget: "object"
+            fields: &privacyFields
+              - {label: "Titre", name: "title", widget: "string"}
+              - label: "Sections"
+                name: "sections"
+                widget: "list"
+                fields:
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Texte", name: "text", widget: "markdown"}
+          - label: "English"
+            name: "en"
+            widget: "object"
+            fields: *privacyFields
+          - label: "Italiano"
+            name: "it"
+            widget: "object"
+            fields: *privacyFields
+
+  - name: "legal-info"
+    label: "Informations légales"
+    files:
+      - file: "src/content/legal-info/legal-info.yml"
+        name: "legal-info"
+        label: "Contenu des informations légales"
+        i18n:
+          structure: single_file
+        fields:
+          - label: "Français"
+            name: "fr"
+            widget: "object"
+            fields: &legalInfoFields
+              - {label: "Titre", name: "title", widget: "string"}
+              - label: "Sections"
+                name: "sections"
+                widget: "list"
+                fields:
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Texte", name: "text", widget: "markdown"}
+          - label: "English"
+            name: "en"
+            widget: "object"
+            fields: *legalInfoFields
+          - label: "Italiano"
+            name: "it"
+            widget: "object"
+            fields: *legalInfoFields
+
+  # Pages Honoraires
+  - name: "honoraires"
+    label: "Pages Tarifs et Honoraires"
+    files:
+      - file: "src/content/honoraires/honoraires.yml"
+        name: "honoraires"
+        label: "Page principale des honoraires"
+        i18n:
+          structure: single_file
+        fields:
+          - label: "Français"
+            name: "fr"
+            widget: "object"
+            fields: &honorairesFields
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Sous-titre", name: "subtitle", widget: "string"}
+              - label: "Tarifs"
+                name: "tarifs"
+                widget: "object"
+                fields:
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Travailleur", name: "travailleur", widget: "string"}
+                  - {label: "Employeur", name: "employeur", widget: "string"}
+              - label: "Transparence"
+                name: "transparence"
+                widget: "object"
+                fields:
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Points", name: "points", widget: "list"}
+              - label: "Prévisibilité"
+                name: "previsibilite"
+                widget: "object"
+                fields:
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Contenu", name: "content", widget: "text"}
+                  - {label: "Points", name: "points", widget: "list"}
+              - label: "Assurance"
+                name: "assurance"
+                widget: "object"
+                fields:
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Contenu", name: "content", widget: "text"}
+              - label: "Exemples de formules forfaitaires"
+                name: "forfaits"
+                widget: "object"
+                fields:
+                  - {label: "Titre", name: "title", widget: "string", default: "Exemples de formules forfaitaires"}
+                  - {label: "Introduction", name: "intro", widget: "text"}
+                  - label: "Exemples"
+                    name: "exemples"
+                    widget: "list"
+                    fields:
+                      - {label: "Titre", name: "title", widget: "string"}
+                      - {label: "Description", name: "description", widget: "text", required: false}
+                      - {label: "Prix", name: "prix", widget: "string"}
+              - label: "Aide juridique"
+                name: "aideJuridique"
+                widget: "object"
+                fields:
+                  - {label: "Titre", name: "title", widget: "string", default: "Aide juridique"}
+                  - {label: "Contenu", name: "content", widget: "markdown"}
+          - label: "English"
+            name: "en"
+            widget: "object"
+            fields: *honorairesFields
+          - label: "Italiano"
+            name: "it"
+            widget: "object"
+            fields: *honorairesFields 
