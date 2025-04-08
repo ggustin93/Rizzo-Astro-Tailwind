@@ -20,25 +20,11 @@ collections:
             name: "sectionsVisibility"
             widget: "object"
             fields:
-              - label: "Section Articles"
+              - label: "Page et section Blog"
                 name: "articlesSection"
                 widget: "boolean"
                 default: false
                 hint: "Activer ou désactiver l'affichage de la section Articles sur la page d'accueil et dans la navigation"
-          - label: "Options globales"
-            name: "globalOptions"
-            widget: "object"
-            fields:
-              - label: "Maintenance"
-                name: "maintenanceMode"
-                widget: "boolean"
-                default: false
-                hint: "Activer le mode maintenance (seuls les administrateurs peuvent accéder au site)"
-              - label: "Message de maintenance"
-                name: "maintenanceMessage"
-                widget: "text"
-                required: false
-                hint: "Message affiché aux visiteurs lorsque le mode maintenance est activé"
   
   # Collection Blog
   - &blogCollection

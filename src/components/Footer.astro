@@ -17,6 +17,7 @@ const translations = {
     contact: "Contact",
     legalNotice: "Mentions légales",
     privacyPolicy: "Politique de confidentialité",
+    legalInfo: "Infos légales & CGV",
     design: "Design by Pwablo",
     ecoDesign: "Score d'éco-conception",
     ecoDesignPwablo: "Site web écologique",
@@ -31,6 +32,7 @@ const translations = {
     contact: "Contact",
     legalNotice: "Legal Notice",
     privacyPolicy: "Privacy Policy",
+    legalInfo: "Legal Info & T&C",
     design: "Design by Pwablo",
     ecoDesign: "Eco-design Score",
     ecoDesignPwablo: "Eco-friendly Website",
@@ -45,6 +47,7 @@ const translations = {
     contact: "Contatto",
     legalNotice: "Note legali",
     privacyPolicy: "Politica sulla riservatezza",
+    legalInfo: "Info legali & CGV",
     design: "Design di Pwablo",
     ecoDesign: "Punteggio di eco-design",
     ecoDesignPwablo: "Sito web ecologico",
@@ -66,7 +69,8 @@ const mainLinks = [
 
 const legalLinks = [
   { href: `/${currentLang}/legal/notice`, label: t.legalNotice },
-  { href: `/${currentLang}/legal/privacy`, label: t.privacyPolicy }
+  { href: `/${currentLang}/legal/privacy`, label: t.privacyPolicy },
+  { href: `/${currentLang}/legal/informations-legales`, label: t.legalInfo }
 ];
 
 ---
@@ -158,6 +162,8 @@ const legalLinks = [
         <a href={legalLinks[0].href} class="hover:underline">{legalLinks[0].label}</a>
         <span class="mx-2">|</span>
         <a href={legalLinks[1].href} class="hover:underline">{legalLinks[1].label}</a>
+        <span class="mx-2">|</span>
+        <a href={legalLinks[2].href} class="hover:underline">{legalLinks[2].label}</a>
       </p>
     </div>
   </div>
