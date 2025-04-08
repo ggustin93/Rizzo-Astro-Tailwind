@@ -12,7 +12,7 @@ collections:
     files:
       - file: "src/content/config/site-config.yml"
         name: "site-config"
-        label: "Paramètres généraux"
+        label: "Paramètres du Blog"
         i18n:
           structure: single_file
         fields:
@@ -110,7 +110,7 @@ collections:
 
   # Page d'accueil
   - name: "home"
-    label: "Page d'accueil"
+    label: "Page Accueil"
     files:
       - file: "src/content/home/home.yml"
         name: "home"
@@ -326,7 +326,7 @@ collections:
 
   # Pages légales
   - name: "legal-pages"
-    label: "Pages légales"
+    label: "Pages Légales"
     files:
       - file: "src/content/legal/legal.yml"
         name: "legal-notice"
@@ -408,7 +408,7 @@ collections:
 
   # Pages Honoraires
   - name: "honoraires"
-    label: "Pages Tarifs et Honoraires"
+    label: "Pages Honoraires"
     files:
       - file: "src/content/honoraires/honoraires.yml"
         name: "honoraires"
