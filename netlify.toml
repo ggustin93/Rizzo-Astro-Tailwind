@@ -13,3 +13,7 @@
   for = "/*"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
+
+[context.test-avril-2025]
+  command = "npm run build"
+  publish = "dist"
