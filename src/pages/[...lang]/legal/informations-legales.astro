@@ -1,3 +1,4 @@
+---
 import { getEntry } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 
@@ -19,6 +20,7 @@ const seoData = {
   title: content.title || `Informations légales - Christine Rizzo`,
   description: `Informations légales et conditions générales de Christine Rizzo, avocate au Barreau de Bruxelles`,
 };
+---
 
 <BaseLayout title={seoData.title} description={seoData.description} lang={lang}>
   <div class="bg-white md:my-20 p-8">
