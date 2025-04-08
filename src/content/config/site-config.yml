@@ -1,4 +1,4 @@
 sectionsVisibility:
-  articlesSection: true
+  articlesSection: false
 globalOptions:
   maintenanceMode: false
