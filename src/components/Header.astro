@@ -2,6 +2,7 @@
 import logoImage from '../assets/images/logo_crizzo_calli3.svg';
 import { Image } from 'astro:assets';
 import LanguagePicker from '../components/LanguagePicker.astro';
+import { getEntry } from 'astro:content';
 
 export interface Props {
   currentLang: string;
@@ -9,6 +10,10 @@ export interface Props {
 
 const { pathname } = Astro.url;
 const currentLang = pathname.split('/')[1] || 'fr'; // Par défaut à 'fr' si aucune langue n'est trouvée
+
+// Récupérer la configuration du site
+const siteConfigEntry = await getEntry('config', 'site-config');
+const showArticlesSection = siteConfigEntry?.data?.sectionsVisibility?.articlesSection || false;
 
 const translations = {
   fr: {
@@ -47,9 +52,9 @@ const leftNavLinks = [
   { href: `/${currentLang}/honoraires`, label: t.tarifs },
 ];
 
-const rightNavLinks = [
+const rightNavLinks = showArticlesSection ? [
   { href: `/${currentLang}/blog`, label: t.articles },
-];
+] : [];
 ---
   <header class="py-2 my-4 lg:py-6 lg:my-8">
     <div class="container mx-auto px-4">

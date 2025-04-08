@@ -9,27 +9,33 @@ const lang = pathname.split('/')[1] || 'fr';
 const translations = {
   fr: {
     ctaTitle: "Contactez-moi",
-    ctaSubtitle: "Je suis disponible pour discuter de vos besoins.",
+    ctaSubtitle: "",
     email: "EMAIL",
     appointment: "RDV",
     call: "APPEL",
-    whatsapp: "WHATSAPP"
+    whatsapp: "WHATSAPP",
+    bookAction: "Réserver",
+    chatAction: "Discuter"
   },
   en: {
     ctaTitle: "Contact me",
-    ctaSubtitle: "I'm available to discuss your needs.",
+    ctaSubtitle: "",
     email: "EMAIL",
     appointment: "APPOINTMENT",
     call: "CALL",
-    whatsapp: "WHATSAPP"
+    whatsapp: "WHATSAPP",
+    bookAction: "Book",
+    chatAction: "Chat"
   },
   it: {
     ctaTitle: "Contattami",
-    ctaSubtitle: "Sono disponibile per discutere le tue esigenze.",
+    ctaSubtitle: "",
     email: "EMAIL",
     appointment: "APPUNTAMENTO",
     call: "CHIAMA",
-    whatsapp: "WHATSAPP"
+    whatsapp: "WHATSAPP",
+    bookAction: "Prenota",
+    chatAction: "Chat"
   }
 };
 
@@ -37,9 +43,9 @@ const t = translations[lang as keyof typeof translations] || translations.fr;
 
 const buttonConfig = [
   { icon: Mail, text: t.email, action: 'c.rizzo@avocat.be', type: 'email' },
-  { icon: Calendar, text: t.appointment, action: 'Réserver', type: 'appointment' },
+  { icon: Calendar, text: t.appointment, action: t.bookAction, type: 'appointment' },
   { icon: Phone, text: t.call, action: '+32 488 40 45 49', type: 'phone' },
-  { icon: MessageCircle, text: t.whatsapp, action: 'Discuter', type: 'whatsapp' },
+  { icon: MessageCircle, text: t.whatsapp, action: t.chatAction, type: 'whatsapp' },
 ];
 
 const handleAction = (type: string, action: string) => {

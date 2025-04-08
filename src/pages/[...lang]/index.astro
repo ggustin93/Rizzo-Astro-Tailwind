@@ -33,12 +33,16 @@ const { lang } = Astro.params;
 const homeEntry = await getEntry('home', 'home');
 const content = homeEntry.data[lang as keyof typeof homeEntry.data] || homeEntry.data['fr'];
 
+// Récupérer la configuration du site
+const siteConfigEntry = await getEntry('config', 'site-config');
+const showArticlesSection = siteConfigEntry?.data?.sectionsVisibility?.articlesSection || false;
+
 if (!content || !content.expertise || !content.expertise.travailleurs) {
   console.error('Structure de contenu invalide:', content);
 }
 
 // Récupération des articles
-const recentArticles = await getArticles(lang, 3);
+const recentArticles = showArticlesSection ? await getArticles(lang, 3) : [];
 
 // Ajout des métadonnées SEO
 const { title, description, keywords, image } = content.seo;
@@ -184,35 +188,34 @@ function generateUniqueId(prefix: string) {
 
   <CTA lang={currentLang} uiTranslations={uiTranslations} />
 
-  <div class="full-bleed bg-white">
-    <section id="articles" class="py-16 md:py-24">
-      <div class="container mx-auto px-4">
-        <div class="flex items-center mb-8 md:mb-12 justify-center">
-          <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
-          <h2 class="text-2xl font-light text-gray-600 mx-10 uppercase text-center">{content.articlesTitle}</h2>
-          <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
-        </div>
-        <div class="max-w-6xl mx-auto">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 justify-items-center">
-            {recentArticles.map((article) => {
-              const slug = article.slug.split('/').slice(1).join('/');
-              return (
-                <ArticleCard
-                  article={article}
-                  lang={currentLang}
-                  url={`/${lang}/blog/${slug}`}
-                  uiTranslations={uiTranslations}
-                />
-              );
-            })}
+  {showArticlesSection && (
+    <div id="articles" class="full-bleed bg-beige">
+      <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+          <div class="flex items-center mb-8 md:mb-12 justify-center">
+            <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
+            <h2 class="text-2xl font-light text-gray-600 mx-10 uppercase text-center">{content.articlesTitle}</h2>
+            <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {recentArticles.map((article) => (
+              <ArticleCard 
+                article={article}
+                lang={currentLang}
+                url={`/${currentLang}/blog/${article.slug.split('/')[1] || ''}`}
+                uiTranslations={uiTranslations}
+              />
+            ))}
+          </div>
+          <div class="text-center mt-12">
+            <a href={`/${currentLang}/blog`} class="inline-block bg-transparent text-dark-gray border border-dark-gray px-4 md:px-6 py-2 md:py-3 rounded-sm hover:bg-gray-700 hover:text-white transition duration-300 uppercase text-sm font-light">
+              {content.viewAllArticles} →
+            </a>
           </div>
         </div>
-        <div class="text-center mt-8 md:mt-12">
-          <a href={`/${lang}/blog`} class="inline-block bg-transparent text-dark-gray border border-dark-gray px-4 md:px-6 py-2 md:py-3 rounded-sm hover:bg-gray-700 hover:text-white transition duration-300 uppercase text-sm font-light">
-            {content.viewAllArticles}
-          </a>
-        </div>
-      </div>
-    </section>
-  </div>
+      </section>
+    </div>
+  )}
+
 </BaseLayout>

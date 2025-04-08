@@ -1,0 +1,86 @@
+- name: "legal"
+  label: "Mentions légales"
+  files:
+    - file: "src/content/legal/legal.yml"
+      name: "legal"
+      label: "Contenu des mentions légales"
+      i18n:
+        structure: single_file
+      fields:
+        - label: "Français"
+          name: "fr"
+          widget: "object"
+          fields: &legalFields
+            - {label: "Titre", name: "title", widget: "string"}
+            - label: "Sections"
+              name: "sections"
+              widget: "list"
+              fields:
+                - {label: "Titre", name: "title", widget: "string"}
+                - {label: "Texte", name: "text", widget: "markdown"}
+        - label: "English"
+          name: "en"
+          widget: "object"
+          fields: *legalFields
+        - label: "Italiano"
+          name: "it"
+          widget: "object"
+          fields: *legalFields
+
+- name: "privacy"
+  label: "Politique de confidentialité"
+  files:
+    - file: "src/content/privacy/privacy.yml"
+      name: "privacy"
+      label: "Contenu de la politique de confidentialité"
+      i18n:
+        structure: single_file
+      fields:
+        - label: "Français"
+          name: "fr"
+          widget: "object"
+          fields: &privacyFields
+            - {label: "Titre", name: "title", widget: "string"}
+            - label: "Sections"
+              name: "sections"
+              widget: "list"
+              fields:
+                - {label: "Titre", name: "title", widget: "string"}
+                - {label: "Texte", name: "text", widget: "markdown"}
+        - label: "English"
+          name: "en"
+          widget: "object"
+          fields: *privacyFields
+        - label: "Italiano"
+          name: "it"
+          widget: "object"
+          fields: *privacyFields
+
+- name: "legal-info"
+  label: "Informations légales"
+  files:
+    - file: "src/content/legal-info/legal-info.yml"
+      name: "legal-info"
+      label: "Contenu des informations légales"
+      i18n:
+        structure: single_file
+      fields:
+        - label: "Français"
+          name: "fr"
+          widget: "object"
+          fields: &legalInfoFields
+            - {label: "Titre", name: "title", widget: "string"}
+            - label: "Sections"
+              name: "sections"
+              widget: "list"
+              fields:
+                - {label: "Titre", name: "title", widget: "string"}
+                - {label: "Texte", name: "text", widget: "markdown"}
+        - label: "English"
+          name: "en"
+          widget: "object"
+          fields: *legalInfoFields
+        - label: "Italiano"
+          name: "it"
+          widget: "object"
+          fields: *legalInfoFields 

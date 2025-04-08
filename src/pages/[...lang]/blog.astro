@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
 import { getUiTranslations } from '../../utils/ui-translations';
+import { getEntry } from 'astro:content';
 
 export const supportedLanguages = ['fr', 'en', 'it'] as const;
 type SupportedLanguage = typeof supportedLanguages[number];
@@ -20,21 +21,35 @@ export interface Props {
     };
   }>;
   currentLang: SupportedLanguage;
+  showArticlesSection: boolean;
 }
 
 export async function getStaticPaths() {
+  // Récupérer la configuration du site
+  const siteConfigEntry = await getEntry('config', 'site-config');
+  const showArticlesSection = siteConfigEntry?.data?.sectionsVisibility?.articlesSection || false;
+  
   const allBlogEntries = await getCollection('blog');
   return supportedLanguages.map(lang => {
     const blogEntries = allBlogEntries.filter(entry => entry.slug.startsWith(`${lang}/`));
     return {
       params: { lang },
-      props: { blogEntries, currentLang: lang as SupportedLanguage }
+      props: { 
+        blogEntries, 
+        currentLang: lang as SupportedLanguage,
+        showArticlesSection
+      }
     };
   });
 }
 
-const { blogEntries, currentLang } = Astro.props;
+const { blogEntries, currentLang, showArticlesSection } = Astro.props;
 const t = getUiTranslations(currentLang);
+
+// Si la section articles est désactivée, rediriger vers la page d'accueil
+if (!showArticlesSection) {
+  return Astro.redirect(`/${currentLang}`);
+}
 
 // Get unique categories
 const categories = [...new Set(blogEntries.flatMap(entry => entry.data.categories))];
@@ -123,7 +138,6 @@ const currentSeo = seoInfo[currentLang];
     @apply px-2 py-1 bg-gray-100 text-gray-600 text-sm rounded;
   }
 </style>
-
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
