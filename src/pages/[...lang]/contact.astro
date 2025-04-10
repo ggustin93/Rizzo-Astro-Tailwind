@@ -83,7 +83,14 @@ const seoData = {
                     <IconComponent class="w-9 h-9 text-employeur group-hover:text-white transition-colors duration-300 pointer-events-none" />
                   </button>
                   <span class="text-base uppercase text-white font-semibold leading-relaxed tracking-wide mb-2 px-2 text-center">{button.text}</span>
-                  <span class="text-base text-gray-300 font-normal italic text-center hover:text-white transition-colors duration-300">{button.subtext}</span>
+                  <button
+                    onclick={handleAction(button.type, button.action || button.subtext)}
+                    class="text-base text-gray-300 font-normal italic text-center hover:text-white transition-colors duration-300 hover:underline cursor-pointer"
+                    data-cal-link={button.type === 'appointment' ? calendarLink.replace('https://cal.com/', '') : undefined}
+                    data-cal-config={button.type === 'appointment' ? '{"layout":"month_view"}' : undefined}
+                  >
+                    {button.subtext}
+                  </button>
                 </div>
               );
             })}
