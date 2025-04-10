@@ -29,6 +29,14 @@ const iconComponents = {
   'map-pin': IconGoogleMaps
 };
 
+interface ContactButton {
+  type: string;
+  icon: keyof typeof iconComponents;
+  text: string;
+  subtext: string;
+  action?: string;
+}
+
 const handleAction = (type: string, action: string) => {
   switch(type) {
     case 'appointment':
@@ -83,7 +91,7 @@ const seoData = {
           </div>
           
           <div class="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-            {contactData.buttons.map((button) => {
+            {contactData.buttons.map((button: ContactButton) => {
               const IconComponent = iconComponents[button.icon];
               return (
                 <div class="flex flex-col items-center">
@@ -98,7 +106,7 @@ const seoData = {
                   <span class="text-sm md:text-base uppercase text-white font-semibold leading-relaxed tracking-wide mb-1 md:mb-2 px-2 text-center">{button.text}</span>
                   <button
                     onclick={handleAction(button.type, button.action || button.subtext)}
-                    class="text-xs md:text-sm lg:text-base text-gray-300 font-normal italic text-center hover:text-white transition-colors duration-300 hover:underline cursor-pointer"
+                    class="text-sm md:text-base text-gray-300 font-normal italic text-center hover:text-white transition-colors duration-300 hover:underline cursor-pointer"
                     data-cal-link={button.type === 'appointment' ? calendarLink.replace('https://cal.com/', '') : undefined}
                     data-cal-config={button.type === 'appointment' ? '{"layout":"month_view"}' : undefined}
                   >
@@ -130,7 +138,7 @@ const seoData = {
 <script>
   document.addEventListener('astro:page-load', () => {
     const appointmentButtons = document.querySelectorAll('[data-cal-link]');
-    appointmentButtons.forEach(button => {
+    appointmentButtons.forEach((button: HTMLElement) => {
       button.addEventListener('click', (e) => {
         e.preventDefault();
         // @ts-ignore

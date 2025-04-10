@@ -44,7 +44,7 @@ export async function getStaticPaths() {
 }
 
 const { blogEntries, currentLang, showArticlesSection } = Astro.props;
-const t = getUiTranslations(currentLang);
+const t = await getUiTranslations(currentLang);
 
 // Si la section articles est désactivée, rediriger vers la page d'accueil
 if (!showArticlesSection) {

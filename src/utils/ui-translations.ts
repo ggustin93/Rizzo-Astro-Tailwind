@@ -1,11 +1,52 @@
-// src/utils/ui-translations.js
-import { getEntryBySlug } from 'astro:content';
+import { getEntry } from 'astro:content';
+
+export interface UiTranslations {
+  readMore: string;
+  viewAllArticles: string;
+  contactCta: string;
+  navigation: string;
+  legalPages: string;
+  ecoDesignPwablo: string;
+  copyright: string;
+  blogTitle: string;
+  noArticles: string;
+  allCategories: string;
+  ctaTitle: string;
+  ctaSubtitle: string;
+  takeAppointment: string;
+  call: string;
+  whatsapp: string;
+  email: string;
+  learnMore: string;
+  additionalTranslations?: {
+    activePage: string;
+    submit: string;
+    cancel: string;
+    search: string;
+    close: string;
+    menu?: string;
+    backToTop?: string;
+    share?: string;
+    readingTime?: string;
+    minutes?: string;
+    publishedOn?: string;
+    categories?: string;
+    nextArticle?: string;
+    previousArticle?: string;
+    relatedArticles?: string;
+    lastUpdated?: string;
+    contactMe?: string;
+    bookAppointment?: string;
+  };
+}
+
+export type SupportedLanguage = 'fr' | 'en' | 'it';
 
 // Fonction pour récupérer les traductions UI depuis le CMS
-export async function getUiTranslations(lang) {
+export async function getUiTranslations(lang: SupportedLanguage): Promise<UiTranslations> {
   try {
     // Récupérer les traductions depuis le CMS
-    const uiTranslationsEntry = await getEntryBySlug('ui-translations', 'ui-translations');
+    const uiTranslationsEntry = await getEntry('ui-translations', 'ui-translations');
     
     // Utiliser les traductions pour la langue spécifiée ou par défaut en français
     return uiTranslationsEntry?.data?.[lang] || uiTranslationsEntry?.data?.fr || defaultTranslations[lang] || defaultTranslations.fr;
@@ -16,7 +57,7 @@ export async function getUiTranslations(lang) {
 }
 
 // Traductions par défaut en cas de problème avec le CMS
-const defaultTranslations = {
+const defaultTranslations: Record<SupportedLanguage, UiTranslations> = {
   fr: {
     readMore: "Lire la suite",
     viewAllArticles: "Voir tous les articles",
@@ -95,4 +136,4 @@ const defaultTranslations = {
       close: "Chiudi"
     }
   }
-};
+}; 
