@@ -503,8 +503,8 @@ collections:
           - label: "Lien de réservation Cal.com"
             name: "calendarLink"
             widget: "string"
-            default: "https://cal.com/pwablo/30min"
-            hint: "Lien vers votre calendrier Cal.com pour les rendez-vous"
+            default: "https://cal.com/c.rizzo-avocat.be/rendez-vous?duration=15"
+            hint: "IMPORTANT: Si vous modifiez l'URL de votre calendrier dans Cal.com, vous devez également mettre à jour ce lien. Inversement, si vous modifiez ce lien, assurez-vous qu'il correspond exactement à votre URL Cal.com. Toute différence entre les deux empêchera le système de prise de rendez-vous de fonctionner."
           
           - label: "SEO et apparence"
             name: "seo"
