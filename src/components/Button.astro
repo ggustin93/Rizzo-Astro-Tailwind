@@ -1,6 +1,6 @@
 ---
 export interface Props {
-  text: string;
+  text?: string;
   href?: string;
   variant?: 'primary' | 'secondary';
   class?: string;
@@ -53,7 +53,7 @@ const dataAttributes = Object.entries(dataAttr).reduce((acc, [key, value]) => {
     {...dataAttributes}
   >
     {iconPosition === 'left' && Icon && <Icon class="w-4 h-4 mr-2 inline-block" />}
-    <span class="inline-block">{text}</span>
+    {text ? <span class="inline-block">{text}</span> : <slot />}
     {iconPosition === 'right' && Icon && <Icon class="w-4 h-4 ml-2 inline-block" />}
   </a>
 ) : (
@@ -66,7 +66,7 @@ const dataAttributes = Object.entries(dataAttr).reduce((acc, [key, value]) => {
     {...dataAttributes}
   >
     {iconPosition === 'left' && Icon && <Icon class="w-4 h-4 mr-2 inline-block" />}
-    <span class="inline-block">{text}</span>
+    {text ? <span class="inline-block">{text}</span> : <slot />}
     {iconPosition === 'right' && Icon && <Icon class="w-4 h-4 ml-2 inline-block" />}
   </button>
 )} 

@@ -30,7 +30,7 @@ export async function getStaticPaths() {
 
 const { currentLang } = Astro.props as Props;
 import { getUiTranslations } from '../../utils/ui-translations';
-const uiTranslations = getUiTranslations(currentLang);
+const uiTranslations = await getUiTranslations(currentLang);
 
 const { lang } = Astro.params;
 const homeEntry = await getEntry('home', 'home');
@@ -76,15 +76,16 @@ function generateUniqueId(prefix: string) {
                 "cal-link": calendarLink.replace('https://cal.com/', ''),
                 "cal-config": '{"layout":"month_view"}'
               }}
-              class="w-full sm:w-auto min-w-[200px]"
+              class="w-full sm:w-auto min-w-[200px] bg-accent text-white font-medium hover:bg-accent/90 hover:text-black"
             />
             <Button 
-              text={uiTranslations.learnMore}
               variant="secondary"
               icon={ChevronDown}
               onClick="document.getElementById('expertise').scrollIntoView({behavior: 'smooth'})"
-              class="w-full sm:w-auto font-medium min-w-[120px]"
-            />
+              class="w-full sm:w-auto min-w-[120px] border-gray-400 hover:bg-gray-100"
+            >
+              <span class="hidden sm:inline">{content.expertise.travailleurs.cta}</span><span class="sm:hidden">{content.expertise.travailleurs.cta}</span>
+            </Button>
           </div>
         </div>
         <div class="w-full md:w-1/2 flex justify-center md:justify-end mt-6 md:mt-0">
@@ -163,7 +164,7 @@ function generateUniqueId(prefix: string) {
         
         <ul class="list-none space-y-2 flex flex-col items-start max-w-md mx-auto">
           {content.expertise.honoraires.advantages.map((advantage: string) => (
-            <li class="text-dark-gray font-light flex items-center w-full">
+            <li class="text-dark-gray font-light flex items-center w-full text-sm md:text-base">
               <CheckCircle class="text-travailleur mr-2 w-4 h-4 flex-shrink-0" />
               <span>{advantage}</span>
             </li>
