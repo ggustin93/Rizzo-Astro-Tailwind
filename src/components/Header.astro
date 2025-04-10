@@ -14,9 +14,20 @@ export interface Props {
 const { pathname } = Astro.url;
 const currentLang = pathname.split('/')[1] || 'fr'; // Par défaut à 'fr' si aucune langue n'est trouvée
 
+// Langues disponibles pour le site
+const langs = ['fr', 'en', 'it'];
+
 // Récupérer la configuration du site
 const siteConfigEntry = await getEntry('config', 'site-config');
 const showArticlesSection = siteConfigEntry?.data?.sectionsVisibility?.articlesSection || false;
+
+// Récupérer la configuration de navigation
+const navigationEntry = await getEntry('navigation', 'navigation');
+const navConfig = navigationEntry?.data?.[currentLang] || navigationEntry?.data?.fr; // Fallback à FR
+
+// Récupérer les traductions UI
+const uiTranslationsEntry = await getEntry('ui-translations', 'ui-translations');
+const uiTranslations = uiTranslationsEntry?.data?.[currentLang] || uiTranslationsEntry?.data?.fr;
 
 const translations = {
   fr: {
@@ -54,6 +65,7 @@ const translations = {
   }
 };
 
+// Utiliser les traductions de navigation du CMS si disponibles, sinon utiliser les valeurs par défaut
 const t = translations[currentLang as keyof typeof translations] || translations.fr;
 
 const isHomePage = pathname === `/${currentLang}` || pathname === `/${currentLang}/`;
@@ -87,33 +99,34 @@ const isServicesPage = pathname.includes(`/${currentLang}/services/`);
 // Vérifier si nous sommes sur la page profil
 const isProfilPage = pathname === `/${currentLang}/profil`;
 
-const serviceDropdownItems = [
-  { href: `/${currentLang}/services/travailleurs`, label: t.travailleurs },
-  { href: `/${currentLang}/services/employeurs`, label: t.employeurs },
-];
+// Utiliser la configuration de navigation du CMS si disponible
+const mainLinks = navConfig?.header?.mainLinks || [];
 
-const leftNavLinks = [
-  { href: `/${currentLang}`, label: t.home },
-  { 
-    href: isHomePage ? "#expertise" : `/${currentLang}#expertise`, 
-    label: t.services,
-    hasDropdown: true,
-    dropdownItems: serviceDropdownItems,
-    isActive: isServicesPage
-  },
-  { 
-    href: isHomePage ? "#profil" : `/${currentLang}/profil`, 
-    label: t.profil,
-    isActive: isProfilPage
-  },
-];
+// Construire les liens de navigation principaux et secondaires
+const leftNavLinks = mainLinks.filter((link, index) => index < 3).map(link => ({
+  href: link.url,
+  label: link.label,
+  hasDropdown: link.hasDropdown,
+  dropdownItems: link.dropdownItems,
+  isActive: link.url.includes('/services/') ? isServicesPage : 
+            link.url.includes('#profil') || link.url.includes('/profil') ? isProfilPage : 
+            isActivePage(link.url)
+}));
 
-const rightNavLinks = showArticlesSection ? [
-  { href: `/${currentLang}/honoraires`, label: t.tarifs },
-  { href: `/${currentLang}/blog`, label: t.articles },
-] : [
-  { href: `/${currentLang}/honoraires`, label: t.tarifs },
-];
+const rightNavLinks = showArticlesSection ? 
+  mainLinks.filter((link, index) => index >= 3).map(link => ({
+    href: link.url,
+    label: link.label,
+    isActive: isActivePage(link.url)
+  })) : 
+  mainLinks.filter((link, index) => index >= 3 && !link.url.includes('/blog')).map(link => ({
+    href: link.url,
+    label: link.label,
+    isActive: isActivePage(link.url)
+  }));
+
+// Texte du bouton Contact depuis la configuration
+const contactButtonText = navConfig?.header?.contactButtonText || t.contact;
 ---
 
 <style>
@@ -191,10 +204,10 @@ const rightNavLinks = showArticlesSection ? [
               </a>
               <div class="absolute left-0 mt-1 w-56 bg-white shadow-lg rounded-sm z-50 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300">
                 <div class="py-2">
-                  {link.dropdownItems.map(item => (
+                  {link.dropdownItems?.map(item => (
                     <a 
-                      href={item.href} 
-                      class={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 ${isActivePage(item.href) ? 'font-medium' : ''}`}
+                      href={item.url} 
+                      class={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 ${isActivePage(item.url) ? 'font-medium' : ''}`}
                     >
                       {item.label}
                     </a>
@@ -226,7 +239,7 @@ const rightNavLinks = showArticlesSection ? [
         <div class="flex items-center space-x-4">
           <Button 
             href={`/${currentLang}/contact`} 
-            text={t.contact}
+            text={contactButtonText}
             variant="secondary"
             class={`py-1 px-3 text-sm ${isActivePage(`/${currentLang}/contact`) ? 'font-medium' : ''}`}
           />
@@ -246,74 +259,68 @@ const rightNavLinks = showArticlesSection ? [
       
       <!-- Menu principal pour mobile avec style amélioré -->
       <div class="w-64 mx-auto text-center">
-        <!-- Home link -->
-        <a 
-          href={`/${currentLang}`}
-          class={`mobile-nav-link block py-3 text-black uppercase text-lg font-light border-b border-gray-200 ${isActivePage(`/${currentLang}`) ? 'active' : ''}`}
-        >
-          {t.home}
-        </a>
-        
-        <!-- Expertise avec sous-menu extensible -->
-        <div class="mb-4">
-          <a 
-            href={isHomePage ? "#expertise" : `/${currentLang}#expertise`}
-            class={`mobile-nav-link block py-3 text-black uppercase text-lg font-light border-b border-gray-200 ${isServicesPage ? 'active' : ''}`}
-          >
-            {t.services}
-          </a>
-          <button id="toggle-services" class="flex items-center justify-center w-full py-1 text-gray-500">
-            <ChevronDown class="w-5 h-5 transform transition-transform duration-300" id="services-chevron" />
-          </button>
-          
-          <!-- Sous-menu services avec animation -->
-          <div class="overflow-hidden transition-all duration-300 max-h-0" id="services-submenu">
-            <div class="py-2 px-4 bg-white bg-opacity-60 rounded-sm my-2">
-              {serviceDropdownItems.map(item => (
-                <a 
-                  href={item.href} 
-                  class={`block py-2 text-black text-base font-light hover:text-gray-600 transition-colors duration-300 ${isActivePage(item.href) ? 'font-medium' : ''}`}
-                >
-                  {item.label}
-                </a>
-              ))}
+        <!-- Afficher tous les liens de navigation principaux -->
+        {mainLinks.map((link, index) => (
+          link.hasDropdown ? (
+            <div class="mb-4">
+              <a 
+                href={link.url}
+                class={`mobile-nav-link block py-3 text-black uppercase text-lg font-light border-b border-gray-200 ${
+                  link.url.includes('/services/') ? isServicesPage : isActivePage(link.url) ? 'active' : ''
+                }`}
+              >
+                {link.label}
+              </a>
+              <button id={`toggle-dropdown-${index}`} class="toggle-dropdown flex items-center justify-center w-full py-1 text-gray-500" data-index={index}>
+                <ChevronDown class="w-5 h-5 transform transition-transform duration-300 dropdown-chevron" />
+              </button>
+              
+              <!-- Sous-menu services avec animation -->
+              <div class="overflow-hidden transition-all duration-300 max-h-0 dropdown-submenu" data-index={index}>
+                <div class="py-2 px-4 bg-white bg-opacity-60 rounded-sm my-2">
+                  {link.dropdownItems?.map(item => (
+                    <a 
+                      href={item.url} 
+                      class={`block py-2 text-black text-base font-light hover:text-gray-600 transition-colors duration-300 ${isActivePage(item.url) ? 'font-medium' : ''}`}
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        
-        <!-- Autres liens de navigation avec style amélioré -->
-        <a 
-          href={isHomePage ? "#profil" : `/${currentLang}/profil`} 
-          class="mobile-nav-link block py-3 text-black uppercase text-lg font-light border-b border-gray-200"
-        >
-          {t.profil}
-        </a>
-        
-        <a 
-          href={`/${currentLang}/honoraires`} 
-          class={`mobile-nav-link block py-3 text-black uppercase text-lg font-light border-b border-gray-200 ${isActivePage(`/${currentLang}/honoraires`) ? 'active' : ''}`}
-        >
-          {t.tarifs}
-        </a>
-        
-        {showArticlesSection && (
-          <a 
-            href={`/${currentLang}/blog`} 
-            class={`mobile-nav-link block py-3 text-black uppercase text-lg font-light border-b border-gray-200 ${isActivePage(`/${currentLang}/blog`) ? 'active' : ''}`}
-          >
-            {t.articles}
-          </a>
-        )}
+          ) : (
+            <a 
+              href={link.url} 
+              class={`mobile-nav-link block py-3 text-black uppercase text-lg font-light border-b border-gray-200 ${
+                link.url.includes('#profil') && isProfilPage ? 'active' : isActivePage(link.url) ? 'active' : ''
+              }`}
+            >
+              {link.label}
+            </a>
+          )
+        ))}
         
         <Button 
           href={`/${currentLang}/contact`} 
-          text={t.contact}
+          text={contactButtonText}
           variant="secondary"
           class={`mt-6 text-lg py-3 px-8 ${isActivePage(`/${currentLang}/contact`) ? 'font-medium' : ''}`}
         />
         
-        <div class="mt-8 py-4 border-t border-gray-200 pt-6">
-          <LanguagePicker currentLang={currentLang} />
+        <!-- Sélecteur de langue simplifié pour mobile -->
+        <div class="mt-8 py-4 border-t border-gray-200 pt-6 flex justify-center">
+          <div class="flex items-center space-x-4">
+            <span class="text-black font-light">{currentLang.toUpperCase()}</span>
+            {langs.filter(lang => lang !== currentLang).map(lang => (
+              <a 
+                href={pathname.replace(`/${currentLang}`, `/${lang}`)} 
+                class="text-gray-500 font-light hover:text-black transition-colors duration-300"
+              >
+                {lang.toUpperCase()}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </nav>
@@ -324,9 +331,6 @@ const rightNavLinks = showArticlesSection ? [
   const menuToggle = document.getElementById('menu-toggle');
   const closeMenu = document.getElementById('close-menu');
   const mobileMenu = document.getElementById('mobile-menu');
-  const toggleServices = document.getElementById('toggle-services');
-  const servicesSubmenu = document.getElementById('services-submenu');
-  const servicesChevron = document.getElementById('services-chevron');
   
   if (menuToggle && mobileMenu) {
     menuToggle.addEventListener('click', () => {
@@ -342,20 +346,28 @@ const rightNavLinks = showArticlesSection ? [
     });
   }
   
-  // Toggle sous-menu services
-  if (toggleServices && servicesSubmenu) {
-    toggleServices.addEventListener('click', () => {
-      if (servicesSubmenu.classList.contains('max-h-0')) {
-        servicesSubmenu.classList.remove('max-h-0');
-        servicesSubmenu.classList.add('max-h-40');
-        servicesChevron.classList.add('rotate-180');
-      } else {
-        servicesSubmenu.classList.remove('max-h-40');
-        servicesSubmenu.classList.add('max-h-0');
-        servicesChevron.classList.remove('rotate-180');
-      }
+  // Toggle pour tous les menus déroulants
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleButtons = document.querySelectorAll('.toggle-dropdown');
+    
+    toggleButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const index = this.getAttribute('data-index');
+        const submenu = document.querySelector(`.dropdown-submenu[data-index="${index}"]`);
+        const chevron = this.querySelector('.dropdown-chevron');
+        
+        if (submenu.classList.contains('max-h-0')) {
+          submenu.classList.remove('max-h-0');
+          submenu.classList.add('max-h-40');
+          chevron.classList.add('rotate-180');
+        } else {
+          submenu.classList.remove('max-h-40');
+          submenu.classList.add('max-h-0');
+          chevron.classList.remove('rotate-180');
+        }
+      });
     });
-  }
+  });
 
   // Smooth scrolling for anchor links - improved version
   document.addEventListener('click', function(e) {

@@ -36,6 +36,151 @@ collections:
                 default: "https://cal.com/pwablo/30min"
                 hint: "Lien vers votre calendrier Cal.com pour les rendez-vous"
   
+  # Navigation du site
+  - name: "navigation"
+    label: "Navigation"
+    files:
+      - file: "src/content/navigation/navigation.yml"
+        name: "site-navigation"
+        label: "Navigation du site"
+        i18n:
+          structure: single_file
+        fields:
+          - label: "Français"
+            name: "fr"
+            widget: "object"
+            fields: &navigationFields
+              - label: "Header"
+                name: "header"
+                widget: "object"
+                fields:
+                  - label: "Liens principaux"
+                    name: "mainLinks"
+                    widget: "list"
+                    fields:
+                      - {label: "Libellé", name: "label", widget: "string"}
+                      - {label: "URL", name: "url", widget: "string", hint: "Utilisez une URL relative comme /fr/contact ou #section pour les ancres"}
+                      - {label: "Sous-menu", name: "hasDropdown", widget: "boolean", default: false}
+                      - label: "Éléments du sous-menu"
+                        name: "dropdownItems"
+                        widget: "list"
+                        required: false
+                        fields:
+                          - {label: "Libellé", name: "label", widget: "string"}
+                          - {label: "URL", name: "url", widget: "string"}
+                        hint: "Ajouter des éléments au sous-menu (seulement si Sous-menu est activé)"
+                  - label: "Texte du bouton Contact"
+                    name: "contactButtonText"
+                    widget: "string"
+                    default: "ME CONTACTER"
+
+              - label: "Footer"
+                name: "footer"
+                widget: "object"
+                fields:
+                  - label: "Titre de la section Menu"
+                    name: "menuTitle"
+                    widget: "string"
+                    default: "Menu"
+                  - label: "Titre de la section Contact"
+                    name: "contactTitle"
+                    widget: "string"
+                    default: "Contact"
+                  - label: "Coordonnées"
+                    name: "contactInfo"
+                    widget: "object"
+                    fields:
+                      - {label: "Téléphone", name: "phone", widget: "string", default: "+32 488 40 45 49"}
+                      - {label: "Email", name: "email", widget: "string", default: "c.rizzo@avocat.be"}
+                      - {label: "LinkedIn", name: "linkedin", widget: "string", default: "https://www.linkedin.com/in/christine-rizzo/"}
+                      - {label: "Adresse", name: "address", widget: "string", default: "Chaussée de Waterloo 1151, 1180 Bruxelles"}
+                  - label: "Liens légaux"
+                    name: "legalLinks"
+                    widget: "list"
+                    fields:
+                      - {label: "Libellé", name: "label", widget: "string"}
+                      - {label: "URL", name: "url", widget: "string"}
+                  - label: "Titre de la section Eco-design"
+                    name: "ecoDesignTitle"
+                    widget: "string"
+                    default: "Site web écologique"
+                  - {label: "Texte du lien Eco-design", name: "ecoDesignText", widget: "string", default: "Score d'éco-conception"}
+                  - {label: "URL du lien Eco-design", name: "ecoDesignUrl", widget: "string", default: "https://www.websitecarbon.com/website/crizzo-avocate-be-fr/"}
+                  - {label: "Texte du lien Pwablo", name: "pwabloText", widget: "string", default: "Design by Pwablo"}
+                  - label: "URL du lien Pwablo"
+                    name: "pwabloUrl"
+                    widget: "string"
+                    default: "https://pwablo.be"
+                    hint: "NE PAS MODIFIER CE CHAMP - Lien réservé à l'agence Pwablo"
+                    pattern: ["^https://pwablo\\.be$", "Cette URL ne doit pas être modifiée"]
+                  - label: "Texte du copyright"
+                    name: "copyrightText"
+                    widget: "string"
+                    default: "© 2024 Christine Rizzo"
+                    hint: "L'année est calculée automatiquement. Ne modifiez que la partie 'Christine Rizzo'"
+
+          - label: "English"
+            name: "en"
+            widget: "object"
+            fields: *navigationFields
+
+          - label: "Italiano"
+            name: "it"
+            widget: "object"
+            fields: *navigationFields
+
+  # Traductions UI
+  - name: "uiTranslations"
+    label: "Traductions UI"
+    files:
+      - file: "src/content/ui-translations/ui-translations.yml"
+        name: "ui-translations"
+        label: "Traductions de l'interface"
+        i18n:
+          structure: single_file
+        fields:
+          - label: "Français"
+            name: "fr"
+            widget: "object"
+            fields: &uiTranslationsFields
+              - {label: "Lire la suite", name: "readMore", widget: "string", default: "Lire la suite"}
+              - {label: "Voir tous les articles", name: "viewAllArticles", widget: "string", default: "Voir tous les articles"}
+              - {label: "Prendre rendez-vous", name: "contactCta", widget: "string", default: "Prendre rendez-vous"}
+              - {label: "Navigation", name: "navigation", widget: "string", default: "Navigation"}
+              - {label: "Pages légales", name: "legalPages", widget: "string", default: "Pages légales"}
+              - {label: "Eco-design & Pwablo", name: "ecoDesignPwablo", widget: "string", default: "Eco-design & Pwablo"}
+              - {label: "Copyright", name: "copyright", widget: "string", default: "© 2024 Christine Rizzo"}
+              - {label: "Titre du blog", name: "blogTitle", widget: "string", default: "Articles"}
+              - {label: "Aucun article trouvé", name: "noArticles", widget: "string", default: "Aucun article trouvé."}
+              - {label: "Toutes catégories", name: "allCategories", widget: "string", default: "Toutes catégories"}
+              - {label: "Titre CTA", name: "ctaTitle", widget: "string", default: "Une question en droit du travail?"}
+              - {label: "Sous-titre CTA", name: "ctaSubtitle", widget: "string", default: "Contactez-moi. Je suis à votre écoute."}
+              - {label: "Prendre RDV", name: "takeAppointment", widget: "string", default: "Prendre RDV"}
+              - {label: "Appeler", name: "call", widget: "string", default: "Appeler"}
+              - {label: "WhatsApp", name: "whatsapp", widget: "string", default: "WhatsApp"}
+              - {label: "Email", name: "email", widget: "string", default: "Email"}
+              - {label: "En savoir plus", name: "learnMore", widget: "string", default: "En savoir plus"}
+              - label: "Autres traductions"
+                name: "additionalTranslations"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - {label: "Page active", name: "activePage", widget: "string", default: "Page active"}
+                  - {label: "Soumettre", name: "submit", widget: "string", default: "Soumettre"}
+                  - {label: "Annuler", name: "cancel", widget: "string", default: "Annuler"}
+                  - {label: "Rechercher", name: "search", widget: "string", default: "Rechercher"}
+                  - {label: "Fermer", name: "close", widget: "string", default: "Fermer"}
+
+          - label: "English"
+            name: "en"
+            widget: "object"
+            fields: *uiTranslationsFields
+
+          - label: "Italiano"
+            name: "it"
+            widget: "object"
+            fields: *uiTranslationsFields
+
   # Collection Blog
   - &blogCollection
     name: "blog-fr"
