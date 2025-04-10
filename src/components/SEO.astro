@@ -1,5 +1,6 @@
 ---
 import { SEO as AstroSEO } from 'astro-seo';
+import { getEntry } from 'astro:content';
 
 export interface Props {
   title: string;
@@ -21,8 +22,15 @@ const {
   lang = 'fr',
 } = Astro.props;
 
-const siteUrl = import.meta.env.SITE ?? 'https://crizzo-avocate.be/';
-const defaultImage = 'default-social-image.png'; 
+// Récupérer la configuration du site
+const siteConfigEntry = await getEntry('config', 'site-config');
+const siteConfig = siteConfigEntry?.data || {};
+const seoConfig = siteConfig.seo || {};
+
+// Utiliser les valeurs de configuration ou les valeurs par défaut
+const siteUrl = seoConfig.siteUrl || import.meta.env.SITE || 'https://crizzo-avocate.be/';
+const siteName = seoConfig.siteName || 'Christine Rizzo - Avocate';
+const defaultImage = seoConfig.defaultSocialImage || 'default-social-image.png'; 
 const fullImageUrl = image ? new URL(image, siteUrl).toString() : new URL(defaultImage, siteUrl).toString();
 
 const keywordsString = Array.isArray(keywords) ? keywords.join(', ') : keywords;
@@ -44,12 +52,12 @@ const languages = ['fr', 'en', 'it'];
     optional: {
       description: description,
       locale: lang,
-      siteName: "Christine Rizzo - Avocate",
+      siteName: siteName,
     },
     image: {
       url: fullImageUrl,
       secureUrl: fullImageUrl,
-      alt: "Christine Rizzo - Avocate",
+      alt: siteName,
       type: "image/jpeg",
       width: 1200,
       height: 630,
@@ -66,16 +74,16 @@ const languages = ['fr', 'en', 'it'];
     title: title,
     description: description,
     image: fullImageUrl,
-    imageAlt: "Christine Rizzo - Avocate",
+    imageAlt: siteName,
   }}
   extend={{
     link: [
-      { rel: "icon", href: "/favicon.ico" },
+      { rel: "icon", href: seoConfig.favicon || "/favicon.ico" },
       ...languages.map(l => ({ rel: "alternate", hreflang: l, href: `${siteUrl}/${l}` })),
     ],
     meta: [
       { name: "author", content: "Christine Rizzo" },
-      { name: "robots", content: "index, follow" },
+      { name: "robots", content: seoConfig.allowIndexing ? "index, follow" : "noindex, nofollow" },
       { name: "language", content: lang },
       ...(keywordsString ? [{ name: "keywords", content: keywordsString }] : []),
       { property: "og:image:width", content: "1200" },

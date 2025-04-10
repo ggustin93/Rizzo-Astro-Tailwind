@@ -45,18 +45,28 @@ const currentLang: SupportedLanguage = supportedLanguages.includes(rawLang as Su
   ? rawLang as SupportedLanguage 
   : 'fr';
 
+// Récupérer la configuration du site
+const siteConfigEntry = await getEntry('config', 'site-config');
+const siteConfig = siteConfigEntry?.data || {};
+const seoConfig = siteConfig.seo || {};
+
 // URL principale du site
-const mainSiteUrl = 'https://crizzo-avocate.be';
+const mainSiteUrl = seoConfig.siteUrl || 'https://crizzo-avocate.be';
 
 // Génération de l'URL canonique
 const path = Astro.url.pathname;
 const autoCanonical = new URL(path, mainSiteUrl).toString();
 const finalCanonical = canonical || autoCanonical;
 
-// Récupérer la configuration du site pour l'indexation
-const siteConfigEntry = await getEntry('config', 'site-config');
-const allowIndexing = siteConfigEntry?.data?.allowIndexing || false;
+// Paramètres d'indexation
+const allowIndexing = seoConfig.allowIndexing || false;
 const robotsContent = allowIndexing ? "index, follow" : "noindex, nofollow";
+
+// Favicon personnalisable
+const favicon = seoConfig.favicon || '/favicon.ico';
+const faviconPng32 = seoConfig.faviconPng32 || '/favicon-32x32.png';
+const faviconPng16 = seoConfig.faviconPng16 || '/favicon-16x16.png';
+const appleTouchIcon = seoConfig.appleTouchIcon || '/apple-touch-icon.png';
 ---
 
 <!DOCTYPE html>
@@ -92,11 +102,11 @@ const robotsContent = allowIndexing ? "index, follow" : "noindex, nofollow";
     <link rel="preconnect" href="https://unpkg.com">
     
     <!-- Favicons et manifeste -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon}>
+    <link rel="icon" type="image/png" sizes="32x32" href={faviconPng32}>
+    <link rel="icon" type="image/png" sizes="16x16" href={faviconPng16}>
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/x-icon" href={favicon}>
     
 
     

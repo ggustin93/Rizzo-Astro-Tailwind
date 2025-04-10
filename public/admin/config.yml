@@ -484,11 +484,11 @@ collections:
 
   # Configuration du site
   - name: "siteConfig"
-    label: "Configuration du site"
+    label: "Configuration"
     files:
       - file: "src/content/config/site-config.yml"
         name: "site-config"
-        label: "Configuration du site"
+        label: "Paramètres généraux"
         editor:
           preview: false
         i18n:
@@ -505,20 +505,82 @@ collections:
             widget: "string"
             default: "https://cal.com/pwablo/30min"
             hint: "Lien vers votre calendrier Cal.com pour les rendez-vous"
-            
-          - label: "Autoriser l'indexation (SEO)"
-            name: "allowIndexing"
-            widget: "boolean"
-            default: false
-            hint: "IMPORTANT: Activer pour que le site soit indexé par les moteurs de recherche. Désactiver pendant le développement ou les tests."
-  
-  # Navigation du site
-  - name: "navigation"
-    label: "Navigation"
-    files:
+          
+          - label: "SEO et apparence"
+            name: "seo"
+            widget: "object"
+            summary: "Paramètres d'apparence et de référencement"
+            fields:
+              - label: "Autoriser l'indexation"
+                name: "allowIndexing"
+                widget: "boolean"
+                default: false
+                hint: "IMPORTANT: Activer pour que le site soit indexé par les moteurs de recherche. Désactiver pendant le développement ou les tests."
+              
+              - label: "Favicon principal"
+                name: "favicon"
+                widget: "image"
+                required: false
+                hint: "Icône principale du site (format .ico pour compatibilité maximale)"
+                media_folder: "public"
+                public_folder: "/"
+              
+              - label: "Favicon 32x32"
+                name: "faviconPng32"
+                widget: "image"
+                required: false
+                hint: "Version PNG 32x32 pixels du favicon"
+                media_folder: "public"
+                public_folder: "/"
+              
+              - label: "Favicon 16x16"
+                name: "faviconPng16"
+                widget: "image"
+                required: false
+                hint: "Version PNG 16x16 pixels du favicon"
+                media_folder: "public"
+                public_folder: "/"
+              
+              - label: "Apple Touch Icon"
+                name: "appleTouchIcon"
+                widget: "image"
+                required: false
+                hint: "Icône pour les appareils Apple (180x180 pixels)"
+                media_folder: "public"
+                public_folder: "/"
+              
+              - label: "Image principale pour les réseaux sociaux"
+                name: "defaultSocialImage"
+                widget: "image"
+                required: false
+                hint: "Image qui apparaîtra lorsque votre site est partagé sur les réseaux sociaux (format recommandé: 1200x630px)"
+                media_folder: "public"
+                public_folder: "/"
+              
+              - label: "Description globale du site"
+                name: "siteDescription"
+                widget: "text"
+                required: false
+                pattern: ['^.{0,160}$', "La description doit faire 160 caractères maximum"]
+                hint: "Description générale du site pour le référencement (max 160 caractères)"
+
+              - label: "Nom du site"
+                name: "siteName"
+                widget: "string" 
+                required: false
+                default: "Christine Rizzo - Avocate"
+                hint: "Nom qui apparaîtra dans les métadonnées et les partages sur réseaux sociaux"
+              
+              - label: "URL du site"
+                name: "siteUrl"
+                widget: "string"
+                required: false
+                default: "https://crizzo-avocate.be"
+                hint: "URL complète du site (utilisée pour les liens canoniques et les partages)"
+      
       - file: "src/content/navigation/navigation.yml"
         name: "site-navigation"
-        label: "Navigation du site"
+        label: "Menus et liens"
         i18n:
           structure: single_file
         fields:
@@ -605,14 +667,10 @@ collections:
             name: "it"
             widget: "object"
             fields: *navigationFields
-
-  # Traductions UI
-  - name: "uiTranslations"
-    label: "Traductions UI"
-    files:
+      
       - file: "src/content/ui-translations/ui-translations.yml"
         name: "ui-translations"
-        label: "Traductions de l'interface"
+        label: "Textes de l'interface"
         i18n:
           structure: single_file
         fields:
