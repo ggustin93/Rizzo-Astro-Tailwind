@@ -38,7 +38,7 @@ fr:
   imageUrl: https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80
   title: Accompagnement et défense des entreprises
   servicesTitle: Mes services
-  description: "*"
+  description: ""
   seo:
     title: Services juridiques pour employeurs | Christine Rizzo Avocate
     description: Expertise en droit du travail pour les entreprises. Conseils,
@@ -51,7 +51,7 @@ fr:
       - litige travail Belgique
       - accompagnement juridique personnalisé entreprises
     image: https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg
-  ctaText: En savoir plus sur les tarifs pour les entreprises
+  ctaText: En savoir plus sur les tarifs
   services:
     - icon: Search
       text: Audit - Due Diligence en droit du travail et de la sécurité sociale
@@ -112,7 +112,7 @@ en:
   imageUrl: https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80
   title: Legal counsel and defense for employers
   servicesTitle: My Services
-  description: "*"
+  description: ""
   seo:
     title: Legal Services for Employers | Christine Rizzo Lawyer
     description: Labor law expertise for companies. Legal advice, defense, and
@@ -120,7 +120,7 @@ en:
     keywords: company lawyer, labor law, Brussels, legal advice, employer defense,
       HR support
     image: https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg
-  ctaText: Learn more about rates for companies
+  ctaText: Learn more about fees
   services:
     - icon: Search
       text: Audit - Due Diligence in labor and social security law
@@ -178,8 +178,8 @@ it:
   imageUrl: https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80
   title: Consulenza e difesa per le aziende
   servicesTitle: I Miei Servizi
-  description: "*"
-  ctaText: Scoprite di più sui tariffari per le aziende
+  description: ""
+  ctaText: Scopri di più sulle tariffe
   services:
     - icon: Search
       text: Audit - Due Diligence in diritto del lavoro

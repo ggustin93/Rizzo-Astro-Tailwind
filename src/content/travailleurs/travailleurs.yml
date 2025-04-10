@@ -1,6 +1,6 @@
 fr:
   title: Accompagnement et défense des travailleurs
-  description: "*"
+  description: ""
   questions:
     - Vous voulez faire relire votre contrat de travail ?
     - "Votre employeur vous propose une rupture conventionnelle mais vous ne
@@ -24,7 +24,7 @@ fr:
       text: Défense devant les cours et tribunaux du travail
     - icon: Handshake
       text: Négociation d'accords amiables
-  ctaText: En savoir plus sur les tarifs pour les travailleurs.euses
+  ctaText: En savoir plus sur les tarifs
   seo:
     title: Services juridiques pour travailleurs | Christine Rizzo Avocate
     description: Expertise en droit du travail pour les employés. Conseils, défense
@@ -37,86 +37,85 @@ fr:
       - défense employé tribunal du travail
       - litige travail Belgique
       - accompagnement juridique personnalisé travailleurs
-  specialFocus: "*"
+  specialFocus: ""
 en:
-  title: Legal counsel and defense for employees
-  description: "*"
+  title: Support and defense for employees
+  description: ""
   questions:
-    - Do you need your employment contract reviewed ?
-    - "Is your employer offering you a negotiated severance package, but you are
-      not sure whether it is in your best interests? "
-    - Do you want to resign ?
-    - Do you want to contest your dismissal (manifestly unreasonable, abusive or
-      discriminatory dismissal) ?
-    - Would you like to verify the calculation of your severance pay and whether
-      your rights have been respected following dismissal ?
-    - Have your working conditions changed during or because of pregnancy ?
-      Would you like to take parental leave ?
-    - Are you a victim of discrimination or harassment ? Are you being sidelined
-      because of a burn-out ?
-    - Are you the victim of a workplace accident ?
-    - "Is your status unclear ? You are an independent contractor, but you think
-      you should be reclassified as an employee ? "
+    - Do you want your employment contract to be reviewed?
+    - "Is your employer offering you a settlement agreement but you're not sure
+      if it's in your best interest?"
+    - Would you like to resign?
+    - Do you want to challenge your dismissal (manifestly unreasonable, wrongful
+      or discriminatory dismissal)?
+    - Do you want to verify the calculation of your severance pay and the
+      respect of your rights following a dismissal?
+    - Have your working conditions changed during or after a pregnancy? Do you
+      want to take time credit and parental leave?
+    - Are you a victim of discrimination or harassment? Are you being
+      marginalized because of burnout?
+    - Are you the victim of a work accident?
+    - Is your status unclear? Do you think you are a false independent?
   servicesTitle: My services
   services:
     - icon: BriefCase
-      text: Legal advice from recruitment to termination
+      text: Legal advice from recruitment to termination of the employment relationship
     - icon: Shield
       text: Defense before labor courts and tribunals
     - icon: Handshake
-      text: Negotiation of settlement agreements
-  ctaText: Learn more about rates for workers
+      text: Negotiation of amicable agreements
+  ctaText: Learn more about fees
   seo:
-    title: Legal Services for Employees | Christine Rizzo Lawyer
-    description: Labor law expertise for employees. Legal advice, defense, and
-      personalized support in Brussels.
-    image: https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg
+    title: Legal services for employees | Christine Rizzo Attorney
+    description: Employment law expertise for employees. Legal advice, defense and
+      personalized legal support in Brussels.
     keywords:
-      - labor law attorney for employees Brussels
-      - employment law expertise for workers
-      - employee legal counsel
-      - worker defense labor court
-      - workplace dispute resolution Belgium
-      - personalized legal support for employees
-  specialFocus: "*"
+      - employment lawyer Brussels
+      - labor law expertise
+      - employee legal advice
+      - defense employee labor court
+      - workplace litigation Belgium
+      - personalized legal support workers
+    image: https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg
+  specialFocus: ""
 it:
-  title: Consulenza e difesa per i lavoratori
-  description: "*"
+  title: Supporto e difesa dei lavoratori
+  description: ""
   questions:
-    - Vuole far controllare un contratto di lavoro prima di firmarlo ?
-    - "Il datore di lavoro Le propone un licenziamento concordato ma non sa se è
-      nel propio interesse? "
-    - Vuole dare le dimissioni?
-    - Intende contestare il licenziamento (motivo insufficiente, abusivo o
-      discriminatorio)?
-    - Vuole fare verificare il calcolo dell'Indennità sostitutiva del preavviso
-      e degli altri importi di fine rapporto??
-    - Le condizioni di lavoro sono cambiate durante o a causa della gravidanza?
-      Desidera prendere un congedo parentale?
-    - É vittima di discriminazione o molestie? Soffri di esaurimento (burn out)
-      professionale ?
-    - Ha avuto un infortunio sul lavoro?
-    - La Sua situazione non è chiara? pensa di dover essere riclassificato come
-      dipendente (lavoro subordinato)?
+    - Vuoi che il tuo contratto di lavoro sia rivisto?
+    - "Il tuo datore di lavoro ti offre un accordo transattivo ma non sei sicuro
+      che sia nel tuo interesse?"
+    - Vuoi dimetterti?
+    - Vuoi contestare il tuo licenziamento (licenziamento manifestamente
+      irragionevole, illegittimo o discriminatorio)?
+    - Vuoi verificare il calcolo della tua indennità di fine rapporto e il
+      rispetto dei tuoi diritti dopo un licenziamento?
+    - Le tue condizioni di lavoro sono cambiate durante o dopo una gravidanza?
+      Vuoi prendere un credito di tempo e un congedo parentale?
+    - Sei vittima di discriminazione o molestie? Sei stato emarginato a causa di
+      un burnout?
+    - Sei vittima di un infortunio sul lavoro?
+    - Il tuo status non è chiaro? Pensi di essere un falso autonomo?
   servicesTitle: I miei servizi
   services:
     - icon: BriefCase
-      text: "Consulenza legale dal l'assunzione alla fine del contratto "
+      text: Consulenza legale dalla fase di assunzione alla cessazione del rapporto di
+        lavoro
     - icon: Shield
-      text: Difesa davanti ai tribunali del lavoro
+      text: Difesa dinanzi ai tribunali del lavoro
     - icon: Handshake
-      text: Negoziazione di accordi transattivi
-  ctaText: Scopri di più sulle tariffe per i lavoratori
+      text: Negoziazione di accordi amichevoli
+  ctaText: Scopri di più sulle tariffe
+  specialFocus: ""
   seo:
-    title: Servizi legali per lavoratori | Avvocato Christine Rizzo
-    description: Esperienza in diritto del lavoro per dipendenti. Consulenza legale,
-      difesa e supporto personalizzato a Bruxelles.
-    image: https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg
+    title: Servizi legali per i lavoratori | Christine Rizzo Avvocato
+    description: Competenza in diritto del lavoro per i dipendenti. Consulenza
+      legale, difesa e assistenza legale personalizzata a Bruxelles.
     keywords:
-      - avvocato diritto del lavoro dipendenti Bruxelles
-      - esperienza diritto sociale lavoratori
-      - consulenza legale dipendenti
-      - difesa lavoratori tribunale del lavoro
-      - controversie lavoro Belgio
-      - supporto legale personalizzato lavoratori
-  specialFocus: "*"
+      - avvocato diritto del lavoro Bruxelles
+      - competenza diritto sociale
+      - consulenza legale dipendente
+      - difesa dipendente tribunale del lavoro
+      - contenzioso lavoro Belgio
+      - assistenza legale personalizzata lavoratori
+    image: https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg
