@@ -1,88 +1,84 @@
+# Christine Rizzo - Labor Law Attorney
 
-# Christine Rizzo Website - Astro Project
+## Project Overview
 
-## 🚀 Project Overview
+Professional website for Christine Rizzo, a labor law attorney based in Brussels. Built with modern web technologies for optimal performance and ease of maintenance.
 
-This project is a custom-built website for Christine Rizzo, utilizing modern web technologies for optimal performance and ease of maintenance.
+## Technology Stack
 
-## 🛠 Tech Stack
+- **[Astro](https://astro.build/)**: Fast, content-focused web framework
+- **[Tailwind CSS](https://tailwindcss.com/)**: Utility-first CSS framework
+- **[Decap CMS](https://decapcms.org/)**: Headless CMS for content management
+- **[Cal.com](https://cal.com/)**: Integrated appointment booking system
 
-- **Astro**: Fast, content-focused web framework
-- **Tailwind CSS**: Utility-first CSS framework for rapid styling
-- **Decap CMS**: Headless CMS for easy content management
+## Key Features
 
+- **Multilingual**: Complete support for French, English, and Italian
+- **Responsive Design**: Optimal user experience on all devices
+- **Content Management**: Admin interface for easy content updates
+- **SEO Optimized**: Structured for search engine visibility
+- **Eco-designed**: Focused on minimal environmental impact
+- **Appointment System**: Integrated Cal.com booking functionality
 
-## 🔧 Development Commands
-
-- `npm install`: Install dependencies
-- `npm run dev`: Start local development server
-- `npm run build`: Build for production
-- `npm run preview`: Preview production build locally
-
-## 📝 Content Management
-
-Content can be managed via Decap CMS at `yoursite.com/admin`.
-
-## 🚀 Deployment
-
-The site is automatically deployed on Netlify upon pushes to the main GitHub repository branch.
-
-## 💬 Support and Maintenance
-
-For any questions, support needs, or maintenance requests, please contact:
-
-Guillaume Gustin
-Email: guillaume.gustin.9@gmail.com
-## 🛠️ Project Structure
+## Project Structure
 
 ```text
 /
-├── public/
-│   ├── admin/
-│   │   └── config.yml
-│   ├── images/
-│   └── favicon.ico
+├── public/               # Static files and CMS configuration
+│   ├── admin/            # Decap CMS admin interface
+│   └── assets/           # Images and resources
 ├── src/
-│   ├── components/
-│   │   ├── Header.astro
-│   │   ├── Footer.astro
-│   │   └── PostCard.astro
-│   ├── layouts/
-│   │   └── BaseLayout.astro
-│   ├── pages/
-│   │   ├── index.astro
-│   │   ├── [lang]/
-│   │   │   ├── index.astro
-│   │   │   └── blog/
-│   │   │       └── [slug].astro
-│   │   └── blog/
-│   │       └── [slug].astro
-│   ├── styles/
-│   │   └── global.css
-│   └── content/
-│       └── posts/
-│           ├── en/
-│           │   ├── post1.md
-│           │   └── post2.md
-│           └── fr/
-│               ├── post1.md
-│               └── post2.md
-├── tailwind.config.js
-├── astro.config.mjs
-├── package.json
-└── netlify.toml
+│   ├── components/       # Reusable components
+│   ├── layouts/          # Base templates
+│   ├── pages/            # Site routes and pages
+│   │   └── [lang]/       # Multilingual structure
+│   ├── content/          # CMS-managed content
+│   │   ├── blog/         # Blog articles by language
+│   │   ├── config/       # Site configuration
+│   │   └── home/         # Homepage content
+│   └── styles/           # Global styles
+├── astro.config.mjs      # Astro configuration
+└── tailwind.config.js    # Tailwind CSS configuration
 ```
 
-This structure reflects:
-- Multilanguage setup with `[lang]` dynamic routes
-- Content organization for different languages
-- Decap CMS configuration in `public/admin/`
-- Blog post handling with dynamic `[slug]` routes
-- Tailwind CSS and Astro configurations
+## Development
 
-The project uses Astro's file-based routing and content collections for efficient multilingual content management and blog post handling. Decap CMS is integrated for easy content updates, while Tailwind CSS is used for styling.
+```bash
+# Install dependencies
+npm install
 
-For any questions or support needs regarding this structure or the project in general, please contact:
+# Start development server
+npm run dev
 
-Guillaume Gustin
-Email: guillaume.gustin.9@gmail.com
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## Content Management
+
+The admin interface is accessible at `/admin/` and allows management of:
+
+- Blog articles
+- Page content
+- Multilingual settings
+- SEO metadata
+- Media and images
+
+## Deployment
+
+The site is automatically deployed on Netlify when changes are pushed to the main repository branch.
+
+## Security
+
+CMS access is secured by Netlify Identity, providing authentication and user management for the admin interface.
+
+## Contact
+
+For questions or support regarding this website:
+
+**Guillaume Gustin**  
+Email: hello@pwablo.be
+Design and development by [Pwablo](https://pwablo.be)
