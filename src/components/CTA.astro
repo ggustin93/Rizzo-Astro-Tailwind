@@ -9,7 +9,7 @@ const lang = pathname.split('/')[1] || 'fr';
 
 // Récupérer la configuration du site pour le lien Cal.com
 const siteConfigEntry = await getEntry('config', 'site-config');
-const calendarLink = siteConfigEntry?.data?.calendarLink || 'https://cal.com/pwablo/30min';
+const calendarLink = siteConfigEntry?.data?.calendarLink || 'https://cal.com/c.rizzo-avocat.be/rendez-vous?duration=15';
 
 const translations = {
   fr: {
