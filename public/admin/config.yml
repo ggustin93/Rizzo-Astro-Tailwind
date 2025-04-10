@@ -522,42 +522,6 @@ collections:
                 default: false
                 hint: "IMPORTANT: Activer pour que le site soit indexé par les moteurs de recherche. Désactiver pendant le développement ou les tests."
               
-              - label: "Favicon principal"
-                name: "favicon"
-                widget: "image"
-                required: false
-                default: "/favicon.ico"
-                hint: "Icône principale du site (format .ico pour compatibilité maximale)"
-                media_folder: "public"
-                public_folder: "/"
-              
-              - label: "Favicon 32x32"
-                name: "faviconPng32"
-                widget: "image"
-                required: false
-                default: "/favicon-32x32.png"
-                hint: "Version PNG 32x32 pixels du favicon"
-                media_folder: "public"
-                public_folder: "/"
-              
-              - label: "Favicon 16x16"
-                name: "faviconPng16"
-                widget: "image"
-                required: false
-                default: "/favicon-16x16.png"
-                hint: "Version PNG 16x16 pixels du favicon"
-                media_folder: "public"
-                public_folder: "/"
-              
-              - label: "Apple Touch Icon"
-                name: "appleTouchIcon"
-                widget: "image"
-                required: false
-                default: "/apple-touch-icon.png"
-                hint: "Icône pour les appareils Apple (180x180 pixels)"
-                media_folder: "public"
-                public_folder: "/"
-              
               - label: "Image principale pour les réseaux sociaux"
                 name: "defaultSocialImage"
                 widget: "image"
