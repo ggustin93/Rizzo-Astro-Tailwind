@@ -40,11 +40,13 @@ const iconMap = {
 };
 
 // SEO data
+const keywords = Array.isArray(content.seo?.keywords) ? content.seo.keywords.join(', ') : '';
+
 const seoData = {
   title: content.seo?.title || `Services pour employeurs - Christine Rizzo`,
-  description: content.seo?.description || content.description,
+  description: content.seo?.description || '',
   image: content.seo?.image || '/default-social-image.jpg',
-  keywords: content.seo?.keywords?.join(', ') || ''
+  keywords: keywords
 };
 ---
 
@@ -83,7 +85,6 @@ const seoData = {
                     </li>
                   ))}
                 </ul>
-                {content.additionalSupport.conclusion}
               </p>
             </div>
           )}

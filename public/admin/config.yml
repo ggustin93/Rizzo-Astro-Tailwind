@@ -164,7 +164,6 @@ collections:
                     name: "points"
                     widget: "list"
                     field: {label: "Point", name: "point", widget: "string"}
-                  - {label: "Conclusion", name: "conclusion", widget: "text"}
               - {label: "Titre des prestations", name: "servicesTitle", widget: "string"}
               - label: "Prestations"
                 name: "services"
