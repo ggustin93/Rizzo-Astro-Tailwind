@@ -80,15 +80,15 @@ const handleAction = (type: string, action: string) => {
             {buttonConfig.map(({ icon: Icon, text, action, type }) => (
               <div class="flex flex-col items-center">
                 <button
-                  class="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-4 hover:bg-travailleur hover:shadow-lg transition-all duration-300 transform hover:scale-105 group cursor-pointer"
+                  class="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-5 hover:bg-travailleur hover:shadow-lg transition-all duration-300 transform hover:scale-105 group cursor-pointer"
                   onclick={handleAction(type, action)}
                   data-cal-link={type === 'appointment' ? calendarLink.replace('https://cal.com/', '') : undefined}
                   data-cal-config={type === 'appointment' ? '{"layout":"month_view"}' : undefined}
                 >
                   <Icon class="w-12 h-12 text-employeur group-hover:text-white transition-colors duration-300 pointer-events-none" />
                 </button>
-                <span class="text-base uppercase text-white font-semibold tracking-wider leading-relaxed mb-1 px-2">{text}</span>
-                <span class="text-base text-gray-300 font-normal italic">{action}</span>
+                <span class="text-base uppercase text-white font-semibold tracking-wider leading-relaxed mb-2 px-2">{text}</span>
+                <span class="text-base text-gray-300 font-normal italic hover:text-white transition-colors duration-300">{action}</span>
               </div>
             ))}
           </div>

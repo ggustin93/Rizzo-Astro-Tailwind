@@ -76,14 +76,14 @@ const seoData = {
                 <div class="flex flex-col items-center">
                   <button
                     onclick={handleAction(button.type, button.action || button.subtext)}
-                    class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4 hover:bg-travailleur transition-colors duration-300 group shadow-md cursor-pointer"
+                    class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-5 hover:bg-travailleur transition-all duration-300 transform hover:scale-105 group shadow-md cursor-pointer"
                     data-cal-link={button.type === 'appointment' ? calendarLink.replace('https://cal.com/', '') : undefined}
                     data-cal-config={button.type === 'appointment' ? '{"layout":"month_view"}' : undefined}
                   >
                     <IconComponent class="w-9 h-9 text-employeur group-hover:text-white transition-colors duration-300 pointer-events-none" />
                   </button>
-                  <span class="text-base uppercase text-white font-semibold leading-relaxed tracking-wide mb-1 px-2 text-center">{button.text}</span>
-                  <span class="text-base text-gray-300 font-normal italic text-center">{button.subtext}</span>
+                  <span class="text-base uppercase text-white font-semibold leading-relaxed tracking-wide mb-2 px-2 text-center">{button.text}</span>
+                  <span class="text-base text-gray-300 font-normal italic text-center hover:text-white transition-colors duration-300">{button.subtext}</span>
                 </div>
               );
             })}
