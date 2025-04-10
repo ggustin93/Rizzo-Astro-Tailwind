@@ -171,6 +171,38 @@ const contactButtonText = navConfig?.header?.contactButtonText || t.contact;
     border-left: 1px solid black;
     padding-left: 0.5rem;
   }
+  
+  /* Amélioration des effets hover sur mobile */
+  .mobile-nav-link {
+    position: relative;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+  
+  .mobile-nav-link:hover, 
+  .mobile-submenu-link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .mobile-nav-link:active, 
+  .mobile-submenu-link:active {
+    transform: scale(0.98);
+  }
+  
+  /* Animation pour les sous-menus */
+  .mobile-submenu-link {
+    position: relative;
+    transition: background-color 0.2s ease, transform 0.1s ease, padding-left 0.2s ease;
+  }
+  
+  .mobile-submenu-link:hover {
+    padding-left: 0.5rem;
+  }
+  
+  .mobile-submenu-link.active {
+    font-weight: 400;
+    padding-left: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
 </style>
 
 <header class="py-2 my-4 lg:py-6 lg:my-8">
@@ -257,7 +289,7 @@ const contactButtonText = navConfig?.header?.contactButtonText || t.contact;
         </svg>
       </button>
       
-      <!-- Menu principal pour mobile avec style amélioré -->
+      <!-- Menu principal pour mobile avec style amélioré et simplifié -->
       <div class="w-64 mx-auto text-center">
         <!-- Afficher tous les liens de navigation principaux -->
         {mainLinks.map((link, index) => (
@@ -265,34 +297,29 @@ const contactButtonText = navConfig?.header?.contactButtonText || t.contact;
             <div class="mb-4">
               <a 
                 href={link.url}
-                class={`mobile-nav-link block py-3 text-black uppercase text-lg font-light border-b border-gray-200 ${
+                class={`mobile-nav-link block py-3 text-black uppercase text-base font-light border-b border-gray-200 ${
                   link.url.includes('/services/') ? isServicesPage : isActivePage(link.url) ? 'active' : ''
                 }`}
               >
                 {link.label}
               </a>
-              <button id={`toggle-dropdown-${index}`} class="toggle-dropdown flex items-center justify-center w-full py-1 text-gray-500" data-index={index}>
-                <ChevronDown class="w-5 h-5 transform transition-transform duration-300 dropdown-chevron" />
-              </button>
               
-              <!-- Sous-menu services avec animation -->
-              <div class="overflow-hidden transition-all duration-300 max-h-0 dropdown-submenu" data-index={index}>
-                <div class="py-2 px-4 bg-white bg-opacity-60 rounded-sm my-2">
-                  {link.dropdownItems?.map(item => (
-                    <a 
-                      href={item.url} 
-                      class={`block py-2 text-black text-base font-light hover:text-gray-600 transition-colors duration-300 ${isActivePage(item.url) ? 'font-medium' : ''}`}
-                    >
-                      {item.label}
-                    </a>
-                  ))}
-                </div>
+              <!-- Sous-menu services simplifié (toujours visible) -->
+              <div class="py-2 px-4 bg-white bg-opacity-60 rounded-sm my-2">
+                {link.dropdownItems?.map(item => (
+                  <a 
+                    href={item.url} 
+                    class={`mobile-submenu-link block py-2 text-black text-sm font-light transition-colors duration-300 ${isActivePage(item.url) ? 'active' : ''}`}
+                  >
+                    {item.label}
+                  </a>
+                ))}
               </div>
             </div>
           ) : (
             <a 
               href={link.url} 
-              class={`mobile-nav-link block py-3 text-black uppercase text-lg font-light border-b border-gray-200 ${
+              class={`mobile-nav-link block py-3 text-black uppercase text-base font-light border-b border-gray-200 ${
                 link.url.includes('#profil') && isProfilPage ? 'active' : isActivePage(link.url) ? 'active' : ''
               }`}
             >
@@ -305,17 +332,17 @@ const contactButtonText = navConfig?.header?.contactButtonText || t.contact;
           href={`/${currentLang}/contact`} 
           text={contactButtonText}
           variant="secondary"
-          class={`mt-6 text-lg py-3 px-8 ${isActivePage(`/${currentLang}/contact`) ? 'font-medium' : ''}`}
+          class={`mt-6 text-base py-3 px-6 ${isActivePage(`/${currentLang}/contact`) ? 'font-medium' : ''}`}
         />
         
         <!-- Sélecteur de langue simplifié pour mobile -->
         <div class="mt-8 py-4 border-t border-gray-200 pt-6 flex justify-center">
           <div class="flex items-center space-x-4">
-            <span class="text-black font-light">{currentLang.toUpperCase()}</span>
+            <span class="text-black text-sm font-light">{currentLang.toUpperCase()}</span>
             {langs.filter(lang => lang !== currentLang).map(lang => (
               <a 
                 href={pathname.replace(`/${currentLang}`, `/${lang}`)} 
-                class="text-gray-500 font-light hover:text-black transition-colors duration-300"
+                class="text-gray-500 text-sm font-light hover:text-black transition-colors duration-300"
               >
                 {lang.toUpperCase()}
               </a>
@@ -346,29 +373,6 @@ const contactButtonText = navConfig?.header?.contactButtonText || t.contact;
     });
   }
   
-  // Toggle pour tous les menus déroulants
-  document.addEventListener('DOMContentLoaded', function() {
-    const toggleButtons = document.querySelectorAll('.toggle-dropdown');
-    
-    toggleButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        const index = this.getAttribute('data-index');
-        const submenu = document.querySelector(`.dropdown-submenu[data-index="${index}"]`);
-        const chevron = this.querySelector('.dropdown-chevron');
-        
-        if (submenu.classList.contains('max-h-0')) {
-          submenu.classList.remove('max-h-0');
-          submenu.classList.add('max-h-40');
-          chevron.classList.add('rotate-180');
-        } else {
-          submenu.classList.remove('max-h-40');
-          submenu.classList.add('max-h-0');
-          chevron.classList.remove('rotate-180');
-        }
-      });
-    });
-  });
-
   // Smooth scrolling for anchor links - improved version
   document.addEventListener('click', function(e) {
     const link = e.target.closest('a');
