@@ -1,19 +1,4 @@
 fr:
-  topics:
-    - Premier engagement en Belgique
-    - Contrats de salariés ou indépendants
-    - Démissions et licenciements
-    - Horaires de travail flexibles
-    - Télétravail
-    - Droit à la déconnexion
-    - Crédit-temps et congés thématiques (congé parental, aide médicale, soins
-      palliatifs, aidant proche) et protections contre le licenciement
-    - Droit à la formation
-    - Reconnaissance et incentives bonus
-    - Gestion des absences (de longue durée)
-    - Harcèlement, stress et violence au travail (risque psychosociaux)
-    - Discrimination au travail
-    - Faux indépendants
   additionalSupport:
     intro: Je vous accompagne également pour que
     points:
@@ -32,11 +17,8 @@ fr:
     - Bien-être au travail (problématiques liées au harcèlement et autres
       risques psychosociaux)
     - Discrimination
-  imageAlt: Poignée de main entre professionnels
-  imageUrl: https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80
   title: Accompagnement et défense des entreprises
   servicesTitle: Mes services
-  description: ""
   seo:
     title: Services juridiques pour employeurs | Christine Rizzo Avocate
     description: Expertise en droit du travail pour les entreprises. Conseils,
@@ -66,21 +48,6 @@ fr:
         du travail et de l'ONSS
 
 en:
-  topics:
-    - First hiring in Belgium
-    - Employee or independent contractor agreements
-    - Resignations and dismissals
-    - Flexible working hours
-    - Remote work
-    - Right to disconnect
-    - Time credit and thematic leaves (parental leave, medical assistance,
-      palliative care, caregivers) and protection against dismissal
-    - Right to training
-    - Recognition and bonus incentives
-    - Management of (long-term) absences
-    - Harassment, stress, and violence at work (psychosocial risks)
-    - Workplace discrimination
-    - False self-employment
   additionalSupport:
     intro: I also assist you in ensuring that
     points:
@@ -97,11 +64,8 @@ en:
     - Managing (long-term) absences
     - Well-being at work (harassment and other psychosocial risks)
     - Discrimination
-  imageAlt: Professional handshake
-  imageUrl: https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80
   title: Legal counsel and defense for employers
   servicesTitle: My Services
-  description: ""
   seo:
     title: Legal Services for Employers | Christine Rizzo Lawyer
     description: Labor law expertise for companies. Legal advice, defense, and
@@ -136,22 +100,6 @@ en:
       text: Defense before labor courts, and labor and social security inspections
 
 it:
-  topics:
-    - Prima assunzione in Belgio
-    - Contratti di dipendenti o autonomi
-    - Dimissioni e licenziamenti
-    - Orari di lavoro flessibili
-    - Lavoro da remoto
-    - Diritto alla disconnessione
-    - Credito d'orario e congedi tematici (congedo parentale, assistenza medica,
-      cure palliative, assistenza familiare) e protezioni contro il
-      licenziamento
-    - Diritto alla formazione
-    - Riconoscimenti e incentivi bonus
-    - Gestione delle assenze (di lunga durata)
-    - Molestie, stress e violenza sul lavoro (rischi psicosociali)
-    - Discriminazione sul lavoro
-    - Falso lavoro autonomo
   additionalSupport:
     intro: Vi assisto anche nell'utilizzo delle normative sul benessere sul lavoro,
       le leggi antidiscriminazione e gli strumenti giuridici volti a migliorare
@@ -172,11 +120,8 @@ it:
     - Gestione delle assenze
     - Benessere sul lavoro (molestie e altri rischi psicosociali)
     - Discriminazione
-  imageAlt: Stretta di mano tra professionisti
-  imageUrl: https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80
   title: Consulenza e difesa per le aziende
   servicesTitle: I Miei Servizi
-  description: ""
   seo:
     title: Servizi legali per datori di lavoro | Avvocato Christine Rizzo
     description: Consulenza legale specializzata in diritto del lavoro per aziende a Bruxelles. Difesa e assistenza personalizzata.
