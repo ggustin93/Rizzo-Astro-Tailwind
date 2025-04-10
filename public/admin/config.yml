@@ -505,6 +505,12 @@ collections:
             widget: "string"
             default: "https://cal.com/pwablo/30min"
             hint: "Lien vers votre calendrier Cal.com pour les rendez-vous"
+            
+          - label: "Autoriser l'indexation (SEO)"
+            name: "allowIndexing"
+            widget: "boolean"
+            default: false
+            hint: "IMPORTANT: Activer pour que le site soit indexé par les moteurs de recherche. Désactiver pendant le développement ou les tests."
   
   # Navigation du site
   - name: "navigation"

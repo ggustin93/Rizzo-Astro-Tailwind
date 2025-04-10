@@ -19,7 +19,8 @@ const configCollection = defineCollection({
   type: 'data',
   schema: z.object({
     sectionsVisibility: z.boolean().optional().default(false),
-    calendarLink: z.string().optional().default("https://cal.com/pwablo/30min")
+    calendarLink: z.string().optional().default("https://cal.com/pwablo/30min"),
+    allowIndexing: z.boolean().optional().default(false)
   })
 });
 

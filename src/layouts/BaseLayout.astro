@@ -3,6 +3,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SEO from '../components/SEO.astro';
 import '../styles/global.css';
+import { getEntry } from 'astro:content';
 
 // Définition des langues supportées
 type SupportedLanguage = 'en' | 'fr' | 'it';
@@ -51,6 +52,11 @@ const mainSiteUrl = 'https://crizzo-avocate.be';
 const path = Astro.url.pathname;
 const autoCanonical = new URL(path, mainSiteUrl).toString();
 const finalCanonical = canonical || autoCanonical;
+
+// Récupérer la configuration du site pour l'indexation
+const siteConfigEntry = await getEntry('config', 'site-config');
+const allowIndexing = siteConfigEntry?.data?.allowIndexing || false;
+const robotsContent = allowIndexing ? "index, follow" : "noindex, nofollow";
 ---
 
 <!DOCTYPE html>
@@ -60,8 +66,8 @@ const finalCanonical = canonical || autoCanonical;
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <!-- Ajoutez cette ligne juste après les autres balises meta -->
-    <meta name="robots" content="noindex, nofollow">
+    <!-- Contrôle de l'indexation basé sur la configuration du site -->
+    <meta name="robots" content={robotsContent}>
     <!-- Composant SEO -->
     <SEO
         title={title}

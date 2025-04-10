@@ -5,8 +5,11 @@ import sitemap from '@astrojs/sitemap';
 // Set this to 'static' or 'hybrid' based on your needs
 const outputMode = 'static';
 
+// Uncomment this when deploying to production
+const siteUrl = 'https://crizzo-avocate.be';
+
 export default defineConfig({
-  // site: 'https://crizzo-avocate.be',
+  site: siteUrl,
   publicDir: './public',
   output: outputMode,
   /* assets: {
@@ -34,7 +37,8 @@ export default defineConfig({
   },
   integrations: [
     robotsTxt({
-      site: 'https://crizzo-avocate.be',
+      host: siteUrl,
+      sitemap: true,
     }),
     sitemap(),
   ],
