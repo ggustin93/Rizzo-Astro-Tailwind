@@ -12,9 +12,12 @@ const currentLang = pathname.split('/')[1] || 'fr';
 const siteConfigEntry = await getEntry('config', 'site-config');
 const showArticlesSection = siteConfigEntry?.data?.sectionsVisibility?.articlesSection || false;
 
+// Année courante pour le copyright
+const currentYear = new Date().getFullYear();
+
 const translations = {
   fr: {
-    copyright: "© 2024 Christine Rizzo",
+    copyright: `© ${currentYear} Christine Rizzo`,
     expertise: "Expertise",
     profil: "Profil",
     honoraires: "Honoraires",
@@ -29,7 +32,7 @@ const translations = {
     menu: "Menu"
   },
   en: {
-    copyright: "© 2024 Christine Rizzo",
+    copyright: `© ${currentYear} Christine Rizzo`,
     expertise: "Expertise",
     profil: "Profile",
     honoraires: "Fees",
@@ -44,7 +47,7 @@ const translations = {
     menu: "Menu"
   },
   it: {
-    copyright: "© 2024 Christine Rizzo",
+    copyright: `© ${currentYear} Christine Rizzo`,
     expertise: "Esperienza",
     profil: "Profilo",
     honoraires: "Onorari",
