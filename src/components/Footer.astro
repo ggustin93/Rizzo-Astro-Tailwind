@@ -130,17 +130,17 @@ const legalLinks = [
   <div class="container mx-auto px-4">
     <div class="flex flex-wrap justify-between items-start">
       <div class="w-full md:w-1/3 mb-6 md:mb-0 pr-4 flex justify-center md:justify-start items-center md:items-start md:self-start">
-        <Image src={logoImage} alt="Christine Rizzo Logo" class="h-48 md:h-96 w-auto mt-0 md:mt-[-4rem]" />
+        <Image src={logoImage} alt="Christine Rizzo Logo" class="h-40 md:h-96 w-auto mt-0 md:mt-[-4rem]" />
       </div>
       
-      <div class="w-full md:w-1/5 mt-6 mb-6 md:mb-0">
-        <h3 class="font-medium mb-5 text-xl hidden md:block">{t.menu}</h3>
+      <div class="w-full md:w-1/5 mt-4 md:mt-6 mb-4 md:mb-0">
+        <h3 class="font-medium mb-5 text-lg md:text-xl hidden md:block">{t.menu}</h3>
         <ul class="space-y-3 hidden md:block">
           {mainLinks.map(link => (
             <li>
               <a 
                 href={link.href} 
-                class={`text-base hover:underline transition-colors duration-300 hover:text-travailleur ${link.isActive ? 'font-medium' : ''}`}
+                class={`text-sm md:text-base hover:underline transition-colors duration-300 hover:text-travailleur ${link.isActive ? 'font-medium' : ''}`}
               >
                 {link.label}
               </a>
@@ -148,16 +148,16 @@ const legalLinks = [
           ))}
         </ul>
         <details class="md:hidden">
-          <summary class="font-medium mb-4 text-xl flex justify-between items-center cursor-pointer text-center">
+          <summary class="font-medium mb-3 text-lg flex justify-between items-center cursor-pointer text-center">
             <span class="w-full">{t.menu}</span>
             <ChevronDown class="w-5 h-5 absolute right-0" />
           </summary>
-          <ul class="space-y-3 mt-3 text-center">
+          <ul class="space-y-2 mt-2 text-center">
             {mainLinks.map(link => (
               <li>
                 <a 
                   href={link.href} 
-                  class={`text-base hover:underline ${link.isActive ? 'font-medium' : ''}`}
+                  class={`text-sm hover:underline ${link.isActive ? 'font-medium' : ''}`}
                 >
                   {link.label}
                 </a>
@@ -167,12 +167,12 @@ const legalLinks = [
         </details>
       </div>
       
-      <div class="w-full md:w-1/5 mb-6 mt-6 md:mb-0">
-        <h3 class="font-medium mb-5 text-xl hidden md:block">{t.contact}</h3>
+      <div class="w-full md:w-1/5 mb-4 md:mb-0 mt-4 md:mt-6">
+        <h3 class="font-medium mb-5 text-lg md:text-xl hidden md:block">{t.contact}</h3>
         <div class="hidden md:block">
-          <p class="text-base flex items-center mb-3"><Phone class="w-5 h-5 mr-3" /> +32 488 40 45 49</p>
-          <p class="text-base flex items-center mb-3"><Mail class="w-5 h-5 mr-3" /> c.rizzo@avocat.be</p>
-          <p class="text-base flex items-start">
+          <p class="text-sm md:text-base flex items-center mb-3"><Phone class="w-5 h-5 mr-3" /> +32 488 40 45 49</p>
+          <p class="text-sm md:text-base flex items-center mb-3"><Mail class="w-5 h-5 mr-3" /> c.rizzo@avocat.be</p>
+          <p class="text-sm md:text-base flex items-start">
             <MapPin class="w-5 h-5 mr-3 mt-1" /> 
             <span>
               Chaussée de Waterloo 1151,<br/>
@@ -181,14 +181,14 @@ const legalLinks = [
           </p>
         </div>
         <details class="md:hidden">
-          <summary class="font-medium mb-4 text-xl flex justify-between items-center cursor-pointer text-center">
+          <summary class="font-medium mb-3 text-lg flex justify-between items-center cursor-pointer text-center">
             <span class="w-full">{t.contact}</span>
             <ChevronDown class="w-5 h-5 absolute right-0" />
           </summary>
-          <div class="mt-3 text-center">
-            <p class="text-base mb-3">+32 488 40 45 49</p>
-            <p class="text-base mb-3">c.rizzo@avocat.be</p>
-            <p class="text-base">
+          <div class="mt-2 text-center">
+            <p class="text-sm mb-2">+32 488 40 45 49</p>
+            <p class="text-sm mb-2">c.rizzo@avocat.be</p>
+            <p class="text-sm">
               Chaussée de Waterloo 1151,<br/>
               1180 Bruxelles
             </p>
@@ -196,38 +196,38 @@ const legalLinks = [
         </details>
       </div>
       
-      <div class="w-full md:w-1/5 mb-6 mt-6 md:mb-0">
-        <h3 class="font-medium mb-5 text-xl hidden md:block">{t.ecoDesignPwablo}</h3>
+      <div class="w-full md:w-1/5 mb-4 md:mb-0 mt-4 md:mt-6">
+        <h3 class="font-medium mb-5 text-lg md:text-xl hidden md:block">{t.ecoDesignPwablo}</h3>
         <div class="hidden md:block">
-          <a href="https://www.websitecarbon.com/website/crizzo-avocate-be-fr/" class="text-base hover:underline mb-3 block">{t.ecoDesign}</a>
+          <a href="https://www.websitecarbon.com/website/crizzo-avocate-be-fr/" class="text-sm md:text-base hover:underline mb-3 block">{t.ecoDesign}</a>
           <a href="https://pwablo.be" class="hover:underline flex flex-col items-start">
-            <span class="text-base mb-3">{t.design}</span>
-            <Image src={logoPwablo} alt="Pwablo Logo" class="h-20 my-2 w-auto bg-white p-2" />
+            <span class="text-sm md:text-base mb-3">{t.design}</span>
+            <Image src={logoPwablo} alt="Pwablo Logo" class="h-16 md:h-20 my-2 w-auto bg-white p-2 rounded-lg" />
           </a>
         </div>
         <details class="md:hidden">
-          <summary class="font-medium mb-4 text-xl flex justify-between items-center cursor-pointer text-center">
+          <summary class="font-medium mb-3 text-lg flex justify-between items-center cursor-pointer text-center">
             <span class="w-full">{t.ecoDesignPwablo}</span>
             <ChevronDown class="w-5 h-5 absolute right-0" />
           </summary>
-          <div class="mt-3 text-center">
-            <a href="https://www.websitecarbon.com/website/crizzo-avocate-be-fr/" class="text-base hover:underline mb-3 block">{t.ecoDesign}</a>
+          <div class="mt-2 text-center">
+            <a href="https://www.websitecarbon.com/website/crizzo-avocate-be-fr/" class="text-sm hover:underline mb-2 block">{t.ecoDesign}</a>
             <a href="https://pwablo.be" class="hover:underline flex flex-col items-center">
-              <span class="text-base mb-3">{t.design}</span>
-              <Image src={logoPwablo} alt="Pwablo Logo" class="h-20 my-4 w-auto bg-white p-2" />
+              <span class="text-sm mb-2">{t.design}</span>
+              <Image src={logoPwablo} alt="Pwablo Logo" class="h-16 my-2 w-auto bg-white p-2 rounded-lg" />
             </a>
           </div>
         </details>
       </div>
     </div>
     
-    <div class="mt-6 pt-4 border-t border-gray-300 text-center">
-      <p class="text-base mb-4">{t.copyright}</p>
-      <p class="text-sm">
+    <div class="mt-4 md:mt-6 pt-3 md:pt-4 border-t border-gray-300 text-center">
+      <p class="text-sm md:text-base mb-3 md:mb-4">{t.copyright}</p>
+      <p class="text-xs md:text-sm">
         {legalLinks.map((link, index) => (
           <>
             <a href={link.href} class="hover:underline">{link.label}</a>
-            {index < legalLinks.length - 1 && <span class="mx-2">|</span>}
+            {index < legalLinks.length - 1 && <span class="mx-1 md:mx-2">|</span>}
           </>
         ))}
       </p>
