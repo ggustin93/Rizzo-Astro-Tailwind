@@ -127,7 +127,7 @@ const pwabloUrl = footerConfig.pwabloUrl || "https://pwablo.be";
 const copyrightText = footerConfig.copyrightText || t.copyright;
 
 // S'assurer que l'année du copyright est toujours l'année en cours
-const formattedCopyrightText = copyrightText.replace(/\d{4}/, currentYear.toString());
+const formattedCopyrightText = `© ${currentYear} ${copyrightText}`;
 
 // Titres des sections
 const menuTitle = footerConfig.menuTitle || t.menu;
