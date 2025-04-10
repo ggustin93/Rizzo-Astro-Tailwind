@@ -113,7 +113,7 @@ collections:
                 name: "services"
                 widget: "list"
                 fields:
-                  - {label: "Icône", name: "icon", widget: "select", options: ["Briefcase", "Shield", "FileText"]}
+                  - {label: "Icône", name: "icon", widget: "select", options: ["BriefCase", "Shield", "FileText", "Handshake"]}
                   - {label: "Texte", name: "text", widget: "string"}
               - {label: "Texte du bouton CTA", name: "ctaText", widget: "string"}
               - label: "SEO"
@@ -170,7 +170,7 @@ collections:
                 name: "services"
                 widget: "list"
                 fields:
-                  - {label: "Icône", name: "icon", widget: "select", options: ["FileText", "UserPlus", "Shield", "Search"]}
+                  - {label: "Icône", name: "icon", widget: "select", options: ["FileText", "UserPlus", "Shield", "Search", "Handshake"]}
                   - {label: "Texte", name: "text", widget: "string"}
               - {label: "Texte du bouton CTA", name: "ctaText", widget: "string"}
               - label: "SEO"

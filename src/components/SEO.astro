@@ -45,8 +45,24 @@ const seoConfig = siteConfig.seo || {};
 // Utiliser les valeurs de configuration ou les valeurs par défaut
 const siteUrl = seoConfig.siteUrl || import.meta.env.SITE || 'https://crizzo-avocate.be/';
 const siteName = seoConfig.siteName || 'Christine Rizzo - Avocate';
-const defaultImage = seoConfig.defaultSocialImage || 'default-social-image.png'; 
-const fullImageUrl = image ? new URL(image, siteUrl).toString() : new URL(defaultImage, siteUrl).toString();
+const defaultImage = seoConfig.defaultSocialImage || '/assets/images/default-social-image.png'; 
+
+// Fix image URL creation to handle both absolute and relative paths
+let fullImageUrl;
+if (image) {
+  // Check if the image is already an absolute URL
+  if (image.startsWith('http://') || image.startsWith('https://')) {
+    fullImageUrl = image;
+  } else {
+    // Handle relative paths correctly
+    const imagePath = image.startsWith('/') ? image : `/${image}`;
+    fullImageUrl = new URL(imagePath, siteUrl).toString();
+  }
+} else {
+  // Ensure default image path is correctly formatted
+  const defaultImagePath = defaultImage.startsWith('/') ? defaultImage : `/${defaultImage}`;
+  fullImageUrl = new URL(defaultImagePath, siteUrl).toString();
+}
 
 const keywordsString = Array.isArray(keywords) ? keywords.join(', ') : keywords;
 
@@ -73,7 +89,7 @@ const languages = ['fr', 'en', 'it'];
       url: fullImageUrl,
       secureUrl: fullImageUrl,
       alt: siteName,
-      type: "image/jpeg",
+      type: fullImageUrl.toLowerCase().endsWith('.jpg') || fullImageUrl.toLowerCase().endsWith('.jpeg') ? "image/jpeg" : "image/png",
       width: 1200,
       height: 630,
     },

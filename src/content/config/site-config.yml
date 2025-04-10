@@ -5,7 +5,7 @@ seo:
   siteUrl: "https://crizzo-avocate.be"
   siteName: "Christine Rizzo - Avocate"
   siteDescription: "Christine Rizzo - Avocate en droit du travail à Bruxelles. Expertise pour employeurs et travailleurs."
-  defaultSocialImage: "/assets/images/default-social-image.png"
+  defaultSocialImage: "/default-social-image.jpg"
   favicon: "/favicon.ico"
   faviconPng32: "/favicon-32x32.png"
   faviconPng16: "/favicon-16x16.png"
