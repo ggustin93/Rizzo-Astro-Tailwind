@@ -83,20 +83,20 @@ const handleAction = (type: string, action: string) => {
             <div class="flex-grow h-px bg-gray-300 md:max-w-xs max-w-[40px] ml-2 md:ml-4"></div>
           </div>
           <p class="mb-8 text-lg md:text-xl font-light text-white">{t.ctaSubtitle}</p>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto md:mx-0">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-2xl mx-auto md:mx-0">
             {buttonConfig.map(({ icon: Icon, text, action, type }) => (
               <div class="flex flex-col items-center">
                 <button
-                  class="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-5 hover:bg-travailleur hover:shadow-lg transition-all duration-300 transform hover:scale-105 group cursor-pointer"
+                  class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center mb-3 md:mb-5 hover:bg-travailleur hover:shadow-lg transition-all duration-300 transform hover:scale-105 group cursor-pointer"
                   onclick={handleAction(type, action)}
                   data-cal-link={type === 'appointment' ? calendarLink.replace('https://cal.com/', '') : undefined}
                   data-cal-config={type === 'appointment' ? '{"layout":"month_view"}' : undefined}
                 >
-                  <Icon class="w-12 h-12 text-employeur group-hover:text-white transition-colors duration-300 pointer-events-none" />
+                  <Icon class="w-10 h-10 md:w-12 md:h-12 text-employeur group-hover:text-white transition-colors duration-300 pointer-events-none" />
                 </button>
-                <span class="text-base uppercase text-white font-semibold tracking-wider leading-relaxed mb-2 px-2">{text}</span>
+                <span class="text-sm md:text-base uppercase text-white font-semibold tracking-wider leading-relaxed mb-1 md:mb-2 px-2 text-center">{text}</span>
                 <button 
-                  class="text-base text-gray-300 font-normal italic hover:text-white transition-colors duration-300 hover:underline cursor-pointer"
+                  class="text-sm md:text-base text-gray-300 font-normal italic hover:text-white transition-colors duration-300 hover:underline cursor-pointer"
                   onclick={handleAction(type, action)}
                   data-cal-link={type === 'appointment' ? calendarLink.replace('https://cal.com/', '') : undefined}
                   data-cal-config={type === 'appointment' ? '{"layout":"month_view"}' : undefined}
