@@ -19,7 +19,7 @@ const langs = ['fr', 'en', 'it'];
 
 // Récupérer la configuration du site
 const siteConfigEntry = await getEntry('config', 'site-config');
-const showArticlesSection = siteConfigEntry?.data?.sectionsVisibility?.articlesSection || false;
+const showArticlesSection = siteConfigEntry?.data?.sectionsVisibility || false;
 
 // Récupérer la configuration de navigation
 const navigationEntry = await getEntry('navigation', 'navigation');

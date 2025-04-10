@@ -27,7 +27,7 @@ export interface Props {
 export async function getStaticPaths() {
   // Récupérer la configuration du site
   const siteConfigEntry = await getEntry('config', 'site-config');
-  const showArticlesSection = siteConfigEntry?.data?.sectionsVisibility?.articlesSection || false;
+  const showArticlesSection = siteConfigEntry?.data?.sectionsVisibility || false;
   
   const allBlogEntries = await getCollection('blog');
   return supportedLanguages.map(lang => {

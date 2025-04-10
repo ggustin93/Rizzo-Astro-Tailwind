@@ -18,12 +18,8 @@ const blog = defineCollection({
 const configCollection = defineCollection({
   type: 'data',
   schema: z.object({
-    sectionsVisibility: z.object({
-      articlesSection: z.boolean().optional().default(false)
-    }).optional(),
-    calendarConfig: z.object({
-      calendarLink: z.string().optional().default("https://cal.com/pwablo/30min")
-    }).optional()
+    sectionsVisibility: z.boolean().optional().default(false),
+    calendarLink: z.string().optional().default("https://cal.com/pwablo/30min")
   })
 });
 
@@ -66,8 +62,10 @@ const navigationCollection = defineCollection({
         ecoDesignTitle: z.string(),
         ecoDesignText: z.string(),
         ecoDesignUrl: z.string(),
-        pwabloText: z.string(),
-        pwabloUrl: z.string(),
+        pwablo: z.object({
+          pwabloText: z.string(),
+          pwabloUrl: z.string()
+        }),
         copyrightText: z.string()
       })
     })

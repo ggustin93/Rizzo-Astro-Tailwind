@@ -38,8 +38,9 @@ fr:
     ecoDesignTitle: "Site web écologique"
     ecoDesignText: "Score d'éco-conception"
     ecoDesignUrl: "https://www.websitecarbon.com/website/crizzo-avocate-be-fr/"
-    pwabloText: "Design by Pwablo"
-    pwabloUrl: "https://pwablo.be"
+    pwablo:
+      pwabloText: "Design by Pwablo"
+      pwabloUrl: "https://pwablo.be"
     copyrightText: "Christine Rizzo"
 
 en:
@@ -82,8 +83,9 @@ en:
     ecoDesignTitle: "Eco-friendly Website"
     ecoDesignText: "Eco-design Score"
     ecoDesignUrl: "https://www.websitecarbon.com/website/crizzo-avocate-be-fr/"
-    pwabloText: "Design by Pwablo"
-    pwabloUrl: "https://pwablo.be"
+    pwablo:
+      pwabloText: "Design by Pwablo"
+      pwabloUrl: "https://pwablo.be"
     copyrightText: "Christine Rizzo"
 
 it:
@@ -126,6 +128,7 @@ it:
     ecoDesignTitle: "Sito web ecologico"
     ecoDesignText: "Punteggio di eco-design"
     ecoDesignUrl: "https://www.websitecarbon.com/website/crizzo-avocate-be-fr/"
-    pwabloText: "Design di Pwablo"
-    pwabloUrl: "https://pwablo.be"
+    pwablo:
+      pwabloText: "Design di Pwablo"
+      pwabloUrl: "https://pwablo.be"
     copyrightText: "Christine Rizzo" 

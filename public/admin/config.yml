@@ -250,11 +250,11 @@ collections:
 
   # Pages Honoraires
   - name: "honoraires"
-    label: "Pages Honoraires"
+    label: "Page Honoraires"
     files:
       - file: "src/content/honoraires/honoraires.yml"
         name: "honoraires"
-        label: "Page principale des honoraires"
+        label: "Contenu de la page Honoraires"
         i18n:
           structure: single_file
         fields:
@@ -488,29 +488,23 @@ collections:
     files:
       - file: "src/content/config/site-config.yml"
         name: "site-config"
-        label: "Paramètres Globaux"
+        label: "Configuration du site"
+        editor:
+          preview: false
         i18n:
           structure: single_file
         fields:
           - label: "Visibilité des sections"
             name: "sectionsVisibility"
-            widget: "object"
-            fields:
-              - label: "Page et section Blog"
-                name: "articlesSection"
-                widget: "boolean"
-                default: false
-                hint: "Activer ou désactiver l'affichage de la section Articles sur la page d'accueil et dans la navigation"
+            widget: "boolean"
+            default: false
+            hint: "Activer ou désactiver l'affichage de la section Articles sur la page d'accueil et dans la navigation"
           
-          - label: "Configuration du calendrier"
-            name: "calendarConfig"
-            widget: "object"
-            fields:
-              - label: "Lien de réservation Cal.com"
-                name: "calendarLink"
-                widget: "string"
-                default: "https://cal.com/pwablo/30min"
-                hint: "Lien vers votre calendrier Cal.com pour les rendez-vous"
+          - label: "Lien de réservation Cal.com"
+            name: "calendarLink"
+            widget: "string"
+            default: "https://cal.com/pwablo/30min"
+            hint: "Lien vers votre calendrier Cal.com pour les rendez-vous"
   
   # Navigation du site
   - name: "navigation"
@@ -582,13 +576,14 @@ collections:
                     default: "Site web écologique"
                   - {label: "Texte du lien Eco-design", name: "ecoDesignText", widget: "string", default: "Score d'éco-conception"}
                   - {label: "URL du lien Eco-design", name: "ecoDesignUrl", widget: "string", default: "https://www.websitecarbon.com/website/crizzo-avocate-be-fr/"}
-                  - {label: "Texte du lien Pwablo", name: "pwabloText", widget: "string", default: "Design by Pwablo"}
-                  - label: "URL du lien Pwablo"
-                    name: "pwabloUrl"
-                    widget: "string"
-                    default: "https://pwablo.be"
-                    hint: "NE PAS MODIFIER CE CHAMP - Lien réservé à l'agence Pwablo"
-                    pattern: ["^https://pwablo\\.be$", "Cette URL ne doit pas être modifiée"]
+                  - label: "Pwablo (non modifiable)"
+                    name: "pwablo"
+                    widget: "object"
+                    collapsed: true
+                    fields:
+                      - {label: "Texte Pwablo", name: "pwabloText", widget: "string", default: "Design by Pwablo", readonly: true}
+                      - {label: "URL Pwablo", name: "pwabloUrl", widget: "string", default: "https://pwablo.be", readonly: true}
+                    hint: "Ces champs sont réservés à l'agence Pwablo et ne peuvent pas être modifiés."
                   - label: "Texte du copyright"
                     name: "copyrightText"
                     widget: "string"

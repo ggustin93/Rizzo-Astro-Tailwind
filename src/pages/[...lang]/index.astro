@@ -38,8 +38,8 @@ const content = homeEntry.data[lang as keyof typeof homeEntry.data] || homeEntry
 
 // Récupérer la configuration du site
 const siteConfigEntry = await getEntry('config', 'site-config');
-const showArticlesSection = siteConfigEntry?.data?.sectionsVisibility?.articlesSection || false;
-const calendarLink = siteConfigEntry?.data?.calendarConfig?.calendarLink || 'https://cal.com/pwablo/30min';
+const showArticlesSection = siteConfigEntry?.data?.sectionsVisibility || false;
+const calendarLink = siteConfigEntry?.data?.calendarLink || 'https://cal.com/pwablo/30min';
 
 if (!content || !content.expertise || !content.expertise.travailleurs) {
   console.error('Structure de contenu invalide:', content);
