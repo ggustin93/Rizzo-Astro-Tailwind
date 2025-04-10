@@ -494,11 +494,11 @@ collections:
         i18n:
           structure: single_file
         fields:
-          - label: "Visibilité des sections"
+          - label: "Visibilité de la section Blog"
             name: "sectionsVisibility"
             widget: "boolean"
             default: false
-            hint: "Activer ou désactiver l'affichage de la section Articles sur la page d'accueil et dans la navigation"
+            hint: "Activer ou désactiver l'affichage de la section Articles/Blog sur la page d'accueil et dans la navigation"
           
           - label: "Lien de réservation Cal.com"
             name: "calendarLink"
@@ -510,6 +510,11 @@ collections:
             name: "seo"
             widget: "object"
             summary: "Paramètres d'apparence et de référencement"
+            collapsed: false
+            description: >
+              Ces paramètres influencent la visibilité de votre site sur les moteurs de recherche
+              et son apparence lors du partage sur les réseaux sociaux. Configuration par défaut optimisée
+              et fonctionnelle. Toute modification requiert une bonne compréhension des pratiques SEO.
             fields:
               - label: "Autoriser l'indexation"
                 name: "allowIndexing"
@@ -521,6 +526,7 @@ collections:
                 name: "favicon"
                 widget: "image"
                 required: false
+                default: "/favicon.ico"
                 hint: "Icône principale du site (format .ico pour compatibilité maximale)"
                 media_folder: "public"
                 public_folder: "/"
@@ -529,6 +535,7 @@ collections:
                 name: "faviconPng32"
                 widget: "image"
                 required: false
+                default: "/favicon-32x32.png"
                 hint: "Version PNG 32x32 pixels du favicon"
                 media_folder: "public"
                 public_folder: "/"
@@ -537,6 +544,7 @@ collections:
                 name: "faviconPng16"
                 widget: "image"
                 required: false
+                default: "/favicon-16x16.png"
                 hint: "Version PNG 16x16 pixels du favicon"
                 media_folder: "public"
                 public_folder: "/"
@@ -545,6 +553,7 @@ collections:
                 name: "appleTouchIcon"
                 widget: "image"
                 required: false
+                default: "/apple-touch-icon.png"
                 hint: "Icône pour les appareils Apple (180x180 pixels)"
                 media_folder: "public"
                 public_folder: "/"
@@ -553,6 +562,7 @@ collections:
                 name: "defaultSocialImage"
                 widget: "image"
                 required: false
+                default: "/assets/images/default-social-image.png"
                 hint: "Image qui apparaîtra lorsque votre site est partagé sur les réseaux sociaux (format recommandé: 1200x630px)"
                 media_folder: "public"
                 public_folder: "/"
@@ -561,6 +571,7 @@ collections:
                 name: "siteDescription"
                 widget: "text"
                 required: false
+                default: "Christine Rizzo - Avocate en droit du travail à Bruxelles. Expertise pour employeurs et travailleurs."
                 pattern: ['^.{0,160}$', "La description doit faire 160 caractères maximum"]
                 hint: "Description générale du site pour le référencement (max 160 caractères)"
 
