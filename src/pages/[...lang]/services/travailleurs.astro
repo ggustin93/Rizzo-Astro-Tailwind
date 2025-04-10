@@ -39,8 +39,8 @@ const t = translations[lang as keyof typeof translations];
 const seoData = {
   title: content.seo?.title || `Services pour travailleurs - Christine Rizzo`,
   description: content.seo?.description || content.description,
-  image: content.seo?.image || 'https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg',
-  keywords: content.keywords?.join(', ') || content.seo?.keywords || ''
+  image: content.seo?.image || '/default-social-image.jpg',
+  keywords: content.seo?.keywords?.join(', ') || ''
 };
 ---
 
