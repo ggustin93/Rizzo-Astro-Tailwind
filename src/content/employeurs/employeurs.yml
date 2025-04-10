@@ -1,11 +1,5 @@
 fr:
-  additionalSupport:
-    intro: Je vous accompagne également pour que
-    points:
-      - la réglementation sur le bien-être au travail
-      - les lois anti-discrimination
-      - et les outils juridiques visant à améliorer l'équilibre vie privée-vie
-        professionnelle
+  title: Accompagnement et défense des entreprises
   questions:
     - Premier engagement en Belgique
     - Contrats de salariés ou indépendants (et faux indépendants)
@@ -17,21 +11,14 @@ fr:
     - Bien-être au travail (problématiques liées au harcèlement et autres
       risques psychosociaux)
     - Discrimination
-  title: Accompagnement et défense des entreprises
+  additionalSupport:
+    intro: Je vous accompagne également pour que
+    points:
+      - la réglementation sur le bien-être au travail
+      - les lois anti-discrimination
+      - et les outils juridiques visant à améliorer l'équilibre vie privée-vie
+        professionnelle
   servicesTitle: Mes services
-  seo:
-    title: Services juridiques pour employeurs | Christine Rizzo Avocate
-    description: Expertise en droit du travail pour les entreprises. Conseils,
-      défense et accompagnement juridique personnalisé à Bruxelles.
-    keywords:
-      - avocat droit du travail entreprises Bruxelles
-      - expertise droit social employeurs
-      - conseil juridique RH
-      - défense employeur tribunal du travail
-      - litige travail Belgique
-      - accompagnement juridique personnalisé entreprises
-    image: /default-social-image.jpg
-  ctaText: En savoir plus sur les tarifs
   services:
     - icon: Search
       text: Audit - Due Diligence en droit du travail et de la sécurité sociale
@@ -46,14 +33,22 @@ fr:
     - icon: Shield
       text: Défense devant les cours et tribunaux du travail et devant les inspections
         du travail et de l'ONSS
+  ctaText: En savoir plus sur les tarifs
+  seo:
+    title: Services juridiques pour employeurs | Christine Rizzo Avocate
+    description: Expertise en droit du travail pour les entreprises. Conseils,
+      défense et accompagnement juridique personnalisé à Bruxelles.
+    keywords:
+      - avocat droit du travail entreprises Bruxelles
+      - expertise droit social employeurs
+      - conseil juridique RH
+      - défense employeur tribunal du travail
+      - litige travail Belgique
+      - accompagnement juridique personnalisé entreprises
+    image: /default-social-image.jpg
 
 en:
-  additionalSupport:
-    intro: I also assist you in ensuring that
-    points:
-      - workplace well-being regulations
-      - anti-discrimination laws
-      - and legal tools aimed at improving work-life balance
+  title: Legal counsel and defense for employers
   questions:
     - First engagement in Belgium
     - "Employee or self-employed contracts (and bogus self-employed) "
@@ -64,8 +59,27 @@ en:
     - Managing (long-term) absences
     - Well-being at work (harassment and other psychosocial risks)
     - Discrimination
-  title: Legal counsel and defense for employers
+  additionalSupport:
+    intro: I also assist you in ensuring that
+    points:
+      - workplace well-being regulations
+      - anti-discrimination laws
+      - and legal tools aimed at improving work-life balance
   servicesTitle: My Services
+  services:
+    - icon: Search
+      text: Audit - Due Diligence in labor and social security law
+    - icon: FileText
+      text: Drafting and revision of employment contracts, work regulations, and HR
+        policies
+    - icon: UserPlus
+      text: Advice on managing individual employment relationships, from recruitment
+        to termination
+    - icon: Handshake
+      text: "Negotiation of settlement agreements "
+    - icon: Shield
+      text: Defense before labor courts, and labor and social security inspections
+  ctaText: Learn more about fees
   seo:
     title: Legal Services for Employers | Christine Rizzo Lawyer
     description: Labor law expertise for companies. Legal advice, defense, and
@@ -84,32 +98,9 @@ en:
       - employer defense
       - HR support
     image: /default-social-image.jpg
-  ctaText: Learn more about fees
-  services:
-    - icon: Search
-      text: Audit - Due Diligence in labor and social security law
-    - icon: FileText
-      text: Drafting and revision of employment contracts, work regulations, and HR
-        policies
-    - icon: UserPlus
-      text: Advice on managing individual employment relationships, from recruitment
-        to termination
-    - icon: Handshake
-      text: "Negotiation of settlement agreements "
-    - icon: Shield
-      text: Defense before labor courts, and labor and social security inspections
 
 it:
-  additionalSupport:
-    intro: Vi assisto anche nell'utilizzo delle normative sul benessere sul lavoro,
-      le leggi antidiscriminazione e gli strumenti giuridici volti a migliorare
-      l'equilibrio tra vita privata e professionale come risorse per valorizzare
-      l'immagine della vostra azienda, attrarre e trattenere i talenti.
-    points:
-      - la regolamentazione sul benessere sul lavoro
-      - le leggi antidiscriminazione
-      - e gli strumenti giuridici volti a migliorare l'equilibrio tra vita
-        privata e professionale
+  title: Consulenza e difesa per le aziende
   questions:
     - Prima assunzione in Belgio
     - "Contratti di lavoro dipendente o autonomo (e falsi lavoratori autonomi) "
@@ -120,14 +111,17 @@ it:
     - Gestione delle assenze
     - Benessere sul lavoro (molestie e altri rischi psicosociali)
     - Discriminazione
-  title: Consulenza e difesa per le aziende
+  additionalSupport:
+    intro: Vi assisto anche nell'utilizzo delle normative sul benessere sul lavoro,
+      le leggi antidiscriminazione e gli strumenti giuridici volti a migliorare
+      l'equilibrio tra vita privata e professionale come risorse per valorizzare
+      l'immagine della vostra azienda, attrarre e trattenere i talenti.
+    points:
+      - la regolamentazione sul benessere sul lavoro
+      - le leggi antidiscriminazione
+      - e gli strumenti giuridici volti a migliorare l'equilibrio tra vita
+        privata e professionale
   servicesTitle: I Miei Servizi
-  seo:
-    title: Servizi legali per datori di lavoro | Avvocato Christine Rizzo
-    description: Consulenza legale specializzata in diritto del lavoro per aziende a Bruxelles. Difesa e assistenza personalizzata.
-    keywords: avvocato diritto del lavoro, Bruxelles, consulenza giuridica, difesa datore di lavoro
-    image: /default-social-image.jpg
-  ctaText: Scopri di più sulle tariffe
   services:
     - icon: Search
       text: Audit - Due Diligence in diritto del lavoro
@@ -142,6 +136,10 @@ it:
     - icon: Shield
       text: Difesa davanti ai tribunali del lavoro, alle ispezioni del lavoro e della
         previdenza sociale
+  ctaText: Scopri di più sulle tariffe
+  seo:
+    title: Servizi legali per datori di lavoro | Avvocato Christine Rizzo
+    description: Consulenza legale specializzata in diritto del lavoro per aziende a Bruxelles. Difesa e assistenza personalizzata.
 
 
 
