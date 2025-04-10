@@ -78,57 +78,73 @@ const seoData = {
   keywords={seoData.keywords}
   lang={lang}
 >
-  <div class="bg-white md:my-20">
-
-  <div class="max-w-6xl mx-auto px-4 py-12">
-    <div class="flex flex-col-reverse md:flex-row gap-12">
-      <div class="md:w-2/3">
-        <h1 class="text-4xl md:text-5xl font-light text-accent mb-8">{name}</h1>
-        <h2 class="text-3xl font-light text-black mb-4">{title}</h2>
-        {bio.map((paragraph) => (
-          <p class="text-dark-gray mb-6">{paragraph}</p>
-        ))}
-        
-        <h3 class="text-xl font-semibold text-black mb-3">{t.career}</h3>
-        <ul class="space-y-2 mb-6">
-          {careerPath.map((item) => (
-            <li class="flex">
-              <span class="font-semibold text-accent w-24 flex-shrink-0">{item.year}</span>
-              <span class="text-dark-gray">{item.event}</span>
-            </li>
-          ))}
-        </ul>
-        
-        <h3 class="text-xl font-semibold text-black mb-3">{t.languages}</h3>
-        <p class="text-dark-gray mb-6">{languages}</p>
-        
-        <h3 class="text-xl font-semibold text-black mb-4">{t.conferences}</h3>
-<ul class="space-y-2 mb-8">
-  {conferences.map((conf) => (
-    <li class="text-dark-gray flex items-start">
-      <span class="text-accent mr-2 text-4xl">•</span> {conf}
-    </li>
-  ))}
-</ul>
-        
-        <h3 class="text-xl font-bold text-black mb-3">{t.publications}</h3>
-        <ul class="space-y-2">
-          {publications.map((pub) => (
-            <li class="text-dark-gray flex items-start">
-              <span class="text-accent mr-2 text-4xl">•</span>
-              <div>
-                <span class="font-semibold">{pub.date}:</span> "{pub.title}", {pub.publisher}
-                {pub.coAuthors && <span class="italic"> ({t.inCollaborationWith} {pub.coAuthors.join(', ')})</span>}
-              </div>
-            </li>
-          ))}
-        </ul>
+  <div class="bg-white md:my-20 p-4 md:p-8">
+    <div class="max-w-6xl mx-auto px-4 py-8 md:py-12">
+      <!-- Image visible only on mobile, above title -->
+      <div class="md:hidden mb-8">
+        <img src={image} alt={name} class="w-full rounded-lg shadow-lg">
       </div>
       
-      <div class="md:w-1/3">
-        <img src={image} alt={name} class="w-full rounded-lg shadow-lg mb-6">
+      <div class="flex flex-col md:flex-row gap-8 md:gap-12">
+        <div class="w-full md:w-2/3">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-light text-accent mb-4 md:mb-8">{name}</h1>
+          <h2 class="text-2xl md:text-3xl font-light text-black mb-4">{title}</h2>
+          {bio.map((paragraph) => (
+            <p class="text-sm md:text-base text-dark-gray mb-4 md:mb-6">{paragraph}</p>
+          ))}
+          
+          <div class="space-y-6 md:space-y-8 mt-6 md:mt-8">
+            <div>
+              <h3 class="text-lg md:text-xl font-semibold text-black mb-2 md:mb-3">{t.career}</h3>
+              <ul class="space-y-2 mb-4 md:mb-6">
+                {careerPath.map((item) => (
+                  <li class="flex flex-col sm:flex-row">
+                    <span class="font-semibold text-accent sm:w-24 flex-shrink-0">{item.year}</span>
+                    <span class="text-sm md:text-base text-dark-gray">{item.event}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div>
+              <h3 class="text-lg md:text-xl font-semibold text-black mb-2 md:mb-3">{t.languages}</h3>
+              <p class="text-sm md:text-base text-dark-gray mb-4 md:mb-6">{languages}</p>
+            </div>
+            
+            <div>
+              <h3 class="text-lg md:text-xl font-semibold text-black mb-2 md:mb-4">{t.conferences}</h3>
+              <ul class="space-y-2 mb-6 md:mb-8">
+                {conferences.map((conf) => (
+                  <li class="text-sm md:text-base text-dark-gray flex items-start">
+                    <span class="text-accent mr-2 text-2xl md:text-4xl">•</span> 
+                    <span>{conf}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div>
+              <h3 class="text-lg md:text-xl font-semibold text-black mb-2 md:mb-3">{t.publications}</h3>
+              <ul class="space-y-3">
+                {publications.map((pub) => (
+                  <li class="text-sm md:text-base text-dark-gray flex items-start">
+                    <span class="text-accent mr-2 text-2xl md:text-4xl">•</span>
+                    <div>
+                      <span class="font-semibold">{pub.date}:</span> "{pub.title}", {pub.publisher}
+                      {pub.coAuthors && <span class="italic"> ({t.inCollaborationWith} {pub.coAuthors.join(', ')})</span>}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Image visible only on desktop -->
+        <div class="hidden md:block md:w-1/3">
+          <img src={image} alt={name} class="w-full rounded-lg shadow-lg">
+        </div>
       </div>
     </div>
   </div>
-</div>
 </BaseLayout>

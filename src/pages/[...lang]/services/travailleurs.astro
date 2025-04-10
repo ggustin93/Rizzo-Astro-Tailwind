@@ -51,39 +51,39 @@ const seoData = {
   keywords={seoData.keywords}
   lang={lang}
 >
-  <div class="bg-white md:my-20 p-8 rounded-lg">
-    <main class="container mx-auto px-4 pt-8 pb-16">
-      <h1 class="text-4xl font-light mb-12 text-black text-center">{content.title}</h1>
+  <div class="bg-white md:my-20 p-4 md:p-8 rounded-lg">
+    <main class="container mx-auto px-3 md:px-4 pt-6 md:pt-8 pb-12 md:pb-16">
+      <h1 class="text-3xl md:text-4xl font-light mb-8 md:mb-12 text-black text-center">{content.title}</h1>
       
-      <div class="flex flex-col md:flex-row">
+      <div class="flex flex-col md:flex-row gap-6 md:gap-8">
         <!-- Left Column (2/3) -->
-        <div class="md:w-2/3 bg-travailleur p-8 rounded-lg text-white">
+        <div class="md:w-2/3 bg-travailleur p-5 md:p-8 rounded-lg text-white">
           <ul class="space-y-2 mb-6">
             {content.questions.map((question: string, index: number) => (
               <li set:key={index} class="flex items-start">
                 <ChevronRight class="w-5 h-5 mr-2 text-white flex-shrink-0 mt-1" />
-                <span>{question}</span>
+                <span class="text-sm md:text-base">{question}</span>
               </li>
             ))}
           </ul>
         </div>
         
         <!-- Right Column (1/3) -->
-        <div class="md:w-1/3 bg-white p-8 rounded-lg">
-          <h2 class="text-2xl font-light mb-6 text-black">{content.servicesTitle}</h2>
-          <ul class="space-y-6">
+        <div class="md:w-1/3 bg-white p-5 md:p-8 rounded-lg shadow-sm md:shadow-none">
+          <h2 class="text-xl md:text-2xl font-light mb-4 md:mb-6 text-black">{content.servicesTitle}</h2>
+          <ul class="space-y-4 md:space-y-6">
             {content.services.map((service: any, index: number) => {
               const IconComponent = iconMap[service.icon as keyof typeof iconMap];
               return (
                 <li set:key={index} class="flex items-start">
-                  {IconComponent && <IconComponent class="w-8 h-8 mr-4 text-travailleur flex-shrink-0" />}
-                  <span class="text-dark-gray font-light">{service.text}</span>
+                  {IconComponent && <IconComponent class="w-6 h-6 md:w-8 md:h-8 mr-3 md:mr-4 text-travailleur flex-shrink-0" />}
+                  <span class="text-dark-gray font-light text-sm md:text-base">{service.text}</span>
                 </li>
               );
             })}
           </ul>
-          <div class="mt-12 text-center">
-            <a href={`/${lang}/honoraires`} class="inline-flex items-center text-travailleur hover:underline">
+          <div class="mt-8 md:mt-12 text-center">
+            <a href={`/${lang}/honoraires`} class="inline-flex items-center text-travailleur hover:underline text-sm md:text-base">
               {content.ctaText}
               <ArrowRight class="w-4 h-4 ml-2" />
             </a>

@@ -49,19 +49,19 @@ function prepareContent(content: string) {
 ---
 
 <BaseLayout title={content.title} description={content.subtitle} lang={lang}>
-  <div class="bg-white md:my-20 p-8 rounded-lg">
+  <div class="bg-white md:my-20 p-4 md:p-8 rounded-lg">
 
-  <main class="container mx-auto px-4 py-12">
-    <h1 class="text-4xl font-light mb-4 text-center text-black">{content.title}</h1>
-    <p class="text-xl mb-12 text-center text-dark-gray">{content.subtitle}</p>
+  <main class="container mx-auto px-3 md:px-4 py-8 md:py-12">
+    <h1 class="text-3xl md:text-4xl font-light mb-3 md:mb-4 text-center text-black">{content.title}</h1>
+    <p class="text-lg md:text-xl mb-8 md:mb-12 text-center text-dark-gray">{content.subtitle}</p>
 
-    <section class="mb-12">
-      <h2 class="text-2xl font-light mb-6 text-black flex items-center">
-        <FileText class="w-6 h-6 mr-2 text-employeur" />
+    <section class="mb-8 md:mb-12">
+      <h2 class="text-xl md:text-2xl font-light mb-4 md:mb-6 text-black flex items-center">
+        <FileText class="w-5 h-5 md:w-6 md:h-6 mr-2 text-employeur" />
         {content.transparence.title}
       </h2>
-      <div class="bg-gray-50 p-8 rounded-lg">
-        <ul class="list-disc ml-6 space-y-3 text-dark-gray">
+      <div class="bg-gray-50 p-4 md:p-8 rounded-lg">
+        <ul class="list-disc ml-4 md:ml-6 space-y-2 md:space-y-3 text-dark-gray text-sm md:text-base">
           {content.transparence.points.map((point: string) => (
             <li class="leading-relaxed">{point}</li>
           ))}
@@ -69,56 +69,55 @@ function prepareContent(content: string) {
       </div>
     </section>
 
-    <section class="mb-12">
-      <h2 class="text-2xl font-light mb-6 text-black flex items-center">
-        <User class="w-6 h-6 mr-2 text-employeur" />
+    <section class="mb-8 md:mb-12">
+      <h2 class="text-xl md:text-2xl font-light mb-4 md:mb-6 text-black flex items-center">
+        <User class="w-5 h-5 md:w-6 md:h-6 mr-2 text-employeur" />
         {content.previsibilite.title}
       </h2>
-      <div class="bg-gray-50 p-8 rounded-lg">
-        <p class="mb-6 text-dark-gray leading-relaxed">{content.previsibilite.content}</p>
+      <div class="bg-gray-50 p-4 md:p-8 rounded-lg">
+        <p class="mb-4 md:mb-6 text-dark-gray leading-relaxed text-sm md:text-base">{content.previsibilite.content}</p>
         
-        {/* Version améliorée des points pour la section Prévisibilité */}
-        <div class="text-dark-gray">
-          <p class="mb-3 leading-relaxed">Si nous choisissons de travailler ensemble sur base d'un tarif horaire :</p>
-          <ul class="list-disc ml-6 space-y-2 mb-4">
+        <div class="text-dark-gray text-sm md:text-base">
+          <p class="mb-2 md:mb-3 leading-relaxed">Si nous choisissons de travailler ensemble sur base d'un tarif horaire :</p>
+          <ul class="list-disc ml-4 md:ml-6 space-y-1 md:space-y-2 mb-3 md:mb-4">
             <li class="leading-relaxed">mes prestations vous sont facturées chaque mois au fur et à mesure des prestations.</li>
             <li class="leading-relaxed">Il n'y a pas de frais de dossier ou de bureau excepté les frais postaux qui sont refacturés au prix coûtant.</li>
           </ul>
-          <p class="mb-3 leading-relaxed">Les frais liés à l'intervention de tiers (huissiers, experts, traducteurs, avocats spécialisés dans d'autres domaines) ou les frais de justice (droits de greffe) sont refacturés au prix coûtant ou directement payables au tiers intervenant.</p>
+          <p class="mb-2 md:mb-3 leading-relaxed">Les frais liés à l'intervention de tiers (huissiers, experts, traducteurs, avocats spécialisés dans d'autres domaines) ou les frais de justice (droits de greffe) sont refacturés au prix coûtant ou directement payables au tiers intervenant.</p>
         </div>
       </div>
     </section>
 
-    <section class="mb-16">
-      <h2 class="text-2xl font-light mb-6 text-black flex items-center">
-        <Briefcase class="w-6 h-6 mr-2 text-employeur" />
+    <section class="mb-8 md:mb-16">
+      <h2 class="text-xl md:text-2xl font-light mb-4 md:mb-6 text-black flex items-center">
+        <Briefcase class="w-5 h-5 md:w-6 md:h-6 mr-2 text-employeur" />
         {content.forfaits.title}
       </h2>
-      <div class="text-dark-gray bg-gray-50 p-6 rounded-lg mb-10">
-        <p class="mb-8 max-w-4xl leading-relaxed">
+      <div class="text-dark-gray bg-gray-50 p-4 md:p-6 rounded-lg mb-6 md:mb-10">
+        <p class="mb-6 md:mb-8 max-w-4xl leading-relaxed text-sm md:text-base">
           {content.forfaits.intro}
         </p>
         
         {content.forfaits.exemples.map((exemple: any) => (
-          <div class="bg-white rounded-lg overflow-hidden shadow-sm mb-8 max-w-3xl">
-            <div class="bg-employeur text-white p-4">
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm mb-6 md:mb-8 max-w-3xl">
+            <div class="bg-employeur text-white p-3 md:p-4">
               <div class="flex items-center">
-                <h3 class="text-lg font-medium">{exemple.title}</h3>
+                <h3 class="text-base md:text-lg font-medium">{exemple.title}</h3>
               </div>
             </div>
-            <div class="p-6">
+            <div class="p-4 md:p-6">
               {exemple.description && (
-                <p class="text-sm italic mb-3">{exemple.description}</p>
+                <p class="text-xs md:text-sm italic mb-2 md:mb-3">{exemple.description}</p>
               )}
               
               {exemple.prix && (
-                <p class="font-medium text-employeur mb-2">{exemple.prix}</p>
+                <p class="font-medium text-employeur mb-2 text-sm md:text-base">{exemple.prix}</p>
               )}
               
               {exemple.options && (
-                <div class="space-y-4">
+                <div class="space-y-3 md:space-y-4">
                   {exemple.options.map((option: any) => (
-                    <div class="flex items-center justify-between border-b pb-3">
+                    <div class="flex items-center justify-between border-b pb-2 md:pb-3 text-sm md:text-base">
                       <span class="text-dark-gray">{option.description}</span>
                       <span class="font-medium text-employeur">{option.prix}</span>
                     </div>
@@ -127,7 +126,7 @@ function prepareContent(content: string) {
               )}
               
               {exemple.services && (
-                <ul class="space-y-2 mb-4">
+                <ul class="space-y-1 md:space-y-2 mb-3 md:mb-4 text-sm md:text-base">
                   {exemple.services.map((service: string) => (
                     <li class="flex items-start">
                       <span class="text-employeur mr-2">•</span>
@@ -138,13 +137,13 @@ function prepareContent(content: string) {
               )}
               
               {exemple.note && (
-                <p class="text-sm text-dark-gray mb-4 border-t pt-3">
+                <p class="text-xs md:text-sm text-dark-gray mb-3 md:mb-4 border-t pt-2 md:pt-3">
                   {exemple.note}
                 </p>
               )}
               
               {exemple.condition && (
-                <p class="italic text-sm text-gray-600">{exemple.condition}</p>
+                <p class="italic text-xs md:text-sm text-gray-600">{exemple.condition}</p>
               )}
             </div>
           </div>
@@ -152,19 +151,19 @@ function prepareContent(content: string) {
       </div>
     </section>
 
-    <section class="mb-16">
-      <h2 class="text-2xl font-light mb-6 text-black flex items-center">
-        <Shield class="w-6 h-6 mr-2 text-employeur" />
+    <section class="mb-8 md:mb-16">
+      <h2 class="text-xl md:text-2xl font-light mb-4 md:mb-6 text-black flex items-center">
+        <Shield class="w-5 h-5 md:w-6 md:h-6 mr-2 text-employeur" />
         {content.assurance.title}
       </h2>
       
-      <div class="bg-gray-50 p-6 rounded-lg">
-        <div class="flex flex-col md:flex-row gap-8 items-center">
-          <div class="md:w-1/2">
-            <p class="text-dark-gray leading-relaxed">{content.assurance.content}</p>
+      <div class="bg-gray-50 p-4 md:p-6 rounded-lg">
+        <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-center">
+          <div class="w-full md:w-1/2">
+            <p class="text-sm md:text-base text-dark-gray leading-relaxed">{content.assurance.content}</p>
           </div>
           
-          <div class="md:w-1/2">
+          <div class="w-full md:w-1/2 mt-4 md:mt-0">
             {content.video && content.video.url ? (
               <div class="relative rounded-lg overflow-hidden shadow-sm aspect-video">
                 <button 
@@ -176,7 +175,7 @@ function prepareContent(content: string) {
                     alt="Miniature vidéo" 
                     class="absolute inset-0 w-full h-full object-cover"
                   />
-                  <svg class="w-16 h-16 md:w-20 md:h-20 text-white opacity-70 group-hover:opacity-100 transition-opacity transform group-hover:scale-110 transition-transform duration-200" fill="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 text-white opacity-70 group-hover:opacity-100 transition-opacity transform group-hover:scale-110 transition-transform duration-200" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z"/>
                   </svg>
                 </button>
@@ -196,14 +195,14 @@ function prepareContent(content: string) {
       </div>
     </section>
 
-    <section class="mb-12">
-      <h2 class="text-2xl font-light mb-6 text-black flex items-center">
-        <Info class="w-6 h-6 mr-2 text-employeur" />
+    <section class="mb-8 md:mb-12">
+      <h2 class="text-xl md:text-2xl font-light mb-4 md:mb-6 text-black flex items-center">
+        <Info class="w-5 h-5 md:w-6 md:h-6 mr-2 text-employeur" />
         {content.aideJuridique.title}
       </h2>
       
-      <div class="bg-gray-50 p-6 rounded-lg">
-        <div class="text-dark-gray leading-relaxed" set:html={prepareContent(content.aideJuridique.content)} />
+      <div class="bg-gray-50 p-4 md:p-6 rounded-lg">
+        <div class="text-sm md:text-base text-dark-gray leading-relaxed" set:html={prepareContent(content.aideJuridique.content)} />
       </div>
     </section>
   </main>
