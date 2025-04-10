@@ -12,6 +12,21 @@ export interface Props {
   lang?: string;
 }
 
+// Définition du type pour la configuration du site
+interface SiteConfig {
+  seo?: {
+    allowIndexing?: boolean;
+    siteUrl?: string;
+    siteName?: string;
+    defaultSocialImage?: string;
+    favicon?: string;
+    siteDescription?: string;
+  };
+  // autres propriétés potentielles
+  sectionsVisibility?: boolean;
+  calendarLink?: string;
+}
+
 const {
   title,
   description,
@@ -24,7 +39,7 @@ const {
 
 // Récupérer la configuration du site
 const siteConfigEntry = await getEntry('config', 'site-config');
-const siteConfig = siteConfigEntry?.data || {};
+const siteConfig = (siteConfigEntry?.data || {}) as SiteConfig;
 const seoConfig = siteConfig.seo || {};
 
 // Utiliser les valeurs de configuration ou les valeurs par défaut

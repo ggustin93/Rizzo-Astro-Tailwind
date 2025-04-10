@@ -23,6 +23,24 @@ export interface Props {
   lang?: string;
 }
 
+// Définition du type pour la configuration du site
+interface SiteConfig {
+  seo?: {
+    allowIndexing?: boolean;
+    siteUrl?: string;
+    siteName?: string;
+    defaultSocialImage?: string;
+    favicon?: string;
+    faviconPng32?: string;
+    faviconPng16?: string;
+    appleTouchIcon?: string;
+    siteDescription?: string;
+  };
+  // autres propriétés potentielles
+  sectionsVisibility?: boolean;
+  calendarLink?: string;
+}
+
 // Destructuration des props
 const { 
   title, 
@@ -47,7 +65,7 @@ const currentLang: SupportedLanguage = supportedLanguages.includes(rawLang as Su
 
 // Récupérer la configuration du site
 const siteConfigEntry = await getEntry('config', 'site-config');
-const siteConfig = siteConfigEntry?.data || {};
+const siteConfig = (siteConfigEntry?.data || {}) as SiteConfig;
 const seoConfig = siteConfig.seo || {};
 
 // URL principale du site
