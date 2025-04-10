@@ -53,6 +53,46 @@ fr:
   video:
     title: En savoir plus
     url: https://youtu.be/Y-SKuT-XqGk
+  forfaits:
+    title: Exemples de formules forfaitaires
+    intro: Les formules forfaitaires suivantes sont données à titre indicatif uniquement, le montant des honoraires convenu entre l'avocat et le client dépendra de la nature du travail à accomplir, de l'importance financière et morale de la cause, de la nature et l'ampleur du travail accompli, de l'urgence, du résultat obtenu et de la capacité financière du client. La TVA est de 21%.
+    exemples:
+      - title: Procédure judiciaire - Contestation d'un licenciement
+        description: (par exemple pour motif grave, licenciement abusif, discriminatoire, manifestement déraisonnable)
+        prix: 290 € htva / mois pendant 24 mois (soit 6.960 € htva) + 10% sur les résultats nets obtenus
+        services:
+          - Montant couvrant un degré de juridiction
+          - Analyse du dossier
+          - Calcul des indemnités
+          - Introduction de la procédure
+          - Rédaction des conclusions
+          - Plaidoiries
+          - Suivi de l'exécution
+          - Vérification des documents sociaux
+          - Relations avec l'avocat adverse et la juridiction
+        note: Dans le cadre du forfait, je réponds à toutes vos questions sur la procédure en cours et vous tiens informé(e) de chaque avancée. Je m'efforce d'être disponible tout en préservant le temps nécessaire pour avancer efficacement sur les dossiers.
+        condition: Facturation des heures prestées au tarif horaire convenu en cas d'accord amiable + 10% sur les résultats nets obtenus
+      - title: Consultation 30 min "one shot" - Avoir une réponse rapide à une question
+        options:
+          - description: Sans analyse de documents
+            prix: 75 € htva
+          - description: Avec analyse de documents
+            prix: 200 € htva
+      - title: Règlement de travail
+        prix: 2.000 € htva
+        services:
+          - Rédaction ou mise à jour du règlement de travail
+          - Accompagnement dans le cadre de la procédure d'affichage et de dépôt auprès de l'inspection du travail
+  aideJuridique:
+    title: Aide juridique (pro deo)
+    content: >
+      L'aide juridique permet à toute personne de bénéficier d'une première consultation juridique gratuite (aide juridique de 1ère ligne). Elle permet également à certaines catégories de personnes de bénéficier de l'assistance gratuite d'un avocat pour le traitement d'un dossier dans toutes les matières juridiques (aide juridique de 2ème ligne). Ces avocats sont volontaires. Ils fournissent à leurs clients les mêmes services que dans le cadre d'une aide juridique payante : conseil, assistance et représentation dans le cadre d'une procédure judiciaire, administrative ou dans le cadre d'une médiation, introduction d'un recours…
+
+
+      Si vous souhaitez vous renseigner ou vérifier si vous remplissez les conditions pour bénéficier de l'aide juridique de 2ème ligne, je vous invite à consulter le site [Avocats.be](http://Avocats.be) ou le site du bureau d'aide juridique de votre région (pour [Bruxelles](https://www.bajbruxelles.be/)).
+
+
+      Si vous remplissez les conditions pour bénéficier de l'aide juridique de 2ème ligne mais que vous souhaitez y renoncer et solliciter mon intervention en dehors de ce cadre, le formulaire téléchargeable [ici](https://docs.google.com/document/d/1342gFQP0Wfvejg3RrRpynr_0xgowMhOHl3XHTDWqWA4/edit?tab=t.0#heading=h.xth8kae1d4z1) devra m'être remis signé.
 en:
   title: Fees
   subtitle: The lawyer's fees are the compensation for the legal services
@@ -107,6 +147,46 @@ en:
   video:
     title: Learn more
     url: https://youtu.be/Y-SKuT-XqGk
+  forfaits:
+    title: Examples of fixed fee options
+    intro: The following fixed fee options are provided for indicative purposes only. The amount of fees agreed between the lawyer and the client will depend on the nature of the work to be performed, the financial and moral importance of the case, the nature and extent of the work done, the urgency, the result obtained and the client's financial capacity. VAT is 21%.
+    exemples:
+      - title: Legal proceedings - Contesting a dismissal
+        description: (e.g. for serious misconduct, abusive, discriminatory, manifestly unreasonable dismissal)
+        prix: €290 excluding VAT / month for 24 months (i.e. €6,960 excluding VAT) + 10% on the net results obtained
+        services:
+          - Amount covering one degree of jurisdiction
+          - File analysis
+          - Calculation of compensation
+          - Initiating proceedings
+          - Drafting of conclusions
+          - Pleadings
+          - Monitoring of execution
+          - Verification of social documents
+          - Relations with the opposing lawyer and the jurisdiction
+        note: As part of the flat fee, I answer all your questions about the ongoing procedure and keep you informed of each step. I strive to be available while preserving the time needed to move forward efficiently on cases.
+        condition: Billing of hours provided at the agreed hourly rate in case of amicable agreement + 10% on the net results obtained
+      - title: 30-minute "one-shot" consultation - Getting a quick answer to a question
+        options:
+          - description: Without document analysis
+            prix: €75 excluding VAT
+          - description: With document analysis
+            prix: €200 excluding VAT
+      - title: Work regulations
+        prix: €2,000 excluding VAT
+        services:
+          - Drafting or updating work regulations
+          - Support in the posting and filing procedure with the labor inspectorate
+  aideJuridique:
+    title: Legal aid (pro deo)
+    content: >
+      Legal aid allows everyone to benefit from a free initial legal consultation (first-line legal aid). It also allows certain categories of people to benefit from the free assistance of a lawyer for the handling of a case in all legal matters (second-line legal aid). These lawyers are volunteers. They provide their clients with the same services as in the context of paid legal aid: advice, assistance and representation in the context of judicial or administrative proceedings or in the context of mediation, filing of appeals, etc.
+
+
+      If you would like to find out more or check whether you qualify for second-line legal aid, please consult the [Avocats.be](http://Avocats.be) website or the website of the legal aid bureau in your region (for [Brussels](https://www.bajbruxelles.be/)).
+
+
+      If you meet the conditions to benefit from second-line legal aid but wish to waive it and request my intervention outside this framework, the form that can be downloaded [here](https://docs.google.com/document/d/1342gFQP0Wfvejg3RrRpynr_0xgowMhOHl3XHTDWqWA4/edit?tab=t.0#heading=h.xth8kae1d4z1) must be signed and returned to me.
 it:
   title: Onorari
   subtitle: Gli onorari dell'avvocato costituiscono il compenso per il lavoro
@@ -162,3 +242,43 @@ it:
   video:
     title: Per saperne di più
     url: https://youtu.be/Y-SKuT-XqGk
+  forfaits:
+    title: Esempi di formule forfettarie
+    intro: Le seguenti formule forfettarie sono fornite solo a titolo indicativo. L'importo degli onorari concordato tra l'avvocato e il cliente dipenderà dalla natura del lavoro da svolgere, dall'importanza finanziaria e morale della causa, dalla natura e dall'entità del lavoro svolto, dall'urgenza, dal risultato ottenuto e dalla capacità finanziaria del cliente. L'IVA è del 21%.
+    exemples:
+      - title: Procedura giudiziaria - Contestazione di un licenziamento
+        description: (ad esempio per giusta causa, licenziamento abusivo, discriminatorio, manifestamente irragionevole)
+        prix: 290 € IVA esclusa / mese per 24 mesi (cioè 6.960 € IVA esclusa) + 10% sui risultati netti ottenuti
+        services:
+          - Importo che copre un grado di giurisdizione
+          - Analisi del fascicolo
+          - Calcolo delle indennità
+          - Introduzione della procedura
+          - Redazione delle conclusioni
+          - Arringhe
+          - Monitoraggio dell'esecuzione
+          - Verifica dei documenti sociali
+          - Rapporti con l'avvocato avversario e la giurisdizione
+        note: Nel quadro del forfait, rispondo a tutte le vostre domande sulla procedura in corso e vi tengo informati di ogni progresso. Mi sforzo di essere disponibile preservando al contempo il tempo necessario per avanzare efficacemente sui dossier.
+        condition: Fatturazione delle ore prestate alla tariffa oraria concordata in caso di accordo amichevole + 10% sui risultati netti ottenuti
+      - title: Consulenza 30 min "one shot" - Avere una risposta rapida a una domanda
+        options:
+          - description: Senza analisi di documenti
+            prix: 75 € IVA esclusa
+          - description: Con analisi di documenti
+            prix: 200 € IVA esclusa
+      - title: Regolamento di lavoro
+        prix: 2.000 € IVA esclusa
+        services:
+          - Redazione o aggiornamento del regolamento di lavoro
+          - Accompagnamento nell'ambito della procedura di affissione e di deposito presso l'ispettorato del lavoro
+  aideJuridique:
+    title: Assistenza legale (pro deo)
+    content: >
+      L'assistenza legale permette a chiunque di beneficiare di una prima consulenza legale gratuita (assistenza legale di 1° livello). Permette inoltre a determinate categorie di persone di beneficiare dell'assistenza gratuita di un avvocato per il trattamento di un caso in tutte le materie legali (assistenza legale di 2° livello). Questi avvocati sono volontari. Forniscono ai loro clienti gli stessi servizi che nel contesto dell'assistenza legale a pagamento: consulenza, assistenza e rappresentanza nel contesto di un procedimento giudiziario, amministrativo o nell'ambito di una mediazione, presentazione di un ricorso, ecc.
+
+
+      Se desiderate informarvi o verificare se soddisfate le condizioni per beneficiare dell'assistenza legale di 2° livello, vi invito a consultare il sito [Avocats.be](http://Avocats.be) o il sito dell'ufficio di assistenza legale della vostra regione (per [Bruxelles](https://www.bajbruxelles.be/)).
+
+
+      Se soddisfate le condizioni per beneficiare dell'assistenza legale di 2° livello ma desiderate rinunciarvi e richiedere il mio intervento al di fuori di questo quadro, il modulo scaricabile [qui](https://docs.google.com/document/d/1342gFQP0Wfvejg3RrRpynr_0xgowMhOHl3XHTDWqWA4/edit?tab=t.0#heading=h.xth8kae1d4z1) dovrà essermi consegnato firmato.

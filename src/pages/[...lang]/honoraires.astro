@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getEntry } from 'astro:content';
-import { FileText, Briefcase, User, Shield, AlertTriangle, YouTube, Users as UsersIcon } from 'astro-feather-icons2';
+import { FileText, Briefcase, User, Shield, HelpCircle, YouTube, Users as UsersIcon, Calendar, Clock, Check, DollarSign, Award, Info } from 'astro-feather-icons2';
 
 export async function getStaticPaths() {
   return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
@@ -17,14 +17,34 @@ const iconMap = {
   UsersIcon,
   User,
   Shield,
-  AlertTriangle,
-  YouTube
+  HelpCircle,
+  YouTube,
+  Calendar,
+  Clock,
+  Check,
+  DollarSign,
+  Award,
+  Info
 };
 
 function getYouTubeID(url: string) {
   const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
   const match = url.match(regExp);
   return (match && match[2].length === 11) ? match[2] : null;
+}
+
+// Fonction pour convertir les liens Markdown en liens HTML
+function convertMarkdownLinks(text: string) {
+  // Format: [text](url)
+  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  return text.replace(linkRegex, '<a href="$2" class="text-employeur underline hover:text-employeur-dark" target="_blank" rel="noopener noreferrer">$1</a>');
+}
+
+// Prépare le contenu avec des sauts de ligne et des liens formatés
+function prepareContent(content: string) {
+  const withLinks = convertMarkdownLinks(content);
+  const withLineBreaks = withLinks.replace(/\n\n/g, '<br><br>');
+  return withLineBreaks;
 }
 ---
 
@@ -37,29 +57,16 @@ function getYouTubeID(url: string) {
 
     <section class="mb-12">
       <h2 class="text-2xl font-light mb-6 text-black flex items-center">
-        <Briefcase class="w-6 h-6 mr-2 text-employeur" />
-        {content.tarifs.title}
-      </h2>
-      <div class="flex flex-col md:flex-row gap-4">
-        <a href={`/${lang}/honoraires/tarif_travailleur`} class="flex-1 bg-travailleur text-white p-6 rounded-sm text-center hover:bg-opacity-90 transition duration-300">
-          {content.tarifs.travailleur}
-        </a>
-        <a href={`/${lang}/honoraires/tarif_employeur`} class="flex-1 bg-employeur text-white p-6 rounded-sm text-center hover:bg-opacity-90 transition duration-300">
-          {content.tarifs.employeur}
-        </a>
-      </div>
-    </section>
-
-    <section class="mb-12">
-      <h2 class="text-2xl font-light mb-6 text-black flex items-center">
         <FileText class="w-6 h-6 mr-2 text-employeur" />
         {content.transparence.title}
       </h2>
-      <ul class="list-disc list-inside space-y-2 text-dark-gray">
-        {content.transparence.points.map((point: string) => (
-          <li>{point}</li>
-        ))}
-      </ul>
+      <div class="bg-gray-50 p-8 rounded-lg">
+        <ul class="list-disc ml-6 space-y-3 text-dark-gray">
+          {content.transparence.points.map((point: string) => (
+            <li class="leading-relaxed">{point}</li>
+          ))}
+        </ul>
+      </div>
     </section>
 
     <section class="mb-12">
@@ -67,62 +74,154 @@ function getYouTubeID(url: string) {
         <User class="w-6 h-6 mr-2 text-employeur" />
         {content.previsibilite.title}
       </h2>
-      <p class="mb-4 text-dark-gray">{content.previsibilite.content}</p>
-      <ul class="list-disc list-inside space-y-2 text-dark-gray">
-        {content.previsibilite.points.map((point: string) => (
-          <li>{point}</li>
-        ))}
-      </ul>
-    </section>
-
-    <section class="mb-12">
-      <h2 class="text-2xl font-light mb-6 text-black flex items-center">
-        <Shield class="w-6 h-6 mr-2 text-employeur" />
-        {content.assurance.title}
-      </h2>
-      <div class="flex flex-col md:flex-row gap-8">
-        <div class="w-full md:w-1/2">
-          <p class="text-dark-gray whitespace-pre-line">{content.assurance.content}</p>
-        </div>
-        <div class="w-full md:w-1/2">
-          {content.video && content.video.url ? (
-            <div class="relative w-full pb-[56.25%]">
-              <button 
-                class="absolute inset-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 group"
-                onclick="this.nextElementSibling.src += '&autoplay=1'; this.remove();"
-              >
-                <img 
-                  src={`https://img.youtube.com/vi/${getYouTubeID(content.video.url)}/maxresdefault.jpg`} 
-                  alt="Miniature vidéo" 
-                  class="absolute inset-0 w-full h-full object-cover"
-                />
-                <svg class="w-16 h-16 md:w-20 md:h-20 text-white opacity-70 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </button>
-              <iframe 
-                class="absolute top-0 left-0 w-full h-full"
-                src={`https://www.youtube.com/embed/${getYouTubeID(content.video.url)}?rel=0`} 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen
-              ></iframe>
-            </div>
-          ) : (
-            <p>Aucune vidéo disponible</p>
-          )}
+      <div class="bg-gray-50 p-8 rounded-lg">
+        <p class="mb-6 text-dark-gray leading-relaxed">{content.previsibilite.content}</p>
+        
+        {/* Version améliorée des points pour la section Prévisibilité */}
+        <div class="text-dark-gray">
+          <p class="mb-3 leading-relaxed">Si nous choisissons de travailler ensemble sur base d'un tarif horaire :</p>
+          <ul class="list-disc ml-6 space-y-2 mb-4">
+            <li class="leading-relaxed">mes prestations vous sont facturées chaque mois au fur et à mesure des prestations.</li>
+            <li class="leading-relaxed">Il n'y a pas de frais de dossier ou de bureau excepté les frais postaux qui sont refacturés au prix coûtant.</li>
+          </ul>
+          <p class="mb-3 leading-relaxed">Les frais liés à l'intervention de tiers (huissiers, experts, traducteurs, avocats spécialisés dans d'autres domaines) ou les frais de justice (droits de greffe) sont refacturés au prix coûtant ou directement payables au tiers intervenant.</p>
         </div>
       </div>
     </section>
 
+    <section class="mb-16">
+      <h2 class="text-2xl font-light mb-6 text-black flex items-center">
+        <Briefcase class="w-6 h-6 mr-2 text-employeur" />
+        {content.forfaits.title}
+      </h2>
+      <div class="text-dark-gray bg-gray-50 p-6 rounded-lg mb-10">
+        <p class="mb-8 max-w-4xl leading-relaxed">
+          {content.forfaits.intro}
+        </p>
+        
+        {content.forfaits.exemples.map((exemple: any) => (
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm mb-8 max-w-3xl">
+            <div class="bg-employeur text-white p-4">
+              <div class="flex items-center">
+                <h3 class="text-lg font-medium">{exemple.title}</h3>
+              </div>
+            </div>
+            <div class="p-6">
+              {exemple.description && (
+                <p class="text-sm italic mb-3">{exemple.description}</p>
+              )}
+              
+              {exemple.prix && (
+                <p class="font-medium text-employeur mb-2">{exemple.prix}</p>
+              )}
+              
+              {exemple.options && (
+                <div class="space-y-4">
+                  {exemple.options.map((option: any) => (
+                    <div class="flex items-center justify-between border-b pb-3">
+                      <span class="text-dark-gray">{option.description}</span>
+                      <span class="font-medium text-employeur">{option.prix}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+              
+              {exemple.services && (
+                <ul class="space-y-2 mb-4">
+                  {exemple.services.map((service: string) => (
+                    <li class="flex items-start">
+                      <span class="text-employeur mr-2">•</span>
+                      <span class="text-dark-gray">{service}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              
+              {exemple.note && (
+                <p class="text-sm text-dark-gray mb-4 border-t pt-3">
+                  {exemple.note}
+                </p>
+              )}
+              
+              {exemple.condition && (
+                <p class="italic text-sm text-gray-600">{exemple.condition}</p>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
 
-    <script>
-    function getYouTubeID(url) {
-      const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-      const match = url.match(regExp);
-      return (match && match[2].length === 11) ? match[2] : null;
-    }
-    </script>
+    <section class="mb-16">
+      <h2 class="text-2xl font-light mb-6 text-black flex items-center">
+        <Shield class="w-6 h-6 mr-2 text-employeur" />
+        {content.assurance.title}
+      </h2>
+      
+      <div class="bg-gray-50 p-6 rounded-lg">
+        <div class="flex flex-col md:flex-row gap-8 items-center">
+          <div class="md:w-1/2">
+            <p class="text-dark-gray leading-relaxed">{content.assurance.content}</p>
+          </div>
+          
+          <div class="md:w-1/2">
+            {content.video && content.video.url ? (
+              <div class="relative rounded-lg overflow-hidden shadow-sm aspect-video">
+                <button 
+                  class="absolute inset-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 group"
+                  onclick="this.nextElementSibling.src += '&autoplay=1'; this.remove();"
+                >
+                  <img 
+                    src={`https://img.youtube.com/vi/${getYouTubeID(content.video.url)}/maxresdefault.jpg`} 
+                    alt="Miniature vidéo" 
+                    class="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <svg class="w-16 h-16 md:w-20 md:h-20 text-white opacity-70 group-hover:opacity-100 transition-opacity transform group-hover:scale-110 transition-transform duration-200" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </button>
+                <iframe 
+                  class="absolute top-0 left-0 w-full h-full"
+                  src={`https://www.youtube.com/embed/${getYouTubeID(content.video.url)}?rel=0`} 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen
+                ></iframe>
+              </div>
+            ) : (
+              <p>Aucune vidéo disponible</p>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-light mb-6 text-black flex items-center">
+        <Info class="w-6 h-6 mr-2 text-employeur" />
+        {content.aideJuridique.title}
+      </h2>
+      
+      <div class="bg-gray-50 p-6 rounded-lg">
+        <div class="text-dark-gray leading-relaxed" set:html={prepareContent(content.aideJuridique.content)} />
+      </div>
+    </section>
   </main>
   </div>
 </BaseLayout>
+
+<style>
+.text-employeur {
+  color: #00558B;
+}
+
+.text-employeur-dark {
+  color: #003d6b;
+}
+
+/* Animation pour les liens */
+a.text-employeur {
+  position: relative;
+  text-decoration-thickness: 1px;
+}
+</style>
