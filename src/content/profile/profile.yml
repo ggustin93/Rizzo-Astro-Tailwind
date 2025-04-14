@@ -164,29 +164,26 @@ en:
 it:
   careerPath:
     - year: "2024"
-      event: Fondazione del mio studio legale
+      event: Creazione del mio studio legale
     - year: 2017-2024
       event: Avvocato Senior presso Reliance Littler
     - year: "2019"
       event: Primo premio al concorso di eloquenza dell'Ordine degli Avvocati di
         Losanna
     - year: 2018-2019
-      event: Direttrice della Conferenza del Giovane Ordine degli Avvocati di
-        Bruxelles
+      event: Direttrice della Conférence du Jeune Barreau de Bruxelles
     - year: 2013-2017
-      event: Avvocato associato presso Meritius Brussels
+      event: Avvocato presso Meritius Brussels
     - year: 2011-2023
-      event: Membro attivo del Forum dei Tirocinanti dell'Ordine degli Avvocati di
-        Bruxelles
+      event: Membro attivo del Carrefour des stagiaires du Barreau de Bruxelles
     - year: 2010-2013
       event: Avvocato tirocinante presso LVP Law Brussels
     - year: "2018"
-      event: Master avanzato in Diritto Sociale - Vrije Universiteit Brussel
+      event: Master in Diritto Sociale - Vrije Universiteit Brussel
     - year: "2010"
       event: LLM in Diritto Europeo e Internazionale - Università di Gand
     - year: "2009"
-      event: Laurea Magistrale in Giurisprudenza - indirizzo Contenzioso - Université
-        Libre de Bruxelles
+      event: Master in Giurisprudenza - Université Libre de Bruxelles
   publications:
     - date: Dicembre 2020
       title: La remunerazione variabile. Approccio nel diritto del lavoro, diritto
@@ -226,9 +223,9 @@ it:
     - '5 luglio 2018, Carrefour de la formation: "CCT 109: 4 anni di
       applicazione e 245 decisioni giudiziarie", con Sophie Gérard e Sophie
       Sottiaux'
-  title: Avvocato specializzato in diritto del lavoro
-  languages: Lavoro in francese, italiano e inglese. Ho anche una buona conoscenza
-    dell'olandese.
+  title: Avvocato del lavoro
+  languages: "Lavoro in francese, italiano e inglese. Ho anche una buona
+    conoscenza della lingua fiaminga. "
   image: https://uploads-ssl.webflow.com/66a3633bf638ce4da95b8ad7/66a367d9f9bfc9b93e01c4a3_Christine_Apropos-b.jpeg
   seo:
     title: Profilo | Christine Rizzo - Avvocato specializzato in diritto del lavoro
