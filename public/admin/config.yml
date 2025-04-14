@@ -155,15 +155,6 @@ collections:
                 name: "questions"
                 widget: "list"
                 field: {label: Question, name: question, widget: "string"}
-              - label: "Support Additionnel"
-                name: "additionalSupport"
-                widget: "object"
-                fields:
-                  - {label: "Introduction", name: "intro", widget: "text"}
-                  - label: "Points"
-                    name: "points"
-                    widget: "list"
-                    field: {label: "Point", name: "point", widget: "string"}
               - {label: "Titre des prestations", name: "servicesTitle", widget: "string"}
               - label: "Prestations"
                 name: "services"
@@ -263,13 +254,6 @@ collections:
             fields: &honorairesFields
               - {label: "Titre", name: "title", widget: "string"}
               - {label: "Sous-titre", name: "subtitle", widget: "string"}
-              - label: "Tarifs"
-                name: "tarifs"
-                widget: "object"
-                fields:
-                  - {label: "Titre", name: "title", widget: "string"}
-                  - {label: "Travailleur", name: "travailleur", widget: "string"}
-                  - {label: "Employeur", name: "employeur", widget: "string"}
               - label: "Transparence"
                 name: "transparence"
                 widget: "object"

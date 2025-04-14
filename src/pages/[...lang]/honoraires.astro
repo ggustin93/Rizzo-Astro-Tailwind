@@ -93,13 +93,13 @@ function prepareContent(content: string) {
         <Briefcase class="w-5 h-5 md:w-6 md:h-6 mr-2 text-employeur" />
         {content.forfaits.title}
       </h2>
-      <div class="text-dark-gray bg-gray-50 p-4 md:p-6 rounded-lg mb-6 md:mb-10">
-        <p class="mb-6 md:mb-8 max-w-4xl leading-relaxed text-sm md:text-base">
+      <div class="bg-gray-50 p-4 md:p-8 rounded-lg">
+        <p class="mb-6 md:mb-8 leading-relaxed text-sm md:text-base text-dark-gray">
           {content.forfaits.intro}
         </p>
         
         {content.forfaits.exemples.map((exemple: any) => (
-          <div class="bg-white rounded-lg overflow-hidden shadow-sm mb-6 md:mb-8 max-w-3xl">
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm mb-6 md:mb-8">
             <div class="bg-employeur text-white p-3 md:p-4">
               <div class="flex items-center">
                 <h3 class="text-base md:text-lg font-medium">{exemple.title}</h3>
@@ -157,7 +157,7 @@ function prepareContent(content: string) {
         {content.assurance.title}
       </h2>
       
-      <div class="bg-gray-50 p-4 md:p-6 rounded-lg">
+      <div class="bg-gray-50 p-4 md:p-8 rounded-lg">
         <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-center">
           <div class="w-full md:w-1/2">
             <p class="text-sm md:text-base text-dark-gray leading-relaxed">{content.assurance.content}</p>
@@ -201,7 +201,7 @@ function prepareContent(content: string) {
         {content.aideJuridique.title}
       </h2>
       
-      <div class="bg-gray-50 p-4 md:p-6 rounded-lg">
+      <div class="bg-gray-50 p-4 md:p-8 rounded-lg">
         <div class="text-sm md:text-base text-dark-gray leading-relaxed" set:html={prepareContent(content.aideJuridique.content)} />
       </div>
     </section>

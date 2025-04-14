@@ -12,7 +12,7 @@ fr:
             url: "/fr/services/travailleurs"
           - label: "POUR LES EMPLOYEURS"
             url: "/fr/services/employeurs"
-      - label: "A PROPOS"
+      - label: "PROFIL"
         url: "/fr#profil"
         hasDropdown: false
       - label: "HONORAIRES"

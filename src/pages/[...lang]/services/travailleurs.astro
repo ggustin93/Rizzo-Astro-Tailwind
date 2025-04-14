@@ -57,12 +57,12 @@ const seoData = {
       
       <div class="flex flex-col md:flex-row gap-6 md:gap-8">
         <!-- Left Column (2/3) -->
-        <div class="md:w-2/3 bg-travailleur p-5 md:p-8 rounded-lg text-white">
-          <ul class="space-y-2 mb-6">
+        <div class="md:w-2/3 bg-travailleur p-6 md:p-10 rounded-lg text-white flex flex-col justify-center md:min-h-[500px]">
+          <ul class="space-y-3 md:space-y-5 mx-auto py-2 md:py-4">
             {content.questions.map((question: string, index: number) => (
               <li set:key={index} class="flex items-start">
-                <ChevronRight class="w-5 h-5 mr-2 text-white flex-shrink-0 mt-1" />
-                <span class="text-sm md:text-base">{question}</span>
+                <ChevronRight class="w-5 h-5 mr-3 text-white flex-shrink-0 mt-1" />
+                <span class="text-sm md:text-base leading-relaxed">{question}</span>
               </li>
             ))}
           </ul>
