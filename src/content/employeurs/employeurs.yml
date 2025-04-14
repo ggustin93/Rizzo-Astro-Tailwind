@@ -2,7 +2,8 @@ fr:
   title: Accompagnement et défense des entreprises
   questions:
     - Premier engagement en Belgique
-    - Contrats de salariés ou indépendants (et faux indépendants)
+    - Contrats de salariés ou indépendants
+    - Problématique des faux indépendants
     - "Démissions et licenciements "
     - Protections contre le licenciement
     - Packages, bonus
@@ -46,12 +47,12 @@ fr:
       - litige travail Belgique
       - accompagnement juridique personnalisé entreprises
     image: /default-social-image.jpg
-
 en:
   title: Legal counsel and defense for employers
   questions:
     - First engagement in Belgium
-    - "Employee or self-employed contracts (and bogus self-employed) "
+    - Employee or self-employed contracts
+    - "Issue of false self-employment "
     - Resignations and dismissals
     - Protections against dismissal
     - Packages, bonuses
@@ -98,12 +99,12 @@ en:
       - employer defense
       - HR support
     image: /default-social-image.jpg
-
 it:
   title: Consulenza e difesa per le aziende
   questions:
     - Prima assunzione in Belgio
-    - "Contratti di lavoro dipendente o autonomo (e falsi lavoratori autonomi) "
+    - Contratti di lavoro dipendente o autonomo
+    - Problematica del falso rapporto di lavoro autonomo
     - Dimissioni e licenziamenti
     - Protezioni contro il licenziamento
     - Pacchetti retributivi e bonus
@@ -139,7 +140,5 @@ it:
   ctaText: Scopri di più sulle tariffe
   seo:
     title: Servizi legali per datori di lavoro | Avvocato Christine Rizzo
-    description: Consulenza legale specializzata in diritto del lavoro per aziende a Bruxelles. Difesa e assistenza personalizzata.
-
-
-
+    description: Consulenza legale specializzata in diritto del lavoro per aziende a
+      Bruxelles. Difesa e assistenza personalizzata.
