@@ -1,5 +1,5 @@
 fr:
-  title: Accompagnement et défense des travailleurs
+  title: Accompagnement et défense des travailleur·euse.s
   description: ""
   questions:
     - Vous voulez faire relire votre contrat de travail ?
@@ -10,7 +10,7 @@ fr:
       déraisonnable, abusif ou discriminatoire) ?
     - Vous voulez vérifier le calcul de votre indemnité de préavis et le respect
       de vos droits suite à un licenciement ?
-    - Vos conditions de travail ont changé pendant ou suite à une grossesse ?
+    - Vos conditions de travail ont changé ? pendant ou suite à une grossesse ?
       Vous souhaitez prendre un crédit-temps et un congé parental ?
     - Vous êtes victime de discrimination, de harcèlement ? Vous êtes mis à
       l'écart à cause d'un burn-out ?
@@ -42,24 +42,25 @@ en:
   title: Support and defense for employees
   description: ""
   questions:
-    - Do you want your employment contract to be reviewed?
-    - "Is your employer offering you a settlement agreement but you're not sure
-      if it's in your best interest?"
-    - Would you like to resign?
-    - Do you want to challenge your dismissal (manifestly unreasonable, wrongful
-      or discriminatory dismissal)?
-    - Do you want to verify the calculation of your severance pay and the
-      respect of your rights following a dismissal?
-    - Have your working conditions changed during or after a pregnancy? Do you
-      want to take time credit and parental leave?
-    - Are you a victim of discrimination or harassment? Are you being
-      marginalized because of burnout?
-    - Are you the victim of a work accident?
-    - Is your status unclear? Do you think you are a false independent?
+    - You want your employment contract to be reviewed
+    - Your employer is offering you a settlement agreement but you are not sure
+      if it is in your best interest
+    - You want to resign
+    - You want to challenge your dismissal (manifestly unreasonable, wrongful or
+      discriminatory dismissal)
+    - You want to verify the calculation of your severance pay and the respect
+      of your rights following a dismissal
+    - Your working conditions have changed e.g. during or after a pregnancy. You
+      want to take time credit and parental leave
+    - You are a victim of discrimination or harassment. You are being
+      marginalized because of burnout
+    - You are a victim of a work accident
+    - Your is status unclear. You think you are a false independent contractor.
   servicesTitle: My services
   services:
     - icon: BriefCase
-      text: Legal advice from recruitment to termination of the employment relationship
+      text: Legal advice from recruitment to termination of the employment
+        relationship
     - icon: Shield
       text: Defense before labor courts and tribunals
     - icon: Handshake
@@ -83,8 +84,8 @@ it:
   description: ""
   questions:
     - Vuoi che il tuo contratto di lavoro sia rivisto?
-    - "Il tuo datore di lavoro ti offre un accordo transattivo ma non sei sicuro
-      che sia nel tuo interesse?"
+    - Il tuo datore di lavoro ti offre un accordo transattivo ma non sei sicuro
+      che sia nel tuo interesse?
     - Vuoi dimetterti?
     - Vuoi contestare il tuo licenziamento (licenziamento manifestamente
       irragionevole, illegittimo o discriminatorio)?
