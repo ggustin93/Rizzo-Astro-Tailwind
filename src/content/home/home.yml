@@ -1,10 +1,10 @@
 fr:
   expertise:
     title: Expertise & Services
-    description: J'accompagne à la fois les salariés et les entreprises dans leurs
-      problématiques quotidiennes et leurs projets liés à l'emploi.
+    description: J'accompagne à la fois les travailleur·euse·s et les entreprises
+      dans leurs problématiques quotidiennes et leurs projets liés à l'emploi.
     travailleurs:
-      title: Vous êtes travailleur
+      title: Vous êtes un.e travailleur·euse
       description: Je vous accompagne tout au long de votre parcours professionnel que
         ce soit pour une question ponctuelle, la négociation d'un départ ou
         l'introduction d'une procédure judiciaire devant le tribunal du travail
@@ -36,12 +36,12 @@ fr:
     title: Profil
     description: Avocate au Barreau de Bruxelles depuis 2010, j'ai acquis
       l'expérience de mon métier en conseillant et défendant à la fois des
-      particuliers et des entreprises locales et internationales. La gestion de
-      la relation de travail du recrutement à la rupture, la rédaction de
-      rapports d'audit dans le cadre de projets d'acquisition, le bien-être au
-      travail, les outils destinés à améliorer l'équilibre vie privée-vie
-      professionnelle, les questions de discrimination et les faux indépendants
-      font partie de ma pratique quotidienne.
+      travailleur·euse.s et des entreprises locales et internationales. La
+      gestion de la relation de travail du recrutement à la rupture, la
+      rédaction de rapports d'audit dans le cadre de projets d'acquisition, le
+      bien-être au travail, les outils destinés à améliorer l'équilibre vie
+      privée-vie professionnelle, les questions de discrimination et les faux
+      indépendants font partie de ma pratique quotidienne.
     cta: En savoir plus
   seo:
     title: Christine Rizzo | Avocate en droit du travail à Bruxelles
@@ -86,7 +86,7 @@ en:
     description: I support and advise both employees and companies in their
       employment-related day-to-day issues and projects.
     travailleurs:
-      title: You are a worker
+      title: You are an employee
       description: I can help you at every stage of your career, whether it's a
         one-off issue, negotiating a departure or taking legal action against
         your employer before the employment tribunal.
@@ -187,8 +187,8 @@ it:
   profil:
     title: Profilo
     description: Avvocato presso il foro di Bruxelles dal 2010, ho acquisito
-      esperienza nella mia professione difendendo e consigliando sia privati che
-      aziende locali e internazionali. La gestione dei rapporti di lavoro,
+      esperienza nella mia professione difendendo e consigliando sia lavoratori
+      che aziende locali e internazionali. La gestione dei rapporti di lavoro,
       dall'assunzione alla cessazione, pre‐acquisition "due diligence",
       benessere sul lavoro, gli strumenti per migliorare l'equilibrio tra lavoro
       e vita privata, le questioni di discriminazione e la qualificazione del
