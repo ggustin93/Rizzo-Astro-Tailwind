@@ -16,27 +16,17 @@ fr:
         les conditions de mon intervention.
   previsibilite:
     title: Prévisibilité et paiement mensualisé
-    content: >
-      Ne pas savoir combien va coûter l'intervention de votre avocat peut être
-      une source d'inquiétude. 
-
+    full_content: |
+      Ne pas savoir combien va coûter l'intervention de votre avocat peut être une source d'inquiétude. 
       Je vous propose la plupart de mes prestations à un tarif forfaitaire fixe "tout compris" payable par mois augmenté le cas échéant d'un honoraire de résultat.
-
       Vous savez donc exactement ce que vous allez payer par mois et ce que vous allez payer au total. 
-
       Le nombre de mensualités est déterminé ensemble en fonction de votre situation personnelle et de votre dossier (par exemple la durée estimée de la procédure devant le tribunal).
-    points:
-      - Si nous choisissons de travailler ensemble sur base d'un tarif horaire
-      - mes prestations vous sont facturées chaque mois
-      - au fur et à mesure des prestations.
-      - Il n'y a pas de frais de dossier ou de bureau excepté les frais postaux
-        qui sont refacturés au prix coûtant.
-      - Les frais liés à l'intervention de tiers (huissiers
-      - experts
-      - traducteurs
-      - avocats spécialisés dans d'autres domaines) ou les frais de justice
-        (droits de greffe) sont refacturés au prix coûtant ou directement
-        payables au tiers intervenant.
+
+      Si nous choisissons de travailler ensemble sur base d'un tarif horaire, mes prestations vous sont facturées chaque mois, au fur et à mesure des prestations.
+
+      Il n'y a pas de frais de dossier ou de bureau excepté les frais postaux qui sont refacturés au prix coûtant. 
+
+      Les frais liés à l'intervention de tiers (huissiers, experts, traducteurs, avocats spécialisés dans d'autres domaines) ou les frais de justice (droits de greffe) sont refacturés au prix coûtant ou directement payables au tiers intervenant.
   assurance:
     title: Pensez à l'assurance protection juridique
     content: >
@@ -111,26 +101,17 @@ en:
         intervention.
   previsibilite:
     title: Predictability and monthly payment
-    content: >
-      Not knowing how much your lawyer's intervention will cost can be a source
-      of concern.
-
+    full_content: |
+      Not knowing how much your lawyer's intervention will cost can be a source of concern.
       I offer most of my services at a fixed, all-inclusive rate payable monthly.
-
       Therefore, you know exactly what you will pay per month and in total.
-
       The number of monthly installments is determined together based on your personal situation and your case (for example, the estimated duration of the court proceedings).
-    points:
-      - The agreed success fee is invoiced after after payment by the other
-        party.
-      - If we choose to work together on an hourly rate basis
-      - my services are billed to you each month as the work progresses.
-      - There are no file or office fees except for postal expenses.
-      - Costs related to third-party interventions (bailiffs
-      - experts
-      - translators
-      - lawyers specialized in other fields) or court fees (registry fees) are
-        re-invoiced at cost or directly payable to the intervening third party.
+
+      If we choose to work together on an hourly rate basis, my services are billed to you each month as the work progresses.
+
+      There are no file or office fees except for postal expenses which are re-invoiced at cost.
+
+      Costs related to third-party interventions (bailiffs, experts, translators, lawyers specialized in other fields) or court fees (registry fees) are re-invoiced at cost or directly payable to the intervening third party.
   assurance:
     title: Consider legal protection insurance
     content: >
@@ -206,26 +187,17 @@ it:
         tutte le condizioni del mio intervento.
   previsibilite:
     title: Prevedibilità e pagamento mensile
-    content: >
-      Non sapere quanto costerà l'intervento del vostro avvocato può essere
-      fonte di preoccupazione.
-
+    full_content: |
+      Non sapere quanto costerà l'intervento del vostro avvocato può essere fonte di preoccupazione.
       Vi propongo la maggior parte delle mie prestazioni a una tariffa forfettaria fissa "tutto incluso" pagabile mensilmente.
-
       Sapete quindi esattamente quanto pagherete al mese e quanto pagherete in totale.
-
       Il numero di rate mensili viene determinato insieme in base alla vostra situazione personale e al vostro caso (ad esempio, la durata stimata del procedimento in tribunale).
-    points:
-      - L'onorario di risultato concordato viene fatturato dopo il ricevimento
-        delle somme ottenute.
-      - Se scegliamo di lavorare insieme sulla base di una tariffa oraria, le
-        mie prestazioni vi vengono fatturate ogni mese, man mano che vengono
-        eseguite.
-      - Non ci sono spese di fascicolo o di ufficio eccetto le spese postali.
-      - I costi relativi all'intervento di terzi (ufficiali giudiziari, esperti,
-        traduttori, avvocati specializzati in altri settori) o le spese
-        giudiziarie (diritti di cancelleria) vengono rifatturati al costo o sono
-        direttamente pagabili al terzo interveniente.
+
+      Se scegliamo di lavorare insieme sulla base di una tariffa oraria, le mie prestazioni vi vengono fatturate ogni mese, man mano che vengono eseguite.
+
+      Non ci sono spese di fascicolo o di ufficio eccetto le spese postali che vengono rifatturate al costo.
+
+      I costi relativi all'intervento di terzi (ufficiali giudiziari, esperti, traduttori, avvocati specializzati in altri settori) o le spese giudiziarie (diritti di cancelleria) vengono rifatturati al costo o sono direttamente pagabili al terzo interveniente.
   assurance:
     title: Pensate all'assicurazione di protezione giuridica
     content: >
