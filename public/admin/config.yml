@@ -285,7 +285,14 @@ collections:
                     fields:
                       - {label: "Titre", name: "title", widget: "string"}
                       - {label: "Description", name: "description", widget: "text", required: false}
-                      - {label: "Prix", name: "prix", widget: "string"}
+                      - {label: "Prix", name: "prix", widget: "string", required: false}
+                      - label: "Options"
+                        name: "options"
+                        widget: "list"
+                        required: false
+                        fields:
+                          - {label: "Description", name: "description", widget: "string"}
+                          - {label: "Prix", name: "prix", widget: "string"}
               - label: "Aide juridique"
                 name: "aideJuridique"
                 widget: "object"

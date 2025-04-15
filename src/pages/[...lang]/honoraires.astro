@@ -78,12 +78,13 @@ function prepareContent(content: string) {
         <p class="mb-4 md:mb-6 text-dark-gray leading-relaxed text-sm md:text-base">{content.previsibilite.content}</p>
         
         <div class="text-dark-gray text-sm md:text-base">
-          <p class="mb-2 md:mb-3 leading-relaxed">Si nous choisissons de travailler ensemble sur base d'un tarif horaire :</p>
-          <ul class="list-disc ml-4 md:ml-6 space-y-1 md:space-y-2 mb-3 md:mb-4">
-            <li class="leading-relaxed">mes prestations vous sont facturées chaque mois au fur et à mesure des prestations.</li>
-            <li class="leading-relaxed">Il n'y a pas de frais de dossier ou de bureau excepté les frais postaux qui sont refacturés au prix coûtant.</li>
-          </ul>
-          <p class="mb-2 md:mb-3 leading-relaxed">Les frais liés à l'intervention de tiers (huissiers, experts, traducteurs, avocats spécialisés dans d'autres domaines) ou les frais de justice (droits de greffe) sont refacturés au prix coûtant ou directement payables au tiers intervenant.</p>
+          {content.previsibilite.points && content.previsibilite.points.length > 0 && (
+            <ul class="list-disc ml-4 md:ml-6 space-y-1 md:space-y-2 mb-3 md:mb-4">
+              {content.previsibilite.points.map((point: string) => (
+                <li class="leading-relaxed">{point}</li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </section>
