@@ -1,6 +1,7 @@
 fr:
   title: Accompagnement et défense des entreprises
   questions:
+    - Projets d'acquisition - audit en droit du travail et de la sécurité sociale
     - Premier engagement en Belgique
     - Contrats de salariés ou indépendants
     - Problématique des faux indépendants
@@ -50,6 +51,7 @@ fr:
 en:
   title: Legal counsel and defense for employers
   questions:
+    - Acquisition audits in employment law and social security
     - First engagement in Belgium
     - Employee or self-employed contracts
     - "Issue of false self-employment "
@@ -102,6 +104,8 @@ en:
 it:
   title: Consulenza e difesa per le aziende
   questions:
+    - Audit aziendale in diritto del lavoro e previdenza sociale nelle
+      operazioni di acquisizioni
     - Prima assunzione in Belgio
     - Contratti di lavoro dipendente o autonomo
     - Problematica del falso rapporto di lavoro autonomo
