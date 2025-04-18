@@ -53,8 +53,8 @@ en:
   questions:
     - Acquisition audits in employment law and social security
     - First engagement in Belgium
-    - Employee or self-employed contracts
-    - "Issue of false self-employment "
+    - Contracts for employees or independent contractors
+    - Issue of false independent contractor
     - Resignations and dismissals
     - Protections against dismissal
     - Packages, bonuses
@@ -81,7 +81,7 @@ en:
     - icon: Handshake
       text: "Negotiation of settlement agreements "
     - icon: Shield
-      text: Defense before labor courts, and labor and social security inspections
+      text: Defense before labor courts, and labour and social security inspections
   ctaText: Learn more about fees
   seo:
     title: Legal Services for Employers | Christine Rizzo Lawyer
