@@ -1,6 +1,7 @@
 ---
 import { getEntry } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { marked } from 'marked';
 
 export async function getStaticPaths() {
   return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
@@ -30,10 +31,10 @@ const seoData = {
         {content.sections.map((section: any) => (
           <section>
             <h2 class="text-2xl font-light mb-4 text-black">{section.title}</h2>
-            <p class="text-dark-gray font-light whitespace-pre-line" set:html={section.text.replace(
-              /\bhttps?:\/\/\S+\b/g,
-              '<a href="$&" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">$&</a>'
-            )}></p>
+            <div 
+              class="prose max-w-none prose-p:text-dark-gray prose-p:font-light prose-a:text-blue-600 prose-a:hover:underline"
+              set:html={marked.parse(section.text)}
+            ></div>
           </section>
         ))}
       </div>
@@ -42,16 +43,5 @@ const seoData = {
 </BaseLayout>
 
 <style>
-  .prose h2 {
-    @apply text-2xl font-semibold mt-8 mb-4 text-gray-800;
-  }
-  .prose p {
-    @apply mb-4 leading-relaxed;
-  }
-  .prose ul {
-    @apply list-disc list-inside mb-4;
-  }
-  .prose a {
-    @apply text-blue-600 hover:underline;
-  }
+  /* Remove redundant prose styles as Tailwind prose classes handle this now */
 </style> 
