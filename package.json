@@ -27,6 +27,7 @@
     "astro-seo": "^0.8.4",
     "astro-social-share": "^2.0.2",
     "feather-icons": "^4.29.2",
+    "marked": "^15.0.8",
     "react-icons": "^5.2.1",
     "sharp": "^0.33.5",
     "typescript": "^5.4.4",
