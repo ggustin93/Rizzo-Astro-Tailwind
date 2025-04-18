@@ -44,13 +44,12 @@ en:
   title: Legal Notice
   sections:
     - title: Publisher
-      text: |
+      text: |-
         The website crizzo-avocate.be is published by:
 
-        Maître Christine Rizzo
+        Christine Rizzo
         Lawyer at the Brussels Bar
-        Bd. Brand Whitlock 87 - 10
-        1200 - Woluwe-Saint-Lambert (BE)
+        Chaussée de Waterloo 1151, 1180 Brussels
         Phone: +32 488 40 45 49
         Company number: 0829577949
     - title: Hosting
@@ -85,13 +84,12 @@ it:
   title: Note legali
   sections:
     - title: Editore
-      text: |
+      text: |-
         Il sito crizzo-avocate.be è pubblicato da:
 
-        Maître Christine Rizzo
-        Avvocato presso il Foro di Bruxelles
-        Bd. Brand Whitlock 87 - 10
-        1200 - Woluwe-Saint-Lambert (BE)
+        Christine Rizzo
+        Avvocata presso il Foro di Bruxelles
+        Chaussée de Waterloo 1151, 1180 Brussels
         Telefono: +32 488 40 45 49
         Numero di impresa: 0829577949
     - title: Hosting
