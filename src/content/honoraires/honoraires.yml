@@ -142,8 +142,8 @@ en:
       - title: Legal proceedings - Contesting a dismissal
         description: (e.g. for serious misconduct, abusive, discriminatory, manifestly
           unreasonable dismissal)
-        prix: €290 excluding VAT / month for 24 months (i.e. €6,960 excluding VAT) + 10%
-          on the net results obtained
+        prix: 290 € excl. VAT / month for 24 months (i.e. 6.960 € excl. VAT) + 10% on
+          the net results obtained
         services:
           - Amount covering one degree of jurisdiction
           - File analysis
@@ -162,11 +162,11 @@ en:
       - title: 30-minute "one-shot" consultation - Getting a quick answer to a question
         options:
           - description: Without document analysis
-            prix: €75 excluding VAT
+            prix: 75 € excl. VAT
           - description: With document analysis
-            prix: €200 excluding VAT
+            prix: 200 € excl. VAT
       - title: Work regulations
-        prix: €2,000 excluding VAT
+        prix: 2.000 € excl. VAT
         services:
           - Drafting or updating work regulations
           - Support in the posting and filing procedure with the labor
