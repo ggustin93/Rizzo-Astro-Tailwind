@@ -1,7 +1,7 @@
 fr:
   expertise:
     title: Expertise & Services
-    description: J'accompagne à la fois les travailleur·euse·s et les entreprises
+    description: J'accompagne à la fois les entreprises et les travailleur·euse·s
       dans leurs problématiques quotidiennes et leurs projets liés à l'emploi.
     travailleurs:
       title: Vous êtes un.e travailleur·euse
@@ -12,9 +12,10 @@ fr:
       cta: En savoir plus
     employeurs:
       title: Vous êtes une entreprise
-      description: Je défends votre entreprise devant les tribunaux et je collabore
-        avec vous ou votre équipe RH pour la gestion des relations de travail au
-        quotidien ainsi que pour vos projets.
+      description: Je défends votre entreprise devant les tribunaux ou les services de
+        l'inspection et je collabore avec vous ou votre équipe RH pour la
+        gestion des relations de travail au quotidien ainsi que pour vos
+        projets.
       cta: En savoir plus
     honoraires:
       title: Honoraires
@@ -38,10 +39,11 @@ fr:
       l'expérience de mon métier en conseillant et défendant à la fois des
       travailleur·euse.s et des entreprises locales et internationales. La
       gestion de la relation de travail du recrutement à la rupture, la
-      rédaction de rapports d'audit dans le cadre de projets d'acquisition, le
-      bien-être au travail, les outils destinés à améliorer l'équilibre vie
-      privée-vie professionnelle, les questions de discrimination et les faux
-      indépendants font partie de ma pratique quotidienne.
+      rédaction de contrats, de rapports d'audit dans le cadre de projets
+      d'acquisition, le bien-être au travail, les outils destinés à améliorer
+      l'équilibre vie privée-vie professionnelle, les questions de
+      discrimination et les faux indépendants font partie de ma pratique
+      quotidienne.
     cta: En savoir plus
   seo:
     title: Christine Rizzo | Avocate en droit du travail à Bruxelles
@@ -83,7 +85,7 @@ en:
     cta: Here are more details
   expertise:
     title: Services
-    description: I support and advise both employees and companies in their
+    description: I support and advise both companies and employees and in their
       employment-related day-to-day issues and projects.
     travailleurs:
       title: You are an employee
@@ -93,8 +95,9 @@ en:
       cta: Learn More
     employeurs:
       title: You are an employer
-      description: I defend your company before the labour courts and work with you or
-        your HR team to manage day-to-day labour relations and your projects.
+      description: I defend your company before the labour courts or inspection
+        services and work with you or your HR team to manage day-to-day labour
+        relations and your projects.
       cta: Learn More
     honoraires:
       intro: Transparent and tailored fees
@@ -116,10 +119,10 @@ en:
     description: Admitted to the Brussels Bar in 2010, I have gained experience in
       my profession by defending and advising both individuals and local and
       international companies . Managing employment relationships from
-      recruitment to termination, drafting audit reports for acquisition
-      projects, well-being at work, tools for improving work-life balance,
-      discrimination issues and classifying employees versus independent
-      contractors are all part of my daily practice.
+      recruitment to termination, drafting agreements, audit reports for
+      acquisition projects, well-being at work, tools for improving work-life
+      balance, discrimination issues and classifying employees versus
+      independent contractors are all part of my daily practice.
     cta: Learn More
   seo:
     title: Christine Rizzo | Employment Lawyer in Brussels
@@ -159,15 +162,14 @@ it:
     travailleurs:
       title: Lavoratori
       description: Vi assisto in ogni fase della vostra carriera, sia che si tratti di
-        un problema singolo, sia che si tratti di negoziare un licenziamento o
-        di intraprendere un'azione legale contro il vostro datore di lavoro
-        davanti al tribunale del lavoro.
+        un problema singolo, di negoziare un licenziamento o di intraprendere
+        un'azione legale contro il datore di lavoro davanti al tribunale.
       cta: Scopri di più
     employeurs:
       title: Aziende
-      description: Difendo la vostra azienda davanti ai tribunali del lavoro e
-        collaboro con voi o con il vostro team di risorse umane per gestire i
-        rapporti di lavoro quotidiani e i vostri progetti.
+      description: Difendo la vostra azienda davanti ai tribunali del lavoro o i
+        servizi di ispezione e collaboro con voi o con il vostro HR team per la
+        gestione quotidiana dei rapporti di lavoro e i vostri progetti.
       cta: Scopri di più
     honoraires:
       intro: Tariffe trasparenti e personalizzate
@@ -186,14 +188,14 @@ it:
   articlesTitle: Articoli
   profil:
     title: Profilo
-    description: Avvocato presso il foro di Bruxelles dal 2010, ho acquisito
+    description: Avvocata presso il foro di Bruxelles dal 2010, ho acquisito
       esperienza nella mia professione difendendo e consigliando sia lavoratori
       che aziende locali e internazionali. La gestione dei rapporti di lavoro,
-      dall'assunzione alla cessazione, pre‐acquisition "due diligence",
-      benessere sul lavoro, gli strumenti per migliorare l'equilibrio tra lavoro
-      e vita privata, le questioni di discriminazione e la qualificazione del
-      contratto di lavoro (in)dipendente fanno parte della mia pratica
-      quotidiana.
+      dall'assunzione alla cessazione, la redazione di contratti e di relazioni
+      pre‐acquisition "due diligence", il benessere sul lavoro, gli strumenti
+      per migliorare l'equilibrio tra lavoro e vita privata, le questioni di
+      discriminazione e la qualificazione del contratto di lavoro (in)dipendente
+      fanno parte della mia pratica quotidiana.
     cta: Scopri di più
   seo:
     title: Christine Rizzo | Avvocato del lavoro a Bruxelles
