@@ -162,14 +162,15 @@ it:
     travailleurs:
       title: Lavoratori
       description: Vi assisto in ogni fase della vostra carriera, sia che si tratti di
-        un problema singolo, di negoziare un licenziamento o di intraprendere
+        un problema puntuale, di negoziare un licenziamento o di intraprendere
         un'azione legale contro il datore di lavoro davanti al tribunale.
       cta: Scopri di più
     employeurs:
       title: Aziende
       description: Difendo la vostra azienda davanti ai tribunali del lavoro o i
-        servizi di ispezione e collaboro con voi o con il vostro HR team per la
-        gestione quotidiana dei rapporti di lavoro e i vostri progetti.
+        servizi di ispezione e collaboro con voi o con il vostro team di risorse
+        umane per la gestione quotidiana dei rapporti di lavoro e i vostri
+        progetti.
       cta: Scopri di più
     honoraires:
       intro: Tariffe trasparenti e personalizzate
@@ -183,7 +184,7 @@ it:
   hero:
     title: Christine Rizzo
     subtitle: Avvocata del lavoro
-    description: Consulenza e difesa con competenza e impegno
+    description: Consulenza e difesa con competenza e dedizione
     cta: PRENOTA UNA CONSULZENZA LEGALE
   articlesTitle: Articoli
   profil:
@@ -195,7 +196,7 @@ it:
       pre‐acquisition "due diligence", il benessere sul lavoro, gli strumenti
       per migliorare l'equilibrio tra lavoro e vita privata, le questioni di
       discriminazione e la qualificazione del rapporto di lavoro (falso lavoro
-      autonomo) fanno parte della mia pratica quotidiana.
+      autonomo) fanno parte delle mie attività quotidiane.
     cta: Scopri di più
   seo:
     title: Christine Rizzo | Avvocato del lavoro a Bruxelles
