@@ -181,7 +181,7 @@ en:
         intervention.
   assurance:
     title: Consider legal protection insurance
-    content: >
+    content: >-
       Legal Protection Insurance (or "legal defense") can save you a lot of
       money.
 
@@ -189,8 +189,9 @@ en:
       Several insurers in Belgium offer legal protection insurance that covers employment-related issues (Ethias, Arag, Das, Arces), whether you are an employee or an employer.
 
 
-      Check with your broker or insurer if you are covered or if such insurance can be taken out and the waiting period.
-       
+      Check with your broker or insurer if you are covered or if such insurance can be taken out and the waiting period. 
+
+
       In this case, all or part of your lawyer's fees will be paid by your insurance and not by you.
   tarifs:
     title: Rates
