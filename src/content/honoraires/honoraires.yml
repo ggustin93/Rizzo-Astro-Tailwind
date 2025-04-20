@@ -112,7 +112,7 @@ fr:
 en:
   previsibilite:
     title: Predictability and monthly payment
-    full_content: >
+    full_content: >-
       Not knowing how much your lawyer's intervention will cost can be a source
       of concern.
 
@@ -129,7 +129,7 @@ en:
       There are no file or office fees except for postal expenses which are re-invoiced at cost.
 
 
-      Costs related to third-party interventions (bailiffs, experts, translators, lawyers specialized in other fields) or court fees (registry fees) are re-invoiced at cost or directly payable to the intervening third party.
+      Costs related to third-party interventions (bailiffs, experts, translators, lawyers specialized in other fields) or court fees (registry fees) are invoiced at cost or directly payable to the intervening third party.
   forfaits:
     title: Examples of fixed fee options
     intro: The following fixed fee options are provided for indicative purposes
@@ -213,8 +213,8 @@ en:
       For individuals meeting the conditions for second line legal aid, you may request my assistance outside of this framework. Please  complete the waiver form [here](https://docs.google.com/document/d/1342gFQP0Wfvejg3RrRpynr_0xgowMhOHl3XHTDWqWA4/edit?tab=t.0#heading=h.xth8kae1d4z1), 
 
       sign, and return to me.
-  subtitle: The lawyer's fees are the compensation for the legal services
-    performed for you.
+  subtitle: The lawyer's fees are the compensation for the legal services rendered
+    for you.
   title: Fees
   video:
     title: Learn more
