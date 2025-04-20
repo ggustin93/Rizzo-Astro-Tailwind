@@ -161,9 +161,10 @@ it:
       all'esecuzione e cessazione.
     travailleurs:
       title: Lavoratori
-      description: Vi assisto in ogni fase della vostra carriera, sia che si tratti di
-        un problema puntuale, di negoziare un licenziamento o di intraprendere
-        un'azione legale contro il datore di lavoro davanti al tribunale.
+      description: Vi assisto in ogni fase della vostro percorso professionale, sia
+        che si tratti di un problema occasionale, di negoziare un licenziamento
+        o di intraprendere un'azione legale contro il datore di lavoro davanti
+        al tribunale.
       cta: Scopri di più
     employeurs:
       title: Aziende
