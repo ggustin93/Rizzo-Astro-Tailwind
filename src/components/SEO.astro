@@ -112,9 +112,12 @@ const languages = ['fr', 'en', 'it'];
       { rel: "icon", href: seoConfig.favicon || "/favicon.ico" },
       ...languages.map(l => ({ rel: "alternate", hreflang: l, href: `${siteUrl}/${l}` })),
     ],
+    // NOTE: La balise <meta name="robots"> n'est plus explicitement ajoutée ici.
+    // Le composant <AstroSEO> de base semble la générer correctement ("index, follow" dans ce cas)
+    // en se basant sur la présence d'une URL canonique et l'absence d'instructions contraires.
+    // La ligne utilisant seoConfig.allowIndexing a été supprimée pour éviter la duplication.
     meta: [
       { name: "author", content: "Christine Rizzo" },
-      { name: "robots", content: seoConfig.allowIndexing ? "index, follow" : "noindex, nofollow" },
       { name: "language", content: lang },
       ...(keywordsString ? [{ name: "keywords", content: keywordsString }] : []),
       { property: "og:image:width", content: "1200" },

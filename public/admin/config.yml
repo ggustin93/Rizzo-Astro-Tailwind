@@ -505,12 +505,6 @@ collections:
               et son apparence lors du partage sur les réseaux sociaux. Configuration par défaut optimisée
               et fonctionnelle. Toute modification requiert une bonne compréhension des pratiques SEO.
             fields:
-              - label: "Autoriser l'indexation"
-                name: "allowIndexing"
-                widget: "boolean"
-                default: false
-                hint: "IMPORTANT: Activer pour que le site soit indexé par les moteurs de recherche. Désactiver pendant le développement ou les tests."
-              
               - label: "Image principale pour les réseaux sociaux"
                 name: "defaultSocialImage"
                 widget: "image"
