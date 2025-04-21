@@ -76,10 +76,6 @@ const path = Astro.url.pathname;
 const autoCanonical = new URL(path, mainSiteUrl).toString();
 const finalCanonical = canonical || autoCanonical;
 
-// Paramètres d'indexation
-const allowIndexing = seoConfig.allowIndexing || false;
-const robotsContent = allowIndexing ? "index, follow" : "noindex, nofollow";
-
 // Favicon personnalisable
 const favicon = seoConfig.favicon || '/favicon.ico';
 const faviconPng32 = seoConfig.faviconPng32 || '/favicon-32x32.png';
