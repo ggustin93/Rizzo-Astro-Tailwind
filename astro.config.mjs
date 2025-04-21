@@ -1,5 +1,5 @@
 import { defineConfig } from "astro/config";
-import robotsTxt from 'astro-robots-txt';
+// import robotsTxt from 'astro-robots-txt';
 import sitemap from '@astrojs/sitemap';
 
 // Set this to 'static' or 'hybrid' based on your needs
@@ -36,10 +36,10 @@ export default defineConfig({
     enabled: false
   },
   integrations: [
-    robotsTxt({
+    /* robotsTxt({
       host: siteUrl,
       sitemap: true,
-    }),
+    }), */
     sitemap(),
   ],
   vite: {

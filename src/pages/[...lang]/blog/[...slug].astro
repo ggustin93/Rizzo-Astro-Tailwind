@@ -1,9 +1,14 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import { Image } from 'astro:assets';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 
 type Language = 'fr' | 'it' | 'en';
+
+// Récupérer la configuration du site
+const siteConfigEntry = await getEntry('config', 'site-config');
+const siteConfig = siteConfigEntry?.data || {};
+const sectionsVisibility = siteConfig.sectionsVisibility === true; // Est-ce que le blog est visible ?
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('blog');
@@ -62,6 +67,13 @@ const seoData = {
   keywords={seoData.keywords}
   lang={lang}
 >
+  {/* Ajout conditionnel de la balise noindex si le blog n'est pas visible */}
+  {!sectionsVisibility && (
+    <head slot="head">
+      <meta name="robots" content="noindex">
+    </head>
+  )}
+
   <article class="max-w-5xl mx-auto">
     <div class="bg-white md:my-20 p-8 rounded-lg">
 

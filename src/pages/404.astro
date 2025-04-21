@@ -28,6 +28,9 @@ const t = translations[lang as keyof typeof translations] || translations.fr;
 ---
 
 <BaseLayout title={t.title} description={t.message} lang={lang}>
+  <head slot="head">
+    <meta name="robots" content="noindex">
+  </head>
   <main class="flex items-center justify-center bg-gradient-to-b bg-employeur my-16 mb-16">
     <div class="w-full px-4 sm:px-8 md:px-12 lg:px-16 py-8 md:py-12">
       <div class="max-w-6xl mx-auto">
