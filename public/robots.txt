@@ -1,4 +1,17 @@
+# Directives pour tous les robots
 User-agent: *
 Allow: /
 
+# Directives spécifiques pour Googlebot (priorité sur les règles générales)
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+
+# Directives spécifiques pour les autres robots de Google
+User-agent: Googlebot-Image
+Allow: /
+User-agent: Googlebot-Mobile
+Allow: /
+
+# Sitemap pour faciliter l'indexation
 Sitemap: https://crizzo-avocate.be/sitemap-index.xml 

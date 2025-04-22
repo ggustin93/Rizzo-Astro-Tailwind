@@ -9,15 +9,8 @@
 [build.processing.images]
   compress = true
 
-# Forcer l'indexation via headers spécifiques pour les moteurs de recherche
+# Configuration d'indexation simple et universelle - sans condition qui pourrait mal fonctionner
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Robots-Tag = "index, follow"
-
-# Ajouter cette nouvelle règle spécifique pour Googlebot qui aura priorité absolue
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Robots-Tag = "index, follow"
-  conditions = {User-Agent = "Googlebot"}
+    X-Robots-Tag = "index, follow, all"
