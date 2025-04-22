@@ -91,6 +91,9 @@ const appleTouchIcon = seoConfig.appleTouchIcon || '/apple-touch-icon.png';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
+    <!-- Forcer l'indexation sans condition, overrider toute autre directive -->
+    <meta name="robots" content="index, follow">
+    
     <!-- Composant SEO -->
     <SEO
         title={title}
@@ -122,6 +125,8 @@ const appleTouchIcon = seoConfig.appleTouchIcon || '/apple-touch-icon.png';
     <link rel="manifest" href="/site.webmanifest">
     <link rel="icon" type="image/x-icon" href={favicon}>
     
+    <!-- Script d'urgence pour corriger les balises meta robots -->
+    <script src="/fix-robots.js"></script>
 
     
     <!-- Cal.com Script -->

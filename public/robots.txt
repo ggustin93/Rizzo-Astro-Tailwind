@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+
 Sitemap: https://crizzo-avocate.be/sitemap-index.xml 
