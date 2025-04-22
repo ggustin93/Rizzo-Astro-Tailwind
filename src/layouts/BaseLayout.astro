@@ -90,6 +90,7 @@ const appleTouchIcon = seoConfig.appleTouchIcon || '/apple-touch-icon.png';
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
     <!-- Composant SEO -->
     <SEO
         title={title}
@@ -99,6 +100,7 @@ const appleTouchIcon = seoConfig.appleTouchIcon || '/apple-touch-icon.png';
         keywords={keywords}
         type={type}
         lang={currentLang}
+        allowIndexing={seoConfig.allowIndexing}
     />
     
     <!-- Préchargement des polices -->

@@ -1,6 +1,5 @@
 ---
 import { SEO as AstroSEO } from 'astro-seo';
-import { getEntry } from 'astro:content';
 
 export interface Props {
   title: string;
@@ -10,21 +9,7 @@ export interface Props {
   keywords?: string | string[];
   type?: 'article' | 'website';
   lang?: string;
-}
-
-// Définition du type pour la configuration du site
-interface SiteConfig {
-  seo?: {
-    allowIndexing?: boolean;
-    siteUrl?: string;
-    siteName?: string;
-    defaultSocialImage?: string;
-    favicon?: string;
-    siteDescription?: string;
-  };
-  // autres propriétés potentielles
-  sectionsVisibility?: boolean;
-  calendarLink?: string;
+  allowIndexing?: boolean;
 }
 
 const {
@@ -35,31 +20,23 @@ const {
   keywords,
   type = 'website',
   lang = 'fr',
+  allowIndexing = true,
 } = Astro.props;
 
-// Récupérer la configuration du site
-const siteConfigEntry = await getEntry('config', 'site-config');
-const siteConfig = (siteConfigEntry?.data || {}) as SiteConfig;
-const seoConfig = siteConfig.seo || {};
+const siteUrl = import.meta.env.SITE || 'https://crizzo-avocate.be/';
+const siteName = 'Christine Rizzo - Avocate';
+const defaultImage = '/assets/images/default-social-image.png';
+const defaultFavicon = '/favicon.ico';
 
-// Utiliser les valeurs de configuration ou les valeurs par défaut
-const siteUrl = seoConfig.siteUrl || import.meta.env.SITE || 'https://crizzo-avocate.be/';
-const siteName = seoConfig.siteName || 'Christine Rizzo - Avocate';
-const defaultImage = seoConfig.defaultSocialImage || '/assets/images/default-social-image.png'; 
-
-// Fix image URL creation to handle both absolute and relative paths
 let fullImageUrl;
 if (image) {
-  // Check if the image is already an absolute URL
   if (image.startsWith('http://') || image.startsWith('https://')) {
     fullImageUrl = image;
   } else {
-    // Handle relative paths correctly
     const imagePath = image.startsWith('/') ? image : `/${image}`;
     fullImageUrl = new URL(imagePath, siteUrl).toString();
   }
 } else {
-  // Ensure default image path is correctly formatted
   const defaultImagePath = defaultImage.startsWith('/') ? defaultImage : `/${defaultImage}`;
   fullImageUrl = new URL(defaultImagePath, siteUrl).toString();
 }
@@ -109,14 +86,11 @@ const languages = ['fr', 'en', 'it'];
   }}
   extend={{
     link: [
-      { rel: "icon", href: seoConfig.favicon || "/favicon.ico" },
-      ...languages.map(l => ({ rel: "alternate", hreflang: l, href: `${siteUrl}/${l}` })),
+      { rel: "icon", href: defaultFavicon },
+      ...languages.map(l => ({ rel: "alternate", hreflang: l, href: `${siteUrl}${l}/` })),
     ],
-    // NOTE: La balise <meta name="robots"> n'est plus explicitement ajoutée ici.
-    // Le composant <AstroSEO> de base semble la générer correctement ("index, follow" dans ce cas)
-    // en se basant sur la présence d'une URL canonique et l'absence d'instructions contraires.
-    // La ligne utilisant seoConfig.allowIndexing a été supprimée pour éviter la duplication.
     meta: [
+      { name: "robots", content: allowIndexing ? "index, follow" : "noindex, nofollow" },
       { name: "author", content: "Christine Rizzo" },
       { name: "language", content: lang },
       ...(keywordsString ? [{ name: "keywords", content: keywordsString }] : []),
