@@ -90,7 +90,6 @@ const languages = ['fr', 'en', 'it'];
       ...languages.map(l => ({ rel: "alternate", hreflang: l, href: `${siteUrl}${l}/` })),
     ],
     meta: [
-      { name: "robots", content: allowIndexing ? "index, follow" : "noindex, nofollow" },
       { name: "author", content: "Christine Rizzo" },
       { name: "language", content: lang },
       ...(keywordsString ? [{ name: "keywords", content: keywordsString }] : []),
