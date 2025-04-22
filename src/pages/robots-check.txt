@@ -1,0 +1,4 @@
+SEO Debug File
+This file is used to check if the site is properly indexable.
+If you can see this file via Google or other search engines, it means indexing works correctly.
+Date: 2025-04-22 

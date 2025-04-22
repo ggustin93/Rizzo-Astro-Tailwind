@@ -1,2 +1,5 @@
 /index.html
   Cache-Control: no-store 
+
+/*
+  X-Robots-Tag: index, follow 

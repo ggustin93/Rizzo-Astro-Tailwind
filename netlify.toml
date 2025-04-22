@@ -8,3 +8,9 @@
   skip_processing = false
 [build.processing.images]
   compress = true
+
+# Forcer l'indexation via headers spécifiques pour les moteurs de recherche
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "index, follow"
