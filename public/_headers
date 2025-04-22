@@ -1,12 +1,12 @@
+# Cache control pour les pages HTML
 /index.html
   Cache-Control: no-store 
-  X-Robots-Tag: index, follow
 
-/fr/
-  X-Robots-Tag: index, follow
-
-/fr/index.html
-  X-Robots-Tag: index, follow
-
+# Règle globale d'indexation pour tous les chemins
 /*
-  X-Robots-Tag: index, follow 
+  X-Robots-Tag: index, follow
+  
+# Règle spécifique pour Googlebot avec une directive forte d'indexation
+/fr/*
+  X-Robots-Tag: index, follow
+  X-Googlebot-Specific: index 

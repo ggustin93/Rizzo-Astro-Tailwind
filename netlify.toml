@@ -15,28 +15,9 @@
   [headers.values]
     X-Robots-Tag = "index, follow"
 
-# Ajouter ici un script post-processing pour supprimer les balises meta robots problématiques
-[[plugins]]
-  package = "@netlify/plugin-functions-core"
-
-[[plugins]]
-  package = "netlify-plugin-inline-functions-env"
-
-[[plugins]]
-  package = "netlify-plugin-inline-source"
-
-# Nouveau plugin pour post-traiter le HTML et supprimer toutes les balises meta robots noindex
-[[plugins]]
-  package = "netlify-plugin-html-validate"
-  [plugins.inputs]
-    ext = "html"
-    config = { "plugins": ["@netlify/netlify-plugin-html-validate"] }
-    
-# Plugin pour forcer l'indexation en manipulant le HTML final
-[[plugins]]
-  package = "@netlify/plugin-local-install-core"
-
-[[plugins]]
-  package = "netlify-plugin-search-index"
-  [plugins.inputs]
-    generatedFunctionName = "search"
+# Ajouter cette nouvelle règle spécifique pour Googlebot qui aura priorité absolue
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "index, follow"
+  conditions = {User-Agent = "Googlebot"}
