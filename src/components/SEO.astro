@@ -23,7 +23,7 @@ const {
   allowIndexing = true,
 } = Astro.props;
 
-const siteUrl = import.meta.env.SITE || 'https://crizzo-avocate.be/';
+const siteUrl = import.meta.env.SITE || 'https://crizzo-avocate.be';
 const siteName = 'Christine Rizzo - Avocate';
 const defaultImage = '/assets/images/default-social-image.png';
 const defaultFavicon = '/favicon.ico';
@@ -89,7 +89,7 @@ const languages = ['fr', 'en', 'it'];
   extend={{
     link: [
       { rel: "icon", href: defaultFavicon },
-      ...languages.map(l => ({ rel: "alternate", hreflang: l, href: `${siteUrl}${l}/` })),
+      ...languages.map(l => ({ rel: "alternate", hreflang: l, href: `${siteUrl}/${l}/` })),
     ],
     meta: [
       { name: "author", content: "Christine Rizzo" },
