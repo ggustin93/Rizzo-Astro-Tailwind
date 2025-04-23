@@ -91,19 +91,39 @@ const langs = ['fr', 'en', 'it'];
 
     const handleLanguageChange = (newLang) => {
       const currentPath = window.location.pathname;
-      const newPath = currentPath.replace(/^\/[^\/]+/, `/${newLang}`);
+      const supportedLanguages = ['fr', 'en', 'it']; // Assurez-vous que c'est défini
 
-      // Debugging
-      console.log(`Language selected: ${newLang}`);
-      console.log(`Redirecting to: ${newPath}`);
-
-      // Fermer le menu mobile
-      const mobileMenu = document.getElementById('mobile-menu');
-      if (mobileMenu) {
-        mobileMenu.classList.add('hidden');
-        document.body.classList.remove('overflow-hidden');
+      // 1. Vérifie si on est déjà sur la bonne langue
+      if (currentPath.startsWith(`/${newLang}/`) || currentPath === `/${newLang}`) {
+        console.log(`Already on language: ${newLang}. No redirect needed.`);
+        return; // Ne fait rien si la langue est déjà correcte
       }
 
+      // 2. Gère la racine et reconstruit le chemin correctement
+      let newPath;
+      if (currentPath === '/' || currentPath === '') {
+        // Cas spécifique de la racine
+        newPath = `/${newLang}/`; 
+      } else {
+        // Décompose le chemin pour mieux le reconstruire
+        const pathParts = currentPath.split('/').filter(Boolean); // Sépare les parties et enlève les vides
+        if (pathParts.length === 0) {
+           // Si après filtrage on est vide (ex: /fr), on va vers la nouvelle langue
+           newPath = `/${newLang}/`;
+        } else if (supportedLanguages.includes(pathParts[0])) {
+          // Si la première partie EST une langue, on la remplace
+          newPath = `/${newLang}/${pathParts.slice(1).join('/')}`;
+        } else {
+          // Si la première partie N'EST PAS une langue, on insère la nouvelle langue au début
+          newPath = `/${newLang}/${pathParts.join('/')}`;
+        }
+        // S'assure qu'il y a un slash à la fin si ce n'est pas un fichier
+        if (!newPath.endsWith('/') && !newPath.includes('.')) {
+           newPath += '/';
+        }
+      }
+
+      console.log(`Redirecting to: ${newPath}`);
       window.location.href = newPath;
     };
 

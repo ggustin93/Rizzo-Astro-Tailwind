@@ -25,16 +25,25 @@ export interface Props {
 }
 
 export async function getStaticPaths() {
-  return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
+  return ['fr', 'en', 'it'].map(lang => ({
+    params: { lang },
+    props: { currentLang: lang as SupportedLanguage }
+  }));
 }
 
-const { currentLang } = Astro.props as Props;
+const { lang: rawLangParam } = Astro.params;
+
+if (typeof rawLangParam !== 'string' || !supportedLanguages.includes(rawLangParam as SupportedLanguage)) {
+  console.warn(`Paramètre de langue invalide ou non supporté dans l'URL: '${rawLangParam}'. Redirection vers /fr/.`);
+  return Astro.redirect('/fr/', 302);
+}
+
+const { currentLang } = Astro.props;
 import { getUiTranslations } from '../../utils/ui-translations';
 const uiTranslations = await getUiTranslations(currentLang);
 
-const { lang } = Astro.params;
 const homeEntry = await getEntry('home', 'home');
-const content = homeEntry.data[lang as keyof typeof homeEntry.data] || homeEntry.data['fr'];
+const content = homeEntry.data[currentLang] || homeEntry.data['fr'];
 
 // Récupérer la configuration du site
 const siteConfigEntry = await getEntry('config', 'site-config');
@@ -46,7 +55,7 @@ if (!content || !content.expertise || !content.expertise.travailleurs) {
 }
 
 // Récupération des articles
-const recentArticles = showArticlesSection ? await getArticles(lang, 3) : [];
+const recentArticles = showArticlesSection ? await getArticles(currentLang, 3) : [];
 
 // Ajout des métadonnées SEO
 const { title, description, keywords, image } = content.seo;
@@ -127,7 +136,7 @@ function generateUniqueId(prefix: string) {
               <p class="text-sm md:text-base font-light mb-4">{content.expertise.travailleurs.description}</p>
             </div>
             <Button 
-              href={`/${lang}/services/travailleurs`}
+              href={`/${currentLang}/services/travailleurs`}
               text={`${content.expertise.travailleurs.cta} →`} 
               variant="secondary"
               class="self-end bg-white text-travailleur hover:bg-gray-800 hover:text-white border-white"
@@ -140,7 +149,7 @@ function generateUniqueId(prefix: string) {
               <p class="text-sm md:text-base font-light mb-4">{content.expertise.employeurs.description}</p>
             </div>
             <Button 
-              href={`/${lang}/services/employeurs`}
+              href={`/${currentLang}/services/employeurs`}
               text={`${content.expertise.employeurs.cta} →`} 
               variant="secondary"
               class="self-end bg-white text-employeur hover:bg-gray-800 hover:text-white border-white"
@@ -159,7 +168,7 @@ function generateUniqueId(prefix: string) {
         
         <p class="text-center mb-4 md:mb-6 max-w-3xl mx-auto text-dark-gray text-sm md:text-base font-light leading-relaxed">
           {content.expertise.honoraires.intro} - 
-          <a href={`/${lang}/honoraires`} class="text-travailleur hover:underline">{content.expertise.honoraires.linkText}</a>.
+          <a href={`/${currentLang}/honoraires`} class="text-travailleur hover:underline">{content.expertise.honoraires.linkText}</a>.
         </p>
         
         <ul class="list-none space-y-2 flex flex-col items-start max-w-md mx-auto">
@@ -203,7 +212,7 @@ function generateUniqueId(prefix: string) {
               <p class="text-dark-gray text-sm md:text-base font-light leading-relaxed mb-6">{content.profil.description}</p>
               <div class="flex justify-center md:justify-start">
                 <Button 
-                  href={`/${lang}/profil`} 
+                  href={`/${currentLang}/profil`} 
                   text={content.profil.cta}
                   variant="secondary"
                   class="uppercase text-sm font-light"
