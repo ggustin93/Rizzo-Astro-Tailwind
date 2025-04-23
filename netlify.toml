@@ -1,7 +1,24 @@
+# Redirection pour les navigateurs préférant l'anglais
 [[redirects]]
   from = "/"
-  to = "/fr"
-  status = 302
+  to = "/en/"
+  status = 302 # Temporaire, car la préférence peut changer
+  force = true
+  conditions = {Language = ["en"]}
+
+# Redirection pour les navigateurs préférant l'italien
+[[redirects]]
+  from = "/"
+  to = "/it/"
+  status = 302 # Temporaire
+  force = true
+  conditions = {Language = ["it"]}
+
+# Redirection par défaut pour tous les autres (y compris le français)
+[[redirects]]
+  from = "/"
+  to = "/fr/"
+  status = 302 # Temporaire
   force = true
 
 [build.processing]

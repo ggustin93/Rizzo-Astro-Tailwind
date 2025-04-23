@@ -17,9 +17,6 @@ export default defineConfig({
       './src/assets': '/assets'
     }
   },*/
-  redirects: {
-    '/': '/fr/',
-  },
   image: {
     service: {
       entrypoint: 'astro/assets/services/sharp',

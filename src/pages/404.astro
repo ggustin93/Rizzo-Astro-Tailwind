@@ -4,7 +4,24 @@ import { Image } from 'astro:assets';
 import { Home } from 'astro-feather-icons2';
 import illustration404 from '../assets/images/404_illustration.svg';
 
-const { lang = 'fr' } = Astro.params;
+// Définit les langues supportées et la langue par défaut
+const supportedLanguages = ['fr', 'en', 'it'];
+const defaultLang = 'fr';
+
+// Récupère le paramètre de langue brut de l'URL (peut être undefined)
+const { lang: rawLangParam } = Astro.params;
+
+// --- LOGIQUE DE REDIRECTION SI LANGUE MANQUANTE/INVALIDE ---
+// Vérifie si le paramètre de langue est absent ou n'est pas une langue supportée
+if (rawLangParam === undefined || typeof rawLangParam !== 'string' || !supportedLanguages.includes(rawLangParam)) {
+  // Si la langue est manquante ou invalide dans l'URL 404, redirige vers la page d'accueil par défaut
+  console.warn(`Paramètre de langue invalide ou manquant pour la route 404 ('${rawLangParam}'). Redirection vers /${defaultLang}/.`);
+  return Astro.redirect(`/${defaultLang}/`, 302); // Redirection temporaire
+}
+// --- FIN DE LA LOGIQUE DE REDIRECTION ---
+
+// Si on arrive ici, rawLangParam est une chaîne de caractères correspondant à une langue supportée
+const lang = rawLangParam; // On utilise la langue validée de l'URL
 
 const translations = {
   fr: {
@@ -24,7 +41,8 @@ const translations = {
   }
 };
 
-const t = translations[lang as keyof typeof translations] || translations.fr;
+// On est certain que 'lang' est une clé valide ici
+const t = translations[lang];
 ---
 
 <BaseLayout title={t.title} description={t.message} lang={lang}>
@@ -41,7 +59,7 @@ const t = translations[lang as keyof typeof translations] || translations.fr;
               {t.message}
             </p>
             <a 
-              href={`/${lang || 'fr'}`} 
+              href={`/${lang}`}
               class="inline-flex items-center bg-transparent text-white border border-white px-4 md:px-6 py-2 md:py-3 rounded-sm hover:bg-travailleur hover:border-travailleur transition duration-300 uppercase text-sm md:text-base font-light group"
             >
               <Home class="w-5 h-5 mr-2 group-hover:text-white transition-colors duration-300" />
