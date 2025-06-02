@@ -2,6 +2,38 @@ import { defineConfig } from "astro/config";
 // import robotsTxt from 'astro-robots-txt';
 import sitemap from '@astrojs/sitemap';
 
+// Function to filter pages from sitemap
+function sitemapFilter(page) {
+  const path = new URL(page).pathname;
+
+  // Exclude individual blog posts (e.g., /fr/blog/post-slug)
+  // This will keep main blog listing pages like /fr/blog, /en/blog etc.
+  if (path.match(/^\/(fr|en|it)\/blog\/.+/)) {
+    return false; // Exclude
+  }
+
+  const pathWithoutLang = path.replace(/^\/(fr|en|it)/, '');
+
+  // Exclude all pages under the /legal/ path
+  if (pathWithoutLang.startsWith('/legal')) {
+    return false; // Exclude
+  }
+
+  // Define slugs for other specific pages to be excluded (e.g., credits)
+  // These are matched after removing the language prefix
+  const specificSlugsToExclude = [
+    '/credits'
+    // Add English/Italian equivalents for '/credits' if your site uses specific translated slugs
+    // e.g., if English credits page is /en/site-credits, add '/site-credits' here.
+  ];
+
+  if (specificSlugsToExclude.includes(pathWithoutLang)) {
+    return false; // Exclude
+  }
+
+  return true; // Include all other pages
+}
+
 // Set this to 'static' or 'hybrid' based on your needs
 const outputMode = 'static';
 
@@ -37,7 +69,20 @@ export default defineConfig({
       host: siteUrl,
       sitemap: true,
     }), */
-    sitemap(),
+    sitemap({
+      filter: sitemapFilter,
+      // Optional: If you use i18n domains or different base paths per language,
+      // you might need to configure the i18n settings for the sitemap.
+      // Example:
+      // i18n: {
+      //   defaultLocale: 'fr', // Your default language
+      //   locales: {
+      //     fr: 'fr-BE', // Or just 'fr'
+      //     en: 'en-US', // Or just 'en'
+      //     it: 'it-IT', // Or just 'it'
+      //   },
+      // },
+    }),
   ],
   vite: {
     css: {
