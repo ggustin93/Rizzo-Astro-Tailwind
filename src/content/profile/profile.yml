@@ -87,6 +87,8 @@ fr:
       - spécialiste litiges travail Belgique
 en:
   careerPath:
+    - year: "2025"
+      event: Awarded the title of specialist in employment law by the Brussels Bar
     - year: "2024"
       event: "Establishment of my legal practice "
     - year: 2017-2024
@@ -166,6 +168,9 @@ en:
       - workplace litigation specialist Belgium
 it:
   careerPath:
+    - event: Conferimento del titolo di specialista in diritto del lavoro dall'Ordine
+        degli Avvocati di Bruxelles
+      year: "2025"
     - year: "2024"
       event: Creazione del mio studio legale
     - year: 2017-2024
