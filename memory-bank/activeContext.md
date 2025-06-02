@@ -2,7 +2,7 @@
 
 ### Current Focus
 
-*   Refining SEO strategy: sitemap configuration, IndexNow protocol implementation (manual submission script enhanced with sitemap parsing).
+*   Refining SEO strategy: sitemap configuration, IndexNow protocol implementation (manual submission script enhanced and made more portable).
 
 ### Recent Changes
 
@@ -14,21 +14,20 @@
 *   Created IndexNow API key file (`public/d77e7bbb53844ce7b455448cecfa0ffd.txt`).
 *   Created IndexNow manual submission script (`scripts/submit_indexnow.sh`).
 *   Enhanced `scripts/submit_indexnow.sh` to parse URLs from the live sitemap (using `xmllint`).
+*   Updated `scripts/submit_indexnow.sh` to replace `readarray` with a `while read` loop for Bash v3+ portability.
+*   Updated Memory Bank files to reflect script changes.
 
 ### Next Steps
 
 *   User to ensure `xmllint` is available if using sitemap parsing feature of the script.
-*   User to make `scripts/submit_indexnow.sh` executable (if not already done).
-*   User to rebuild and redeploy site for sitemap changes and IndexNow key file to take effect.
-*   User to verify sitemap changes and IndexNow key file accessibility.
-*   User to test IndexNow submission using `scripts/submit_indexnow.sh --sitemap` after deployment.
+*   User to test IndexNow submission using `scripts/submit_indexnow.sh --sitemap` after deployment (if not already done and successful).
+*   User to commit recent script changes.
 *   Monitor search engine indexing (Bing Webmaster Tools, Google Search Console).
 *   Investigate and potentially implement automated IndexNow submissions on deployment.
-*   Prepare Git commits for the recent features (Memory Bank, sitemap config, IndexNow key & script).
 
 ### Active Decisions & Considerations
 
 *   Decision to exclude specific content from sitemap to improve indexing focus.
 *   `bing_index_check.sh` was a temporary diagnostic tool.
 *   IndexNow API key `d77e7bbb53844ce7b455448cecfa0ffd` adopted.
-*   IndexNow submission script enhanced for ease of use by adding sitemap parsing. 
+*   IndexNow submission script enhanced for sitemap parsing and portability. 

@@ -121,8 +121,16 @@ if $SUBMIT_SITEMAP; then
       exit 1
   fi
   
-  # Read into array
-  readarray -t URLS_TO_PROCESS <<< "$EXTRACTED_URLS"
+  # Read into array using a while loop for better portability
+  URLS_TO_PROCESS=() # Initialize an empty array
+  if [[ -n "$EXTRACTED_URLS" ]]; then # Check if EXTRACTED_URLS is not empty
+    while IFS= read -r line; do
+      # Avoid adding empty lines if xmllint output has them
+      if [[ -n "$line" ]]; then 
+        URLS_TO_PROCESS+=("$line")
+      fi
+    done <<< "$EXTRACTED_URLS"
+  fi
   
   if [ "${#URLS_TO_PROCESS[@]}" -eq 0 ]; then
       echo "⚠️ No URLs extracted from sitemap. Nothing to submit."
