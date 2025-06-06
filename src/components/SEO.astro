@@ -4,6 +4,9 @@ import { SEO as AstroSEO } from 'astro-seo';
 export interface Props {
   title: string;
   description: string;
+  canonical: string;
+  lang: 'fr' | 'en' | 'it';
+  pathname: string;
   image?: string;
   keywords?: string | string[];
   type?: 'article' | 'website';
@@ -12,14 +15,13 @@ export interface Props {
 const {
   title,
   description,
+  canonical,
+  lang,
+  pathname,
   image,
   keywords,
   type = 'website',
 } = Astro.props;
-
-// Utiliser Astro.url pour obtenir l'URL canonique complète et la langue.
-const canonicalUrl = Astro.url.href;
-const currentLang = Astro.url.pathname.split('/')[1] || 'fr';
 
 const siteUrl = import.meta.env.SITE || 'https://crizzo-avocate.be';
 const siteName = 'Christine Rizzo - Avocate';
@@ -45,7 +47,7 @@ const supportedLanguages = ['fr', 'en', 'it'];
 <AstroSEO
   title={title}
   description={description}
-  canonical={canonicalUrl}
+  canonical={canonical}
   noindex={false}
   nofollow={false}
   openGraph={{
@@ -53,11 +55,11 @@ const supportedLanguages = ['fr', 'en', 'it'];
       title: title,
       type: type,
       image: fullImageUrl,
-      url: canonicalUrl, // Toujours utiliser l'URL canonique de la page
+      url: canonical,
     },
     optional: {
       description: description,
-      locale: currentLang,
+      locale: lang,
       siteName: siteName,
     },
     image: {
@@ -85,17 +87,17 @@ const supportedLanguages = ['fr', 'en', 'it'];
     link: [
       { rel: "icon", href: defaultFavicon },
       // Générer les balises hreflang pour toutes les langues supportées
-      ...supportedLanguages.map(lang => ({
+      ...supportedLanguages.map(l => ({
         rel: "alternate",
-        hreflang: lang,
-        href: `${siteUrl}/${lang}${Astro.url.pathname.substring(3)}` // Construit l'URL alternative
+        hreflang: l,
+        href: `${siteUrl}/${l}${pathname.substring(3)}`
       })),
       // Ajout de la balise hreflang x-default
-      { rel: "alternate", hreflang: "x-default", href: `${siteUrl}/fr${Astro.url.pathname.substring(3)}` }
+      { rel: "alternate", hreflang: "x-default", href: `${siteUrl}/fr${pathname.substring(3)}` }
     ],
     meta: [
       { name: "author", content: siteName },
-      { name: "language", content: currentLang },
+      { name: "language", content: lang },
       ...(keywordsString ? [{ name: "keywords", content: keywordsString }] : []),
       // Les balises 'robots' et 'googlebot' sont gérées par noindex/nofollow.
       // Les autres balises (twitter, og) sont gérées par les sections dédiées.
