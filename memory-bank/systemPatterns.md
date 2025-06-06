@@ -33,4 +33,9 @@
 *   To be defined.
 
 ### SEO & Indexing Patterns
-*   A diagnostic script (`bing_index_check.sh`, now removed) was developed to help identify potential Bing indexing issues. 
+*   A diagnostic script (`bing_index_check.sh`, now removed) was developed to help identify potential Bing indexing issues.
+
+5.  **Tests Continus (CI/CD)**:
+    *   **Principe** : Avant tout déploiement, une suite de tests automatisés doit être exécutée pour valider les aspects critiques du site.
+    *   **Application** : Le script `scripts/run-seo-tests.sh` sert de garde-fou pour le SEO technique.
+    *   **Leçon Apprise** : Les scripts de test doivent être robustes. Des scripts basés sur des `grep` simples se sont avérés peu fiables à cause du formatage du HTML. La solution a été d'utiliser des outils plus puissants comme `sed` et `awk` pour parser le HTML de manière fiable avant de le tester. Un test non fiable peut causer plus de problèmes qu'il n'en résout en masquant les vrais bugs ou en signalant de faux positifs. 
