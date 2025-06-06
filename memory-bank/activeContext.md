@@ -2,34 +2,24 @@
 
 ### Current Focus
 
-*   Refining SEO strategy: sitemap configuration, IndexNow protocol implementation (manual submission script enhanced and made more portable).
+*   The project is currently stable. The main focus has been on resolving critical build and functionality issues related to SEO and client-side scripting.
 
 ### Recent Changes
 
-*   Created the core Memory Bank files (initial setup).
-*   Updated `astro.config.mjs` to implement `sitemapFilter` (excluding blog posts, /legal/*, /credits).
-*   Developed and used `bing_index_check.sh` (subsequently deleted).
-*   Confirmed correct sitemap URL (`https://crizzo-avocate.be/sitemap-index.xml` which points to `sitemap-0.xml`).
-*   Updated Memory Bank files with initial sitemap/SEO details.
-*   Created IndexNow API key file (`public/d77e7bbb53844ce7b455448cecfa0ffd.txt`).
-*   Created IndexNow manual submission script (`scripts/submit_indexnow.sh`).
-*   Enhanced `scripts/submit_indexnow.sh` to parse URLs from the live sitemap (using `xmllint`).
-*   Updated `scripts/submit_indexnow.sh` to replace `readarray` with a `while read` loop for Bash v3+ portability.
-*   Updated Memory Bank files to reflect script changes.
-*   **Resolved Root Redirection**: Simplified the root redirection by removing the Astro-based script (`src/pages/index.astro`) and relying solely on a redirect rule in `netlify.toml` (`/ -> /fr/`). This fixes the "Redirecting from..." message and ensures bot compatibility.
+*   **Removed `astro-seo`**: The `astro-seo` package was uninstalled to resolve persistent issues with duplicate meta tags.
+*   **Manual SEO Implementation**: All SEO meta tags (robots, Open Graph, Twitter Cards, canonical URL) are now generated directly within `src/layouts/BaseLayout.astro` for full control.
+*   **Content Schema Definition**: Created `src/content/config.ts` to define a strict schema for all content collections, particularly `site-config`. This fixed critical build errors by ensuring type safety between the YAML content file and the Astro components.
+*   **Corrected `site-config.yml`**: Added the required `allowIndexing` field to `src/content/config/site-config.yml` to match the new schema.
+*   **Fixed `LanguagePicker.astro`**: Modified the component's script to use the `astro:page-load` event. This ensures the language switcher works reliably with Astro's View Transitions enabled, which was a major bug.
+*   **Cleaned up `astro.config.mjs`**: Removed an incorrect `vite` configuration block and added the `@astrojs/tailwind` integration to resolve CSS pathing issues.
 
 ### Next Steps
 
-*   User to ensure `xmllint` is available if using sitemap parsing feature of the script.
-*   User to test IndexNow submission using `scripts/submit_indexnow.sh --sitemap` after deployment (if not already done and successful).
-*   User to commit recent script changes.
-*   Monitor search engine indexing (Bing Webmaster Tools, Google Search Console).
-*   Investigate and potentially implement automated IndexNow submissions on deployment.
+*   Continue with content population and development of new features as needed.
+*   Monitor site performance and search engine indexing.
 
 ### Active Decisions & Considerations
 
-*   Decision to exclude specific content from sitemap to improve indexing focus.
-*   `bing_index_check.sh` was a temporary diagnostic tool.
-*   IndexNow API key `d77e7bbb53844ce7b455448cecfa0ffd` adopted.
-*   IndexNow submission script enhanced for sitemap parsing and portability.
-*   **Redirection Strategy**: The root of the site will use a simple, non-conditional redirect in `netlify.toml` for maximum performance and bot compatibility, defaulting all traffic to the French (`/fr/`) version. 
+*   **SEO Management**: The decision was made to manage SEO tags manually in the base layout rather than relying on a third-party library, providing greater control and avoiding hard-to-debug issues.
+*   **Content Type Safety**: Using Astro's content collection schemas is now the standard pattern for this project to ensure data integrity and prevent build failures.
+*   **Client-side Scripts & View Transitions**: All new client-side scripts must be written to be compatible with Astro's View Transitions, typically by using the `astro:page-load` event for initialization. 

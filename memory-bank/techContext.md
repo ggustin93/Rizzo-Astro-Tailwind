@@ -2,10 +2,14 @@
 
 ### 1. Technologies Utilisées
 
-*   **Framework:** Astro
-*   **Styling:** Tailwind CSS
-*   **CMS:** Decap CMS (auto-hébergé)
+*   **Framework:** Astro (with View Transitions enabled)
+*   **Styling:** Tailwind CSS (integrated via `@astrojs/tailwind`)
+*   **Content Management:** Flat-file based, using YAML files in `src/content/`.
+*   **Content Schema:** Astro Content Collections (`src/content/config.ts`) are used to enforce type safety.
 *   **Hébergement & Déploiement:** Netlify (déploiement continu depuis Git)
+*   **Dépendances:** Gérées via `package.json`.
+*   **Sitemap:** Generation and filtering configured via `@astrojs/sitemap` in `astro.config.mjs`.
+*   **IndexNow Submission Script:** A Bash script (`scripts/submit_indexnow.sh`) using `curl` is available for manual URL submission.
 *   **Build:** Processus de build statique (`astro build`)
 *   **Dépendances:** Gérées via `package.json`
 *   **Sitemap:** Generation and filtering configured via `@astrojs/sitemap` in `astro.config.mjs`.
