@@ -1,3 +1,10 @@
+# Redirection simple pour tous (bots et humains)
+[[redirects]]
+  from = "/"
+  to = "/fr/"
+  status = 302
+  force = true
+
 [build.processing]
   skip_processing = false
 [build.processing.images]
@@ -7,3 +14,4 @@
   for = "/*"
   [headers.values]
     X-Robots-Tag = "index, follow, all"
+    Cache-Control = "public, max-age=0, must-revalidate"
