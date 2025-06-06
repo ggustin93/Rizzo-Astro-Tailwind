@@ -13,7 +13,7 @@ fr:
           - label: "POUR LES EMPLOYEURS"
             url: "/fr/services/employeurs"
       - label: "PROFIL"
-        url: "/fr#profil"
+        url: "/fr/profil"
         hasDropdown: false
       - label: "HONORAIRES"
         url: "/fr/honoraires"
@@ -58,7 +58,7 @@ en:
           - label: "FOR EMPLOYERS"
             url: "/en/services/employeurs"
       - label: "PROFILE"
-        url: "/en#profil"
+        url: "/en/profil"
         hasDropdown: false
       - label: "FEES"
         url: "/en/honoraires"
@@ -103,7 +103,7 @@ it:
           - label: "PER I DATORI DI LAVORO"
             url: "/it/services/employeurs"
       - label: "PROFILO"
-        url: "/it#profil"
+        url: "/it/profil"
         hasDropdown: false
       - label: "ONORARI"
         url: "/it/honoraires"
