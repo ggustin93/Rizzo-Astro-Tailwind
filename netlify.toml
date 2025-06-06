@@ -1,28 +1,4 @@
-# Redirection pour les navigateurs préférant l'anglais (mais pas les bots)
-[[redirects]]
-  from = "/"
-  to = "/en/"
-  status = 302
-  force = true
-  conditions = {Language = ["en"], Role = ["visitor"]}
-
-# Redirection pour les navigateurs préférant l'italien (mais pas les bots)
-[[redirects]]
-  from = "/"
-  to = "/it/"
-  status = 302
-  force = true
-  conditions = {Language = ["it"], Role = ["visitor"]}
-
-# Redirection par défaut pour les visiteurs humains
-[[redirects]]
-  from = "/"
-  to = "/fr/"
-  status = 302
-  force = true
-  conditions = {Role = ["visitor"]}
-
-# Redirection simple pour tous les bots (sans conditions de langue)
+# Redirection simple pour tous (bots et humains)
 [[redirects]]
   from = "/"
   to = "/fr/"
@@ -38,3 +14,4 @@
   for = "/*"
   [headers.values]
     X-Robots-Tag = "index, follow, all"
+    Cache-Control = "public, max-age=0, must-revalidate"
