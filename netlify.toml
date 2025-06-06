@@ -1,32 +1,29 @@
-# Redirection pour les navigateurs préférant l'anglais
-[[redirects]]
-  from = "/"
-  to = "/en/"
-  status = 302 # Temporaire, car la préférence peut changer
-  force = true
-  conditions = {Language = ["en"]}
+# TEMPORAIREMENT COMMENTÉ POUR TEST
+# [[redirects]]
+#   from = "/"
+#   to = "/en/"
+#   status = 302
+#   force = true
+#   conditions = {Language = ["en"]}
 
-# Redirection pour les navigateurs préférant l'italien
-[[redirects]]
-  from = "/"
-  to = "/it/"
-  status = 302 # Temporaire
-  force = true
-  conditions = {Language = ["it"]}
+# [[redirects]]
+#   from = "/"
+#   to = "/it/"
+#   status = 302
+#   force = true
+#   conditions = {Language = ["it"]}
 
-# Redirection par défaut pour tous les autres (y compris le français)
-[[redirects]]
-  from = "/"
-  to = "/fr/"
-  status = 302 # Temporaire
-  force = true
+# [[redirects]]
+#   from = "/"
+#   to = "/fr/"
+#   status = 302
+#   force = true
 
 [build.processing]
   skip_processing = false
 [build.processing.images]
   compress = true
 
-# Configuration d'indexation simple et universelle - sans condition qui pourrait mal fonctionner
 [[headers]]
   for = "/*"
   [headers.values]
