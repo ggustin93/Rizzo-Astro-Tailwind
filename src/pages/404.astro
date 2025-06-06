@@ -3,26 +3,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { Home } from 'astro-feather-icons2';
 import illustration404 from '../assets/images/404_illustration.svg';
 
-// Si l'URL est exactement la racine, rediriger vers /fr/
-if (Astro.url.pathname === "/") {
-  return Astro.redirect('/fr/', 302);
-}
-
 // Définit les langues supportées et la langue par défaut
 const supportedLanguages = ['fr', 'en', 'it'] as const;
 type SupportedLanguage = typeof supportedLanguages[number];
 const defaultLang = 'fr' as SupportedLanguage;
 
 // Récupère la langue depuis l'URL
-const { lang: rawLangParam } = Astro.params;
-
-// Vérification de sécurité pour s'assurer que la langue est valide
-if (typeof rawLangParam !== 'string' || !supportedLanguages.includes(rawLangParam as SupportedLanguage)) {
-  return Astro.redirect('/fr/404', 302);
-}
-
-// Si on arrive ici, rawLangParam est une chaîne de caractères correspondant à une langue supportée
-const lang = rawLangParam as SupportedLanguage; // On utilise la langue validée de l'URL
+const lang = supportedLanguages.find(l => Astro.url.pathname.startsWith(`/${l}/`)) || defaultLang;
 
 const translations = {
   fr: {
@@ -49,10 +36,12 @@ const translations = {
 const t = translations[lang];
 ---
 
-<BaseLayout title={t.title} description={t.message} lang={lang}>
-  <head slot="head">
-    <meta name="robots" content="noindex">
-  </head>
+<BaseLayout 
+  title={t.title} 
+  description={t.message} 
+  lang={lang}
+  allowIndexing={false}
+>
   <main class="flex flex-col items-center justify-center min-h-[60vh] py-10 md:py-20">
     <div class="container px-4 mx-auto">
       <div class="max-w-4xl mx-auto">

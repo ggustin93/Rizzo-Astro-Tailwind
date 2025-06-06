@@ -12,6 +12,15 @@
   command = "npm run build"
   publish = "dist"
 
+# --- Redirects ---
+# Redirects the root path to the default language (French).
+# Using a 301 (permanent) redirect is best practice for SEO.
+[[redirects]]
+  from = "/"
+  to = "/fr/"
+  status = 301
+  force = true # Ensures this rule is applied even if a file exists at the root
+
 # --- Headers ---
 # Custom headers to improve performance by leveraging browser caching.
 [[headers]]

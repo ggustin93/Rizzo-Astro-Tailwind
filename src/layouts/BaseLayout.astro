@@ -18,7 +18,8 @@ const {
   keywords, 
   type = 'website', 
   canonical, 
-  lang: propLang 
+  lang: propLang,
+  allowIndexing: pageAllowIndexing
 } = Astro.props;
 
 const { lang: pathLang } = Astro.params;
@@ -28,7 +29,9 @@ const siteConfigEntry = await getEntry('config', 'site-config');
 if (!siteConfigEntry) {
   throw new Error("Site config entry not found! Make sure you have a `site-config.md` file in `src/content/config`.");
 }
-const { seo, sectionsVisibility, calendarLink } = siteConfigEntry.data;
+const { seo, sectionsVisibility, calendarLink, allowIndexing: siteAllowIndexing } = siteConfigEntry.data;
+
+const allowIndexing = pageAllowIndexing === undefined ? siteAllowIndexing : pageAllowIndexing;
 
 const productionSiteUrl = seo.siteUrl || Astro.site || 'https://crizzo-avocate.be';
 const siteUrl = import.meta.env.DEV ? Astro.url.origin : productionSiteUrl;
@@ -67,7 +70,11 @@ const pathname = Astro.url.pathname;
     <link rel="canonical" href={finalCanonical}>
 
     <!-- SEO Meta Tags -->
-    <meta name="robots" content="index, follow">
+    {allowIndexing ? (
+      <meta name="robots" content="index, follow">
+    ) : (
+      <meta name="robots" content="noindex, nofollow">
+    )}
     <meta name="author" content={siteName}>
     <meta name="language" content={currentLang}>
     {keywordsString && <meta name="keywords" content={keywordsString}>}

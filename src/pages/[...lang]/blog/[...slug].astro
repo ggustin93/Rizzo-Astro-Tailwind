@@ -69,14 +69,8 @@ const seoData = {
   image={seoData.image}
   keywords={seoData.keywords}
   lang={lang}
+  allowIndexing={sectionsVisibility}
 >
-  {/* Ajout conditionnel de la balise noindex si le blog n'est pas visible */}
-  {!sectionsVisibility && (
-    <head slot="head">
-      <meta name="robots" content="noindex">
-    </head>
-  )}
-
   <article class="max-w-5xl mx-auto">
     <div class="bg-white md:my-20 p-8 rounded-lg">
 
