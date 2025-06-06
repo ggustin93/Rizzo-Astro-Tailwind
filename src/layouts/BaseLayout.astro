@@ -27,7 +27,9 @@ const currentLang = propLang || pathLang || 'fr';
 const siteConfigEntry = await getEntry('config', 'site-config');
 const { seo, sectionsVisibility, calendarLink } = siteConfigEntry.data;
 
-const siteUrl = seo.siteUrl || Astro.site || 'https://crizzo-avocate.be';
+const productionSiteUrl = seo.siteUrl || Astro.site || 'https://crizzo-avocate.be';
+const siteUrl = import.meta.env.DEV ? Astro.url.origin : productionSiteUrl;
+
 const siteName = seo.siteName || 'Christine Rizzo - Avocate';
 const defaultDescription = seo.siteDescription || 'Avocate en droit du travail à Bruxelles.';
 const defaultImage = seo.defaultSocialImage || '/default-social-image.png';
