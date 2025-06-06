@@ -1,69 +1,16 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
   "routes": [
-    { 
-      "src": "^/$", 
-      "dest": "/fr/",
-      "status": 302
-    },
     {
-      "src": "^/(fr|en|it)/?.*$",
-      "continue": true
+      "src": "^/$",
+      "dest": "/fr/",
+      "status": 301
     }
   ],
-  "github": {
-    "silent": true
-  },
-  "trailingSlash": true,
-  "cleanUrls": true,
   "headers": [
     {
-      "source": "/assets/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/(.*).css",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/(.*).js",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/fonts/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/(.*).png",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/(.*).svg",
+      "source": "/_astro/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
