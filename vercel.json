@@ -1,11 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
-  "routes": [
+  "redirects": [
     {
-      "src": "^/$",
-      "dest": "/fr/",
-      "status": 301
+      "source": "/",
+      "destination": "/fr/",
+      "permanent": true
     }
   ],
   "headers": [
@@ -19,4 +19,4 @@
       ]
     }
   ]
-} 
+}
