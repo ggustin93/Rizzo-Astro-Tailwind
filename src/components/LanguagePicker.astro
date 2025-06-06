@@ -85,7 +85,7 @@ const langs = ['fr', 'en', 'it'];
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  const initLanguagePicker = () => {
     const select = document.getElementById('language-select');
     const langLinks = document.querySelectorAll('.mobile-lang-links a');
 
@@ -128,13 +128,10 @@ const langs = ['fr', 'en', 'it'];
     };
 
     if (select) {
-      console.log('Language select element found');  // Debugging
       select.addEventListener('change', (event) => {
         const target = event.target as HTMLSelectElement;
         handleLanguageChange(target.value);
       });
-    } else {
-      console.log('Language select element not found');  // Debugging
     }
 
     langLinks.forEach(link => {
@@ -144,5 +141,7 @@ const langs = ['fr', 'en', 'it'];
         handleLanguageChange(target.dataset.lang);
       });
     });
-  });
+  };
+
+  document.addEventListener('astro:page-load', initLanguagePicker);
 </script>
