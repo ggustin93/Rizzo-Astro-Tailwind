@@ -4,52 +4,48 @@ import { SEO as AstroSEO } from 'astro-seo';
 export interface Props {
   title: string;
   description: string;
-  canonical?: string;
   image?: string;
   keywords?: string | string[];
   type?: 'article' | 'website';
-  lang?: string;
-  allowIndexing?: boolean;
 }
 
 const {
   title,
   description,
-  canonical,
   image,
   keywords,
   type = 'website',
-  lang = 'fr',
-  allowIndexing = true,
 } = Astro.props;
+
+// Utiliser Astro.url pour obtenir l'URL canonique complète et la langue.
+const canonicalUrl = Astro.url.href;
+const currentLang = Astro.url.pathname.split('/')[1] || 'fr';
 
 const siteUrl = import.meta.env.SITE || 'https://crizzo-avocate.be';
 const siteName = 'Christine Rizzo - Avocate';
-const defaultImage = '/assets/images/default-social-image.png';
+const defaultImage = '/default-social-image.png'; // Image par défaut à la racine de /public
 const defaultFavicon = '/favicon.ico';
 
+// Gestion de l'image pour les réseaux sociaux
 let fullImageUrl;
-if (image) {
-  if (image.startsWith('http://') || image.startsWith('https://')) {
-    fullImageUrl = image;
-  } else {
-    const imagePath = image.startsWith('/') ? image : `/${image}`;
-    fullImageUrl = new URL(imagePath, siteUrl).toString();
-  }
+if (image && (image.startsWith('http://') || image.startsWith('https://'))) {
+  fullImageUrl = image;
 } else {
-  const defaultImagePath = defaultImage.startsWith('/') ? defaultImage : `/${defaultImage}`;
-  fullImageUrl = new URL(defaultImagePath, siteUrl).toString();
+  // Gère les images locales (attendues dans /public/assets/images/) ou l'image par défaut
+  const imagePath = image ? `/assets/images/${image}` : defaultImage;
+  fullImageUrl = new URL(imagePath, siteUrl).toString();
 }
 
 const keywordsString = Array.isArray(keywords) ? keywords.join(', ') : keywords;
 
-const languages = ['fr', 'en', 'it'];
+// Langues supportées par le site
+const supportedLanguages = ['fr', 'en', 'it'];
 ---
 
 <AstroSEO
   title={title}
   description={description}
-  canonical={canonical || siteUrl}
+  canonical={canonicalUrl}
   noindex={false}
   nofollow={false}
   openGraph={{
@@ -57,18 +53,17 @@ const languages = ['fr', 'en', 'it'];
       title: title,
       type: type,
       image: fullImageUrl,
-      url: canonical || siteUrl,
+      url: canonicalUrl, // Toujours utiliser l'URL canonique de la page
     },
     optional: {
       description: description,
-      locale: lang,
+      locale: currentLang,
       siteName: siteName,
     },
     image: {
       url: fullImageUrl,
-      secureUrl: fullImageUrl,
-      alt: siteName,
-      type: fullImageUrl.toLowerCase().endsWith('.jpg') || fullImageUrl.toLowerCase().endsWith('.jpeg') ? "image/jpeg" : "image/png",
+      alt: `Image pour ${title}`,
+      type: "image/png",
       width: 1200,
       height: 630,
     },
@@ -84,24 +79,26 @@ const languages = ['fr', 'en', 'it'];
     title: title,
     description: description,
     image: fullImageUrl,
-    imageAlt: siteName,
+    imageAlt: `Image pour ${title}`,
   }}
   extend={{
     link: [
       { rel: "icon", href: defaultFavicon },
-      ...languages.map(l => ({ rel: "alternate", hreflang: l, href: `${siteUrl}/${l}/` })),
+      // Générer les balises hreflang pour toutes les langues supportées
+      ...supportedLanguages.map(lang => ({
+        rel: "alternate",
+        hreflang: lang,
+        href: `${siteUrl}/${lang}${Astro.url.pathname.substring(3)}` // Construit l'URL alternative
+      })),
+      // Ajout de la balise hreflang x-default
+      { rel: "alternate", hreflang: "x-default", href: `${siteUrl}/fr${Astro.url.pathname.substring(3)}` }
     ],
     meta: [
-      { name: "author", content: "Christine Rizzo" },
-      { name: "language", content: lang },
-      { name: "googlebot", content: "index, follow" },
+      { name: "author", content: siteName },
+      { name: "language", content: currentLang },
       ...(keywordsString ? [{ name: "keywords", content: keywordsString }] : []),
-      { property: "og:image:width", content: "1200" },
-      { property: "og:image:height", content: "630" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: title },
-      { name: "twitter:description", content: description },
-      { name: "twitter:image", content: fullImageUrl },
+      // Les balises 'robots' et 'googlebot' sont gérées par noindex/nofollow.
+      // Les autres balises (twitter, og) sont gérées par les sections dédiées.
     ],
   }}
 />
