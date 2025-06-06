@@ -1,23 +1,33 @@
-# TEMPORAIREMENT COMMENTÉ POUR TEST
-# [[redirects]]
-#   from = "/"
-#   to = "/en/"
-#   status = 302
-#   force = true
-#   conditions = {Language = ["en"]}
+# Redirection pour les navigateurs préférant l'anglais (mais pas les bots)
+[[redirects]]
+  from = "/"
+  to = "/en/"
+  status = 302
+  force = true
+  conditions = {Language = ["en"], Role = ["visitor"]}
 
-# [[redirects]]
-#   from = "/"
-#   to = "/it/"
-#   status = 302
-#   force = true
-#   conditions = {Language = ["it"]}
+# Redirection pour les navigateurs préférant l'italien (mais pas les bots)
+[[redirects]]
+  from = "/"
+  to = "/it/"
+  status = 302
+  force = true
+  conditions = {Language = ["it"], Role = ["visitor"]}
 
-# [[redirects]]
-#   from = "/"
-#   to = "/fr/"
-#   status = 302
-#   force = true
+# Redirection par défaut pour les visiteurs humains
+[[redirects]]
+  from = "/"
+  to = "/fr/"
+  status = 302
+  force = true
+  conditions = {Role = ["visitor"]}
+
+# Redirection simple pour tous les bots (sans conditions de langue)
+[[redirects]]
+  from = "/"
+  to = "/fr/"
+  status = 302
+  force = true
 
 [build.processing]
   skip_processing = false
