@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import { Calendar, Mail, Phone, MessageCircle } from 'astro-feather-icons';
 import ctaIllustration from '../assets/images/illustration_cta_2.svg';
 import { getEntry } from 'astro:content';
@@ -108,14 +107,13 @@ const handleAction = (type: string, action: string) => {
           </div>
         </div>
         <div class="md:w-1/2 md:mb-0 flex justify-center md:justify-end mt-8 md:mt-0">
-          <Image
-            src={ctaIllustration}
+          <img
+            src={ctaIllustration.src}
             alt="illustration cta"
             class="w-full h-auto max-w-md"
             width={500}
             height={200}
             loading="lazy"
-            format="avif"
           />
         </div>
       </div>

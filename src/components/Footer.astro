@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import { Phone, Mail, MapPin, ChevronDown } from 'astro-feather-icons2';
 import IconLinkedin from './IconLinkedIn.astro';
 import logoImage from '../assets/images/logo_crizzo_calli3.svg';
@@ -169,7 +168,7 @@ const handleContactAction = (type: string, action: string) => {
   <div class="container mx-auto px-4">
     <div class="flex flex-wrap justify-between items-start">
       <div class="w-full md:w-1/3 mb-6 md:mb-0 pr-4 flex justify-center md:justify-start items-center md:items-start md:self-start">
-        <Image src={logoImage} alt="Christine Rizzo Logo" class="h-40 md:h-96 w-auto mt-0 md:mt-[-4rem]" />
+        <img src={logoImage.src} alt="Christine Rizzo Logo" class="h-40 md:h-96 w-auto mt-0 md:mt-[-4rem]" />
       </div>
       
       <div class="w-full md:w-1/5 mt-4 md:mt-6 mb-4 md:mb-0">
@@ -299,7 +298,7 @@ const handleContactAction = (type: string, action: string) => {
           <a href={ecoDesignUrl} class="text-sm md:text-base hover:underline mb-3 block">{ecoDesignText}</a>
           <a href={pwabloUrl} class="hover:underline flex flex-col items-start">
             <span class="text-sm md:text-base mb-3">{pwabloText}</span>
-            <Image src={logoPwablo} alt="Pwablo Logo" class="h-16 md:h-20 my-2 w-auto bg-white p-2 rounded-lg border border-black" />
+            <img src={logoPwablo.src} alt="Pwablo Logo" class="h-16 md:h-20 my-2 w-auto bg-white p-2 rounded-lg border border-black" />
           </a>
         </div>
         <details class="md:hidden">
@@ -311,7 +310,7 @@ const handleContactAction = (type: string, action: string) => {
             <a href={ecoDesignUrl} class="text-sm hover:underline mb-2 block">{ecoDesignText}</a>
             <a href={pwabloUrl} class="hover:underline flex flex-col items-center">
               <span class="text-sm mb-2">{pwabloText}</span>
-              <Image src={logoPwablo} alt="Pwablo Logo" class="h-16 my-2 w-auto bg-white p-2 rounded-lg border border-black" />
+              <img src={logoPwablo.src} alt="Pwablo Logo" class="h-16 my-2 w-auto bg-white p-2 rounded-lg border border-black" />
             </a>
           </div>
         </details>

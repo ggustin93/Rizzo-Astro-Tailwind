@@ -1,6 +1,5 @@
 ---
 import logoImage from '../assets/images/logo_crizzo_calli3.svg';
-import { Image } from 'astro:assets';
 import LanguagePicker from '../components/LanguagePicker.astro';
 import Button from '../components/Button.astro';
 import { getEntry } from 'astro:content';
@@ -218,7 +217,7 @@ const contactButtonText = navConfig?.header?.contactButtonText || t.contact;
       <!-- Logo (visible on all screens) -->
       <div class="logo text-center flex-grow lg:flex-grow-0 lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2">
         <a href={`/${currentLang}`}>
-          <Image src={logoImage} alt="Christine Rizzo Logo" class="h-20 sm:h-24 md:h-28 lg:h-32 w-auto mx-auto" />
+          <img src={logoImage.src} alt="Christine Rizzo Logo" class="h-20 sm:h-24 md:h-28 lg:h-32 w-auto mx-auto" />
         </a>
       </div>
       
