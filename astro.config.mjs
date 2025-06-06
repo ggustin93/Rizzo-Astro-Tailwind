@@ -84,6 +84,12 @@ export default defineConfig({
       // },
     }),
   ],
+  redirects: {
+    '/': {
+      destination: '/fr/',
+      status: 302
+    }
+  },
   vite: {
     css: {
       preprocessorOptions: {

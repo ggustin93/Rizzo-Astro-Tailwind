@@ -2,9 +2,13 @@
   "version": 2,
   "routes": [
     { 
-      "src": "/", 
+      "src": "^/$", 
       "dest": "/fr/",
       "status": 302
+    },
+    {
+      "src": "^/(fr|en|it)/?.*$",
+      "continue": true
     }
   ],
   "github": {

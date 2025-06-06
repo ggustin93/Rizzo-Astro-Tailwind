@@ -1,43 +1,47 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { Image } from 'astro:assets';
 import { Home } from 'astro-feather-icons2';
 import illustration404 from '../assets/images/404_illustration.svg';
 
-// Définit les langues supportées et la langue par défaut
-const supportedLanguages = ['fr', 'en', 'it'];
-const defaultLang = 'fr';
+// Si l'URL est exactement la racine, rediriger vers /fr/
+if (Astro.url.pathname === "/") {
+  return Astro.redirect('/fr/', 302);
+}
 
-// Récupère le paramètre de langue brut de l'URL (peut être undefined)
+// Définit les langues supportées et la langue par défaut
+const supportedLanguages = ['fr', 'en', 'it'] as const;
+type SupportedLanguage = typeof supportedLanguages[number];
+const defaultLang = 'fr' as SupportedLanguage;
+
+// Récupère la langue depuis l'URL
 const { lang: rawLangParam } = Astro.params;
 
-// --- LOGIQUE DE REDIRECTION SI LANGUE MANQUANTE/INVALIDE ---
-// Vérifie si le paramètre de langue est absent ou n'est pas une langue supportée
-if (rawLangParam === undefined || typeof rawLangParam !== 'string' || !supportedLanguages.includes(rawLangParam)) {
-  // Si la langue est manquante ou invalide dans l'URL 404, redirige vers la page d'accueil par défaut
-  console.warn(`Paramètre de langue invalide ou manquant pour la route 404 ('${rawLangParam}'). Redirection vers /${defaultLang}/.`);
-  return Astro.redirect(`/${defaultLang}/`, 302); // Redirection temporaire
+// Vérification de sécurité pour s'assurer que la langue est valide
+if (typeof rawLangParam !== 'string' || !supportedLanguages.includes(rawLangParam as SupportedLanguage)) {
+  return Astro.redirect('/fr/404', 302);
 }
-// --- FIN DE LA LOGIQUE DE REDIRECTION ---
 
 // Si on arrive ici, rawLangParam est une chaîne de caractères correspondant à une langue supportée
-const lang = rawLangParam; // On utilise la langue validée de l'URL
+const lang = rawLangParam as SupportedLanguage; // On utilise la langue validée de l'URL
 
 const translations = {
   fr: {
-    title: "Page non trouvée",
-    message: "Oups ! La page que vous recherchez semble avoir disparu ou n'existe pas.",
-    button: "RETOUR À L'ACCUEIL"
+    title: 'Page non trouvée - 404',
+    message: 'La page que vous recherchez n\'existe pas ou a été déplacée.',
+    backHome: 'Retour à l\'accueil',
+    description: 'Erreur 404 - Page non trouvée sur le site de Me Christine Rizzo, avocate en droit du travail à Bruxelles.'
   },
   en: {
-    title: "Page not found",
-    message: "Oops! The page you're looking for seems to have vanished or doesn't exist.",
-    button: "BACK TO HOME"
+    title: 'Page not found - 404',
+    message: 'The page you are looking for doesn\'t exist or has been moved.',
+    backHome: 'Back to home',
+    description: 'Error 404 - Page not found on Christine Rizzo\'s website, attorney specialized in labor law in Brussels.'
   },
   it: {
-    title: "Pagina non trovata",
-    message: "Ops! La pagina che stai cercando sembra essere scomparsa o non esiste.",
-    button: "TORNA ALLA HOME"
+    title: 'Pagina non trovata - 404',
+    message: 'La pagina che stai cercando non esiste o è stata spostata.',
+    backHome: 'Torna alla home',
+    description: 'Errore 404 - Pagina non trovata sul sito di Christine Rizzo, avvocato specializzato in diritto del lavoro a Bruxelles.'
   }
 };
 
@@ -49,31 +53,31 @@ const t = translations[lang];
   <head slot="head">
     <meta name="robots" content="noindex">
   </head>
-  <main class="flex items-center justify-center bg-gradient-to-b bg-employeur my-16 mb-16">
-    <div class="w-full px-4 sm:px-8 md:px-12 lg:px-16 py-8 md:py-12">
-      <div class="max-w-6xl mx-auto">
-        <div class="flex flex-col md:flex-row items-center justify-between">
-          <div class="w-full md:w-1/2 text-center md:text-left mb-8 md:mb-0">
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-light mb-4 text-white">{t.title}</h1>
-            <p class="text-lg md:text-xl lg:text-2xl mb-8 text-white font-light leading-relaxed">
+  <main class="flex flex-col items-center justify-center min-h-[60vh] py-10 md:py-20">
+    <div class="container px-4 mx-auto">
+      <div class="max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div class="text-center md:text-left">
+            <h1 class="text-8xl font-extralight text-accent mb-4">404</h1>
+            <h2 class="text-2xl md:text-3xl font-light text-gray-800 mb-4">{t.title}</h2>
+            <p class="text-gray-600 mb-8">
               {t.message}
             </p>
             <a 
               href={`/${lang}`}
-              class="inline-flex items-center bg-transparent text-white border border-white px-4 md:px-6 py-2 md:py-3 rounded-sm hover:bg-travailleur hover:border-travailleur transition duration-300 uppercase text-sm md:text-base font-light group"
+              class="inline-flex items-center bg-transparent text-travailleur border border-travailleur px-4 md:px-6 py-2 md:py-3 rounded-sm hover:bg-travailleur hover:text-white transition duration-300 uppercase text-sm md:text-base font-light group"
             >
-              <Home class="w-5 h-5 mr-2 group-hover:text-white transition-colors duration-300" />
-              {t.button}
+              <Home class="w-5 h-5 mr-2" /> {t.backHome}
             </a>
           </div>
-          <div class="w-full md:w-1/2 flex justify-center md:justify-end">
-            <Image 
-              src={illustration404} 
-              alt="Illustration 404"
-              width={400}
-              height={300}
-              class="w-full max-w-sm md:max-w-md"
+          <div class="flex justify-center md:justify-end">
+            <img 
+              src={illustration404.src} 
+              alt="Illustration 404" 
+              class="w-full max-w-md" 
               loading="eager"
+              width="500"
+              height="400"
             />
           </div>
         </div>
@@ -81,3 +85,14 @@ const t = translations[lang];
     </div>
   </main>
 </BaseLayout>
+
+<script>
+  // Si on arrive sur la page 404 à la racine exacte, rediriger vers /fr/
+  // Vérifier explicitement qu'on est bien à la racine du site pour ne pas interférer avec le changeur de langue
+  if (window.location.pathname === "/" || window.location.pathname === "") {
+    // Double vérification pour s'assurer qu'on est vraiment à la racine
+    if (!window.location.pathname.match(/^\/(fr|en|it)(?:\/|$)/)) {
+      window.location.href = "/fr/";
+    }
+  }
+</script>
