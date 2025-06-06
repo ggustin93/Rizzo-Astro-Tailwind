@@ -7,7 +7,10 @@ type Language = 'fr' | 'it' | 'en';
 
 // Récupérer la configuration du site
 const siteConfigEntry = await getEntry('config', 'site-config');
-const siteConfig = siteConfigEntry?.data || {};
+if (!siteConfigEntry) {
+  throw new Error("Site config entry not found in blog slug page! Make sure you have a `site-config.md` file in `src/content/config`.");
+}
+const siteConfig = siteConfigEntry.data;
 const sectionsVisibility = siteConfig.sectionsVisibility === true; // Est-ce que le blog est visible ?
 
 export async function getStaticPaths() {

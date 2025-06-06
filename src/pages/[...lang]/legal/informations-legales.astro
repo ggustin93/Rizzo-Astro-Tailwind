@@ -8,7 +8,10 @@ export async function getStaticPaths() {
 }
 
 const { lang } = Astro.params;
-const legalInfoEntry = await getEntry('legal-info', 'legal-info');
+const legalInfoEntry = await getEntry('legal', 'informations-legales');
+if (!legalInfoEntry) {
+  throw new Error("Legal info entry not found!");
+}
 const content = legalInfoEntry.data[lang as keyof typeof legalInfoEntry.data] || legalInfoEntry.data['fr'];
 
 // Ajoutez cette vérification

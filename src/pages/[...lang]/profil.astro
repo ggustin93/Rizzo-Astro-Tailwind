@@ -1,14 +1,19 @@
 ---
-import { getEntry } from 'astro:content';
+import { getDataEntryById } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { CheckCircle, Globe, Briefcase, Mic, Coffee, BookOpen } from 'astro-feather-icons';
+
+export const prerender = true;
 
 export async function getStaticPaths() {
   return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
 }
 
 const { lang } = Astro.params;
-const profileEntry = await getEntry('profile', 'profile');
+const profileEntry = await getDataEntryById('profile', 'profile');
+if (!profileEntry) {
+  throw new Error("Profile entry not found! Make sure you have a `profile.yml` file in `src/content/profile`.");
+}
 const profileData = profileEntry.data[lang] || profileEntry.data['fr']; // Use French as fallback
 
 if (!profileData) {

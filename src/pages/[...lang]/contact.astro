@@ -1,5 +1,5 @@
 ---
-import { getEntry } from 'astro:content';
+import { getEntry, getDataEntryById } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { Calendar, Mail, Phone } from 'astro-feather-icons';
 import IconWhatsapp from '../../components/IconWhatsApp.astro';
@@ -8,16 +8,24 @@ import IconGoogleMaps from '../../components/IconGmaps.astro';
 import { Image } from 'astro:assets';
 import ctaIllustration from '../../assets/images/illustration_cta_2.svg';
 
+export const prerender = true;
+
 export async function getStaticPaths() {
   return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
 }
 
 const { lang } = Astro.params;
-const contactEntry = await getEntry('contact', 'contact');
+const contactEntry = await getDataEntryById('contact', 'contact');
+if (!contactEntry) {
+  throw new Error("Contact entry not found! Make sure you have a `contact.yml` file in `src/content/contact`.");
+}
 const contactData = contactEntry.data[lang];
 
 // Récupérer la configuration du site pour le lien Cal.com
 const siteConfigEntry = await getEntry('config', 'site-config');
+if (!siteConfigEntry) {
+    throw new Error("Site config entry not found in contact page! Make sure you have a `site-config.md` file in `src/content/config`.");
+}
 const calendarLink = siteConfigEntry?.data?.calendarLink || 'https://cal.com/c.rizzo-avocat.be/rendez-vous?duration=15';
 
 const iconComponents = {
@@ -58,7 +66,7 @@ const handleAction = (type: string, action: string) => {
 
 const seoData = {
   title: contactData.seo?.title || `Contact - Christine Rizzo`,
-  description: contactData.seo?.description || contactEntry.data.description,
+  description: contactData.seo?.description || "Prenez contact avec Christine Rizzo, avocate spécialisée en droit du travail à Bruxelles.",
   image: contactData.seo?.image || 'https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg',
   keywords: contactData.seo?.keywords?.join(', ') || ''
 };

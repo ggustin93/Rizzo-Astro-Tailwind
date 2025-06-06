@@ -1,14 +1,19 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getEntry } from 'astro:content';
+import { getDataEntryById } from 'astro:content';
 import { FileText, Briefcase, User, Shield, HelpCircle, YouTube, Users as UsersIcon, Calendar, Clock, Check, DollarSign, Award, Info } from 'astro-feather-icons2';
+
+export const prerender = true;
 
 export async function getStaticPaths() {
   return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
 }
 
 const { lang } = Astro.params;
-const honoraires = await getEntry('honoraires', 'honoraires');
+const honoraires = await getDataEntryById('honoraires', 'honoraires');
+if (!honoraires) {
+  throw new Error("Honoraires entry not found! Make sure you have a `honoraires.yml` file in `src/content/honoraires`.");
+}
 const content = honoraires.data[lang as keyof typeof honoraires.data];
 
 const iconMap = {
@@ -176,7 +181,7 @@ function prepareContent(content: string) {
                 <iframe 
                   class="absolute top-0 left-0 w-full h-full"
                   src={`https://www.youtube.com/embed/${getYouTubeID(content.video.url)}?rel=0`} 
-                  frameborder="0" 
+                  style="border:0;" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                   allowfullscreen
                 ></iframe>

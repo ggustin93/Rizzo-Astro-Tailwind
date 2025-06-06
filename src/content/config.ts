@@ -125,9 +125,25 @@ const uiTranslationsCollection = defineCollection({
   )
 });
 
+// Generic data collection for YAML/JSON files
+const dataCollection = defineCollection({
+  type: 'data',
+  schema: z.any()
+});
+
 export const collections = {
   'blog': blog,
   'config': configCollection,
   'navigation': navigationCollection,
   'ui-translations': uiTranslationsCollection,
+  // Add all other data collections here
+  'home': dataCollection,
+  'profile': dataCollection,
+  'contact': dataCollection,
+  'honoraires': dataCollection,
+  'employeurs': dataCollection,
+  'travailleurs': dataCollection,
+  'legal': dataCollection,
+  'legal-info': dataCollection,
+  'privacy': dataCollection,
 };

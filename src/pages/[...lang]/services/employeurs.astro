@@ -1,8 +1,10 @@
 ---
-import { getEntry } from 'astro:content';
+import { getDataEntryById } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { ChevronRight, Search, FileText, UserPlus, Shield, ArrowRight } from 'astro-feather-icons2';
 import IconHandshake from '../../../components/IconHandshake.astro';
+
+export const prerender = true;
 
 // Translations
 const translations = {
@@ -22,7 +24,11 @@ export async function getStaticPaths() {
 }
 
 const { lang } = Astro.params;
-const employeursEntry = await getEntry('employeurs', 'employeurs');
+
+const employeursEntry = await getDataEntryById('employeurs', 'employeurs');
+if (!employeursEntry) {
+    throw new Error("Employeurs service entry not found! Make sure you have `employeurs.yml` in `src/content/employeurs`");
+}
 const content = employeursEntry.data[lang] || employeursEntry.data['fr']; // Use French as fallback
 
 if (!content) {

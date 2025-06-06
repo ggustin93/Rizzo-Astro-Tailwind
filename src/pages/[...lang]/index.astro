@@ -1,6 +1,6 @@
 ---
 // src/pages/blog/[lang]/[slug].astro
-import { getEntry } from 'astro:content';
+import { getEntry, getDataEntryById } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTA from '../../components/CTA.astro';
 import { CheckCircle } from 'astro-feather-icons';
@@ -41,11 +41,17 @@ const { currentLang } = Astro.props;
 import { getUiTranslations } from '../../utils/ui-translations';
 const uiTranslations = await getUiTranslations(currentLang);
 
-const homeEntry = await getEntry('home', 'home');
+const homeEntry = await getDataEntryById('home', 'home');
+if (!homeEntry) {
+  throw new Error("Home entry not found! Make sure you have a `home.yml` file in `src/content/home`.");
+}
 const content = homeEntry.data[currentLang] || homeEntry.data['fr'];
 
 // Récupérer la configuration du site
 const siteConfigEntry = await getEntry('config', 'site-config');
+if (!siteConfigEntry) {
+  throw new Error("Site config entry not found in index page! Make sure you have a `site-config.md` file in `src/content/config`.");
+}
 const showArticlesSection = siteConfigEntry?.data?.sectionsVisibility || false;
 const calendarLink = siteConfigEntry?.data?.calendarLink || 'https://cal.com/c.rizzo-avocat.be/rendez-vous?duration=15';
 
@@ -61,8 +67,10 @@ const { title, description, keywords, image } = content.seo;
 
 // Fonction pour générer des IDs uniques
 function generateUniqueId(prefix: string) {
-  return `${prefix}-${Math.random().toString(36).substr(2, 9)}`;
+  return `${prefix}-${Math.random().toString(36).slice(2, 11)}`;
 }
+
+export const prerender = true;
 ---
 
 <BaseLayout title={title} description={description} keywords={keywords} image={image} lang={currentLang}>  

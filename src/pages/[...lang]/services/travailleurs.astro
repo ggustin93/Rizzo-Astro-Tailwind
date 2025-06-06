@@ -1,15 +1,20 @@
 ---
-import { getEntry } from 'astro:content';
+import { getDataEntryById } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { ChevronRight, Check, Briefcase, Shield, FileText, ArrowRight } from 'astro-feather-icons2';
 import IconHandshake from '../../../components/IconHandshake.astro'; // Assurez-vous que ce composant existe
+
+export const prerender = true;
 
 export async function getStaticPaths() {
   return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
 }
 const { lang } = Astro.params;
 
-const travailleursEntry = await getEntry('travailleurs', 'travailleurs');
+const travailleursEntry = await getDataEntryById('travailleurs', 'travailleurs');
+if (!travailleursEntry) {
+    throw new Error("Travailleurs service entry not found! Make sure `travailleurs.yml` exists in `src/content/travailleurs`");
+}
 const content = travailleursEntry.data[lang] || travailleursEntry.data['fr']; // Use French as fallback
 
 if (!content) {

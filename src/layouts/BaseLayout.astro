@@ -25,6 +25,9 @@ const { lang: pathLang } = Astro.params;
 const currentLang = propLang || pathLang || 'fr';
 
 const siteConfigEntry = await getEntry('config', 'site-config');
+if (!siteConfigEntry) {
+  throw new Error("Site config entry not found! Make sure you have a `site-config.md` file in `src/content/config`.");
+}
 const { seo, sectionsVisibility, calendarLink } = siteConfigEntry.data;
 
 const productionSiteUrl = seo.siteUrl || Astro.site || 'https://crizzo-avocate.be';
@@ -115,7 +118,7 @@ const pathname = Astro.url.pathname;
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
     <!-- Cal.com Script -->
-    <script type="text/javascript">
+    <script is:inline type="text/javascript">
     (function (C, A, L) {
       let p = function (a, ar) { a.q.push(ar); };
       let d = C.document;

@@ -8,7 +8,10 @@ export async function getStaticPaths() {
 }
 
 const { lang } = Astro.params;
-const privacyEntry = await getEntry('privacy', 'privacy');
+const privacyEntry = await getEntry('legal', 'privacy');
+if (!privacyEntry) {
+    throw new Error("Privacy entry not found!");
+}
 const content = privacyEntry.data[lang as keyof typeof privacyEntry.data] || privacyEntry.data['fr'];
 ---
 
