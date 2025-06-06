@@ -16,6 +16,7 @@
 *   Enhanced `scripts/submit_indexnow.sh` to parse URLs from the live sitemap (using `xmllint`).
 *   Updated `scripts/submit_indexnow.sh` to replace `readarray` with a `while read` loop for Bash v3+ portability.
 *   Updated Memory Bank files to reflect script changes.
+*   **Resolved Root Redirection**: Simplified the root redirection by removing the Astro-based script (`src/pages/index.astro`) and relying solely on a redirect rule in `netlify.toml` (`/ -> /fr/`). This fixes the "Redirecting from..." message and ensures bot compatibility.
 
 ### Next Steps
 
@@ -30,4 +31,5 @@
 *   Decision to exclude specific content from sitemap to improve indexing focus.
 *   `bing_index_check.sh` was a temporary diagnostic tool.
 *   IndexNow API key `d77e7bbb53844ce7b455448cecfa0ffd` adopted.
-*   IndexNow submission script enhanced for sitemap parsing and portability. 
+*   IndexNow submission script enhanced for sitemap parsing and portability.
+*   **Redirection Strategy**: The root of the site will use a simple, non-conditional redirect in `netlify.toml` for maximum performance and bot compatibility, defaulting all traffic to the French (`/fr/`) version. 

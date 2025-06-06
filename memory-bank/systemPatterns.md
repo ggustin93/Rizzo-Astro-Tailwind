@@ -11,6 +11,7 @@
 *   Use Tailwind CSS for styling.
 *   Use Decap CMS for content management.
 *   Use Netlify for hosting and deployment.
+*   **Root Redirection**: Use a simple, non-conditional redirect in `netlify.toml` for the root path (`/`). This approach was chosen for its performance and to ensure compatibility with all search engine bots (like Bingbot), which may not consistently send `Accept-Language` headers. This avoids using language-based conditions or client-side/Astro-based redirects.
 
 ### Design Patterns in Use
 

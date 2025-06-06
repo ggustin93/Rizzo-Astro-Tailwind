@@ -7,6 +7,7 @@
 *   Initial diagnostics for Bing indexing performed (using a temporary script, now deleted).
 *   IndexNow API key file (`public/d77e7bbb53844ce7b455448cecfa0ffd.txt`) created.
 *   Manual IndexNow URL submission script (`scripts/submit_indexnow.sh`) created, enhanced for sitemap parsing (requires `xmllint`), and updated for Bash v3+ portability.
+*   **Root Redirection**: A simple, performant redirection from `/` to `/fr/` is implemented via `netlify.toml`, ensuring compatibility with all search engine bots.
 
 ### What's Left to Build
 
