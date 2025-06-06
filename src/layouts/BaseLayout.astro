@@ -1,47 +1,16 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import SEO from '../components/SEO.astro';
-import '../styles/global.css';
 import { getEntry } from 'astro:content';
+import { ViewTransitions } from "astro:transitions";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
 
-// Définition des langues supportées
-type SupportedLanguage = 'en' | 'fr' | 'it';
-const supportedLanguages: SupportedLanguage[] = ['en', 'fr', 'it'];
-
-// Définition du type pour la prop 'type'
-type SEOType = 'article' | 'website' | undefined;
-
-// Interface pour les props du composant
-export interface Props {
-  title: string;
-  description: string;
-  image?: string;
-  keywords?: string;
-  type?: SEOType;  // Mise à jour du type ici
-  canonical?: string;
-  lang?: string;
+declare global {
+  interface Window {
+    Cal: any;
+  }
 }
 
-// Définition du type pour la configuration du site
-interface SiteConfig {
-  seo?: {
-    allowIndexing?: boolean;
-    siteUrl?: string;
-    siteName?: string;
-    defaultSocialImage?: string;
-    favicon?: string;
-    faviconPng32?: string;
-    faviconPng16?: string;
-    appleTouchIcon?: string;
-    siteDescription?: string;
-  };
-  // autres propriétés potentielles
-  sectionsVisibility?: boolean;
-  calendarLink?: string;
-}
-
-// Destructuration des props
 const { 
   title, 
   description, 
@@ -52,80 +21,99 @@ const {
   lang: propLang 
 } = Astro.props;
 
-const { pathname } = Astro.url;
-const urlLang = pathname.split('/')[1];
+const { lang: pathLang } = Astro.params;
+const currentLang = propLang || pathLang || 'fr';
 
-// Utiliser la langue passée en prop si elle existe, sinon utiliser celle de l'URL
-const rawLang = propLang || urlLang;
-
-// Validation et définition de la langue actuelle
-const currentLang: SupportedLanguage = supportedLanguages.includes(rawLang as SupportedLanguage) 
-  ? rawLang as SupportedLanguage 
-  : 'fr';
-
-// Récupérer la configuration du site
 const siteConfigEntry = await getEntry('config', 'site-config');
-const siteConfig = (siteConfigEntry?.data || {}) as SiteConfig;
-const seoConfig = siteConfig.seo || {};
+const { seo, sectionsVisibility, calendarLink } = siteConfigEntry.data;
 
-// URL principale du site
-const mainSiteUrl = seoConfig.siteUrl || 'https://crizzo-avocate.be';
+const siteUrl = seo.siteUrl || Astro.site || 'https://crizzo-avocate.be';
+const siteName = seo.siteName || 'Christine Rizzo - Avocate';
+const defaultDescription = seo.siteDescription || 'Avocate en droit du travail à Bruxelles.';
+const defaultImage = seo.defaultSocialImage || '/default-social-image.png';
 
-// Génération de l'URL canonique
-const path = Astro.url.pathname;
-const autoCanonical = new URL(path, mainSiteUrl).toString();
-const finalCanonical = canonical || autoCanonical;
+let fullImageUrl;
+if (image && (image.startsWith('http://') || image.startsWith('https://'))) {
+  fullImageUrl = image;
+} else if (image) {
+  fullImageUrl = new URL(image, siteUrl).toString();
+} else {
+  fullImageUrl = new URL(defaultImage, siteUrl).toString();
+}
 
-// Favicon personnalisable
-const favicon = seoConfig.favicon || '/favicon.ico';
-const faviconPng32 = seoConfig.faviconPng32 || '/favicon-32x32.png';
-const faviconPng16 = seoConfig.faviconPng16 || '/favicon-16x16.png';
-const appleTouchIcon = seoConfig.appleTouchIcon || '/apple-touch-icon.png';
+const finalTitle = title ? `${title} | ${siteName}` : siteName;
+const finalDescription = description || defaultDescription;
+const finalCanonical = canonical ? (new URL(canonical, siteUrl).toString()) : (new URL(Astro.url.pathname, siteUrl).toString());
+const keywordsString = Array.isArray(keywords) ? keywords.join(', ') : keywords;
+
+const supportedLanguages = ['fr', 'en', 'it'];
+const pathname = Astro.url.pathname;
 ---
 
 <!DOCTYPE html>
 <html lang={currentLang}>
 <head>
     <meta charset="UTF-8">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <!-- Le composant SEO gère maintenant toutes les balises meta, y compris "robots" -->
-    
-    <!-- Composant SEO -->
-    <SEO
-        title={title}
-        description={description}
-        canonical={finalCanonical}
-        lang={currentLang}
-        pathname={pathname}
-        image={image}
-        keywords={keywords}
-        type={type}
-    />
-    
+    <ViewTransitions />
+    <title>{finalTitle}</title>
+    <meta name="description" content={finalDescription}>
+    <link rel="canonical" href={finalCanonical}>
+
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <meta name="author" content={siteName}>
+    <meta name="language" content={currentLang}>
+    {keywordsString && <meta name="keywords" content={keywordsString}>}
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type}>
+    <meta property="og:url" content={finalCanonical}>
+    <meta property="og:title" content={finalTitle}>
+    <meta property="og:description" content={finalDescription}>
+    <meta property="og:image" content={fullImageUrl}>
+    <meta property="og:image:alt" content={`Image pour ${finalTitle}`}>
+    <meta property="og:site_name" content={siteName}>
+    <meta property="og:locale" content={currentLang}>
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content={finalCanonical}>
+    <meta name="twitter:title" content={finalTitle}>
+    <meta name="twitter:description" content={finalDescription}>
+    <meta name="twitter:image" content={fullImageUrl}>
+    <meta name="twitter:image:alt" content={`Image pour ${finalTitle}`}>
+    <meta name="twitter:site" content="@ChristineRizzo">
+    <meta name="twitter:creator" content="@ChristineRizzo">
+
+    <!-- Hreflang links -->
+    {supportedLanguages.map(l => (
+        <link rel="alternate" hreflang={l} href={`${siteUrl}/${l}${pathname.substring(3)}`} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={`${siteUrl}/fr${pathname.substring(3)}`} />
+
     <!-- Préchargement des polices -->
     <link rel="preload" href="/fonts/Synonym-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="/fonts/Synonym-Regular.woff" as="font" type="font/woff" crossorigin="anonymous">
-    
+
     <!-- Feuilles de style -->
     <link rel="stylesheet" href="/styles/tailwind.css">
     <link rel="stylesheet" href="/styles/global.css">
-    
+
     <!-- Préconnexions -->
     <link rel="preconnect" href="https://app.cal.com">
     <link rel="preconnect" href="https://unpkg.com">
-    
-    <!-- Favicons et manifeste -->
-    <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon}>
-    <link rel="icon" type="image/png" sizes="32x32" href={faviconPng32}>
-    <link rel="icon" type="image/png" sizes="16x16" href={faviconPng16}>
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="icon" type="image/x-icon" href={favicon}>
-    
 
-    
+    <!-- Favicons et manifeste -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
     <!-- Cal.com Script -->
     <script type="text/javascript">
     (function (C, A, L) {
@@ -160,22 +148,20 @@ const appleTouchIcon = seoConfig.appleTouchIcon || '/apple-touch-icon.png';
     </script>
 </head>
 <body class="bg-beige bg-svg-pattern">
-    <div class="container mx-auto px-4">
-        <Header currentLang={currentLang} />
-        
-        <main id="content">
-            <slot />
-        </main>
-        
-        <Footer currentLang={currentLang} />
-    </div>
-    
-    <!-- Script for Cal.com -->
-    <script is:inline>
+  <div class="container mx-auto px-4">
+    <Header currentLang={currentLang}/>
+    <main id="content">
+      <slot />
+    </main>
+    <Footer currentLang={currentLang}/>
+  </div>
+
+  <!-- Script for Cal.com -->
+  <script>
     document.addEventListener('DOMContentLoaded', function() {
       document.body.addEventListener('click', function(e) {
         if (e.target instanceof HTMLElement && e.target.hasAttribute('data-cal-link')) {
-          Cal("ui", {
+          window.Cal("ui", {
             styles: {branding: {brandColor: "#000000"}},
             hideEventTypeDetails: false,
             layout: "month_view"
@@ -184,9 +170,8 @@ const appleTouchIcon = seoConfig.appleTouchIcon || '/apple-touch-icon.png';
       });
     });
     </script>
-
     <!-- Script pour l'amélioration de l'accessibilité -->
-    <script is:inline>
+    <script>
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Tab') {
           document.body.classList.add('user-is-tabbing');
@@ -197,9 +182,8 @@ const appleTouchIcon = seoConfig.appleTouchIcon || '/apple-touch-icon.png';
         document.body.classList.remove('user-is-tabbing');
       });
     </script>
-
     <!-- Script pour le chargement paresseux des images -->
-    <script is:inline>
+    <script>
       document.addEventListener('DOMContentLoaded', function() {
         var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
 
@@ -208,9 +192,11 @@ const appleTouchIcon = seoConfig.appleTouchIcon || '/apple-touch-icon.png';
             entries.forEach(function(entry) {
               if (entry.isIntersecting) {
                 let lazyImage = entry.target;
-                lazyImage.src = lazyImage.dataset.src;
-                lazyImage.classList.remove("lazy");
-                lazyImageObserver.unobserve(lazyImage);
+                if (lazyImage instanceof HTMLImageElement && lazyImage.dataset.src) {
+                    lazyImage.src = lazyImage.dataset.src;
+                    lazyImage.classList.remove("lazy");
+                    lazyImageObserver.unobserve(lazyImage);
+                }
               }
             });
           });

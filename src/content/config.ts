@@ -18,10 +18,16 @@ const blog = defineCollection({
 const configCollection = defineCollection({
   type: 'data',
   schema: z.object({
-    sectionsVisibility: z.boolean().optional().default(false),
-    calendarLink: z.string().optional().default("https://cal.com/pwablo/30min"),
-    allowIndexing: z.boolean().optional().default(false)
-  })
+    seo: z.object({
+      siteUrl: z.string().url(),
+      siteName: z.string(),
+      siteDescription: z.string(),
+      defaultSocialImage: z.string(),
+    }),
+    sectionsVisibility: z.boolean(),
+    calendarLink: z.string().url(),
+    allowIndexing: z.boolean(),
+  }),
 });
 
 // Collection Navigation
