@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import netlify from "@astrojs/netlify";
 // import robotsTxt from 'astro-robots-txt';
 import sitemap from '@astrojs/sitemap';
 
@@ -35,12 +36,13 @@ function sitemapFilter(page) {
 }
 
 // Set this to 'static' or 'hybrid' based on your needs
-const outputMode = 'static';
+const outputMode = 'server';
 
 // Uncomment this when deploying to production
 const siteUrl = 'https://crizzo-avocate.be';
 
 export default defineConfig({
+  adapter: netlify(),
   site: siteUrl,
   publicDir: './public',
   output: outputMode,
@@ -84,12 +86,6 @@ export default defineConfig({
       // },
     }),
   ],
-  redirects: {
-    '/': {
-      destination: '/fr/',
-      status: 302
-    }
-  },
   vite: {
     css: {
       preprocessorOptions: {
