@@ -91,19 +91,15 @@ const appleTouchIcon = seoConfig.appleTouchIcon || '/apple-touch-icon.png';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-    <!-- Force d'indexation pour tous les moteurs, y compris Googlebot -->
-    <meta name="robots" content="index, follow">
+    <!-- Le composant SEO gère maintenant toutes les balises meta, y compris "robots" -->
     
     <!-- Composant SEO -->
     <SEO
         title={title}
         description={description}
-        canonical={finalCanonical}
         image={image}
         keywords={keywords}
         type={type}
-        lang={currentLang}
-        allowIndexing={true}
     />
     
     <!-- Préchargement des polices -->
