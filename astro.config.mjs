@@ -36,13 +36,14 @@ function sitemapFilter(page) {
 }
 
 // Set this to 'static' or 'hybrid' based on your needs
-const outputMode = 'server';
+const outputMode = 'static';
 
 // Uncomment this when deploying to production
 const siteUrl = 'https://crizzo-avocate.be';
 
 export default defineConfig({
-  adapter: netlify(),
+  // The adapter is only needed for SSR (server) mode
+  // adapter: netlify(),
   site: siteUrl,
   publicDir: './public',
   output: outputMode,
