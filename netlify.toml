@@ -13,24 +13,12 @@
   publish = "dist"
 
 # --- Redirects ---
-# Redirects the root path to the default language (French).
-# Using a 301 (permanent) redirect is best practice for SEO.
+# Primary redirect for humans - permanent redirect to French version
 [[redirects]]
   from = "/"
   to = "/fr/"
   status = 301
-  force = true # Ensures this rule is applied even if a file exists at the root
-  # Add conditions to handle bots differently
-  conditions = {Role = ["!bot"]}
-
-# Specific rule for search engine crawlers and bots
-# This allows bots to access site content without getting lost in redirects
-[[redirects]]
-  from = "/"
-  to = "/fr/"
-  status = 200
-  force = false
-  conditions = {Role = ["bot"]}
+  force = true
 
 # --- Headers ---
 # Custom headers to improve performance by leveraging browser caching.
@@ -52,3 +40,9 @@
   [headers.values]
     X-Robots-Tag = "all"
     X-Content-Type-Options = "nosniff"
+
+# Add special headers for search engine bots to help them crawl effectively
+[[headers]]
+  for = "/"
+  [headers.values]
+    Vary = "User-Agent"
