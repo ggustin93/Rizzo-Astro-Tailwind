@@ -72,6 +72,36 @@ const translations = {
   }
 };
 
+// Interface for footer configuration
+interface PwabloConfig {
+  pwabloText?: string;
+  pwabloUrl?: string;
+}
+
+interface ContactInfo {
+  phone: string;
+  email: string;
+  linkedin: string;
+  address: string;
+}
+
+interface LegalLink {
+  label: string;
+  url: string;
+}
+
+interface FooterConfig {
+  contactInfo?: ContactInfo;
+  legalLinks?: LegalLink[];
+  ecoDesignTitle?: string;
+  ecoDesignText?: string;
+  ecoDesignUrl?: string;
+  pwablo?: PwabloConfig;
+  copyrightText?: string;
+  menuTitle?: string;
+  contactTitle?: string;
+}
+
 // Utiliser les traductions du CMS si disponibles
 const t = translations[currentLang as keyof typeof translations] || translations.fr;
 
@@ -100,7 +130,7 @@ const isActivePage = (href: string) => {
 };
 
 // Utiliser les données de navigation du CMS
-const footerConfig = navConfig?.footer || {};
+const footerConfig: FooterConfig = navConfig?.footer || {};
 const contactInfo = footerConfig.contactInfo || {
   phone: "+32 488 40 45 49",
   email: "c.rizzo@avocat.be",
