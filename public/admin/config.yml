@@ -533,12 +533,6 @@ collections:
                 widget: "string"
                 default: "Chaussée de Waterloo 1151, 1180 Bruxelles"
                 hint: "Adresse complète du cabinet"
-                
-              - label: "Lien Cal.com"
-                name: "calendarLink"
-                widget: "string"
-                default: "https://cal.com/c.rizzo-avocat.be/rendez-vous?duration=15"
-                hint: "URL complète de votre page Cal.com pour les rendez-vous"
           
           - label: "SEO et apparence"
             name: "seo"
