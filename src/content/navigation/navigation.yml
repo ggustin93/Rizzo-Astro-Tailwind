@@ -1,134 +1,129 @@
 fr:
   header:
     mainLinks:
-      - label: "ACCUEIL"
-        url: "/fr"
+      - label: ACCUEIL
+        url: /fr
         hasDropdown: false
-      - label: "SERVICES"
-        url: "/fr#expertise"
+      - label: SERVICES
+        url: /fr#expertise
         hasDropdown: true
         dropdownItems:
-          - label: "POUR LES TRAVAILLEURS"
-            url: "/fr/services/travailleurs"
-          - label: "POUR LES EMPLOYEURS"
-            url: "/fr/services/employeurs"
-      - label: "PROFIL"
-        url: "/fr/profil"
+          - label: POUR LES TRAVAILLEURS
+            url: /fr/services/travailleurs
+          - label: POUR LES EMPLOYEURS
+            url: /fr/services/employeurs
+      - label: PROFIL
+        url: /fr/profil
         hasDropdown: false
-      - label: "HONORAIRES"
-        url: "/fr/honoraires"
+      - label: HONORAIRES
+        url: /fr/honoraires
         hasDropdown: false
-    contactButtonText: "ME CONTACTER"
-  
+    contactButtonText: ME CONTACTER
   footer:
-    menuTitle: "Menu"
-    contactTitle: "Contact"
-    contactInfo:
-      phone: "+32 488 40 45 49"
-      email: "c.rizzo@avocat.be"
-      linkedin: "https://www.linkedin.com/in/chrizzo11/"
-      address: "Chaussée de Waterloo 1151, 1180 Bruxelles"
     legalLinks:
-      - label: "Mentions légales"
-        url: "/fr/legal/notice"
-      - label: "Politique de confidentialité"
-        url: "/fr/legal/privacy"
-      - label: "Infos légales & CGV"
-        url: "/fr/legal/informations-legales"
-    ecoDesignTitle: "Site web écologique"
-    ecoDesignText: "Score d'éco-conception"
-    ecoDesignUrl: "https://www.websitecarbon.com/website/crizzo-avocate-be-fr/"
+      - label: Mentions légales
+        url: /fr/legal/notice
+      - label: Politique de confidentialité
+        url: /fr/legal/privacy
+      - label: Infos légales & CGV
+        url: /fr/legal/informations-legales
+    ecoDesignUrl: https://www.websitecarbon.com/website/crizzo-avocate-be-fr/
+    ecoDesignTitle: Site web écologique
     pwablo:
-      pwabloText: "Design by Pwablo"
-      pwabloUrl: "https://pwablo.be"
-    copyrightText: "Christine Rizzo"
-
+      pwabloText: Design by Pwablo
+      pwabloUrl: https://pwablo.be
+    contactInfo:
+      phone: +32 479 80 50 02
+      email: c.rizzo@avocat.be
+      linkedin: https://www.linkedin.com/in/chrizzo11/
+      address: Chaussée de Waterloo 1151, 1180 Bruxelles
+    copyrightText: Christine Rizzo
+    contactTitle: Contact
+    menuTitle: Menu
+    ecoDesignText: Score d'éco-conception
 en:
   header:
     mainLinks:
-      - label: "HOME"
-        url: "/en"
+      - label: HOME
+        url: /en
         hasDropdown: false
-      - label: "SERVICES"
-        url: "/en#expertise"
+      - label: SERVICES
+        url: /en#expertise
         hasDropdown: true
         dropdownItems:
-          - label: "FOR EMPLOYEES"
-            url: "/en/services/travailleurs"
-          - label: "FOR EMPLOYERS"
-            url: "/en/services/employeurs"
-      - label: "PROFILE"
-        url: "/en/profil"
+          - label: FOR EMPLOYEES
+            url: /en/services/travailleurs
+          - label: FOR EMPLOYERS
+            url: /en/services/employeurs
+      - label: PROFILE
+        url: /en/profil
         hasDropdown: false
-      - label: "FEES"
-        url: "/en/honoraires"
+      - label: FEES
+        url: /en/honoraires
         hasDropdown: false
-    contactButtonText: "CONTACT ME"
-  
+    contactButtonText: CONTACT ME
   footer:
-    menuTitle: "Menu"
-    contactTitle: "Contact"
-    contactInfo:
-      phone: "+32 488 40 45 49"
-      email: "c.rizzo@avocat.be"
-      linkedin: "https://www.linkedin.com/in/chrizzo11/"
-      address: "Chaussée de Waterloo 1151, 1180 Bruxelles"
     legalLinks:
-      - label: "Legal Notice"
-        url: "/en/legal/notice"
-      - label: "Privacy Policy"
-        url: "/en/legal/privacy"
-      - label: "Legal Info & T&C"
-        url: "/en/legal/informations-legales"
-    ecoDesignTitle: "Eco-friendly Website"
-    ecoDesignText: "Eco-design Score"
-    ecoDesignUrl: "https://www.websitecarbon.com/website/crizzo-avocate-be-fr/"
+      - label: Legal Notice
+        url: /en/legal/notice
+      - label: Privacy Policy
+        url: /en/legal/privacy
+      - label: Legal Info & T&C
+        url: /en/legal/informations-legales
+    ecoDesignUrl: https://www.websitecarbon.com/website/crizzo-avocate-be-fr/
+    ecoDesignTitle: Eco-friendly Website
     pwablo:
-      pwabloText: "Design by Pwablo"
-      pwabloUrl: "https://pwablo.be"
-    copyrightText: "Christine Rizzo"
-
+      pwabloText: Design by Pwablo
+      pwabloUrl: https://pwablo.be
+    contactInfo:
+      phone: +32 479 80 50 02
+      email: c.rizzo@avocat.be
+      linkedin: https://www.linkedin.com/in/chrizzo11/
+      address: Chaussée de Waterloo 1151, 1180 Bruxelles
+    copyrightText: Christine Rizzo
+    contactTitle: Contact
+    menuTitle: Menu
+    ecoDesignText: Eco-design Score
 it:
   header:
     mainLinks:
-      - label: "HOME"
-        url: "/it"
+      - label: HOME
+        url: /it
         hasDropdown: false
-      - label: "SERVIZI"
-        url: "/it#expertise"
+      - label: SERVIZI
+        url: /it#expertise
         hasDropdown: true
         dropdownItems:
-          - label: "PER I LAVORATORI"
-            url: "/it/services/travailleurs"
-          - label: "PER I DATORI DI LAVORO"
-            url: "/it/services/employeurs"
-      - label: "PROFILO"
-        url: "/it/profil"
+          - label: PER I LAVORATORI
+            url: /it/services/travailleurs
+          - label: PER I DATORI DI LAVORO
+            url: /it/services/employeurs
+      - label: PROFILO
+        url: /it/profil
         hasDropdown: false
-      - label: "ONORARI"
-        url: "/it/honoraires"
+      - label: ONORARI
+        url: /it/honoraires
         hasDropdown: false
-    contactButtonText: "CONTATTAMI"
-  
+    contactButtonText: CONTATTAMI
   footer:
-    menuTitle: "Menu"
-    contactTitle: "Contatto"
-    contactInfo:
-      phone: "+32 488 40 45 49"
-      email: "c.rizzo@avocat.be"
-      linkedin: "https://www.linkedin.com/in/chrizzo11/"
-      address: "Chaussée de Waterloo 1151, 1180 Bruxelles"
     legalLinks:
-      - label: "Note legali"
-        url: "/it/legal/notice"
-      - label: "Politica sulla riservatezza"
-        url: "/it/legal/privacy"
-      - label: "Info legali & CGV"
-        url: "/it/legal/informations-legales"
-    ecoDesignTitle: "Sito web ecologico"
-    ecoDesignText: "Punteggio di eco-design"
-    ecoDesignUrl: "https://www.websitecarbon.com/website/crizzo-avocate-be-fr/"
+      - label: Note legali
+        url: /it/legal/notice
+      - label: Politica sulla riservatezza
+        url: /it/legal/privacy
+      - label: Info legali & CGV
+        url: /it/legal/informations-legales
+    ecoDesignUrl: https://www.websitecarbon.com/website/crizzo-avocate-be-fr/
+    ecoDesignTitle: Sito web ecologico
     pwablo:
-      pwabloText: "Design di Pwablo"
-      pwabloUrl: "https://pwablo.be"
-    copyrightText: "Christine Rizzo" 
+      pwabloText: Design di Pwablo
+      pwabloUrl: https://pwablo.be
+    contactInfo:
+      phone: +32 479 80 50 02
+      email: c.rizzo@avocat.be
+      linkedin: https://www.linkedin.com/in/chrizzo11/
+      address: Chaussée de Waterloo 1151, 1180 Bruxelles
+    copyrightText: Christine Rizzo
+    contactTitle: Contatto
+    menuTitle: Menu
+    ecoDesignText: Punteggio di eco-design
