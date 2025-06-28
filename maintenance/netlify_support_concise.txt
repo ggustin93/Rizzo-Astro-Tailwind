@@ -1,0 +1,30 @@
+Subject: Critical 502 Errors Affecting Bing Crawler - Issues with 301/302 Redirects
+
+Hello Netlify Support Team,
+
+We're experiencing intermittent 502 Bad Gateway errors (~30% of requests) specifically affecting Bingbot crawler on our production site crizzo-avocate.be. This appears to be related to how Netlify handles 301/302 redirects in our netlify.toml configuration.
+
+Evidence:
+1. Only Bingbot is affected - Google and other crawlers index our site without issues
+2. Controlled testing with Bingbot user-agent shows 30% failure rate with 502 errors
+3. Identical deployment on Vercel has 0 failures (100% success) with the same redirects
+4. We have specific Netlify Request IDs showing the failures:
+   - 01JX2T4VQXC94E676Z8CYTQTC5 (Bing crawler 502 failure)
+   - 01JX2RT1GYEC8V012SEWDQ9QN2 (502 failure)
+   - 01JX2RW4GN0X7XKZWQT9E8A5EE (502 failure)
+
+Critical impact:
+- Bing is unable to index our site, reporting a DNS error
+- This is severely impacting our visibility on Bing search
+
+The issue appears to be with how Netlify processes our 301/302 redirects from the root path to language-specific directories (/fr/) in the netlify.toml file when Bingbot makes requests. The identical configuration works perfectly on Vercel.
+
+Requests:
+1. Please investigate how Netlify handles 301/302 redirects specifically for Bingbot
+2. Check if there are known issues with Bingbot and your CDN/redirect implementation
+3. Provide guidance on optimizing our redirects for Bingbot compatibility
+
+This is urgent as it's directly impacting our business visibility on Bing. Please advise on next steps.
+
+Thank you,
+[Your Name] 

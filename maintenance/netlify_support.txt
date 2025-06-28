@@ -1,0 +1,41 @@
+Subject: Important: Request for Assistance with Intermittent 502 Errors Affecting Search Indexing
+
+Hello Netlify Support Team,
+
+We greatly appreciate your platform and need your help with an issue on our production site crizzo-avocate.be that's affecting our search engine visibility, particularly on Bing.
+
+**Issue Description**:
+We're experiencing intermittent 502 Bad Gateway errors that occur randomly when our site is accessed with search engine bot user-agents. After extensive troubleshooting, we've isolated this to what appears to be an infrastructure-related issue.
+
+**Comparative Testing Results** (June 7, 2025):
+To help identify the root cause, we've deployed identical builds to both Netlify and Vercel:
+
+1. Netlify deployment: 4/15 requests returned 502 errors (27% failure rate)
+2. Vercel deployment: 15/15 requests succeeded (100% success rate)
+3. Both deployments use identical codebase, configuration, and were tested with the same user-agent strings
+
+**Relevant Request IDs for Investigation**:
+We've captured these Netlify Request IDs during 502 errors:
+- 01JX4WS8NJMEDS1S4ZQ2E2GZWS
+- 01JX4WTEWTY7VT74006FQG10NE
+- 01JX4WTPHNRVGJZ3G8A6W5YAZ9
+- 01JX4WTVAZVKF6YZVCQYE9ND0Y
+
+**Steps Already Taken**:
+1. Switched from SSR to static build mode to simplify the deployment
+2. Simplified our redirects in netlify.toml
+3. Conducted systematic testing to isolate the issue
+4. Verified the same codebase works consistently on another platform
+
+**Business Impact**:
+This issue is impacting our search visibility, as Bing reports our site as "Discovered but not analyzed" with DNS errors. As we rely on search traffic for our business, this presents a significant challenge for us.
+
+**Assistance Requested**:
+1. Could your team investigate these specific request IDs to help understand what's happening during these 502 responses?
+2. Are there any known issues or recommendations for sites experiencing intermittent 502 errors with bot crawlers?
+3. Would it be possible to escalate this to your technical team for review, as our testing suggests it may be related to how certain requests are handled at the infrastructure level?
+
+We're eager to collaborate on finding a solution and can provide any additional information that might help resolve this issue. We value our partnership with Netlify and appreciate your assistance.
+
+Thank you for your time and support,
+[Your Name] 
