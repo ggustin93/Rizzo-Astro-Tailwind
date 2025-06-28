@@ -6,16 +6,16 @@ declare module '*.json' {
   declare module 'feather-icons';
   
   interface Window {
-    Calendly: any;
+    Cal: any;
   }
 
-  interface Calendly {
-    initPopupWidget(options: { url: string }): void;
+  interface Cal {
+    init(options: { origin: string }): void;
   }
   
   declare global {
     interface Window {
-      Calendly: Calendly;
+      Cal: Cal;
     }
-    var Calendly: Calendly;
+    var Cal: Cal;
   }

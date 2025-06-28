@@ -31,7 +31,7 @@ Suite à un message urgent de Christine Rizzo le 28/06/2025 à 08:42 :
    - `src/content/legal/notice.yml` - Mise à jour du numéro dans les 3 langues
 
 ### Améliorations
-- Ajout d'un champ `calendlyLink` dans la configuration globale
+- Ajout d'un champ `calendarLink` dans la configuration globale
 - Centralisation des coordonnées LinkedIn et adresse postale
 - Mise en place d'un système qui permet à Christine de modifier elle-même ses coordonnées via l'interface admin
 
