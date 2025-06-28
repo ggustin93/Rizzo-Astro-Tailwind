@@ -33,7 +33,6 @@ const configCollection = defineCollection({
       email: z.string().email(),
       linkedin: z.string().url(),
       address: z.string(),
-      calendarLink: z.string().url().optional(),
     }).optional(),
   }),
 });
