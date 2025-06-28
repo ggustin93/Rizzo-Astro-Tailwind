@@ -20,12 +20,13 @@ if (!contactEntry) {
 }
 const contactData = contactEntry.data[lang];
 
-// Récupérer la configuration du site pour le lien Cal.com
+// Récupérer la configuration du site
 const siteConfigEntry = await getEntry('config', 'site-config');
 if (!siteConfigEntry) {
     throw new Error("Site config entry not found in contact page! Make sure you have a `site-config.md` file in `src/content/config`.");
 }
 const calendarLink = siteConfigEntry?.data?.calendarLink || 'https://cal.com/c.rizzo-avocat.be/rendez-vous?duration=15';
+const globalContactInfo = siteConfigEntry?.data?.contactInfo;
 
 const iconComponents = {
   calendar: Calendar,
@@ -44,20 +45,46 @@ interface ContactButton {
   action?: string;
 }
 
+// Fonction pour obtenir la valeur correcte en fonction du type de bouton
+const getContactValue = (button: ContactButton) => {
+  if (!globalContactInfo) return button.action || button.subtext;
+  
+  switch(button.type) {
+    case 'email':
+      return button.action || globalContactInfo.email || button.subtext;
+    case 'phone':
+      return globalContactInfo.phone || button.subtext;
+    case 'whatsapp':
+      return 'WhatsApp'; // Le texte affiché reste "WhatsApp" mais l'action utilisera globalContactInfo.whatsapp
+    case 'linkedin':
+      return button.action || globalContactInfo.linkedin || button.subtext;
+    case 'maps':
+      return button.action || globalContactInfo.address || button.subtext;
+    default:
+      return button.action || button.subtext;
+  }
+};
+
 const handleAction = (type: string, action: string) => {
   switch(type) {
     case 'appointment':
       return `Cal('ui', {"styles":{"branding":{"brandColor":"#000000"}},"hideEventTypeDetails":false,"layout":"month_view"})`;
     case 'email':
-      return `window.location.href = 'mailto:${action}'`;
+      const email = globalContactInfo?.email || action;
+      return `window.location.href = 'mailto:${email}'`;
     case 'phone':
-      return `window.location.href = 'tel:${action}'`;
+      const phone = globalContactInfo?.phone || action;
+      return `window.location.href = 'tel:${phone}'`;
     case 'whatsapp':
-      return `window.open('https://wa.me/${action.replace(/\D/g,'')}', '_blank')`;
+      // Use global config if available, otherwise fall back to processing the action
+      const whatsappNumber = globalContactInfo?.whatsapp || action.replace(/\D/g,'');
+      return `window.open('https://wa.me/${whatsappNumber}', '_blank')`;
     case 'linkedin':
-      return `window.open('${action}', '_blank')`;
+      const linkedin = globalContactInfo?.linkedin || action;
+      return `window.open('${linkedin}', '_blank')`;
     case 'maps':
-      return `window.open('https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(action)}', '_blank')`;
+      const address = globalContactInfo?.address || action;
+      return `window.open('https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}', '_blank')`;
     default:
       return '';
   }
@@ -99,6 +126,8 @@ const seoData = {
           <div class="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {contactData.buttons.map((button: ContactButton) => {
               const IconComponent = iconComponents[button.icon];
+              const displayText = button.type === 'phone' && globalContactInfo ? globalContactInfo.phone : button.subtext;
+              
               return (
                 <div class="flex flex-col items-center">
                   <button
@@ -116,7 +145,7 @@ const seoData = {
                     data-cal-link={button.type === 'appointment' ? calendarLink.replace('https://cal.com/', '') : undefined}
                     data-cal-config={button.type === 'appointment' ? '{"layout":"month_view"}' : undefined}
                   >
-                    {button.subtext}
+                    {displayText}
                   </button>
                 </div>
               );

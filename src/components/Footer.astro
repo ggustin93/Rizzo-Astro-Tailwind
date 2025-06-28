@@ -12,6 +12,7 @@ const currentLang = pathname.split('/')[1] || 'fr';
 // Récupérer la configuration du site
 const siteConfigEntry = await getEntry('config', 'site-config');
 const showArticlesSection = siteConfigEntry?.data?.sectionsVisibility || false;
+const globalContactInfo = siteConfigEntry?.data?.contactInfo;
 
 // Récupérer la configuration de navigation
 const navigationEntry = await getEntry('navigation', 'navigation');
@@ -131,7 +132,7 @@ const isActivePage = (href: string) => {
 
 // Utiliser les données de navigation du CMS
 const footerConfig: FooterConfig = navConfig?.footer || {};
-const contactInfo = footerConfig.contactInfo || {
+const contactInfo = globalContactInfo || footerConfig.contactInfo || {
   phone: "+32 488 40 45 49",
   email: "c.rizzo@avocat.be",
   linkedin: "https://www.linkedin.com/in/christine-rizzo/",

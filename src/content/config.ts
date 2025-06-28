@@ -27,6 +27,14 @@ const configCollection = defineCollection({
     sectionsVisibility: z.boolean(),
     calendarLink: z.string().url(),
     allowIndexing: z.boolean(),
+    contactInfo: z.object({
+      phone: z.string(),
+      whatsapp: z.string(),
+      email: z.string().email(),
+      linkedin: z.string().url(),
+      address: z.string(),
+      calendlyLink: z.string().url().optional(),
+    }).optional(),
   }),
 });
 

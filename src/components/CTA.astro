@@ -6,9 +6,14 @@ import { getEntry } from 'astro:content';
 const { pathname } = Astro.url;
 const lang = pathname.split('/')[1] || 'fr';
 
-// Récupérer la configuration du site pour le lien Cal.com
+// Récupérer la configuration du site
 const siteConfigEntry = await getEntry('config', 'site-config');
 const calendarLink = siteConfigEntry?.data?.calendarLink || 'https://cal.com/c.rizzo-avocat.be/rendez-vous?duration=15';
+const contactInfo = siteConfigEntry?.data?.contactInfo || {
+  phone: '+32 488 40 45 49',
+  whatsapp: '32488404549',
+  email: 'c.rizzo@avocat.be'
+};
 
 const translations = {
   fr: {
@@ -46,9 +51,9 @@ const translations = {
 const t = translations[lang as keyof typeof translations] || translations.fr;
 
 const buttonConfig = [
-  { icon: Mail, text: t.email, action: 'c.rizzo@avocat.be', type: 'email' },
+  { icon: Mail, text: t.email, action: contactInfo.email, type: 'email' },
   { icon: Calendar, text: t.appointment, action: t.bookAction, type: 'appointment' },
-  { icon: Phone, text: t.call, action: '+32 488 40 45 49', type: 'phone' },
+  { icon: Phone, text: t.call, action: contactInfo.phone, type: 'phone' },
   { icon: MessageCircle, text: t.whatsapp, action: t.chatAction, type: 'whatsapp' },
 ];
 
@@ -61,7 +66,7 @@ const handleAction = (type: string, action: string) => {
     case 'phone':
       return `window.location.href = 'tel:${action}'`;
     case 'whatsapp':
-      return `window.open('https://wa.me/32488404549', '_blank')`;
+      return `window.open('https://wa.me/${contactInfo.whatsapp}', '_blank')`;
     default:
       return '';
   }

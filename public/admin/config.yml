@@ -495,6 +495,51 @@ collections:
             default: "https://cal.com/c.rizzo-avocat.be/rendez-vous?duration=15"
             hint: "IMPORTANT: Si vous modifiez l'URL de votre calendrier dans Cal.com, vous devez également mettre à jour ce lien. Inversement, si vous modifiez ce lien, assurez-vous qu'il correspond exactement à votre URL Cal.com. Toute différence entre les deux empêchera le système de prise de rendez-vous de fonctionner."
           
+          - label: "Informations de contact"
+            name: "contactInfo"
+            widget: "object"
+            summary: "Coordonnées de contact centralisées"
+            collapsed: false
+            description: >
+              Ces informations apparaîtront partout sur le site (header, footer, page contact, etc.).
+              Modifiez ici pour changer sur tout le site automatiquement.
+            fields:
+              - label: "Numéro de téléphone"
+                name: "phone"
+                widget: "string"
+                default: "+32 488 40 45 49"
+                hint: "Format international recommandé avec espaces (ex: +32 488 40 45 49)"
+              
+              - label: "Numéro WhatsApp"
+                name: "whatsapp"
+                widget: "string"
+                default: "32488404549"
+                hint: "Numéro sans espaces ni + pour WhatsApp (ex: 32488404549)"
+              
+              - label: "Adresse email"
+                name: "email"
+                widget: "string"
+                default: "c.rizzo@avocat.be"
+                hint: "Adresse email professionnelle"
+              
+              - label: "Profil LinkedIn"
+                name: "linkedin"
+                widget: "string"
+                default: "https://www.linkedin.com/in/christine-rizzo/"
+                hint: "URL complète du profil LinkedIn"
+              
+              - label: "Adresse du cabinet"
+                name: "address"
+                widget: "string"
+                default: "Chaussée de Waterloo 1151, 1180 Bruxelles"
+                hint: "Adresse complète du cabinet"
+                
+              - label: "Lien Calendly"
+                name: "calendlyLink"
+                widget: "string"
+                default: "https://cal.com/c.rizzo-avocat.be/rendez-vous?duration=15"
+                hint: "URL complète de votre page Calendly pour les rendez-vous"
+          
           - label: "SEO et apparence"
             name: "seo"
             widget: "object"
