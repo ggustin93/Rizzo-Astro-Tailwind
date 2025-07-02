@@ -28,6 +28,12 @@ if (!siteConfigEntry) {
 const calendarLink = siteConfigEntry?.data?.calendarLink || 'https://cal.com/c.rizzo-avocat.be/rendez-vous?duration=15';
 const globalContactInfo = siteConfigEntry?.data?.contactInfo;
 
+if (!globalContactInfo) {
+  throw new Error("FATAL: Global contact info not found in site-config.yml for Contact page.");
+}
+
+const contactContent = (await getEntry('contact', 'contact'))?.data?.[lang] || {};
+
 const iconComponents = {
   calendar: Calendar,
   mail: Mail,
@@ -45,48 +51,41 @@ interface ContactButton {
   action?: string;
 }
 
-// Fonction pour obtenir la valeur correcte en fonction du type de bouton
-const getContactValue = (button: ContactButton) => {
-  if (!globalContactInfo) return button.action || button.subtext;
-  
+const getAction = (button: ContactButton) => {
+  if (!button.type || !button.action) return button.action || button.subtext;
+
   switch(button.type) {
     case 'email':
-      return button.action || globalContactInfo.email || button.subtext;
+      return `mailto:${globalContactInfo.email}`;
     case 'phone':
-      return globalContactInfo.phone || button.subtext;
+      return `tel:${globalContactInfo.phone}`;
     case 'whatsapp':
-      return 'WhatsApp'; // Le texte affiché reste "WhatsApp" mais l'action utilisera globalContactInfo.whatsapp
+      return `https://wa.me/${globalContactInfo.whatsapp}`;
     case 'linkedin':
-      return button.action || globalContactInfo.linkedin || button.subtext;
+      return globalContactInfo.linkedin;
     case 'maps':
-      return button.action || globalContactInfo.address || button.subtext;
+      return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(globalContactInfo.address)}`;
     default:
-      return button.action || button.subtext;
+      return button.action;
   }
 };
 
-const handleAction = (type: string, action: string) => {
-  switch(type) {
-    case 'appointment':
-      return `Cal('ui', {"styles":{"branding":{"brandColor":"#000000"}},"hideEventTypeDetails":false,"layout":"month_view"})`;
+const getDisplayText = (button: ContactButton) => {
+  if (!button.type) return button.subtext;
+
+  switch(button.type) {
     case 'email':
-      const email = globalContactInfo?.email || action;
-      return `window.location.href = 'mailto:${email}'`;
+      return globalContactInfo.email;
     case 'phone':
-      const phone = globalContactInfo?.phone || action;
-      return `window.location.href = 'tel:${phone}'`;
+      return globalContactInfo.phone;
     case 'whatsapp':
-      // Use global config if available, otherwise fall back to processing the action
-      const whatsappNumber = globalContactInfo?.whatsapp || action.replace(/\D/g,'');
-      return `window.open('https://wa.me/${whatsappNumber}', '_blank')`;
+      return 'WhatsApp'; // Le libellé du bouton reste simple
     case 'linkedin':
-      const linkedin = globalContactInfo?.linkedin || action;
-      return `window.open('${linkedin}', '_blank')`;
+      return 'LinkedIn'; // Le libellé du bouton reste simple
     case 'maps':
-      const address = globalContactInfo?.address || action;
-      return `window.open('https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}', '_blank')`;
+      return globalContactInfo.address;
     default:
-      return '';
+      return button.subtext;
   }
 };
 
@@ -131,7 +130,7 @@ const seoData = {
               return (
                 <div class="flex flex-col items-center">
                   <button
-                    onclick={handleAction(button.type, button.action || button.subtext)}
+                    onclick={getAction(button)}
                     class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center mb-3 md:mb-5 hover:bg-travailleur transition-all duration-300 transform hover:scale-105 group shadow-md cursor-pointer"
                     data-cal-link={button.type === 'appointment' ? calendarLink.replace('https://cal.com/', '') : undefined}
                     data-cal-config={button.type === 'appointment' ? '{"layout":"month_view"}' : undefined}
@@ -140,12 +139,12 @@ const seoData = {
                   </button>
                   <span class="text-sm md:text-base uppercase text-white font-semibold leading-relaxed tracking-wide mb-1 md:mb-2 px-2 text-center">{button.text}</span>
                   <button
-                    onclick={handleAction(button.type, button.action || button.subtext)}
+                    onclick={getAction(button)}
                     class="text-sm md:text-base text-gray-300 font-normal italic text-center hover:text-white transition-colors duration-300 hover:underline cursor-pointer"
                     data-cal-link={button.type === 'appointment' ? calendarLink.replace('https://cal.com/', '') : undefined}
                     data-cal-config={button.type === 'appointment' ? '{"layout":"month_view"}' : undefined}
                   >
-                    {displayText}
+                    {getDisplayText(button)}
                   </button>
                 </div>
               );

@@ -1,50 +1,20 @@
 import { getEntry } from 'astro:content';
 
-// Fallback contact info
-const fallbackContactInfo = {
-    fr: {
-      phone: "+32 488 40 45 49",
-      email: "c.rizzo@avocat.be",
-      address: "Chaussée de Waterloo 1151, 1180 Bruxelles"
-    },
-    en: {
-      phone: "+32 488 40 45 49",
-      email: "c.rizzo@avocat.be",
-      address: "Chaussée de Waterloo 1151, 1180 Brussels"
-    },
-    it: {
-      phone: "+32 488 40 45 49",
-      email: "c.rizzo@avocat.be",
-      address: "Chaussée de Waterloo 1151, 1180 Bruxelles"
-    }
-  };
+export async function getContactInfo() {
+  const siteConfigEntry = await getEntry('config', 'site-config');
+  const globalContactInfo = siteConfigEntry?.data?.contactInfo;
 
-// Get contact info from centralized config or fallback to static data
-export async function getContactInfo(lang = 'fr') {
-  try {
-    const siteConfigEntry = await getEntry('config', 'site-config');
-    const globalContactInfo = siteConfigEntry?.data?.contactInfo;
-    
-    if (globalContactInfo) {
-      // Use centralized config with appropriate address translation
-      const addressTranslations = {
-        en: globalContactInfo.address.replace('Bruxelles', 'Brussels'),
-        fr: globalContactInfo.address,
-        it: globalContactInfo.address
-      };
-      
-      return {
-        phone: globalContactInfo.phone,
-        email: globalContactInfo.email,
-        address: addressTranslations[lang] || addressTranslations.fr
-      };
-    }
-  } catch (error) {
-    console.warn('Could not load contact info from config, using fallback');
+  if (!globalContactInfo) {
+    throw new Error("FATAL: Global contact info could not be loaded from site-config.yml in getContactInfo utility.");
   }
-  
-  return fallbackContactInfo[lang] || fallbackContactInfo.fr;
-}
 
-// Legacy export for backward compatibility
-export const contactInfo = fallbackContactInfo;
+  // L'objet retourné est maintenant directement basé sur la configuration globale.
+  // La logique de traduction spécifique à l'adresse est gérée ici.
+  return {
+    phone: globalContactInfo.phone,
+    whatsapp: globalContactInfo.whatsapp,
+    email: globalContactInfo.email,
+    linkedin: globalContactInfo.linkedin,
+    address: globalContactInfo.address // L'adresse de base est en français
+  };
+}

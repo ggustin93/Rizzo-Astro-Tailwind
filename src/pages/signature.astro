@@ -3,12 +3,11 @@ import { getEntry } from 'astro:content';
 
 // Récupérer la configuration du site
 const siteConfigEntry = await getEntry('config', 'site-config');
-const contactInfo = siteConfigEntry?.data?.contactInfo || {
-  phone: '+32 488 40 45 49',
-  whatsapp: '32488404549',
-  email: 'c.rizzo@avocat.be',
-  linkedin: 'https://www.linkedin.com/in/christine-rizzo/'
-};
+const contactInfo = siteConfigEntry?.data?.contactInfo;
+
+if (!contactInfo) {
+  throw new Error("FATAL: Global contact info not found in site-config.yml for email signature.");
+}
 
 // Formater le numéro de téléphone pour l'affichage (avec points)
 const formattedPhone = contactInfo.phone.replace('+32 ', '').replace(/(\d{3})(\d{2})(\d{2})(\d{2})/, '$1.$2.$3.$4');

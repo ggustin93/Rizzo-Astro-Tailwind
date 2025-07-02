@@ -132,12 +132,12 @@ const isActivePage = (href: string) => {
 
 // Utiliser les données de navigation du CMS
 const footerConfig: FooterConfig = navConfig?.footer || {};
-const contactInfo = globalContactInfo || footerConfig.contactInfo || {
-  phone: "+32 488 40 45 49",
-  email: "c.rizzo@avocat.be",
-  linkedin: "https://www.linkedin.com/in/christine-rizzo/",
-  address: "Chaussée de Waterloo 1151, 1180 Bruxelles"
-};
+const contactInfo = globalContactInfo;
+
+if (!contactInfo) {
+  // This will stop the build if the contact info is missing, which is what we want.
+  throw new Error("FATAL: Global contact information could not be loaded from src/content/config/site-config.yml");
+}
 
 // Récupérer les liens principaux du Header
 const mainLinks = navConfig?.header?.mainLinks || [];

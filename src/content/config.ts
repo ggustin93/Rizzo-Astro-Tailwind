@@ -40,8 +40,8 @@ const configCollection = defineCollection({
 // Collection Navigation
 const navigationCollection = defineCollection({
   type: 'data',
-  schema: z.record(
-    z.object({
+  schema: z.object({
+    fr: z.object({
       header: z.object({
         mainLinks: z.array(
           z.object({
@@ -66,7 +66,7 @@ const navigationCollection = defineCollection({
           email: z.string(),
           linkedin: z.string(),
           address: z.string()
-        }),
+        }).optional(),
         legalLinks: z.array(
           z.object({
             label: z.string(),
@@ -82,8 +82,92 @@ const navigationCollection = defineCollection({
         }),
         copyrightText: z.string()
       })
-    })
-  )
+    }),
+    en: z.object({
+      header: z.object({
+        mainLinks: z.array(
+          z.object({
+            label: z.string(),
+            url: z.string(),
+            hasDropdown: z.boolean().optional().default(false),
+            dropdownItems: z.array(
+              z.object({
+                label: z.string(),
+                url: z.string()
+              })
+            ).optional()
+          })
+        ),
+        contactButtonText: z.string()
+      }),
+      footer: z.object({
+        menuTitle: z.string(),
+        contactTitle: z.string(),
+        contactInfo: z.object({
+          phone: z.string(),
+          email: z.string(),
+          linkedin: z.string(),
+          address: z.string()
+        }).optional(),
+        legalLinks: z.array(
+          z.object({
+            label: z.string(),
+            url: z.string()
+          })
+        ),
+        ecoDesignTitle: z.string(),
+        ecoDesignText: z.string(),
+        ecoDesignUrl: z.string(),
+        pwablo: z.object({
+          pwabloText: z.string(),
+          pwabloUrl: z.string()
+        }),
+        copyrightText: z.string()
+      })
+    }),
+    it: z.object({
+      header: z.object({
+        mainLinks: z.array(
+          z.object({
+            label: z.string(),
+            url: z.string(),
+            hasDropdown: z.boolean().optional().default(false),
+            dropdownItems: z.array(
+              z.object({
+                label: z.string(),
+                url: z.string()
+              })
+            ).optional()
+          })
+        ),
+        contactButtonText: z.string()
+      }),
+      footer: z.object({
+        menuTitle: z.string(),
+        contactTitle: z.string(),
+        contactInfo: z.object({
+          phone: z.string(),
+          email: z.string(),
+          linkedin: z.string(),
+          address: z.string()
+        }).optional(),
+        legalLinks: z.array(
+          z.object({
+            label: z.string(),
+            url: z.string()
+          })
+        ),
+        ecoDesignTitle: z.string(),
+        ecoDesignText: z.string(),
+        ecoDesignUrl: z.string(),
+        pwablo: z.object({
+          pwabloText: z.string(),
+          pwabloUrl: z.string()
+        }),
+        copyrightText: z.string()
+      })
+    }),
+  })
 });
 
 // Collection UI Translations

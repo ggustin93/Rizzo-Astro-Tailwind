@@ -9,11 +9,11 @@ const lang = pathname.split('/')[1] || 'fr';
 // Récupérer la configuration du site
 const siteConfigEntry = await getEntry('config', 'site-config');
 const calendarLink = siteConfigEntry?.data?.calendarLink || 'https://cal.com/c.rizzo-avocat.be/rendez-vous?duration=15';
-const contactInfo = siteConfigEntry?.data?.contactInfo || {
-  phone: '+32 488 40 45 49',
-  whatsapp: '32488404549',
-  email: 'c.rizzo@avocat.be'
-};
+const contactInfo = siteConfigEntry?.data?.contactInfo;
+
+if (!contactInfo) {
+  throw new Error("FATAL: Global contact info not found in site-config.yml for CTA component.");
+}
 
 const translations = {
   fr: {
