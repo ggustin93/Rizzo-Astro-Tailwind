@@ -13,6 +13,22 @@ if (!privacyEntry) {
     throw new Error("Privacy entry not found!");
 }
 const content = privacyEntry.data[lang as keyof typeof privacyEntry.data] || privacyEntry.data['fr'];
+
+// Récupérer la configuration du site pour les placeholders
+const siteConfigEntry = await getEntry('config', 'site-config');
+const globalContactInfo = siteConfigEntry?.data?.contactInfo;
+
+if (!globalContactInfo) {
+  throw new Error("FATAL: Global contact info not found in site-config.yml for legal pages.");
+}
+
+// Remplacer les placeholders
+content.sections.forEach((section: any) => {
+  section.text = section.text
+    .replace('%%ADDRESS%%', globalContactInfo.address)
+    .replace('%%EMAIL%%', globalContactInfo.email)
+    .replace('%%PHONE%%', globalContactInfo.phone);
+});
 ---
 
 <BaseLayout title={content.title} lang={lang} description={content.title}>

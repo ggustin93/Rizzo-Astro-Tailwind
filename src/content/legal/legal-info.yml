@@ -10,9 +10,9 @@ fr:
         1. Nom de l'avocat: Christine Rizzo   
 
         2. Coordonnées :
-           Chaussée de Waterloo 1151, 1180 Bruxelles
-           c.rizzo@avocat.be
-           0488 40 45 49	  
+           %%ADDRESS%%  
+           %%EMAIL%%  
+           %%PHONE%%	  
         3. Numéro d'entreprise / tva : 0829.577.949  
 
         4. Organisation professionnelle: Ordre français des Avocats du Barreau de Bruxelles  
@@ -317,9 +317,9 @@ en:
         1. Lawyer's name: Christine Rizzo      	   
 
         2. Contact details:\
-           Chaussée de Waterloo 1151, 1180 Brussels\
-           c.rizzo@avocat.be\
-           0488 40 45 49	  
+           %%ADDRESS%%  
+           %%EMAIL%%  
+           %%PHONE%%
         3. Company/VAT number: 0829.577.949   
 
         4. Professional organization: French Order of Lawyers of the Brussels Bar  
@@ -359,9 +359,9 @@ it:
         1. Nome dell'avvocato: Christine Rizzo      	   
 
         2. Coordinate:\
-           Chaussée de Waterloo 1151, 1180 Bruxelles\
-           c.rizzo@avocat.be\
-           0488 40 45 49	  
+           %%ADDRESS%%  
+           %%EMAIL%%  
+           %%PHONE%%
         3. Numero d'impresa/IVA: 0829.577.949   
 
         4. Organizzazione professionale: Ordine francese degli Avvocati del Foro di Bruxelles  

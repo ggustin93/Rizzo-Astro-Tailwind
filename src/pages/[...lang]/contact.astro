@@ -71,17 +71,11 @@ const getAction = (button: ContactButton) => {
 };
 
 const getDisplayText = (button: ContactButton) => {
-  if (!button.type) return button.subtext;
-
   switch(button.type) {
     case 'email':
       return globalContactInfo.email;
     case 'phone':
       return globalContactInfo.phone;
-    case 'whatsapp':
-      return 'WhatsApp'; // Le libellé du bouton reste simple
-    case 'linkedin':
-      return 'LinkedIn'; // Le libellé du bouton reste simple
     case 'maps':
       return globalContactInfo.address;
     default:
@@ -125,7 +119,6 @@ const seoData = {
           <div class="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {contactData.buttons.map((button: ContactButton) => {
               const IconComponent = iconComponents[button.icon];
-              const displayText = button.type === 'phone' && globalContactInfo ? globalContactInfo.phone : button.subtext;
               
               return (
                 <div class="flex flex-col items-center">

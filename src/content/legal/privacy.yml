@@ -13,11 +13,12 @@ fr:
         numérique responsable.
     - title: Identité et coordonnées de la responsable du traitement
       text: |-
-        Maître Christine Rizzo
-        Avocate au Barreau de Bruxelles
-        Chaussée de Waterloo 1151, 1180 Bruxelles (BE)
-        n° BCE : 0829577949
-        Adresse mail : c.rizzo@avocat.be
+        Maître Christine Rizzo  
+        Avocate au Barreau de Bruxelles  
+        %%ADDRESS%%  
+        Téléphone : %%PHONE%%  
+        n° BCE : 0829577949  
+        Adresse mail : %%EMAIL%%
     - title: Données personnelles traitées
       text: >-
         Dans le cadre de l'utilisation du site web, la responsable du traitement
@@ -52,7 +53,7 @@ fr:
         les utilisateurs disposent de droits sur leurs données personnelles,
         notamment les droits d'accès, de rectification, d'effacement, et
         d'opposition au traitement. Ces droits peuvent être exercés en
-        contactant Maître Christine Rizzo à l'adresse c.rizzo@avocat.be.
+        contactant Maître Christine Rizzo à l'adresse %%EMAIL%%.
     - title: Sécurité
       text: Des mesures de sécurité appropriées sont mises en place pour protéger les
         données personnelles contre tout accès, modification, divulgation ou
@@ -73,12 +74,12 @@ en:
         accordance with the principles of responsible digital practices.
     - title: Identity and contact details of the data controller
       text: |-
-        Maître Christine Rizzo
-        Lawyer at the Brussels Bar
-        Bd. Brand Whitlock 87 - 10
-        1200 - Woluwe-Saint-Lambert (BE)
-        n° BCE : 0829577949
-        Email address: c.rizzo@avocat.be
+        Maître Christine Rizzo  
+        Lawyer at the Brussels Bar  
+        %%ADDRESS%%  
+        Phone: %%PHONE%%  
+        n° BCE : 0829577949  
+        Email address: %%EMAIL%%
     - title: Personal data processed
       text: >-
         As part of the use of the website, the data controller is committed to
@@ -109,7 +110,7 @@ en:
       text: In accordance with the General Data Protection Regulation (GDPR), users
         have rights over their personal data, including the rights of access,
         rectification, erasure, and opposition to processing. These rights can
-        be exercised by contacting Maître Christine Rizzo at c.rizzo@avocat.be.
+        be exercised by contacting Maître Christine Rizzo at %%EMAIL%%.
     - title: Security
       text: Appropriate security measures are in place to protect personal data
         against any unauthorized access, modification, disclosure or
@@ -131,12 +132,12 @@ it:
         principi delle pratiche digitali responsabili.
     - title: Identità e dati di contatto del responsabile del trattamento
       text: |-
-        Maître Christine Rizzo
-        Avvocato presso il Foro di Bruxelles
-        Bd. Brand Whitlock 87 - 10
-        1200 - Woluwe-Saint-Lambert (BE)
-        n° BCE : 0829577949
-        Indirizzo email: c.rizzo@avocat.be
+        Maître Christine Rizzo  
+        Avvocato presso il Foro di Bruxelles  
+        %%ADDRESS%%  
+        Telefono: %%PHONE%%  
+        n° BCE : 0829577949  
+        Indirizzo email: %%EMAIL%%
     - title: Dati personali trattati
       text: >-
         Nell'ambito dell'utilizzo del sito web, il responsabile del trattamento
@@ -169,7 +170,7 @@ it:
         (GDPR), gli utenti hanno diritti sui propri dati personali, tra cui i
         diritti di accesso, rettifica, cancellazione e opposizione al
         trattamento. Questi diritti possono essere esercitati contattando Maître
-        Christine Rizzo all'indirizzo c.rizzo@avocat.be.
+        Christine Rizzo all'indirizzo %%EMAIL%%.
     - title: Sicurezza
       text: Sono in atto misure di sicurezza appropriate per proteggere i dati
         personali da qualsiasi accesso, modifica, divulgazione o distruzione non
