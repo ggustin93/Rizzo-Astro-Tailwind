@@ -1,12 +1,25 @@
-# dependencies
+# Dependencies
 /node_modules/
+
+# Build Output
 /dist/
 /.astro/
+
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+*.log
 
+# System Files
 .DS_Store
 
+# User-specific
 maintenance/
+.netlify/
+.obsidian/
+Ressources - Avril 2025/
+
+# Test results
+test-results/
