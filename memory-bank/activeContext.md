@@ -9,6 +9,8 @@ Récemment, l'objectif s'est porté sur la **vérification et l'amélioration de
 
 **Mise à jour du 28/06/2025** : Le numéro de téléphone a été changé de "+32 488 40 45 49" à "+32 479 80 50 02" partout sur le site suite à un problème avec l'opérateur téléphonique. Tous les numéros sont maintenant centralisés dans `site-config.yml` et accessibles via l'interface admin Decap CMS.
 
+**Mise à jour du 14/08/2025** : Refactoring de la source de vérité pour les données de contact. L'email a été mis à jour et une mention sur la page contact a été supprimée.
+
 ## Tâches Actuelles
 1. **Maintenance SEO** : S'assurer que le site reste bien indexé par les moteurs de recherche.
 2. **Suivi des performances** : Surveiller les performances du site et résoudre les problèmes éventuels.
@@ -17,6 +19,8 @@ Récemment, l'objectif s'est porté sur la **vérification et l'amélioration de
 ## Décisions Récentes
 - **Désactivation du prerendering** : Le prerendering de Netlify a été désactivé car il causait des erreurs 503 et n'est pas nécessaire pour ce site statique.
 - **Centralisation des coordonnées** : Toutes les coordonnées de contact sont maintenant centralisées dans `site-config.yml` et configurables via l'interface admin.
+- **Source de vérité unique** : Le refactoring du 14/08/2025 a consolidé `site-config.yml` comme la source de vérité unique pour les informations de contact, éliminant les données dupliquées dans `navigation.yml` et `contact.yml`.
+- **Validation par Tests E2E** : Une suite de tests automatisés avec Playwright a été mise en place pour vérifier la cohérence des données de contact sur l'ensemble du site, garantissant la non-régression.
 
 ## Points d'Attention
 - **Performances mobiles** : Le site doit rester performant sur mobile, c'est une priorité.
@@ -43,4 +47,4 @@ La session de travail a abouti à plusieurs changements majeurs :
 - **Redirections multilingues** : Conserver le code de statut 301 pour les redirections est considéré comme la solution la plus professionnelle pour un site multilingue.
 - **Prerendering** : Le prerendering a été désactivé car non nécessaire pour ce site statique généré par Astro.
 
-*Dernière mise à jour : 09/06/2025 - Investigation des redirections et résolution des erreurs 503.*
+*Dernière mise à jour : 14/08/2025 - Refactoring de la source de vérité des données de contact et ajout de tests E2E.*

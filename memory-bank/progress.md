@@ -20,4 +20,17 @@
 - **Erreurs 503 résolues** : La désactivation du prerendering de Netlify a résolu le problème des erreurs 503. Le site Astro statique n'a pas besoin de prerendering.
 - **Prêt pour le déploiement** : Le code sur la branche locale est stable, testé et prêt à être mis en production.
 
-*Dernière mise à jour : 28/06/2025 - Centralisation des coordonnées de contact et mise à jour du numéro de téléphone.* 
+*Dernière mise à jour : 14/08/2025 - Refactoring des données de contact et mise à jour de l'email.*
+
+## Refactoring de la Source de Vérité (14/08/2025)
+- **Constat** : Les informations de contact étaient dupliquées dans `navigation.yml`, `contact.yml` et `site-config.yml`, rendant les mises à jour incohérentes et difficiles.
+- **Action** : Refactoring complet pour faire de `site-config.yml` la source de vérité unique. Les composants `Footer.astro` et `contact.astro` ont été modifiés pour ne lire que depuis ce fichier.
+- **Résultat** : La maintenance est simplifiée, et les futures modifications par la cliente via le CMS seront appliquées uniformément sur tout le site.
+
+## Mise à Jour du Contenu (14/08/2025)
+- **Email** : L'adresse email de contact a été mise à jour globalement vers `christine@rizzoavocate.be`.
+- **Page Contact** : La mention "Le premier contact est gratuit" a été supprimée sous le bouton de prise de rendez-vous dans toutes les langues. 
+
+## Ajout de Tests E2E (14/08/2025)
+- **Mise en place** : Une suite de tests End-to-End avec Playwright a été créée dans le dossier `/tests` pour valider automatiquement la cohérence des informations de contact sur tout le site.
+- **Résultat** : Les tests confirment que le refactoring vers une source de vérité unique est un succès. Cela fournit un filet de sécurité pour les futures modifications. 

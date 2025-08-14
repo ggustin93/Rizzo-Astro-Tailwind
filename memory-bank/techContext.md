@@ -10,6 +10,7 @@
 *   **Dépendances:** Gérées via `package.json`.
 *   **Sitemap:** Generation and filtering configured via `@astrojs/sitemap` in `astro.config.mjs`.
 *   **IndexNow Submission Script:** A Bash script (`scripts/submit_indexnow.sh`) using `curl` is available for manual URL submission.
+*   **Tests E2E:** Le projet utilise Playwright pour les tests End-to-End afin de vérifier la cohérence du contenu et les fonctionnalités critiques après les modifications. Les tests sont situés dans le dossier `/tests`.
 *   **Build:** Processus de build statique (`astro build`)
 *   **Dépendances:** Gérées via `package.json`
 *   **Sitemap:** Generation and filtering configured via `@astrojs/sitemap` in `astro.config.mjs`.

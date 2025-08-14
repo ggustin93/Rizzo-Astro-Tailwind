@@ -1,84 +1,12 @@
 # dependencies
-node_modules/
-node_modules/**/*
-
-# build output
-.output/
-dist/
-out/
-
-# Astro specific
-.astro/
-
-# Environment files
-.env
-.env.local
-.env.production
-
-# Logs
-*.log
-
-# Temporary files
-*.tmp
-*.swp
-
-# Operating system files
-.DS_Store
-Thumbs.db
-
-# IDE/editor-specific files
-.vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
-.obsidian/
-
-# MacOS-specific files
-.AppleDouble
-.LSOverride
-
-# Windows-specific files
-ehthumbs.db
-Icon?
-Desktop.ini
-
-# npm package lock files (if you use Yarn or another package manager, adjust accordingly)
-package-lock.json
-yarn.lock
-
-# Build artifacts and temporary files
-*.cache
-*.tmp
-*.bak
-*.swp
-
-# Local Netlify folder
-.netlify
-
-# Netlify CMS local config
-public/admin/config.local.yml
-public/admin/index.local.html
-
-# Local resources and planning
-Ressources - Avril 2025/
-todo-action-plan.md
-
-# generated types
-.vercel/
-
-# Obsidian files
-.obsidian/
-
-# Project specific resources
-Ressources - Avril 2025/
-
-# Todo files
-todo-action-plan.md
-
-# log files
+/node_modules/
+/dist/
+/.astro/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-maintenance/*
+.DS_Store
+
+maintenance/

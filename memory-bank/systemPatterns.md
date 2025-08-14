@@ -11,6 +11,7 @@
 *   Use Astro for static site generation.
 *   Use Tailwind CSS for styling, integrated via `@astrojs/tailwind`.
 *   **Root Redirection**: Use a simple, non-conditional redirect in `netlify.toml` for the root path (`/`). This approach is chosen for performance and bot compatibility.
+*   **Single Source of Truth for Contact Info**: All global contact information (email, phone, address, etc.) is centralized in `src/content/config/site-config.yml`. All components, including the Footer and Contact Page, must pull data from this file to ensure consistency and ease of maintenance.
 *   **Manual SEO Management**: All critical SEO meta tags are managed directly in `src/layouts/BaseLayout.astro` instead of using a third-party library. This provides full control and avoids difficult-to-debug conflicts.
 *   **Content Schema**: Astro's content collections feature, with schemas defined in `src/content/config.ts`, is the source of truth for all content structure. This enforces type safety and prevents build errors.
 *   **View Transitions Scripting**: Client-side scripts that need to run on every page change must use the `astro:page-load` event for initialization to ensure compatibility with Astro's View Transitions.
@@ -34,6 +35,9 @@
 
 ### SEO & Indexing Patterns
 *   A diagnostic script (`bing_index_check.sh`, now removed) was developed to help identify potential Bing indexing issues.
+
+### Testing Patterns
+*   **End-to-End (E2E) Verification:** After any significant refactoring or content update, a suite of E2E tests using Playwright (`/tests`) should be run. This ensures that data from the single source of truth (`site-config.yml`) is displayed correctly across all relevant components and pages (Footer, Contact, Legal, etc.). This provides a final, user-centric validation that complements static analysis.
 
 5.  **Tests Continus (CI/CD)**:
     *   **Principe** : Avant tout déploiement, une suite de tests automatisés doit être exécutée pour valider les aspects critiques du site.
