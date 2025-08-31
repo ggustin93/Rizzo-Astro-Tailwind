@@ -1,0 +1,172 @@
+---
+import { getDataEntryById } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { CheckCircle, Globe, Briefcase, Mic, Coffee, BookOpen } from 'astro-feather-icons';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const profileEntry = await getDataEntryById('profile', 'profile');
+if (!profileEntry) {
+  throw new Error("Profile entry not found! Make sure you have a `profile.yml` file in `src/content/profile`.");
+}
+const profileData = profileEntry.data[lang] || profileEntry.data['fr']; // Use French as fallback
+
+if (!profileData) {
+  throw new Error(`Content not found for language: ${lang}`);
+}
+
+// Extract Stéphanie Michiels's data
+const lawyers = profileData.lawyers || [];
+const stephanieLawyer = lawyers.find((lawyer: any) => lawyer.name === "Stéphanie Michiels");
+
+if (!stephanieLawyer) {
+  throw new Error(`Stéphanie Michiels not found in profile data for language: ${lang}`);
+}
+
+// Translations
+const translations = {
+  fr: {
+    backToTeam: "← Retour à l'équipe",
+    languages: "Langues",
+    career: "Parcours",
+    conferences: "Conférences",
+    publications: "Publications",
+    with: "avec",
+    inCollaborationWith: "En collaboration avec",
+    placeholder: "[À fournir par le client]"
+  },
+  en: {
+    backToTeam: "← Back to team",
+    languages: "Languages",
+    career: "Career",
+    conferences: "Conferences",
+    publications: "Publications",
+    with: "with",
+    inCollaborationWith: "In collaboration with",
+    placeholder: "[To be provided by client]"
+  },
+  it: {
+    backToTeam: "← Torna al team",
+    languages: "Lingue",
+    career: "Percorso",
+    conferences: "Conferenze",
+    publications: "Pubblicazioni",
+    with: "con",
+    inCollaborationWith: "In collaborazione con",
+    placeholder: "[Da fornire dal cliente]"
+  }
+};
+
+const t = translations[lang as keyof typeof translations];
+
+// SEO data
+const seoData = {
+  title: stephanieLawyer.seo?.title || `Stéphanie Michiels - Avocate spécialisée en droit du travail`,
+  description: stephanieLawyer.seo?.description || `Stéphanie Michiels, avocate au Barreau de Bruxelles spécialisée en droit du travail. Expertise pour entreprises et travailleurs.`,
+  image: stephanieLawyer.seo?.image || stephanieLawyer.image,
+  keywords: stephanieLawyer.seo?.keywords?.join(', ') || 'Stéphanie Michiels, avocat droit du travail, Bruxelles'
+};
+---
+
+<BaseLayout 
+  title={seoData.title}
+  description={seoData.description}
+  image={seoData.image}
+  keywords={seoData.keywords}
+  lang={lang}
+>
+  <div class="bg-white md:my-20 p-4 md:p-8">
+    <div class="max-w-6xl mx-auto px-4 py-8 md:py-12">
+      
+      <!-- Back to team link -->
+      <div class="mb-8">
+        <a 
+          href={`/${lang}/equipe/`}
+          class="inline-flex items-center text-accent hover:text-travailleur transition-colors duration-300"
+        >
+          {t.backToTeam}
+        </a>
+      </div>
+
+      <!-- Image visible only on mobile, above title -->
+      <div class="md:hidden mb-8">
+        <img src={stephanieLawyer.image} alt={stephanieLawyer.name} class="w-full rounded-lg shadow-lg">
+      </div>
+      
+      <div class="flex flex-col md:flex-row gap-8 md:gap-12">
+        <div class="w-full md:w-2/3">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-light text-accent mb-4 md:mb-8">{stephanieLawyer.name}</h1>
+          <h2 class="text-2xl md:text-3xl font-light text-black mb-4">{stephanieLawyer.title}</h2>
+          
+          {stephanieLawyer.bio && stephanieLawyer.bio.map((paragraph: string) => (
+            <p class="text-sm md:text-base text-dark-gray mb-4 md:mb-6">{paragraph}</p>
+          ))}
+          
+          <div class="space-y-6 md:space-y-8 mt-6 md:mt-8">
+            {stephanieLawyer.careerPath && (
+              <div>
+                <h3 class="text-lg md:text-xl font-semibold text-black mb-2 md:mb-3">{t.career}</h3>
+                <ul class="space-y-2 mb-4 md:mb-6">
+                  {stephanieLawyer.careerPath.map((item: any) => (
+                    <li class="flex flex-col sm:flex-row">
+                      <span class="font-semibold text-accent sm:w-24 flex-shrink-0">{item.year}</span>
+                      <span class="text-sm md:text-base text-dark-gray">{item.event}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            
+            {stephanieLawyer.languages && (
+              <div>
+                <h3 class="text-lg md:text-xl font-semibold text-black mb-2 md:mb-3">{t.languages}</h3>
+                <p class="text-sm md:text-base text-dark-gray mb-4 md:mb-6">{stephanieLawyer.languages}</p>
+              </div>
+            )}
+            
+            {stephanieLawyer.conferences && stephanieLawyer.conferences.length > 0 && (
+              <div>
+                <h3 class="text-lg md:text-xl font-semibold text-black mb-2 md:mb-4">{t.conferences}</h3>
+                <ul class="space-y-2 mb-6 md:mb-8">
+                  {stephanieLawyer.conferences.map((conf: string) => (
+                    <li class="text-sm md:text-base text-dark-gray flex items-start">
+                      <span class="text-accent mr-2 text-2xl md:text-4xl">•</span> 
+                      <span>{conf}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            
+            {stephanieLawyer.publications && stephanieLawyer.publications.length > 0 && (
+              <div>
+                <h3 class="text-lg md:text-xl font-semibold text-black mb-2 md:mb-3">{t.publications}</h3>
+                <ul class="space-y-3">
+                  {stephanieLawyer.publications.map((pub: any) => (
+                    <li class="text-sm md:text-base text-dark-gray flex items-start">
+                      <span class="text-accent mr-2 text-2xl md:text-4xl">•</span>
+                      <div>
+                        <span>{pub.date}:</span> "{pub.title}", {pub.publisher}
+                        {pub.coAuthors && <span class="italic"> ({t.inCollaborationWith} {pub.coAuthors.join(', ')})</span>}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </div>
+        
+        <!-- Image visible only on desktop -->
+        <div class="hidden md:block md:w-1/3">
+          <img src={stephanieLawyer.image} alt={stephanieLawyer.name} class="w-full rounded-lg shadow-lg">
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

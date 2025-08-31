@@ -12,9 +12,16 @@ fr:
             url: /fr/services/travailleurs
           - label: POUR LES EMPLOYEURS
             url: /fr/services/employeurs
-      - label: PROFIL
-        url: /fr/profil
-        hasDropdown: false
+      - label: L'ÉQUIPE
+        url: /fr/equipe
+        hasDropdown: true
+        dropdownItems:
+          - label: VUE D'ENSEMBLE
+            url: /fr/equipe
+          - label: CHRISTINE RIZZO
+            url: /fr/equipe/christine-rizzo
+          - label: STÉPHANIE MICHIELS
+            url: /fr/equipe/stephanie-michiels
       - label: HONORAIRES
         url: /fr/honoraires
         hasDropdown: false
@@ -50,9 +57,16 @@ en:
             url: /en/services/travailleurs
           - label: FOR EMPLOYERS
             url: /en/services/employeurs
-      - label: PROFILE
-        url: /en/profil
-        hasDropdown: false
+      - label: THE TEAM
+        url: /en/equipe
+        hasDropdown: true
+        dropdownItems:
+          - label: OVERVIEW
+            url: /en/equipe
+          - label: CHRISTINE RIZZO
+            url: /en/equipe/christine-rizzo
+          - label: STÉPHANIE MICHIELS
+            url: /en/equipe/stephanie-michiels
       - label: FEES
         url: /en/honoraires
         hasDropdown: false
@@ -88,9 +102,16 @@ it:
             url: /it/services/travailleurs
           - label: PER I DATORI DI LAVORO
             url: /it/services/employeurs
-      - label: PROFILO
-        url: /it/profil
-        hasDropdown: false
+      - label: IL TEAM
+        url: /it/equipe
+        hasDropdown: true
+        dropdownItems:
+          - label: PANORAMICA
+            url: /it/equipe
+          - label: CHRISTINE RIZZO
+            url: /it/equipe/christine-rizzo
+          - label: STÉPHANIE MICHIELS
+            url: /it/equipe/stephanie-michiels
       - label: ONORARI
         url: /it/honoraires
         hasDropdown: false
