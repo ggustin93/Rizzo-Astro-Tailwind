@@ -1,10 +1,24 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides comprehensive guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Project Overview
 
-Professional multilingual website for Christine Rizzo, a labor law attorney in Brussels, built with Astro framework and Decap CMS for content management. The site operates in French (default), English, and Italian with SSG output.
+Professional multilingual website for Christine Rizzo, a labor law attorney specializing in labor law in Brussels. The site serves as an information platform, expertise showcase, and primary contact point for potential and existing clients. Built with Astro framework and Decap CMS for content management, operating in French (default), English, and Italian with SSG output.
+
+### Business Objectives
+- Present Christine Rizzo's professional expertise in labor law
+- Attract and inform potential clients (workers and employers)
+- Facilitate contact and appointment scheduling
+- Share relevant legal information via blog
+- Build and strengthen professional brand image
+- Ensure optimal search engine visibility (SEO)
+
+### Target Audience
+- **Workers** seeking advice or representation in labor law
+- **Employers/Companies** (HR teams, executives) needing social law expertise
+- Individuals seeking general information about Belgian labor law
+- Multilingual audience: French, English, and Italian speakers
 
 ## Development Commands
 
@@ -23,28 +37,43 @@ npx playwright test --ui  # Run tests with UI mode
 ## Architecture
 
 ### Core Technology Stack
-- **Astro 5.9.0**: Static site generator with View Transitions
-- **Tailwind CSS**: Utility-first CSS with Typography plugin
+- **Astro 5.9.0**: Static site generator with View Transitions enabled
+- **Tailwind CSS**: Utility-first CSS with Typography plugin and custom colors
 - **Decap CMS**: Git-based headless CMS (admin at `/admin/`)
-- **Content Collections**: Type-safe content management via Astro
+- **Content Collections**: Type-safe content management via Astro with Zod schemas
+- **Cal.com Integration**: Appointment booking system embedded
+- **Icons**: astro-feather-icons, FontAwesome, custom SVG components
 
 ### Content Structure
-- **Collections**: Blog articles, config, navigation, UI translations
+- **Collections**: Blog articles, config, navigation, UI translations, contact, home
 - **Languages**: Multilingual YAML files under `src/content/`
-- **Schema Validation**: Zod schemas in `src/content/config.ts`
-- **Centralized Config**: Contact info in `src/content/config/site-config.yml`
+- **Schema Validation**: Zod schemas in `src/content/config.ts` (source of truth)
+- **Centralized Config**: All global contact info in `src/content/config/site-config.yml`
+- **Single Source of Truth**: Contact info must always be pulled from site-config.yml
 
 ### Routing Architecture
 - **Dynamic Language Routes**: `[...lang]/` pattern for all pages
 - **Supported Languages**: `fr`, `en`, `it` (French is default)
-- **Root Redirect**: `/` → `/fr/` via netlify.toml
-- **Language Detection**: Validates and redirects invalid language params
+- **Root Redirect**: `/` → `/fr/` via netlify.toml (simple, non-conditional)
+- **Language Detection**: Validates and redirects invalid language params to French
+- **Trailing Slashes**: All paths redirected to versions with trailing slashes
 
 ### Content Management System
 - **Admin Access**: `/admin/` with Git Gateway backend
 - **YAML Storage**: All content stored as YAML in `src/content/`
 - **Media**: Images in `public/assets/images/`
 - **Blog Structure**: `src/content/blog/{lang}/{slug}.md`
+- **Content Schema Enforcement**: Build fails if content doesn't match schemas
+
+### Design System
+- **Color Palette**: 
+  - Beige (base)
+  - Blue "travailleur" (worker blue)
+  - Blue "employeur" (employer blue)
+  - Yellow accent
+- **Typography**: Professional, clean, modern
+- **Responsive**: Mobile-first approach
+- **Accessibility**: WCAG compliance targeted
 
 ## Key Implementation Patterns
 
