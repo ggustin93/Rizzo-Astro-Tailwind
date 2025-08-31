@@ -202,6 +202,7 @@ collections:
                 name: "lawyers"
                 widget: "list"
                 summary: "{{fields.name}} - {{fields.title}}"
+                collapsed: false
                 fields:
                   - {label: "Nom", name: "name", widget: "string"}
                   - {label: "Titre", name: "title", widget: "string"}
