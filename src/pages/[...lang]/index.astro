@@ -53,7 +53,9 @@ if (!siteConfigEntry) {
   throw new Error("Site config entry not found in index page! Make sure you have a `site-config.md` file in `src/content/config`.");
 }
 const showArticlesSection = siteConfigEntry?.data?.sectionsVisibility || false;
-const calendarLink = siteConfigEntry?.data?.calendarLink || 'https://cal.com/c.rizzo-avocat.be/rendez-vous?duration=15';
+// Get primary lawyer's calendar link (first in the lawyers array)
+const lawyers = siteConfigEntry?.data?.lawyers || [];
+const calendarLink = lawyers[0]?.calendarLink || 'https://cal.com/c.rizzo-avocat.be/rendez-vous?duration=15';
 
 if (!content || !content.expertise || !content.expertise.travailleurs) {
   console.error('Structure de contenu invalide:', content);

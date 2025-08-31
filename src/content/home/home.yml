@@ -1,19 +1,19 @@
 fr:
   expertise:
     title: Expertise & Services
-    description: J'accompagne à la fois les entreprises et les travailleur·euse·s
+    description: Nous accompagnons à la fois les entreprises et les travailleur·euse·s
       dans leurs problématiques quotidiennes et leurs projets liés à l'emploi.
     travailleurs:
       title: Vous êtes un.e travailleur·euse
-      description: Je vous accompagne tout au long de votre parcours professionnel que
+      description: Nous vous accompagnons tout au long de votre parcours professionnel que
         ce soit pour une question ponctuelle, la négociation d'un départ ou
         l'introduction d'une procédure judiciaire devant le tribunal du travail
         contre votre employeur.
       cta: En savoir plus
     employeurs:
       title: Vous êtes une entreprise
-      description: Je défends votre entreprise devant les tribunaux ou les services de
-        l'inspection et je collabore avec vous ou votre équipe RH pour la
+      description: Nous défendons votre entreprise devant les tribunaux ou les services de
+        l'inspection et nous collaborons avec vous ou votre équipe RH pour la
         gestion des relations de travail au quotidien ainsi que pour vos
         projets.
       cta: En savoir plus
@@ -28,27 +28,27 @@ fr:
       cta: En savoir plus
   viewAllArticles: Lire plus d'articles
   hero:
-    title: Christine Rizzo
-    subtitle: Avocate spécialiste en droit du travail
-    description: Vous conseiller et vous défendre avec expertise et engagement
+    title: Christine Rizzo et Stéphanie Michiels
+    subtitle: Avocates spécialisées en droit du travail
+    description: Nous vous conseillons et vous défendons avec expertise et engagement
     cta: PRENEZ RDV EN LIGNE
   articlesTitle: Articles
   profil:
-    title: Profil
-    description: Avocate au Barreau de Bruxelles depuis 2010, j'ai acquis
-      l'expérience de mon métier en conseillant et défendant à la fois des
+    title: L'équipe
+    description: Christine Rizzo et Stéphanie Michiels, avocates au Barreau de Bruxelles, 
+      ont acquis l'expérience de leur métier en conseillant et défendant à la fois des
       travailleur·euse.s et des entreprises locales et internationales. La
       gestion de la relation de travail du recrutement à la rupture, la
       rédaction de contrats, de rapports d'audit dans le cadre de projets
       d'acquisition, le bien-être au travail, les outils destinés à améliorer
       l'équilibre vie privée-vie professionnelle, les questions de
-      discrimination et les faux indépendants font partie de ma pratique
+      discrimination et les faux indépendants font partie de notre pratique
       quotidienne.
-    cta: En savoir plus
+    cta: Découvrir l'équipe
   seo:
-    title: Christine Rizzo | Avocate en droit du travail à Bruxelles
+    title: Christine Rizzo et Stéphanie Michiels | Avocates en droit du travail à Bruxelles
     description: Expertise en droit du travail pour salariés et employeurs.
-      Conseils, défense et accompagnement juridique personnalisé à Bruxelles.
+      Conseils, défense et accompagnement juridique personnalisé à Bruxelles par notre équipe d'avocates spécialisées.
     image: https://github.com/ggustin93/Rizzo-Astro-Tailwind/blob/main/public/default-social-image.png
     keywords:
       - avocat droit du travail Bruxelles
@@ -109,25 +109,25 @@ en:
       cta: Learn more about our fees
   viewAllArticles: View All Resources
   hero:
-    title: Christine Rizzo
-    subtitle: Specialist employment lawyer
-    description: Advising and defending you with expertise and commitment
+    title: Christine Rizzo and Stéphanie Michiels
+    subtitle: Specialist employment lawyers
+    description: We advise and defend you with expertise and commitment
     cta: BOOK A CONSULTATION
   articlesTitle: Articles
   profil:
-    title: Profile
-    description: Admitted to the Brussels Bar in 2010, I have gained experience in
-      my profession by defending and advising both individuals and local and
-      international companies. Managing employment relationships from
+    title: The Team
+    description: Christine Rizzo and Stéphanie Michiels, admitted to the Brussels Bar, 
+      have gained experience in their profession by defending and advising both individuals and 
+      local and international companies. Managing employment relationships from
       recruitment to termination, drafting agreements, audit reports for
       acquisition projects, well-being at work, tools for improving work-life
       balance, discrimination issues and classification issues (employee vs
-      independent contractor) are all part of my daily practice.
-    cta: Learn More
+      independent contractor) are all part of our daily practice.
+    cta: Meet The Team
   seo:
-    title: Christine Rizzo | Employment Lawyer in Brussels
+    title: Christine Rizzo and Stéphanie Michiels | Employment Lawyers in Brussels
     description: Expertise in employment law for employees and employers. Advice,
-      defense and personalized legal support in Brussels.
+      defense and personalized legal support in Brussels by our team of specialist lawyers.
     keywords: lawyer, labor law, Brussels, legal advice, employee defense, employer
       support
     image: https://github.com/ggustin93/Rizzo-Astro-Tailwind/blob/main/public/default-social-image.png
@@ -183,26 +183,26 @@ it:
       cta: Scopri di più sui nostri onorari
   viewAllArticles: Visualizza tutte le risorse
   hero:
-    title: Christine Rizzo
-    subtitle: Avvocata specializzata in diritto del lavoro
-    description: Consulenza e difesa con competenza e dedizione
+    title: Christine Rizzo e Stéphanie Michiels
+    subtitle: Avvocate specializzate in diritto del lavoro
+    description: Vi offriamo consulenza e difesa con competenza e dedizione
     cta: PRENOTA UNA CONSULENZA LEGALE
   articlesTitle: Articoli
   profil:
-    title: Profilo
-    description: Avvocata presso il foro di Bruxelles dal 2010, ho acquisito
-      esperienza nella mia professione difendendo e consigliando sia lavoratori
+    title: Il Team
+    description: Christine Rizzo e Stéphanie Michiels, avvocate presso il foro di Bruxelles, 
+      hanno acquisito esperienza nella loro professione difendendo e consigliando sia lavoratori
       che aziende locali e internazionali. La gestione dei rapporti di lavoro,
       dall'assunzione alla cessazione, la redazione di contratti e di relazioni
       pre‐acquisition "due diligence", il benessere sul lavoro, gli strumenti
       per migliorare l'equilibrio tra lavoro e vita privata, le questioni di
       discriminazione e la qualificazione del rapporto di lavoro (falso lavoro
-      autonomo) fanno parte delle mie attività quotidiane.
-    cta: Scopri di più
+      autonomo) fanno parte delle nostre attività quotidiane.
+    cta: Scopri il Team
   seo:
-    title: Christine Rizzo | Avvocato del lavoro a Bruxelles
+    title: Christine Rizzo e Stéphanie Michiels | Avvocati del lavoro a Bruxelles
     description: Diritto del lavoro per lavoratori e aziende. Consulenza, difesa e
-      assistenza legale personalizzata a Bruxelles.
+      assistenza legale personalizzata a Bruxelles dal nostro team di avvocati specializzati.
     keywords: avvocato, diritto del lavoro, Bruxelles, consulenza legale, difesa dei
       dipendenti, supporto ai datori di lavoro
     image: https://github.com/ggustin93/Rizzo-Astro-Tailwind/blob/main/public/default-social-image.png
