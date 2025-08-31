@@ -12,7 +12,7 @@ collections:
     files:
       - file: "src/content/home/home.yml"
         name: "home"
-        label: "Contenu de la page d'accueil"
+        label: "Contenu de la Page d'accueil"
         i18n:
           structure: single_file
         fields:
