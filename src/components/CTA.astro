@@ -8,12 +8,15 @@ const lang = pathname.split('/')[1] || 'fr';
 
 // Récupérer la configuration du site
 const siteConfigEntry = await getEntry('config', 'site-config');
-const calendarLink = siteConfigEntry?.data?.calendarLink || 'https://cal.com/c.rizzo-avocat.be/rendez-vous?duration=15';
-const contactInfo = siteConfigEntry?.data?.contactInfo;
+const lawyers = siteConfigEntry?.data?.lawyers || [];
 
-if (!contactInfo) {
-  throw new Error("FATAL: Global contact info not found in site-config.yml for CTA component.");
+if (!lawyers || lawyers.length === 0) {
+  throw new Error("FATAL: No lawyers found in site-config.yml for CTA component.");
 }
+
+// Use the primary lawyer (Christine Rizzo) for CTA
+const primaryLawyer = lawyers.find((lawyer: any) => lawyer.name === "Christine Rizzo") || lawyers[0];
+const calendarLink = primaryLawyer.calendarLink || 'https://cal.com/c.rizzo-avocat.be/rendez-vous?duration=15';
 
 const translations = {
   fr: {
@@ -51,9 +54,9 @@ const translations = {
 const t = translations[lang as keyof typeof translations] || translations.fr;
 
 const buttonConfig = [
-  { icon: Mail, text: t.email, action: contactInfo.email, type: 'email' },
+  { icon: Mail, text: t.email, action: primaryLawyer.email, type: 'email' },
   { icon: Calendar, text: t.appointment, action: t.bookAction, type: 'appointment' },
-  { icon: Phone, text: t.call, action: contactInfo.phone, type: 'phone' },
+  { icon: Phone, text: t.call, action: primaryLawyer.phone, type: 'phone' },
   { icon: MessageCircle, text: t.whatsapp, action: t.chatAction, type: 'whatsapp' },
 ];
 
@@ -66,7 +69,7 @@ const handleAction = (type: string, action: string) => {
     case 'phone':
       return `window.location.href = 'tel:${action}'`;
     case 'whatsapp':
-      return `window.open('https://wa.me/${contactInfo.whatsapp}', '_blank')`;
+      return `window.open('https://wa.me/${primaryLawyer.whatsapp || ''}', '_blank')`;
     default:
       return '';
   }
