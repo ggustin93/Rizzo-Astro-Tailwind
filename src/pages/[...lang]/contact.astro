@@ -52,8 +52,6 @@ interface ContactButton {
 }
 
 const getAction = (button: ContactButton) => {
-  if (!button.type || !button.action) return button.action || button.subtext;
-
   switch(button.type) {
     case 'email':
       return `mailto:${globalContactInfo.email}`;
@@ -66,7 +64,7 @@ const getAction = (button: ContactButton) => {
     case 'maps':
       return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(globalContactInfo.address)}`;
     default:
-      return button.action;
+      return button.action || '#';
   }
 };
 
@@ -119,27 +117,44 @@ const seoData = {
           <div class="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {contactData.buttons.map((button: ContactButton) => {
               const IconComponent = iconComponents[button.icon];
-              
+              const isAppointment = button.type === 'appointment';
+
+              // Render a button for Cal.com appointments
+              if (isAppointment) {
+                return (
+                  <div class="flex flex-col items-center text-center">
+                    <button
+                      class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center mb-3 md:mb-5 hover:bg-travailleur transition-all duration-300 transform hover:scale-105 group shadow-md cursor-pointer"
+                      data-cal-link={calendarLink.replace('https://cal.com/', '')}
+                      data-cal-config='{"layout":"month_view"}'
+                    >
+                      <IconComponent class="w-7 h-7 md:w-9 md:h-9 text-employeur group-hover:text-white transition-colors duration-300 pointer-events-none" />
+                    </button>
+                    <span class="text-sm md:text-base uppercase text-white font-semibold leading-relaxed tracking-wide mb-1 md:mb-2 px-2">{button.text}</span>
+                    <span class="text-sm md:text-base text-gray-300 font-normal italic">
+                      {getDisplayText(button)}
+                    </span>
+                  </div>
+                );
+              }
+
+              // Render an anchor tag for all other links
+              const actionUrl = getAction(button);
               return (
-                <div class="flex flex-col items-center">
-                  <button
-                    onclick={getAction(button)}
-                    class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center mb-3 md:mb-5 hover:bg-travailleur transition-all duration-300 transform hover:scale-105 group shadow-md cursor-pointer"
-                    data-cal-link={button.type === 'appointment' ? calendarLink.replace('https://cal.com/', '') : undefined}
-                    data-cal-config={button.type === 'appointment' ? '{"layout":"month_view"}' : undefined}
-                  >
-                    <IconComponent class="w-7 h-7 md:w-9 md:h-9 text-employeur group-hover:text-white transition-colors duration-300 pointer-events-none" />
-                  </button>
-                  <span class="text-sm md:text-base uppercase text-white font-semibold leading-relaxed tracking-wide mb-1 md:mb-2 px-2 text-center">{button.text}</span>
-                  <button
-                    onclick={getAction(button)}
-                    class="text-sm md:text-base text-gray-300 font-normal italic text-center hover:text-white transition-colors duration-300 hover:underline cursor-pointer"
-                    data-cal-link={button.type === 'appointment' ? calendarLink.replace('https://cal.com/', '') : undefined}
-                    data-cal-config={button.type === 'appointment' ? '{"layout":"month_view"}' : undefined}
-                  >
+                <a
+                  href={actionUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex flex-col items-center group text-center"
+                >
+                  <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center mb-3 md:mb-5 group-hover:bg-travailleur transition-all duration-300 transform group-hover:scale-105 shadow-md">
+                    <IconComponent class="w-7 h-7 md:w-9 md:h-9 text-employeur group-hover:text-white transition-colors duration-300" />
+                  </div>
+                  <span class="text-sm md:text-base uppercase text-white font-semibold leading-relaxed tracking-wide mb-1 md:mb-2 px-2">{button.text}</span>
+                  <span class="text-sm md:text-base text-gray-300 font-normal italic group-hover:text-white transition-colors duration-300 group-hover:underline">
                     {getDisplayText(button)}
-                  </button>
-                </div>
+                  </span>
+                </a>
               );
             })}
           </div>
