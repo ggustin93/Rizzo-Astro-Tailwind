@@ -60,7 +60,7 @@ collections:
                         widget: "list"
                         field: {label: "Avantage", name: "advantage", widget: "string"}
 
-              - label: "Profil"
+              - label: "Équipe"
                 name: "profil"
                 widget: "object"
                 fields:
@@ -184,13 +184,13 @@ collections:
             widget: "object"
             fields: *employeursFields
 
-  # Page Profil
+  # Page Équipe
   - name: "profile"
-    label: "Page Profil"
+    label: "Page Équipe"
     files:
       - file: "src/content/profile/profile.yml"
         name: "profile"
-        label: "Contenu du profil"
+        label: "Profils de l'équipe"
         i18n:
           structure: single_file
         fields:
@@ -198,37 +198,55 @@ collections:
             name: "fr"
             widget: "object"
             fields: &profileFields
-              - {label: "Nom", name: "name", widget: "string"}
-              - {label: "Titre", name: "title", widget: "string"}
-              - {label: "Image", name: "image", widget: "image"}
-              - label: "Biographie"
-                name: "bio"
+              - label: "Avocates"
+                name: "lawyers"
                 widget: "list"
-                field: {label: "Paragraphe", name: "paragraph", widget: "text"}
-              - label: "Langues"
-                name: "languages"
-                widget: "string"
-              - label: "Parcours"
-                name: "careerPath"
-                widget: "list"
+                summary: "{{fields.name}} - {{fields.title}}"
                 fields:
-                  - {label: "Année", name: "year", widget: "string"}
-                  - {label: "Événement", name: "event", widget: "string"}
-              - label: "Conférences"
-                name: "conferences"
-                widget: "list"
-                field: {label: "Conférence", name: "conference", widget: "text"}
-              - label: "Publications"
-                name: "publications"
-                widget: "list"
-                fields:
-                  - {label: "Date", name: "date", widget: "string"}
+                  - {label: "Nom", name: "name", widget: "string"}
                   - {label: "Titre", name: "title", widget: "string"}
-                  - {label: "Éditeur", name: "publisher", widget: "string"}
-                  - label: "Co-auteurs"
-                    name: "coAuthors"
+                  - {label: "Image", name: "image", widget: "image"}
+                  - label: "Biographie"
+                    name: "bio"
                     widget: "list"
-                    field: {label: "Auteur", name: "author", widget: "string"}
+                    field: {label: "Paragraphe", name: "paragraph", widget: "text"}
+                  - label: "Langues"
+                    name: "languages"
+                    widget: "string"
+                  - label: "Parcours"
+                    name: "careerPath"
+                    widget: "list"
+                    fields:
+                      - {label: "Année", name: "year", widget: "string"}
+                      - {label: "Événement", name: "event", widget: "string"}
+                  - label: "Conférences"
+                    name: "conferences"
+                    widget: "list"
+                    field: {label: "Conférence", name: "conference", widget: "text"}
+                  - label: "Publications"
+                    name: "publications"
+                    widget: "list"
+                    fields:
+                      - {label: "Date", name: "date", widget: "string"}
+                      - {label: "Titre", name: "title", widget: "string"}
+                      - {label: "Éditeur", name: "publisher", widget: "string"}
+                      - label: "Co-auteurs"
+                        name: "coAuthors"
+                        widget: "list"
+                        field: {label: "Auteur", name: "author", widget: "string"}
+                  - label: "SEO"
+                    name: "seo"
+                    widget: "object"
+                    collapsed: true
+                    fields:
+                      - {label: "Titre SEO", name: "title", widget: "string", required: false}
+                      - {label: "Description SEO", name: "description", widget: "text", required: false, pattern: ['^.{0,160}$', "La description doit faire 160 caractères maximum"]}
+                      - {label: "Image SEO", name: "image", widget: "string", required: false}
+                      - label: "Mots-clés SEO"
+                        name: "keywords"
+                        widget: "list"
+                        required: false
+                        field: {label: "Mot-clé", name: keyword, widget: string}
           - label: "English"
             name: "en"
             widget: "object"
@@ -495,43 +513,43 @@ collections:
             default: "https://cal.com/c.rizzo-avocat.be/rendez-vous?duration=15"
             hint: "IMPORTANT: Si vous modifiez l'URL de votre calendrier dans Cal.com, vous devez également mettre à jour ce lien. Inversement, si vous modifiez ce lien, assurez-vous qu'il correspond exactement à votre URL Cal.com. Toute différence entre les deux empêchera le système de prise de rendez-vous de fonctionner."
           
-          - label: "Informations de contact"
-            name: "contactInfo"
-            widget: "object"
-            summary: "Coordonnées de contact centralisées"
+          - label: "Équipe d'avocates"
+            name: "lawyers"
+            widget: "list"
+            summary: "{{fields.name}} - {{fields.email}}"
             collapsed: false
             description: >
+              Informations de contact pour chaque avocate du cabinet.
               Ces informations apparaîtront partout sur le site (header, footer, page contact, etc.).
-              Modifiez ici pour changer sur tout le site automatiquement.
             fields:
+              - label: "Nom"
+                name: "name"
+                widget: "string"
+                hint: "Nom complet de l'avocate"
+              
               - label: "Numéro de téléphone"
                 name: "phone"
                 widget: "string"
-                default: "+32 488 40 45 49"
                 hint: "Format international recommandé avec espaces (ex: +32 488 40 45 49)"
               
               - label: "Numéro WhatsApp"
                 name: "whatsapp"
                 widget: "string"
-                default: "32488404549"
                 hint: "Numéro sans espaces ni + pour WhatsApp (ex: 32488404549)"
               
               - label: "Adresse email"
                 name: "email"
                 widget: "string"
-                default: "c.rizzo@avocat.be"
                 hint: "Adresse email professionnelle"
               
               - label: "Profil LinkedIn"
                 name: "linkedin"
                 widget: "string"
-                default: "https://www.linkedin.com/in/christine-rizzo/"
                 hint: "URL complète du profil LinkedIn"
               
               - label: "Adresse du cabinet"
                 name: "address"
                 widget: "string"
-                default: "Chaussée de Waterloo 1151, 1180 Bruxelles"
                 hint: "Adresse complète du cabinet"
           
           - label: "SEO et apparence"
@@ -621,14 +639,6 @@ collections:
                     name: "contactTitle"
                     widget: "string"
                     default: "Contact"
-                  - label: "Coordonnées"
-                    name: "contactInfo"
-                    widget: "object"
-                    fields:
-                      - {label: "Téléphone", name: "phone", widget: "string", default: "+32 488 40 45 49"}
-                      - {label: "Email", name: "email", widget: "string", default: "c.rizzo@avocat.be"}
-                      - {label: "LinkedIn", name: "linkedin", widget: "string", default: "https://www.linkedin.com/in/christine-rizzo/"}
-                      - {label: "Adresse", name: "address", widget: "string", default: "Chaussée de Waterloo 1151, 1180 Bruxelles"}
                   - label: "Liens légaux"
                     name: "legalLinks"
                     widget: "list"

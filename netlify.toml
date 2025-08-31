@@ -20,6 +20,54 @@
   status = 301
   force = true
 
+# Redirect old profil URLs to new equipe URLs (multi-lawyer transformation)
+[[redirects]]
+  from = "/fr/profil/*"
+  to = "/fr/equipe/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/en/profil/*"
+  to = "/en/equipe/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/it/profil/*"
+  to = "/it/equipe/:splat"
+  status = 301
+
+# Redirect old single profil page to team overview
+[[redirects]]
+  from = "/fr/profil/"
+  to = "/fr/equipe/"
+  status = 301
+
+[[redirects]]
+  from = "/en/profil/"
+  to = "/en/equipe/"
+  status = 301
+
+[[redirects]]
+  from = "/it/profil/"
+  to = "/it/equipe/"
+  status = 301
+
+# Redirect old profil without trailing slash
+[[redirects]]
+  from = "/fr/profil"
+  to = "/fr/equipe/"
+  status = 301
+
+[[redirects]]
+  from = "/en/profil"
+  to = "/en/equipe/"
+  status = 301
+
+[[redirects]]
+  from = "/it/profil"
+  to = "/it/equipe/"
+  status = 301
+
 # --- Headers ---
 # Custom headers to improve performance by leveraging browser caching.
 [[headers]]
