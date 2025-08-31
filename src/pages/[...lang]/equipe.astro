@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 const { lang } = Astro.params;
 const profileEntry = await getDataEntryById('profile', 'profile');
 if (!profileEntry) {
-  throw new Error("Profile entry not found! Make sure you have a `profile.yml` file in `src/content/profile`.");
+  throw new Error("Profile entry not found. Make sure you have a `profile.yml` file in `src/content/profile`.");
 }
 const profileData = profileEntry.data[lang] || profileEntry.data['fr']; // Use French as fallback
 
