@@ -25,15 +25,16 @@ const configCollection = defineCollection({
       defaultSocialImage: z.string(),
     }),
     sectionsVisibility: z.boolean(),
-    calendarLink: z.string().url(),
     allowIndexing: z.boolean(),
-    contactInfo: z.object({
+    lawyers: z.array(z.object({
+      name: z.string(),
       phone: z.string(),
-      whatsapp: z.string(),
-      email: z.string().email(),
-      linkedin: z.string().url(),
-      address: z.string(),
-    }).optional(),
+      whatsapp: z.string().optional(),
+      email: z.string(),
+      linkedin: z.string(),
+      calendarLink: z.string(),
+    })),
+    address: z.string(),
   }),
 });
 
