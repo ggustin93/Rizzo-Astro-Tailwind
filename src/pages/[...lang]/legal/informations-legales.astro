@@ -16,18 +16,22 @@ const content = legalInfoEntry.data[lang as keyof typeof legalInfoEntry.data] ||
 
 // Récupérer la configuration du site pour les placeholders
 const siteConfigEntry = await getEntry('config', 'site-config');
-const globalContactInfo = siteConfigEntry?.data?.contactInfo;
+const lawyers = siteConfigEntry?.data?.lawyers || [];
+const address = siteConfigEntry?.data?.address;
 
-if (!globalContactInfo) {
-  throw new Error("FATAL: Global contact info not found in site-config.yml for legal pages.");
+if (!lawyers || lawyers.length === 0) {
+  throw new Error("FATAL: No lawyers found in site-config.yml for legal pages.");
 }
+
+// Use the primary lawyer (Christine Rizzo) for legal pages
+const primaryLawyer = lawyers.find((lawyer: any) => lawyer.name === "Christine Rizzo") || lawyers[0];
 
 // Remplacer les placeholders
 content.sections.forEach((section: any) => {
   section.text = section.text
-    .replace('%%ADDRESS%%', globalContactInfo.address)
-    .replace('%%EMAIL%%', globalContactInfo.email)
-    .replace('%%PHONE%%', globalContactInfo.phone);
+    .replace('%%ADDRESS%%', address)
+    .replace('%%EMAIL%%', primaryLawyer.email)
+    .replace('%%PHONE%%', primaryLawyer.phone);
 });
 
 // Ajoutez cette vérification

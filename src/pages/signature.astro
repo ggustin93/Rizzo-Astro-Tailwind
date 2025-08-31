@@ -3,14 +3,17 @@ import { getEntry } from 'astro:content';
 
 // Récupérer la configuration du site
 const siteConfigEntry = await getEntry('config', 'site-config');
-const contactInfo = siteConfigEntry?.data?.contactInfo;
+const lawyers = siteConfigEntry?.data?.lawyers || [];
 
-if (!contactInfo) {
-  throw new Error("FATAL: Global contact info not found in site-config.yml for email signature.");
+if (!lawyers || lawyers.length === 0) {
+  throw new Error("FATAL: No lawyers found in site-config.yml for email signature.");
 }
 
+// Use the primary lawyer (Christine Rizzo) for email signature
+const primaryLawyer = lawyers.find((lawyer: any) => lawyer.name === "Christine Rizzo") || lawyers[0];
+
 // Formater le numéro de téléphone pour l'affichage (avec points)
-const formattedPhone = contactInfo.phone.replace('+32 ', '').replace(/(\d{3})(\d{2})(\d{2})(\d{2})/, '$1.$2.$3.$4');
+const formattedPhone = primaryLawyer.phone.replace('+32 ', '').replace(/(\d{3})(\d{2})(\d{2})(\d{2})/, '$1.$2.$3.$4');
 ---
 
 <!DOCTYPE html>
@@ -40,13 +43,13 @@ const formattedPhone = contactInfo.phone.replace('+32 ', '').replace(/(\d{3})(\d
           <tr>
             <td style="padding: 0 0 5px 0; border-top: 1px solid #eeeeee;">
               <span style="color: #333333; font-weight: bold;">Email:&nbsp;&nbsp;</span>
-              <a href={`mailto:${contactInfo.email}`} style="color: #333333; text-decoration: none;">{contactInfo.email}</a>
+              <a href={`mailto:${primaryLawyer.email}`} style="color: #333333; text-decoration: none;">{primaryLawyer.email}</a>
             </td>
           </tr>
           <tr>
             <td style="padding: 0 0 5px 0; border-top: 1px solid #eeeeee;">
               <span style="color: #333333; font-weight: bold;">Téléphone:&nbsp;&nbsp;</span>
-              <a href={`tel:+${contactInfo.whatsapp}`} style="color: #333333; text-decoration: none;">{formattedPhone}</a>
+              <a href={`tel:${primaryLawyer.phone}`} style="color: #333333; text-decoration: none;">{formattedPhone}</a>
             </td>
           </tr>
           <tr>
@@ -57,10 +60,10 @@ const formattedPhone = contactInfo.phone.replace('+32 ', '').replace(/(\d{3})(\d
           </tr>
           <tr>
             <td style="padding: 10px 0 0 0; border-top: 1px solid #eeeeee;">
-              <a href={contactInfo.linkedin} style="text-decoration: none; margin-right: 10px;">
+              <a href={primaryLawyer.linkedin} style="text-decoration: none; margin-right: 10px;">
                 <img src="https://cdn.prod.website-files.com/66a3633bf638ce4da95b8ad7/66d4b460d66aad3c82aea265_Logo_LinkedIn.png" alt="LinkedIn" width="20" height="20" style="vertical-align: middle; border: 0;">
               </a>
-              <a href={`https://wa.me/${contactInfo.whatsapp}`} style="text-decoration: none;">
+              <a href={`https://wa.me/${primaryLawyer.whatsapp || ''}`} style="text-decoration: none;">
                 <img src="https://cdn.prod.website-files.com/66a3633bf638ce4da95b8ad7/66d4b460e9cbcd03c68d5d77_Logo_WhatsApp.png" alt="WhatsApp Business" width="20" height="20" style="vertical-align: middle; border: 0;">
               </a>
             </td>
