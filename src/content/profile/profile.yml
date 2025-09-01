@@ -3,6 +3,7 @@ fr:
     - name: "Christine Rizzo"
       title: "Avocate en droit du travail"
       image: "https://uploads-ssl.webflow.com/66a3633bf638ce4da95b8ad7/66a367d9f9bfc9b93e01c4a3_Christine_Apropos-b.jpeg"
+      linkedin: "https://www.linkedin.com/in/christine-rizzo/"
       languages: "Je travaille en français, italien et anglais. J'ai également une bonne connaissance du néerlandais."
       bio:
         - "Avocate au Barreau de Bruxelles depuis 2010, habituée des négociations et des salles d'audience et forte d'une expérience auprès de clients internationaux et dans un cabinet de niche, je propose à mes clients - à la fois entreprises et travailleur·euse.s - des services d'accompagnement, conseil, négociation et défense en justice en droit des relations du travail."
@@ -65,7 +66,8 @@ fr:
     
     - name: "Stéphanie Michiels"
       title: "Avocate en droit du travail"
-      image: "https://images.unsplash.com/photo-1594736797933-d0da635b3db6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "/assets/images/s_michiels_photo.webp"
+      linkedin: "https://www.linkedin.com/in/stephanie-michiels/"
       languages: "Je travaille en français, néerlandais et anglais."
       bio:
         - "Avocate expérimentée en droit du travail, Stéphanie Michiels apporte son expertise juridique approfondie pour accompagner les entreprises et les travailleurs dans leurs défis quotidiens."

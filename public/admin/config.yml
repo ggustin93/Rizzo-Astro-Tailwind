@@ -505,7 +505,12 @@ collections:
             name: "sectionsVisibility"
             widget: "boolean"
             default: false
-            hint: "Activer ou désactiver l'affichage de la section Articles/Blog sur la page d'accueil et dans la navigation"
+          
+          - label: "Afficher le formulaire de contact"
+            name: "showContactForm"
+            widget: "boolean"
+            default: true
+            hint: "Active ou désactive le formulaire de contact sur la page Contact"
           
           - label: "Lien de réservation Cal.com"
             name: "calendarLink"

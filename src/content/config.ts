@@ -25,6 +25,7 @@ const configCollection = defineCollection({
       defaultSocialImage: z.string(),
     }),
     sectionsVisibility: z.boolean(),
+    showContactForm: z.boolean().optional().default(true),
     allowIndexing: z.boolean(),
     lawyers: z.array(z.object({
       name: z.string(),
