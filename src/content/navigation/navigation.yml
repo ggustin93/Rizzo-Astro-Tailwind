@@ -25,7 +25,7 @@ fr:
       - label: HONORAIRES
         url: /fr/honoraires
         hasDropdown: false
-    contactButtonText: ME CONTACTER
+    contactButtonText: NOUS CONTACTER
   footer:
     legalLinks:
       - label: Mentions légales
@@ -70,7 +70,7 @@ en:
       - label: FEES
         url: /en/honoraires
         hasDropdown: false
-    contactButtonText: CONTACT ME
+    contactButtonText: CONTACT US
   footer:
     legalLinks:
       - label: Legal Notice
@@ -115,7 +115,7 @@ it:
       - label: ONORARI
         url: /it/honoraires
         hasDropdown: false
-    contactButtonText: CONTATTAMI
+    contactButtonText: CONTATTACI
   footer:
     legalLinks:
       - label: Note legali
