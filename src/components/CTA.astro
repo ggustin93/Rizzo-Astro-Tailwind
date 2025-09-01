@@ -1,5 +1,6 @@
 ---
-import { Calendar, Mail, Phone, MessageCircle } from 'astro-feather-icons';
+import { Calendar, Mail, Phone } from 'astro-feather-icons';
+import { MessageCircle } from 'astro-feather-icons';
 import ctaIllustration from '../assets/images/illustration_cta_2.svg';
 import { getEntry } from 'astro:content';
 
@@ -14,53 +15,36 @@ if (!lawyers || lawyers.length === 0) {
   throw new Error("FATAL: No lawyers found in site-config.yml for CTA component.");
 }
 
-// Use the primary lawyer (Christine Rizzo) for CTA
-const primaryLawyer = lawyers.find((lawyer: any) => lawyer.name === "Christine Rizzo") || lawyers[0];
-const calendarLink = primaryLawyer.calendarLink || 'https://cal.com/c.rizzo-avocat.be/rendez-vous?duration=15';
-
 const translations = {
   fr: {
-    ctaTitle: "Contactez-moi",
+    ctaTitle: "Contactez-nous",
     ctaSubtitle: "",
     email: "EMAIL",
     appointment: "RDV",
     call: "APPEL",
-    whatsapp: "WHATSAPP",
-    bookAction: "Réserver",
-    chatAction: "Discuter"
+    bookAction: "Réserver"
   },
   en: {
-    ctaTitle: "Contact me",
+    ctaTitle: "Contact us",
     ctaSubtitle: "",
     email: "EMAIL",
     appointment: "APPOINTMENT",
     call: "CALL",
-    whatsapp: "WHATSAPP",
-    bookAction: "Book",
-    chatAction: "Chat"
+    bookAction: "Book"
   },
   it: {
-    ctaTitle: "Contattami",
+    ctaTitle: "Contattaci",
     ctaSubtitle: "",
     email: "EMAIL",
     appointment: "APPUNTAMENTO",
     call: "CHIAMA",
-    whatsapp: "WHATSAPP",
-    bookAction: "Prenota",
-    chatAction: "Chat"
+    bookAction: "Prenota"
   }
 };
 
 const t = translations[lang as keyof typeof translations] || translations.fr;
 
-const buttonConfig = [
-  { icon: Mail, text: t.email, action: primaryLawyer.email, type: 'email' },
-  { icon: Calendar, text: t.appointment, action: t.bookAction, type: 'appointment' },
-  { icon: Phone, text: t.call, action: primaryLawyer.phone, type: 'phone' },
-  { icon: MessageCircle, text: t.whatsapp, action: t.chatAction, type: 'whatsapp' },
-];
-
-const handleAction = (type: string, action: string) => {
+const handleAction = (type: string, action: string, calendarLink?: string) => {
   switch(type) {
     case 'email':
       return `window.location.href = 'mailto:${action}'`;
@@ -68,8 +52,6 @@ const handleAction = (type: string, action: string) => {
       return `Cal('ui', {"styles":{"branding":{"brandColor":"#000000"}},"hideEventTypeDetails":false,"layout":"month_view"})`;
     case 'phone':
       return `window.location.href = 'tel:${action}'`;
-    case 'whatsapp':
-      return `window.open('https://wa.me/${primaryLawyer.whatsapp || ''}', '_blank')`;
     default:
       return '';
   }
@@ -77,52 +59,100 @@ const handleAction = (type: string, action: string) => {
 ---
 
 <div class="full-bleed bg-employeur rounded-lg overflow-hidden">
-  <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8">
+  <section id="contact" class="py-4 sm:py-6 px-4 sm:px-6 lg:px-8">
     <div class="container mx-auto">
-      <div class="flex flex-col md:flex-row items-center justify-between">
-        <div class="md:w-1/2 text-center md:text-left">
-          <div class="flex items-center mb-6 justify-center md:justify-start">
-            <div class="flex-grow h-px bg-gray-300 md:max-w-xs max-w-[40px] mr-2 md:mr-4"></div>
-            <h2 class="text-xl sm:text-2xl font-light text-white uppercase flex items-center">
-              <MessageCircle class="w-5 h-5 md:w-6 md:h-6 mr-2 md:mr-3 text-white" />
-              {t.ctaTitle}
-            </h2>
-            <div class="flex-grow h-px bg-gray-300 md:max-w-xs max-w-[40px] ml-2 md:ml-4"></div>
-          </div>
-          <p class="mb-8 text-lg md:text-xl font-light text-white">{t.ctaSubtitle}</p>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-2xl mx-auto md:mx-0">
-            {buttonConfig.map(({ icon: Icon, text, action, type }) => (
-              <div class="flex flex-col items-center">
-                <button
-                  class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center mb-3 md:mb-5 hover:bg-travailleur hover:shadow-lg transition-all duration-300 transform hover:scale-105 group cursor-pointer"
-                  onclick={handleAction(type, action)}
-                  data-cal-link={type === 'appointment' ? calendarLink.replace('https://cal.com/', '') : undefined}
-                  data-cal-config={type === 'appointment' ? '{"layout":"month_view"}' : undefined}
-                >
-                  <Icon class="w-10 h-10 md:w-12 md:h-12 text-employeur group-hover:text-white transition-colors duration-300 pointer-events-none" />
-                </button>
-                <span class="text-sm md:text-base uppercase text-white font-semibold tracking-wider leading-relaxed mb-1 md:mb-2 px-2 text-center">{text}</span>
-                <button 
-                  class="text-sm md:text-base text-gray-300 font-normal italic hover:text-white transition-colors duration-300 hover:underline cursor-pointer"
-                  onclick={handleAction(type, action)}
-                  data-cal-link={type === 'appointment' ? calendarLink.replace('https://cal.com/', '') : undefined}
-                  data-cal-config={type === 'appointment' ? '{"layout":"month_view"}' : undefined}
-                >
-                  {action}
-                </button>
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div class="lg:w-3/5 text-center lg:text-left">
+          <div class="space-y-4 max-w-2xl mx-auto lg:mx-0">
+            {lawyers.map((lawyer: any, index: number) => (
+              <div class={`${index > 0 ? 'pt-4 border-t border-white/20' : ''}`}>
+                <h3 class="text-xl font-medium text-white mb-3 text-center">
+                  {lawyer.name}
+                </h3>
+                <div class="grid grid-cols-3 gap-2 sm:gap-3 max-w-md mx-auto">
+                  <!-- Email Button -->
+                  <div class="flex flex-col items-center">
+                    <button
+                      class="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full flex items-center justify-center mb-2 hover:bg-travailleur hover:shadow-lg transition-all duration-300 transform hover:scale-105 group cursor-pointer"
+                      onclick={handleAction('email', lawyer.email)}
+                      aria-label={`Email ${lawyer.name}`}
+                    >
+                      <Mail class="w-7 h-7 sm:w-8 sm:h-8 text-employeur group-hover:text-white transition-colors duration-300 pointer-events-none"/>
+                    </button>
+                    <span class="text-sm uppercase text-white/90 font-medium tracking-wider mb-1">{t.email}</span>
+                    <button 
+                      class="text-sm sm:text-base text-white/70 font-light hover:text-white transition-colors duration-200 hover:underline cursor-pointer max-w-full truncate px-1"
+                      onclick={handleAction('email', lawyer.email)}
+                      title={lawyer.email}
+                    >
+                      {lawyer.email || ''}
+                    </button>
+                  </div>
+                  
+                  <!-- Appointment Button -->
+                  <div class="flex flex-col items-center">
+                    <button
+                      class="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full flex items-center justify-center mb-2 hover:bg-travailleur hover:shadow-lg transition-all duration-300 transform hover:scale-105 group cursor-pointer"
+                      onclick={handleAction('appointment', t.bookAction, lawyer.calendarLink)}
+                      data-cal-link={lawyer.calendarLink?.replace('https://cal.com/', '')}
+                      data-cal-config='{"layout":"month_view"}'
+                      aria-label={`Book appointment with ${lawyer.name}`}
+                    >
+                      <Calendar class="w-7 h-7 sm:w-8 sm:h-8 text-employeur group-hover:text-white transition-colors duration-300 pointer-events-none" />
+                    </button>
+                    <span class="text-sm uppercase text-white/90 font-medium tracking-wider mb-1">{t.appointment}</span>
+                    <button 
+                      class="text-sm sm:text-base text-white/70 font-light hover:text-white transition-colors duration-200 hover:underline cursor-pointer"
+                      onclick={handleAction('appointment', t.bookAction, lawyer.calendarLink)}
+                      data-cal-link={lawyer.calendarLink?.replace('https://cal.com/', '')}
+                      data-cal-config='{"layout":"month_view"}'
+                    >
+                      {t.bookAction}
+                    </button>
+                  </div>
+                  
+                  <!-- Phone Button -->
+                  <div class="flex flex-col items-center">
+                    <button
+                      class="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full flex items-center justify-center mb-2 hover:bg-travailleur hover:shadow-lg transition-all duration-300 transform hover:scale-105 group cursor-pointer"
+                      onclick={handleAction('phone', lawyer.phone)}
+                      aria-label={`Call ${lawyer.name}`}
+                    >
+                      <Phone class="w-7 h-7 sm:w-8 sm:h-8 text-employeur group-hover:text-white transition-colors duration-300 pointer-events-none" />
+                    </button>
+                    <span class="text-sm uppercase text-white/90 font-medium tracking-wider mb-1">{t.call}</span>
+                    <button 
+                      class="text-sm sm:text-base text-white/70 font-light hover:text-white transition-colors duration-200 hover:underline cursor-pointer"
+                      onclick={handleAction('phone', lawyer.phone)}
+                    >
+                      {lawyer.phone || ''}
+                    </button>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </div>
-        <div class="md:w-1/2 md:mb-0 flex justify-center md:justify-end mt-8 md:mt-0">
-          <img
-            src={ctaIllustration.src}
-            alt="illustration cta"
-            class="w-full h-auto max-w-md"
-            width={500}
-            height={200}
-            loading="lazy"
-          />
+        
+        <div class="lg:w-2/5 flex flex-col justify-start items-center lg:items-center">
+          <div class="flex items-center mb-6 w-full justify-center">
+            <div class="flex-grow h-px bg-white/30 max-w-[60px] lg:max-w-[100px] mr-3"></div>
+            <h2 class="text-xl sm:text-2xl font-light text-white uppercase flex items-center whitespace-nowrap">
+              <MessageCircle class="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-white" />
+              {t.ctaTitle}
+            </h2>
+            <div class="flex-grow h-px bg-white/30 max-w-[60px] lg:max-w-[100px] ml-3"></div>
+          </div>
+          <div class="flex justify-center">
+            <img
+              src={ctaIllustration.src}
+              alt="Contact illustration"
+              class="w-full h-auto max-w-[280px] sm:max-w-[320px] lg:max-w-[360px] opacity-90"
+              width={360}
+              height={144}
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
     </div>
