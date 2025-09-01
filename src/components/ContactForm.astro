@@ -1,0 +1,225 @@
+---
+import { getEntry } from 'astro:content';
+
+const { pathname } = Astro.url;
+const lang = pathname.split('/')[1] || 'fr';
+
+// Get site configuration
+const siteConfigEntry = await getEntry('config', 'site-config');
+const lawyers = siteConfigEntry?.data?.lawyers || [];
+const showContactForm = siteConfigEntry?.data?.showContactForm ?? true;
+
+// Get all lawyer emails for form notifications
+const lawyerEmails = lawyers.map((lawyer: any) => lawyer.email).join(', ');
+
+// Translations
+const translations = {
+  fr: {
+    formTitle: "Envoyez-nous un message",
+    nameLabel: "Nom complet *",
+    namePlaceholder: "Jean Dupont",
+    emailLabel: "Email *",
+    emailPlaceholder: "jean.dupont@exemple.com",
+    phoneLabel: "Téléphone",
+    phonePlaceholder: "+32 4XX XX XX XX",
+    subjectLabel: "Objet *",
+    subjectPlaceholder: "Objet de votre demande",
+    messageLabel: "Message *",
+    messagePlaceholder: "Décrivez votre situation ou votre question...",
+    submitButton: "Envoyer le message",
+    sending: "Envoi en cours...",
+    successMessage: "Merci pour votre message. Nous vous répondrons dans les plus brefs délais.",
+    errorMessage: "Une erreur s'est produite. Veuillez réessayer ou nous contacter directement."
+  },
+  en: {
+    formTitle: "Send us a message",
+    nameLabel: "Full Name *",
+    namePlaceholder: "John Doe",
+    emailLabel: "Email *",
+    emailPlaceholder: "john.doe@example.com",
+    phoneLabel: "Phone",
+    phonePlaceholder: "+32 4XX XX XX XX",
+    subjectLabel: "Subject *",
+    subjectPlaceholder: "Subject of your inquiry",
+    messageLabel: "Message *",
+    messagePlaceholder: "Describe your situation or question...",
+    submitButton: "Send Message",
+    sending: "Sending...",
+    successMessage: "Thank you for your message. We will respond as soon as possible.",
+    errorMessage: "An error occurred. Please try again or contact us directly."
+  },
+  it: {
+    formTitle: "Inviaci un messaggio",
+    nameLabel: "Nome completo *",
+    namePlaceholder: "Mario Rossi",
+    emailLabel: "Email *",
+    emailPlaceholder: "mario.rossi@esempio.com",
+    phoneLabel: "Telefono",
+    phonePlaceholder: "+32 4XX XX XX XX",
+    subjectLabel: "Oggetto *",
+    subjectPlaceholder: "Oggetto della richiesta",
+    messageLabel: "Messaggio *",
+    messagePlaceholder: "Descrivi la tua situazione o domanda...",
+    submitButton: "Invia messaggio",
+    sending: "Invio in corso...",
+    successMessage: "Grazie per il tuo messaggio. Risponderemo il prima possibile.",
+    errorMessage: "Si è verificato un errore. Riprova o contattaci direttamente."
+  }
+};
+
+const t = translations[lang as keyof typeof translations] || translations.fr;
+---
+
+{showContactForm && (
+  <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+    <h2 class="text-2xl md:text-3xl font-light mb-6 text-gray-800">{t.formTitle}</h2>
+    
+    <form
+      name="contact-form"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      action={`/${lang}/contact/success`}
+      class="space-y-4"
+    >
+      <!-- Honeypot field for spam protection -->
+      <input type="hidden" name="form-name" value="contact-form" />
+      <div class="hidden">
+        <label>
+          Don't fill this out if you're human:
+          <input name="bot-field" />
+        </label>
+      </div>
+      
+      <!-- Hidden field for lawyer emails -->
+      <input type="hidden" name="recipient-emails" value={lawyerEmails} />
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Name Field -->
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700 mb-1">
+            {t.nameLabel}
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder={t.namePlaceholder}
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-travailleur focus:border-travailleur transition-colors"
+          />
+        </div>
+        
+        <!-- Email Field -->
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+            {t.emailLabel}
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder={t.emailPlaceholder}
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-travailleur focus:border-travailleur transition-colors"
+          />
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Phone Field -->
+        <div>
+          <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">
+            {t.phoneLabel}
+          </label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder={t.phonePlaceholder}
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-travailleur focus:border-travailleur transition-colors"
+          />
+        </div>
+        
+        <!-- Subject Field -->
+        <div>
+          <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">
+            {t.subjectLabel}
+          </label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            required
+            placeholder={t.subjectPlaceholder}
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-travailleur focus:border-travailleur transition-colors"
+          />
+        </div>
+      </div>
+      
+      <!-- Message Field -->
+      <div>
+        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">
+          {t.messageLabel}
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          required
+          rows="6"
+          placeholder={t.messagePlaceholder}
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-travailleur focus:border-travailleur transition-colors resize-none"
+        ></textarea>
+      </div>
+      
+      <!-- Submit Button -->
+      <div class="flex justify-end">
+        <button
+          type="submit"
+          class="px-6 py-3 bg-travailleur text-white font-semibold rounded-lg hover:bg-travailleur/90 transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg"
+        >
+          <span class="submit-text">{t.submitButton}</span>
+          <span class="submit-loading hidden">{t.sending}</span>
+        </button>
+      </div>
+      
+      <!-- Success/Error Messages -->
+      <div id="form-messages" class="hidden">
+        <div class="success-message hidden bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
+          {t.successMessage}
+        </div>
+        <div class="error-message hidden bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
+          {t.errorMessage}
+        </div>
+      </div>
+    </form>
+  </div>
+)}
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const form = document.querySelector('form[name="contact-form"]') as HTMLFormElement;
+    if (!form) return;
+    
+    const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    const submitText = submitButton?.querySelector('.submit-text') as HTMLElement;
+    const submitLoading = submitButton?.querySelector('.submit-loading') as HTMLElement;
+    
+    form.addEventListener('submit', async (e) => {
+      // Show loading state
+      if (submitText && submitLoading) {
+        submitText.classList.add('hidden');
+        submitLoading.classList.remove('hidden');
+        submitButton.disabled = true;
+      }
+    });
+  });
+</script>
+
+<style>
+  /* Custom focus styles for form inputs */
+  input:focus,
+  textarea:focus {
+    outline: none;
+  }
+</style>
