@@ -1,11 +1,9 @@
 ---
 import { getEntry, getDataEntryById } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { Calendar, Mail, Phone } from 'astro-feather-icons';
-import IconWhatsapp from '../../components/IconWhatsApp.astro';
-import IconLinkedin from '../../components/IconLinkedIn.astro';
-import IconGoogleMaps from '../../components/IconGmaps.astro';
-import ctaIllustration from '../../assets/images/illustration_cta_2.svg';
+
+import ContactForm from '../../components/ContactForm.astro';
+import CTA from '../../components/CTA.astro';
 
 export const prerender = true;
 
@@ -20,71 +18,13 @@ if (!contactEntry) {
 }
 const contactData = contactEntry.data[lang];
 
-// Récupérer la configuration du site
-const siteConfigEntry = await getEntry('config', 'site-config');
-if (!siteConfigEntry) {
-    throw new Error("Site config entry not found in contact page! Make sure you have a `site-config.md` file in `src/content/config`.");
-}
-const lawyers = siteConfigEntry?.data?.lawyers || [];
-const address = siteConfigEntry?.data?.address;
 
-if (!lawyers || lawyers.length === 0) {
-  throw new Error("FATAL: No lawyers found in site-config.yml for Contact page.");
-}
 
-const contactContent = (await getEntry('contact', 'contact'))?.data?.[lang] || {};
 
-const iconComponents = {
-  calendar: Calendar,
-  mail: Mail,
-  phone: Phone,
-  'message-circle': IconWhatsapp,
-  linkedin: IconLinkedin,
-  'map-pin': IconGoogleMaps
-};
 
-interface ContactButton {
-  type: string;
-  icon: keyof typeof iconComponents;
-  text: string;
-  subtext: string;
-  action?: string;
-}
 
-// Get appointment text based on language
-const getAppointmentText = (lawyerName: string) => {
-  switch(lang) {
-    case 'en':
-      return `Book with ${lawyerName}`;
-    case 'it':
-      return `Prenota con ${lawyerName}`;
-    default:
-      return `Rendez-vous avec ${lawyerName}`;
-  }
-};
 
-const getContactTexts = () => {
-  switch(lang) {
-    case 'en':
-      return {
-        email: 'Send an email',
-        phone: 'Call us',
-        address: 'Find our office'
-      };
-    case 'it':
-      return {
-        email: 'Invia un\'email',
-        phone: 'Chiamaci',
-        address: 'Trova il nostro ufficio'
-      };
-    default:
-      return {
-        email: 'Envoyer un e-mail',
-        phone: 'Nous appeler',
-        address: 'Trouver le cabinet'
-      };
-  }
-};
+
 
 const seoData = {
   title: contactData.seo?.title || `Contact - Christine Rizzo`,
@@ -104,138 +44,13 @@ const seoData = {
   <main class="container mx-auto px-4 py-8 md:py-16">
     <h1 class="text-3xl md:text-4xl font-light mb-8 md:mb-12 text-black text-center">{contactData.heading}</h1>
     
-    <div class="full-bleed bg-employeur py-10 md:py-16">
-      <div class="container mx-auto px-3 md:px-4">
-        <div class="flex flex-col lg:flex-row gap-8 items-center lg:items-start">
-          <!-- Image visible seulement sur mobile, au-dessus des boutons -->
-          <div class="w-full lg:hidden mb-6">
-            <img
-              src={ctaIllustration.src}
-              alt="illustration contact"
-              class="w-full h-auto max-w-[200px] mx-auto"
-              width={200}
-              height={200}
-              loading="lazy"
-            />
-          </div>
-          
-          <div class="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
-            
-            <!-- Appointment Buttons - One for each lawyer -->
-            <div class="sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-              {lawyers.map((lawyer: any) => (
-                <div class="flex flex-col items-center text-center">
-                  <button
-                    class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center mb-3 md:mb-5 hover:bg-travailleur transition-all duration-300 transform hover:scale-105 group shadow-md cursor-pointer"
-                    data-cal-link={lawyer.calendarLink ? lawyer.calendarLink.replace('https://cal.com/', '') : ''}
-                    data-cal-config='{"layout":"month_view"}'
-                  >
-                    <Calendar class="w-7 h-7 md:w-9 md:h-9 text-employeur group-hover:text-white transition-colors duration-300 pointer-events-none" />
-                  </button>
-                  <span class="text-sm md:text-base uppercase text-white font-semibold leading-relaxed tracking-wide mb-1 md:mb-2 px-2">
-                    {getAppointmentText(lawyer.name)}
-                  </span>
-                  <span class="text-sm md:text-base text-gray-300 font-normal italic">
-                    {lawyer.name}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            <!-- Email Section -->
-            <div class="flex flex-col items-center text-center">
-              <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center mb-3 md:mb-5 shadow-md">
-                <Mail class="w-7 h-7 md:w-9 md:h-9 text-employeur" />
-              </div>
-              <span class="text-sm md:text-base uppercase text-white font-semibold leading-relaxed tracking-wide mb-1 md:mb-2 px-2">
-                {getContactTexts().email}
-              </span>
-              <div class="text-sm md:text-base text-gray-300 font-normal space-y-1">
-                {lawyers.map((lawyer: any) => (
-                  <div>
-                    <div class="font-semibold">{lawyer.name}</div>
-                    <a href={`mailto:${lawyer.email}`} class="hover:text-white transition-colors duration-300 hover:underline block">
-                      {lawyer.email}
-                    </a>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <!-- Phone Section -->
-            <div class="flex flex-col items-center text-center">
-              <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center mb-3 md:mb-5 shadow-md">
-                <Phone class="w-7 h-7 md:w-9 md:h-9 text-employeur" />
-              </div>
-              <span class="text-sm md:text-base uppercase text-white font-semibold leading-relaxed tracking-wide mb-1 md:mb-2 px-2">
-                {getContactTexts().phone}
-              </span>
-              <div class="text-sm md:text-base text-gray-300 font-normal space-y-1">
-                {lawyers.map((lawyer: any) => (
-                  <div>
-                    <div class="font-semibold">{lawyer.name}</div>
-                    <a href={`tel:${lawyer.phone}`} class="hover:text-white transition-colors duration-300 hover:underline block">
-                      {lawyer.phone}
-                    </a>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <!-- Address Section -->
-            <div class="sm:col-span-2 flex flex-col items-center text-center">
-              <a
-                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="flex flex-col items-center group text-center"
-              >
-                <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center mb-3 md:mb-5 group-hover:bg-travailleur transition-all duration-300 transform group-hover:scale-105 shadow-md">
-                  <IconGoogleMaps class="w-7 h-7 md:w-9 md:h-9 text-employeur group-hover:text-white transition-colors duration-300" />
-                </div>
-                <span class="text-sm md:text-base uppercase text-white font-semibold leading-relaxed tracking-wide mb-1 md:mb-2 px-2">
-                  {getContactTexts().address}
-                </span>
-                <span class="text-sm md:text-base text-gray-300 font-normal italic group-hover:text-white transition-colors duration-300 group-hover:underline">
-                  {address}
-                </span>
-              </a>
-            </div>
-
-          </div>
-          
-          <!-- Image visible seulement sur desktop, à droite des boutons -->
-          <div class="hidden lg:block w-1/3 pl-12 flex justify-center lg:justify-end">
-            <img
-              src={ctaIllustration.src}
-              alt="illustration contact"
-              class="w-full h-auto max-w-sm lg:max-w-full"
-              width={400}
-              height={400}
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </div>
+    <!-- CTA Component -->
+    <CTA />
+    
+    <!-- Contact Form Section -->
+    <div class="container mx-auto px-4 py-12 md:py-16">
+      <ContactForm />
     </div>
   </main>
 </BaseLayout>
 
-<script>
-  document.addEventListener('astro:page-load', () => {
-    const appointmentButtons = document.querySelectorAll('[data-cal-link]');
-    appointmentButtons.forEach((button: HTMLElement) => {
-      button.addEventListener('click', (e) => {
-        e.preventDefault();
-        // @ts-ignore
-        if (typeof Cal !== 'undefined') {
-          (window as any).Cal("ui", {
-            styles: {branding: {brandColor: "#000000"}},
-            hideEventTypeDetails: false,
-            layout: "month_view"
-          });
-        }
-      });
-    });
-  });
-</script>
