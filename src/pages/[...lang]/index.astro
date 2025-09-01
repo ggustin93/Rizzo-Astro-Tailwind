@@ -80,8 +80,8 @@ export const prerender = true;
     <section class="py-6 md:py-10 relative">
       <div class="container mx-auto px-4 flex flex-col items-center md:flex-row md:items-center md:justify-between">
         <div class="w-full md:w-1/2 text-center md:text-left">
-          <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light mb-2 md:mb-3 text-gray-800">{content.hero.title}</h1>
-          <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-3 md:mb-4 text-accent font-light">{content.hero.subtitle}</h2>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-2 md:mb-3 text-gray-800 leading-tight">{content.hero.title.replace(' et ', ' & ')}</h1>
+          <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-3 md:mb-4 text-accent font-light leading-snug">{content.hero.subtitle}</h2>
           <p class="mb-5 md:mb-6 text-sm md:text-base text-dark-gray max-w-xl mx-auto md:mx-0 font-light leading-relaxed">{content.hero.description}</p>
           <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start space-y-3 sm:space-y-0 sm:space-x-4">
             <Button 
@@ -200,30 +200,59 @@ export const prerender = true;
           </h2>
           <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
         </div>
-        <div class="max-w-4xl mx-auto">
-          <div class="flex flex-col md:flex-row items-start gap-6 md:gap-8">
-            <div class="md:w-3/5 w-full">
-              <Picture 
-                src={profileImage} 
-                formats={['avif', 'webp']} 
-                alt="Christine Rizzo" 
-                class="w-full h-auto object-cover rounded-lg" 
-                decoding="async" 
-                loading="lazy" 
-                height="800"
-                width="800" 
-              />
+        <div class="max-w-3xl mx-auto">
+          <!-- Photo montage of both lawyers -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8">
+            <!-- Christine Rizzo -->
+            <div class="text-center">
+              <a href={`/${currentLang}/equipe/christine-rizzo`} class="block group">
+                <div class="aspect-square overflow-hidden rounded-lg shadow-lg mb-4 border border-gray-900 relative">
+                  <Picture 
+                    src={profileImage} 
+                    formats={['avif', 'webp']} 
+                    alt="Christine Rizzo" 
+                    class="w-full h-full object-cover object-center transition-all duration-300 group-hover:scale-105" 
+                    decoding="async" 
+                    loading="lazy" 
+                    height="800"
+                    width="800" 
+                  />
+                  <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                </div>
+                <h3 class="text-lg md:text-xl font-semibold text-travailleur mb-1 group-hover:text-travailleur/80 transition-colors">Christine Rizzo</h3>
+                <p class="text-sm text-gray-600">Avocate en droit du travail</p>
+              </a>
             </div>
-            <div class="md:w-2/5 w-full mt-4 md:mt-0 text-center md:text-left">
-              <p class="text-dark-gray text-sm md:text-base font-light leading-relaxed mb-6">{content.profil.description}</p>
-              <div class="flex justify-center md:justify-start">
-                <Button 
-                  href={`/${currentLang}/profil`} 
-                  text={content.profil.cta}
-                  variant="secondary"
-                  class="uppercase text-sm font-light"
-                />
-              </div>
+            <!-- Stéphanie Michiels -->
+            <div class="text-center">
+              <a href={`/${currentLang}/equipe/stephanie-michiels`} class="block group">
+                <div class="aspect-square overflow-hidden rounded-lg shadow-lg mb-4 border border-gray-900 relative">
+                  <img 
+                    src="/assets/images/s_michiels_photo.webp" 
+                    alt="Stéphanie Michiels" 
+                    class="w-full h-full object-cover object-center transition-all duration-300 group-hover:scale-105" 
+                    decoding="async" 
+                    loading="lazy" 
+                    height="800"
+                    width="800" 
+                  />
+                  <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                </div>
+                <h3 class="text-lg md:text-xl font-semibold text-travailleur mb-1 group-hover:text-travailleur/80 transition-colors">Stéphanie Michiels</h3>
+                <p class="text-sm text-gray-600">Avocate en droit du travail</p>
+              </a>
+            </div>
+          </div>
+          <!-- Description and CTA -->
+          <div class="text-center">
+            <p class="text-dark-gray text-sm md:text-base font-light leading-relaxed mb-6 max-w-3xl mx-auto">{content.profil.description}</p>
+            <div class="flex justify-center">
+              <Button 
+                href={`/${currentLang}/equipe`} 
+                text={`${content.profil.cta} →`}
+                variant="secondary"
+                class="uppercase text-sm font-light"
+              />
             </div>
           </div>
         </div>
