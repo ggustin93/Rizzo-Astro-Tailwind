@@ -148,7 +148,8 @@ const ecoDesignText = footerConfig.ecoDesignText || t.ecoDesign;
 const ecoDesignUrl = footerConfig.ecoDesignUrl || "https://www.websitecarbon.com/website/crizzo-avocate-be-fr/";
 const pwabloText = footerConfig.pwablo?.pwabloText || t.design;
 const pwabloUrl = footerConfig.pwablo?.pwabloUrl || "https://pwablo.be";
-const copyrightText = footerConfig.copyrightText || t.copyright;
+// Récupérer le copyright depuis site-config (source unique de vérité)
+const copyrightText = siteConfigEntry?.data?.copyrightText || 'C. Rizzo & S. Michiels';
 
 // S'assurer que l'année du copyright est toujours l'année en cours
 const formattedCopyrightText = `© ${currentYear} ${copyrightText}`;
