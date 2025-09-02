@@ -406,7 +406,9 @@ const contactButtonText = navConfig?.header?.contactButtonText || t.contact;
   
   // Smooth scrolling for anchor links - improved version
   document.addEventListener('click', function(e) {
-    const link = e.target.closest('a');
+    const target = e.target as HTMLElement;
+    if (!target) return;
+    const link = target.closest('a');
     if (!link) return;
     
     const href = link.getAttribute('href');
@@ -435,19 +437,19 @@ const contactButtonText = navConfig?.header?.contactButtonText || t.contact;
     
     // Keep the user-modified duration of 1000ms
     const duration = 300;
-    let startTime = null;
+    let startTime: number | null = null;
     
     // Using a simpler easing function optimized for Safari
     function easeOutCubic(t) {
       return 1 - Math.pow(1 - t, 3);
     }
     
-    function step(currentTime) {
+    function step(currentTime: number) {
       if (startTime === null) {
         startTime = currentTime;
       }
       
-      const elapsed = currentTime - startTime;
+      const elapsed = currentTime - startTime!;
       const progress = Math.min(elapsed / duration, 1);
       const easedProgress = easeOutCubic(progress);
       

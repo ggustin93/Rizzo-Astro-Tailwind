@@ -177,6 +177,7 @@ const navigationCollection = defineCollection({
 const uiTranslationsCollection = defineCollection({
   type: 'data',
   schema: z.record(
+    z.string(), // language key
     z.object({
       readMore: z.string(),
       viewAllArticles: z.string(),
