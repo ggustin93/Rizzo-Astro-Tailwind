@@ -7,7 +7,7 @@ export interface UiTranslations {
   navigation: string;
   legalPages: string;
   ecoDesignPwablo: string;
-  copyright: string;
+  copyright?: string;
   blogTitle: string;
   noArticles: string;
   allCategories: string;
@@ -65,7 +65,6 @@ const defaultTranslations: Record<SupportedLanguage, UiTranslations> = {
     navigation: "Navigation",
     legalPages: "Pages légales",
     ecoDesignPwablo: "Eco-design & Pwablo",
-    copyright: "© 2024 Christine Rizzo",
     blogTitle: "Articles",
     noArticles: "Aucun article trouvé.",
     allCategories: "Toutes catégories",
@@ -91,7 +90,6 @@ const defaultTranslations: Record<SupportedLanguage, UiTranslations> = {
     navigation: "Navigation",
     legalPages: "Legal pages",
     ecoDesignPwablo: "Eco-design & Pwablo",
-    copyright: "© 2024 Christine Rizzo",
     blogTitle: "Blog Posts",
     noArticles: "No articles found.",
     allCategories: "All categories",
@@ -117,7 +115,6 @@ const defaultTranslations: Record<SupportedLanguage, UiTranslations> = {
     navigation: "Navigazione",
     legalPages: "Pagine legali",
     ecoDesignPwablo: "Eco-design & Pwablo",
-    copyright: "© 2024 Christine Rizzo",
     blogTitle: "Articoli",
     noArticles: "Nessun articolo trovato.",
     allCategories: "Tutte le categorie",

@@ -36,6 +36,7 @@ const configCollection = defineCollection({
       calendarLink: z.string(),
     })),
     address: z.string(),
+    copyrightText: z.string().optional(),
   }),
 });
 
@@ -82,7 +83,7 @@ const navigationCollection = defineCollection({
           pwabloText: z.string(),
           pwabloUrl: z.string()
         }),
-        copyrightText: z.string()
+        copyrightText: z.string().optional()
       })
     }),
     en: z.object({
@@ -124,7 +125,7 @@ const navigationCollection = defineCollection({
           pwabloText: z.string(),
           pwabloUrl: z.string()
         }),
-        copyrightText: z.string()
+        copyrightText: z.string().optional()
       })
     }),
     it: z.object({
@@ -166,7 +167,7 @@ const navigationCollection = defineCollection({
           pwabloText: z.string(),
           pwabloUrl: z.string()
         }),
-        copyrightText: z.string()
+        copyrightText: z.string().optional()
       })
     }),
   })
@@ -183,7 +184,7 @@ const uiTranslationsCollection = defineCollection({
       navigation: z.string(),
       legalPages: z.string(),
       ecoDesignPwablo: z.string(),
-      copyright: z.string(),
+      copyright: z.string().optional(),
       blogTitle: z.string(),
       noArticles: z.string(),
       allCategories: z.string(),

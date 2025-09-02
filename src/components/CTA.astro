@@ -1,6 +1,6 @@
 ---
 import { Calendar, Mail, Phone } from 'astro-feather-icons';
-import { MessageSquare } from 'astro-feather-icons';
+import { MessageCircle } from 'astro-feather-icons';
 import ctaIllustration from '../assets/images/illustration_cta_2.svg';
 import { getEntry } from 'astro:content';
 
@@ -138,7 +138,7 @@ const handleAction = (type: string, action: string, calendarLink?: string) => {
           <div class="flex items-center mb-6 w-full justify-center">
             <div class="flex-grow h-px bg-white/30 max-w-[60px] lg:max-w-[100px] mr-3"></div>
             <h2 class="text-xl sm:text-2xl font-light text-white uppercase flex items-center whitespace-nowrap">
-              <MessageSquare class="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-white" />
+              <MessageCircle class="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-white" />
               {t.ctaTitle}
             </h2>
             <div class="flex-grow h-px bg-white/30 max-w-[60px] lg:max-w-[100px] ml-3"></div>
