@@ -17,10 +17,57 @@
 @layer base {
   html {
     @apply scroll-smooth;
+    font-size: 16px; /* Ensure base font size is adequate for desktop */
   }
   
   body {
     @apply font-sans;
+    line-height: 1.6; /* Improve readability */
+  }
+  
+  /* Enhanced mobile typography for better readability */
+  @media (max-width: 640px) {
+    html {
+      font-size: 18px; /* Increased base font on mobile for better readability */
+    }
+    
+    /* Improved paragraph readability on mobile */
+    p {
+      font-size: 1.0625rem !important; /* 19.125px on mobile - balanced size */
+      line-height: 1.7 !important;
+    }
+    
+    /* Larger text sizes for mobile */
+    .text-base {
+      font-size: 1.125rem !important; /* 20.25px on mobile */
+    }
+    
+    .text-lg {
+      font-size: 1.25rem !important; /* 22.5px on mobile */
+    }
+    
+    /* Ensure minimum font sizes for small text */
+    .text-sm {
+      font-size: 1rem !important; /* 18px on mobile, instead of 14px */
+    }
+    
+    .text-xs {
+      font-size: 0.9375rem !important; /* 16.875px on mobile, instead of 12px */
+    }
+    
+    /* Better readability for buttons and interactive elements */
+    button, .btn, a[class*="btn"] {
+      font-size: 1rem !important; /* 18px minimum for buttons */
+    }
+  }
+  
+  /* Enhanced tablet typography */
+  @media (min-width: 641px) and (max-width: 768px) {
+    /* Improve paragraph readability on tablet */
+    p {
+      font-size: 1.0625rem !important; /* 17px on tablet */
+      line-height: 1.65 !important;
+    }
   }
 }
 
@@ -64,5 +111,14 @@
     /* background-image: url('/src/assets/images/waves-pattern.svg');
     background-repeat: repeat;*/
   }
-
+  
+  /* Mobile-optimized button styles */
+  @media (max-width: 640px) {
+    .btn-mobile-optimized {
+      max-width: 280px !important;
+      width: auto !important;
+      padding: 0.75rem 1.5rem !important;
+      font-size: 1rem !important;
+    }
+  }
 }
