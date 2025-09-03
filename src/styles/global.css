@@ -25,48 +25,48 @@
     line-height: 1.6; /* Improve readability */
   }
   
-  /* Enhanced mobile typography for better readability */
+  /* Mobile typography - reversed to smaller sizes */
   @media (max-width: 640px) {
     html {
-      font-size: 18px; /* Increased base font on mobile for better readability */
+      font-size: 16px; /* Standard base font size */
     }
     
-    /* Improved paragraph readability on mobile */
+    /* Smaller paragraph text on mobile for better content fit */
     p {
-      font-size: 1.0625rem !important; /* 19.125px on mobile - balanced size */
-      line-height: 1.7 !important;
+      font-size: 0.9375rem !important; /* 15px on mobile */
+      line-height: 1.6 !important;
     }
     
-    /* Larger text sizes for mobile */
+    /* Standard text sizes for mobile */
     .text-base {
-      font-size: 1.125rem !important; /* 20.25px on mobile */
+      font-size: 1rem !important; /* 16px on mobile */
     }
     
     .text-lg {
-      font-size: 1.25rem !important; /* 22.5px on mobile */
+      font-size: 1.125rem !important; /* 18px on mobile */
     }
     
-    /* Ensure minimum font sizes for small text */
+    /* Small text sizes */
     .text-sm {
-      font-size: 1rem !important; /* 18px on mobile, instead of 14px */
+      font-size: 0.875rem !important; /* 14px on mobile */
     }
     
     .text-xs {
-      font-size: 0.9375rem !important; /* 16.875px on mobile, instead of 12px */
+      font-size: 0.75rem !important; /* 12px on mobile */
     }
     
-    /* Better readability for buttons and interactive elements */
+    /* Readable buttons but not oversized */
     button, .btn, a[class*="btn"] {
-      font-size: 1rem !important; /* 18px minimum for buttons */
+      font-size: 0.9375rem !important; /* 15px for buttons */
     }
   }
   
-  /* Enhanced tablet typography */
+  /* Tablet typography */
   @media (min-width: 641px) and (max-width: 768px) {
-    /* Improve paragraph readability on tablet */
+    /* Standard paragraph size on tablet */
     p {
-      font-size: 1.0625rem !important; /* 17px on tablet */
-      line-height: 1.65 !important;
+      font-size: 1rem !important; /* 16px on tablet */
+      line-height: 1.6 !important;
     }
   }
 }

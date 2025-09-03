@@ -135,21 +135,21 @@ const handleAction = (type: string, action: string, calendarLink?: string) => {
         </div>
         
         <div class="lg:w-2/5 flex flex-col justify-start items-center lg:items-center order-first lg:order-last">
-          <div class="flex items-center mb-6 w-full justify-center">
-            <div class="flex-grow h-px bg-white/30 max-w-[60px] lg:max-w-[100px] mr-3"></div>
+          <div class="flex items-center mb-6 w-full justify-center pt-4 px-4">
+            <div class="w-16 sm:w-20 lg:w-24 h-px bg-white mr-4"></div>
             <h2 class="text-xl sm:text-2xl font-light text-white uppercase flex items-center whitespace-nowrap">
               <MessageCircle class="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-white" />
               {t.ctaTitle}
             </h2>
-            <div class="flex-grow h-px bg-white/30 max-w-[60px] lg:max-w-[100px] ml-3"></div>
+            <div class="w-16 sm:w-20 lg:w-24 h-px bg-white ml-4"></div>
           </div>
           <div class="flex justify-center">
             <img
               src={ctaIllustration.src}
               alt="Contact illustration"
-              class="w-full h-auto max-w-[280px] sm:max-w-[320px] lg:max-w-[360px] opacity-90"
-              width={360}
-              height={144}
+              class="w-full h-auto max-w-[200px] sm:max-w-[240px] lg:max-w-[280px] opacity-90"
+              width={280}
+              height={112}
               loading="lazy"
             />
           </div>
