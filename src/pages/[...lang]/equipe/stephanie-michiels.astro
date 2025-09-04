@@ -22,12 +22,12 @@ if (!profileData) {
   throw new Error(`Content not found for language: ${lang}`);
 }
 
-// Extract Stéphanie Michiels's data
+// Extract Stephanie Michiels's data
 const lawyers = profileData.lawyers || [];
-const stephanieLawyer = lawyers.find((lawyer: any) => lawyer.name === "Stéphanie Michiels");
+const stephanieLawyer = lawyers.find((lawyer: any) => lawyer.name === "Stephanie Michiels");
 
 if (!stephanieLawyer) {
-  throw new Error(`Stéphanie Michiels not found in profile data for language: ${lang}`);
+  throw new Error(`Stephanie Michiels not found in profile data for language: ${lang}`);
 }
 
 // Translations
@@ -68,10 +68,10 @@ const t = translations[lang as keyof typeof translations];
 
 // SEO data
 const seoData = {
-  title: stephanieLawyer.seo?.title || `Stéphanie Michiels - Avocate spécialisée en droit du travail`,
-  description: stephanieLawyer.seo?.description || `Stéphanie Michiels, avocate au Barreau de Bruxelles spécialisée en droit du travail. Expertise pour entreprises et travailleurs.`,
+  title: stephanieLawyer.seo?.title || `Stephanie Michiels - Avocate spécialisée en droit du travail`,
+  description: stephanieLawyer.seo?.description || `Stephanie Michiels, avocate au Barreau de Bruxelles spécialisée en droit du travail. Expertise pour entreprises et travailleurs.`,
   image: stephanieLawyer.seo?.image || stephanieLawyer.image,
-  keywords: stephanieLawyer.seo?.keywords?.join(', ') || 'Stéphanie Michiels, avocat droit du travail, Bruxelles'
+  keywords: stephanieLawyer.seo?.keywords?.join(', ') || 'Stephanie Michiels, avocat droit du travail, Bruxelles'
 };
 ---
 
