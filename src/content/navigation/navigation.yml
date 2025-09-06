@@ -20,7 +20,7 @@ fr:
             url: /fr/equipe
           - label: CHRISTINE RIZZO
             url: /fr/equipe/christine-rizzo
-          - label: STÉPHANIE MICHIELS
+          - label: STEPHANIE MICHIELS
             url: /fr/equipe/stephanie-michiels
       - label: HONORAIRES
         url: /fr/honoraires
@@ -64,7 +64,7 @@ en:
             url: /en/equipe
           - label: CHRISTINE RIZZO
             url: /en/equipe/christine-rizzo
-          - label: STÉPHANIE MICHIELS
+          - label: STEPHANIE MICHIELS
             url: /en/equipe/stephanie-michiels
       - label: FEES
         url: /en/honoraires
@@ -108,7 +108,7 @@ it:
             url: /it/equipe
           - label: CHRISTINE RIZZO
             url: /it/equipe/christine-rizzo
-          - label: STÉPHANIE MICHIELS
+          - label: STEPHANIE MICHIELS
             url: /it/equipe/stephanie-michiels
       - label: ONORARI
         url: /it/honoraires
