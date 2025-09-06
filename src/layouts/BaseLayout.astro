@@ -158,26 +158,6 @@ const pathname = Astro.url.pathname;
       layout: "month_view"
     });
     </script>
-    <!-- Script de redirection pour les tokens d'invitation Netlify Identity -->
-    <script is:inline>
-      // Détection et redirection automatique pour les tokens d'invitation Decap CMS
-      if (typeof window !== 'undefined') {
-        const hash = window.location.hash;
-        const searchParams = new URLSearchParams(window.location.search);
-        
-        // Vérifier si on a un invite_token, recovery_token ou confirmation_token dans le hash ou les params
-        const hasInviteToken = hash.includes('invite_token=') || searchParams.has('invite_token');
-        const hasRecoveryToken = hash.includes('recovery_token=') || searchParams.has('recovery_token');
-        const hasConfirmationToken = hash.includes('confirmation_token=') || searchParams.has('confirmation_token');
-        
-        // Si on a un token ET qu'on n'est pas déjà sur /admin/
-        if ((hasInviteToken || hasRecoveryToken || hasConfirmationToken) && !window.location.pathname.includes('/admin')) {
-          // Conserver le hash complet pour Netlify Identity
-          const newUrl = window.location.origin + '/admin/' + window.location.hash + window.location.search;
-          window.location.replace(newUrl);
-        }
-      }
-    </script>
 </head>
 <body class="bg-beige bg-svg-pattern">
   <div class="container mx-auto px-4">
@@ -238,6 +218,34 @@ const pathname = Astro.url.pathname;
           });
         }
       });
+    </script>
+    
+    <!-- Netlify Identity Invite Token Redirect Script -->
+    <script>
+      // Function to check and redirect invite tokens
+      function checkAndRedirectToken() {
+        const hash = window.location.hash;
+        const searchParams = new URLSearchParams(window.location.search);
+        
+        // Check for invite_token, recovery_token, or confirmation_token in hash or query params
+        const hasInviteToken = hash.includes('invite_token=') || searchParams.has('invite_token');
+        const hasRecoveryToken = hash.includes('recovery_token=') || searchParams.has('recovery_token');
+        const hasConfirmationToken = hash.includes('confirmation_token=') || searchParams.has('confirmation_token');
+        
+        // If we have a token AND we're not already on /admin/
+        if ((hasInviteToken || hasRecoveryToken || hasConfirmationToken) && !window.location.pathname.includes('/admin')) {
+          // Preserve the complete hash and query params for Netlify Identity
+          const newUrl = window.location.origin + '/admin/' + window.location.hash + window.location.search;
+          // Use replace to avoid adding to browser history
+          window.location.replace(newUrl);
+        }
+      }
+      
+      // Run immediately on initial page load (for direct navigation via email link)
+      checkAndRedirectToken();
+      
+      // Also run after Astro ViewTransitions navigation (for client-side routing)
+      document.addEventListener('astro:page-load', checkAndRedirectToken);
     </script>
 </body>
 </html>
