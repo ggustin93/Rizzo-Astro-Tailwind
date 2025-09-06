@@ -44,12 +44,23 @@ const translations = {
 
 const t = translations[lang as keyof typeof translations] || translations.fr;
 
+// Helper function to validate if a calendar link is valid
+const isValidCalendarLink = (link: string | undefined): boolean => {
+  if (!link) return false;
+  // Check if it's a valid Cal.com URL
+  return link.startsWith('https://cal.com/') || link.startsWith('http://cal.com/');
+};
+
 const handleAction = (type: string, action: string, calendarLink?: string) => {
   switch(type) {
     case 'email':
       return `window.location.href = 'mailto:${action}'`;
     case 'appointment':
-      return `Cal('ui', {"styles":{"branding":{"brandColor":"#000000"}},"hideEventTypeDetails":false,"layout":"month_view"})`;
+      // Only trigger Cal widget if we have a valid calendar link
+      if (isValidCalendarLink(calendarLink)) {
+        return `Cal('ui', {"styles":{"branding":{"brandColor":"#000000"}},"hideEventTypeDetails":false,"layout":"month_view"})`;
+      }
+      return ''; // Return empty string if no valid link
     case 'phone':
       return `window.location.href = 'tel:${action}'`;
     default:
@@ -91,24 +102,41 @@ const handleAction = (type: string, action: string, calendarLink?: string) => {
                   
                   <!-- Appointment Button -->
                   <div class="flex flex-col items-center">
-                    <button
-                      class="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full flex items-center justify-center mb-2 hover:bg-travailleur hover:shadow-lg transition-all duration-300 transform hover:scale-105 group cursor-pointer"
-                      onclick={handleAction('appointment', t.bookAction, lawyer.calendarLink)}
-                      data-cal-link={lawyer.calendarLink?.replace('https://cal.com/', '')}
-                      data-cal-config='{"layout":"month_view"}'
-                      aria-label={`Book appointment with ${lawyer.name}`}
-                    >
-                      <Calendar class="w-7 h-7 sm:w-8 sm:h-8 text-employeur group-hover:text-white transition-colors duration-300 pointer-events-none" />
-                    </button>
-                    <span class="text-sm uppercase text-white/90 font-medium tracking-wider mb-1">{t.appointment}</span>
-                    <button 
-                      class="text-sm sm:text-base text-white/70 font-light hover:text-white transition-colors duration-200 hover:underline cursor-pointer"
-                      onclick={handleAction('appointment', t.bookAction, lawyer.calendarLink)}
-                      data-cal-link={lawyer.calendarLink?.replace('https://cal.com/', '')}
-                      data-cal-config='{"layout":"month_view"}'
-                    >
-                      {t.bookAction}
-                    </button>
+                    {isValidCalendarLink(lawyer.calendarLink) ? (
+                      <>
+                        <button
+                          class="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full flex items-center justify-center mb-2 hover:bg-travailleur hover:shadow-lg transition-all duration-300 transform hover:scale-105 group cursor-pointer"
+                          onclick={handleAction('appointment', t.bookAction, lawyer.calendarLink)}
+                          data-cal-link={lawyer.calendarLink?.replace('https://cal.com/', '')}
+                          data-cal-config='{"layout":"month_view"}'
+                          aria-label={`Book appointment with ${lawyer.name}`}
+                        >
+                          <Calendar class="w-7 h-7 sm:w-8 sm:h-8 text-employeur group-hover:text-white transition-colors duration-300 pointer-events-none" />
+                        </button>
+                        <span class="text-sm uppercase text-white/90 font-medium tracking-wider mb-1">{t.appointment}</span>
+                        <button 
+                          class="text-sm sm:text-base text-white/70 font-light hover:text-white transition-colors duration-200 hover:underline cursor-pointer"
+                          onclick={handleAction('appointment', t.bookAction, lawyer.calendarLink)}
+                          data-cal-link={lawyer.calendarLink?.replace('https://cal.com/', '')}
+                          data-cal-config='{"layout":"month_view"}'
+                        >
+                          {t.bookAction}
+                        </button>
+                      </>
+                    ) : (
+                      <>
+                        <div
+                          class="w-16 h-16 sm:w-20 sm:h-20 bg-white/50 rounded-full flex items-center justify-center mb-2 cursor-not-allowed opacity-50"
+                          aria-label={`Appointment booking not available for ${lawyer.name}`}
+                        >
+                          <Calendar class="w-7 h-7 sm:w-8 sm:h-8 text-employeur/50 pointer-events-none" />
+                        </div>
+                        <span class="text-sm uppercase text-white/50 font-medium tracking-wider mb-1">{t.appointment}</span>
+                        <span class="text-sm sm:text-base text-white/30 font-light">
+                          -
+                        </span>
+                      </>
+                    )}
                   </div>
                   
                   <!-- Phone Button -->
