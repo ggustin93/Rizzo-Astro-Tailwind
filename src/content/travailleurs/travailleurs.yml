@@ -16,14 +16,14 @@ fr:
       l'écart à cause d'un burn-out ?
     - Vous êtes victime d'un accident du travail ?
     - Votre statut n'est pas clair ? Vous pensez être un faux indépendant ?
-  servicesTitle: Mes services
+  servicesTitle: Nos services
   services:
     - icon: BriefCase
       text: Conseils juridiques du recrutement à la rupture de la relation de travail
     - icon: Shield
       text: Défense devant les cours et tribunaux du travail
     - icon: Handshake
-      text: Négociation d'accords amiables
+      text: Négociation d'accords amiables - Droit collaboratif
   ctaText: En savoir plus sur les tarifs
   seo:
     title: Services juridiques pour travailleurs | Christine Rizzo Avocate
@@ -56,7 +56,7 @@ en:
       marginalized because of burnout
     - You are a victim of a work accident
     - Your status is unclear. You think you are a false independent contractor.
-  servicesTitle: My services
+  servicesTitle: Our services
   services:
     - icon: BriefCase
       text: Legal advice from recruitment to termination of the employment
@@ -98,7 +98,7 @@ it:
     - Sei vittima di un infortunio sul lavoro?
     - La tua situazione non è chiara? Pensi di essere un falso lavoratore
       autonomo?
-  servicesTitle: I miei servizi
+  servicesTitle: I nostri servizi
   services:
     - icon: BriefCase
       text: Consulenza legale dall'assunzione alla cessazione del rapporto di lavoro

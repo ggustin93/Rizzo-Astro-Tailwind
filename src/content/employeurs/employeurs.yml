@@ -2,6 +2,7 @@ fr:
   title: Accompagnement et défense des entreprises
   questions:
     - Projets d'acquisition - audit en droit du travail et de la sécurité sociale
+    - GDPR
     - Premier engagement en Belgique
     - Contrats de salariés ou indépendants
     - Problématique des faux indépendants
@@ -20,18 +21,18 @@ fr:
       - les lois anti-discrimination
       - et les outils juridiques visant à améliorer l'équilibre vie privée-vie
         professionnelle
-  servicesTitle: Mes services
+  servicesTitle: Nos services
   services:
     - icon: Search
       text: Audit - Due Diligence en droit du travail et de la sécurité sociale
     - icon: FileText
       text: Rédaction et révision de vos contrats de travail, règlement de travail et
-        politiques RH
+        politiques RH et GDPR
     - icon: UserPlus
       text: Conseils - gestion de la relation individuelle de travail, du recrutement
         à la rupture
     - icon: Handshake
-      text: Négociation d'accords amiables
+      text: Négociation d'accords amiables - Droit collaboratif
     - icon: Shield
       text: Défense devant les cours et tribunaux du travail et devant les inspections
         du travail et de l'ONSS
@@ -52,6 +53,7 @@ en:
   title: Legal counsel and defense for employers
   questions:
     - Acquisition audits in employment law and social security
+    - GDPR
     - Hiring first employees in Belgium
     - Contracts for employees or independent contractors
     - Issue of false independent contractor
@@ -68,7 +70,7 @@ en:
       - workplace well-being regulations
       - anti-discrimination laws
       - and legal tools aimed at improving work-life balance
-  servicesTitle: My Services
+  servicesTitle: Our Services
   services:
     - icon: Search
       text: Audit - due diligence in labor and social security law
@@ -106,6 +108,7 @@ it:
   questions:
     - Audit aziendale in diritto del lavoro e previdenza sociale nelle
       operazioni di acquisizioni
+    - GDPR
     - Prima assunzione in Belgio
     - Contratti di lavoro dipendente o autonomo
     - Problema del falso rapporto di lavoro autonomo
@@ -126,7 +129,7 @@ it:
       - le leggi antidiscriminazione
       - e gli strumenti giuridici volti a migliorare l'equilibrio tra vita
         privata e professionale
-  servicesTitle: I Miei Servizi
+  servicesTitle: I nostri servizi
   services:
     - icon: Search
       text: Audit - Due Diligence in diritto del lavoro

@@ -5,11 +5,7 @@ fr:
       Ne pas savoir combien va coûter l'intervention de votre avocat.e peut être
       une source d'inquiétude. 
 
-      Nous vous proposons la plupart de nos prestations à un tarif forfaitaire fixe "tout compris" payable par mois augmenté le cas échéant d'un honoraire de résultat.
-
-      Vous savez donc exactement ce que vous allez payer par mois et ce que vous allez payer au total. 
-
-      Le nombre de mensualités est déterminé ensemble en fonction de votre situation personnelle et de votre dossier (par exemple la durée estimée de la procédure judiciaire).
+      Nous vous proposons nos prestations soit à un tarif horaire soit à un tarif forfaitaire fixe "tout compris" payable par mois augmenté le cas échéant d'un honoraire de résultat. Vous savez donc exactement ce que vous allez payer par mois et ce que vous allez payer au total. Le nombre de mensualités est déterminé ensemble en fonction de votre situation personnelle et de votre dossier (par exemple la durée estimée de la procédure judiciaire).
 
 
       Si nous choisissons de travailler ensemble sur base d'un tarif horaire, nos prestations vous sont facturées chaque mois, au fur et à mesure des prestations.
@@ -20,6 +16,7 @@ fr:
 
       Les frais liés à l'intervention de tiers (huissiers, experts, traducteurs, avocats spécialisés dans d'autres domaines) ou les frais de justice (droits de greffe) sont refacturés au prix coûtant ou directement payables au tiers intervenant.
   forfaits:
+
     title: Exemples de formules forfaitaires
     intro: Les formules forfaitaires suivantes sont données à titre indicatif
       uniquement, le montant des honoraires convenu dépendra de la nature du
@@ -30,7 +27,7 @@ fr:
       - title: Procédure judiciaire - Contestation d'un licenciement
         description: (par exemple pour motif grave, licenciement abusif,
           discriminatoire, manifestement déraisonnable)
-        prix: 290 € htva / mois pendant 24 mois (soit 6.960 € htva) + 10% sur les
+        prix: 350 € htva / mois pendant 24 mois (soit 8.400 € htva) + 10% sur les
           résultats nets obtenus
         services:
           - Montant couvrant un degré de juridiction
@@ -51,11 +48,11 @@ fr:
       - title: Consultation 30 min "one shot" - Avoir une réponse rapide à une question
         options:
           - description: Sans analyse de documents
-            prix: 75 € htva
+            prix: 100 € htva
           - description: Avec analyse de documents
-            prix: 200 € htva
+            prix: 250 € htva
       - title: Règlement de travail
-        prix: 2.000 € htva
+        prix: 2.500 € htva
         services:
           - Rédaction ou mise à jour du règlement de travail
           - Accompagnement dans le cadre de la procédure d'affichage et de dépôt
@@ -63,11 +60,11 @@ fr:
   transparence:
     title: Transparence
     points:
-      - Le premier contact vise généralement à identifier vos besoins et si je
-        suis la bonne personne pour y répondre.
+      - Le premier contact vise généralement à identifier vos besoins et si nous
+        sommes les bonnes personnes pour y répondre.
       - Nous discutons des conditions financières dès le premier entretien.
       - Vous recevrez ensuite une proposition de prix écrite ainsi que toutes
-        les conditions de mon intervention.
+        les conditions de notre intervention.
   assurance:
     title: Pensez à l'assurance protection juridique
     content: >
@@ -116,7 +113,7 @@ en:
       Not knowing how much your lawyer's intervention will cost can be a source
       of concern.
 
-      We offer most of our services at a fixed, all-inclusive rate payable monthly.
+      We offer our services at an hourly rate or at a fixed, all-inclusive rate payable monthly.
 
       Therefore, you know exactly what you will pay per month and in total.
 
@@ -142,7 +139,7 @@ en:
       - title: Legal proceedings - Contesting a dismissal
         description: (e.g. for serious misconduct, abusive, discriminatory, manifestly
           unreasonable dismissal)
-        prix: 290 € excl. VAT / month for 24 months (i.e. 6.960 € excl. VAT) + 10% on
+        prix: 350 € excl. VAT / month for 24 months (i.e. 8.400 € excl. VAT) + 10% on
           the net results obtained
         services:
           - Amount covering one degree of jurisdiction
@@ -162,11 +159,11 @@ en:
       - title: 30-minute "one-shot" consultation - Getting a quick answer to a question
         options:
           - description: Without document analysis
-            prix: 75 € excl. VAT
+            prix: 100 € excl. VAT
           - description: With document analysis
-            prix: 200 € excl. VAT
+            prix: 250 € excl. VAT
       - title: Work regulations
-        prix: 2.000 € excl. VAT
+        prix: 2.500 € excl. VAT
         services:
           - Drafting or updating work regulations
           - Support in the posting and filing procedure with the labor
@@ -174,10 +171,10 @@ en:
   transparence:
     title: Transparency
     points:
-      - The initial contact aims at identifying your needs and determining if I
-        am the right person to address them.
+      - The initial contact aims at identifying your needs and determining if we
+        are the right persons to address them.
       - We discuss financial terms from the first meeting.
-      - You receive a written price proposal and all the conditions of my
+      - You receive a written price proposal and all the conditions of our
         intervention.
   assurance:
     title: Consider legal protection insurance
@@ -226,7 +223,7 @@ it:
       Non sapere quanto costerà l'intervento del vostro avvocato può essere
       fonte di preoccupazione.
 
-      Vi proponiamo la maggior parte delle nostre prestazioni a una tariffa forfettaria fissa "tutto incluso" pagabile mensilmente.
+      Vi proponiamo i nostri servizi a una tariffa oraria o forfettaria fissa "tutto incluso" pagabile mensilmente.
 
       Sapete quindi esattamente quanto pagherete al mese e quanto pagherete in totale.
 
@@ -252,7 +249,7 @@ it:
       - title: Procedura giudiziaria - Contestazione di un licenziamento
         description: (ad esempio per giusta causa, licenziamento abusivo,
           discriminatorio, manifestamente irragionevole)
-        prix: 290 € IVA esclusa / mese per 24 mesi (cioè 6.960 € IVA esclusa) + 10% sui
+        prix: 350 € IVA esclusa / mese per 24 mesi (cioè 8.400 € IVA esclusa) + 10% sui
           risultati netti ottenuti
         services:
           - Importo che copre un grado di giurisdizione
@@ -273,11 +270,11 @@ it:
       - title: Consulenza 30 min "one shot" - Avere una risposta rapida a una domanda
         options:
           - description: Senza analisi di documenti
-            prix: 75 € IVA esclusa
+            prix: 100 € IVA esclusa
           - description: Con analisi di documenti
-            prix: 200 € IVA esclusa
+            prix: 250 € IVA esclusa
       - title: Regolamento di lavoro
-        prix: 2.000 € IVA esclusa
+        prix: 2.500 € IVA esclusa
         services:
           - Redazione o aggiornamento del regolamento di lavoro
           - Accompagnamento nell'ambito della procedura di affissione e di
@@ -286,10 +283,10 @@ it:
     title: Trasparenza
     points:
       - Il primo contatto mira generalmente a identificare le vostre esigenze e
-        se sono la persona giusta per rispondervi.
+        se siamo le persone giuste per rispondervi.
       - Discutiamo delle condizioni finanziarie fin dal primo incontro.
       - Riceverete una proposta di prezzo scritta con tutte le condizioni del
-        mio intervento.
+        nostro intervento.
   assurance:
     title: Pensate all'assicurazione di protezione giuridica
     content: >
