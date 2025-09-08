@@ -2,7 +2,7 @@ teamImages:
   - name: Christine Rizzo
     image: https://uploads-ssl.webflow.com/66a3633bf638ce4da95b8ad7/66a367d9f9bfc9b93e01c4a3_Christine_Apropos-b.jpeg
   - name: Stephanie Michiels
-    image: /assets/images/s_michiels_photo.webp
+    image: /assets/images/photo-stephanie-michiels.jpg
 fr:
   lawyers:
     - careerPath:
@@ -102,7 +102,7 @@ fr:
         - year: 2020-2025
           event: Juriste au sein de la Commission européenne
         - year: 2017-2020
-          event: Avocate au sein du département droit social chez Crowell & Moring LLP
+          event: Avocate au sein du département droit social d'un cabinet international
         - year: "2019"
           event: Deuxième prix du concours d'éloquence du Barreau de Bruxelles « J'accuse
             ! »
@@ -112,13 +112,14 @@ fr:
         - year: 2017-2019
           event: Trésorière de la Conférence du Jeune Barreau de Bruxelles
         - year: "2014"
-          event: Médiatrice bénévole auprès du Tribunal via la « California Academy of
+          event: Médiatrice bénévole auprès du tribunal via la « California Academy of
             Mediation Professionals », États-Unis
         - year: "2014"
           event: LLM en règlement alternatif des litiges – « University of California Los
             Angeles », États-Unis
         - year: "2013"
-          event: Lauréate d'une bourse Fulbright
+          event: Lauréate d'une bourse Fulbright et d'une bourse de la « University of
+            California Los Angeles »
         - year: "2013"
           event: Master en droit – Université Catholique de Louvain
       publications:
@@ -143,7 +144,7 @@ fr:
         - Inscrite au Barreau de Bruxelles en 2015, je suis passionnée par les
           questions liées aux ressources humaines et aux relations entre
           employeur et travailleur·euse·s, tant dans le secteur privé que
-          publique.
+          public.
         - J'ai acquis une vision pluri-secteurs du droit du travail. En qualité
           d'avocate, j'ai notamment travaillé au sein du département droit
           social d'un cabinet international. J'y ai traité des dossiers
@@ -268,54 +269,53 @@ en:
           - employee employer defense
           - workplace litigation specialist Belgium
     - name: Stephanie Michiels
-      title: Belgian and European Labor Law Attorney
+      title: Belgian and European Employment Lawyer
       languages: I work in French, Dutch, and English.
       bio:
-        - Admitted to the Brussels Bar in 2015, I am passionate about human
-          resources issues and employer-employee relations, in both the private
-          and public sectors.
-        - I have gained a multi-sector perspective on labor law. As a lawyer, I
-          worked in the social law department of an international law firm,
-          handling fascinating cases for multinational companies, SMEs, and
-          public entities. I then served as a legal advisor at the European
-          Commission.
-        - Matters related to compensation packages for employees in the public
-          and private sectors are part of my daily practice. I also handle all
-          your questions related to contract terminations, career progression,
-          social security coverage, discrimination, moral and sexual harassment
-          at work, as well as whistleblower issues.
-        - I am also trained in personal data protection law.
+        - Admitted to the Brussels Bar in 2015, I am passionate about HR-related
+          issues and employer-employee relations, both in the public and private
+          sector.
+        - I have gained a multi-sector perspective on labour law. As a lawyer, I
+          worked in the employment law department of an international law firm,
+          handling cases for multinational companies, SMEs, and public entities.
+          I then served as a legal officer at the European Commission.
+        - Matters related to pay and compensation packages for employees in the
+          public and private sectors are part of my daily practice. I also
+          handle all your questions related to contract termination, career
+          progression, social security coverage, discrimination, moral and
+          sexual harassment at work, as well as whistleblowing issues.
+        - I am also trained in data protection law.
         - In my practice, I favor negotiation when it allows for a quick
-          resolution to disputes. However, I vigorously and convincingly
-          advocate for my clients in court when a negotiated outcome is not
-          feasible.
+          resolution to disputes. However, I vigorously advocate for my clients
+          in court when a negotiated outcome is not feasible.
       careerPath:
         - year: "2025"
           event: Partnership with Christine Rizzo
         - year: 2020-2025
-          event: Legal advisor at the European Commission
+          event: Legal officer at the European Commission
         - year: 2017-2020
           event: Attorney in the social law department at Crowell & Moring LLP
         - year: "2019"
           event: Second prize at the Brussels Bar eloquence contest 'J'accuse!'
         - year: "2018"
-          event: Co-organizer of the first Brussels Bar legal clinic with Christine Rizzo
+          event: Co-organizer of the first Brussels Bar call-in legal clinic with
+            Christine Rizzo
         - year: 2017-2019
-          event: Treasurer of the Young Brussels Bar Conference
+          event: Treasurer of the Brussels Bar Association
         - year: "2014"
-          event: Volunteer mediator at the Court via the California Academy of Mediation
-            Professionals, USA
+          event: Volunteer mediator at the Court via the 'California Academy of Mediation
+            Professionals', USA
         - year: "2014"
           event: LLM in Alternative Dispute Resolution - University of California Los
             Angeles, USA
         - year: "2013"
-          event: Fulbright Scholarship recipient
+          event: Fulbright Scholarship and Dean Tuition Fellowship recipient
         - year: "2013"
           event: Master in Law - Catholic University of Louvain
       publications:
         - date: December 2020
-          title: Variable remuneration. Approach in labor law, social security law, tax
-            law and human resources practice
+          title: Variable remuneration. Approach in employment law, social security law,
+            tax law and human resources
           publisher: Larcier
           coAuthors:
             - Christine Rizzo
