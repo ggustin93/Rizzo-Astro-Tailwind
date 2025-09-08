@@ -70,10 +70,33 @@ const handleAction = (type: string, action: string, calendarLink?: string) => {
 ---
 
 <div class="full-bleed bg-employeur rounded-lg overflow-hidden">
-  <section id="contact" class="py-4 sm:py-6 px-4 sm:px-6 lg:px-8">
+  <section id="contact" class="py-4 pb-8 sm:py-6 px-4 sm:px-6 lg:px-8">
     <div class="container mx-auto">
       <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
-        <div class="lg:w-3/5 text-center lg:text-left">
+        <!-- Right column appears first on mobile, second on desktop -->
+        <div class="lg:w-2/5 flex flex-col items-center justify-start order-first lg:order-last">
+          <!-- Title visible on all screen sizes -->
+          <div class="flex items-center mb-4 w-full justify-center pt-0">
+            <div class="w-12 sm:w-16 lg:w-16 h-px bg-white mr-3"></div>
+            <h2 class="text-lg sm:text-xl lg:text-2xl font-light text-white uppercase flex items-center whitespace-nowrap">
+              <MessageCircle class="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-white" />
+              {t.ctaTitle}
+            </h2>
+            <div class="w-12 sm:w-16 lg:w-16 h-px bg-white ml-3"></div>
+          </div>
+          <!-- Image below the title -->
+          <img
+            src={ctaIllustration.src}
+            alt="Contact illustration"
+            class="w-full h-auto max-w-[200px] sm:max-w-[240px] lg:max-w-[280px] opacity-90"
+            width={280}
+            height={112}
+            loading="lazy"
+          />
+        </div>
+        
+        <!-- Left column appears second on mobile, first on desktop -->
+        <div class="lg:w-3/5 text-center lg:text-left order-last lg:order-first">
           <div class="space-y-4 max-w-2xl mx-auto lg:mx-0">
             {lawyers.map((lawyer: any, index: number) => (
               <div class={`${index > 0 ? 'pt-4 border-t border-white/20' : ''}`}>
@@ -92,7 +115,7 @@ const handleAction = (type: string, action: string, calendarLink?: string) => {
                     </button>
                     <span class="text-sm uppercase text-white/90 font-medium tracking-wider mb-1">{t.email}</span>
                     <button 
-                      class="text-sm sm:text-base text-white/70 font-light hover:text-white transition-colors duration-200 hover:underline cursor-pointer max-w-full truncate px-1"
+                      class="text-xs sm:text-sm text-white/70 font-light hover:text-white transition-colors duration-200 hover:underline cursor-pointer max-w-full break-all px-1"
                       onclick={handleAction('email', lawyer.email)}
                       title={lawyer.email}
                     >
@@ -159,27 +182,6 @@ const handleAction = (type: string, action: string, calendarLink?: string) => {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-        
-        <div class="lg:w-2/5 flex flex-col justify-start items-center lg:items-center order-first lg:order-last">
-          <div class="flex items-center mb-6 w-full justify-center pt-4 px-4">
-            <div class="w-16 sm:w-20 lg:w-24 h-px bg-white mr-4"></div>
-            <h2 class="text-xl sm:text-2xl font-light text-white uppercase flex items-center whitespace-nowrap">
-              <MessageCircle class="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-white" />
-              {t.ctaTitle}
-            </h2>
-            <div class="w-16 sm:w-20 lg:w-24 h-px bg-white ml-4"></div>
-          </div>
-          <div class="flex justify-center">
-            <img
-              src={ctaIllustration.src}
-              alt="Contact illustration"
-              class="w-full h-auto max-w-[200px] sm:max-w-[240px] lg:max-w-[280px] opacity-90"
-              width={280}
-              height={112}
-              loading="lazy"
-            />
           </div>
         </div>
       </div>

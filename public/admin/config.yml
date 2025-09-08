@@ -121,7 +121,7 @@ collections:
                 widget: "object"
                 fields:
                   - {label: "Titre SEO", name: "title", widget: "string", required: false}
-                  - {label: "Description SEO", name: "description", widget: "text", required: false, pattern: ['^.{0,200}$', "La description idéale fait 155-160 caractères (max 200)"], hint: "Description pour le SEO - idéalement 155-160 caractères (max 200)"}
+                  - {label: "Description SEO", name: "description", widget: "text", required: false, pattern: ['^.{0,320}$', "La description idéale fait 155-160 caractères (max 320)"], hint: "Description pour le SEO - idéalement 155-160 caractères (max 320)"}
                   - {label: "Image SEO", name: "image", widget: "image", required: false}
                   - label: "Mots-clés SEO"
                     name: "keywords"
@@ -168,7 +168,7 @@ collections:
                 widget: "object"
                 fields:
                   - {label: "Titre SEO", name: "title", widget: "string", required: false}
-                  - {label: "Description SEO", name: "description", widget: "text", required: false, pattern: ['^.{0,200}$', "La description idéale fait 155-160 caractères (max 200)"], hint: "Description pour le SEO - idéalement 155-160 caractères (max 200)"}
+                  - {label: "Description SEO", name: "description", widget: "text", required: false, pattern: ['^.{0,320}$', "La description idéale fait 155-160 caractères (max 320)"], hint: "Description pour le SEO - idéalement 155-160 caractères (max 320)"}
                   - {label: "Image SEO", name: "image", widget: "image", required: false}
                   - label: "Mots-clés SEO"
                     name: "keywords"
@@ -249,7 +249,7 @@ collections:
                     collapsed: true
                     fields:
                       - {label: "Titre SEO", name: "title", widget: "string", required: false}
-                      - {label: "Description SEO", name: "description", widget: "text", required: false, pattern: ['^.{0,200}$', "La description idéale fait 155-160 caractères (max 200)"]}
+                      - {label: "Description SEO", name: "description", widget: "text", required: false, pattern: ['^.{0,320}$', "La description idéale fait 155-160 caractères (max 320)"]}
                       - {label: "Image SEO", name: "image", widget: "string", required: false}
                       - label: "Mots-clés SEO"
                         name: "keywords"
@@ -444,7 +444,7 @@ collections:
           name: "point"
           widget: "text"
         hint: "Optionnel. Résumé en quelques points clés de l'article. Chaque point peut être sur plusieurs lignes. Ils apparaîtront dans un encadré au début de l'article."
-      - {label: "Description SEO", name: "description", widget: "text", required: true, pattern: ['^.{0,200}$', "La description idéale fait 155-160 caractères (max 200)"], hint: "Description pour le SEO - idéalement 155-160 caractères (max 200)"}
+      - {label: "Description SEO", name: "description", widget: "text", required: true, pattern: ['^.{0,320}$', "La description idéale fait 155-160 caractères (max 320)"], hint: "Description pour le SEO - idéalement 155-160 caractères (max 320)"}
       - label: "Mots-clés SEO (optionnel)"
         name: "keywords"
         widget: "list"
@@ -470,7 +470,7 @@ collections:
       - label: "Highlights (optional)"
         name: "highlights"
         hint: "Optional. Summary of the article in a few key points. Each point can be multiple lines. They will appear in a box at the beginning of the article."
-      - {label: "SEO Description", name: "description", widget: "text", required: true, pattern: ['^.{0,200}$', "Ideal description is 155-160 characters (max 200)"], hint: "SEO description - ideally 155-160 characters (max 200)"}
+      - {label: "SEO Description", name: "description", widget: "text", required: true, pattern: ['^.{0,320}$', "Ideal description is 155-160 characters (max 320)"], hint: "SEO description - ideally 155-160 characters (max 320)"}
       - label: "SEO Keywords (optional)"
         name: "keywords"
         hint: "Optional. Add relevant keywords for SEO."
@@ -492,7 +492,7 @@ collections:
       - label: "Punti salienti (opzionale)"
         name: "highlights"
         hint: "Opzionale. Riassunto dell'articolo in alcuni punti chiave. Ogni punto può essere su più righe. Appariranno in un riquadro all'inizio dell'articolo."
-      - {label: "Descrizione SEO", name: "description", widget: "text", required: true, pattern: ['^.{0,200}$', "La descrizione ideale è di 155-160 caratteri (max 200)"], hint: "Descrizione SEO - idealmente 155-160 caratteri (max 200)"}
+      - {label: "Descrizione SEO", name: "description", widget: "text", required: true, pattern: ['^.{0,320}$', "La descrizione ideale è di 155-160 caratteri (max 320)"], hint: "Descrizione SEO - idealmente 155-160 caratteri (max 320)"}
       - label: "Parole chiave SEO (opzionale)"
         name: "keywords"
         hint: "Opzionale. Aggiungi parole chiave rilevanti per il SEO."
@@ -561,6 +561,12 @@ collections:
                 widget: "string"
                 hint: "URL complète du profil LinkedIn"
               
+              - label: "Lien calendrier Cal.com"
+                name: "calendarLink"
+                widget: "string"
+                hint: "URL complète du calendrier Cal.com (ex: https://cal.com/username/meeting)"
+                required: false
+              
               - label: "Adresse du cabinet"
                 name: "address"
                 widget: "string"
@@ -590,8 +596,8 @@ collections:
                 widget: "text"
                 required: false
                 default: "Christine Rizzo - Avocate en droit du travail à Bruxelles. Expertise pour employeurs et travailleurs."
-                pattern: ['^.{0,200}$', "La description idéale fait 155-160 caractères (max 200)"]
-                hint: "Description générale du site pour le référencement - idéalement 155-160 caractères (max 200)"
+                pattern: ['^.{0,320}$', "La description idéale fait 155-160 caractères (max 320)"]
+                hint: "Description générale du site pour le référencement - idéalement 155-160 caractères (max 320)"
 
               - label: "Nom du site"
                 name: "siteName"

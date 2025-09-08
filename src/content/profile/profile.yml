@@ -107,10 +107,16 @@ fr:
           publisher: "Larcier"
           coAuthors:
             - "Christine Rizzo"
-      conferences:
-        - "Décembre 2020: Newsletter - \"Shares Allocated by Foreign Parent Company No Longer Exempted from Social Security Contributions?\""
-        - "Janvier 2020: Newsletter - \"EU Adopts Directive Setting New Rights for Workers Towards More Transparent and Predictable Working Conditions\""
-        - "Décembre 2017: Newsletter - \"Restructurings: A Rejuvenation Cure for the Renault Act?\""
+        - date: "Décembre 2020"
+          title: "Shares Allocated by Foreign Parent Company No Longer Exempted from Social Security Contributions?"
+          publisher: "Newsletter"
+        - date: "Janvier 2020"
+          title: "EU Adopts Directive Setting New Rights for Workers Towards More Transparent and Predictable Working Conditions"
+          publisher: "Newsletter"
+        - date: "Décembre 2017"
+          title: "Restructurings: A Rejuvenation Cure for the Renault Act?"
+          publisher: "Newsletter"
+      conferences: []
       seo:
         title: "Profil | Stephanie Michiels - Avocate spécialisée en droit du travail belge et européen"
         description: "Découvrez le parcours et l'expertise de Stephanie Michiels, avocate spécialisée en droit du travail belge et européen. Conseil et représentation pour employés et employeurs, avec expérience à la Commission européenne."
@@ -224,10 +230,16 @@ en:
           publisher: "Larcier"
           coAuthors:
             - "Christine Rizzo"
-      conferences:
-        - "December 2020: Newsletter - \"Shares Allocated by Foreign Parent Company No Longer Exempted from Social Security Contributions?\""
-        - "January 2020: Newsletter - \"EU Adopts Directive Setting New Rights for Workers Towards More Transparent and Predictable Working Conditions\""
-        - "December 2017: Newsletter - \"Restructurings: A Rejuvenation Cure for the Renault Act?\""
+        - date: "December 2020"
+          title: "Shares Allocated by Foreign Parent Company No Longer Exempted from Social Security Contributions?"
+          publisher: "Newsletter"
+        - date: "January 2020"
+          title: "EU Adopts Directive Setting New Rights for Workers Towards More Transparent and Predictable Working Conditions"
+          publisher: "Newsletter"
+        - date: "December 2017"
+          title: "Restructurings: A Rejuvenation Cure for the Renault Act?"
+          publisher: "Newsletter"
+      conferences: []
       seo:
         title: "Profile | Stephanie Michiels - Belgian and European Labor Law Attorney in Brussels"
         description: "Discover the background and expertise of Stephanie Michiels, a specialized Belgian and European labor law attorney in Brussels with European Commission experience. Counsel and representation for employees and employers."
@@ -341,10 +353,16 @@ it:
           publisher: "Larcier"
           coAuthors:
             - "Christine Rizzo"
-      conferences:
-        - "Dicembre 2020: Newsletter - \"Shares Allocated by Foreign Parent Company No Longer Exempted from Social Security Contributions?\""
-        - "Gennaio 2020: Newsletter - \"EU Adopts Directive Setting New Rights for Workers Towards More Transparent and Predictable Working Conditions\""
-        - "Dicembre 2017: Newsletter - \"Restructurings: A Rejuvenation Cure for the Renault Act?\""
+        - date: "Dicembre 2020"
+          title: "Shares Allocated by Foreign Parent Company No Longer Exempted from Social Security Contributions?"
+          publisher: "Newsletter"
+        - date: "Gennaio 2020"
+          title: "EU Adopts Directive Setting New Rights for Workers Towards More Transparent and Predictable Working Conditions"
+          publisher: "Newsletter"
+        - date: "Dicembre 2017"
+          title: "Restructurings: A Rejuvenation Cure for the Renault Act?"
+          publisher: "Newsletter"
+      conferences: []
       seo:
         title: "Profilo | Stephanie Michiels - Avvocato specializzato in diritto del lavoro belga ed europeo a Bruxelles"
         description: "Scopri il percorso e l'esperienza di Stephanie Michiels, avvocato specializzato in diritto del lavoro belga ed europeo a Bruxelles con esperienza presso la Commissione europea. Consulenza e rappresentanza per dipendenti e datori di lavoro."
