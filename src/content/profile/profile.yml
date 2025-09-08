@@ -1,379 +1,528 @@
-# Photos centralisées de l'équipe - utilisées pour toutes les langues
 teamImages:
-  - name: "Christine Rizzo"
-    image: "https://uploads-ssl.webflow.com/66a3633bf638ce4da95b8ad7/66a367d9f9bfc9b93e01c4a3_Christine_Apropos-b.jpeg"
-  - name: "Stephanie Michiels"
-    image: "/assets/images/s_michiels_photo.webp"
-
+  - name: Christine Rizzo
+    image: https://uploads-ssl.webflow.com/66a3633bf638ce4da95b8ad7/66a367d9f9bfc9b93e01c4a3_Christine_Apropos-b.jpeg
+  - name: Stephanie Michiels
+    image: /assets/images/s_michiels_photo.webp
 fr:
   lawyers:
-    - name: "Christine Rizzo"
-      title: "Avocate en droit du travail"
-      linkedin: "https://www.linkedin.com/in/chrizzo11/"
-      languages: "Je travaille en français, italien et anglais. J'ai également une bonne connaissance du néerlandais."
-      bio:
-        - "Avocate au Barreau de Bruxelles depuis 2010, habituée des négociations et des salles d'audience et forte d'une expérience auprès de clients internationaux et dans un cabinet de niche, je propose à mes clients - à la fois entreprises et travailleur·euse.s - des services d'accompagnement, conseil, négociation et défense en justice en droit des relations du travail."
-        - "La gestion de la relation de travail du recrutement à la rupture, la rédaction de contrats, de rapports d'audit dans le cadre de projets d'acquisition, le bien-être au travail, les outils destinés à améliorer l'équilibre vie privée-vie professionnelle, les questions de discrimination et les faux indépendants font partie de ma pratique quotidienne."
-        - "Je suis actuellement membre de la commission Bien-être psychosocial du Barreau de Bruxelles et je siège régulièrement au sein du jury des exercices de plaidoirie, examen auquel les avocats stagiaires doivent se soumettre avant la fin de leur stage. Je suis également membre de l'Association des Juristes Praticiens du Droit Social."
-      careerPath:
-        - year: "2025-2026"
-          event: "Professeure CAPA (certificat d'aptitude à la profession d'avocat) - Droit du travail - Gestion du stress et prévention du burn-out"
+    - careerPath:
+        - year: 2025-2026
+          event: Professeure CAPA (certificat d'aptitude à la profession d'avocat) - Droit
+            du travail - Gestion du stress et prévention du burn-out
         - year: "2025"
-          event: "Octroi du titre de spécialiste en droit du travail par le Barreau de Bruxelles"
+          event: Octroi du titre de spécialiste en droit du travail par le Barreau de
+            Bruxelles
         - year: "2024"
-          event: "Création de mon cabinet"
-        - year: "2017-2024"
-          event: "Avocate Senior chez Reliance Littler"
+          event: Création de mon cabinet
+        - year: 2017-2024
+          event: Avocate Senior chez Reliance Littler
         - year: "2019"
-          event: "Premier prix au concours d'éloquence du Barreau de Lausanne"
-        - year: "2018-2019"
-          event: "Directrice de la Conférence du Jeune Barreau de Bruxelles"
-        - year: "2013-2017"
-          event: "Avocate collaboratrice chez Meritius Brussels"
-        - year: "2011-2013"
-          event: "Membre active du Carrefour des stagiaires du Barreau de Bruxelles"
-        - year: "2010-2013"
-          event: "Avocate stagiaire chez LVP Law Brussels"
+          event: Premier prix au concours d'éloquence du Barreau de Lausanne
+        - year: 2018-2019
+          event: Directrice de la Conférence du Jeune Barreau de Bruxelles
+        - year: 2013-2017
+          event: Avocate collaboratrice chez Meritius Brussels
+        - year: 2011-2013
+          event: Membre active du Carrefour des stagiaires du Barreau de Bruxelles
+        - year: 2010-2013
+          event: Avocate stagiaire chez LVP Law Brussels
         - year: "2018"
-          event: "Master complémentaire en droit social - Vrije Universiteit Brussel"
+          event: Master complémentaire en droit social - Vrije Universiteit Brussel
         - year: "2010"
-          event: "LLM en droit européen et international - Universiteit Gent"
+          event: LLM en droit européen et international - Universiteit Gent
         - year: "2009"
-          event: "Master en droit - finalité contentieux - Université Libre de Bruxelles"
+          event: Master en droit - finalité contentieux - Université Libre de Bruxelles
       publications:
-        - date: "Décembre 2020"
-          title: "La rémunération variable. Approche en droit du travail, droit de la sécurité sociale, droit fiscal et pratique des ressources humaines"
-          publisher: "Larcier"
+        - date: Décembre 2020
+          title: La rémunération variable. Approche en droit du travail, droit de la
+            sécurité sociale, droit fiscal et pratique des ressources humaines
+          publisher: Larcier
           coAuthors:
-            - "Stephanie Michiels"
-        - date: "Mars 2020"
+            - Stephanie Michiels
+        - date: Mars 2020
           title: "Droit social et Covid-19: analyse et questions pratiques"
-          publisher: "Larcier"
+          publisher: Larcier
           coAuthors:
-            - "Erwin Crabeels"
-            - "Anne-Valérie Michaux"
-      conferences:
-        - "17 avril 2024, Abilways : \"Le licenciement des travailleurs contractuels du secteur public. La loi du 13 mars 2024\", avec Fabienne Raepsaet"
-        - "25 mars 2021, Conférence du Jeune Barreau de Bruxelles: \"Les heures supplémentaires: actualités\", avec Pierre Van Achter et Nicolas Tancredi"
-        - "23 mars 2020, Conférence du Jeune Barreau de Bruxelles: \"Coronavirus: la vie au travail continue-t-elle?\", avec Erwin Crabeels"
-        - "19 novembre 2019, Conférence du Jeune Barreau de Bruxelles: \"Les élections sociales: les notions clés\", avec Erwin Crabeels"
-        - "5 juillet 2018, Carrefour de la formation: \"La CCT 109: 4 années d'application et 245 décisions judiciaires\", avec Sophie Gérard et Sophie Sottiaux"
-      seo:
-        title: "Profil | Christine Rizzo - Avocate spécialisée en droit du travail à Bruxelles"
-        description: "Découvrez le parcours et l'expertise de Christine Rizzo, avocate spécialisée en droit du travail à Bruxelles. Conseil et représentation pour employés et employeurs."
-        image: "https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg"
-        keywords:
-          - "avocat droit du travail Bruxelles"
-          - "Christine Rizzo profil"
-          - "expertise juridique emploi"
-          - "conseil droit social"
-          - "défense employés employeurs"
-          - "spécialiste litiges travail Belgique"
-    
-    - name: "Stephanie Michiels"
-      title: "Avocate en droit du travail belge et européen"
-      linkedin: "https://www.linkedin.com/in/stephanie-michiels-/"
-      languages: "Je travaille en français, néerlandais et anglais."
+            - Erwin Crabeels
+            - Anne-Valérie Michaux
       bio:
-        - "Inscrite au Barreau de Bruxelles en 2015, je suis passionnée par les questions liées aux ressources humaines et aux relations entre employeur et travailleur·euse·s, tant dans le secteur privé que publique."
-        - "J'ai acquis une vision pluri-secteurs du droit du travail. En qualité d'avocate, j'ai notamment travaillé au sein du département droit social d'un cabinet international. J'y ai traité des dossiers passionnants tant pour des entreprises multinationales que des PME et entités publiques. J'ai ensuite été conseillère juridique au sein de la Commission européenne."
-        - "Les questions liées au package salarial des employé·e·s du secteur public et privé, font partie de ma pratique quotidienne. Je traite aussi notamment toutes vos questions liées aux ruptures de contrats, au déroulement de la carrière, à la couverture sociale, aux discriminations, au harcèlement moral et sexuel au travail, ainsi qu'à la problématique des lanceurs d'alerte."
-        - "Je suis également formée en droit de la protection des données à caractère personnel."
-        - "Dans ma pratique, je privilégie la négociation lorsqu'elle permet une solution rapide au litige. Je porte toutefois avec énergie et conviction la voix de mes clients devant les tribunaux lorsqu'une issue négociée n'est pas envisageable."
-      careerPath:
-        - year: "2025"
-          event: "Association à Christine Rizzo"
-        - year: "2020-2025"
-          event: "Juriste au sein de la Commission européenne"
-        - year: "2017-2020"
-          event: "Avocate au sein du département droit social chez Crowell & Moring LLP"
-        - year: "2019"
-          event: "Deuxième prix du concours d'éloquence du Barreau de Bruxelles « J'accuse ! »"
-        - year: "2018"
-          event: "Co-organisatrice de la première clinique juridique du Barreau de Bruxelles avec Christine Rizzo"
-        - year: "2017-2019"
-          event: "Trésorière de la Conférence du Jeune Barreau de Bruxelles"
-        - year: "2014"
-          event: "Médiatrice bénévole auprès du Tribunal via la « California Academy of Mediation Professionals », États-Unis"
-        - year: "2014"
-          event: "LLM en règlement alternatif des litiges – « University of California Los Angeles », États-Unis"
-        - year: "2013"
-          event: "Lauréate d'une bourse Fulbright"
-        - year: "2013"
-          event: "Master en droit – Université Catholique de Louvain"
-      publications:
-        - date: "Décembre 2020"
-          title: "La rémunération variable. Approche en droit du travail, droit de la sécurité sociale, droit fiscal et pratique des ressources humaines"
-          publisher: "Larcier"
-          coAuthors:
-            - "Christine Rizzo"
-        - date: "Décembre 2020"
-          title: "Shares Allocated by Foreign Parent Company No Longer Exempted from Social Security Contributions?"
-          publisher: "Newsletter"
-        - date: "Janvier 2020"
-          title: "EU Adopts Directive Setting New Rights for Workers Towards More Transparent and Predictable Working Conditions"
-          publisher: "Newsletter"
-        - date: "Décembre 2017"
-          title: "Restructurings: A Rejuvenation Cure for the Renault Act?"
-          publisher: "Newsletter"
-      conferences: []
+        - Avocate au Barreau de Bruxelles depuis 2010, habituée des négociations
+          et des salles d'audience et forte d'une expérience auprès de clients
+          internationaux et dans un cabinet de niche, je propose à mes clients -
+          à la fois entreprises et travailleur·euse.s - des services
+          d'accompagnement, conseil, négociation et défense en justice en droit
+          des relations du travail.
+        - La gestion de la relation de travail du recrutement à la rupture, la
+          rédaction de contrats, de rapports d'audit dans le cadre de projets
+          d'acquisition, le bien-être au travail, les outils destinés à
+          améliorer l'équilibre vie privée-vie professionnelle, les questions de
+          discrimination et les faux indépendants font partie de ma pratique
+          quotidienne.
+        - Je suis actuellement membre de la commission Bien-être psychosocial du
+          Barreau de Bruxelles et je siège régulièrement au sein du jury des
+          exercices de plaidoirie, examen auquel les avocats stagiaires doivent
+          se soumettre avant la fin de leur stage. Je suis également membre de
+          l'Association des Juristes Praticiens du Droit Social.
+      name: Christine Rizzo
+      conferences:
+        - '17 avril 2024, Abilways : "Le licenciement des travailleurs
+          contractuels du secteur public. La loi du 13 mars 2024", avec Fabienne
+          Raepsaet'
+        - '25 mars 2021, Conférence du Jeune Barreau de Bruxelles: "Les heures
+          supplémentaires: actualités", avec Pierre Van Achter et Nicolas
+          Tancredi'
+        - '23 mars 2020, Conférence du Jeune Barreau de Bruxelles: "Coronavirus:
+          la vie au travail continue-t-elle?", avec Erwin Crabeels'
+        - '19 novembre 2019, Conférence du Jeune Barreau de Bruxelles: "Les
+          élections sociales: les notions clés", avec Erwin Crabeels'
+        - "5 juillet 2018, Carrefour de la formation: \"La CCT 109: 4 années
+          d'application et 245 décisions judiciaires\", avec Sophie Gérard et
+          Sophie Sottiaux"
+      title: Avocate en droit du travail
+      languages: Je travaille en français, italien et anglais. J'ai également une
+        bonne connaissance du néerlandais.
       seo:
-        title: "Profil | Stephanie Michiels - Avocate spécialisée en droit du travail belge et européen"
-        description: "Découvrez le parcours et l'expertise de Stephanie Michiels, avocate spécialisée en droit du travail belge et européen. Conseil et représentation pour employés et employeurs, avec expérience à la Commission européenne."
-        image: "https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg"
+        title: Profil | Christine Rizzo - Avocate spécialisée en droit du travail à
+          Bruxelles
+        description: Découvrez le parcours et l'expertise de Christine Rizzo, avocate
+          spécialisée en droit du travail à Bruxelles. Conseil et représentation
+          pour employés et employeurs.
+        image: https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg
         keywords:
-          - "avocat droit du travail Bruxelles"
-          - "Stephanie Michiels profil"
-          - "expertise juridique emploi"
-          - "conseil droit social"
-          - "défense employés employeurs"
-          - "spécialiste litiges travail Belgique"
-          - "droit européen du travail"
-          - "Commission européenne"
-          - "protection données personnelles"
-
+          - avocat droit du travail Bruxelles
+          - Christine Rizzo profil
+          - expertise juridique emploi
+          - conseil droit social
+          - défense employés employeurs
+          - spécialiste litiges travail Belgique
+      linkedin: https://www.linkedin.com/in/chrizzo11/
+    - careerPath:
+        - year: "2025"
+          event: Association à Christine Rizzo
+        - year: 2020-2025
+          event: Juriste au sein de la Commission européenne
+        - year: 2017-2020
+          event: Avocate au sein du département droit social chez Crowell & Moring LLP
+        - year: "2019"
+          event: Deuxième prix du concours d'éloquence du Barreau de Bruxelles « J'accuse
+            ! »
+        - year: "2018"
+          event: Co-organisatrice de la première clinique juridique du Barreau de
+            Bruxelles avec Christine Rizzo
+        - year: 2017-2019
+          event: Trésorière de la Conférence du Jeune Barreau de Bruxelles
+        - year: "2014"
+          event: Médiatrice bénévole auprès du Tribunal via la « California Academy of
+            Mediation Professionals », États-Unis
+        - year: "2014"
+          event: LLM en règlement alternatif des litiges – « University of California Los
+            Angeles », États-Unis
+        - year: "2013"
+          event: Lauréate d'une bourse Fulbright
+        - year: "2013"
+          event: Master en droit – Université Catholique de Louvain
+      publications:
+        - date: Décembre 2020
+          title: La rémunération variable. Approche en droit du travail, droit de la
+            sécurité sociale, droit fiscal et pratique des ressources humaines
+          publisher: Larcier
+          coAuthors:
+            - Christine Rizzo
+        - date: Décembre 2020
+          title: Shares Allocated by Foreign Parent Company No Longer Exempted from Social
+            Security Contributions?
+          publisher: Newsletter
+        - date: Janvier 2020
+          title: EU Adopts Directive Setting New Rights for Workers Towards More
+            Transparent and Predictable Working Conditions
+          publisher: Newsletter
+        - date: Décembre 2017
+          title: "Restructurings: A Rejuvenation Cure for the Renault Act?"
+          publisher: Newsletter
+      bio:
+        - Inscrite au Barreau de Bruxelles en 2015, je suis passionnée par les
+          questions liées aux ressources humaines et aux relations entre
+          employeur et travailleur·euse·s, tant dans le secteur privé que
+          publique.
+        - J'ai acquis une vision pluri-secteurs du droit du travail. En qualité
+          d'avocate, j'ai notamment travaillé au sein du département droit
+          social d'un cabinet international. J'y ai traité des dossiers
+          passionnants tant pour des entreprises multinationales que des PME et
+          entités publiques. J'ai ensuite été conseillère juridique au sein de
+          la Commission européenne.
+        - Les questions liées au package salarial des employé·e·s du secteur
+          public et privé, font partie de ma pratique quotidienne. Je traite
+          aussi notamment toutes vos questions liées aux ruptures de contrats,
+          au déroulement de la carrière, à la couverture sociale, aux
+          discriminations, au harcèlement moral et sexuel au travail, ainsi qu'à
+          la problématique des lanceurs d'alerte.
+        - Je suis également formée en droit de la protection des données à
+          caractère personnel.
+        - Dans ma pratique, je privilégie la négociation lorsqu'elle permet une
+          solution rapide au litige. Je porte toutefois avec énergie et
+          conviction la voix de mes clients devant les tribunaux lorsqu'une
+          issue négociée n'est pas envisageable.
+      name: Stephanie Michielss
+      conferences: []
+      title: Avocate en droit du travail belge et européen
+      languages: Je travaille en français, néerlandais et anglais.
+      seo:
+        title: Profil | Stephanie Michiels - Avocate spécialisée en droit du travail
+          belge et européen
+        description: Découvrez le parcours et l'expertise de Stephanie Michiels, avocate
+          spécialisée en droit du travail belge et européen. Conseil et
+          représentation pour employés et employeurs, avec expérience à la
+          Commission européenne.
+        image: https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg
+        keywords:
+          - avocat droit du travail Bruxelles
+          - Stephanie Michiels profil
+          - expertise juridique emploi
+          - conseil droit social
+          - défense employés employeurs
+          - spécialiste litiges travail Belgique
+          - droit européen du travail
+          - Commission européenne
+          - protection données personnelles
+      linkedin: https://www.linkedin.com/in/stephanie-michiels-/
 en:
   lawyers:
-    - name: "Christine Rizzo"
-      title: "Employment lawyer"
-      languages: "I work in French, Italian, and English. I also have a good knowledge of Dutch."
+    - name: Christine Rizzo
+      title: Employment lawyer
+      languages: I work in French, Italian, and English. I also have a good knowledge
+        of Dutch.
       bio:
-        - "A member of the Brussels Bar since 2010 and with experience with international clients and in a niche firm, I offer my clients - both employers and employees - support services, advice, negotiation, and legal defense in labor relations law."
-        - "Managing employment relationships from recruitment to termination, drafting agreemeents and audit reports for acquisition projects, well-being at work, tools for improving work-life balance, discrimination issues and classification issues (employee vs independent contractor) are all part of my daily practice."
-        - "I am currently a member of the Psychosocial Well-being Commission of the Brussels Bar and regularly sit on the jury for pleading exercises, an examination that trainee lawyers must undergo before the end of their internship. I am also a member of the Association of Jurists Practicing Social Law (AJPDS)."
+        - A member of the Brussels Bar since 2010 and with experience with
+          international clients and in a niche firm, I offer my clients - both
+          employers and employees - support services, advice, negotiation, and
+          legal defense in labor relations law.
+        - Managing employment relationships from recruitment to termination,
+          drafting agreemeents and audit reports for acquisition projects,
+          well-being at work, tools for improving work-life balance,
+          discrimination issues and classification issues (employee vs
+          independent contractor) are all part of my daily practice.
+        - I am currently a member of the Psychosocial Well-being Commission of
+          the Brussels Bar and regularly sit on the jury for pleading exercises,
+          an examination that trainee lawyers must undergo before the end of
+          their internship. I am also a member of the Association of Jurists
+          Practicing Social Law (AJPDS).
       careerPath:
         - year: "2025"
-          event: "Awarded the title of specialist in employment law by the Brussels Bar"
+          event: Awarded the title of specialist in employment law by the Brussels Bar
         - year: "2024"
-          event: "Establishment of my legal practice"
-        - year: "2017-2024"
-          event: "Senior Lawyer at Reliance Littler"
+          event: Establishment of my legal practice
+        - year: 2017-2024
+          event: Senior Lawyer at Reliance Littler
         - year: "2019"
-          event: "First prize in the Lausanne Bar Association's eloquence competition"
-        - year: "2018-2019"
-          event: "Director of the Young Brussels Bar Conference"
-        - year: "2013-2017"
-          event: "Associate Lawyer at Meritius Brussels"
-        - year: "2011-2013"
-          event: "Active member of the Brussels Bar Trainees' Forum"
-        - year: "2010-2013"
-          event: "Trainee Lawyer at LVP Law Brussels"
+          event: First prize in the Lausanne Bar Association's eloquence competition
+        - year: 2018-2019
+          event: Director of the Young Brussels Bar Conference
+        - year: 2013-2017
+          event: Associate Lawyer at Meritius Brussels
+        - year: 2011-2013
+          event: Active member of the Brussels Bar Trainees' Forum
+        - year: 2010-2013
+          event: Trainee Lawyer at LVP Law Brussels
         - year: "2018"
-          event: "Advanced Master in Social Law - Vrije Universiteit Brussel"
+          event: Advanced Master in Social Law - Vrije Universiteit Brussel
         - year: "2010"
-          event: "LLM in European and International Law - Universiteit Gent"
+          event: LLM in European and International Law - Universiteit Gent
         - year: "2009"
-          event: "Master of Laws - Université Libre de Bruxelles"
+          event: Master of Laws - Université Libre de Bruxelles
       publications:
-        - date: "December 2020"
-          title: "Variable remuneration. Approach in labor law, social security law, tax law and human resources practice"
-          publisher: "Larcier"
+        - date: December 2020
+          title: Variable remuneration. Approach in labor law, social security law, tax
+            law and human resources practice
+          publisher: Larcier
           coAuthors:
-            - "Stephanie Michiels"
-        - date: "March 2020"
+            - Stephanie Michiels
+        - date: March 2020
           title: "Social law and Covid-19: analysis and practical questions"
-          publisher: "Larcier"
+          publisher: Larcier
           coAuthors:
-            - "Erwin Crabeels"
-            - "Anne-Valérie Michaux"
+            - Erwin Crabeels
+            - Anne-Valérie Michaux
       conferences:
-        - "17 April 2024, Abilways : \"Dismissal of contract workers in the public sector. The Act of March 13, 2024\", with Fabienne Raepsaet"
-        - "25 March 2021, Conférence du Jeune Barreau de Bruxelles: \"Overtime: latest news\", with Pierre Van Achter and Nicolas Tancredi"
-        - "23 March 2020, Conférence du Jeune Barreau de Bruxelles: \"Coronavirus: does life at work go on? \", with Erwin Crabeels"
-        - "19 November 2019, Conférence du Jeune Barreau de Bruxelles: \"Social élections: key notions\", with Erwin Crabeels"
-        - "5 July 2018, Carrefour de la formation: \"CBA 109: 4 years of application and 245 judicial decisions\", with Sophie Gérard and Sophie Sottiaux"
+        - '17 April 2024, Abilways : "Dismissal of contract workers in the
+          public sector. The Act of March 13, 2024", with Fabienne Raepsaet'
+        - '25 March 2021, Conférence du Jeune Barreau de Bruxelles: "Overtime:
+          latest news", with Pierre Van Achter and Nicolas Tancredi'
+        - '23 March 2020, Conférence du Jeune Barreau de Bruxelles:
+          "Coronavirus: does life at work go on? ", with Erwin Crabeels'
+        - '19 November 2019, Conférence du Jeune Barreau de Bruxelles: "Social
+          élections: key notions", with Erwin Crabeels'
+        - '5 July 2018, Carrefour de la formation: "CBA 109: 4 years of
+          application and 245 judicial decisions", with Sophie Gérard and Sophie
+          Sottiaux'
       seo:
-        title: "Profile | Christine Rizzo - Labor Law Attorney in Brussels"
-        description: "Discover the background and expertise of Christine Rizzo, a specialized labor law attorney in Brussels. Counsel and representation for employees and employers."
-        image: "https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg"
+        title: Profile | Christine Rizzo - Labor Law Attorney in Brussels
+        description: Discover the background and expertise of Christine Rizzo, a
+          specialized labor law attorney in Brussels. Counsel and representation
+          for employees and employers.
+        image: https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg
         keywords:
-          - "labor law attorney Brussels"
-          - "Christine Rizzo profile"
-          - "employment legal expertise"
-          - "social law counsel"
-          - "employee employer defense"
-          - "workplace litigation specialist Belgium"
-    
-    - name: "Stephanie Michiels"
-      title: "Belgian and European Labor Law Attorney"
-      languages: "I work in French, Dutch, and English."
+          - labor law attorney Brussels
+          - Christine Rizzo profile
+          - employment legal expertise
+          - social law counsel
+          - employee employer defense
+          - workplace litigation specialist Belgium
+    - name: Stephanie Michiels
+      title: Belgian and European Labor Law Attorney
+      languages: I work in French, Dutch, and English.
       bio:
-        - "Admitted to the Brussels Bar in 2015, I am passionate about human resources issues and employer-employee relations, in both the private and public sectors."
-        - "I have gained a multi-sector perspective on labor law. As a lawyer, I worked in the social law department of an international law firm, handling fascinating cases for multinational companies, SMEs, and public entities. I then served as a legal advisor at the European Commission."
-        - "Matters related to compensation packages for employees in the public and private sectors are part of my daily practice. I also handle all your questions related to contract terminations, career progression, social security coverage, discrimination, moral and sexual harassment at work, as well as whistleblower issues."
-        - "I am also trained in personal data protection law."
-        - "In my practice, I favor negotiation when it allows for a quick resolution to disputes. However, I vigorously and convincingly advocate for my clients in court when a negotiated outcome is not feasible."
+        - Admitted to the Brussels Bar in 2015, I am passionate about human
+          resources issues and employer-employee relations, in both the private
+          and public sectors.
+        - I have gained a multi-sector perspective on labor law. As a lawyer, I
+          worked in the social law department of an international law firm,
+          handling fascinating cases for multinational companies, SMEs, and
+          public entities. I then served as a legal advisor at the European
+          Commission.
+        - Matters related to compensation packages for employees in the public
+          and private sectors are part of my daily practice. I also handle all
+          your questions related to contract terminations, career progression,
+          social security coverage, discrimination, moral and sexual harassment
+          at work, as well as whistleblower issues.
+        - I am also trained in personal data protection law.
+        - In my practice, I favor negotiation when it allows for a quick
+          resolution to disputes. However, I vigorously and convincingly
+          advocate for my clients in court when a negotiated outcome is not
+          feasible.
       careerPath:
         - year: "2025"
-          event: "Partnership with Christine Rizzo"
-        - year: "2020-2025"
-          event: "Legal advisor at the European Commission"
-        - year: "2017-2020"
-          event: "Attorney in the social law department at Crowell & Moring LLP"
+          event: Partnership with Christine Rizzo
+        - year: 2020-2025
+          event: Legal advisor at the European Commission
+        - year: 2017-2020
+          event: Attorney in the social law department at Crowell & Moring LLP
         - year: "2019"
-          event: "Second prize at the Brussels Bar eloquence contest 'J'accuse!'"
+          event: Second prize at the Brussels Bar eloquence contest 'J'accuse!'
         - year: "2018"
-          event: "Co-organizer of the first Brussels Bar legal clinic with Christine Rizzo"
-        - year: "2017-2019"
-          event: "Treasurer of the Young Brussels Bar Conference"
+          event: Co-organizer of the first Brussels Bar legal clinic with Christine Rizzo
+        - year: 2017-2019
+          event: Treasurer of the Young Brussels Bar Conference
         - year: "2014"
-          event: "Volunteer mediator at the Court via the California Academy of Mediation Professionals, USA"
+          event: Volunteer mediator at the Court via the California Academy of Mediation
+            Professionals, USA
         - year: "2014"
-          event: "LLM in Alternative Dispute Resolution - University of California Los Angeles, USA"
+          event: LLM in Alternative Dispute Resolution - University of California Los
+            Angeles, USA
         - year: "2013"
-          event: "Fulbright Scholarship recipient"
+          event: Fulbright Scholarship recipient
         - year: "2013"
-          event: "Master in Law - Catholic University of Louvain"
+          event: Master in Law - Catholic University of Louvain
       publications:
-        - date: "December 2020"
-          title: "Variable remuneration. Approach in labor law, social security law, tax law and human resources practice"
-          publisher: "Larcier"
+        - date: December 2020
+          title: Variable remuneration. Approach in labor law, social security law, tax
+            law and human resources practice
+          publisher: Larcier
           coAuthors:
-            - "Christine Rizzo"
-        - date: "December 2020"
-          title: "Shares Allocated by Foreign Parent Company No Longer Exempted from Social Security Contributions?"
-          publisher: "Newsletter"
-        - date: "January 2020"
-          title: "EU Adopts Directive Setting New Rights for Workers Towards More Transparent and Predictable Working Conditions"
-          publisher: "Newsletter"
-        - date: "December 2017"
+            - Christine Rizzo
+        - date: December 2020
+          title: Shares Allocated by Foreign Parent Company No Longer Exempted from Social
+            Security Contributions?
+          publisher: Newsletter
+        - date: January 2020
+          title: EU Adopts Directive Setting New Rights for Workers Towards More
+            Transparent and Predictable Working Conditions
+          publisher: Newsletter
+        - date: December 2017
           title: "Restructurings: A Rejuvenation Cure for the Renault Act?"
-          publisher: "Newsletter"
+          publisher: Newsletter
       conferences: []
       seo:
-        title: "Profile | Stephanie Michiels - Belgian and European Labor Law Attorney in Brussels"
-        description: "Discover the background and expertise of Stephanie Michiels, a specialized Belgian and European labor law attorney in Brussels with European Commission experience. Counsel and representation for employees and employers."
-        image: "https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg"
+        title: Profile | Stephanie Michiels - Belgian and European Labor Law Attorney in
+          Brussels
+        description: Discover the background and expertise of Stephanie Michiels, a
+          specialized Belgian and European labor law attorney in Brussels with
+          European Commission experience. Counsel and representation for
+          employees and employers.
+        image: https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg
         keywords:
-          - "labor law attorney Brussels"
-          - "Stephanie Michiels profile"
-          - "employment legal expertise"
-          - "social law counsel"
-          - "employee employer defense"
-          - "workplace litigation specialist Belgium"
-          - "European labor law"
-          - "European Commission"
-          - "data protection law"
-
+          - labor law attorney Brussels
+          - Stephanie Michiels profile
+          - employment legal expertise
+          - social law counsel
+          - employee employer defense
+          - workplace litigation specialist Belgium
+          - European labor law
+          - European Commission
+          - data protection law
 it:
   lawyers:
-    - name: "Christine Rizzo"
-      title: "Avvocata del lavoro"
-      languages: "Lavoro in francese, italiano e inglese. Ho anche una buona conoscenza della lingua nederlandese."
+    - name: Christine Rizzo
+      title: Avvocata del lavoro
+      languages: Lavoro in francese, italiano e inglese. Ho anche una buona conoscenza
+        della lingua nederlandese.
       bio:
-        - "Membro dell'Ordine degli Avvocati di Bruxelles dal 2010 e con esperienza con clienti internazionali e in uno studio specializzato, offro ai miei clienti - sia datori di lavoro che dipendenti - servizi di supporto, consulenza, negoziazione e difesa legale nel diritto delle relazioni di lavoro."
-        - "La gestione del rapporto di lavoro dall'assunzione alla cessazione, la redazione di contratti e di relazioni di audit nell'ambito di progetti di acquisizione, il benessere sul lavoro, gli strumenti per migliorare l'equilibrio tra lavoro e vita privata, i problemi di discriminazione e il falso lavoro autonomo fanno parte della mia pratica quotidiana."
-        - "Attualmente sono membro della Commissione per il Benessere Psicosociale dell'Ordine degli Avvocati di Bruxelles e siedo regolarmente nella giuria degli esercizi di arringa, un esame che gli avvocati tirocinanti devono sostenere prima della fine del loro tirocinio. Sono anche membro dell'Associazione dei professionisti del diritto del lavoro (AJPDS)."
+        - Membro dell'Ordine degli Avvocati di Bruxelles dal 2010 e con
+          esperienza con clienti internazionali e in uno studio specializzato,
+          offro ai miei clienti - sia datori di lavoro che dipendenti - servizi
+          di supporto, consulenza, negoziazione e difesa legale nel diritto
+          delle relazioni di lavoro.
+        - La gestione del rapporto di lavoro dall'assunzione alla cessazione, la
+          redazione di contratti e di relazioni di audit nell'ambito di progetti
+          di acquisizione, il benessere sul lavoro, gli strumenti per migliorare
+          l'equilibrio tra lavoro e vita privata, i problemi di discriminazione
+          e il falso lavoro autonomo fanno parte della mia pratica quotidiana.
+        - Attualmente sono membro della Commissione per il Benessere
+          Psicosociale dell'Ordine degli Avvocati di Bruxelles e siedo
+          regolarmente nella giuria degli esercizi di arringa, un esame che gli
+          avvocati tirocinanti devono sostenere prima della fine del loro
+          tirocinio. Sono anche membro dell'Associazione dei professionisti del
+          diritto del lavoro (AJPDS).
       careerPath:
         - year: "2025"
-          event: "Conferimento del titolo di specialista in diritto del lavoro dall'Ordine degli Avvocati di Bruxelles"
+          event: Conferimento del titolo di specialista in diritto del lavoro dall'Ordine
+            degli Avvocati di Bruxelles
         - year: "2024"
-          event: "Creazione del mio studio legale"
-        - year: "2017-2024"
-          event: "Avvocata Senior presso Reliance Littler"
+          event: Creazione del mio studio legale
+        - year: 2017-2024
+          event: Avvocata Senior presso Reliance Littler
         - year: "2019"
-          event: "Primo premio al concorso di eloquenza dell'Ordine degli Avvocati di Losanna"
-        - year: "2018-2019"
-          event: "Direttrice della Conférence du Jeune Barreau de Bruxelles"
-        - year: "2013-2017"
-          event: "Avvocata presso Meritius Brussels"
-        - year: "2011-2013"
-          event: "Membro attivo del Carrefour des stagiaires du Barreau de Bruxelles"
-        - year: "2010-2013"
-          event: "Avvocata tirocinante presso LVP Law Brussels"
+          event: Primo premio al concorso di eloquenza dell'Ordine degli Avvocati di
+            Losanna
+        - year: 2018-2019
+          event: Direttrice della Conférence du Jeune Barreau de Bruxelles
+        - year: 2013-2017
+          event: Avvocata presso Meritius Brussels
+        - year: 2011-2013
+          event: Membro attivo del Carrefour des stagiaires du Barreau de Bruxelles
+        - year: 2010-2013
+          event: Avvocata tirocinante presso LVP Law Brussels
         - year: "2018"
-          event: "Master in Diritto Sociale - Vrije Universiteit Brussel"
+          event: Master in Diritto Sociale - Vrije Universiteit Brussel
         - year: "2010"
-          event: "LLM in Diritto Europeo e Internazionale - Universiteit Gent"
+          event: LLM in Diritto Europeo e Internazionale - Universiteit Gent
         - year: "2009"
-          event: "Master in Giurisprudenza - Université Libre de Bruxelles"
+          event: Master in Giurisprudenza - Université Libre de Bruxelles
       publications:
-        - date: "Dicembre 2020"
-          title: "La remunerazione variabile. Approccio nel diritto del lavoro, diritto della sicurezza sociale, diritto fiscale e pratica delle risorse umane"
-          publisher: "Larcier"
+        - date: Dicembre 2020
+          title: La remunerazione variabile. Approccio nel diritto del lavoro, diritto
+            della sicurezza sociale, diritto fiscale e pratica delle risorse
+            umane
+          publisher: Larcier
           coAuthors:
-            - "Stephanie Michiels"
-        - date: "Marzo 2020"
+            - Stephanie Michiels
+        - date: Marzo 2020
           title: "Diritto sociale e Covid-19: analisi e questioni pratiche"
-          publisher: "Larcier"
+          publisher: Larcier
           coAuthors:
-            - "Erwin Crabeels"
-            - "Anne-Valérie Michaux"
+            - Erwin Crabeels
+            - Anne-Valérie Michaux
       conferences:
-        - "17 aprile 2024, Abilways : \"Il licenziamento dei lavoratori contrattuali nel settore pubblico. La legge del 13 marzo 2024\", con Fabienne Raepsaet"
-        - "25 marzo 2021, Conférence du Jeune Barreau de Bruxelles: \"Lavoro straordinario: aggiornamenti\", con Pierre Van Achter e Nicolas Tancredi"
-        - "23 marzo 2020, Conférence du Jeune Barreau de Bruxelles: \"Coronavirus: la vita lavorativa continua?\", con Erwin Crabeels"
-        - "19 novembre 2019, Conférence du Jeune Barreau de Bruxelles: \"Elezioni sociali: concetti chiave\", con Erwin Crabeels"
-        - "5 luglio 2018, Carrefour de la formation: \"CCT 109: 4 anni di applicazione e 245 decisioni giudiziarie\", con Sophie Gérard e Sophie Sottiaux"
+        - '17 aprile 2024, Abilways : "Il licenziamento dei lavoratori
+          contrattuali nel settore pubblico. La legge del 13 marzo 2024", con
+          Fabienne Raepsaet'
+        - '25 marzo 2021, Conférence du Jeune Barreau de Bruxelles: "Lavoro
+          straordinario: aggiornamenti", con Pierre Van Achter e Nicolas
+          Tancredi'
+        - '23 marzo 2020, Conférence du Jeune Barreau de Bruxelles:
+          "Coronavirus: la vita lavorativa continua?", con Erwin Crabeels'
+        - '19 novembre 2019, Conférence du Jeune Barreau de Bruxelles: "Elezioni
+          sociali: concetti chiave", con Erwin Crabeels'
+        - '5 luglio 2018, Carrefour de la formation: "CCT 109: 4 anni di
+          applicazione e 245 decisioni giudiziarie", con Sophie Gérard e Sophie
+          Sottiaux'
       seo:
-        title: "Profilo | Christine Rizzo - Avvocato specializzato in diritto del lavoro a Bruxelles"
-        description: "Scopri il percorso e l'esperienza di Christine Rizzo, avvocato specializzato in diritto del lavoro a Bruxelles. Consulenza e rappresentanza per dipendenti e datori di lavoro."
-        image: "https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg"
+        title: Profilo | Christine Rizzo - Avvocato specializzato in diritto del lavoro
+          a Bruxelles
+        description: Scopri il percorso e l'esperienza di Christine Rizzo, avvocato
+          specializzato in diritto del lavoro a Bruxelles. Consulenza e
+          rappresentanza per dipendenti e datori di lavoro.
+        image: https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg
         keywords:
-          - "avvocato diritto del lavoro Bruxelles"
-          - "profilo Christine Rizzo"
-          - "esperienza giuridica lavoro"
-          - "consulenza diritto sociale"
-          - "difesa dipendenti datori di lavoro"
-          - "specialista controversie lavoro Belgio"
-    
-    - name: "Stephanie Michiels"
-      title: "Avvocata specializzata in diritto del lavoro belga ed europeo"
-      languages: "Lavoro in francese, olandese e inglese."
+          - avvocato diritto del lavoro Bruxelles
+          - profilo Christine Rizzo
+          - esperienza giuridica lavoro
+          - consulenza diritto sociale
+          - difesa dipendenti datori di lavoro
+          - specialista controversie lavoro Belgio
+    - name: Stephanie Michiels
+      title: Avvocata specializzata in diritto del lavoro belga ed europeo
+      languages: Lavoro in francese, olandese e inglese.
       bio:
-        - "Iscritta all'Ordine degli Avvocati di Bruxelles nel 2015, sono appassionata delle questioni legate alle risorse umane e alle relazioni tra datore di lavoro e lavoratori, sia nel settore privato che pubblico."
-        - "Ho acquisito una visione multisettoriale del diritto del lavoro. Come avvocata, ho lavorato nel dipartimento di diritto sociale di uno studio internazionale, gestendo casi affascinanti per aziende multinazionali, PMI ed entità pubbliche. Successivamente sono stata consulente legale presso la Commissione europea."
-        - "Le questioni relative al pacchetto retributivo dei dipendenti del settore pubblico e privato fanno parte della mia pratica quotidiana. Mi occupo anche di tutte le vostre questioni relative a cessazioni di contratti, sviluppo della carriera, copertura sociale, discriminazioni, molestie morali e sessuali sul lavoro, nonché la problematica dei whistleblower."
-        - "Sono anche formata nel diritto della protezione dei dati personali."
-        - "Nella mia pratica, privilegio la negoziazione quando permette una soluzione rapida alla controversia. Tuttavia, difendo con energia e convinzione la voce dei miei clienti davanti ai tribunali quando una soluzione negoziata non è possibile."
+        - Iscritta all'Ordine degli Avvocati di Bruxelles nel 2015, sono
+          appassionata delle questioni legate alle risorse umane e alle
+          relazioni tra datore di lavoro e lavoratori, sia nel settore privato
+          che pubblico.
+        - Ho acquisito una visione multisettoriale del diritto del lavoro. Come
+          avvocata, ho lavorato nel dipartimento di diritto sociale di uno
+          studio internazionale, gestendo casi affascinanti per aziende
+          multinazionali, PMI ed entità pubbliche. Successivamente sono stata
+          consulente legale presso la Commissione europea.
+        - Le questioni relative al pacchetto retributivo dei dipendenti del
+          settore pubblico e privato fanno parte della mia pratica quotidiana.
+          Mi occupo anche di tutte le vostre questioni relative a cessazioni di
+          contratti, sviluppo della carriera, copertura sociale,
+          discriminazioni, molestie morali e sessuali sul lavoro, nonché la
+          problematica dei whistleblower.
+        - Sono anche formata nel diritto della protezione dei dati personali.
+        - Nella mia pratica, privilegio la negoziazione quando permette una
+          soluzione rapida alla controversia. Tuttavia, difendo con energia e
+          convinzione la voce dei miei clienti davanti ai tribunali quando una
+          soluzione negoziata non è possibile.
       careerPath:
         - year: "2025"
-          event: "Associazione con Christine Rizzo"
-        - year: "2020-2025"
-          event: "Giurista presso la Commissione europea"
-        - year: "2017-2020"
-          event: "Avvocata nel dipartimento di diritto sociale presso Crowell & Moring LLP"
+          event: Associazione con Christine Rizzo
+        - year: 2020-2025
+          event: Giurista presso la Commissione europea
+        - year: 2017-2020
+          event: Avvocata nel dipartimento di diritto sociale presso Crowell & Moring LLP
         - year: "2019"
-          event: "Secondo premio al concorso di eloquenza dell'Ordine degli Avvocati di Bruxelles 'J'accuse!'"
+          event: Secondo premio al concorso di eloquenza dell'Ordine degli Avvocati di
+            Bruxelles 'J'accuse!'
         - year: "2018"
-          event: "Co-organizzatrice della prima clinica legale dell'Ordine degli Avvocati di Bruxelles con Christine Rizzo"
-        - year: "2017-2019"
-          event: "Tesoriera della Conferenza del Giovane Foro di Bruxelles"
+          event: Co-organizzatrice della prima clinica legale dell'Ordine degli Avvocati
+            di Bruxelles con Christine Rizzo
+        - year: 2017-2019
+          event: Tesoriera della Conferenza del Giovane Foro di Bruxelles
         - year: "2014"
-          event: "Mediatrice volontaria presso il Tribunale tramite la California Academy of Mediation Professionals, Stati Uniti"
+          event: Mediatrice volontaria presso il Tribunale tramite la California Academy
+            of Mediation Professionals, Stati Uniti
         - year: "2014"
-          event: "LLM in risoluzione alternativa delle controversie - University of California Los Angeles, Stati Uniti"
+          event: LLM in risoluzione alternativa delle controversie - University of
+            California Los Angeles, Stati Uniti
         - year: "2013"
-          event: "Vincitrice di una borsa di studio Fulbright"
+          event: Vincitrice di una borsa di studio Fulbright
         - year: "2013"
-          event: "Master in Diritto - Università Cattolica di Lovanio"
+          event: Master in Diritto - Università Cattolica di Lovanio
       publications:
-        - date: "Dicembre 2020"
-          title: "La retribuzione variabile. Approccio nel diritto del lavoro, diritto della sicurezza sociale, diritto fiscale e pratica delle risorse umane"
-          publisher: "Larcier"
+        - date: Dicembre 2020
+          title: La retribuzione variabile. Approccio nel diritto del lavoro, diritto
+            della sicurezza sociale, diritto fiscale e pratica delle risorse
+            umane
+          publisher: Larcier
           coAuthors:
-            - "Christine Rizzo"
-        - date: "Dicembre 2020"
-          title: "Shares Allocated by Foreign Parent Company No Longer Exempted from Social Security Contributions?"
-          publisher: "Newsletter"
-        - date: "Gennaio 2020"
-          title: "EU Adopts Directive Setting New Rights for Workers Towards More Transparent and Predictable Working Conditions"
-          publisher: "Newsletter"
-        - date: "Dicembre 2017"
+            - Christine Rizzo
+        - date: Dicembre 2020
+          title: Shares Allocated by Foreign Parent Company No Longer Exempted from Social
+            Security Contributions?
+          publisher: Newsletter
+        - date: Gennaio 2020
+          title: EU Adopts Directive Setting New Rights for Workers Towards More
+            Transparent and Predictable Working Conditions
+          publisher: Newsletter
+        - date: Dicembre 2017
           title: "Restructurings: A Rejuvenation Cure for the Renault Act?"
-          publisher: "Newsletter"
+          publisher: Newsletter
       conferences: []
       seo:
-        title: "Profilo | Stephanie Michiels - Avvocato specializzato in diritto del lavoro belga ed europeo a Bruxelles"
-        description: "Scopri il percorso e l'esperienza di Stephanie Michiels, avvocato specializzato in diritto del lavoro belga ed europeo a Bruxelles con esperienza presso la Commissione europea. Consulenza e rappresentanza per dipendenti e datori di lavoro."
-        image: "https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg"
+        title: Profilo | Stephanie Michiels - Avvocato specializzato in diritto del
+          lavoro belga ed europeo a Bruxelles
+        description: Scopri il percorso e l'esperienza di Stephanie Michiels, avvocato
+          specializzato in diritto del lavoro belga ed europeo a Bruxelles con
+          esperienza presso la Commissione europea. Consulenza e rappresentanza
+          per dipendenti e datori di lavoro.
+        image: https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg
         keywords:
-          - "avvocato diritto del lavoro Bruxelles"
-          - "profilo Stephanie Michiels"
-          - "esperienza giuridica lavoro"
-          - "consulenza diritto sociale"
-          - "difesa dipendenti datori di lavoro"
-          - "specialista controversie lavoro Belgio"
-          - "diritto del lavoro europeo"
-          - "Commissione europea"
-          - "protezione dati personali"
+          - avvocato diritto del lavoro Bruxelles
+          - profilo Stephanie Michiels
+          - esperienza giuridica lavoro
+          - consulenza diritto sociale
+          - difesa dipendenti datori di lavoro
+          - specialista controversie lavoro Belgio
+          - diritto del lavoro europeo
+          - Commissione europea
+          - protezione dati personali
