@@ -12,6 +12,8 @@ fr:
         - year: "2025"
           event: Octroi du titre de spécialiste en droit du travail par le Barreau de
             Bruxelles
+        - year: "2025"
+          event: Avocate agréée en droit collaboratif
         - year: "2024"
           event: Création de mon cabinet
         - year: 2017-2024
@@ -20,14 +22,14 @@ fr:
           event: Premier prix au concours d'éloquence du Barreau de Lausanne
         - year: 2018-2019
           event: Directrice de la Conférence du Jeune Barreau de Bruxelles
+        - year: "2018"
+          event: Master complémentaire en droit social - Vrije Universiteit Brussel
         - year: 2013-2017
           event: Avocate collaboratrice chez Meritius Brussels
         - year: 2011-2013
           event: Membre active du Carrefour des stagiaires du Barreau de Bruxelles
         - year: 2010-2013
           event: Avocate stagiaire chez LVP Law Brussels
-        - year: "2018"
-          event: Master complémentaire en droit social - Vrije Universiteit Brussel
         - year: "2010"
           event: LLM en droit européen et international - Universiteit Gent
         - year: "2009"
@@ -78,7 +80,7 @@ fr:
         - "5 juillet 2018, Carrefour de la formation: \"La CCT 109: 4 années
           d'application et 245 décisions judiciaires\", avec Sophie Gérard et
           Sophie Sottiaux"
-      title: Avocate en droit du travail
+      title: Avocate spécialiste en droit du travail
       languages: Je travaille en français, italien et anglais. J'ai également une
         bonne connaissance du néerlandais.
       seo:
@@ -208,8 +210,14 @@ en:
           their internship. I am also a member of the Association of Jurists
           Practicing Social Law (AJPDS).
       careerPath:
+        - event: CAPA (Certificate of Aptitude for the Profession of Lawyer) Professor -
+            Labor Law - Stress Management and Burnout Prevention
+          year: 2025-2026
         - year: "2025"
           event: Awarded the title of specialist in employment law by the Brussels Bar
+        - year: "2025"
+          event: Certification "droit collaboratif" (alternative dispute resolution
+            method)
         - year: "2024"
           event: Establishment of my legal practice
         - year: 2017-2024
@@ -218,14 +226,14 @@ en:
           event: First prize in the Lausanne Bar Association's eloquence competition
         - year: 2018-2019
           event: Director of the Young Brussels Bar Conference
+        - year: "2018"
+          event: Advanced Master in Social Law - Vrije Universiteit Brussel
         - year: 2013-2017
           event: Associate Lawyer at Meritius Brussels
         - year: 2011-2013
           event: Active member of the Brussels Bar Trainees' Forum
         - year: 2010-2013
           event: Trainee Lawyer at LVP Law Brussels
-        - year: "2018"
-          event: Advanced Master in Social Law - Vrije Universiteit Brussel
         - year: "2010"
           event: LLM in European and International Law - Universiteit Gent
         - year: "2009"
@@ -373,9 +381,15 @@ it:
           tirocinio. Sono anche membro dell'Associazione dei professionisti del
           diritto del lavoro (AJPDS).
       careerPath:
+        - event: Professore CAPA (Certificato di idoneità alla professione di avvocato)  -
+            Diritto del lavoro - Gestione dello stress e prevenzione del burnout
+          year: 2025-2026
         - year: "2025"
           event: Conferimento del titolo di specialista in diritto del lavoro dall'Ordine
             degli Avvocati di Bruxelles
+        - event: Certificazione “diritto collaborativo” (metodo alternativo di risoluzione
+            delle controversie)
+          year: "2025"
         - year: "2024"
           event: Creazione del mio studio legale
         - year: 2017-2024
