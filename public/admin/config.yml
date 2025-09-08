@@ -312,6 +312,13 @@ collections:
                       - {label: "Titre", name: "title", widget: "string"}
                       - {label: "Description", name: "description", widget: "text", required: false}
                       - {label: "Prix", name: "prix", widget: "string", required: false}
+                      - label: "Services"
+                        name: "services"
+                        widget: "list"
+                        required: false
+                        field: {label: "Service", name: "service", widget: "string"}
+                      - {label: "Note", name: "note", widget: "text", required: false}
+                      - {label: "Condition", name: "condition", widget: "text", required: false}
                       - label: "Options"
                         name: "options"
                         widget: "list"
@@ -338,7 +345,7 @@ collections:
   - name: "legal-pages"
     label: "Pages Légales"
     files:
-      - file: "src/content/legal/legal.yml"
+      - file: "src/content/legal/legal-info.yml"
         name: "legal-notice"
         label: "Mentions légales"
         i18n:
@@ -364,7 +371,7 @@ collections:
             widget: "object"
             fields: *legalFields
 
-      - file: "src/content/privacy/privacy.yml"
+      - file: "src/content/legal/privacy.yml"
         name: "privacy-policy"
         label: "Politique de confidentialité"
         i18n:
@@ -390,7 +397,7 @@ collections:
             widget: "object"
             fields: *privacyFields
 
-      - file: "src/content/legal-info/legal-info.yml"
+      - file: "src/content/legal/legal-info.yml"
         name: "legal-info"
         label: "Infos légales & CGV"
         i18n:
