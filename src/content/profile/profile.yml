@@ -1,8 +1,14 @@
+# Photos centralisées de l'équipe - utilisées pour toutes les langues
+teamImages:
+  - name: "Christine Rizzo"
+    image: "https://uploads-ssl.webflow.com/66a3633bf638ce4da95b8ad7/66a367d9f9bfc9b93e01c4a3_Christine_Apropos-b.jpeg"
+  - name: "Stephanie Michiels"
+    image: "/assets/images/s_michiels_photo.webp"
+
 fr:
   lawyers:
     - name: "Christine Rizzo"
       title: "Avocate en droit du travail"
-      image: "https://uploads-ssl.webflow.com/66a3633bf638ce4da95b8ad7/66a367d9f9bfc9b93e01c4a3_Christine_Apropos-b.jpeg"
       linkedin: "https://www.linkedin.com/in/chrizzo11/"
       languages: "Je travaille en français, italien et anglais. J'ai également une bonne connaissance du néerlandais."
       bio:
@@ -66,7 +72,6 @@ fr:
     
     - name: "Stephanie Michiels"
       title: "Avocate en droit du travail belge et européen"
-      image: "/assets/images/s_michiels_photo.webp"
       linkedin: "https://www.linkedin.com/in/stephanie-michiels-/"
       languages: "Je travaille en français, néerlandais et anglais."
       bio:
@@ -125,7 +130,6 @@ en:
   lawyers:
     - name: "Christine Rizzo"
       title: "Employment lawyer"
-      image: "https://uploads-ssl.webflow.com/66a3633bf638ce4da95b8ad7/66a367d9f9bfc9b93e01c4a3_Christine_Apropos-b.jpeg"
       languages: "I work in French, Italian, and English. I also have a good knowledge of Dutch."
       bio:
         - "A member of the Brussels Bar since 2010 and with experience with international clients and in a niche firm, I offer my clients - both employers and employees - support services, advice, negotiation, and legal defense in labor relations law."
@@ -186,7 +190,6 @@ en:
     
     - name: "Stephanie Michiels"
       title: "Belgian and European Labor Law Attorney"
-      image: "/assets/images/s_michiels_photo.webp"
       languages: "I work in French, Dutch, and English."
       bio:
         - "Admitted to the Brussels Bar in 2015, I am passionate about human resources issues and employer-employee relations, in both the private and public sectors."
@@ -244,7 +247,6 @@ it:
   lawyers:
     - name: "Christine Rizzo"
       title: "Avvocata del lavoro"
-      image: "https://uploads-ssl.webflow.com/66a3633bf638ce4da95b8ad7/66a367d9f9bfc9b93e01c4a3_Christine_Apropos-b.jpeg"
       languages: "Lavoro in francese, italiano e inglese. Ho anche una buona conoscenza della lingua nederlandese."
       bio:
         - "Membro dell'Ordine degli Avvocati di Bruxelles dal 2010 e con esperienza con clienti internazionali e in uno studio specializzato, offro ai miei clienti - sia datori di lavoro che dipendenti - servizi di supporto, consulenza, negoziazione e difesa legale nel diritto delle relazioni di lavoro."
@@ -305,7 +307,6 @@ it:
     
     - name: "Stephanie Michiels"
       title: "Avvocata specializzata in diritto del lavoro belga ed europeo"
-      image: "/assets/images/s_michiels_photo.webp"
       languages: "Lavoro in francese, olandese e inglese."
       bio:
         - "Iscritta all'Ordine degli Avvocati di Bruxelles nel 2015, sono appassionata delle questioni legate alle risorse umane e alle relazioni tra datore di lavoro e lavoratori, sia nel settore privato che pubblico."

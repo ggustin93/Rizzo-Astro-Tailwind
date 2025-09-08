@@ -23,9 +23,24 @@ if (!profileData) {
 // Extract the lawyers array from the new structure
 const lawyers = profileData.lawyers || [];
 
+// Get the centralized team images
+const teamImages = profileEntry.data.teamImages || [];
+
+// Map images to lawyers by name
+const lawyersWithImages = lawyers.map(lawyer => {
+  const imageData = teamImages.find(img => img.name === lawyer.name);
+  return {
+    ...lawyer,
+    image: imageData ? imageData.image : lawyer.image // Fallback to old structure if needed
+  };
+});
+
 if (!lawyers || lawyers.length === 0) {
   throw new Error(`No lawyers found in profile data for language: ${lang}`);
 }
+
+// Use lawyersWithImages instead of lawyers for rendering
+const lawyersToDisplay = lawyersWithImages;
 
 // Translations
 const translations = {
@@ -81,7 +96,7 @@ const seoData = {
       <h1 class="text-3xl md:text-4xl lg:text-5xl font-light text-gray-800 mb-8 md:mb-12 text-center">{t.teamTitle}</h1>
       
       <div class="space-y-12 md:space-y-16">
-        {lawyers.map((lawyer: any, index: number) => (
+        {lawyersToDisplay.map((lawyer: any, index: number) => (
           <div class={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 md:gap-12 items-start`}>
             <!-- Lawyer Image -->
             <div class="w-full md:w-1/3">

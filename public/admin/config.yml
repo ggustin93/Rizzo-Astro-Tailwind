@@ -121,7 +121,7 @@ collections:
                 widget: "object"
                 fields:
                   - {label: "Titre SEO", name: "title", widget: "string", required: false}
-                  - {label: "Description SEO", name: "description", widget: "text", required: false, pattern: ['^.{0,160}$', "La description doit faire 160 caractères maximum"], hint: "Description courte pour le SEO (max 160 caractères)"}
+                  - {label: "Description SEO", name: "description", widget: "text", required: false, pattern: ['^.{0,200}$', "La description idéale fait 155-160 caractères (max 200)"], hint: "Description pour le SEO - idéalement 155-160 caractères (max 200)"}
                   - {label: "Image SEO", name: "image", widget: "image", required: false}
                   - label: "Mots-clés SEO"
                     name: "keywords"
@@ -168,7 +168,7 @@ collections:
                 widget: "object"
                 fields:
                   - {label: "Titre SEO", name: "title", widget: "string", required: false}
-                  - {label: "Description SEO", name: "description", widget: "text", required: false, pattern: ['^.{0,160}$', "La description doit faire 160 caractères maximum"], hint: "Description courte pour le SEO (max 160 caractères)"}
+                  - {label: "Description SEO", name: "description", widget: "text", required: false, pattern: ['^.{0,200}$', "La description idéale fait 155-160 caractères (max 200)"], hint: "Description pour le SEO - idéalement 155-160 caractères (max 200)"}
                   - {label: "Image SEO", name: "image", widget: "image", required: false}
                   - label: "Mots-clés SEO"
                     name: "keywords"
@@ -194,6 +194,16 @@ collections:
         i18n:
           structure: single_file
         fields:
+          # Images centralisées - upload une seule fois pour toutes les langues
+          - label: "Photos de l'équipe (partagées entre toutes les langues)"
+            name: "teamImages"
+            widget: "list"
+            summary: "{{fields.name}}"
+            collapsed: false
+            hint: "Téléchargez les photos ici une seule fois. Elles seront automatiquement utilisées pour toutes les langues."
+            fields:
+              - {label: "Nom de l'avocate", name: "name", widget: "string", hint: "Doit correspondre exactement au nom utilisé dans les profils"}
+              - {label: "Photo", name: "image", widget: "image"}
           - label: "Français"
             name: "fr"
             widget: "object"
@@ -203,9 +213,8 @@ collections:
                 widget: "list"
                 summary: "{{fields.name}} - {{fields.title}}"
                 fields:
-                  - {label: "Nom", name: "name", widget: "string"}
+                  - {label: "Nom", name: "name", widget: "string", hint: "Doit correspondre au nom dans 'Photos de l'équipe' pour lier l'image"}
                   - {label: "Titre", name: "title", widget: "string"}
-                  - {label: "Image", name: "image", widget: "image"}
                   - label: "Biographie"
                     name: "bio"
                     widget: "list"
@@ -240,7 +249,7 @@ collections:
                     collapsed: true
                     fields:
                       - {label: "Titre SEO", name: "title", widget: "string", required: false}
-                      - {label: "Description SEO", name: "description", widget: "text", required: false, pattern: ['^.{0,160}$', "La description doit faire 160 caractères maximum"]}
+                      - {label: "Description SEO", name: "description", widget: "text", required: false, pattern: ['^.{0,200}$', "La description idéale fait 155-160 caractères (max 200)"]}
                       - {label: "Image SEO", name: "image", widget: "string", required: false}
                       - label: "Mots-clés SEO"
                         name: "keywords"
@@ -435,7 +444,7 @@ collections:
           name: "point"
           widget: "text"
         hint: "Optionnel. Résumé en quelques points clés de l'article. Chaque point peut être sur plusieurs lignes. Ils apparaîtront dans un encadré au début de l'article."
-      - {label: "Description SEO", name: "description", widget: "text", required: true, pattern: ['^.{0,160}$', "La description doit faire 160 caractères maximum"], hint: "Description courte pour le SEO (max 160 caractères)"}
+      - {label: "Description SEO", name: "description", widget: "text", required: true, pattern: ['^.{0,200}$', "La description idéale fait 155-160 caractères (max 200)"], hint: "Description pour le SEO - idéalement 155-160 caractères (max 200)"}
       - label: "Mots-clés SEO (optionnel)"
         name: "keywords"
         widget: "list"
@@ -461,7 +470,7 @@ collections:
       - label: "Highlights (optional)"
         name: "highlights"
         hint: "Optional. Summary of the article in a few key points. Each point can be multiple lines. They will appear in a box at the beginning of the article."
-      - {label: "SEO Description", name: "description", widget: "text", required: true, pattern: ['^.{0,160}$', "Description must be 160 characters or less"], hint: "Short description for SEO (max 160 characters)"}
+      - {label: "SEO Description", name: "description", widget: "text", required: true, pattern: ['^.{0,200}$', "Ideal description is 155-160 characters (max 200)"], hint: "SEO description - ideally 155-160 characters (max 200)"}
       - label: "SEO Keywords (optional)"
         name: "keywords"
         hint: "Optional. Add relevant keywords for SEO."
@@ -483,7 +492,7 @@ collections:
       - label: "Punti salienti (opzionale)"
         name: "highlights"
         hint: "Opzionale. Riassunto dell'articolo in alcuni punti chiave. Ogni punto può essere su più righe. Appariranno in un riquadro all'inizio dell'articolo."
-      - {label: "Descrizione SEO", name: "description", widget: "text", required: true, pattern: ['^.{0,160}$', "La descrizione deve essere di massimo 160 caratteri"], hint: "Breve descrizione per SEO (max 160 caratteri)"}
+      - {label: "Descrizione SEO", name: "description", widget: "text", required: true, pattern: ['^.{0,200}$', "La descrizione ideale è di 155-160 caratteri (max 200)"], hint: "Descrizione SEO - idealmente 155-160 caratteri (max 200)"}
       - label: "Parole chiave SEO (opzionale)"
         name: "keywords"
         hint: "Opzionale. Aggiungi parole chiave rilevanti per il SEO."
@@ -581,8 +590,8 @@ collections:
                 widget: "text"
                 required: false
                 default: "Christine Rizzo - Avocate en droit du travail à Bruxelles. Expertise pour employeurs et travailleurs."
-                pattern: ['^.{0,160}$', "La description doit faire 160 caractères maximum"]
-                hint: "Description générale du site pour le référencement (max 160 caractères)"
+                pattern: ['^.{0,200}$', "La description idéale fait 155-160 caractères (max 200)"]
+                hint: "Description générale du site pour le référencement - idéalement 155-160 caractères (max 200)"
 
               - label: "Nom du site"
                 name: "siteName"
