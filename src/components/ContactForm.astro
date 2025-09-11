@@ -84,6 +84,8 @@ const t = translations[lang as keyof typeof translations] || translations.fr;
     >
       <!-- Honeypot field for spam protection -->
       <input type="hidden" name="form-name" value="contact-form" />
+      <!-- Email subject for Netlify (will be dynamically updated) -->
+      <input type="hidden" name="email-subject" id="email-subject" value="[Site web Rizzo-Michiels] Nouveau message" />
       <div class="hidden">
         <label>
           Don't fill this out if you're human:
@@ -201,8 +203,35 @@ const t = translations[lang as keyof typeof translations] || translations.fr;
     const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
     const submitText = submitButton?.querySelector('.submit-text') as HTMLElement;
     const submitLoading = submitButton?.querySelector('.submit-loading') as HTMLElement;
+    const subjectField = form.querySelector('input#subject') as HTMLInputElement;
+    const emailSubjectField = form.querySelector('#email-subject') as HTMLInputElement;
+    
+    // Update the hidden email-subject field when user types in the visible subject field
+    if (subjectField && emailSubjectField) {
+      subjectField.addEventListener('input', () => {
+        const userSubject = subjectField.value.trim();
+        if (userSubject) {
+          emailSubjectField.value = `[Site web Rizzo-Michiels] Nouveau message : ${userSubject}`;
+        } else {
+          emailSubjectField.value = '[Site web Rizzo-Michiels] Nouveau message';
+        }
+      });
+      
+      // Initialize on page load if subject already has a value
+      if (subjectField.value.trim()) {
+        emailSubjectField.value = `[Site web Rizzo-Michiels] Nouveau message : ${subjectField.value.trim()}`;
+      }
+    }
     
     form.addEventListener('submit', async () => {
+      // Update email subject one final time before submission
+      if (subjectField && emailSubjectField) {
+        const userSubject = subjectField.value.trim();
+        if (userSubject) {
+          emailSubjectField.value = `[Site web Rizzo-Michiels] Nouveau message : ${userSubject}`;
+        }
+      }
+      
       // Show loading state
       if (submitText && submitLoading) {
         submitText.classList.add('hidden');
