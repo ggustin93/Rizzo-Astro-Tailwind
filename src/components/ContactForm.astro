@@ -84,8 +84,8 @@ const t = translations[lang as keyof typeof translations] || translations.fr;
     >
       <!-- Honeypot field for spam protection -->
       <input type="hidden" name="form-name" value="contact-form" />
-      <!-- Email subject for Netlify (will be dynamically updated) -->
-      <input type="hidden" name="email-subject" id="email-subject" value="[Site web Rizzo-Michiels] Nouveau message" />
+      <!-- Store original subject for form data -->
+      <input type="hidden" name="user-subject" id="user-subject" value="" />
       <div class="hidden">
         <label>
           Don't fill this out if you're human:
@@ -204,32 +204,27 @@ const t = translations[lang as keyof typeof translations] || translations.fr;
     const submitText = submitButton?.querySelector('.submit-text') as HTMLElement;
     const submitLoading = submitButton?.querySelector('.submit-loading') as HTMLElement;
     const subjectField = form.querySelector('input#subject') as HTMLInputElement;
-    const emailSubjectField = form.querySelector('#email-subject') as HTMLInputElement;
+    const userSubjectField = form.querySelector('#user-subject') as HTMLInputElement;
     
-    // Update the hidden email-subject field when user types in the visible subject field
-    if (subjectField && emailSubjectField) {
+    // Store the original user input for reference
+    let originalSubject = '';
+    
+    // Update the hidden field with original value when user types
+    if (subjectField && userSubjectField) {
       subjectField.addEventListener('input', () => {
-        const userSubject = subjectField.value.trim();
-        if (userSubject) {
-          emailSubjectField.value = `[Site web Rizzo-Michiels] Nouveau message : ${userSubject}`;
-        } else {
-          emailSubjectField.value = '[Site web Rizzo-Michiels] Nouveau message';
-        }
+        originalSubject = subjectField.value;
+        userSubjectField.value = originalSubject;
       });
-      
-      // Initialize on page load if subject already has a value
-      if (subjectField.value.trim()) {
-        emailSubjectField.value = `[Site web Rizzo-Michiels] Nouveau message : ${subjectField.value.trim()}`;
-      }
     }
     
-    form.addEventListener('submit', async () => {
-      // Update email subject one final time before submission
-      if (subjectField && emailSubjectField) {
-        const userSubject = subjectField.value.trim();
-        if (userSubject) {
-          emailSubjectField.value = `[Site web Rizzo-Michiels] Nouveau message : ${userSubject}`;
-        }
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      // Add prefix to the subject field before submission
+      if (subjectField && originalSubject) {
+        subjectField.value = `[Site web Rizzo-Michiels] Nouveau message : ${originalSubject}`;
+      } else if (subjectField) {
+        subjectField.value = '[Site web Rizzo-Michiels] Nouveau message';
       }
       
       // Show loading state
@@ -238,6 +233,11 @@ const t = translations[lang as keyof typeof translations] || translations.fr;
         submitLoading.classList.remove('hidden');
         submitButton.disabled = true;
       }
+      
+      // Submit the form
+      setTimeout(() => {
+        form.submit();
+      }, 100);
     });
   });
 </script>
