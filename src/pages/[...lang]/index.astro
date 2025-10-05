@@ -13,7 +13,6 @@ import { Picture } from 'astro:assets';
 
 // Import des images locales
 import heroImage from '../../assets/images/hero_image_wbg.svg';
-import profileImage from '../../assets/images/chrizzo-pp.avif';
 import illustrationServices from '../../assets/images/illustration_services.svg';
 
 const supportedLanguages = ['fr', 'en', 'it'] as const;
@@ -47,6 +46,24 @@ if (!homeEntry) {
 }
 const content = homeEntry.data[currentLang] || homeEntry.data['fr'];
 
+// Récupérer les données des profils pour les photos CMS
+const profileEntry = await getDataEntryById('profile', 'profile');
+if (!profileEntry) {
+  throw new Error("Profile entry not found! Make sure you have a `profile.yml` file in `src/content/profile`.");
+}
+const profileData = profileEntry.data[currentLang] || profileEntry.data['fr'];
+const teamImages = profileEntry.data.teamImages || [];
+
+// Mapper les photos aux avocates par nom
+const lawyers = profileData.lawyers || [];
+const lawyersWithImages = lawyers.map(lawyer => {
+  const imageData = teamImages.find(img => img.name === lawyer.name);
+  return {
+    ...lawyer,
+    image: imageData ? imageData.image : null
+  };
+});
+
 // Récupérer la configuration du site
 const siteConfigEntry = await getEntry('config', 'site-config');
 if (!siteConfigEntry) {
@@ -54,8 +71,8 @@ if (!siteConfigEntry) {
 }
 const showArticlesSection = siteConfigEntry?.data?.sectionsVisibility || false;
 // Get primary lawyer's calendar link (first in the lawyers array)
-const lawyers = siteConfigEntry?.data?.lawyers || [];
-const calendarLink = lawyers[0]?.calendarLink || 'https://cal.com/c.rizzo-avocat.be/rendez-vous?duration=15';
+const siteConfigLawyers = siteConfigEntry?.data?.lawyers || [];
+const calendarLink = siteConfigLawyers[0]?.calendarLink || 'https://cal.com/c.rizzo-avocat.be/rendez-vous?duration=15';
 
 if (!content || !content.expertise || !content.expertise.travailleurs) {
   console.error('Structure de contenu invalide:', content);
@@ -198,45 +215,33 @@ export const prerender = true;
           <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
         </div>
         <div class="max-w-2xl mx-auto">
-          <!-- Photo montage of both lawyers -->
+          <!-- Photo montage of both lawyers using CMS images -->
           <div class="grid grid-cols-2 gap-4 md:gap-6 mb-8">
-            <!-- Christine Rizzo -->
-            <div class="text-center">
-              <a href={`/${currentLang}/equipe/christine-rizzo`} class="block group">
-                <div class="aspect-square overflow-hidden rounded-lg shadow-lg mb-3 border border-gray-900 relative max-w-[200px] md:max-w-[250px] mx-auto">
-                  <Picture 
-                    src={profileImage} 
-                    formats={['avif', 'webp']} 
-                    alt="Christine Rizzo" 
-                    class="w-full h-full object-cover object-center transition-all duration-300 group-hover:scale-105" 
-                    decoding="async" 
-                    loading="lazy" 
-                    height="500"
-                    width="500" 
-                  />
-                  <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
-                </div>
-                <h3 class="text-base md:text-lg font-semibold text-travailleur group-hover:text-travailleur/80 transition-colors">Christine Rizzo</h3>
-              </a>
-            </div>
-            <!-- Stephanie Michiels -->
-            <div class="text-center">
-              <a href={`/${currentLang}/equipe/stephanie-michiels`} class="block group">
-                <div class="aspect-square overflow-hidden rounded-lg shadow-lg mb-3 border border-gray-900 relative max-w-[200px] md:max-w-[250px] mx-auto">
-                  <img 
-                    src="/assets/images/s_michiels_photo.webp" 
-                    alt="Stephanie Michiels" 
-                    class="w-full h-full object-cover object-center transition-all duration-300 group-hover:scale-105" 
-                    decoding="async" 
-                    loading="lazy" 
-                    height="500"
-                    width="500" 
-                  />
-                  <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
-                </div>
-                <h3 class="text-base md:text-lg font-semibold text-travailleur group-hover:text-travailleur/80 transition-colors">Stephanie Michiels</h3>
-              </a>
-            </div>
+            {lawyersWithImages.map((lawyer) => (
+              <div class="text-center">
+                <a href={`/${currentLang}/equipe/${lawyer.name.toLowerCase().replace(' ', '-')}`} class="block group">
+                  <div class="aspect-square overflow-hidden rounded-lg shadow-lg mb-3 border border-gray-900 relative max-w-[200px] md:max-w-[250px] mx-auto">
+                    {lawyer.image ? (
+                      <img 
+                        src={lawyer.image} 
+                        alt={lawyer.name} 
+                        class="w-full h-full object-cover object-center transition-all duration-300 group-hover:scale-105" 
+                        decoding="async" 
+                        loading="lazy" 
+                        height="500"
+                        width="500" 
+                      />
+                    ) : (
+                      <div class="w-full h-full bg-gray-200 flex items-center justify-center">
+                        <span class="text-gray-500">Photo à venir</span>
+                      </div>
+                    )}
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                  </div>
+                  <h3 class="text-base md:text-lg font-semibold text-travailleur group-hover:text-travailleur/80 transition-colors">{lawyer.name}</h3>
+                </a>
+              </div>
+            ))}
           </div>
           <!-- Description and CTA -->
           <div class="text-center">
