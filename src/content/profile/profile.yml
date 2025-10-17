@@ -155,10 +155,10 @@ fr:
         - "Les questions liées au package salarial des employé·e·s du secteur
           public et privé, font partie de ma pratique quotidienne. Je traite
           aussi notamment toutes vos questions liées aux ruptures de contrats,
-          au déroulement de la carrière (évaluations, promotions, etc.), à la
-          couverture sociale (pension, allocations), aux discriminations, au
-          harcèlement moral et sexuel au travail, ainsi qu'à la problématique
-          des lanceurs d'alerte. "
+          au déroulement de la carrière (évaluations, promotions,
+          disciplinaire), à la couverture sociale (pensions, allocations), aux
+          discriminations, au harcèlement moral et sexuel au travail, ainsi qu'à
+          la problématique des lanceurs d'alerte. "
         - Je maîtrise parfaitement les règles relatives aux droits et
           obligations des fonctionnaires et agents de l'Union européenne et suis
           également formée à la protection des données à caractère personnel.
@@ -190,7 +190,7 @@ fr:
 en:
   lawyers:
     - name: Christine Rizzo
-      title: Employment Lawyer
+      title: Employment lawyer
       languages: I work in French, Italian, and English. I also have a good knowledge
         of Dutch.
       bio:
@@ -276,26 +276,22 @@ en:
           - employee employer defense
           - workplace litigation specialist Belgium
     - name: Stephanie Michiels
-      title: Employment & European civil service Lawyer
+      title: Belgian and European Employment Lawyer
       languages: I work in French, Dutch, and English.
       bio:
         - Admitted to the Brussels Bar in 2015, I am passionate about HR-related
           issues and employer-employee relations, both in the public and private
           sector.
-        - I have gained a multi-sector perspective on labour law. As an
-          attorney, I worked in the employment law department of an
-          international law firm (US-based), handling cases for multinational
-          companies, SMEs, as well as public entities. I then served as a legal
-          officer at the European Commission in EU civil service law.
-        - Matters related to pay and compensation for employees in the private
-          sector and for EU officials and agents are part of my daily practice.
-          I also handle all your questions related to contract termination,
-          career progression (appraisals, promotion, discipline), social
-          security coverage (pension, allowances), discrimination, moral and
+        - I have gained a multi-sector perspective on labour law. As a lawyer, I
+          worked in the employment law department of an international law firm,
+          handling cases for multinational companies, SMEs, and public entities.
+          I then served as a legal officer at the European Commission.
+        - Matters related to pay and compensation packages for employees in the
+          public and private sectors are part of my daily practice. I also
+          handle all your questions related to contract termination, career
+          progression, social security coverage, discrimination, moral and
           sexual harassment at work, as well as whistleblowing issues.
-        - I have a thorough knowledge of the rules governing the rights and
-          obligations of EU officials and agents. I am also trained in data
-          protection law.
+        - I am also trained in data protection law.
         - In my practice, I favor negotiation when it allows for a quick
           resolution to disputes. However, I vigorously advocate for my clients
           in court when a negotiated outcome is not feasible.
@@ -305,7 +301,7 @@ en:
         - year: 2020-2025
           event: Legal officer at the European Commission
         - year: 2017-2020
-          event: Attorney in the employment law department at Crowell & Moring LLP
+          event: Attorney in the social law department at Crowell & Moring LLP
         - year: "2019"
           event: Second prize at the Brussels Bar eloquence contest 'J'accuse!'
         - year: "2018"
@@ -317,7 +313,7 @@ en:
           event: Volunteer mediator at the Court via the 'California Academy of Mediation
             Professionals', USA
         - year: "2014"
-          event: LL.M. in Alternative Dispute Resolution - University of California Los
+          event: LLM in Alternative Dispute Resolution - University of California Los
             Angeles, USA
         - year: "2013"
           event: Fulbright Scholarship and Dean Tuition Fellowship recipient
