@@ -1,9 +1,9 @@
 # Dependencies
-/node_modules/
+node_modules/
 
 # Build Output
-/dist/
-/.astro/
+dist/
+.astro/
 
 # Logs
 npm-debug.log*
@@ -14,8 +14,14 @@ pnpm-debug.log*
 
 # System Files
 .DS_Store
+Thumbs.db
 
-# User-specific
+# IDE / Editors
+.cursor/
+.vscode/
+.idea/
+
+# User-specific / Local
 maintenance/
 .netlify/
 .obsidian/
@@ -23,9 +29,17 @@ Ressources - Avril 2025/
 
 # Test results
 test-results/
+playwright-report/
 
-# Serena MCP
+# MCP Servers
 .serena/
-
-# Playwright MCP
 .playwright-mcp/
+
+# Replit (legacy)
+.replit
+replit.nix
+
+# Misc
+*.local
+.env*
+!.env.example
