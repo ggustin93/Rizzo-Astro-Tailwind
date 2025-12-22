@@ -12,6 +12,9 @@
   command = "npm run build"
   publish = "dist"
 
+[build.environment]
+  NODE_VERSION = "22"
+
 # --- Redirects ---
 # Primary redirect for humans - permanent redirect to French version
 [[redirects]]
