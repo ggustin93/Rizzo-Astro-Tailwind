@@ -16,47 +16,12 @@ fr:
 
       Les frais liés à l'intervention de tiers (huissiers, experts, traducteurs, avocats spécialisés dans d'autres domaines) ou les frais de justice (droits de greffe) sont refacturés au prix coûtant ou directement payables au tiers intervenant.
   forfaits:
-
-    title: Exemples de formules forfaitaires
-    intro: Les formules forfaitaires suivantes sont données à titre indicatif
-      uniquement, le montant des honoraires convenu dépendra de la nature du
-      travail à accomplir, de l'importance financière et morale de la cause, de
-      la nature et l'ampleur du travail accompli, de l'urgence, du résultat
-      obtenu et de votre capacité financière. La TVA est de 21%.
-    exemples:
-      - title: Procédure judiciaire - Contestation d'un licenciement
-        description: (par exemple pour motif grave, licenciement abusif,
-          discriminatoire, manifestement déraisonnable)
-        prix: 350 € htva / mois pendant 24 mois (soit 8.400 € htva) + 10% sur les
-          résultats nets obtenus
-        services:
-          - Montant couvrant un degré de juridiction
-          - Analyse du dossier
-          - Calcul des indemnités
-          - Introduction de la procédure
-          - Rédaction des conclusions
-          - Plaidoiries
-          - Suivi de l'exécution
-          - Vérification des documents sociaux
-          - Relations avec l'avocat adverse et la juridiction
-        note: Dans le cadre du forfait, nous répondons à toutes vos questions sur la
-          procédure en cours et vous tenons informé(e) de chaque avancée. Nous
-          nous efforçons d'être disponibles tout en préservant le temps nécessaire
-          pour avancer efficacement sur les dossiers.
-        condition: Facturation des heures prestées au tarif horaire convenu en cas
-          d'accord amiable + 10% sur les résultats nets obtenus
-      - title: Consultation 30 min "one shot" - Avoir une réponse rapide à une question
-        options:
-          - description: Sans analyse de documents
-            prix: 100 € htva
-          - description: Avec analyse de documents
-            prix: 250 € htva
-      - title: Règlement de travail
-        prix: 2.500 € htva
-        services:
-          - Rédaction ou mise à jour du règlement de travail
-          - Accompagnement dans le cadre de la procédure d'affichage et de dépôt
-            auprès de l'inspection du travail
+    title: Avoir une réponse rapide à une question - Première consultation 45 min -
+      200 € htva.
+    intro: "La première réunion de 45 minutes est facturée 200 € htva. La TVA est de
+      21%. N'hésitez pas à y apporter tous les documents que vous jugez utiles
+      pour cette première rencontre. "
+    exemples: []
   transparence:
     title: Transparence
     points:
@@ -152,8 +117,9 @@ en:
           - Verification of social documents
           - Relations with the opposing lawyer and the jurisdiction
         note: As part of the flat fee, we answer all your questions about the ongoing
-          procedure and keep you informed of each step. We strive to be available
-          while preserving the time needed to move forward efficiently on cases.
+          procedure and keep you informed of each step. We strive to be
+          available while preserving the time needed to move forward efficiently
+          on cases.
         condition: Billing of hours provided at the agreed hourly rate in case of
           amicable agreement + 10% on the net results obtained
       - title: 30-minute "one-shot" consultation - Getting a quick answer to a question
@@ -261,10 +227,10 @@ it:
           - Monitoraggio dell'esecuzione
           - Verifica dei documenti sociali
           - Rapporti con l'avvocato avversario e la giurisdizione
-        note: Nel quadro del forfait, rispondiamo a tutte le vostre domande sulla procedura
-          in corso e vi teniamo informati di ogni progresso. Ci sforziamo di essere
-          disponibili preservando al contempo il tempo necessario per avanzare
-          efficacemente sui dossier.
+        note: Nel quadro del forfait, rispondiamo a tutte le vostre domande sulla
+          procedura in corso e vi teniamo informati di ogni progresso. Ci
+          sforziamo di essere disponibili preservando al contempo il tempo
+          necessario per avanzare efficacemente sui dossier.
         condition: Fatturazione delle ore prestate alla tariffa oraria concordata in
           caso di accordo amichevole + 10% sui risultati netti ottenuti
       - title: Consulenza 30 min "one shot" - Avere una risposta rapida a una domanda
