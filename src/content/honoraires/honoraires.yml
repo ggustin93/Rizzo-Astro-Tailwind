@@ -1,11 +1,11 @@
 fr:
   previsibilite:
-    title: Prévisibilité et paiement mensualisé
+    title: "Prévisibilité "
     full_content: >-
       Ne pas savoir combien va coûter l'intervention de votre avocat.e peut être
       une source d'inquiétude. 
 
-      Nous vous proposons nos prestations soit à un tarif horaire soit à un tarif forfaitaire fixe "tout compris" payable par mois augmenté le cas échéant d'un honoraire de résultat. Vous savez donc exactement ce que vous allez payer par mois et ce que vous allez payer au total. Le nombre de mensualités est déterminé ensemble en fonction de votre situation personnelle et de votre dossier (par exemple la durée estimée de la procédure judiciaire).
+      Nous vous proposons nos prestations soit à un tarif horaire soit, dans certains cas, à un tarif forfaitaire fixe "tout compris" augmenté le cas échéant d'un honoraire de résultat. Vous savez donc exactement ce que vous allez payer par mois et ce que vous allez payer au total. 
 
 
       Si nous choisissons de travailler ensemble sur base d'un tarif horaire, nos prestations vous sont facturées chaque mois, au fur et à mesure des prestations.
@@ -25,11 +25,9 @@ fr:
   transparence:
     title: Transparence
     points:
-      - Le premier contact vise généralement à identifier vos besoins et si nous
-        sommes les bonnes personnes pour y répondre.
-      - Nous discutons des conditions financières dès le premier entretien.
-      - Vous recevrez ensuite une proposition de prix écrite ainsi que toutes
-        les conditions de notre intervention.
+      - Les modalités de calcul de nos honoraires ainsi que les conditions de
+        notre intervention vous sont communiquées par écrit avant le début de
+        notre intervention.
   assurance:
     title: Pensez à l'assurance protection juridique
     content: >
@@ -73,16 +71,14 @@ fr:
     url: https://youtu.be/Y-SKuT-XqGk
 en:
   previsibilite:
-    title: Predictability and monthly payment
+    title: Predictability
     full_content: >-
       Not knowing how much your lawyer's intervention will cost can be a source
       of concern.
 
-      We offer our services at an hourly rate or at a fixed, all-inclusive rate payable monthly.
+      We offer our services at an hourly rate or, in certain cases, at a fixed, all-inclusive rate payable monthly.
 
       Therefore, you know exactly what you will pay per month and in total.
-
-      The number of monthly installments is determined together based on your personal situation and your case (for example, the estimated duration of the court proceedings).
 
 
       If we choose to work together on an hourly rate basis, our services are billed to you each month as the work progresses.
@@ -93,55 +89,18 @@ en:
 
       Costs related to third-party interventions (bailiffs, experts, translators, lawyers specialized in other fields) or court fees (registry fees) are invoiced at cost or directly payable to the intervening third party.
   forfaits:
-    title: Examples of fixed fee options
-    intro: The following fixed fee options are provided for indicative purposes
-      only. The amount of fees agreed between the lawyer and the client will
-      depend on the nature of the work to be performed, the financial and moral
-      importance of the case, the nature and extent of the work done, the
-      urgency, the result obtained and the client's financial capacity. VAT is
-      21%.
-    exemples:
-      - title: Legal proceedings - Contesting a dismissal
-        description: (e.g. for serious misconduct, abusive, discriminatory, manifestly
-          unreasonable dismissal)
-        prix: 350 € excl. VAT / month for 24 months (i.e. 8.400 € excl. VAT) + 10% on
-          the net results obtained
-        services:
-          - Amount covering one degree of jurisdiction
-          - File analysis
-          - Calculation of compensation
-          - Initiating proceedings
-          - Drafting of conclusions
-          - Pleadings
-          - Monitoring of execution
-          - Verification of social documents
-          - Relations with the opposing lawyer and the jurisdiction
-        note: As part of the flat fee, we answer all your questions about the ongoing
-          procedure and keep you informed of each step. We strive to be
-          available while preserving the time needed to move forward efficiently
-          on cases.
-        condition: Billing of hours provided at the agreed hourly rate in case of
-          amicable agreement + 10% on the net results obtained
-      - title: 30-minute "one-shot" consultation - Getting a quick answer to a question
-        options:
-          - description: Without document analysis
-            prix: 100 € excl. VAT
-          - description: With document analysis
-            prix: 250 € excl. VAT
-      - title: Work regulations
-        prix: 2.500 € excl. VAT
-        services:
-          - Drafting or updating work regulations
-          - Support in the posting and filing procedure with the labor
-            inspectorate
+    title: Get a quick answer to a question - First consultation 45 min - 200 €
+      excl. tax.
+    intro: "The first 45-minute meeting is charged at €200 excluding VAT. VAT is
+      21%. Please feel free to bring any documents you consider useful for this
+      initial meeting. "
+    exemples: []
   transparence:
     title: Transparency
     points:
-      - The initial contact aims at identifying your needs and determining if we
-        are the right persons to address them.
-      - We discuss financial terms from the first meeting.
-      - You receive a written price proposal and all the conditions of our
-        intervention.
+      - The terms and conditions for calculating our fees and the conditions of
+        our services will be provided to you in writing before we begin our
+        work.
   assurance:
     title: Consider legal protection insurance
     content: >-
@@ -184,16 +143,14 @@ en:
     url: https://youtu.be/Y-SKuT-XqGk
 it:
   previsibilite:
-    title: Prevedibilità e pagamento mensile
+    title: Prevedibilità
     full_content: >-
       Non sapere quanto costerà l'intervento del vostro avvocato può essere
       fonte di preoccupazione.
 
-      Vi proponiamo i nostri servizi a una tariffa oraria o forfettaria fissa "tutto incluso" pagabile mensilmente.
+      Vi proponiamo i nostri servizi a una tariffa oraria o, in certi casi, forfettaria fissa "tutto incluso" pagabile mensilmente.
 
       Sapete quindi esattamente quanto pagherete al mese e quanto pagherete in totale.
-
-      Il numero di rate mensili viene determinato insieme in base alla vostra situazione personale e al vostro caso (ad esempio, la durata stimata del procedimento in tribunale).
 
 
       Se scegliamo di lavorare insieme sulla base di una tariffa oraria, le nostre prestazioni vi vengono fatturate ogni mese, man mano che vengono eseguite.
@@ -204,54 +161,17 @@ it:
 
       I costi relativi all'intervento di terzi (ufficiali giudiziari, esperti, traduttori, avvocati specializzati in altri settori) o le spese giudiziarie (diritti di cancelleria) vengono rifatturati al costo o sono direttamente pagabili al terzo interveniente.
   forfaits:
-    title: Esempi di formule forfettarie
-    intro: Le seguenti formule forfettarie sono fornite solo a titolo indicativo.
-      L'importo degli onorari concordato tra l'avvocato e il cliente dipenderà
-      dalla natura del lavoro da svolgere, dall'importanza finanziaria e morale
-      della causa, dalla natura e dall'entità del lavoro svolto, dall'urgenza,
-      dal risultato ottenuto e dalla capacità finanziaria del cliente. L'IVA è
-      del 21%.
-    exemples:
-      - title: Procedura giudiziaria - Contestazione di un licenziamento
-        description: (ad esempio per giusta causa, licenziamento abusivo,
-          discriminatorio, manifestamente irragionevole)
-        prix: 350 € IVA esclusa / mese per 24 mesi (cioè 8.400 € IVA esclusa) + 10% sui
-          risultati netti ottenuti
-        services:
-          - Importo che copre un grado di giurisdizione
-          - Analisi del fascicolo
-          - Calcolo delle indennità
-          - Introduzione della procedura
-          - Redazione delle conclusioni
-          - Arringhe
-          - Monitoraggio dell'esecuzione
-          - Verifica dei documenti sociali
-          - Rapporti con l'avvocato avversario e la giurisdizione
-        note: Nel quadro del forfait, rispondiamo a tutte le vostre domande sulla
-          procedura in corso e vi teniamo informati di ogni progresso. Ci
-          sforziamo di essere disponibili preservando al contempo il tempo
-          necessario per avanzare efficacemente sui dossier.
-        condition: Fatturazione delle ore prestate alla tariffa oraria concordata in
-          caso di accordo amichevole + 10% sui risultati netti ottenuti
-      - title: Consulenza 30 min "one shot" - Avere una risposta rapida a una domanda
-        options:
-          - description: Senza analisi di documenti
-            prix: 100 € IVA esclusa
-          - description: Con analisi di documenti
-            prix: 250 € IVA esclusa
-      - title: Regolamento di lavoro
-        prix: 2.500 € IVA esclusa
-        services:
-          - Redazione o aggiornamento del regolamento di lavoro
-          - Accompagnamento nell'ambito della procedura di affissione e di
-            deposito presso l'ispettorato del lavoro
+    title: Avere una risposta rapida a una domanda - Primo appuntamento 45 min - 200
+      € IVA esclusa.
+    intro: "Il primo incontro di 45 minuti ha un costo di 200 € IVA esclusa. L'IVA è
+      del 21%. Non esitate a portare con voi tutti i documenti che ritenete
+      utili per questo primo incontro. "
+    exemples: []
   transparence:
     title: Trasparenza
     points:
-      - Il primo contatto mira generalmente a identificare le vostre esigenze e
-        se siamo le persone giuste per rispondervi.
-      - Discutiamo delle condizioni finanziarie fin dal primo incontro.
-      - Riceverete una proposta di prezzo scritta con tutte le condizioni del
+      - Le modalità di calcolo dei nostri onorari e le condizioni del nostro
+        intervento vi saranno comunicate per iscritto prima dell'inizio del
         nostro intervento.
   assurance:
     title: Pensate all'assicurazione di protezione giuridica
