@@ -49,6 +49,13 @@ collections:
                       - {label: "Titre", name: "title", widget: "string"}
                       - {label: "Description", name: "description", widget: "text"}
                       - {label: "CTA", name: "cta", widget: "string"}
+                  - label: "Institutions Européennes"
+                    name: "europeennes"
+                    widget: "object"
+                    fields:
+                      - {label: "Titre", name: "title", widget: "string"}
+                      - {label: "Description", name: "description", widget: "text"}
+                      - {label: "CTA", name: "cta", widget: "string"}
                   - label: "Honoraires"
                     name: "honoraires"
                     widget: "object"
@@ -183,6 +190,54 @@ collections:
             name: "it"
             widget: "object"
             fields: *employeursFields
+
+  # Page Institutions Européennes
+  - name: "europeennes"
+    label: "Page Institutions Européennes"
+    files:
+      - file: "src/content/europeennes/europeennes.yml"
+        name: "europeennes"
+        label: "Contenu de la page Institutions Européennes"
+        i18n:
+          structure: single_file
+        fields:
+          - label: "Français"
+            name: "fr"
+            widget: "object"
+            fields: &europeennesFields
+              - {label: "Titre", name: "title", widget: "string"}
+              - label: "Questions"
+                name: "questions"
+                widget: "list"
+                field: {label: Question, name: question, widget: "string"}
+              - {label: "Titre des services", name: "servicesTitle", widget: "string"}
+              - label: "Services"
+                name: "services"
+                widget: "list"
+                fields:
+                  - {label: "Icône", name: "icon", widget: "select", options: ["BriefCase", "Shield", "FileText", "Handshake"]}
+                  - {label: "Texte", name: "text", widget: "string"}
+              - {label: "Texte du bouton CTA", name: "ctaText", widget: "string"}
+              - label: "SEO"
+                name: "seo"
+                widget: "object"
+                fields:
+                  - {label: "Titre SEO", name: "title", widget: "string", required: false}
+                  - {label: "Description SEO", name: "description", widget: "text", required: false, pattern: ['^.{0,320}$', "La description idéale fait 155-160 caractères (max 320)"], hint: "Description pour le SEO - idéalement 155-160 caractères (max 320)"}
+                  - {label: "Image SEO", name: "image", widget: "image", required: false}
+                  - label: "Mots-clés SEO"
+                    name: "keywords"
+                    widget: "list"
+                    required: false
+                    field: {label: "Mot-clé", name: keyword, widget: string}
+          - label: "English"
+            name: "en"
+            widget: "object"
+            fields: *europeennesFields
+          - label: "Italiano"
+            name: "it"
+            widget: "object"
+            fields: *europeennesFields
 
   # Page Équipe
   - name: "profile"

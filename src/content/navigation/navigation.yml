@@ -8,10 +8,12 @@ fr:
         url: /fr#expertise
         hasDropdown: true
         dropdownItems:
-          - label: POUR LES TRAVAILLEURS
-            url: /fr/services/travailleurs
           - label: POUR LES EMPLOYEURS
             url: /fr/services/employeurs
+          - label: POUR LES TRAVAILLEURS
+            url: /fr/services/travailleurs
+          - label: INSTITUTIONS EUROPÉENNES
+            url: /fr/services/europeennes
       - label: L'ÉQUIPE
         url: /fr/equipe
         hasDropdown: true
@@ -52,10 +54,12 @@ en:
         url: /en#expertise
         hasDropdown: true
         dropdownItems:
-          - label: FOR EMPLOYEES
-            url: /en/services/travailleurs
           - label: FOR EMPLOYERS
             url: /en/services/employeurs
+          - label: FOR EMPLOYEES
+            url: /en/services/travailleurs
+          - label: EUROPEAN INSTITUTIONS
+            url: /en/services/europeennes
       - label: THE TEAM
         url: /en/equipe
         hasDropdown: true
@@ -96,10 +100,12 @@ it:
         url: /it#expertise
         hasDropdown: true
         dropdownItems:
-          - label: PER I LAVORATORI
-            url: /it/services/travailleurs
           - label: PER I DATORI DI LAVORO
             url: /it/services/employeurs
+          - label: PER I LAVORATORI
+            url: /it/services/travailleurs
+          - label: ISTITUZIONI EUROPEE
+            url: /it/services/europeennes
       - label: IL TEAM
         url: /it/equipe
         hasDropdown: true

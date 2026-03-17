@@ -238,6 +238,7 @@ export const collections = {
   'honoraires': dataCollection,
   'employeurs': dataCollection,
   'travailleurs': dataCollection,
+  'europeennes': dataCollection,
   'legal': dataCollection,
   'legal-info': dataCollection,
   'privacy': dataCollection,

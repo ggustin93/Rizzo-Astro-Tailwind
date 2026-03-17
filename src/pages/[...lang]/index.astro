@@ -1,16 +1,12 @@
 ---
-// src/pages/blog/[lang]/[slug].astro
 import { getEntry, getDataEntryById } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTA from '../../components/CTA.astro';
-import { CheckCircle } from 'astro-feather-icons';
 import { ChevronDown, Briefcase, User, FileText } from 'astro-feather-icons2';
 import { Calendar } from 'astro-feather-icons';
 import { getArticles } from '../../utils/articles';
 import ArticleCard from '../../components/ArticleCard.astro';
 import Button from '../../components/Button.astro';
-import { Picture } from 'astro:assets';
-
 // Import des images locales
 import heroImage from '../../assets/images/hero_image_wbg.svg';
 import illustrationServices from '../../assets/images/illustration_services.svg';
@@ -70,10 +66,6 @@ if (!siteConfigEntry) {
   throw new Error("Site config entry not found in index page! Make sure you have a `site-config.md` file in `src/content/config`.");
 }
 const showArticlesSection = siteConfigEntry?.data?.sectionsVisibility || false;
-// Get primary lawyer's calendar link (first in the lawyers array)
-const siteConfigLawyers = siteConfigEntry?.data?.lawyers || [];
-const calendarLink = siteConfigLawyers[0]?.calendarLink || 'https://cal.com/c.rizzo-avocat.be/rendez-vous?duration=15';
-
 if (!content || !content.expertise || !content.expertise.travailleurs) {
   console.error('Structure de contenu invalide:', content);
 }
@@ -83,11 +75,6 @@ const recentArticles = showArticlesSection ? await getArticles(currentLang, 3) :
 
 // Ajout des métadonnées SEO
 const { title, description, keywords, image } = content.seo;
-
-// Fonction pour générer des IDs uniques
-function generateUniqueId(prefix: string) {
-  return `${prefix}-${Math.random().toString(36).slice(2, 11)}`;
-}
 
 export const prerender = true;
 ---
@@ -151,30 +138,44 @@ export const prerender = true;
           {content.expertise.description}
         </p> 
         
-        <div class="flex flex-col md:flex-row gap-8 mb-0">
-          <div class="md:w-1/2 bg-travailleur p-4 md:p-6 rounded-lg text-white flex flex-col justify-between">
-            <div>
-              <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">{content.expertise.travailleurs.title}</h3>
-              <p class="text-base md:text-lg font-light mb-4">{content.expertise.travailleurs.description}</p>
-            </div>
-            <Button 
-              href={`/${currentLang}/services/travailleurs`}
-              text={`${content.expertise.travailleurs.cta} →`} 
-              variant="secondary"
-              class="self-end bg-white text-travailleur hover:bg-gray-800 hover:text-white border-white"
-            />
-          </div>
-          
-          <div class="md:w-1/2 bg-employeur p-4 md:p-6 rounded-lg text-white flex flex-col justify-between">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-0">
+          <!-- BLOC 1 : EMPLOYEURS -->
+          <div class="bg-employeur p-4 md:p-6 rounded-lg text-white flex flex-col justify-between">
             <div>
               <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">{content.expertise.employeurs.title}</h3>
               <p class="text-base md:text-lg font-light mb-4">{content.expertise.employeurs.description}</p>
             </div>
-            <Button 
+            <Button
               href={`/${currentLang}/services/employeurs`}
-              text={`${content.expertise.employeurs.cta} →`} 
+              text={`${content.expertise.employeurs.cta} →`}
               variant="secondary"
               class="self-end bg-white text-employeur hover:bg-gray-800 hover:text-white border-white"
+            />
+          </div>
+          <!-- BLOC 2 : TRAVAILLEURS -->
+          <div class="bg-travailleur p-4 md:p-6 rounded-lg text-white flex flex-col justify-between">
+            <div>
+              <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">{content.expertise.travailleurs.title}</h3>
+              <p class="text-base md:text-lg font-light mb-4">{content.expertise.travailleurs.description}</p>
+            </div>
+            <Button
+              href={`/${currentLang}/services/travailleurs`}
+              text={`${content.expertise.travailleurs.cta} →`}
+              variant="secondary"
+              class="self-end bg-white text-travailleur hover:bg-gray-800 hover:text-white border-white"
+            />
+          </div>
+          <!-- BLOC 3 : INSTITUTIONS EUROPÉENNES -->
+          <div class="bg-europeenne p-4 md:p-6 rounded-lg text-white flex flex-col justify-between">
+            <div>
+              <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">{content.expertise.europeennes.title}</h3>
+              <p class="text-base md:text-lg font-light mb-4">{content.expertise.europeennes.description}</p>
+            </div>
+            <Button
+              href={`/${currentLang}/services/europeennes`}
+              text={`${content.expertise.europeennes.cta} →`}
+              variant="secondary"
+              class="self-end bg-white text-europeenne hover:bg-gray-800 hover:text-white border-white"
             />
           </div>
         </div>
@@ -186,19 +187,6 @@ export const prerender = true;
           width="1200"
         />
         
-        <p class="text-center mb-4 md:mb-6 max-w-3xl mx-auto text-dark-gray text-base md:text-lg font-light leading-relaxed">
-          {content.expertise.honoraires.intro} - 
-          <a href={`/${currentLang}/honoraires`} class="text-travailleur hover:underline">{content.expertise.honoraires.linkText}</a>.
-        </p>
-        
-        <ul class="list-none space-y-2 flex flex-col items-start max-w-md mx-auto">
-          {content.expertise.honoraires.advantages.map((advantage: string) => (
-            <li class="text-dark-gray font-light flex items-center w-full text-base md:text-lg">
-              <CheckCircle class="text-travailleur mr-2 w-4 h-4 flex-shrink-0" />
-              <span>{advantage}</span>
-            </li>
-          ))}
-        </ul>
       </div>
     </section>
   </div>

@@ -20,7 +20,9 @@ export default {
         'light-blue': '#c2dae0',
         'beige': '#faf5f0',
         'light-travailleur': '#91bfc4',
-        'light-employeur':'#9397c7' //'#FDFCFB'
+        'light-employeur':'#9397c7', //'#FDFCFB'
+        'europeenne': '#2B6CB0',
+        'light-europeenne': '#90CDF4'
         /*"light-gray": "#fdfcfb",//"#d4d9d0",
         "dark-green": "#06615b",
         "dark-gray": "#747873",
