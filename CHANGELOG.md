@@ -30,6 +30,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Dead code across service pages: unused imports, stale translation objects, unreferenced variables, and outdated comments
 
 ### Fixed
+- Icons on Employeurs service page: `Search` → `CheckSquare` (audit/due diligence) and `UserPlus` → `Users` (individual employment relationship management) — updated in `employeurs.astro` and `employeurs.yml` across all three languages (FR/EN/IT)
 - Null guard on `IconComponent` rendering in `employeurs.astro`
 - Aligned `employeurs.astro` icon map keys with YAML icon names
 - SEO `og:image` and `twitter:image` URLs now point to the production domain instead of GitHub raw URLs

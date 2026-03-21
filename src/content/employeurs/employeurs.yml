@@ -23,12 +23,12 @@ fr:
         professionnelle
   servicesTitle: Nos services
   services:
-    - icon: Search
+    - icon: CheckSquare
       text: Audit - Due Diligence en droit du travail et de la sécurité sociale
     - icon: FileText
       text: Rédaction et révision de vos contrats de travail, règlement de travail et
         politiques RH et GDPR
-    - icon: UserPlus
+    - icon: Users
       text: Conseils - gestion de la relation individuelle de travail, du recrutement
         à la rupture
     - icon: Handshake
@@ -72,12 +72,12 @@ en:
       - and legal tools aimed at improving work-life balance
   servicesTitle: Our Services
   services:
-    - icon: Search
+    - icon: CheckSquare
       text: Audit - due diligence in labor and social security law
     - icon: FileText
       text: Drafting and revision of employment contracts, work regulations, and HR
         policies
-    - icon: UserPlus
+    - icon: Users
       text: Advice on managing individual employment relationships, from recruitment
         to termination
     - icon: Handshake
@@ -131,12 +131,12 @@ it:
         privata e professionale
   servicesTitle: I nostri servizi
   services:
-    - icon: Search
+    - icon: CheckSquare
       text: Audit - Due Diligence in diritto del lavoro
     - icon: FileText
       text: Redazione e revisione dei vostri contratti di lavoro o di collaborazione
         indipendente
-    - icon: UserPlus
+    - icon: Users
       text: Consulenza nella gestione dei rapporti di lavoro individuali,
         dall'assunzione alla cessazione
     - icon: Handshake
