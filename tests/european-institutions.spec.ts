@@ -6,9 +6,9 @@ const languages = ['fr', 'en', 'it'];
 
 test.describe('European Institutions Service Page', () => {
   const expectedTitles: Record<string, string> = {
-    fr: 'Accompagnement et défense des fonctionnaires et agents des institutions et agences européennes',
-    en: 'Support and defense for European institution employees',
-    it: 'Supporto e difesa dei funzionari e agenti delle istituzioni e agenzie europee',
+    fr: 'Institutions et agences européennes',
+    en: 'European institutions and agencies',
+    it: 'Istituzioni e agenzie europee',
   };
 
   for (const lang of languages) {
@@ -18,11 +18,17 @@ test.describe('European Institutions Service Page', () => {
       // Page loads with correct h1
       await expect(page.locator('h1')).toContainText(expectedTitles[lang]);
 
-      // Services section is present
-      await expect(page.locator('text="BriefCase"').or(page.locator('h2'))).toBeVisible();
+      // Two navigation cards are present
+      const navCards = page.locator('a[href="#agences"], a[href="#fonctionnaires"]');
+      await expect(navCards).toHaveCount(2);
 
-      // CTA link to honoraires exists
-      await expect(page.locator(`a[href="/${lang}/honoraires"]`)).toBeVisible();
+      // Two content sections exist
+      await expect(page.locator('#agences')).toBeVisible();
+      await expect(page.locator('#fonctionnaires')).toBeVisible();
+
+      // CTA links to honoraires exist (one per section)
+      const ctaLinks = page.locator(`a[href="/${lang}/honoraires"]`);
+      await expect(ctaLinks.first()).toBeVisible();
     });
   }
 });
@@ -101,11 +107,11 @@ test.describe('Navigation Dropdown - European Institutions Link', () => {
     test(`should have European Institutions link in nav for /${lang}/`, async ({ page }) => {
       await page.goto(`${BASE_URL}/${lang}/`);
 
-      // The dropdown link to europeennes exists in the header
+      // The dropdown link to europeennes exists in the header (desktop + mobile = 2)
       const header = page.locator('header');
       const euroLink = header.locator(`a[href="/${lang}/services/europeennes"]`);
-      await expect(euroLink).toHaveCount(1);
-      await expect(euroLink).toContainText(navLabels[lang]);
+      await expect(euroLink).toHaveCount(2);
+      await expect(euroLink.first()).toContainText(navLabels[lang]);
     });
   }
 });

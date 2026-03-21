@@ -20,10 +20,10 @@ fr:
       cta: En savoir plus
     europeennes:
       title: Institutions européennes
-      description: Nous accompagnons les fonctionnaires et agents des
-        institutions européennes tout au long de leur parcours professionnel,
-        que ce soit pour une question ponctuelle, la négociation d'un départ
-        ou l'introduction d'une procédure.
+      description: Nous conseillons les institutions et agences européennes
+        dans la gestion de leurs relations de travail et accompagnons les
+        fonctionnaires et agents dans leurs démarches, de la négociation à la
+        procédure contentieuse.
       cta: En savoir plus
     honoraires:
       title: Honoraires
@@ -58,7 +58,7 @@ fr:
     description: Expertise en droit du travail pour salariés et employeurs.
       Conseils, défense et accompagnement juridique personnalisé à Bruxelles par
       notre équipe d'avocates en droit du travail.
-    image: https://github.com/ggustin93/Rizzo-Astro-Tailwind/blob/main/public/default-social-image.png
+    image: https://crizzo-avocate.be/default-social-image.png
     keywords:
       - avocat droit du travail Bruxelles
       - expertise droit social
@@ -110,9 +110,9 @@ en:
       cta: Learn More
     europeennes:
       title: European Institutions
-      description: We support officials and agents of European institutions
-        throughout their career, whether for a one-off question, negotiating
-        a departure or initiating proceedings.
+      description: We advise European institutions and agencies on managing
+        their employment relations and support officials and agents in their
+        proceedings, from negotiation to litigation.
       cta: Learn More
     honoraires:
       intro: Transparent and tailored fees
@@ -146,7 +146,7 @@ en:
       specialist lawyers.
     keywords: lawyer, labor law, Brussels, legal advice, employee defense, employer
       support
-    image: https://github.com/ggustin93/Rizzo-Astro-Tailwind/blob/main/public/default-social-image.png
+    image: https://crizzo-avocate.be/default-social-image.png
   employeurs:
     title: You are an employer
     description: I support your HR team in managing your disputes and day-to-day
@@ -191,10 +191,9 @@ it:
       cta: Scopri di più
     europeennes:
       title: Istituzioni europee
-      description: Assistiamo i funzionari e gli agenti delle istituzioni
-        europee durante tutto il loro percorso professionale, sia per una
-        questione specifica, la negoziazione di una partenza o l'avvio di un
-        procedimento.
+      description: Assistiamo le istituzioni e le agenzie europee nella
+        gestione dei rapporti di lavoro e accompagniamo i funzionari e gli
+        agenti nelle loro procedure, dalla negoziazione al contenzioso.
       cta: Scopri di più
     honoraires:
       intro: Tariffe trasparenti e personalizzate
@@ -229,7 +228,7 @@ it:
       specializzati.
     keywords: avvocato, diritto del lavoro, Bruxelles, consulenza legale, difesa dei
       dipendenti, supporto ai datori di lavoro
-    image: https://github.com/ggustin93/Rizzo-Astro-Tailwind/blob/main/public/default-social-image.png
+    image: https://crizzo-avocate.be/default-social-image.png
   employeurs:
     title: Sei un datore di lavoro
     cta: Ecco maggiori dettagli sulle tariffe

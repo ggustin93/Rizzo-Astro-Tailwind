@@ -95,13 +95,13 @@ export const prerender = true;
               icon={Calendar}
               iconPosition="left"
               ariaLabel="Prendre rendez-vous"
-              class="bg-accent text-white font-medium hover:bg-accent/90 hover:text-black text-center justify-center"
+              class="bg-accent text-white font-medium hover:bg-travailleur text-center justify-center"
             />
             <Button 
               variant="secondary"
               icon={ChevronDown}
               onClick="document.getElementById('expertise').scrollIntoView({behavior: 'smooth'})"
-              class="border-gray-400 hover:bg-gray-100 text-center justify-center"
+              class="border-gray-400 hover:bg-beige hover:text-gray-900 text-center justify-center"
             >
               <span class="whitespace-nowrap">{content.expertise.travailleurs.cta}</span>
             </Button>
@@ -110,7 +110,7 @@ export const prerender = true;
         <div class="w-full md:w-1/2 flex justify-center md:justify-end mt-6 md:mt-0">
           <img 
             src={heroImage.src} 
-            alt="Christine Rizzo" 
+            alt="Christine Rizzo et Stephanie Michiels"
             class="w-full h-auto max-w-sm md:max-w-xl object-contain" 
             decoding="async" 
             loading="eager" 
@@ -149,7 +149,7 @@ export const prerender = true;
               href={`/${currentLang}/services/employeurs`}
               text={`${content.expertise.employeurs.cta} →`}
               variant="secondary"
-              class="self-end bg-white text-employeur hover:bg-gray-800 hover:text-white border-white"
+              class="self-end bg-white text-gray-900 hover:bg-transparent hover:text-white border-white"
             />
           </div>
           <!-- BLOC 2 : TRAVAILLEURS -->
@@ -162,7 +162,7 @@ export const prerender = true;
               href={`/${currentLang}/services/travailleurs`}
               text={`${content.expertise.travailleurs.cta} →`}
               variant="secondary"
-              class="self-end bg-white text-travailleur hover:bg-gray-800 hover:text-white border-white"
+              class="self-end bg-white text-gray-900 hover:bg-transparent hover:text-white border-white"
             />
           </div>
           <!-- BLOC 3 : INSTITUTIONS EUROPÉENNES -->
@@ -175,7 +175,7 @@ export const prerender = true;
               href={`/${currentLang}/services/europeennes`}
               text={`${content.expertise.europeennes.cta} →`}
               variant="secondary"
-              class="self-end bg-white text-europeenne hover:bg-gray-800 hover:text-white border-white"
+              class="self-end bg-white text-gray-900 hover:bg-transparent hover:text-white border-white"
             />
           </div>
         </div>
@@ -239,7 +239,7 @@ export const prerender = true;
                 href={`/${currentLang}/equipe`} 
                 text={`${content.profil.cta} →`}
                 variant="secondary"
-                class="uppercase text-sm font-light"
+                class="uppercase text-sm font-light hover:text-gray-900"
               />
             </div>
           </div>
@@ -278,7 +278,7 @@ export const prerender = true;
               href={`/${currentLang}/blog`} 
               text={`${content.viewAllArticles} →`}
               variant="secondary"
-              class="uppercase text-sm font-light"
+              class="uppercase text-sm font-light hover:text-gray-900"
             />
           </div>
         </div>

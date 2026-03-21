@@ -206,17 +206,48 @@ collections:
             widget: "object"
             fields: &europeennesFields
               - {label: "Titre", name: "title", widget: "string"}
-              - label: "Questions"
-                name: "questions"
-                widget: "list"
-                field: {label: Question, name: question, widget: "string"}
-              - {label: "Titre des services", name: "servicesTitle", widget: "string"}
-              - label: "Services"
-                name: "services"
-                widget: "list"
+              - label: "Cartes de navigation"
+                name: "navigationCards"
+                widget: "object"
                 fields:
-                  - {label: "Icône", name: "icon", widget: "select", options: ["BriefCase", "Shield", "FileText", "Handshake"]}
-                  - {label: "Texte", name: "text", widget: "string"}
+                  - {label: "Agences", name: "agences", widget: "string"}
+                  - {label: "Fonctionnaires", name: "fonctionnaires", widget: "string"}
+              - label: "Section Agences"
+                name: "agences"
+                widget: "object"
+                fields:
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Introduction", name: "intro", widget: "text"}
+                  - {label: "Titre accompagnement", name: "accompagnementTitle", widget: "string"}
+                  - label: "Accompagnement"
+                    name: "accompagnement"
+                    widget: "list"
+                    field: {label: "Élément", name: "item", widget: "string"}
+                  - {label: "Titre services", name: "servicesTitle", widget: "string"}
+                  - label: "Services"
+                    name: "services"
+                    widget: "list"
+                    fields:
+                      - {label: "Icône", name: "icon", widget: "select", options: ["Search", "FileText", "Handshake", "BriefCase", "Shield"]}
+                      - {label: "Texte", name: "text", widget: "string"}
+              - label: "Section Fonctionnaires"
+                name: "fonctionnaires"
+                widget: "object"
+                fields:
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Introduction", name: "intro", widget: "text"}
+                  - {label: "Titre accompagnement", name: "accompagnementTitle", widget: "string"}
+                  - label: "Accompagnement"
+                    name: "accompagnement"
+                    widget: "list"
+                    field: {label: "Élément", name: "item", widget: "string"}
+                  - {label: "Titre services", name: "servicesTitle", widget: "string"}
+                  - label: "Services"
+                    name: "services"
+                    widget: "list"
+                    fields:
+                      - {label: "Icône", name: "icon", widget: "select", options: ["Search", "FileText", "Handshake", "BriefCase", "Shield"]}
+                      - {label: "Texte", name: "text", widget: "string"}
               - {label: "Texte du bouton CTA", name: "ctaText", widget: "string"}
               - label: "SEO"
                 name: "seo"

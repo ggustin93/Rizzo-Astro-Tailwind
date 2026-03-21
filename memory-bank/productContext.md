@@ -1,13 +1,13 @@
-## Product Context: Site Web Professionnel Christine Rizzo, Avocate
+## Product Context: Site Web Professionnel Christine Rizzo & Stephanie Michiels, Avocates
 
 ### 1. Objectifs du Produit
 
-*   **Présenter l'expertise professionnelle** de Christine Rizzo en droit du travail.
-*   **Attirer et informer** les clients potentiels (travailleurs et employeurs).
-*   **Faciliter la prise de contact** et la planification de rendez-vous.
+*   **Presenter l'expertise professionnelle** de Christine Rizzo et Stephanie Michiels en droit du travail.
+*   **Attirer et informer** les clients potentiels (travailleurs, employeurs, fonctionnaires europeens).
+*   **Faciliter la prise de contact** et la planification de rendez-vous avec chaque avocate individuellement.
 *   **Partager des informations juridiques** pertinentes via une section blog.
-*   **Construire et renforcer** l'image de marque professionnelle de Christine Rizzo.
-*   **Assurer une visibilité optimale** sur les moteurs de recherche (SEO).
+*   **Construire et renforcer** l'image de marque professionnelle du cabinet.
+*   **Assurer une visibilite optimale** sur les moteurs de recherche (SEO).
 
 ### 2. Public Cible
 

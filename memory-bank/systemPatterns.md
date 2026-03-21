@@ -16,30 +16,29 @@
 *   **Content Schema**: Astro's content collections feature, with schemas defined in `src/content/config.ts`, is the source of truth for all content structure. This enforces type safety and prevents build errors.
 *   **View Transitions Scripting**: Client-side scripts that need to run on every page change must use the `astro:page-load` event for initialization to ensure compatibility with Astro's View Transitions.
 
+### Design Patterns in Use
+
+*   **Dynamic Lawyer Iteration (CTA.astro)**: The CTA component reads the `lawyers` array from `site-config.yml` and iterates over it to render a contact card per lawyer. Each card includes Email, Appointment (Cal.com, shown conditionally based on `calendarLink`), and Phone buttons. This pattern ensures that adding or removing a lawyer only requires editing `site-config.yml` -- no component changes needed. The layout uses a 2-column design: lawyer contact cards stacked vertically on the left, title and illustration on the right.
+
+*   **Service Page Collection Pattern (travailleurs, employeurs, europeennes)**: Each service page follows the same structure: multilingual YAML content file → Zod schema in `config.ts` → Astro page template → CMS collection definition. The `europeennes` collection follows the exact same pattern as `travailleurs` — same fields (title, questions, servicesTitle, services[], ctaText, seo), same YAML anchor pattern in CMS config.
+
+*   **CMS ↔ Schema ↔ Template Alignment**: When adding a new content collection, three files must stay in sync:
+    1. `public/admin/config.yml` — CMS widget definitions (what editors see)
+    2. `src/content/config.ts` — Zod schema (build-time validation)
+    3. `src/pages/[...lang]/[page].astro` — Template (what gets rendered)
+    If fields don't match between these three, either the CMS won't save, the build will fail, or content won't display.
+
 ### Component Relationships
 
-*   `BaseLayout.astro` is the core layout for all pages. It now directly includes all necessary SEO meta tags.
+*   `BaseLayout.astro` is the core layout for all pages. It directly includes all necessary SEO meta tags.
 *   `LanguagePicker.astro` is a self-contained component responsible for handling language switching. Its script is initialized by the `astro:page-load` event.
+*   **CTA.astro → site-config.yml**: The CTA component reads the `lawyers` array from `site-config.yml` at build time. Each lawyer entry provides `name`, `email`, `phone`, and `calendarLink`. This is a direct dependency — if the `lawyers` schema changes, `CTA.astro` must be updated accordingly.
+*   **Homepage Expertise Section**: Displays 3 service cards (workers, employers, European institutions), linking to the corresponding service pages.
 
 ### SEO & Indexing Patterns
 *   The site relies on a clean, manually-controlled `<head>` in `BaseLayout.astro` for on-page SEO.
 *   The `allowIndexing` flag in `src/content/config/site-config.yml` provides a centralized switch to control search engine indexing via the `robots` meta tag.
 
-### Design Patterns in Use
-
-*   To be defined.
-
-### Component Relationships
-
-*   To be defined.
-
-### SEO & Indexing Patterns
-*   A diagnostic script (`bing_index_check.sh`, now removed) was developed to help identify potential Bing indexing issues.
-
 ### Testing Patterns
 *   **End-to-End (E2E) Verification:** After any significant refactoring or content update, a suite of E2E tests using Playwright (`/tests`) should be run. This ensures that data from the single source of truth (`site-config.yml`) is displayed correctly across all relevant components and pages (Footer, Contact, Legal, etc.). This provides a final, user-centric validation that complements static analysis.
-
-5.  **Tests Continus (CI/CD)**:
-    *   **Principe** : Avant tout déploiement, une suite de tests automatisés doit être exécutée pour valider les aspects critiques du site.
-    *   **Application** : Le script `scripts/run-seo-tests.sh` sert de garde-fou pour le SEO technique.
-    *   **Leçon Apprise** : Les scripts de test doivent être robustes. Des scripts basés sur des `grep` simples se sont avérés peu fiables à cause du formatage du HTML. La solution a été d'utiliser des outils plus puissants comme `sed` et `awk` pour parser le HTML de manière fiable avant de le tester. Un test non fiable peut causer plus de problèmes qu'il n'en résout en masquant les vrais bugs ou en signalant de faux positifs. 
+*   **Continuous Testing (CI/CD)**: Before deployment, automated test scripts (`scripts/run-seo-tests.sh`) serve as guardrails for technical SEO. Test scripts use `sed` and `awk` for reliable HTML parsing rather than simple `grep`.
