@@ -30,7 +30,7 @@ fr:
       - Discrimination, diversité et égalité de traitement
     servicesTitle: Nos services
     services:
-      - icon: Search
+      - icon: CheckSquare
         text: Audit et due diligence en droit du travail belge et européen
       - icon: FileText
         text: Rédaction et révision de contrats, politiques RH, règlements internes et documents GDPR
@@ -73,7 +73,7 @@ fr:
       - Protection des données personnelles (GDPR) dans la relation de travail
     servicesTitle: Nos services
     services:
-      - icon: Search
+      - icon: CheckSquare
         text: Analyse de votre situation professionnelle et de vos droits
       - icon: BriefCase
         text: Conseil stratégique avant toute démarche (réclamation, recours, négociation)
@@ -131,7 +131,7 @@ en:
       - Discrimination, diversity and equal treatment
     servicesTitle: Our services
     services:
-      - icon: Search
+      - icon: CheckSquare
         text: Labour and employment law audit and due diligence under Belgian and European law
       - icon: FileText
         text: Drafting and reviewing contracts, HR policies, internal regulations and GDPR documents
@@ -171,7 +171,7 @@ en:
       - Personal data protection (GDPR) in the employment relationship
     servicesTitle: Our services
     services:
-      - icon: Search
+      - icon: CheckSquare
         text: Analysis of your professional situation and rights
       - icon: BriefCase
         text: Strategic advice before any action (complaint, appeal, negotiation)
@@ -229,7 +229,7 @@ it:
       - Discriminazione, diversità e parità di trattamento
     servicesTitle: I nostri servizi
     services:
-      - icon: Search
+      - icon: CheckSquare
         text: Audit e due diligence in diritto del lavoro belga ed europeo
       - icon: FileText
         text: Redazione e revisione di contratti, politiche HR, regolamenti interni e documenti GDPR
@@ -271,7 +271,7 @@ it:
       - Protezione dei dati personali (GDPR) nel rapporto di lavoro
     servicesTitle: I nostri servizi
     services:
-      - icon: Search
+      - icon: CheckSquare
         text: Analisi della vostra situazione professionale e dei vostri diritti
       - icon: BriefCase
         text: Consulenza strategica prima di qualsiasi azione (reclamo, ricorso, negoziazione)
