@@ -107,14 +107,6 @@ const pathname = Astro.url.pathname;
     ))}
     <link rel="alternate" hreflang="x-default" href={`${siteUrl}/fr${pathname.substring(3)}`} />
 
-    <!-- Préchargement des polices -->
-    <link rel="preload" href="/fonts/Synonym-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="/fonts/Synonym-Regular.woff" as="font" type="font/woff" crossorigin="anonymous">
-
-    <!-- Feuilles de style -->
-    <link rel="stylesheet" href="/styles/tailwind.css">
-    <link rel="stylesheet" href="/styles/global.css">
-
     <!-- Préconnexions -->
     <link rel="preconnect" href="https://app.cal.com">
     <link rel="preconnect" href="https://unpkg.com">

@@ -241,5 +241,4 @@ export const collections = {
   'europeennes': dataCollection,
   'legal': dataCollection,
   'legal-info': dataCollection,
-  'privacy': dataCollection,
 };

@@ -1,7 +1,7 @@
 ---
 import { getDataEntryById } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { ChevronRight, Briefcase, FileText, Shield, ArrowRight } from 'astro-feather-icons2';
+import { ChevronRight, Briefcase, FileText, Shield, ArrowRight, Search, UserPlus } from 'astro-feather-icons2';
 import IconHandshake from '../../../components/IconHandshake.astro';
 
 export const prerender = true;
@@ -23,7 +23,9 @@ if (!content) {
 }
 
 const iconMap = {
+  Search,
   FileText,
+  UserPlus,
   Handshake: IconHandshake,
   BriefCase: Briefcase,
   Shield
