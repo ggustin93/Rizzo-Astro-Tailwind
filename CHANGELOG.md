@@ -16,6 +16,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - This CHANGELOG
 
 ### Changed
+- SEO titles harmonized across all pages to reflect "Rizzo & Michiels" branding (replaced "Christine Rizzo Avocate" references, fixed IT gender "Avvocato" → "Avvocate", unified EN "Lawyer" → "Attorneys")
+- Homepage Européennes card: added subtitle "Agences · Fonctionnaires & Agents" (FR/EN/IT) to clarify dual-audience scope
 - Homepage expertise layout: 2-column flex (Employeurs / Travailleurs) → 3-column CSS grid (Employeurs / Travailleurs / Européennes)
 - Navigation dropdown updated with three service areas and reordered links
 - Homepage content schema (`config.ts`) extended to support the new European Institutions block
@@ -34,6 +36,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Icons on Européennes service page: `Search` → `CheckSquare` for all audit/analysis services in both the Agences and Fonctionnaires sections — updated in `europeennes.astro` and `europeennes.yml` across all three languages (FR/EN/IT)
 - Null guard on `IconComponent` rendering in `employeurs.astro`
 - Aligned `employeurs.astro` icon map keys with YAML icon names
+- SEO `og:image` URLs: replaced 12 broken `v5--crizzo.netlify.app` references with `/default-social-image.png` in contact, travailleurs, and profile collections
+- SEO descriptions in contact collection updated to mention both lawyers (was "Christine Rizzo" only)
 - SEO `og:image` and `twitter:image` URLs now point to the production domain instead of GitHub raw URLs
 - Configuration CMS (Decap) pour la page Institutions européennes : les champs `services` des sections Agences et Fonctionnaires étaient définis comme listes de chaînes simples alors que le gabarit attend des objets `{icon, text}` — corrigé en liste d'objets avec champs `icon` (sélecteur) et `text` (chaîne), éliminant les erreurs d'édition dans l'interface d'administration
 

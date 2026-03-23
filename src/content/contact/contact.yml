@@ -2,9 +2,9 @@ fr:
   title: "Contact"
   heading: "Comment pouvons-nous vous aider?"
   seo:
-    title: "Contact | Christine Rizzo Avocate en droit du travail à Bruxelles"
-    description: "Contactez Christine Rizzo, avocate en droit du travail à Bruxelles. Conseils juridiques personnalisés pour employés et employeurs."
-    image: "https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg"
+    title: "Contact | Rizzo & Michiels Avocates en droit du travail à Bruxelles"
+    description: "Contactez Rizzo & Michiels, avocates en droit du travail à Bruxelles. Conseils juridiques personnalisés pour employés et employeurs."
+    image: /default-social-image.png
     keywords:
       - contact avocat droit du travail Bruxelles
       - consultation juridique emploi
@@ -40,9 +40,9 @@ en:
   title: "Contact"
   heading: "How can we help you?"
   seo:
-    title: "Contact | Christine Rizzo Employment Lawyer in Brussels"
-    description: "Contact Christine Rizzo, an employment law specialist in Brussels. Personalized legal advice for employees and employers."
-    image: "https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg"
+    title: "Contact | Rizzo & Michiels Employment Attorneys in Brussels"
+    description: "Contact Rizzo & Michiels, employment law specialists in Brussels. Personalized legal advice for employees and employers."
+    image: /default-social-image.png
     keywords:
       - contact employment lawyer Brussels
       - legal consultation employment
@@ -78,9 +78,9 @@ it:
   title: "Contatto"
   heading: "Come possiamo aiutarti?"
   seo:
-    title: "Contatto | Christine Rizzo Avvocato del lavoro a Bruxelles"
-    description: "Contatta Christine Rizzo, avvocato specializzato in diritto del lavoro a Bruxelles. Consulenza legale personalizzata per dipendenti e datori di lavoro."
-    image: "https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg"
+    title: "Contatto | Rizzo & Michiels Avvocate del lavoro a Bruxelles"
+    description: "Contatta Rizzo & Michiels, avvocate specializzate in diritto del lavoro a Bruxelles. Consulenza legale personalizzata per dipendenti e datori di lavoro."
+    image: /default-social-image.png
     keywords:
       - contatto avvocato diritto del lavoro Bruxelles
       - consulenza legale impiego
