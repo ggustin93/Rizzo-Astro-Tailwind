@@ -20,6 +20,7 @@ fr:
       cta: En savoir plus
     europeennes:
       title: Institutions européennes
+      subtitle: "Agences · Fonctionnaires & Agents"
       description: Nous conseillons les institutions et agences européennes
         dans la gestion de leurs relations de travail et accompagnons les
         fonctionnaires et agents dans leurs démarches, de la négociation à la
@@ -110,6 +111,7 @@ en:
       cta: Learn More
     europeennes:
       title: European Institutions
+      subtitle: "Agencies · Officials & Contract Staff"
       description: We advise European institutions and agencies on managing
         their employment relations and support officials and agents in their
         proceedings, from negotiation to litigation.
@@ -191,6 +193,7 @@ it:
       cta: Scopri di più
     europeennes:
       title: Istituzioni europee
+      subtitle: "Agenzie · Funzionari & Agenti contrattuali"
       description: Assistiamo le istituzioni e le agenzie europee nella
         gestione dei rapporti di lavoro e accompagniamo i funzionari e gli
         agenti nelle loro procedure, dalla negoziazione al contenzioso.

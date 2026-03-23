@@ -168,7 +168,10 @@ export const prerender = true;
           <!-- BLOC 3 : INSTITUTIONS EUROPÉENNES -->
           <div class="bg-europeenne p-4 md:p-6 rounded-lg text-white flex flex-col justify-between">
             <div>
-              <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">{content.expertise.europeennes.title}</h3>
+              <h3 class="text-lg md:text-xl font-semibold mb-1 md:mb-2">{content.expertise.europeennes.title}</h3>
+              {content.expertise.europeennes.subtitle && (
+                <p class="text-xs md:text-sm font-light opacity-75 mb-3 uppercase tracking-wide">{content.expertise.europeennes.subtitle}</p>
+              )}
               <p class="text-base md:text-lg font-light mb-4">{content.expertise.europeennes.description}</p>
             </div>
             <Button
