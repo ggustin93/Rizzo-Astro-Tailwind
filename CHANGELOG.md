@@ -26,6 +26,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Bouton secondaire "EN SAVOIR PLUS" (hero) : le survol affiche un fond beige (`#faf5f0`) avec texte sombre, discret et non-concurrent avec le CTA principal
 - Boutons des cartes d'expertise (Employeurs / Travailleurs / Européennes) : la couleur du texte au repos passe de la couleur de section à `gray-900` pour une meilleure lisibilité sur fond blanc ; le survol bascule vers un fond transparent (laissant apparaître la couleur de carte) avec texte blanc
 - Variante secondaire du composant Button : suppression de `hover:text-gray-900` sur le variant par défaut pour éviter les conflits avec les surcharges de couleur de texte au survol définies à l'usage
+- Legal notice publisher updated from individual lawyer (Christine Rizzo) to company entity (Rizzo & MICHIELS SRL) with new company number (1034.645.352), dual phone numbers, and shared contact email across FR/EN/IT
+- Domain migrated from `crizzo-avocate.be` to `rizzo-michiels.be` across 17 files: site config, Astro config, layouts, robots.txt, legal content, navigation, SEO images, email signature, footer, CMS config, and all SEO scripts
+- Decap CMS branch config reverted from `feature/european-institutions` to `main` for production
 
 ### Removed
 - Honoraires intro block from the homepage (the dedicated Honoraires page remains accessible via navigation)
@@ -40,10 +43,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - SEO descriptions in contact collection updated to mention both lawyers (was "Christine Rizzo" only)
 - SEO `og:image` and `twitter:image` URLs now point to the production domain instead of GitHub raw URLs
 - Configuration CMS (Decap) pour la page Institutions européennes : les champs `services` des sections Agences et Fonctionnaires étaient définis comme listes de chaînes simples alors que le gabarit attend des objets `{icon, text}` — corrigé en liste d'objets avec champs `icon` (sélecteur) et `text` (chaîne), éliminant les erreurs d'édition dans l'interface d'administration
-
-### Pending (not in this release)
-- **R1 — Domain migration**: `crizzo-avocate.be` → `rizzo-michiels.be` (separate branch, merged last)
-- **R3 — Legal pages**: Christine to update legal text via Decap CMS (`/admin/`)
+- `og:image` fallback on contact, contact/success, and equipe pages: replaced stale Netlify preview URL (`v5--crizzo.netlify.app`) with local `/default-social-image.jpg`
+- Italian localization typo in legal notice: "Responsabilité" → "Responsabilità"
+- Trailing newline added to `robots.txt` for POSIX compliance
 
 ## [Earlier]
 
