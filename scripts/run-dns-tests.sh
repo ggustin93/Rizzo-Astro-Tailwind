@@ -13,7 +13,7 @@
 #   ./run-dns-tests.sh <domain_name>
 #
 # Example:
-#   ./run-dns-tests.sh crizzo-avocate.be
+#   ./run-dns-tests.sh rizzo-michiels.be
 #
 # Dependencies:
 #   - dig (usually available in the 'dnsutils' or 'bind-utils' package)

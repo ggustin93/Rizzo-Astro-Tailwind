@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: feature/european-institutions
+  branch: main
 
 media_folder: "public/assets/images"
 public_folder: "/assets/images"
@@ -697,7 +697,7 @@ collections:
                 name: "siteUrl"
                 widget: "string"
                 required: false
-                default: "https://crizzo-avocate.be"
+                default: "https://rizzo-michiels.be"
                 hint: "URL complète du site (utilisée pour les liens canoniques et les partages)"
       
       - file: "src/content/navigation/navigation.yml"
@@ -757,7 +757,7 @@ collections:
                     widget: "string"
                     default: "Site web écologique"
                   - {label: "Texte du lien Eco-design", name: "ecoDesignText", widget: "string", default: "Score d'éco-conception"}
-                  - {label: "URL du lien Eco-design", name: "ecoDesignUrl", widget: "string", default: "https://www.websitecarbon.com/website/crizzo-avocate-be-fr/"}
+                  - {label: "URL du lien Eco-design", name: "ecoDesignUrl", widget: "string", default: "https://www.websitecarbon.com/website/rizzo-michiels-be-fr/"}
                   - label: "Pwablo (non modifiable)"
                     name: "pwablo"
                     widget: "object"

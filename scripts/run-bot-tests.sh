@@ -13,13 +13,13 @@
 #   ./run-bot-tests.sh <full_url> [number_of_runs] [show_headers]
 #
 # Example (single run):
-#   ./run-bot-tests.sh https://crizzo-avocate.be/fr/
+#   ./run-bot-tests.sh https://rizzo-michiels.be/fr/
 #
 # Example (5 runs):
-#   ./run-bot-tests.sh https://crizzo-avocate.be/fr/ 5
+#   ./run-bot-tests.sh https://rizzo-michiels.be/fr/ 5
 #
 # Example (with headers):
-#   ./run-bot-tests.sh https://crizzo-avocate.be/fr/ 1 headers
+#   ./run-bot-tests.sh https://rizzo-michiels.be/fr/ 1 headers
 #
 # Dependencies:
 #   - curl
