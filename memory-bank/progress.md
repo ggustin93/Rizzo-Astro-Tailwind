@@ -1,5 +1,15 @@
 # Progress
 
+## Refonte CTA et Ajout Section Europeenne (17/03/2026)
+
+- **Ajout de Stephanie Michiels** : Le site represente desormais deux avocates. Le `site-config.yml` contient un tableau `lawyers` avec les coordonnees de chaque avocate (nom, email, telephone, lien calendrier).
+- **Section Institutions Europeennes** : Nouvelle page de services pour les fonctionnaires et agents des institutions europeennes, accessible dans les 3 langues.
+- **Refonte du composant CTA** : Nouveau layout 2 colonnes (contacts a gauche, titre + illustration a droite). Le composant itere dynamiquement sur le tableau `lawyers` et affiche les boutons Email, RDV (Cal.com conditionnel) et Telephone pour chaque avocate.
+- **Ameliorations UX** : Emails affiches en entier (sans troncature), telephones sur une seule ligne, illustration avec effet de lueur subtil, icone MessageCircle en couleur accent.
+- **Nouveau logo et favicons** : Branding mis a jour avec nouveau logo et favicons regeneres.
+- **Nettoyage descriptions europeennes** : Suppression du balisage HTML residuel dans le champ `description` de `europeennes.yml`.
+- **CMS branch temporaire** : `public/admin/config.yml` pointe vers `feature/european-institutions` pour permettre l'edition du contenu europeennes via Decap CMS avant le merge.
+
 ## Ce qui fonctionne
 - **Tests SEO automatisés** : Le script `scripts/run-seo-tests.sh` est maintenant robuste. Il utilise `sed` pour formater le HTML et `awk` pour une analyse précise, ce qui élimine les faux négatifs que nous rencontrions. Il teste de manière fiable les balises meta robots, les canoniques et les hreflang sur plusieurs pages et pour plusieurs user-agents.
 - **Implémentation SEO** : Toutes les balises SEO (meta, canonique, OG, Twitter) sont maintenant gérées manuellement et correctement dans `src/layouts/BaseLayout.astro`. La dépendance `astro-seo` a été complètement supprimée.
@@ -11,16 +21,20 @@
 - **Centralisation des coordonnées** : Suite à un problème urgent de téléphone professionnel, toutes les coordonnées de contact (téléphone, WhatsApp, email, etc.) sont maintenant centralisées dans `site-config.yml` avec interface CMS pour permettre à Christine de les modifier elle-même. Les composants CTA, Footer, contact et signature utilisent maintenant cette configuration unique.
 
 ## Ce qu'il reste à faire
-- **Déploiement en production** : Toutes les corrections ont été validées en local avec `npm run preview`. Les changements doivent être "commit" et "push" pour être appliqués sur le site en production.
-- **Nettoyage optionnel** : Le sitemap liste des pages de blog qui ne sont pas actives. Ce n'est pas un bug, mais cela pourrait être nettoyé à l'avenir.
+- **Merge vers main** : La branche `feature/european-institutions` doit être fusionnée. Avant le merge, revertir `public/admin/config.yml` de `branch: feature/european-institutions` vers `branch: main`.
+- **Tests E2E** : Mettre à jour les tests existants pour couvrir le tableau `lawyers` et la section Institutions Européennes.
+- **Validation mobile** : Vérifier le rendu du CTA 2 colonnes sur petits écrans.
+- **Nettoyage optionnel** : Le sitemap liste des pages de blog qui ne sont pas actives.
 
 ## Statut actuel
-- **Problème résolu** : Le problème initial des tests SEO qui échouaient et le bug du sélecteur de langue sont entièrement résolus.
-- **Redirections vérifiées** : Les redirections du site fonctionnent correctement, avec les chemins sans slash redirigés vers leurs versions avec slash.
-- **Erreurs 503 résolues** : La désactivation du prerendering de Netlify a résolu le problème des erreurs 503. Le site Astro statique n'a pas besoin de prerendering.
-- **Prêt pour le déploiement** : Le code sur la branche locale est stable, testé et prêt à être mis en production.
+- **Branche active** : `feature/european-institutions` - en cours de developpement.
+- **Deux avocates** : Le site represente desormais Christine Rizzo et Stephanie Michiels, avec un composant CTA dynamique iterant sur le tableau `lawyers`.
+- **Section Institutions Europeennes** : Nouvelle section de services ajoutee dans les 3 langues. La page d'accueil affiche desormais 3 cartes d'expertise au lieu de 2.
+- **Composant CTA redesigne** : Layout 2 colonnes avec contacts dynamiques par avocate et illustration.
+- **Nouveau branding** : Logo et favicons regeneres.
+- **Infrastructure stable** : Les corrections SEO, redirections et tests E2E precedents restent fonctionnels.
 
-*Dernière mise à jour : 14/08/2025 - Refactoring des données de contact et mise à jour de l'email.*
+*Derniere mise a jour : 17/03/2026 - Refonte CTA, ajout section Institutions Europeennes, ajout de Stephanie Michiels.*
 
 ## Refactoring de la Source de Vérité (14/08/2025)
 - **Constat** : Les informations de contact étaient dupliquées dans `navigation.yml`, `contact.yml` et `site-config.yml`, rendant les mises à jour incohérentes et difficiles.

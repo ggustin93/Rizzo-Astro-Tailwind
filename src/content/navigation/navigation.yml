@@ -8,10 +8,12 @@ fr:
         url: /fr#expertise
         hasDropdown: true
         dropdownItems:
-          - label: POUR LES TRAVAILLEURS
-            url: /fr/services/travailleurs
           - label: POUR LES EMPLOYEURS
             url: /fr/services/employeurs
+          - label: POUR LES TRAVAILLEURS
+            url: /fr/services/travailleurs
+          - label: INSTITUTIONS EUROPÉENNES
+            url: /fr/services/europeennes
       - label: L'ÉQUIPE
         url: /fr/equipe
         hasDropdown: true
@@ -34,7 +36,7 @@ fr:
         url: /fr/legal/privacy
       - label: Infos légales & CGV
         url: /fr/legal/informations-legales
-    ecoDesignUrl: https://www.websitecarbon.com/website/crizzo-avocate-be-fr/
+    ecoDesignUrl: https://www.websitecarbon.com/website/rizzo-michiels-be-fr/
     ecoDesignTitle: Site web écologique
     pwablo:
       pwabloText: Design by Pwablo
@@ -52,10 +54,12 @@ en:
         url: /en#expertise
         hasDropdown: true
         dropdownItems:
-          - label: FOR EMPLOYEES
-            url: /en/services/travailleurs
           - label: FOR EMPLOYERS
             url: /en/services/employeurs
+          - label: FOR EMPLOYEES
+            url: /en/services/travailleurs
+          - label: EUROPEAN INSTITUTIONS
+            url: /en/services/europeennes
       - label: THE TEAM
         url: /en/equipe
         hasDropdown: true
@@ -78,7 +82,7 @@ en:
         url: /en/legal/privacy
       - label: Legal Info & T&C
         url: /en/legal/informations-legales
-    ecoDesignUrl: https://www.websitecarbon.com/website/crizzo-avocate-be-fr/
+    ecoDesignUrl: https://www.websitecarbon.com/website/rizzo-michiels-be-fr/
     ecoDesignTitle: Eco-friendly Website
     pwablo:
       pwabloText: Design by Pwablo
@@ -96,10 +100,12 @@ it:
         url: /it#expertise
         hasDropdown: true
         dropdownItems:
-          - label: PER I LAVORATORI
-            url: /it/services/travailleurs
           - label: PER I DATORI DI LAVORO
             url: /it/services/employeurs
+          - label: PER I LAVORATORI
+            url: /it/services/travailleurs
+          - label: ISTITUZIONI EUROPEE
+            url: /it/services/europeennes
       - label: IL TEAM
         url: /it/equipe
         hasDropdown: true
@@ -122,7 +128,7 @@ it:
         url: /it/legal/privacy
       - label: Info legali & CGV
         url: /it/legal/informations-legales
-    ecoDesignUrl: https://www.websitecarbon.com/website/crizzo-avocate-be-fr/
+    ecoDesignUrl: https://www.websitecarbon.com/website/rizzo-michiels-be-fr/
     ecoDesignTitle: Sito web ecologico
     pwablo:
       pwabloText: Design di Pwablo

@@ -23,12 +23,12 @@ fr:
         professionnelle
   servicesTitle: Nos services
   services:
-    - icon: Search
+    - icon: CheckSquare
       text: Audit - Due Diligence en droit du travail et de la sécurité sociale
     - icon: FileText
       text: Rédaction et révision de vos contrats de travail, règlement de travail et
         politiques RH et GDPR
-    - icon: UserPlus
+    - icon: Users
       text: Conseils - gestion de la relation individuelle de travail, du recrutement
         à la rupture
     - icon: Handshake
@@ -38,7 +38,7 @@ fr:
         du travail et de l'ONSS
   ctaText: En savoir plus sur les tarifs
   seo:
-    title: Services juridiques pour employeurs | Christine Rizzo Avocate
+    title: Services juridiques pour employeurs | Rizzo & Michiels Avocates
     description: Expertise en droit du travail pour les entreprises. Conseils,
       défense et accompagnement juridique personnalisé à Bruxelles.
     keywords:
@@ -72,12 +72,12 @@ en:
       - and legal tools aimed at improving work-life balance
   servicesTitle: Our Services
   services:
-    - icon: Search
+    - icon: CheckSquare
       text: Audit - due diligence in labor and social security law
     - icon: FileText
       text: Drafting and revision of employment contracts, work regulations, and HR
         policies
-    - icon: UserPlus
+    - icon: Users
       text: Advice on managing individual employment relationships, from recruitment
         to termination
     - icon: Handshake
@@ -86,7 +86,7 @@ en:
       text: Defense before labor courts, and labour and social security inspections
   ctaText: Learn more about fees
   seo:
-    title: Legal Services for Employers | Christine Rizzo Lawyer
+    title: Legal Services for Employers | Rizzo & Michiels Attorneys
     description: Labor law expertise for companies. Legal advice, defense, and
       personalized support for employers in Brussels.
     keywords:
@@ -131,12 +131,12 @@ it:
         privata e professionale
   servicesTitle: I nostri servizi
   services:
-    - icon: Search
+    - icon: CheckSquare
       text: Audit - Due Diligence in diritto del lavoro
     - icon: FileText
       text: Redazione e revisione dei vostri contratti di lavoro o di collaborazione
         indipendente
-    - icon: UserPlus
+    - icon: Users
       text: Consulenza nella gestione dei rapporti di lavoro individuali,
         dall'assunzione alla cessazione
     - icon: Handshake
@@ -146,6 +146,6 @@ it:
         previdenza sociale
   ctaText: Scopri di più sulle tariffe
   seo:
-    title: Servizi legali per datori di lavoro | Avvocato Christine Rizzo
+    title: Servizi legali per datori di lavoro | Rizzo & Michiels Avvocate
     description: Consulenza legale specializzata in diritto del lavoro per aziende a
       Bruxelles. Difesa e assistenza personalizzata.

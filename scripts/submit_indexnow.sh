@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Configuration
-HOST="crizzo-avocate.be"
+HOST="rizzo-michiels.be"
 API_KEY="d77e7bbb53844ce7b455448cecfa0ffd"
-KEY_LOCATION_URL="https://crizzo-avocate.be/d77e7bbb53844ce7b455448cecfa0ffd.txt"
+KEY_LOCATION_URL="https://rizzo-michiels.be/d77e7bbb53844ce7b455448cecfa0ffd.txt"
 INDEXNOW_API_ENDPOINT="https://api.indexnow.org/IndexNow"
-SITEMAP_URL="https://crizzo-avocate.be/sitemap-0.xml" # Adjusted to the actual sitemap
+SITEMAP_URL="https://rizzo-michiels.be/sitemap-0.xml" # Adjusted to the actual sitemap
 
 # --- Helper function to submit a list of URLs ---
 submit_urls_to_indexnow() {

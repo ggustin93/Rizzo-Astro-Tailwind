@@ -26,10 +26,10 @@ fr:
       text: Négociation d'accords amiables - Droit collaboratif
   ctaText: En savoir plus sur les tarifs
   seo:
-    title: Services juridiques pour travailleurs | Christine Rizzo Avocate
+    title: Services juridiques pour travailleurs | Rizzo & Michiels Avocates
     description: Expertise en droit du travail pour les employés. Conseils, défense
       et accompagnement juridique personnalisé à Bruxelles.
-    image: https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg
+    image: /default-social-image.png
     keywords:
       - avocat droit du travail employés Bruxelles
       - expertise droit social travailleurs
@@ -67,7 +67,7 @@ en:
       text: Negotiation of settlement agreements
   ctaText: Learn more about fees
   seo:
-    title: Legal services for employees | Christine Rizzo Attorney
+    title: Legal services for employees | Rizzo & Michiels Attorneys
     description: Employment law expertise for employees. Legal advice, defense and
       personalized legal support in Brussels.
     keywords:
@@ -77,7 +77,7 @@ en:
       - defense employee labor court
       - workplace litigation Belgium
       - personalized legal support workers
-    image: https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg
+    image: /default-social-image.png
   specialFocus: ""
 it:
   title: Supporto e difesa dei lavoratori
@@ -109,7 +109,7 @@ it:
   ctaText: Scopri di più sulle tariffe
   specialFocus: ""
   seo:
-    title: Servizi legali per i lavoratori | Christine Rizzo Avvocato
+    title: Servizi legali per i lavoratori | Rizzo & Michiels Avvocate
     description: Competenza in diritto del lavoro per i dipendenti. Consulenza
       legale, difesa e assistenza legale personalizzata a Bruxelles.
     keywords:
@@ -119,4 +119,4 @@ it:
       - difesa dipendente tribunale del lavoro
       - contenzioso lavoro Belgio
       - assistenza legale personalizzata lavoratori
-    image: https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg
+    image: /default-social-image.png

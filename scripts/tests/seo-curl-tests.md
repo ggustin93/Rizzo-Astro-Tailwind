@@ -37,19 +37,19 @@ Si vous devez absolument effectuer un test manuel, voici quelques exemples.
 
 **1. Vérifier les En-têtes HTTP :**
 ```bash
-curl -I https://crizzo-avocate.be/fr/
+curl -I https://rizzo-michiels.be/fr/
 ```
 *À rechercher :* `HTTP/2 200`, `Cache-Control`, absence de `X-Robots-Tag: noindex`.
 
 **2. Vérifier `robots.txt` :**
 ```bash
-curl https://crizzo-avocate.be/robots.txt
+curl https://rizzo-michiels.be/robots.txt
 ```
 *À rechercher :* `User-agent: *`, `Allow: /`, et le lien vers le `Sitemap`.
 
 **3. Visualiser le HTML brut (pour inspection manuelle) :**
 ```bash
-curl -s -A "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" https://crizzo-avocate.be/fr/
+curl -s -A "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" https://rizzo-michiels.be/fr/
 ```
 
 ---

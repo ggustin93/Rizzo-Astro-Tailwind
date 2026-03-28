@@ -18,6 +18,14 @@ fr:
         RH pour la gestion des relations de travail au quotidien ainsi que pour
         vos projets.
       cta: En savoir plus
+    europeennes:
+      title: Institutions européennes
+      subtitle: "Agences · Fonctionnaires & Agents"
+      description: Nous conseillons les institutions et agences européennes
+        dans la gestion de leurs relations de travail et accompagnons les
+        fonctionnaires et agents dans leurs démarches, de la négociation à la
+        procédure contentieuse.
+      cta: En savoir plus
     honoraires:
       title: Honoraires
       intro: Des honoraires transparents et adaptés à votre situation.
@@ -51,7 +59,7 @@ fr:
     description: Expertise en droit du travail pour salariés et employeurs.
       Conseils, défense et accompagnement juridique personnalisé à Bruxelles par
       notre équipe d'avocates en droit du travail.
-    image: https://github.com/ggustin93/Rizzo-Astro-Tailwind/blob/main/public/default-social-image.png
+    image: https://rizzo-michiels.be/default-social-image.png
     keywords:
       - avocat droit du travail Bruxelles
       - expertise droit social
@@ -101,6 +109,13 @@ en:
         services. We work with you or your HR team to manage daily labour
         relations and your projects.
       cta: Learn More
+    europeennes:
+      title: European Institutions
+      subtitle: "Agencies · Officials & Contract Staff"
+      description: We advise European institutions and agencies on managing
+        their employment relations and support officials and agents in their
+        proceedings, from negotiation to litigation.
+      cta: Learn More
     honoraires:
       intro: Transparent and tailored fees
       linkText: Learn more
@@ -133,7 +148,7 @@ en:
       specialist lawyers.
     keywords: lawyer, labor law, Brussels, legal advice, employee defense, employer
       support
-    image: https://github.com/ggustin93/Rizzo-Astro-Tailwind/blob/main/public/default-social-image.png
+    image: https://rizzo-michiels.be/default-social-image.png
   employeurs:
     title: You are an employer
     description: I support your HR team in managing your disputes and day-to-day
@@ -176,6 +191,13 @@ it:
         umane per la gestione quotidiana dei rapporti di lavoro e i vostri
         progetti.
       cta: Scopri di più
+    europeennes:
+      title: Istituzioni europee
+      subtitle: "Agenzie · Funzionari & Agenti contrattuali"
+      description: Assistiamo le istituzioni e le agenzie europee nella
+        gestione dei rapporti di lavoro e accompagniamo i funzionari e gli
+        agenti nelle loro procedure, dalla negoziazione al contenzioso.
+      cta: Scopri di più
     honoraires:
       intro: Tariffe trasparenti e personalizzate
       linkText: Scopri di più
@@ -209,7 +231,7 @@ it:
       specializzati.
     keywords: avvocato, diritto del lavoro, Bruxelles, consulenza legale, difesa dei
       dipendenti, supporto ai datori di lavoro
-    image: https://github.com/ggustin93/Rizzo-Astro-Tailwind/blob/main/public/default-social-image.png
+    image: https://rizzo-michiels.be/default-social-image.png
   employeurs:
     title: Sei un datore di lavoro
     cta: Ecco maggiori dettagli sulle tariffe

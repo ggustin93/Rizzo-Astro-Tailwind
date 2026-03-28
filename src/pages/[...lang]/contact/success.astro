@@ -49,7 +49,7 @@ const t = translations[lang as keyof typeof translations] || translations.fr;
 const seoData = {
   title: t.title,
   description: t.message,
-  image: contactData?.seo?.image || 'https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg',
+  image: contactData?.seo?.image || '/default-social-image.jpg',
   keywords: ''
 };
 ---

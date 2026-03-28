@@ -14,4 +14,4 @@ User-agent: Googlebot-Mobile
 Allow: /
 
 # Sitemap pour faciliter l'indexation
-Sitemap: https://crizzo-avocate.be/sitemap-index.xml 
+Sitemap: https://rizzo-michiels.be/sitemap-index.xml

@@ -39,7 +39,7 @@ function sitemapFilter(page) {
 const outputMode = 'static';
 
 // Uncomment this when deploying to production
-const siteUrl = 'https://crizzo-avocate.be';
+const siteUrl = 'https://rizzo-michiels.be';
 
 export default defineConfig({
   // The adapter is only needed for SSR (server) mode

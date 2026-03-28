@@ -14,7 +14,7 @@
 # ==============================================================================
 
 # --- Configuration ---
-BASE_URL="https://crizzo-avocate.be"
+BASE_URL="https://rizzo-michiels.be"
 # Add page paths to this array to include them in the tests.
 PAGES_TO_TEST=(
   "/fr/"

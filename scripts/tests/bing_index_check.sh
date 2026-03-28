@@ -1,8 +1,8 @@
 #!/bin/bash
 
-URL="https://crizzo-avocate.be/fr/"
-DOMAIN="crizzo-avocate.be"
-DEFAULT_SITEMAP_URL="https://crizzo-avocate.be/sitemap.xml" # Common default location
+URL="https://rizzo-michiels.be/fr/"
+DOMAIN="rizzo-michiels.be"
+DEFAULT_SITEMAP_URL="https://rizzo-michiels.be/sitemap.xml" # Common default location
 
 echo "🔍 Diagnostic d'indexation Bing pour $URL"
 echo "-----------------------------------------------------"

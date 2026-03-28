@@ -3,21 +3,18 @@ fr:
   sections:
     - title: Éditeur
       text: |-
-        Le site crizzo-avocate.be est édité par :
-
-        Maître Christine Rizzo  
-        Avocate au Barreau de Bruxelles  
-        %%ADDRESS%%  
-        Téléphone : %%PHONE%%  
-        Numéro d'entreprise : 0829577949
+        Rizzo & MICHIELS SRL
+        %%ADDRESS%%
+        Téléphone : +32 488 40 45 49 - +32 498 50 29 01
+        Numéro d'entreprise : 1034.645.352
     - title: Hébergeur
       text: Le Site est hébergé par Netlify, dont le siège social est situé 2325 3rd
         Street, Suite 215, San Francisco, California 94107, USA.
     - title: Contact
       text: "Pour toute question ou demande concernant le site, vous pouvez contacter
-        l'éditeur à l'adresse mail suivante : %%EMAIL%%"
+        l'éditeur à l'adresse mail suivante : rizzomichiels@gmail.com"
     - title: Propriété intellectuelle
-      text: L'intégralité du contenu du site crizzo-avocate.be (textes, images,
+      text: L'intégralité du contenu du site rizzo-michiels.be (textes, images,
         vidéos...) est la propriété de l'éditeur et est protégée par le droit
         d'auteur. La reproduction, diffusion ou copie de tout ou partie du
         contenu est strictement interdite et est susceptible de constituer un
@@ -26,7 +23,7 @@ fr:
       text: Le traitement des données personnelles collectées par le biais du site web
         est défini dans la Politique de confidentialité consultable sur le site.
     - title: Cookies
-      text: Le site crizzo-avocate.be n'utilise que des cookies techniques et
+      text: Le site rizzo-michiels.be n'utilise que des cookies techniques et
         fonctionnels nécessaires au bon fonctionnement du site.
     - title: Responsabilité
       text: Bien que le contenu du site soit rédigé avec soin, l'éditeur décline toute
@@ -37,7 +34,7 @@ fr:
       text: Les présentes mentions légales sont régies par le droit belge. En cas de
         différend, les tribunaux belges seront seuls compétents.
     - title: Crédits
-      text: Le site crizzo-avocate.be a été créé par Guillaume Gustin
+      text: Le site rizzo-michiels.be a été créé par Guillaume Gustin
         (https://guillaumegustin.com/, https://pwablo.be/). Police Synonym
         Regular fournie par Web Fonts sous licence CC BY 4.0
 en:
@@ -45,21 +42,18 @@ en:
   sections:
     - title: Publisher
       text: |-
-        The website crizzo-avocate.be is published by:
-
-        Christine Rizzo  
-        Lawyer at the Brussels Bar  
-        %%ADDRESS%%  
-        Phone: %%PHONE%%  
-        Company number: 0829577949
+        Rizzo & MICHIELS SRL
+        %%ADDRESS%%
+        Phone: +32 488 40 45 49 - +32 498 50 29 01
+        Company number: 1034.645.352
     - title: Hosting
       text: The Site is hosted by Netlify, whose registered office is located at 2325
         3rd Street, Suite 215, San Francisco, California 94107, USA.
     - title: Contact
       text: "For any questions or requests regarding the site, you can contact the
-        publisher at the following email address: %%EMAIL%%"
+        publisher at the following email address: rizzomichiels@gmail.com"
     - title: Intellectual property
-      text: The entire content of the crizzo-avocate.be website (texts, images,
+      text: The entire content of the rizzo-michiels.be website (texts, images,
         videos...) is the property of the publisher and is protected by
         copyright. Reproduction, distribution or copying of all or part of the
         content is strictly prohibited and may constitute a copyright
@@ -68,7 +62,7 @@ en:
       text: The processing of personal data collected through the website is defined
         in the Privacy Policy available on the site.
     - title: Cookies
-      text: The crizzo-avocate.be website only uses technical and functional cookies
+      text: The rizzo-michiels.be website only uses technical and functional cookies
         necessary for the proper functioning of the site.
     - title: Liability
       text: Although the content of the site is carefully written, the publisher
@@ -77,7 +71,7 @@ en:
       text: These legal notices are governed by Belgian law. In case of dispute,
         Belgian courts will have sole jurisdiction.
     - title: Credits
-      text: The crizzo-avocate.be website was created by Guillaume Gustin
+      text: The rizzo-michiels.be website was created by Guillaume Gustin
         (https://guillaumegustin.com/, https://pwablo.be/). Synonym Regular font
         provided by Web Fonts under CC BY 4.0 license
 it:
@@ -85,21 +79,18 @@ it:
   sections:
     - title: Editore
       text: |-
-        Il sito crizzo-avocate.be è pubblicato da:
-
-        Christine Rizzo  
-        Avvocata presso il Foro di Bruxelles  
-        %%ADDRESS%%  
-        Telefono: %%PHONE%%  
-        Numero di impresa: 0829577949
+        Rizzo & MICHIELS SRL
+        %%ADDRESS%%
+        Telefono: +32 488 40 45 49 - +32 498 50 29 01
+        Numero di impresa: 1034.645.352
     - title: Hosting
       text: Il Sito è ospitato da Netlify, la cui sede legale si trova a 2325 3rd
         Street, Suite 215, San Francisco, California 94107, USA.
     - title: Contatto
       text: "Per qualsiasi domanda o richiesta riguardante il sito, è possibile
-        contattare l'editore al seguente indirizzo email: %%EMAIL%%"
+        contattare l'editore al seguente indirizzo email: rizzomichiels@gmail.com"
     - title: Proprietà intellettuale
-      text: L'intero contenuto del sito crizzo-avocate.be (testi, immagini, video...)
+      text: L'intero contenuto del sito rizzo-michiels.be (testi, immagini, video...)
         è di proprietà dell'editore ed è protetto dal diritto d'autore. La
         riproduzione, la distribuzione o la copia di tutto o parte del contenuto
         è severamente vietata e può costituire una violazione del diritto
@@ -108,15 +99,15 @@ it:
       text: Il trattamento dei dati personali raccolti attraverso il sito web è
         definito nella Politica sulla privacy consultabile sul sito.
     - title: Cookie
-      text: Il sito crizzo-avocate.be utilizza solo cookie tecnici e funzionali
+      text: Il sito rizzo-michiels.be utilizza solo cookie tecnici e funzionali
         necessari per il corretto funzionamento del sito.
-    - title: Responsabilité
+    - title: Responsabilità
       text: Sebbene il contenuto del sito sia redatto con cura, l'editore declina ogni
         responsabilità per eventuali inesattezze o omissioni.
     - title: Legge applicabile e giurisdizione competente
       text: Le presenti note legali sono regolate dal diritto belga. In caso di
         controversia, i tribunali belgi saranno gli unici competenti.
     - title: Crediti
-      text: Il sito crizzo-avocate.be è stato creato da Guillaume Gustin
+      text: Il sito rizzo-michiels.be è stato creato da Guillaume Gustin
         (https://guillaumegustin.com/, https://pwablo.be/). Font Synonym Regular
         fornito da Web Fonts sotto licenza CC BY 4.0

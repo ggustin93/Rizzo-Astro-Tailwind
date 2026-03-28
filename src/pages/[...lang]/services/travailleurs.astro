@@ -1,8 +1,8 @@
 ---
 import { getDataEntryById } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { ChevronRight, Check, Briefcase, Shield, FileText, ArrowRight } from 'astro-feather-icons2';
-import IconHandshake from '../../../components/IconHandshake.astro'; // Assurez-vous que ce composant existe
+import { ChevronRight, Briefcase, Shield, FileText, ArrowRight } from 'astro-feather-icons2';
+import IconHandshake from '../../../components/IconHandshake.astro';
 
 export const prerender = true;
 
@@ -20,18 +20,6 @@ const content = travailleursEntry.data[lang] || travailleursEntry.data['fr']; //
 if (!content) {
   throw new Error(`Content not found for language: ${lang}`);
 }
-// Translations
-const translations = {
-  fr: {
-    backLinkText: "Retour aux services"
-  },
-  en: {
-    backLinkText: "Back to services"
-  },
-  it: {
-    backLinkText: "Torna ai servizi"
-  }
-};
 
 const iconMap = {
   FileText,
@@ -39,7 +27,6 @@ const iconMap = {
   BriefCase: Briefcase,
   Shield
 };
-const t = translations[lang as keyof typeof translations];
 // SEO data
 const seoData = {
   title: content.seo?.title || `Services pour travailleurs - Christine Rizzo`,

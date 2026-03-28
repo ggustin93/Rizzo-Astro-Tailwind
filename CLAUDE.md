@@ -4,11 +4,11 @@ This file provides comprehensive guidance to Claude Code (claude.ai/code) when w
 
 ## Project Overview
 
-Professional multilingual website for Christine Rizzo, a labor law attorney specializing in labor law in Brussels. The site serves as an information platform, expertise showcase, and primary contact point for potential and existing clients. Built with Astro framework and Decap CMS for content management, operating in French (default), English, and Italian with SSG output.
+Professional multilingual website for Christine Rizzo and Stephanie Michiels, labor law attorneys specializing in labor law in Brussels. The site serves as an information platform, expertise showcase, and primary contact point for potential and existing clients. Built with Astro framework and Decap CMS for content management, operating in French (default), English, and Italian with SSG output.
 
 ### Business Objectives
-- Present Christine Rizzo's professional expertise in labor law
-- Attract and inform potential clients (workers and employers)
+- Present the professional expertise of Christine Rizzo and Stephanie Michiels in labor law
+- Attract and inform potential clients (workers, employers, and European institution staff)
 - Facilitate contact and appointment scheduling
 - Share relevant legal information via blog
 - Build and strengthen professional brand image
@@ -45,10 +45,11 @@ npx playwright test --ui  # Run tests with UI mode
 - **Icons**: astro-feather-icons, FontAwesome, custom SVG components
 
 ### Content Structure
-- **Collections**: Blog articles, config, navigation, UI translations, contact, home
+- **Collections**: Blog articles, config, navigation, UI translations, contact, home, travailleurs, employeurs, europeennes (European Institutions), profile, honoraires
 - **Languages**: Multilingual YAML files under `src/content/`
 - **Schema Validation**: Zod schemas in `src/content/config.ts` (source of truth)
 - **Centralized Config**: All global contact info in `src/content/config/site-config.yml`
+- **Lawyers Array**: `site-config.yml` contains a `lawyers` array with entries for each lawyer (name, email, phone, calendarLink). Components iterate over this array to display per-lawyer contact information dynamically.
 - **Single Source of Truth**: Contact info must always be pulled from site-config.yml
 
 ### Routing Architecture
@@ -64,6 +65,7 @@ npx playwright test --ui  # Run tests with UI mode
 - **Media**: Images in `public/assets/images/`
 - **Blog Structure**: `src/content/blog/{lang}/{slug}.md`
 - **Content Schema Enforcement**: Build fails if content doesn't match schemas
+- **CMS Branch Config**: `public/admin/config.yml` line 3 sets which Git branch Decap CMS reads from. Must point to `main` in production. Can be temporarily pointed to a feature branch during development to allow content editing before merge.
 
 ### Design System
 - **Color Palette**: 
@@ -107,6 +109,7 @@ npx playwright test --ui  # Run tests with UI mode
 - **Icons**: Import from `astro-feather-icons` or `astro-feather-icons2`
 - **Images**: Use Astro's `Picture` component for optimization
 - **Buttons**: Use `Button.astro` component for consistency
+- **CTA Component**: `CTA.astro` dynamically iterates over the `lawyers` array from site-config.yml. Each lawyer gets their own contact card with Email, Appointment (Cal.com, conditional on valid `calendarLink`), and Phone buttons. When adding or removing lawyers, only site-config.yml needs to change.
 
 ### Testing Requirements
 - E2E tests with Playwright in `tests/` directory
@@ -132,6 +135,9 @@ Edit `src/content/config/site-config.yml` - changes propagate site-wide
 
 ### Modify Navigation
 Edit `src/content/navigation/site-navigation.yml` for all languages
+
+### Add or Modify a Lawyer
+Edit the `lawyers` array in `src/content/config/site-config.yml`. Each entry requires `name`, `email`, `phone`, and optionally `calendarLink` (Cal.com URL). The CTA component and other lawyer-aware components will automatically pick up the changes.
 
 ### Run SEO Validation
 ```bash
