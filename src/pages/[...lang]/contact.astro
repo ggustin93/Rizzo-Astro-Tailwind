@@ -29,7 +29,7 @@ const contactData = contactEntry.data[lang];
 const seoData = {
   title: contactData.seo?.title || `Contact - Christine Rizzo`,
   description: contactData.seo?.description || "Prenez contact avec Christine Rizzo, avocate en droit du travail à Bruxelles.",
-  image: contactData.seo?.image || 'https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg',
+  image: contactData.seo?.image || '/default-social-image.jpg',
   keywords: contactData.seo?.keywords?.join(', ') || ''
 };
 ---

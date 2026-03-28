@@ -79,7 +79,7 @@ const t = translations[lang as keyof typeof translations];
 const seoData = {
   title: profileData.seo?.title || `${t.teamTitle} - Christine Rizzo & Stephanie Michiels`,
   description: profileData.seo?.description || `Découvrez l'équipe d'avocates en droit du travail à Bruxelles.`,
-  image: profileData.seo?.image || 'https://v5--crizzo.netlify.app/_astro/logo_crizzo_calli3.8EyI_Q3S_2joHla.svg',
+  image: profileData.seo?.image || '/default-social-image.jpg',
   keywords: profileData.seo?.keywords?.join(', ') || ''
 };
 ---
