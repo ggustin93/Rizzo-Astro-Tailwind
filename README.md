@@ -1,8 +1,8 @@
-# Christine Rizzo - Labor Law Attorney
+# Christine Rizzo & Stephanie Michiels - Labor Law Attorneys
 
 ## Project Overview
 
-Professional website for Christine Rizzo, a labor law attorney specializing in labor law in Brussels. The site serves as an information platform, expertise showcase, and primary contact point for potential and existing clients. Built with modern web technologies for optimal performance, SEO visibility, and ease of maintenance.
+Professional website for Christine Rizzo and Stephanie Michiels, labor law attorneys specializing in labor law in Brussels. The site serves as an information platform, expertise showcase, and primary contact point for potential and existing clients. Built with modern web technologies for optimal performance, SEO visibility, and ease of maintenance.
 
 ## Technology Stack
 
@@ -20,6 +20,7 @@ Professional website for Christine Rizzo, a labor law attorney specializing in l
 - **SEO Optimized**: Manual SEO tag management, sitemap generation, and IndexNow submission
 - **Performance Focused**: Static site generation with minimal environmental impact
 - **Appointment System**: Integrated Cal.com booking functionality
+- **Contact Forms**: Netlify Forms integration (`data-netlify="true"`) with spam protection
 
 ## Project Structure
 
@@ -27,7 +28,9 @@ Professional website for Christine Rizzo, a labor law attorney specializing in l
 /
 ├── public/               # Static files and CMS configuration
 │   ├── admin/            # Decap CMS admin interface
-│   └── assets/           # Images and resources
+│   ├── assets/           # Images and resources
+│   │   ├── images/       # Optimized image assets
+│   │   └── documents/    # Static documents (PDF)
 ├── src/
 │   ├── components/       # Reusable UI components
 │   ├── layouts/          # Base templates with SEO configuration
@@ -35,10 +38,11 @@ Professional website for Christine Rizzo, a labor law attorney specializing in l
 │   │   └── [...lang]/    # Multilingual route structure
 │   ├── content/          # CMS-managed content (YAML)
 │   │   ├── blog/         # Blog articles by language
-│   │   ├── config/       # Site configuration
+│   │   ├── config/       # Site configuration (incl. lawyers array)
 │   │   ├── contact/      # Contact information
 │   │   ├── home/         # Homepage content
-│   │   └── ui-translations/ # UI text translations
+│   │   ├── ui-translations/ # UI text translations
+│   │   └── legal/        # Legal pages (notice.yml, privacy.yml)
 │   ├── utils/            # Helper functions
 │   └── styles/           # Global styles
 ├── scripts/              # Maintenance and testing scripts
@@ -72,11 +76,15 @@ The admin interface is accessible at `/admin/` and allows management of:
 
 - Page content across all languages
 - Blog articles
-- Contact information (centralized in site-config.yml)
+- Contact information (centralized in `site-config.yml`)
 - SEO metadata and indexing controls
 - Media and images
 
 All content is stored in YAML files within the `src/content/` directory, following schemas defined in `src/content/config.ts`.
+
+### Lawyer Configuration
+
+Each attorney's contact details (name, email, phone, Cal.com link) are defined in the `lawyers` array in `src/content/config/site-config.yml`. Components such as `CTA.astro` iterate over this array automatically — adding or removing a lawyer requires only editing that file.
 
 ## Deployment & Infrastructure
 
@@ -99,6 +107,8 @@ Common issues and solutions:
 - **SEO Tag Issues**: Check manual implementation in `src/layouts/BaseLayout.astro`
 - **Language Picker**: Ensure script initialization uses `astro:page-load` event
 - **Build Errors**: Verify content matches schemas in `src/content/config.ts`
+- **Contact Form Not Submitting**: Confirm the `<form>` element carries `data-netlify="true"` and a `name` attribute; Netlify Forms requires these to detect and register the form at build time
+- **Cross-Domain 301 Redirects Not Firing**: Automatic alias redirects do not work when the primary domain uses external DNS (e.g. Infomaniak A record) instead of Netlify DNS. Use explicit rules in `netlify.toml` with full source URLs (`https://old-domain.com/*`) placed before all other redirect rules
 
 ## Contact
 

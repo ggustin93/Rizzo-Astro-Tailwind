@@ -7,6 +7,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Added
+- **Document PDF politique dossiers clients** (`public/assets/documents/politique-traitement-dossiers-clients.pdf`) : ajout du fichier et lien dans les Mentions légales (section "Données personnelles") dans les trois langues (FR/EN/IT), avec lien cliquable "accessible ici / accessible here / accessibile qui"
+- Lien cliquable vers la Politique de confidentialité dans les Mentions légales (section "Données personnelles") — FR pointe vers `/fr/legal/privacy`, EN vers `/en/legal/privacy`, IT vers `/it/legal/privacy`
+
+### Changed
+- **Politique de confidentialité** (`privacy.yml`) — section "Données personnelles traitées" réécrite dans les trois langues : suppression de l'inexactitude "aucune donnée collectée" et ajout de la liste exhaustive des collectes réelles (formulaire de contact via Netlify Forms, Cal.com, données techniques Netlify hébergeur) avec mention des finalités et durées de conservation, pour conformité RGPD (CNPD belge)
+- **README.md** : mis à jour pour refléter les deux avocates (Christine Rizzo & Stephanie Michiels), l'usage de Netlify Forms, la structure `public/assets/documents/`, les pages légales, et le tableau `lawyers` dans `site-config.yml`
+
 - **European Institutions service section** (`/services/europeennes/`): new content collection (`src/content/europeennes/`), dedicated service page with trilingual content (FR/EN/IT), homepage expertise block, navigation dropdown links, and full Decap CMS configuration for client-side editing
 - Tailwind color tokens for the new European Institutions section (`bleu-europeennes` palette)
 - New "rm." monogram logo SVG (`logo-rizzo-michiels.svg`) replacing the previous calligraphy logo
