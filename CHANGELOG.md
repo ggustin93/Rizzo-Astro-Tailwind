@@ -10,7 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - **European Institutions service section** (`/services/europeennes/`): new content collection (`src/content/europeennes/`), dedicated service page with trilingual content (FR/EN/IT), homepage expertise block, navigation dropdown links, and full Decap CMS configuration for client-side editing
 - Tailwind color tokens for the new European Institutions section (`bleu-europeennes` palette)
 - New "rm." monogram logo SVG (`logo-rizzo-michiels.svg`) replacing the previous calligraphy logo
-- Regenerated all favicon assets from the new logo: `favicon.ico` (multi-size ICO), `favicon-16x16.png`, `favicon-32x32.png`, `apple-touch-icon.png` (180px), `android-chrome-192x192.png`, `android-chrome-512x512.png`
+- Regenerated all favicon assets from the new logo: `favicon.ico` (multi-size ICO, 16/32/48px), `favicon-16x16.png`, `favicon-32x32.png`, `apple-touch-icon.png` (180px), `android-chrome-192x192.png`, `android-chrome-512x512.png` — generated via sharp/rsvg from the SVG, cropped to the central calligraphic mark (viewBox 530–1120) on beige background (`#faf5f0`)
 - Social sharing images (`default-social-image.jpg`, `default-social-image.png`) regenerated with the new "rm." logo at 1200×630px on white background
 - E2E test suite for European Institutions feature (`tests/european-institutions.spec.ts`)
 - Domain migration verification script (`scripts/run-migration-tests.sh`): automated checks for 301 cross-domain redirects, page availability, canonical tags, sitemap integrity, robots.txt, and DNS resolution
@@ -22,7 +22,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Homepage expertise layout: 2-column flex (Employeurs / Travailleurs) → 3-column CSS grid (Employeurs / Travailleurs / Européennes)
 - Navigation dropdown updated with three service areas and reordered links
 - Homepage content schema (`config.ts`) extended to support the new European Institutions block
-- `site.webmanifest`: added firm name "Rizzo & Michiels - Avocates", short name, and beige theme color (`#faf5f0`)
+- `site.webmanifest`: added firm name "Rizzo & Michiels - Avocates", short name, beige theme color (`#faf5f0`), and aligned `background_color` to `#faf5f0` (was `#ffffff`)
 - Bouton principal "NOUS CONTACTER" (hero) : le survol passe désormais à la couleur de marque `travailleur` (teal #068D9D) plutôt qu'un gris foncé générique, pour une cohérence chromatique jaune accent → teal
 - Bouton secondaire "EN SAVOIR PLUS" (hero) : le survol affiche un fond beige (`#faf5f0`) avec texte sombre, discret et non-concurrent avec le CTA principal
 - Boutons des cartes d'expertise (Employeurs / Travailleurs / Européennes) : la couleur du texte au repos passe de la couleur de section à `gray-900` pour une meilleure lisibilité sur fond blanc ; le survol bascule vers un fond transparent (laissant apparaître la couleur de carte) avec texte blanc
