@@ -18,7 +18,7 @@ Professional website for Christine Rizzo and Stephanie Michiels, labor law attor
 - **Responsive Design**: Optimized user experience across all devices
 - **Content Management**: Admin interface for easy content updates via flat-file YAML
 - **SEO Optimized**: Manual SEO tag management, sitemap generation, and IndexNow submission
-- **Performance Focused**: Static site generation with minimal environmental impact
+- **Performance Focused**: Static site generation — **Website Carbon A+** (0.02g CO2/visit, cleaner than 97% of the web) · **EcoIndex B (79/100)**
 - **Appointment System**: Integrated Cal.com booking functionality
 - **Contact Forms**: Netlify Forms integration (`data-netlify="true"`) with spam protection
 
