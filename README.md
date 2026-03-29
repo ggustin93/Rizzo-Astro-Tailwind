@@ -106,17 +106,16 @@ Redirects and cache headers are configured in `netlify.toml`. The CMS branch tar
 
 ---
 
-## Troubleshooting
+## Performance
 
-| Symptom | Where to look |
+All pages are pre-built at deploy time (SSG) and served as static files via Netlify Edge CDN over HTTP/2. There is no server-side rendering at runtime.
+
+| Metric | Value |
 | --- | --- |
-| Build fails with schema error | `src/content/config.ts` — Zod schema validation is strict |
-| SEO tags incorrect | `src/layouts/BaseLayout.astro` — tags are managed manually |
-| Language picker broken after navigation | Ensure the picker script initialises on `astro:page-load`, not `DOMContentLoaded` |
-| Contact form not submitting | `<form>` must have `data-netlify="true"` and a `name` attribute for Netlify to detect it at build time |
-| CMS edits not visible in preview | Check `public/admin/config.yml` line 3 — the branch must match the branch you are previewing |
-
-For past incidents and root cause analyses, see `maintenance/troubleshoot.md`.
+| Website Carbon rating | A+ — 0.02 g CO2 per visit — cleaner than 97% of pages tested globally |
+| EcoIndex | B (79/100) |
+| TTFB | ~200 ms (Netlify Edge CDN, HTTP/2) |
+| Rendering | Zero server-side rendering — all pages pre-built at deploy time |
 
 ---
 
