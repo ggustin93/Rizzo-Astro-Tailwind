@@ -1,6 +1,6 @@
 # Rizzo & Michiels — Labor Law Attorneys
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/deploy-status.svg)](https://app.netlify.com/sites/rizzo-michiels/deploys) ![Astro](https://img.shields.io/badge/Astro-5.9-BC52EE?logo=astro&logoColor=white) ![Website Carbon](https://img.shields.io/badge/Website%20Carbon-A%2B-brightgreen) ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4-06B6D4?logo=tailwindcss&logoColor=white)
+![Astro](https://img.shields.io/badge/Astro-5.9-BC52EE?logo=astro&logoColor=white) ![Website Carbon](https://img.shields.io/badge/Website%20Carbon-A%2B-brightgreen) ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4-06B6D4?logo=tailwindcss&logoColor=white)
 
 A website built for Christine Rizzo and Stephanie Michiels, labor law attorneys based in Brussels. The project was approached with care for detail: clean architecture, multilingual support, and content fully managed through flat files — no database, no unnecessary complexity.
 
