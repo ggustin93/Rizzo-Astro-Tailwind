@@ -2,23 +2,25 @@ fr:
   title: Politique de confidentialité
   sections:
     - title: Objet
-      text: La présente politique de confidentialité définit et informe les
+      text: >-
+        La présente politique de confidentialité définit et informe les
         utilisateurs du site internet www.rizzo-michiels.be des modalités de
         traitement de leurs données personnelles par la responsable du
-        traitement, Maître Christine Rizzo. Ce site a été conçu par Maître
-        Christine Rizzo en collaboration avec Guillaume Gustin, dans une
-        démarche responsable et respectueuse de la vie privée des utilisateurs.
-        Notre approche est fondée sur le respect de la vie privée et une
-        utilisation minimale des données, conformément aux principes du
-        numérique responsable.
+        traitement, la SRL RIZZO & MICHIELS. Ce site a été conçu par 
+
+        la SRL RIZZO & MICHIELS en collaboration avec Guillaume Gustin, dans une démarche responsable et respectueuse de la vie privée des utilisateurs. Notre approche est fondée sur le respect de la vie privée et une utilisation minimale des données, conformément aux principes du numérique responsable.
     - title: Identité et coordonnées de la responsable du traitement
-      text: |-
-        Maître Christine Rizzo  
-        Avocate au Barreau de Bruxelles  
-        %%ADDRESS%%  
-        Téléphone : %%PHONE%%  
-        n° BCE : 0829577949  
-        Adresse mail : %%EMAIL%%
+      text: >-
+        
+        RIZZO & MICHIELS SRL représentée par Me Christine Rizzo et Me Stephanie Michiels\
+
+        Adresse: %%ADDRESS%%\
+
+        E-mail: rizzomichiels@gmail.com\
+
+        n° BCE : 1034.645.352
+
+        Tel: +32 488 40 45 49 - +32 498 50 29 01
     - title: Données personnelles traitées
       text: >-
         Dans le cadre de l'utilisation du site web, la responsable du traitement
@@ -121,7 +123,8 @@ en:
       text: In accordance with the General Data Protection Regulation (GDPR), users
         have rights over their personal data, including the rights of access,
         rectification, erasure, and opposition to processing. These rights can
-        be exercised by contacting Rizzo & Michiels SRL at rizzomichiels@gmail.com.
+        be exercised by contacting Rizzo & Michiels SRL at
+        rizzomichiels@gmail.com.
     - title: Security
       text: Appropriate security measures are in place to protect personal data
         against any unauthorized access, modification, disclosure or
