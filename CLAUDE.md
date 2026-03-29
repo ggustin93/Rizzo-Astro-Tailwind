@@ -146,6 +146,13 @@ Edit the `lawyers` array in `src/content/config/site-config.yml`. Each entry req
 ./scripts/run-migration-tests.sh # Verify domain migration (301 redirects, canonical, sitemap)
 ```
 
+## Maintenance Documentation
+
+Active maintenance logs are kept in `maintenance/demande-14-03-2026/checklist.md`.
+
+For known issues, past incidents, and their root causes, see `maintenance/troubleshoot.md` (if it exists). Key known pitfall:
+- **Netlify cross-domain 301 redirects**: Automatic alias redirect does NOT fire when primary domain uses external DNS (Infomaniak A record) instead of Netlify DNS. Fix: explicit `netlify.toml` rules with full `https://old-domain.com/*` → `https://new-domain.com/:splat` syntax, placed before all other redirects.
+
 ## Project Constraints
 - **No TypeScript**: Project uses JavaScript with TypeScript disabled
 - **Static Output**: SSG mode only, no SSR
