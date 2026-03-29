@@ -60,19 +60,25 @@ function prepareContent(content: string) {
     <h1 class="text-3xl md:text-4xl font-light mb-3 md:mb-4 text-center text-black">{content.title}</h1>
     <p class="text-lg md:text-xl mb-8 md:mb-12 text-center text-dark-gray">{content.subtitle}</p>
 
+    {content.transparence.points.length > 0 && (
     <section class="mb-8 md:mb-12">
       <h2 class="text-xl md:text-2xl font-light mb-4 md:mb-6 text-black flex items-center">
         <FileText class="w-5 h-5 md:w-6 md:h-6 mr-2 text-employeur" />
         {content.transparence.title}
       </h2>
       <div class="bg-gray-50 p-4 md:p-8 rounded-lg">
-        <ul class="list-disc ml-4 md:ml-6 space-y-2 md:space-y-3 text-dark-gray text-sm md:text-base">
-          {content.transparence.points.map((point: string) => (
-            <li class="leading-relaxed">{point}</li>
-          ))}
-        </ul>
+        {content.transparence.points.length === 1 ? (
+          <p class="text-dark-gray text-sm md:text-base leading-relaxed">{content.transparence.points[0]}</p>
+        ) : (
+          <ul class="list-disc ml-4 md:ml-6 space-y-2 md:space-y-3 text-dark-gray text-sm md:text-base">
+            {content.transparence.points.map((point: string) => (
+              <li class="leading-relaxed">{point}</li>
+            ))}
+          </ul>
+        )}
       </div>
     </section>
+    )}
 
     <section class="mb-8 md:mb-12">
       <h2 class="text-xl md:text-2xl font-light mb-4 md:mb-6 text-black flex items-center">

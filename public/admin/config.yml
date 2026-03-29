@@ -431,7 +431,7 @@ collections:
   - name: "legal-pages"
     label: "Pages Légales"
     files:
-      - file: "src/content/legal/legal-info.yml"
+      - file: "src/content/legal/notice.yml"
         name: "legal-notice"
         label: "Mentions légales"
         i18n:
