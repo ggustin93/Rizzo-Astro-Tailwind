@@ -135,7 +135,11 @@
 - [x] Vérifier 301 : `./scripts/run-migration-tests.sh` → **30/30 PASS** (29/03/2026)
 - [x] `./scripts/submit_indexnow.sh -s` — **202 Accepted**, 36 URLs soumises à Bing/Yandex (29/03/2026)
 - [ ] Google Search Console : ajouter et vérifier propriété `rizzo-michiels.be`
-- [ ] Google Search Console : **outil "Changement d'adresse"** sur `crizzo-avocate.be` → `rizzo-michiels.be` (301s maintenant actifs → validation possible)
+- [ ] Google Search Console : **outil "Changement d'adresse"** sur `crizzo-avocate.be` → `rizzo-michiels.be`
+  - ⚠️ Validation en échec le 29/03/2026 : "Impossible de récupérer la page" — voir analyse ci-dessous
+  - **Diagnostic SSL** : cert valide sur les deux domaines (SANs OK, Let's Encrypt, expire 26/06/2026)
+  - **Cause probable** : chaîne double-saut sur HTTP (`http://crizzo-avocate.be/` → `https://crizzo-avocate.be/` → `https://rizzo-michiels.be/`) — Netlify intercepte HTTP→HTTPS avant nos règles `netlify.toml`
+  - **Action** : retenter la validation GSC le 30/03/2026 (propagation CDN). Si toujours en échec → migrer vers Netlify DNS (voir Points d'attention #7)
 - [ ] GSC : soumettre sitemap `https://rizzo-michiels.be/sitemap-index.xml`
 - [ ] GSC : "Inspection d'URL" sur les 5-6 pages clés pour demander indexation
 
@@ -205,6 +209,8 @@
 - [x] Redirections 301 cross-domain — 30/30 PASS (29/03/2026)
 - [x] IndexNow soumis — 36 URLs, HTTP 202 (29/03/2026)
 - [x] `run-seo-tests.sh` — tous les tests passent (canonical, hreflang, robots, 200)
+- [x] `memory-bank/troubleshoot.md` créé — incidents connus, causes racines, pièges récurrents (29/03/2026)
+- [ ] GSC "Changement d'adresse" validé ⚠️ en cours — voir SEO post-déploiement
 - [ ] Responsive mobile vérifié (3 blocs empilés)
 
 ## Ordre d'exécution
@@ -224,6 +230,8 @@
 ## Git — Commits sur `main`
 
 ```
+94f16a63 Update checklist and CLAUDE.md post-migration verification
+efec6a95 Add cross-domain 301 redirects and migration test script
 691019a4 Update CHANGELOG with domain migration, legal notice, and SEO fixes
 6e22dfe1 Merge feature/european-institutions: EU section, logo, domain migration, legal update
 29decdef Fix broken og:image fallback on contact and equipe pages
@@ -240,3 +248,4 @@ ed0d72dc Update legal notice with SRL entity info (Rizzo & MICHIELS SRL)
 4. ~~**`default-social-image.png`**~~ ✅ Fait
 5. ~~**Redirections 301**~~ ✅ **30/30 PASS** (29/03/2026) — `netlify.toml` avec règles cross-domain explicites. Les redirections automatiques Netlify ne suffisaient pas car `rizzo-michiels.be` utilise un A record externe (Infomaniak), pas Netlify DNS.
 6. ~~**`legal-info.yml`**~~ ✅ Mis à jour avec entité SRL + n° entreprise `1034.645.352`
+7. ⚠️ **GSC "Changement d'adresse"** — validation en échec (chaîne double-saut HTTP). **Option recommandée : migrer `rizzo-michiels.be` vers Netlify DNS.** Étapes : Netlify Dashboard → "Set up Netlify DNS" → noter les 4 nameservers → Infomaniak → remplacer nameservers → attendre 24-48h. Voir `memory-bank/troubleshoot.md` Incident 2 pour le détail complet.
