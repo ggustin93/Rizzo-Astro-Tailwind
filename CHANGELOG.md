@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Regenerated all favicon assets from the new logo: `favicon.ico` (multi-size ICO), `favicon-16x16.png`, `favicon-32x32.png`, `apple-touch-icon.png` (180px), `android-chrome-192x192.png`, `android-chrome-512x512.png`
 - Social sharing images (`default-social-image.jpg`, `default-social-image.png`) regenerated with the new "rm." logo at 1200×630px on white background
 - E2E test suite for European Institutions feature (`tests/european-institutions.spec.ts`)
+- Domain migration verification script (`scripts/run-migration-tests.sh`): automated checks for 301 cross-domain redirects, page availability, canonical tags, sitemap integrity, robots.txt, and DNS resolution
 - This CHANGELOG
 
 ### Changed
@@ -27,6 +28,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Boutons des cartes d'expertise (Employeurs / Travailleurs / Européennes) : la couleur du texte au repos passe de la couleur de section à `gray-900` pour une meilleure lisibilité sur fond blanc ; le survol bascule vers un fond transparent (laissant apparaître la couleur de carte) avec texte blanc
 - Variante secondaire du composant Button : suppression de `hover:text-gray-900` sur le variant par défaut pour éviter les conflits avec les surcharges de couleur de texte au survol définies à l'usage
 - Legal notice publisher updated from individual lawyer (Christine Rizzo) to company entity (Rizzo & MICHIELS SRL) with new company number (1034.645.352), dual phone numbers, and shared contact email across FR/EN/IT
+- Legal information page (`legal-info.yml`) updated from individual lawyer to SRL entity: name, company number (0829.577.949 → 1034.645.352) across FR/EN/IT
 - Domain migrated from `crizzo-avocate.be` to `rizzo-michiels.be` across 17 files: site config, Astro config, layouts, robots.txt, legal content, navigation, SEO images, email signature, footer, CMS config, and all SEO scripts
 - Decap CMS branch config reverted from `feature/european-institutions` to `main` for production
 

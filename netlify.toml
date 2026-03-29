@@ -16,6 +16,22 @@
   NODE_VERSION = "22"
 
 # --- Redirects ---
+# Cross-domain 301 redirects: crizzo-avocate.be → rizzo-michiels.be
+# These MUST come before all other redirects and use full domain syntax.
+# Required because rizzo-michiels.be uses external Infomaniak DNS (A record),
+# not Netlify DNS — so Netlify's automatic alias redirect does not fire.
+[[redirects]]
+  from = "https://crizzo-avocate.be/*"
+  to   = "https://rizzo-michiels.be/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://crizzo-avocate.be/*"
+  to   = "https://rizzo-michiels.be/:splat"
+  status = 301
+  force = true
+
 # Primary redirect for humans - permanent redirect to French version
 [[redirects]]
   from = "/"

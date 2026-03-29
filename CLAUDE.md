@@ -141,8 +141,9 @@ Edit the `lawyers` array in `src/content/config/site-config.yml`. Each entry req
 
 ### Run SEO Validation
 ```bash
-./scripts/run-seo-tests.sh  # Check meta tags and structure
-./scripts/run-bot-tests.sh  # Test bot crawling behavior
+./scripts/run-seo-tests.sh       # Check meta tags and structure
+./scripts/run-bot-tests.sh       # Test bot crawling behavior
+./scripts/run-migration-tests.sh # Verify domain migration (301 redirects, canonical, sitemap)
 ```
 
 ## Project Constraints
