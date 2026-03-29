@@ -1,119 +1,126 @@
-# Christine Rizzo & Stephanie Michiels - Labor Law Attorneys
+# Rizzo & Michiels — Labor Law Attorneys
 
-## Project Overview
+Professional website for Christine Rizzo and Stephanie Michiels, labor law attorneys based in Brussels. The site serves as an information platform, expertise showcase, and primary contact point for clients.
 
-Professional website for Christine Rizzo and Stephanie Michiels, labor law attorneys specializing in labor law in Brussels. The site serves as an information platform, expertise showcase, and primary contact point for potential and existing clients. Built with modern web technologies for optimal performance, SEO visibility, and ease of maintenance.
+**Stack:** Astro 5 SSG · Tailwind CSS · Decap CMS · Netlify
+**Languages:** French (default) · English · Italian
+**Live admin:** `/admin/` (Decap CMS, Git Gateway)
 
-## Technology Stack
+---
 
-- **[Astro](https://astro.build/)**: Fast, content-focused web framework with View Transitions
-- **[Tailwind CSS](https://tailwindcss.com/)**: Utility-first CSS framework
-- **[Decap CMS](https://decapcms.org/)**: Headless CMS for content management
-- **[Cal.com](https://cal.com/)**: Integrated appointment booking system
-- **Content Schema**: Type-safe content using Astro Content Collections
+## Content Architecture
 
-## Key Features
+All content is managed through YAML files and Markdown. There is no database.
 
-- **Multilingual**: Complete support for French, English, and Italian with hreflang implementation
-- **Responsive Design**: Optimized user experience across all devices
-- **Content Management**: Admin interface for easy content updates via flat-file YAML
-- **SEO Optimized**: Manual SEO tag management, sitemap generation, and IndexNow submission
-- **Performance Focused**: Static site generation — **Website Carbon A+** (0.02g CO2/visit, cleaner than 97% of the web) · **EcoIndex B (79/100)**
-- **Appointment System**: Integrated Cal.com booking functionality
-- **Contact Forms**: Netlify Forms integration (`data-netlify="true"`) with spam protection
+```mermaid
+graph TD
+    CMS["Decap CMS<br/>/admin/"] -->|writes| YAML["src/content/<br/>YAML + Markdown"]
+    YAML -->|validated by| SCHEMA["config.ts<br/>Zod schemas"]
+    SCHEMA -->|feeds| BUILD["Astro Build<br/>SSG"]
+    BUILD -->|deploys| NETLIFY["Netlify<br/>Static hosting"]
 
-## Project Structure
-
-```text
-/
-├── public/               # Static files and CMS configuration
-│   ├── admin/            # Decap CMS admin interface
-│   ├── assets/           # Images and resources
-│   │   ├── images/       # Optimized image assets
-│   │   └── documents/    # Static documents (PDF)
-├── src/
-│   ├── components/       # Reusable UI components
-│   ├── layouts/          # Base templates with SEO configuration
-│   ├── pages/            # Site routes and pages
-│   │   └── [...lang]/    # Multilingual route structure
-│   ├── content/          # CMS-managed content (YAML)
-│   │   ├── blog/         # Blog articles by language
-│   │   ├── config/       # Site configuration (incl. lawyers array)
-│   │   ├── contact/      # Contact information
-│   │   ├── home/         # Homepage content
-│   │   ├── ui-translations/ # UI text translations
-│   │   └── legal/        # Legal pages (notice.yml, privacy.yml)
-│   ├── utils/            # Helper functions
-│   └── styles/           # Global styles
-├── scripts/              # Maintenance and testing scripts
-├── memory-bank/          # Project documentation
-├── astro.config.mjs      # Astro configuration with sitemap
-└── netlify.toml          # Netlify configuration with redirects
+    YAML --> CONFIG["site-config.yml<br/>Single source of truth<br/>(contact, lawyers array)"]
+    YAML --> BLOG["blog/{lang}/*.md"]
+    YAML --> PAGES["page collections<br/>home, travailleurs,<br/>employeurs, europeennes…"]
+    YAML --> I18N["ui-translations/{lang}.yml<br/>Interface strings"]
 ```
 
-## Development
+**Key constraint:** contact information (email, phone, Cal.com links) lives exclusively in `src/content/config/site-config.yml` and propagates site-wide. Never hardcode it in components.
+
+---
+
+## Multilingual Routing
+
+| URL pattern | Language | Notes |
+| --- | --- | --- |
+| `/fr/*` | French | Default language |
+| `/en/*` | English | |
+| `/it/*` | Italian | |
+| `/` | — | Redirects to `/fr/` via `netlify.toml` |
+
+Invalid language params are redirected to `/fr/`. All routes use `getStaticPaths()` with trailing slashes enforced.
+
+---
+
+## Quick Start
 
 ```bash
-# Install dependencies
 npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-
-# Run SEO tests
-npm run test:seo
+npm run dev       # http://localhost:4321
+npm run build     # type-check + production build
+npm run preview   # preview dist/ locally
 ```
 
-## Content Management
+---
 
-The admin interface is accessible at `/admin/` and allows management of:
+## Common Tasks
 
-- Page content across all languages
-- Blog articles
-- Contact information (centralized in `site-config.yml`)
-- SEO metadata and indexing controls
-- Media and images
+### Update contact information or lawyer details
 
-All content is stored in YAML files within the `src/content/` directory, following schemas defined in `src/content/config.ts`.
+Edit `src/content/config/site-config.yml`. The `lawyers` array drives the CTA component — add, remove, or update entries there. Each entry accepts `name`, `email`, `phone`, and an optional `calendarLink` (Cal.com URL).
 
-### Lawyer Configuration
+### Add a blog article
 
-Each attorney's contact details (name, email, phone, Cal.com link) are defined in the `lawyers` array in `src/content/config/site-config.yml`. Components such as `CTA.astro` iterate over this array automatically — adding or removing a lawyer requires only editing that file.
+Create a Markdown file at `src/content/blog/{lang}/{slug}.md` with the required frontmatter. It will appear in listings automatically.
 
-## Deployment & Infrastructure
+### Add a new page
 
-- **Hosting**: Netlify with continuous deployment from Git
-- **Redirections**: Configured in `netlify.toml` for language handling (root → /fr/)
-- **SEO**: Sitemap generation with filtering for specific sections
+1. Create `src/pages/[...lang]/[pagename].astro`
+2. Implement `getStaticPaths()` for the three language codes
+3. Load translations with `getUiTranslations(currentLang)`
+4. Add a content collection in `src/content/config.ts` if the page has managed content
 
-## Maintenance & Testing
+### Modify navigation
 
-The project includes several maintenance scripts:
+Edit `src/content/navigation/site-navigation.yml`.
 
-- `scripts/run-seo-tests.sh`: Validates critical SEO elements
-- `scripts/run-bot-tests.sh`: Tests site behavior with different search engine user-agents
-- `scripts/submit_indexnow.sh`: Submits URLs to search engines via IndexNow API
+### Run SEO validation
+
+```bash
+./scripts/run-seo-tests.sh        # meta tags and structure
+./scripts/run-bot-tests.sh        # crawler behavior
+./scripts/run-migration-tests.sh  # 301 redirects, canonicals, sitemap
+./scripts/submit_indexnow.sh      # submit URLs via IndexNow
+```
+
+---
+
+## Project Constraints
+
+| Constraint | Detail |
+| --- | --- |
+| No TypeScript | JavaScript only; `astro check` runs type inference via JSDoc |
+| Static output only | SSG, no SSR or serverless functions |
+| Content-first | All page content in YAML/Markdown, not in component files |
+| No hardcoded contact data | Always use `getContactInfo()` from `src/utils/contact-info.js` |
+
+---
+
+## Deployment
+
+Deployed on Netlify via automatic Git push to `main`. Build command: `astro check && astro build`. Output: `dist/`.
+
+Redirects and cache headers are configured in `netlify.toml`. The CMS branch target is set on line 3 of `public/admin/config.yml` — it must point to `main` in production.
+
+**Known pitfall — cross-domain 301 redirects:** Netlify's automatic alias redirect does not fire when the primary domain uses external DNS (e.g. an Infomaniak A record) instead of Netlify DNS. Use explicit rules in `netlify.toml` with full source URLs (`https://old-domain.com/*`) placed before all other redirect rules.
+
+---
 
 ## Troubleshooting
 
-Common issues and solutions:
+| Symptom | Where to look |
+| --- | --- |
+| Build fails with schema error | `src/content/config.ts` — Zod schema validation is strict |
+| SEO tags incorrect | `src/layouts/BaseLayout.astro` — tags are managed manually |
+| Language picker broken after navigation | Ensure the picker script initialises on `astro:page-load`, not `DOMContentLoaded` |
+| Contact form not submitting | `<form>` must have `data-netlify="true"` and a `name` attribute for Netlify to detect it at build time |
+| CMS edits not visible in preview | Check `public/admin/config.yml` line 3 — the branch must match the branch you are previewing |
 
-- **SEO Tag Issues**: Check manual implementation in `src/layouts/BaseLayout.astro`
-- **Language Picker**: Ensure script initialization uses `astro:page-load` event
-- **Build Errors**: Verify content matches schemas in `src/content/config.ts`
-- **Contact Form Not Submitting**: Confirm the `<form>` element carries `data-netlify="true"` and a `name` attribute; Netlify Forms requires these to detect and register the form at build time
-- **Cross-Domain 301 Redirects Not Firing**: Automatic alias redirects do not work when the primary domain uses external DNS (e.g. Infomaniak A record) instead of Netlify DNS. Use explicit rules in `netlify.toml` with full source URLs (`https://old-domain.com/*`) placed before all other redirect rules
+For past incidents and root cause analyses, see `maintenance/troubleshoot.md`.
+
+---
 
 ## Contact
 
-For questions or support regarding this website:
-
-**Guillaume Gustin**  
-Email: hello@pwablo.be  
-Design and development by [Pwablo](https://pwablo.be)
+**Guillaume Gustin** — design and development
+[hello@pwablo.be](mailto:hello@pwablo.be) · [pwablo.be](https://pwablo.be)
