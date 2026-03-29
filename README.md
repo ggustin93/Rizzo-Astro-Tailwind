@@ -1,6 +1,6 @@
 # Rizzo & Michiels — Labor Law Attorneys
 
-Professional website for Christine Rizzo and Stephanie Michiels, labor law attorneys based in Brussels. The site serves as an information platform, expertise showcase, and primary contact point for clients.
+A website built for Christine Rizzo and Stephanie Michiels, labor law attorneys based in Brussels. The project was approached with care for detail: clean architecture, multilingual support, and content fully managed through flat files — no database, no unnecessary complexity.
 
 **Stack:** Astro 5 SSG · Tailwind CSS · Decap CMS · Netlify
 **Languages:** French (default) · English · Italian
@@ -10,7 +10,7 @@ Professional website for Christine Rizzo and Stephanie Michiels, labor law attor
 
 ## Content Architecture
 
-All content is managed through YAML files and Markdown. There is no database.
+All content is managed through YAML files and Markdown — no database involved.
 
 ```mermaid
 graph TD
@@ -25,7 +25,7 @@ graph TD
     YAML --> I18N["ui-translations/{lang}.yml<br/>Interface strings"]
 ```
 
-**Key constraint:** contact information (email, phone, Cal.com links) lives exclusively in `src/content/config/site-config.yml` and propagates site-wide. Never hardcode it in components.
+**Single source of truth:** contact information (email, phone, Cal.com links) is defined once in `src/content/config/site-config.yml` and propagates site-wide through a dedicated utility. Component-level hardcoding should be avoided.
 
 ---
 
@@ -38,7 +38,7 @@ graph TD
 | `/it/*` | Italian | |
 | `/` | — | Redirects to `/fr/` via `netlify.toml` |
 
-Invalid language params are redirected to `/fr/`. All routes use `getStaticPaths()` with trailing slashes enforced.
+Invalid language params fall back to `/fr/`. All routes are generated via `getStaticPaths()`, with trailing slashes consistently enforced.
 
 ---
 
@@ -57,11 +57,11 @@ npm run preview   # preview dist/ locally
 
 ### Update contact information or lawyer details
 
-Edit `src/content/config/site-config.yml`. The `lawyers` array drives the CTA component — add, remove, or update entries there. Each entry accepts `name`, `email`, `phone`, and an optional `calendarLink` (Cal.com URL).
+Edit `src/content/config/site-config.yml`. The `lawyers` array drives the CTA component — add, remove, or update entries there. Each entry accepts `name`, `email`, `phone`, and an optional `calendarLink` (Cal.com URL). No component changes are needed.
 
 ### Add a blog article
 
-Create a Markdown file at `src/content/blog/{lang}/{slug}.md` with the required frontmatter. It will appear in listings automatically.
+Create a Markdown file at `src/content/blog/{lang}/{slug}.md` with the required frontmatter. It will appear in listings without further configuration.
 
 ### Add a new page
 
@@ -100,9 +100,9 @@ Edit `src/content/navigation/site-navigation.yml`.
 
 Deployed on Netlify via automatic Git push to `main`. Build command: `astro check && astro build`. Output: `dist/`.
 
-Redirects and cache headers are configured in `netlify.toml`. The CMS branch target is set on line 3 of `public/admin/config.yml` — it must point to `main` in production.
+Redirects and cache headers are configured in `netlify.toml`. The CMS branch target is set on line 3 of `public/admin/config.yml` — it should point to `main` in production.
 
-**Known pitfall — cross-domain 301 redirects:** Netlify's automatic alias redirect does not fire when the primary domain uses external DNS (e.g. an Infomaniak A record) instead of Netlify DNS. Use explicit rules in `netlify.toml` with full source URLs (`https://old-domain.com/*`) placed before all other redirect rules.
+**A note on cross-domain 301 redirects:** Netlify's automatic alias redirect does not fire when the primary domain relies on external DNS (e.g. an Infomaniak A record) rather than Netlify DNS. In that case, explicit rules are required in `netlify.toml`, using full source URLs (`https://old-domain.com/*`) and placed before all other redirect entries.
 
 ---
 
@@ -122,5 +122,5 @@ For past incidents and root cause analyses, see `maintenance/troubleshoot.md`.
 
 ## Contact
 
-**Guillaume Gustin** — design and development
+**Guillaume Gustin** — independent design and development
 [hello@pwablo.be](mailto:hello@pwablo.be) · [pwablo.be](https://pwablo.be)
