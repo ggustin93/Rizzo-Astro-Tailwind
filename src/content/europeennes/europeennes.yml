@@ -108,18 +108,19 @@ fr:
 en:
   title: European institutions and agencies
   navigationCards:
-    agences: You are a European agency
-    fonctionnaires: You are a European civil servant or contract agent
+    agences: You are a European institution, body or agency
+    fonctionnaires: You are a EU civil servant or agent
   agences:
-    title: You are a European agency
+    title: You are a European institution, body or agency
     intro: >
-      We support European agencies based in Brussels in the day-to-day
-      management of their employment relations and strategic projects. We appear
-      before competent courts, internal bodies and national authorities, and
-      work in close collaboration with your HR and legal teams.
+      We support European institutions, bodies and agencies in the day-to-day
+      management of their relationships with staff members as well as in their
+      strategic HR projects and policies. We work in close cooperation with your
+      internal HR and legal teams and prepare the replies to requests and
+      complaints (art. 90, §§1 and 2, of the Staff Regulations). We defend your
+      institution or body before the competent Belgian and European courts.
 
-
-      Our expertise combines Belgian employment law and the specificities of the European civil service.
+      Our expertise combines Belgian employment law with the specifics of European civil service law.
     accompagnementTitle: Support and defense of European agencies
     accompagnement:
       - Labour law and social security audit
