@@ -76,14 +76,21 @@ const seoData = {
           <!-- Left Column (2/3) -->
           <div class="md:w-2/3 bg-europeenne p-6 md:p-10 rounded-lg text-white flex flex-col justify-start">
             <p class="text-sm md:text-base leading-relaxed mb-6 opacity-90">{content.agences.intro}</p>
-            <ul class="space-y-3 md:space-y-5 mx-auto py-2 md:py-4">
-              {content.agences.accompagnement.map((item: string, index: number) => (
-                <li set:key={index} class="flex items-start">
-                  <ChevronRight class="w-5 h-5 mr-3 text-white flex-shrink-0 mt-1" />
-                  <span class="text-sm md:text-base leading-relaxed">{item}</span>
-                </li>
+            <div class="space-y-6 md:space-y-8 py-2 md:py-4">
+              {content.agences.accompagnement.map((group: any, index: number) => (
+                <div set:key={index}>
+                  <h3 class="text-base md:text-lg font-semibold mb-3 text-white">{group.title}</h3>
+                  <ul class="space-y-2 md:space-y-3 ml-2">
+                    {group.items.map((item: string, i: number) => (
+                      <li set:key={i} class="flex items-start">
+                        <ChevronRight class="w-5 h-5 mr-3 text-white flex-shrink-0 mt-0.5" />
+                        <span class="text-sm md:text-base leading-relaxed">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
 
           <!-- Right Column (1/3) -->

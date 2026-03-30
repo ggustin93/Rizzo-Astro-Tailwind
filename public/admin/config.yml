@@ -222,7 +222,13 @@ collections:
                   - label: "Accompagnement"
                     name: "accompagnement"
                     widget: "list"
-                    field: {label: "Élément", name: "item", widget: "string"}
+                    summary: "{{fields.title}}"
+                    fields:
+                      - {label: "Sous-titre", name: "title", widget: "string"}
+                      - label: "Éléments"
+                        name: "items"
+                        widget: "list"
+                        field: {label: "Élément", name: "item", widget: "string"}
                   - {label: "Titre services", name: "servicesTitle", widget: "string"}
                   - label: "Services"
                     name: "services"
