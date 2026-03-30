@@ -269,48 +269,47 @@ it:
         text: Rappresentanza dinanzi alle autorità interne competenti e ai giudici belgi
           ed europei
   fonctionnaires:
-    title: Sei un funzionario europeo, agente contrattuale o temporaneo
+    title: Siete un funzionario o un membro del personale europeo
     intro: >
-      Sei un funzionario europeo, agente contrattuale o esperto all'interno di
-      un'agenzia europea o di un'istituzione europea, e ti trovi ad affrontare
-      una difficoltà professionale?
-
-      Ti assistiamo in ogni fase del tuo percorso professionale, sia per una consulenza puntuale, una situazione delicata o un contenzioso.
+      Siete funzionari o membri del personale di un’agenzia o di un’istituzione
+      europea e vi trovate ad affrontare una difficoltà professionale?
 
 
-      Interveniamo davanti agli organi interni delle istituzioni europee nonché davanti alle giurisdizioni competenti, tenendo conto delle specificità dello statuto della funzione pubblica europea e del quadro belga.
-    accompagnementTitle: Assistenza e difesa dei funzionari e agenti contrattuali europei
+      Vi assistiamo in ogni fase del vostro percorso professionale, sia che abbiate bisogno di una consulenza puntuale, di supporto in una situazione delicata o di rappresentanza in un contenzioso.
+
+
+      Interveniamo dinanzi agli organi interni delle istituzioni e delle agenzie europee, nonché dinanzi alla Corte di giustizia dell’Unione europea.
+    accompagnementTitle: Assistenza e difesa dei funzionari e dei membri del personale europei
     accompagnement:
-      - Reclutamento e condizioni di assunzione presso le istituzioni e le
-        agenzie europee
-      - Analisi e negoziazione di contratti di agenti contrattuali o temporanei
-      - Statuto, diritti e obblighi dei funzionari europei
-      - Valutazioni, promozioni e sviluppo della carriera
-      - Rifiuto di rinnovo del contratto o fine della missione
-      - Licenziamento o risoluzione del contratto
-      - Misure disciplinari e indagini amministrative
+      - Concorsi e procedure di selezione
+      - Reclutamento e condizioni di ingaggio
       - Molestie morali o sessuali sul lavoro
       - Discriminazione e parità di trattamento
-      - Benessere sul lavoro e rischi psicosociali
-      - Gestione delle assenze (malattia, burnout, congedi specifici)
-      - Telelavoro, mobilità e condizioni di lavoro internazionali
-      - Protezione dei dati personali (GDPR) nel rapporto di lavoro
+      - Valutazione, promozione e progressione di carriera
+      - Mancato rinnovo dei contratti di agenti contrattuali o temporanei
+      - Composizione della retribuzione (indennità di dislocazione, assegni
+        familiari, spese di viaggio e altre indennità e rimborsi)
+      - Diritti pensionistici (trasferimenti IN e OUT)
+      - Indagini e sanzioni disciplinari
+      - Copertura RCAM e rimborso delle spese mediche
+      - Gestione delle assenze (controlli medici, congedi speciali, telelavoro)
+      - Mobilità e distacco
+      - Protezione dei dati personali (GDPR) nel rapporto statutario
+      - Informatori (whistleblowers)
     servicesTitle: I nostri servizi
     services:
       - icon: CheckSquare
-        text: Analisi della vostra situazione professionale e dei vostri diritti
+        text: Analisi della vostra situazione professionale e dei vostri diritti e dei
+          vostri diritti
       - icon: BriefCase
-        text: Consulenza strategica prima di qualsiasi azione (reclamo, ricorso,
-          negoziazione)
+        text: Consulenza strategica prima di intraprendere qualsiasi iniziativa formale
       - icon: FileText
-        text: Assistenza nelle procedure interne alle istituzioni europee
-      - icon: FileText
-        text: Redazione di ricorsi amministrativi e assistenza nelle procedure
-          contenziose
-      - icon: Handshake
-        text: Negoziazione di soluzioni amichevoli e confidenziali
+        text: Redazione di richieste (art. 90, par. 1 dello Statuto), richieste di
+          assistenza (art. 24 dello Statuto) e reclami (art. 90, par. 2 dello
+          Statuto)
       - icon: Shield
-        text: Difesa davanti alle giurisdizioni competenti
+        text: Assistenza nelle procedure amministrative interne e nel contenzioso
+          dinanzi alla Corte di giustizia dell’Unione europea
   ctaText: Scopri di più sulle tariffe
   seo:
     title: Servizi legali per le istituzioni europee | Rizzo & Michiels Avvocate
