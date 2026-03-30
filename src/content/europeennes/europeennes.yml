@@ -61,42 +61,42 @@ fr:
       Nous intervenons devant les organes internes des institutions et agences européennes ainsi que devant la Cour de justice de l’Union européenne.
     accompagnementTitle: Accompagnement et défense des fonctionnaires et agents européens
     accompagnement:
-      - Recrutement et conditions d'engagement au sein des institutions et
-        agences européennes
-      - Analyse et négociation de contrats d'agents contractuels ou temporaires
-      - Statut, droits et obligations des fonctionnaires européens
-      - Évaluations, promotions et évolution de carrière
-      - Refus de renouvellement de contrat ou fin de mission
-      - Licenciement ou résiliation de contrat
-      - Mesures disciplinaires et enquêtes administratives
+      - Concours et procédures de sélection
+      - "Recrutement et conditions d’engagement "
       - Harcèlement moral ou sexuel au travail
       - Discrimination et égalité de traitement
-      - Bien-être au travail et risques psychosociaux
-      - Gestion des absences (maladie, burn-out, congés spécifiques)
-      - Télétravail, mobilité et conditions de travail internationales
-      - Protection des données personnelles (GDPR) dans la relation de travail
+      - Évaluation, promotion et évolution de carrière
+      - Non-renouvellement de contrat d’agent contractuel ou temporaire
+      - Composition de la rémunération (indemnité de dépaysement, allocations
+        familiales, frais de voyages et autres indemnités et remboursements)
+      - "Droits de pension (transferts-IN et OUT) "
+      - Enquêtes et sanctions disciplinaires
+      - Couverture RCAM et remboursement des frais médicaux,
+      - Gestion des absences (contrôle médical, congés spéciaux, télétravail)
+      - Mobilité et détachement
+      - Lanceurs d’alerte
+      - Protection des données à caractère personnel (RGPD) dans la relation
+        statutaire
     servicesTitle: Nos services
     services:
-      - icon: CheckSquare
-        text: Analyse de votre situation professionnelle et de vos droits
       - icon: BriefCase
-        text: Conseil stratégique avant toute démarche (réclamation, recours,
-          négociation)
-      - icon: FileText
-        text: Assistance dans les procédures internes aux institutions européennes
-      - icon: FileText
-        text: Rédaction de recours administratifs et accompagnement dans les procédures
-          contentieuses
+        text: Analyse de votre situation professionnelle et de vos droits
       - icon: Handshake
-        text: Négociation de solutions amiables et confidentielles
+        text: Conseils stratégiques avant toute démarche
+      - icon: FileText
+        text: Rédaction des demandes (art. 90 §1 du statut), demandes d’assistance (art.
+          24 du statut), réclamations (art. 90 §2 du statut)
+      - icon: FileText
+        text: "Assistance dans les procédures administratives internes et les procédures
+          contentieuses devant la Cour de justice de l’Union européenne "
       - icon: Shield
         text: Défense devant les juridictions compétentes
   ctaText: En savoir plus sur les tarifs
   seo:
     title: Droit du travail · Institutions européennes | Rizzo & Michiels
-    description: Expertise en droit du travail pour les agences, fonctionnaires et
-      agents des institutions européennes. Conseils, défense et accompagnement
-      juridique personnalisé à Bruxelles.
+    description: Expertise en droit du travail pour les institutions, organes et
+      agences, fonctionnaires et agents de l'Union  européenne. Conseils,
+      défense et accompagnement juridique personnalisé à Bruxelles.
     image: https://rizzo-michiels.be/default-social-image.png
     keywords:
       - avocat institutions européennes Bruxelles
