@@ -121,7 +121,7 @@ en:
       institution or body before the competent Belgian and European courts.
 
       Our expertise combines Belgian employment law with the specifics of European civil service law.
-    accompagnementTitle: Supporting and defending European institutions, bodies and agencies
+    accompagnementTitle: Support and defence of European institutions, bodies and agencies
     accompagnement:
       - "Advice and support in implementing HR policies: •\tCompetitions,
         selection procedures and recruitment •\tWell-being at work and
@@ -158,45 +158,49 @@ en:
         text: Representation before the competent internal authorities and the Belgian
           and European courts
   fonctionnaires:
-    title: You are a European civil servant, contract agent or temporary staff
-    intro: >
-      Are you a European civil servant, contract agent or expert within a
-      European agency or institution, facing a professional difficulty?
+    title: You are a European civil servant, contract or temporary agent
+    intro: >+
+      Are you a European official or member of staff within a European agency,
+      body or institution facing a professional difficulty?
 
-      We support you at every stage of your career, whether for one-time advice, a sensitive situation or litigation.
+      We support you at every stage of your professional career, whether you require occasional advice, assistance in a sensitive situation, or representation in litigation.
 
+      We act before the internal bodies of European institutions, bodies and agencies, as well as before the Court of Justice of the European Union.
 
-      We appear before the internal bodies of European institutions as well as before competent courts, taking into account the specificities of the European civil service regulations and the Belgian framework.
-    accompagnementTitle: Support and defense of European civil servants and contract staff
+    accompagnementTitle: Support and defence of European officials and agents
     accompagnement:
-      - Recruitment and engagement conditions within European institutions and
-        agencies
-      - Analysis and negotiation of contract or temporary agent contracts
-      - Status, rights and obligations of European civil servants
-      - Evaluations, promotions and career development
-      - Refusal of contract renewal or end of assignment
-      - Dismissal or contract termination
-      - Disciplinary measures and administrative investigations
-      - Moral or sexual harassment at work
-      - Discrimination and equal treatment
-      - Workplace well-being and psychosocial risks
-      - Absence management (illness, burnout, special leave)
-      - Remote work, mobility and international working conditions
-      - Personal data protection (GDPR) in the employment relationship
+      - Competitions and selection procedures
+      - "Recruitment and conditions of engagement "
+      - "Psychological or sexual harassment at work "
+      - "Discrimination and equal treatment "
+      - "Evaluation, promotion and career progression "
+      - Non-renewal of contracts (contractual or temporary staff)
+      - Composition of remuneration (expatriation allowance, family allowances,
+        travel expenses and other allowances and reimbursements)
+      - "Pension rights (transfers-IN and -OUT ) "
+      - "Disciplinary investigations and sanctions "
+      - "JSIS cover and reimbursement of medical expenses "
+      - Management of absences (medical checks, special leaves)
+      - "Mobility and secondment "
+      - "Whistleblowing "
+      - "Protection of personal data (GDPR) in the statutory relationship "
     servicesTitle: Our services
     services:
       - icon: CheckSquare
         text: Analysis of your professional situation and rights
       - icon: BriefCase
-        text: Strategic advice before any action (complaint, appeal, negotiation)
+        text: Strategic advice before any formal step
       - icon: FileText
-        text: Assistance in procedures internal to European institutions
+        text: Drafting requests (art. 90(1) of the Staff Regulations), requests for
+          assistance (art. 24 of the Staff Regulations), and complaints (art.
+          90(2) of the Staff Regulations)
       - icon: FileText
-        text: Drafting of administrative appeals and support in contentious procedures
+        text: "Assistance in internal administrative procedures and litigation before
+          the Court of Justice of the European Union "
       - icon: Handshake
-        text: Negotiation of amicable and confidential solutions
+        text: Negotiation of confidential solutions
       - icon: Shield
-        text: Defense before competent courts
+        text: Defence before competent courts
   ctaText: Find out more about fees
   seo:
     title: Legal services for European institutions | Rizzo & Michiels Attorneys
