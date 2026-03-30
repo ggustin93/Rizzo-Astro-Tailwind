@@ -117,42 +117,46 @@ en:
       management of their relationships with staff members as well as in their
       strategic HR projects and policies. We work in close cooperation with your
       internal HR and legal teams and prepare the replies to requests and
-      complaints (art. 90, §§1 and 2, of the Staff Regulations). We defend your
+      complaints (art. 90(1) and 90(2) of the Staff Regulations). We defend your
       institution or body before the competent Belgian and European courts.
 
       Our expertise combines Belgian employment law with the specifics of European civil service law.
-    accompagnementTitle: Support and defense of European agencies
+    accompagnementTitle: Supporting and defending European institutions, bodies and agencies
     accompagnement:
-      - Labour law and social security audit
-      - GDPR and staff data protection
-      - Contracts for contract agents, temporary staff, seconded national
-        experts and consultants
-      - The issue of bogus self-employment in an international context
-      - End of collaboration (non-renewal, termination, dismissal)
-      - Collaboration termination protection schemes
-      - Remuneration packages, benefits and bonus policies
-      - "Work organisation: international remote work, hybrid working, flexible
-        schedules, right to disconnect"
-      - Management of short and long-term absences (illness, burnout)
-      - "Workplace well-being: harassment, internal investigations, psychosocial
-        risks"
-      - Discrimination, diversity and equal treatment
+      - "Advice and support in implementing HR policies: •\tCompetitions,
+        selection procedures and recruitment •\tWell-being at work and
+        prevention •\tDiversity •\tProtection of personal data (GDPR) in the
+        statutory relationship •\tWork organisation, management of short- and
+        long-term absences (illness, burnout), teleworking (including from
+        abroad)"
+      - "Handling internal administrative and judicial litigation before the
+        Court of Justice of the European Union: •\tCompetitions, selection
+        procedures and recruitment •\tPsychological or sexual harassment at work
+        •\tDiscrimination and equal treatment •\tEvaluation, promotion and
+        career development •\tNon-renewal of contracts of contract or temporary
+        staff •\tComposition of remuneration (expatriation allowance, family
+        allowances, travel expenses and other allowances and reimbursements)
+        •\tPension rights (IN and OUT transfers) •\tDisciplinary investigations
+        and sanctions •\tJSIS cover and reimbursement of medical expenses
+        •\tManagement of absences (medical checks, special leave) •\tMobility
+        and secondment"
     servicesTitle: Our services
     services:
       - icon: CheckSquare
-        text: Labour and employment law audit and due diligence under Belgian and
-          European law
+        text: Drafting replies to requests (art. 90(1) of the Staff Regulations),
+          requests for assistance (Art. 24 of the Staff Regulations) and
+          complaints (Art. 90(2) of the Staff Regulations)
       - icon: FileText
-        text: Drafting and reviewing contracts, HR policies, internal regulations and
-          GDPR documents
+        text: Drafting and reviewing contracts, HR policies, internal rules and GDPR
+          documentation
       - icon: Handshake
-        text: Advisory services on employment relationship management, from recruitment
-          to end of collaboration
+        text: Advice on managing the work relationship, from recruitment to termination
+          of service
       - icon: BriefCase
-        text: Negotiation of amicable agreements and confidential conflict resolution
+        text: Negotiation of amicable settlements and confidential dispute resolution
       - icon: Shield
-        text: Defense before labour courts in Belgium, social inspections and competent
-          authorities
+        text: Representation before the competent internal authorities and the Belgian
+          and European courts
   fonctionnaires:
     title: You are a European civil servant, contract agent or temporary staff
     intro: >
