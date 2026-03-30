@@ -217,50 +217,57 @@ en:
 it:
   title: Istituzioni e agenzie europee
   navigationCards:
-    agences: Sei un'agenzia europea
-    fonctionnaires: Sei un funzionario o agente contrattuale europeo
+    agences: Siete un’istituzione, un organo o un’agenzia europea
+    fonctionnaires: Siete un funzionario o un membro del personale europeo
   agences:
-    title: Sei un'agenzia europea
+    title: Siete un’istituzione, un organo o un’agenzia europea
     intro: >
-      Assistiamo le agenzie europee con sede a Bruxelles nella gestione
-      quotidiana dei loro rapporti di lavoro e nei loro progetti strategici.
-      Interveniamo davanti alle giurisdizioni competenti, agli organi interni o
-      alle autorità nazionali, e lavoriamo in stretta collaborazione con i
-      vostri team HR e legali.
+      Assistiamo le istituzioni, gli organi e le agenzie europee nella gestione
+      quotidiana dei rapporti con i membri del personale, nonché nei loro
+      progetti e nelle loro politiche strategiche in materia di risorse umane.
+      Lavoriamo in stretta collaborazione con i vostri team interni HR e legali
+      e predisponiamo le risposte alle richieste e ai reclami (art. 90, parr. 1
+      e 2 dello Statuto). Difendiamo la vostra istituzione o il vostro organo
+      dinanzi alle autorità giudiziarie belghe ed europee competenti.
 
 
-      La nostra expertise combina il diritto del lavoro belga e le specificità della funzione pubblica europea.
-    accompagnementTitle: Assistenza e difesa delle agenzie europee
+      La nostra competenza combina il diritto del lavoro belga con le specificità del diritto della funzione pubblica europea.
+    accompagnementTitle: Assistenza e difesa delle istituzioni, degli organi e delle agenzie europee
     accompagnement:
-      - Audit in diritto del lavoro e previdenza sociale
-      - GDPR e protezione dei dati del personale
-      - Contratti di agenti contrattuali, temporanei, esperti nazionali
-        distaccati e consulenti
-      - Problematica dei falsi lavoratori autonomi in un contesto internazionale
-      - Fine della collaborazione (mancato rinnovo, risoluzione, licenziamento)
-      - Regimi di protezione contro la cessazione della collaborazione
-      - Pacchetti retributivi, benefit e politiche di bonus
-      - "Organizzazione del lavoro: telelavoro internazionale, lavoro ibrido,
-        orari flessibili, diritto alla disconnessione"
-      - Gestione delle assenze di breve e lunga durata (malattia, burnout)
-      - "Benessere sul lavoro: molestie, indagini interne, rischi psicosociali"
-      - Discriminazione, diversità e parità di trattamento
+      - "Consulenza e supporto nell’attuazione delle politiche HR:  Concorsi,
+        procedure di selezione e reclutamento Benessere sul lavoro e prevenzione
+        Diversità Protezione dei dati personali (GDPR) nel rapporto statutario
+        Organizzazione del lavoro, gestione delle assenze di breve e lunga
+        durata (malattia, burnout), telelavoro (anche dall’estero)"
+      - "Gestione del contenzioso amministrativo interno e giudiziario dinanzi
+        alla Corte di giustizia dell’Unione europea:  Concorsi, procedure di
+        selezione e reclutamento Molestie morali o sessuali sul lavoro
+        Discriminazione e parità di trattamento Valutazione, promozione e
+        sviluppo della carriera Mancato rinnovo dei contratti di agenti
+        contrattuali o temporanei Composizione della retribuzione (indennità di
+        dislocazione, assegni familiari, spese di viaggio e altre indennità e
+        rimborsi) Diritti pensionistici (trasferimenti IN e OUT) Indagini e
+        sanzioni disciplinari Copertura RCAM e rimborso delle spese mediche
+        Gestione delle assenze (controlli medici, congedi speciali), Mobilità e
+        distacco"
     servicesTitle: I nostri servizi
     services:
       - icon: CheckSquare
-        text: Audit e due diligence in diritto del lavoro belga ed europeo
+        text: Redazione delle risposte alle richieste (art. 90, par. 1 dello Statuto),
+          alle richieste di assistenza (art. 24 dello Statuto) e ai reclami
+          (art. 90, par. 2 dello Statuto)
       - icon: FileText
         text: Redazione e revisione di contratti, politiche HR, regolamenti interni e
-          documenti GDPR
+          documentazione GDPR
       - icon: Handshake
         text: Consulenza nella gestione del rapporto di lavoro, dal reclutamento alla
-          fine della collaborazione
+          cessazione del servizio
       - icon: BriefCase
-        text: Negoziazione di accordi amichevoli e risoluzione confidenziale dei
-          conflitti
+        text: Negoziazione di accordi amichevoli e risoluzione confidenziale delle
+          controversie
       - icon: Shield
-        text: Difesa davanti ai tribunali del lavoro in Belgio, alle ispezioni sociali e
-          alle autorità competenti
+        text: Rappresentanza dinanzi alle autorità interne competenti e ai giudici belgi
+          ed europei
   fonctionnaires:
     title: Sei un funzionario europeo, agente contrattuale o temporaneo
     intro: >
