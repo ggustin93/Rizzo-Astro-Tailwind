@@ -12,7 +12,7 @@ fr:
             url: /fr/services/employeurs
           - label: POUR LES TRAVAILLEURS
             url: /fr/services/travailleurs
-          - label: INSTITUTIONS EUROPÉENNES
+          - label: FONCTIONNAIRES & INSTITUTIONS UE
             url: /fr/services/europeennes
       - label: L'ÉQUIPE
         url: /fr/equipe
@@ -58,7 +58,7 @@ en:
             url: /en/services/employeurs
           - label: FOR EMPLOYEES
             url: /en/services/travailleurs
-          - label: EUROPEAN INSTITUTIONS
+          - label: EU OFFICIALS & INSTITUTIONS
             url: /en/services/europeennes
       - label: THE TEAM
         url: /en/equipe
