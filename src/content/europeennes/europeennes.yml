@@ -1,7 +1,7 @@
 fr:
-  title: Fonctionnaires et institutions européennes
+  title: Fonctionnaires et institutions de l'Union européenne
   navigationCards:
-    agences: Vous êtes une institution, organe ou agence européenne
+    agences: Vous êtes une institution, organe ou agence de l'UE
     fonctionnaires: Vous êtes fonctionnaire ou agent européen
   agences:
     title: Vous êtes une institution, organe ou agence européenne
@@ -16,21 +16,25 @@ fr:
       Notre expertise combine le droit du travail belge et les spécificités du droit de la fonction publique européenne.
     accompagnementTitle: Accompagnement et défense des institutions, organes ou agences européennes
     accompagnement:
-      - title: "Conseil et accompagnement dans la mise en place de politiques RH"
+      - title: Conseil et accompagnement dans la mise en place de politiques RH
         items:
-          - Concours, procédures de sélection et recrutement
           - Bien-être au travail et prévention
           - Diversité
-          - Protection des données à caractère personnel (RGPD) dans la relation statutaire
-          - Organisation du travail, gestion des absences de courte ou longue durée (maladie, burn-out), télétravail (depuis l’étranger)
-      - title: "Gestion du contentieux administratif interne et judiciaire devant la Cour de justice de l’Union européenne"
+          - Protection des données à caractère personnel (RGPD) dans la relation
+            statutaire
+          - Organisation du travail, gestion des absences de courte ou longue
+            durée (maladie, burn-out)
+          - Télétravail (depuis l’étranger)
+      - title: Gestion du contentieux administratif et judiciaire
         items:
           - Concours, procédures de sélection et recrutement
           - Harcèlement moral ou sexuel au travail
           - Discrimination et égalité de traitement
           - Évaluation, promotion et évolution de carrière
           - Non-renouvellement de contrat d’agent contractuel ou temporaire
-          - Composition de la rémunération (indemnité de dépaysement, allocations familiales, frais de voyages et autres indemnités et remboursements)
+          - Composition de la rémunération (indemnité de dépaysement,
+            allocations familiales, frais de voyages et autres indemnités et
+            remboursements)
           - Droits de pension (transferts-IN et OUT)
           - Enquêtes et sanctions disciplinaires
           - Couverture RCAM et remboursement des frais médicaux
@@ -126,21 +130,24 @@ en:
       Our expertise combines Belgian employment law with the specifics of European civil service law.
     accompagnementTitle: Support and defence of European institutions, bodies and agencies
     accompagnement:
-      - title: "Advice and support in implementing HR policies"
+      - title: Advice and support in implementing HR policies
         items:
           - Competitions, selection procedures and recruitment
           - Well-being at work and prevention
           - Diversity
           - Protection of personal data (GDPR) in the statutory relationship
-          - Work organisation, management of short- and long-term absences (illness, burnout), teleworking (including from abroad)
-      - title: "Handling internal administrative and judicial litigation before the Court of Justice of the European Union"
+          - Work organisation, management of short- and long-term absences
+            (illness, burnout), teleworking (including from abroad)
+      - title: Handling internal administrative and judicial litigation before the Court
+          of Justice of the European Union
         items:
           - Competitions, selection procedures and recruitment
           - Psychological or sexual harassment at work
           - Discrimination and equal treatment
           - Evaluation, promotion and career development
           - Non-renewal of contracts of contract or temporary staff
-          - Composition of remuneration (expatriation allowance, family allowances, travel expenses and other allowances and reimbursements)
+          - Composition of remuneration (expatriation allowance, family
+            allowances, travel expenses and other allowances and reimbursements)
           - Pension rights (IN and OUT transfers)
           - Disciplinary investigations and sanctions
           - JSIS cover and reimbursement of medical expenses
@@ -240,21 +247,24 @@ it:
       La nostra competenza combina il diritto del lavoro belga con le specificità del diritto della funzione pubblica europea.
     accompagnementTitle: Assistenza e difesa delle istituzioni, degli organi e delle agenzie europee
     accompagnement:
-      - title: "Consulenza e supporto nell’attuazione delle politiche HR"
+      - title: Consulenza e supporto nell’attuazione delle politiche HR
         items:
           - Concorsi, procedure di selezione e reclutamento
           - Benessere sul lavoro e prevenzione
           - Diversità
           - Protezione dei dati personali (GDPR) nel rapporto statutario
-          - Organizzazione del lavoro, gestione delle assenze di breve e lunga durata (malattia, burnout), telelavoro (anche dall’estero)
-      - title: "Gestione del contenzioso amministrativo interno e giudiziario dinanzi alla Corte di giustizia dell’Unione europea"
+          - Organizzazione del lavoro, gestione delle assenze di breve e lunga
+            durata (malattia, burnout), telelavoro (anche dall’estero)
+      - title: Gestione del contenzioso amministrativo interno e giudiziario dinanzi
+          alla Corte di giustizia dell’Unione europea
         items:
           - Concorsi, procedure di selezione e reclutamento
           - Molestie morali o sessuali sul lavoro
           - Discriminazione e parità di trattamento
           - Valutazione, promozione e sviluppo della carriera
           - Mancato rinnovo dei contratti di agenti contrattuali o temporanei
-          - Composizione della retribuzione (indennità di dislocazione, assegni familiari, spese di viaggio e altre indennità e rimborsi)
+          - Composizione della retribuzione (indennità di dislocazione, assegni
+            familiari, spese di viaggio e altre indennità e rimborsi)
           - Diritti pensionistici (trasferimenti IN e OUT)
           - Indagini e sanzioni disciplinari
           - Copertura RCAM e rimborso delle spese mediche
