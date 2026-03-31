@@ -38,7 +38,7 @@ fr:
           - Mobilité et détachement
     servicesTitle: Nos services
     services:
-      - icon: Search
+      - icon: CheckSquare
         text: Rédaction des réponses aux demandes (art. 90 §1 du statut), demandes
           d’assistance (art. 24 du statut) et aux réclamations (art. 90 §2 du
           statut)
