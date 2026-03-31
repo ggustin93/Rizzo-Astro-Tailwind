@@ -104,7 +104,7 @@ it:
             url: /it/services/employeurs
           - label: PER I LAVORATORI
             url: /it/services/travailleurs
-          - label: ISTITUZIONI EUROPEE
+          - label: FUNZIONARI & ISTITUZIONI UE
             url: /it/services/europeennes
       - label: IL TEAM
         url: /it/equipe
