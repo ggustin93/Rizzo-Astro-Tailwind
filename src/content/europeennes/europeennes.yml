@@ -117,7 +117,7 @@ fr:
       - litige travail institutions européennes Belgique
       - accompagnement juridique personnalisé institutions européennes
 en:
-  title: European institutions and agencies
+  title: EU institutions and staff members
   navigationCards:
     agences: You are a European institution, body or agency
     fonctionnaires: You are a EU civil servant or agent
@@ -126,24 +126,24 @@ en:
     intro: >
       We support European institutions, bodies and agencies in the day-to-day
       management of their relationships with staff members as well as in their
-      strategic HR projects and policies. We work in close cooperation with your
-      internal HR and legal teams and prepare the replies to requests and
-      complaints (art. 90(1) and 90(2) of the Staff Regulations). We defend your
-      institution or body before the competent Belgian and European courts.
+      strategic HR projects and policies. 
+
+
+      We work in close cooperation with your internal HR and legal teams and prepare the replies to requests and complaints (art. 90(1) and 90(2) of the Staff Regulations). We defend your institution or body before the competent Belgian and European courts.
+
 
       Our expertise combines Belgian employment law with the specifics of European civil service law.
-    accompagnementTitle: Support and defence of European institutions, bodies and agencies
+    accompagnementTitle: Support and defence of EU institutions, bodies and agencies
     accompagnement:
       - title: Advice and support in implementing HR policies
         items:
-          - Competitions, selection procedures and recruitment
           - Well-being at work and prevention
           - Diversity
           - Protection of personal data (GDPR) in the statutory relationship
           - Work organisation, management of short- and long-term absences
-            (illness, burnout), teleworking (including from abroad)
-      - title: Handling internal administrative and judicial litigation before the Court
-          of Justice of the European Union
+            (illness, burnout)
+          - Teleworking (including from abroad)
+      - title: Handling internal administrative and judicial litigation
         items:
           - Competitions, selection procedures and recruitment
           - Psychological or sexual harassment at work
@@ -180,11 +180,13 @@ en:
       Are you a European official or member of staff within a European agency,
       body or institution facing a professional difficulty?
 
+
       We support you at every stage of your professional career, whether you require occasional advice, assistance in a sensitive situation, or representation in litigation.
+
 
       We act before the internal bodies of European institutions, bodies and agencies, as well as before the Court of Justice of the European Union.
 
-    accompagnementTitle: Support and defence of European officials and agents
+    accompagnementTitle: Support and defence of EU officials and agents
     accompagnement:
       - Competitions and selection procedures
       - "Recruitment and conditions of engagement "
@@ -211,13 +213,11 @@ en:
         text: Drafting requests (art. 90(1) of the Staff Regulations), requests for
           assistance (art. 24 of the Staff Regulations), and complaints (art.
           90(2) of the Staff Regulations)
-      - icon: FileText
+      - icon: Shield
         text: "Assistance in internal administrative procedures and litigation before
           the Court of Justice of the European Union "
       - icon: Handshake
         text: Negotiation of confidential solutions
-      - icon: Shield
-        text: Defence before competent courts
   ctaText: Find out more about fees
   seo:
     title: Legal services for European institutions | Rizzo & Michiels Attorneys
