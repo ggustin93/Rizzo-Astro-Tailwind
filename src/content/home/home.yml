@@ -43,15 +43,14 @@ fr:
   articlesTitle: Articles
   profil:
     title: L'équipe
-    description: Christine Rizzo et Stephanie Michiels, avocates au Barreau de
-      Bruxelles, ont acquis l'expérience de leur métier en conseillant et
-      défendant à la fois des travailleur·euse.s et des entreprises locales et
-      internationales. La gestion de la relation de travail du recrutement à la
-      rupture, la rédaction de contrats, de rapports d'audit dans le cadre de
-      projets d'acquisition, le bien-être au travail, les outils destinés à
-      améliorer l'équilibre vie privée-vie professionnelle, les questions de
-      discrimination et les faux indépendants font partie de leur pratique
-      quotidienne.
+    description: >-
+      Christine Rizzo et Stephanie Michiels, avocates au Barreau de Bruxelles,
+      ont acquis l'expérience de leur métier en conseillant et défendant à la
+      fois des travailleur·euse.s et des entreprises locales et
+      internationales. 
+
+
+      La gestion de la relation de travail du recrutement à la rupture, la rédaction de contrats, de rapports d'audit dans le cadre de projets d'acquisition, le bien-être au travail, les outils destinés à améliorer l'équilibre vie privée-vie professionnelle, les questions de discrimination et les faux indépendants font partie de leur pratique quotidienne.
     cta: Découvrir l'équipe
   seo:
     title: Christine Rizzo et Stephanie Michiels | Avocates en droit du travail à
@@ -132,14 +131,13 @@ en:
   articlesTitle: Articles
   profil:
     title: The Team
-    description: Christine Rizzo and Stephanie Michiels, admitted to the Brussels
-      Bar, have gained experience in their profession by defending and advising
-      both individuals and local and international companies. Managing
-      employment relationships from recruitment to termination, drafting
-      agreements, audit reports for acquisition projects, well-being at work,
-      tools for improving work-life balance, discrimination issues and
-      classification issues (employee vs independent contractor) are all part of
-      their daily practice.
+    description: >-
+      Christine Rizzo and Stephanie Michiels, admitted to the Brussels Bar, have
+      gained experience in their profession by defending and advising both
+      individuals and local and international companies. 
+
+
+      Managing employment relationships from recruitment to termination, drafting agreements, audit reports for acquisition projects, well-being at work, tools for improving work-life balance, discrimination issues and classification issues (employee vs independent contractor) are all part of their daily practice.
     cta: Meet The Team
   seo:
     title: Christine Rizzo and Stephanie Michiels | Employment Lawyers in Brussels
