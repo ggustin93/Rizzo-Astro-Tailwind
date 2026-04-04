@@ -245,18 +245,18 @@ done
 # ==============================================================================
 hdr "5. Redirect Chains (${ALIAS_DOMAIN} → ${PRIMARY_DOMAIN})"
 
-# HTTP redirect — the GSC-critical test
+# HTTP redirect — informational only (Netlify always does HTTP→HTTPS at platform level before netlify.toml rules)
 HTTP_RESPONSE=$(curl -sI --max-time 10 "http://${ALIAS_DOMAIN}/" 2>/dev/null)
 HTTP_CODE=$(echo "$HTTP_RESPONSE" | grep -i "^HTTP/" | head -1 | awk '{print $2}')
 HTTP_LOCATION=$(echo "$HTTP_RESPONSE" | grep -i "^location:" | head -1 | sed 's/location: *//i' | tr -d '\r')
 
 if [[ "$HTTP_CODE" == "301" ]]; then
   if echo "$HTTP_LOCATION" | grep -qi "https://${PRIMARY_DOMAIN}"; then
-    ok "http://${ALIAS_DOMAIN}/ → 301 → ${HTTP_LOCATION} (SINGLE HOP — GSC ready)"
+    ok "http://${ALIAS_DOMAIN}/ → 301 → ${HTTP_LOCATION} (single hop)"
   elif echo "$HTTP_LOCATION" | grep -qi "https://${ALIAS_DOMAIN}"; then
-    warn "http://${ALIAS_DOMAIN}/ → 301 → ${HTTP_LOCATION} (double hop — GSC may fail)"
-    echo -e "       ${YLW}Netlify is redirecting HTTP→HTTPS before the cross-domain rule.${RST}"
-    echo -e "       ${YLW}This resolves once NS point to Netlify DNS.${RST}"
+    warn "http://${ALIAS_DOMAIN}/ → 301 → ${HTTP_LOCATION} (2 hops: HTTP→HTTPS then cross-domain)"
+    echo -e "       ${YLW}Expected behavior on Netlify — platform upgrades HTTP→HTTPS before netlify.toml rules.${RST}"
+    echo -e "       ${YLW}GSC 'Change of Address' validates HTTPS directly (1 hop) — this is not a blocker.${RST}"
   else
     fail "http://${ALIAS_DOMAIN}/ → 301 → ${HTTP_LOCATION} (unexpected target)"
   fi
@@ -373,11 +373,11 @@ hdr "8. GSC 'Change of Address' Readiness"
 
 GSC_READY=true
 
-# Check 1: Single-hop HTTP redirect
-if echo "$HTTP_LOCATION" | grep -qi "https://${PRIMARY_DOMAIN}"; then
-  ok "HTTP redirect is single-hop (direct to new domain)"
+# Check 1: HTTPS single-hop redirect (what GSC actually validates)
+if [[ "$HTTPS_CODE" == "301" ]] && echo "$HTTPS_LOCATION" | grep -qi "https://${PRIMARY_DOMAIN}"; then
+  ok "HTTPS redirect is single-hop → ${PRIMARY_DOMAIN} (GSC validates HTTPS)"
 else
-  fail "HTTP redirect is NOT single-hop — GSC validation will likely fail"
+  fail "HTTPS redirect is NOT pointing to ${PRIMARY_DOMAIN} — GSC validation will fail"
   GSC_READY=false
 fi
 
