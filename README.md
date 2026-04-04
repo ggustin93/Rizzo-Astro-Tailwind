@@ -121,7 +121,7 @@ All pages are pre-built at deploy time (SSG) and served as static files via Netl
 | Metric | Value |
 | --- | --- |
 | Website Carbon rating | A+ — 0.02 g CO2 per visit — cleaner than 97% of pages tested globally |
-| EcoIndex | B (79/100) |
+| EcoIndex | B (80/100) |
 | TTFB | ~200 ms (Netlify Edge CDN, HTTP/2) |
 | Rendering | Zero server-side rendering — all pages pre-built at deploy time |
 
