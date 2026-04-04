@@ -16,11 +16,16 @@
   NODE_VERSION = "22"
 
 # --- Redirects ---
-# NOTE (2026-04-04): Cross-domain rules for crizzo-avocate.be were removed.
-# Both domains are now on Netlify DNS (dns1-4.p04.nsone.net).
-# Netlify's automatic alias redirect handles crizzo-avocate.be → rizzo-michiels.be
-# as a single hop at the CDN edge, including HTTP→HTTPS upgrade.
-# Explicit cross-domain rules are no longer needed and would create a double-hop.
+# Cross-domain redirect: crizzo-avocate.be → rizzo-michiels.be
+# Netlify alias domains serve the same site — they do NOT auto-redirect to the primary.
+# This explicit HTTPS rule catches requests after Netlify's platform-level HTTP→HTTPS upgrade.
+# Result: http://crizzo-avocate.be → (platform) → https://crizzo-avocate.be → (this rule) → https://rizzo-michiels.be
+# GSC "Change of Address" tests HTTPS directly → single hop → validation passes.
+[[redirects]]
+  from = "https://crizzo-avocate.be/*"
+  to   = "https://rizzo-michiels.be/:splat"
+  status = 301
+  force = true
 
 # Primary redirect for humans - permanent redirect to French version
 [[redirects]]
