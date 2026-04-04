@@ -30,9 +30,10 @@ if (!christineLawyer) {
   throw new Error(`Christine Rizzo not found in profile data for language: ${lang}`);
 }
 
-// Get the centralized image
+// Get the profile-specific image (portrait), fallback to team image (square)
+const profileImages = profileEntry.data.profileImages || [];
 const teamImages = profileEntry.data.teamImages || [];
-const imageData = teamImages.find(img => img.name === "Christine Rizzo");
+const imageData = profileImages.find(img => img.name === "Christine Rizzo") || teamImages.find(img => img.name === "Christine Rizzo");
 christineLawyer.image = imageData ? imageData.image : christineLawyer.image;
 
 // Translations

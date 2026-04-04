@@ -11,7 +11,6 @@ const currentLang = pathname.split('/')[1] || 'fr';
 
 // Récupérer la configuration du site
 const siteConfigEntry = await getEntry('config', 'site-config');
-const showArticlesSection = siteConfigEntry?.data?.sectionsVisibility || false;
 const lawyers = siteConfigEntry?.data?.lawyers || [];
 // Get the shared office address from the root level
 const address = siteConfigEntry?.data?.address || "Chaussée de Waterloo 1151, 1180 Bruxelles";
@@ -175,7 +174,7 @@ const handleContactAction = (type: string, action: string) => {
 
 <footer class="bg-beige text-dark-gray py-6 md:py-10">
   <div class="container mx-auto px-4">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 items-start md:grid-rows-[auto]">
+    <div class="grid grid-cols-1 md:grid-cols-[1.3fr_1fr_0.8fr_0.9fr] gap-6 md:gap-8 items-start md:grid-rows-[auto]">
       <div class="flex justify-center md:justify-start items-center md:items-start md:self-start">
         <Image src={logoImage} alt="Christine Rizzo Logo" class="h-40 md:h-96 w-auto mt-0 md:mt-[-4rem]" />
       </div>

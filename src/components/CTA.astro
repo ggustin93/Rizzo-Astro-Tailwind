@@ -1,5 +1,5 @@
 ---
-import { Calendar, Mail, Phone } from 'astro-feather-icons';
+import Icon from './Icon.astro';
 import { MessageCircle } from 'astro-feather-icons';
 import ctaIllustration from '../assets/images/illustration_cta_2.svg';
 import { getEntry } from 'astro:content';
@@ -107,7 +107,7 @@ const handleAction = (type: string, action: string, calendarLink?: string) => {
                       onclick={handleAction('email', lawyer.email)}
                       aria-label={`Email ${lawyer.name}`}
                     >
-                      <Mail class="w-7 h-7 sm:w-8 sm:h-8 text-employeur group-hover:text-white transition-colors duration-300 pointer-events-none"/>
+                      <Icon name="mail" class="w-7 h-7 sm:w-8 sm:h-8 text-employeur group-hover:text-white transition-colors duration-300 pointer-events-none"/>
                     </button>
                     <span class="text-sm uppercase text-white/90 font-medium tracking-wider mb-1">{t.email}</span>
                     <button 
@@ -130,7 +130,7 @@ const handleAction = (type: string, action: string, calendarLink?: string) => {
                           data-cal-config='{"layout":"month_view"}'
                           aria-label={`Book appointment with ${lawyer.name}`}
                         >
-                          <Calendar class="w-7 h-7 sm:w-8 sm:h-8 text-employeur group-hover:text-white transition-colors duration-300 pointer-events-none" />
+                          <Icon name="calendar" class="w-7 h-7 sm:w-8 sm:h-8 text-employeur group-hover:text-white transition-colors duration-300 pointer-events-none" />
                         </button>
                         <span class="text-sm uppercase text-white/90 font-medium tracking-wider mb-1">{t.appointment}</span>
                         <button 
@@ -148,7 +148,7 @@ const handleAction = (type: string, action: string, calendarLink?: string) => {
                           class="w-16 h-16 sm:w-20 sm:h-20 bg-white/50 rounded-full flex items-center justify-center mb-2 cursor-not-allowed opacity-50"
                           aria-label={`Appointment booking not available for ${lawyer.name}`}
                         >
-                          <Calendar class="w-7 h-7 sm:w-8 sm:h-8 text-employeur/50 pointer-events-none" />
+                          <Icon name="calendar" class="w-7 h-7 sm:w-8 sm:h-8 text-employeur/50 pointer-events-none" />
                         </div>
                         <span class="text-sm uppercase text-white/50 font-medium tracking-wider mb-1">{t.appointment}</span>
                         <span class="text-sm sm:text-base text-white/30 font-light">
@@ -165,7 +165,7 @@ const handleAction = (type: string, action: string, calendarLink?: string) => {
                       onclick={handleAction('phone', lawyer.phone)}
                       aria-label={`Call ${lawyer.name}`}
                     >
-                      <Phone class="w-7 h-7 sm:w-8 sm:h-8 text-employeur group-hover:text-white transition-colors duration-300 pointer-events-none" />
+                      <Icon name="phone" class="w-7 h-7 sm:w-8 sm:h-8 text-employeur group-hover:text-white transition-colors duration-300 pointer-events-none" />
                     </button>
                     <span class="text-sm uppercase text-white/90 font-medium tracking-wider mb-1">{t.call}</span>
                     <button 

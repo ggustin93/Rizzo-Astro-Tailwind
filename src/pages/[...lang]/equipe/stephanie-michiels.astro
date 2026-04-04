@@ -30,9 +30,10 @@ if (!stephanieLawyer) {
   throw new Error(`Stephanie Michiels not found in profile data for language: ${lang}`);
 }
 
-// Get the centralized image
+// Get the profile-specific image (portrait), fallback to team image (square)
+const profileImages = profileEntry.data.profileImages || [];
 const teamImages = profileEntry.data.teamImages || [];
-const imageData = teamImages.find(img => img.name === "Stephanie Michiels");
+const imageData = profileImages.find(img => img.name === "Stephanie Michiels") || teamImages.find(img => img.name === "Stephanie Michiels");
 stephanieLawyer.image = imageData ? imageData.image : stephanieLawyer.image;
 
 // Translations

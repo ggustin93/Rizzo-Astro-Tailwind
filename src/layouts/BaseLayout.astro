@@ -3,6 +3,7 @@ import { getEntry } from 'astro:content';
 import { ViewTransitions } from "astro:transitions";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import SvgSprite from "../components/SvgSprite.astro";
 import "../styles/global.css";
 
 declare global {
@@ -152,6 +153,7 @@ const pathname = Astro.url.pathname;
     </script>
 </head>
 <body class="bg-beige bg-svg-pattern">
+  <SvgSprite />
   <div class="container mx-auto px-4">
     <Header currentLang={currentLang}/>
     <main id="content">

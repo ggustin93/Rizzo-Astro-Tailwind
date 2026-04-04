@@ -7,10 +7,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Added
+- **SVG sprite system** (`SvgSprite.astro`, `Icon.astro`): inline Feather icon SVGs replaced by a single `<symbol>` sprite sheet + `<use>` references for icons used 2+ times (calendar, mail, phone, chevron-down, map-pin, globe). Reduces DOM nodes by ~3-5 per icon instance. Sprite included once in `BaseLayout.astro`.
+- **DNS health check script** (`scripts/run-dns-tests.sh`): comprehensive migration health check — DNSSEC status, NS propagation, SSL certs, redirect chain analysis, GSC readiness, SEO signals. Supports `--quick` flag for DNS-only checks.
+
+### Changed
+- **EcoIndex DOM optimization**: flattened redundant wrapper `<div>` elements in Header (dropdown inner div) and homepage (single-child flex container). Homepage DOM: 437→417, Europeennes: 546→541.
+- **DNS configuration**: migrated `rizzo-michiels.be` from Infomaniak DNS (A record) to Netlify DNS for automatic CDN-level alias redirects and single-hop redirect chain (fixes GSC "Change of Address" validation).
+- **Image optimization**: compressed 3 DSCF photos from 20 MB total to 1.1 MB (resized to 1600px, quality 80%). `dscf3258.jpg` 11MB→274KB, `dscf3259.jpg` 3.8MB→589KB, `dscf3286.jpg` 5.2MB→267KB.
+- Components updated to use `Icon.astro` sprite references: `CTA.astro`, `Footer.astro`, `Header.astro`, `LanguagePicker.astro`
+- `CLAUDE.md`: added Netlify DNS documentation, DNS health check script reference, updated maintenance pitfalls
+
 - **Document PDF politique dossiers clients** (`public/assets/documents/politique-traitement-dossiers-clients.pdf`) : ajout du fichier et lien dans les Mentions légales (section "Données personnelles") dans les trois langues (FR/EN/IT), avec lien cliquable "accessible ici / accessible here / accessibile qui"
 - Lien cliquable vers la Politique de confidentialité dans les Mentions légales (section "Données personnelles") — FR pointe vers `/fr/legal/privacy`, EN vers `/en/legal/privacy`, IT vers `/it/legal/privacy`
 
 ### Changed
+- **Photos d'équipe optimisées en WebP** : portraits de Christine Rizzo et Stephanie Michiels convertis en WebP optimisé — ~14-18 KB chacun contre 928 KB en JPG d'origine. Images dimensionnées à 500×500 (2× retina) pour la grille d'accueil, avec attributs `width`/`height` en HTML pour éviter le CLS
+- **Nouveau champ `profileImages` dans `profile.yml`** : permet d'utiliser des variantes d'image par contexte (carré pour la page d'accueil, portrait pour les pages profil individuelles), avec fallback sur `teamImages`
 - **Politique de confidentialité** (`privacy.yml`) — section "Données personnelles traitées" réécrite dans les trois langues : suppression de l'inexactitude "aucune donnée collectée" et ajout de la liste exhaustive des collectes réelles (formulaire de contact via Netlify Forms, Cal.com, données techniques Netlify hébergeur) avec mention des finalités et durées de conservation, pour conformité RGPD (CNPD belge)
 - **README.md** : mis à jour pour refléter les deux avocates (Christine Rizzo & Stephanie Michiels), l'usage de Netlify Forms, la structure `public/assets/documents/`, les pages légales, et le tableau `lawyers` dans `site-config.yml`
 

@@ -3,8 +3,7 @@ import logoImage from '../assets/images/logo_crizzo_calli3.svg';
 import LanguagePicker from '../components/LanguagePicker.astro';
 import Button from '../components/Button.astro';
 import { getEntry } from 'astro:content';
-import { ChevronDown } from 'astro-feather-icons2';
-import { Home } from 'astro-feather-icons2';
+import Icon from './Icon.astro';
 
 export interface Props {
   currentLang: string;
@@ -231,19 +230,17 @@ const contactButtonText = navConfig?.header?.contactButtonText || t.contact;
                 class={`nav-link text-black uppercase text-sm font-light inline-flex items-center ${link.isActive ? 'active' : ''}`}
               >
                 {link.label}
-                <ChevronDown class="w-4 h-4 ml-1" />
+                <Icon name="chevron-down" class="w-4 h-4 ml-1" />
               </a>
-              <div class="absolute left-0 mt-1 w-56 bg-white shadow-lg rounded-sm z-50 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300">
-                <div class="py-2">
+              <div class="absolute left-0 mt-1 w-56 bg-white shadow-lg rounded-sm z-50 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 py-2">
                   {link.dropdownItems?.map(item => (
-                    <a 
-                      href={item.url} 
+                    <a
+                      href={item.url}
                       class={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 ${isActivePage(item.url) ? 'font-medium' : ''}`}
                     >
                       {item.label}
                     </a>
                   ))}
-                </div>
               </div>
             </div>
           ) : (

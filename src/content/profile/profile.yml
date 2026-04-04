@@ -2,7 +2,12 @@ teamImages:
   - name: Christine Rizzo
     image: /assets/images/christine-optimized.webp
   - name: Stephanie Michiels
-    image: /assets/images/dscf3286-2-1-1-.jpg
+    image: /assets/images/smichiels-optimized.webp
+profileImages:
+  - name: Christine Rizzo
+    image: /assets/images/christine-optimized.webp
+  - name: Stephanie Michiels
+    image: /assets/images/smichiels-portrait.webp
 fr:
   lawyers:
     - careerPath:

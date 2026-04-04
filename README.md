@@ -72,6 +72,10 @@ Create a Markdown file at `src/content/blog/{lang}/{slug}.md` with the required 
 3. Load translations with `getUiTranslations(currentLang)`
 4. Add a content collection in `src/content/config.ts` if the page has managed content
 
+### Update team photos
+
+Team images live in `public/assets/images/` as optimized WebP files. The `profile.yml` collection supports two image fields: `teamImages` (square crops for the homepage grid) and `profileImages` (portrait format for individual profile pages). Profile pages fall back to `teamImages` when `profileImages` is not set.
+
 ### Modify navigation
 
 Edit `src/content/navigation/site-navigation.yml`.
@@ -82,6 +86,8 @@ Edit `src/content/navigation/site-navigation.yml`.
 ./scripts/run-seo-tests.sh        # meta tags and structure
 ./scripts/run-bot-tests.sh        # crawler behavior
 ./scripts/run-migration-tests.sh  # 301 redirects, canonicals, sitemap
+./scripts/run-dns-tests.sh        # DNS health: NS, DNSSEC, SSL, redirects, GSC readiness
+./scripts/run-dns-tests.sh --quick # DNS-only (no HTTP checks)
 ./scripts/submit_indexnow.sh      # submit URLs via IndexNow
 ```
 
@@ -102,9 +108,9 @@ Edit `src/content/navigation/site-navigation.yml`.
 
 Deployed on Netlify via automatic Git push to `main`. Build command: `astro check && astro build`. Output: `dist/`.
 
-Redirects and cache headers are configured in `netlify.toml`. The CMS branch target is set on line 3 of `public/admin/config.yml` — it should point to `main` in production.
+**DNS:** Both `rizzo-michiels.be` (primary) and `crizzo-avocate.be` (alias) are on Netlify DNS, enabling automatic CDN-level alias redirects.
 
-**A note on cross-domain 301 redirects:** Netlify's automatic alias redirect does not fire when the primary domain relies on external DNS (e.g. an Infomaniak A record) rather than Netlify DNS. In that case, explicit rules are required in `netlify.toml`, using full source URLs (`https://old-domain.com/*`) and placed before all other redirect entries.
+Redirects and cache headers are configured in `netlify.toml`. The CMS branch target is set on line 3 of `public/admin/config.yml` — it should point to `main` in production.
 
 ---
 

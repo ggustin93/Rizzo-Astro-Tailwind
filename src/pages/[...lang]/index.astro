@@ -237,14 +237,12 @@ export const prerender = true;
           <!-- Description and CTA -->
           <div class="text-center">
             <p class="text-dark-gray text-base md:text-lg font-light leading-relaxed mb-6 max-w-3xl mx-auto">{content.profil.description}</p>
-            <div class="flex justify-center">
-              <Button 
-                href={`/${currentLang}/equipe`} 
+            <Button
+                href={`/${currentLang}/equipe`}
                 text={`${content.profil.cta} →`}
                 variant="secondary"
                 class="uppercase text-sm font-light hover:text-gray-900"
               />
-            </div>
           </div>
         </div>
       </div>
