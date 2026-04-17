@@ -241,5 +241,17 @@ const pathname = Astro.url.pathname;
       // Also run after Astro ViewTransitions navigation (for client-side routing)
       document.addEventListener('astro:page-load', checkAndRedirectToken);
     </script>
+    <script is:inline>
+      // Scroll to hash anchor after Astro View Transitions (browser doesn't do this automatically)
+      document.addEventListener('astro:page-load', function() {
+        const hash = window.location.hash;
+        if (!hash) return;
+        const target = document.querySelector(hash);
+        if (!target) return;
+        setTimeout(function() {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }, 50);
+      });
+    </script>
 </body>
 </html>
