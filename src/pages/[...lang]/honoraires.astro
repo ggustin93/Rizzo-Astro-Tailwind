@@ -184,11 +184,11 @@ function prepareContent(content: string) {
                     <path d="M8 5v14l11-7z"/>
                   </svg>
                 </button>
-                <iframe 
+                <iframe
                   class="absolute top-0 left-0 w-full h-full"
-                  src={`https://www.youtube.com/embed/${getYouTubeID(content.video.url)}?rel=0`} 
-                  style="border:0;" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  src={`https://www.youtube-nocookie.com/embed/${getYouTubeID(content.video.url)}?rel=0`}
+                  style="border:0;"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen
                 ></iframe>
               </div>
@@ -199,6 +199,7 @@ function prepareContent(content: string) {
         </div>
       </div>
     </section>
+
 
     <section class="mb-8 md:mb-12">
       <h2 class="text-xl md:text-2xl font-light mb-4 md:mb-6 text-black flex items-center">

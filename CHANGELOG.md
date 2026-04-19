@@ -21,6 +21,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Lien cliquable vers la Politique de confidentialité dans les Mentions légales (section "Données personnelles") — FR pointe vers `/fr/legal/privacy`, EN vers `/en/legal/privacy`, IT vers `/it/legal/privacy`
 
 ### Changed
+- **Document Politique de protection des données** (`public/assets/documents/politique-traitement-dossiers-clients.pdf`) : remplacé par la version actualisée signée SRL Rizzo & Michiels (13/04/2026)
+- **Vidéo honoraires** (`honoraires.astro`) : iframe YouTube remplacée par `youtube-nocookie.com` pour limiter les cookies tiers ; section TEST (bordure rouge) supprimée
+
+### Changed
 - **Photos d'équipe optimisées en WebP** : portraits de Christine Rizzo et Stephanie Michiels convertis en WebP optimisé — ~14-18 KB chacun contre 928 KB en JPG d'origine. Images dimensionnées à 500×500 (2× retina) pour la grille d'accueil, avec attributs `width`/`height` en HTML pour éviter le CLS
 - **Nouveau champ `profileImages` dans `profile.yml`** : permet d'utiliser des variantes d'image par contexte (carré pour la page d'accueil, portrait pour les pages profil individuelles), avec fallback sur `teamImages`
 - **Politique de confidentialité** (`privacy.yml`) — section "Données personnelles traitées" réécrite dans les trois langues : suppression de l'inexactitude "aucune donnée collectée" et ajout de la liste exhaustive des collectes réelles (formulaire de contact via Netlify Forms, Cal.com, données techniques Netlify hébergeur) avec mention des finalités et durées de conservation, pour conformité RGPD (CNPD belge)
