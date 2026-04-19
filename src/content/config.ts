@@ -70,6 +70,7 @@ const navigationCollection = defineCollection({
           linkedin: z.string(),
           address: z.string()
         }).optional(),
+        menuLinks: z.array(z.object({ label: z.string(), url: z.string() })).optional(),
         legalLinks: z.array(
           z.object({
             label: z.string(),
@@ -112,6 +113,7 @@ const navigationCollection = defineCollection({
           linkedin: z.string(),
           address: z.string()
         }).optional(),
+        menuLinks: z.array(z.object({ label: z.string(), url: z.string() })).optional(),
         legalLinks: z.array(
           z.object({
             label: z.string(),
@@ -154,6 +156,7 @@ const navigationCollection = defineCollection({
           linkedin: z.string(),
           address: z.string()
         }).optional(),
+        menuLinks: z.array(z.object({ label: z.string(), url: z.string() })).optional(),
         legalLinks: z.array(
           z.object({
             label: z.string(),

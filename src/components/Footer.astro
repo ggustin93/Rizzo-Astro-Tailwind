@@ -84,6 +84,7 @@ interface LegalLink {
 
 interface FooterConfig {
   legalLinks?: LegalLink[];
+  menuLinks?: LegalLink[];
   ecoDesignTitle?: string;
   ecoDesignText?: string;
   ecoDesignUrl?: string;
@@ -130,6 +131,8 @@ if (!lawyers || lawyers.length === 0) {
 
 // Récupérer les liens principaux du Header
 const mainLinks = navConfig?.header?.mainLinks || [];
+// Utiliser les liens de menu du footer s'ils existent, sinon fallback sur mainLinks
+const footerMenuLinks = footerConfig.menuLinks || mainLinks;
 
 // Liens légaux du Footer
 const legalLinks = footerConfig.legalLinks || [
@@ -308,7 +311,7 @@ const handleContactAction = (type: string, action: string) => {
       <div>
         <h3 class="font-medium mb-5 text-lg md:text-xl hidden md:block">{menuTitle}</h3>
         <ul class="space-y-3 hidden md:block">
-          {mainLinks.map(link => (
+          {footerMenuLinks.map(link => (
             <li>
               <a
                 href={link.url}
@@ -325,7 +328,7 @@ const handleContactAction = (type: string, action: string) => {
             <ChevronDown class="w-5 h-5 absolute right-0" />
           </summary>
           <ul class="space-y-2 mt-2 text-center">
-            {mainLinks.map(link => (
+            {footerMenuLinks.map(link => (
               <li>
                 <a
                   href={link.url}

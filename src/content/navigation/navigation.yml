@@ -44,6 +44,17 @@ fr:
     contactTitle: Contact
     menuTitle: Menu
     ecoDesignText: Score d'éco-conception
+    menuLinks:
+      - label: ACCUEIL
+        url: /fr
+      - label: SERVICES
+        url: /fr#expertise
+      - label: L'ÉQUIPE
+        url: /fr/equipe
+      - label: HONORAIRES
+        url: /fr/honoraires
+      - label: CONTACT
+        url: /fr/contact
 en:
   header:
     mainLinks:
@@ -90,6 +101,17 @@ en:
     contactTitle: Contact
     menuTitle: Menu
     ecoDesignText: Eco-design Score
+    menuLinks:
+      - label: HOME
+        url: /en
+      - label: SERVICES
+        url: /en#expertise
+      - label: THE TEAM
+        url: /en/equipe
+      - label: FEES
+        url: /en/honoraires
+      - label: CONTACT
+        url: /en/contact
 it:
   header:
     mainLinks:
@@ -136,3 +158,14 @@ it:
     contactTitle: Contatto
     menuTitle: Menu
     ecoDesignText: Punteggio di eco-design
+    menuLinks:
+      - label: HOME
+        url: /it
+      - label: SERVIZI
+        url: /it#expertise
+      - label: IL TEAM
+        url: /it/equipe
+      - label: ONORARI
+        url: /it/honoraires
+      - label: CONTATTO
+        url: /it/contact
