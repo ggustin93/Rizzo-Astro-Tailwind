@@ -12,11 +12,10 @@ fr:
         contre votre employeur.
       cta: En savoir plus
     employeurs:
-      title: Vous êtes une entreprise
-      description: Nous défendons votre entreprise devant les tribunaux ou les
-        services de l'inspection et nous collaborons avec vous ou votre équipe
-        RH pour la gestion des relations de travail au quotidien ainsi que pour
-        vos projets.
+      title: Vous êtes employeur, gérant ou responsable RH
+      description: Concentrez-vous sur votre activité. Nous vous conseillons et
+        défendons sur vos questions sociales — de l'engagement à la rupture, de
+        la prévention au contentieux.
       cta: En savoir plus
     europeennes:
       title: Institutions & fonctionnaires européens
@@ -103,10 +102,10 @@ en:
         action against your employer before the employment tribunal.
       cta: Learn More
     employeurs:
-      title: You are an employer
-      description: We defend your company before the labour courts or inspection
-        services. We work with you or your HR team to manage daily labour
-        relations and your projects.
+      title: You are an employer, manager or HR officer
+      description: Focus on your business. We advise and represent you on all
+        employment matters — from hiring to termination, from prevention to
+        litigation.
       cta: Learn More
     europeennes:
       title: European institutions & officials
@@ -188,11 +187,10 @@ it:
         lavoro.
       cta: Scopri di più
     employeurs:
-      title: Aziende
-      description: Difendiamo la vostra azienda davanti ai tribunali del lavoro o i
-        servizi di ispezione e collaboro con voi o con il vostro team di risorse
-        umane per la gestione quotidiana dei rapporti di lavoro e i vostri
-        progetti.
+      title: Siete un datore di lavoro, dirigente o responsabile HR
+      description: Concentratevi sulla vostra attività. Vi consigliamo e difendiamo su
+        tutte le questioni di diritto del lavoro — dall'assunzione alla
+        risoluzione del contratto, dalla prevenzione al contenzioso.
       cta: Scopri di più
     europeennes:
       title: Istituzioni europee
