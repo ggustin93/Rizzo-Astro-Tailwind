@@ -3,7 +3,7 @@ fr:
   sections:
     - title: Éditeur
       text: |-
-        Rizzo & MICHIELS SRL
+        RiZZO & MICHIELS SRL
         %%ADDRESS%%
         Téléphone : +32 488 40 45 49 - +32 498 50 29 01
         Numéro d'entreprise : 1034.645.352
@@ -20,10 +20,12 @@ fr:
         contenu est strictement interdite et est susceptible de constituer un
         délit de contrefaçon.
     - title: Données personnelles
-      text: "Le traitement des données personnelles collectées par le biais du site web
-        est défini dans la [Politique de confidentialité](/fr/legal/privacy) consultable sur le site.\n\n
-        Le traitement des données personnelles relatif à la gestion des dossiers
-        clients fait l'objet d'une politique distincte, [accessible ici](/assets/documents/politique-traitement-dossiers-clients.pdf)."
+      text: >-
+        Le traitement des données personnelles collectées par le biais du site
+        web est défini dans la [Politique de confidentialité](/fr/legal/privacy)
+        consultable sur le site.
+
+         Le traitement des données personnelles relatif à la gestion des dossiers clients fait l'objet d'une politique distincte, [accessible ici](/assets/documents/politique-traitement-dossiers-clients.pdf).
     - title: Cookies
       text: Le site rizzo-michiels.be n'utilise que des cookies techniques et
         fonctionnels nécessaires au bon fonctionnement du site.
@@ -44,7 +46,7 @@ en:
   sections:
     - title: Publisher
       text: |-
-        Rizzo & MICHIELS SRL
+        RIZZO & MICHIELS SRL
         %%ADDRESS%%
         Phone: +32 488 40 45 49 - +32 498 50 29 01
         Company number: 1034.645.352
@@ -61,10 +63,11 @@ en:
         content is strictly prohibited and may constitute a copyright
         infringement.
     - title: Personal data
-      text: "The processing of personal data collected through the website is defined
-        in the [Privacy Policy](/en/legal/privacy) available on the site.\n\n
-        The processing of personal data relating to the management of client files
-        is governed by a separate policy, [accessible here](/assets/documents/politique-traitement-dossiers-clients.pdf)."
+      text: >-
+        The processing of personal data collected through the website is defined
+        in the [Privacy Policy](/en/legal/privacy) available on the site.
+
+         The processing of personal data relating to the management of client files is governed by a separate policy, [accessible here](/assets/documents/politique-traitement-dossiers-clients.pdf).
     - title: Cookies
       text: The rizzo-michiels.be website only uses technical and functional cookies
         necessary for the proper functioning of the site.
@@ -83,7 +86,7 @@ it:
   sections:
     - title: Editore
       text: |-
-        Rizzo & MICHIELS SRL
+        RIZZO & MICHIELS SRL
         %%ADDRESS%%
         Telefono: +32 488 40 45 49 - +32 498 50 29 01
         Numero di impresa: 1034.645.352
@@ -92,7 +95,8 @@ it:
         Street, Suite 215, San Francisco, California 94107, USA.
     - title: Contatto
       text: "Per qualsiasi domanda o richiesta riguardante il sito, è possibile
-        contattare l'editore al seguente indirizzo email: rizzomichiels@gmail.com"
+        contattare l'editore al seguente indirizzo email:
+        rizzomichiels@gmail.com"
     - title: Proprietà intellettuale
       text: L'intero contenuto del sito rizzo-michiels.be (testi, immagini, video...)
         è di proprietà dell'editore ed è protetto dal diritto d'autore. La
@@ -100,10 +104,12 @@ it:
         è severamente vietata e può costituire una violazione del diritto
         d'autore.
     - title: Dati personali
-      text: "Il trattamento dei dati personali raccolti attraverso il sito web è
-        definito nella [Politica sulla privacy](/it/legal/privacy) consultabile sul sito.\n\n
-        Il trattamento dei dati personali relativo alla gestione dei fascicoli
-        dei clienti è oggetto di una politica distinta, [accessibile qui](/assets/documents/politique-traitement-dossiers-clients.pdf)."
+      text: >-
+        Il trattamento dei dati personali raccolti attraverso il sito web è
+        definito nella [Politica sulla privacy](/it/legal/privacy) consultabile
+        sul sito.
+
+         Il trattamento dei dati personali relativo alla gestione dei fascicoli dei clienti è oggetto di una politica distinta, [accessibile qui](/assets/documents/politique-traitement-dossiers-clients.pdf).
     - title: Cookie
       text: Il sito rizzo-michiels.be utilizza solo cookie tecnici e funzionali
         necessari per il corretto funzionamento del sito.
