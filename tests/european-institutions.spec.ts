@@ -24,8 +24,10 @@ test.describe('European Institutions Service Page', () => {
       await expect(page.locator('#agences')).toBeVisible();
       await expect(page.locator('#fonctionnaires')).toBeVisible();
 
-      // CTA links to honoraires exist (one per section)
-      const ctaLinks = page.locator(`a[href="/${lang}/honoraires"]`);
+      // CTA links to honoraires exist (one per section). Scoped to <main>: the
+      // header nav has its own /honoraires link, hidden on mobile viewports.
+      const ctaLinks = page.locator(`main a[href="/${lang}/honoraires"]`);
+      await expect(ctaLinks).toHaveCount(2);
       await expect(ctaLinks.first()).toBeVisible();
     });
   }

@@ -1,6 +1,17 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test';
 import { languages as langs } from './helpers';
 
+/**
+ * Le footer duplique ses colonnes : une version desktop (`hidden md:block`) et
+ * des accordéons `<details class="md:hidden">` fermés au chargement. Sur mobile
+ * on les ouvre — c'est le parcours réel d'un visiteur sur téléphone.
+ */
+async function openFooterAccordions(page: Page, isMobile: boolean | undefined) {
+  if (!isMobile) return;
+  for (const summary of await page.locator('footer details > summary:visible').all()) {
+    await summary.click();
+  }
+}
 
 
 const contactLabels: Record<string, string> = { fr: 'CONTACT', en: 'CONTACT', it: 'CONTATTO', nl: 'CONTACT' };
@@ -11,8 +22,9 @@ const homeLabels: Record<string, string> = { fr: 'ACCUEIL', en: 'HOME', it: 'HOM
 
 test.describe('Footer menu — links présents', () => {
   for (const lang of langs) {
-    test(`/${lang} — menu footer contient les 5 liens`, async ({ page }) => {
+    test(`/${lang} — menu footer contient les 5 liens`, async ({ page, isMobile }) => {
       await page.goto(`/${lang}/`);
+      await openFooterAccordions(page, isMobile);
 
       const footer = page.locator('footer');
 
@@ -27,8 +39,9 @@ test.describe('Footer menu — links présents', () => {
 
 test.describe('Footer — lien CONTACT', () => {
   for (const lang of langs) {
-    test(`/${lang} — lien Contact navigue vers /${lang}/contact`, async ({ page }) => {
+    test(`/${lang} — lien Contact navigue vers /${lang}/contact`, async ({ page, isMobile }) => {
       await page.goto(`/${lang}/`);
+      await openFooterAccordions(page, isMobile);
 
       const footer = page.locator('footer');
       const contactLink = footer.getByRole('link', { name: contactLabels[lang], exact: true }).first();
@@ -42,8 +55,9 @@ test.describe('Footer — lien CONTACT', () => {
 
 test.describe('Footer — lien SERVICES', () => {
   for (const lang of langs) {
-    test(`/${lang} — href pointe vers #expertise`, async ({ page }) => {
+    test(`/${lang} — href pointe vers #expertise`, async ({ page, isMobile }) => {
       await page.goto(`/${lang}/`);
+      await openFooterAccordions(page, isMobile);
 
       const footer = page.locator('footer');
       const servicesLink = footer.getByRole('link', { name: servicesLabels[lang], exact: true }).first();
@@ -62,10 +76,11 @@ test.describe('Footer — lien SERVICES', () => {
 
 test.describe('Footer SERVICES — scroll ancre après View Transitions', () => {
   for (const lang of langs) {
-    test(`/${lang} — depuis /honoraires, clic SERVICES scroll jusqu'à #expertise`, async ({ page }) => {
+    test(`/${lang} — depuis /honoraires, clic SERVICES scroll jusqu'à #expertise`, async ({ page, isMobile }) => {
       await page.goto(`/${lang}/honoraires`);
+      await openFooterAccordions(page, isMobile);
 
-      // Clic sur le lien Services du footer (desktop, visible sans accordion)
+      // Clic sur le lien Services du footer (colonne desktop ou accordéon mobile ouvert)
       const servicesLink = page
         .locator('footer ul')
         .filter({ has: page.locator(`a[href="/${lang}#expertise"]`) })

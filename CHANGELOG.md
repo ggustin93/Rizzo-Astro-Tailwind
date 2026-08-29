@@ -13,6 +13,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - **SVG sprite system** (`SvgSprite.astro`, `Icon.astro`): inline Feather icon SVGs replaced by a single `<symbol>` sprite sheet + `<use>` references for icons used 2+ times (calendar, mail, phone, chevron-down, map-pin, globe). Reduces DOM nodes by ~3-5 per icon instance. Sprite included once in `BaseLayout.astro`.
 - **DNS health check script** (`scripts/run-dns-tests.sh`): comprehensive migration health check — DNSSEC status, NS propagation, SSL certs, redirect chain analysis, GSC readiness, SEO signals. Supports `--quick` flag for DNS-only checks.
 
+### Fixed
+- **Playwright `mobile-safari` project is green** (#17): `tests/footer-navigation.spec.ts` queried the desktop-only footer column (`hidden md:block`) on a mobile viewport, where the links live in collapsed `<details class="md:hidden">`. A helper now opens the visible accordions when `isMobile`, exercising the real phone journey instead of skipping it. `tests/european-institutions.spec.ts` hid a genuine test bug: a page-wide `a[href="/{lang}/honoraires"]` locator with `.first()` resolved to the **header** nav link (hidden on mobile), so the assertion never checked the two section CTAs it claimed to. Scoped to `main` with an explicit `toHaveCount(2)`. Test-side only, no `src/` changes. Full suite: 151 passed, 5 skipped, 0 failed.
+
 ### Changed
 - **`scripts/run-seo-tests.sh` derives its locales from `src/config/locales.ts`**: the page list and the hreflang assertion hardcoded `fr/en/it`, so a new language was silently untested. Shipping a locale now extends the suite without editing it.
 - **`tests/helpers.ts`**: the career-timeline anchor was `Barreau de Bruxelles`, a French string absent from the translated timelines. Replaced with proper nouns that survive translation (`Reliance Littler`, `Fulbright`), which also fixes two pre-existing EN/IT failures.
