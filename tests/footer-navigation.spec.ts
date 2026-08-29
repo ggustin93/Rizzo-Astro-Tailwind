@@ -3,9 +3,9 @@ import { languages as langs } from './helpers';
 
 
 
-const contactLabels: Record<string, string> = { fr: 'CONTACT', en: 'CONTACT', it: 'CONTATTO' };
-const servicesLabels: Record<string, string> = { fr: 'SERVICES', en: 'SERVICES', it: 'SERVIZI' };
-const homeLabels: Record<string, string> = { fr: 'ACCUEIL', en: 'HOME', it: 'HOME' };
+const contactLabels: Record<string, string> = { fr: 'CONTACT', en: 'CONTACT', it: 'CONTATTO', nl: 'CONTACT' };
+const servicesLabels: Record<string, string> = { fr: 'SERVICES', en: 'SERVICES', it: 'SERVIZI', nl: 'DIENSTEN' };
+const homeLabels: Record<string, string> = { fr: 'ACCUEIL', en: 'HOME', it: 'HOME', nl: 'HOME' };
 
 // ─── Footer menu links ────────────────────────────────────────────────────────
 

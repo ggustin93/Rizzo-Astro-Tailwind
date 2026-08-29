@@ -4,7 +4,7 @@ This file provides comprehensive guidance to Codex (Codex.ai/code) when working 
 
 ## Project Overview
 
-Professional multilingual website for Christine Rizzo and Stephanie Michiels, labor law attorneys specializing in labor law in Brussels. The site serves as an information platform, expertise showcase, and primary contact point for potential and existing clients. Built with Astro framework and Decap CMS for content management, operating in French (default), English, and Italian with SSG output.
+Professional multilingual website for Christine Rizzo and Stephanie Michiels, labor law attorneys specializing in labor law in Brussels. The site serves as an information platform, expertise showcase, and primary contact point for potential and existing clients. Built with Astro framework and Decap CMS for content management, operating in French (default), English, Italian and Dutch with SSG output.
 
 ### Business Objectives
 - Present the professional expertise of Christine Rizzo and Stephanie Michiels in labor law
@@ -18,7 +18,7 @@ Professional multilingual website for Christine Rizzo and Stephanie Michiels, la
 - **Workers** seeking advice or representation in labor law
 - **Employers/Companies** (HR teams, executives) needing social law expertise
 - Individuals seeking general information about Belgian labor law
-- Multilingual audience: French, English, and Italian speakers
+- Multilingual audience: French, English, Italian and Dutch speakers
 
 ## Development Commands
 
@@ -54,7 +54,7 @@ npx playwright test --ui  # Run tests with UI mode
 
 ### Routing Architecture
 - **Dynamic Language Routes**: `[...lang]/` pattern for all pages
-- **Supported Languages**: `fr`, `en`, `it` (French is default)
+- **Supported Languages**: `fr`, `en`, `it`, `nl` (French is default). The list lives in `src/config/locales.ts` — add a language there, not in individual pages.
 - **Root Redirect**: `/` → `/fr/` via netlify.toml (simple, non-conditional)
 - **Language Detection**: Validates and redirects invalid language params to French
 - **Trailing Slashes**: All paths redirected to versions with trailing slashes
@@ -100,7 +100,7 @@ npx playwright test --ui  # Run tests with UI mode
 ## Important Conventions
 
 ### Language Handling
-- Always validate language params against `['fr', 'en', 'it']`
+- Always validate language params against `LOCALES` from `src/config/locales.ts`
 - Redirect invalid languages to `/fr/`
 - Use language-specific content fallback to French if missing
 

@@ -348,3 +348,121 @@ it:
       - contenzioso lavoro istituzioni europee Belgio
       - assistenza legale personalizzata istituzioni europee
     image: https://rizzo-michiels.be/default-social-image.png
+nl:
+  title: Ambtenaren en instellingen van de Europese Unie
+  navigationCards:
+    agences: U bent een EU-instelling, -orgaan of -agentschap
+    fonctionnaires: U bent Europees ambtenaar of personeelslid
+  agences:
+    title: U bent een Europese instelling, orgaan of agentschap
+    intro: >
+      Wij begeleiden de Europese instellingen, organen en agentschappen bij het
+      dagelijkse beheer van hun relaties met hun personeelsleden en bij hun
+      strategische HR-projecten.
+
+
+      Wij werken nauw samen met uw HR- en juridische teams en beantwoorden de verzoeken en klachten van ambtenaren en personeelsleden. Wij treden regelmatig op voor de bevoegde Belgische en Europese rechtscolleges.
+
+
+      Onze expertise combineert het Belgische arbeidsrecht met de bijzonderheden van het Europese ambtenarenrecht.
+    accompagnementTitle: Begeleiding en verdediging van Europese instellingen, organen en agentschappen
+    accompagnement:
+      - title: Advies en begeleiding bij de invoering van een HR-beleid
+        items:
+          - Welzijn op het werk en preventie
+          - Diversiteit
+          - Bescherming van persoonsgegevens (AVG) in de statutaire relatie
+          - Arbeidsorganisatie, beheer van korte of langdurige afwezigheden
+            (ziekte, burn-out)
+          - Telewerk (vanuit het buitenland)
+      - title: Beheer van administratieve en gerechtelijke geschillen
+        items:
+          - Vergelijkende onderzoeken, selectie- en aanwervingsprocedures
+          - Pesterijen of ongewenst seksueel gedrag op het werk
+          - Discriminatie en gelijke behandeling
+          - Beoordeling, bevordering en loopbaanontwikkeling
+          - Niet-verlenging van de overeenkomst van een arbeidscontractant of
+            tijdelijk functionaris
+          - Samenstelling van de bezoldiging (ontheemdingstoelage,
+            gezinstoelagen, reiskosten en andere vergoedingen en
+            terugbetalingen)
+          - Pensioenrechten (transfers IN en OUT)
+          - Onderzoeken en tuchtsancties
+          - GSZV-dekking en terugbetaling van medische kosten
+          - Beheer van afwezigheden (medische controle, bijzonder verlof)
+          - Mobiliteit en detachering
+    servicesTitle: Onze diensten
+    services:
+      - icon: CheckSquare
+        text: Opstellen van antwoorden op verzoeken (art. 90 §1 van het Statuut),
+          verzoeken om bijstand (art. 24 van het Statuut) en klachten (art. 90 §2
+          van het Statuut)
+      - icon: FileText
+        text: "Opstellen en nazien van overeenkomsten, HR-beleid, interne reglementen en
+          AVG-documenten "
+      - icon: Handshake
+        text: Advies bij het beheer van de arbeidsrelatie, van aanwerving tot het einde
+          van de samenwerking
+      - icon: BriefCase
+        text: Onderhandeling van minnelijke schikkingen en vertrouwelijke
+          conflictoplossing
+      - icon: Shield
+        text: "Verdediging voor de bevoegde interne instanties en voor de Belgische en
+          Europese rechtscolleges "
+  fonctionnaires:
+    title: U bent Europees ambtenaar of personeelslid
+    intro: >
+      Bent u ambtenaar of personeelslid bij een Europese instelling, orgaan of
+      agentschap en wordt u geconfronteerd met een professionele moeilijkheid?
+
+
+      Wij begeleiden u in elke fase van uw loopbaan, of het nu gaat om eenmalig advies, een gevoelige situatie of een geschil.
+
+
+      Wij treden op voor de interne organen van de Europese instellingen en agentschappen en voor het Hof van Justitie van de Europese Unie.
+    accompagnementTitle: Begeleiding en verdediging van Europese ambtenaren en personeelsleden
+    accompagnement:
+      - Vergelijkende onderzoeken en selectieprocedures
+      - "Aanwerving en aanstellingsvoorwaarden "
+      - Pesterijen of ongewenst seksueel gedrag op het werk
+      - Discriminatie en gelijke behandeling
+      - Beoordeling, bevordering en loopbaanontwikkeling
+      - Niet-verlenging van de overeenkomst van een arbeidscontractant of
+        tijdelijk functionaris
+      - Samenstelling van de bezoldiging (ontheemdingstoelage, gezinstoelagen,
+        reiskosten en andere vergoedingen en terugbetalingen)
+      - "Pensioenrechten (transfers IN en OUT) "
+      - Onderzoeken en tuchtsancties
+      - GSZV-dekking en terugbetaling van medische kosten,
+      - Beheer van afwezigheden (medische controle, bijzonder verlof, telewerk)
+      - Mobiliteit en detachering
+      - Klokkenluiders
+      - Bescherming van persoonsgegevens (AVG) in de statutaire relatie
+    servicesTitle: Onze diensten
+    services:
+      - icon: BriefCase
+        text: Analyse van uw professionele situatie en van uw rechten
+      - icon: Handshake
+        text: Strategisch advies vóór elke stap
+      - icon: FileText
+        text: Opstellen van verzoeken (art. 90 §1 van het Statuut), verzoeken om bijstand
+          (art. 24 van het Statuut), klachten (art. 90 §2 van het Statuut)
+      - icon: Handshake
+        text: "Bijstand in de interne administratieve procedures en in de
+          contentieuze procedures voor het Hof van Justitie van de Europese Unie "
+      - icon: Shield
+        text: Verdediging voor de bevoegde rechtscolleges
+  ctaText: Meer weten over de tarieven
+  seo:
+    title: Arbeidsrecht · Europese instellingen | Rizzo & Michiels
+    description: Expertise in arbeidsrecht voor de instellingen, organen en
+      agentschappen, ambtenaren en personeelsleden van de Europese Unie. Advies,
+      verdediging en persoonlijke juridische begeleiding in Brussel.
+    image: https://rizzo-michiels.be/default-social-image.png
+    keywords:
+      - advocaat Europese instellingen Brussel
+      - arbeidsrecht Europese ambtenaren
+      - juridisch advies Europese agentschappen
+      - verdediging personeelsleden EU-instellingen
+      - arbeidsgeschil Europese instellingen België
+      - persoonlijke juridische begeleiding Europese instellingen

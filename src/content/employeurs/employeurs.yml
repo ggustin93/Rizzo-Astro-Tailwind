@@ -149,3 +149,55 @@ it:
     title: Servizi legali per datori di lavoro | Rizzo & Michiels Avvocate
     description: Consulenza legale specializzata in diritto del lavoro per aziende a
       Bruxelles. Difesa e assistenza personalizzata.
+nl:
+  title: Begeleiding en verdediging van ondernemingen
+  questions:
+    - Overnameprojecten - audit inzake arbeidsrecht en sociale zekerheid
+    - GDPR
+    - Eerste aanwerving in België
+    - Overeenkomsten met werknemers of zelfstandigen
+    - Problematiek van de schijnzelfstandigen
+    - "Veilig ontslag — arbeidsovereenkomst van bepaalde of onbepaalde duur,
+      dringende reden / Ontslagname "
+    - Werknemers die beschermd zijn tegen ontslag
+    - Loonpakketten, bonussen
+    - Flexibele werktijden, telewerk, recht op deconnectie
+    - Absenteïsme, burn-out, langdurige ziekte, re-integratie
+    - Welzijn op het werk, pesterijen, psychosociale risico's,
+      preventieverplichting
+    - Discriminatie
+  additionalSupport:
+    intro: Ik begeleid u eveneens zodat
+    points:
+      - de regelgeving inzake welzijn op het werk
+      - de antidiscriminatiewetgeving
+      - en de juridische instrumenten die het evenwicht tussen privé- en
+        beroepsleven verbeteren
+  servicesTitle: Onze diensten
+  services:
+    - icon: CheckSquare
+      text: Audit - Due diligence inzake arbeidsrecht en sociale zekerheid
+    - icon: FileText
+      text: Opstellen en nazien van uw arbeidsovereenkomsten, arbeidsreglement en
+        HR- en GDPR-beleid
+    - icon: Users
+      text: Advies - beheer van de individuele arbeidsrelatie, van aanwerving tot
+        beëindiging
+    - icon: Handshake
+      text: Onderhandeling van minnelijke schikkingen - Collaboratief recht
+    - icon: Shield
+      text: Verdediging voor de arbeidsrechtbanken en -hoven en voor de
+        arbeidsinspectie en de RSZ
+  ctaText: Meer weten over de tarieven
+  seo:
+    title: Juridische diensten voor werkgevers | Rizzo & Michiels Advocaten
+    description: Expertise in arbeidsrecht voor ondernemingen. Advies, verdediging
+      en persoonlijke juridische begeleiding in Brussel.
+    keywords:
+      - advocaat arbeidsrecht ondernemingen Brussel
+      - expertise sociaal recht werkgevers
+      - juridisch advies HR
+      - verdediging werkgever arbeidsrechtbank
+      - arbeidsgeschil België
+      - persoonlijke juridische begeleiding ondernemingen
+    image: /default-social-image.jpg

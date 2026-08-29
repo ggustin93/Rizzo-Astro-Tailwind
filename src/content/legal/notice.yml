@@ -123,3 +123,46 @@ it:
       text: Il sito rizzo-michiels.be è stato creato da Guillaume Gustin
         (https://guillaumegustin.com/, https://pwablo.be/). Font Synonym Regular
         fornito da Web Fonts sotto licenza CC BY 4.0
+nl:
+  title: Wettelijke vermeldingen
+  sections:
+    - title: Uitgever
+      text: |-
+        RiZZO & MICHIELS SRL
+        %%ADDRESS%%
+        Telefoon: +32 488 40 45 49 - +32 498 50 29 01
+        Ondernemingsnummer: 1034.645.352
+    - title: Host
+      text: De Site wordt gehost door Netlify, met maatschappelijke zetel te 2325 3rd
+        Street, Suite 215, San Francisco, California 94107, USA.
+    - title: Contact
+      text: "Voor elke vraag of verzoek betreffende de site kunt u de uitgever
+        contacteren op het volgende e-mailadres: rizzomichiels@gmail.com"
+    - title: Intellectuele eigendom
+      text: De volledige inhoud van de site rizzo-michiels.be (teksten, beelden,
+        video's...) is eigendom van de uitgever en wordt beschermd door het
+        auteursrecht. De reproductie, verspreiding of kopie van de inhoud, geheel
+        of gedeeltelijk, is strikt verboden en kan een namaakmisdrijf uitmaken.
+    - title: Persoonsgegevens
+      text: >-
+        De verwerking van de persoonsgegevens die via de website worden
+        verzameld, wordt omschreven in het [Privacybeleid](/nl/legal/privacy) dat
+        op de site kan worden geraadpleegd.
+
+         De verwerking van persoonsgegevens in het kader van het beheer van cliëntendossiers maakt het voorwerp uit van een afzonderlijk beleid, [hier raadpleegbaar](/assets/documents/politique-traitement-dossiers-clients.pdf).
+    - title: Cookies
+      text: De site rizzo-michiels.be gebruikt uitsluitend technische en functionele
+        cookies die noodzakelijk zijn voor de goede werking van de site.
+    - title: Aansprakelijkheid
+      text: Hoewel de inhoud van de site met zorg wordt opgesteld, wijst de uitgever
+        elke aansprakelijkheid af voor eventuele onnauwkeurigheden of
+        weglatingen. De artikels en juridische informatie die op de site worden
+        gepubliceerd, worden op algemene en informatieve wijze verstrekt en
+        vervangen geen juridisch advies.
+    - title: Toepasselijk recht en bevoegde rechtbank
+      text: Deze wettelijke vermeldingen worden beheerst door het Belgische recht. In
+        geval van betwisting zijn uitsluitend de Belgische rechtbanken bevoegd.
+    - title: Credits
+      text: De site rizzo-michiels.be werd gecreëerd door Guillaume Gustin
+        (https://guillaumegustin.com/, https://pwablo.be/). Lettertype Synonym
+        Regular geleverd door Web Fonts onder CC BY 4.0-licentie

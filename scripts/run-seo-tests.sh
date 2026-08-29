@@ -21,15 +21,22 @@ BASE_URL="${BASE_URL:-https://rizzo-michiels.be}"
 # even when the pages are served from a preview host — that is correct SEO, so
 # they are checked against this fixed origin rather than against BASE_URL.
 CANONICAL_BASE="https://rizzo-michiels.be"
-# Add page paths to this array to include them in the tests.
-PAGES_TO_TEST=(
-  "/fr/"
-  "/en/"
-  "/it/"
-  "/fr/contact/"
-  "/en/contact/"
-  "/it/contact/"
-)
+# Locales come from the single source of truth (src/config/locales.ts) so that
+# shipping a new language extends this suite without editing it (issue #11).
+LOCALES=($(sed -n "s/.*LOCALES = \[\(.*\)\] as const.*/\1/p" \
+  "$(dirname "$0")/../src/config/locales.ts" | tr -d "' " | tr ',' ' '))
+if [ ${#LOCALES[@]} -eq 0 ]; then
+  echo "Could not read LOCALES from src/config/locales.ts" >&2
+  exit 1
+fi
+# Every locale's home page and contact page.
+PAGES_TO_TEST=()
+for locale in "${LOCALES[@]}"; do
+  PAGES_TO_TEST+=("/${locale}/")
+done
+for locale in "${LOCALES[@]}"; do
+  PAGES_TO_TEST+=("/${locale}/contact/")
+done
 
 # User-Agents
 UA_GOOGLEBOT="Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
@@ -139,15 +146,17 @@ test_hreflang_tags() {
   local url=$1
   local html_content=$(curl -s "$url")
   
-  # Assuming 3 languages: fr, en, it
-  local fr_ok=$(echo "$html_content" | grep -i 'hreflang="fr"' | wc -l)
-  local en_ok=$(echo "$html_content" | grep -i 'hreflang="en"' | wc -l)
-  local it_ok=$(echo "$html_content" | grep -i 'hreflang="it"' | wc -l)
+  local missing=""
+  for locale in "${LOCALES[@]}"; do
+    if ! echo "$html_content" | grep -qi "hreflang=\"${locale}\""; then
+      missing="${missing} ${locale}"
+    fi
+  done
 
-  if [ "$fr_ok" -gt 0 ] && [ "$en_ok" -gt 0 ] && [ "$it_ok" -gt 0 ]; then
-    print_pass "Found hreflang tags for fr, en, it"
+  if [ -z "$missing" ]; then
+    print_pass "Found hreflang tags for ${LOCALES[*]}"
   else
-    print_fail "Missing one or more hreflang tags (fr:$fr_ok, en:$en_ok, it:$it_ok)"
+    print_fail "Missing hreflang tags for:${missing}"
   fi
 }
 

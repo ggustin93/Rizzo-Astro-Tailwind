@@ -111,3 +111,40 @@ it:
     - icon: "map-pin"
       text: "TROVA IL MIO STUDIO"
       type: "maps"
+nl:
+  title: "Contact"
+  heading: "Hoe kunnen wij u helpen?"
+  seo:
+    title: "Contact | Rizzo & Michiels advocaten arbeidsrecht in Brussel"
+    description: "Neem contact op met Rizzo & Michiels, advocaten arbeidsrecht in Brussel. Persoonlijk juridisch advies voor werknemers en werkgevers."
+    image: /default-social-image.png
+    keywords:
+      - contact advocaat arbeidsrecht Brussel
+      - juridisch consult arbeid
+      - afspraak advocaat arbeidsrecht
+      - juridisch advies werknemer werkgever
+      - juridische bijstand arbeid België
+      - contact Christine Rizzo advocate
+  buttons:
+    - icon: "calendar"
+      text: "MAAK ONLINE EEN AFSPRAAK"
+      type: "appointment"
+      action: "https://cal.com/c.rizzo-avocat.be/rendez-vous?duration=15"
+    - icon: "mail"
+      text: "STUUR MIJ EEN E-MAIL"
+      type: "email"
+    - icon: "phone"
+      text: "BEL MIJ"
+      type: "phone"
+    - icon: "message-circle"
+      text: "LAAT EEN GESCHREVEN OF GESPROKEN BERICHT ACHTER"
+      subtext: "WhatsApp"
+      type: "whatsapp"
+    - icon: "linkedin"
+      text: "VOLG MIJ OP LINKEDIN"
+      subtext: "Blijf op de hoogte"
+      type: "linkedin"
+      action: "https://www.linkedin.com/in/chrizzo11/"
+    - icon: "map-pin"
+      text: "VIND MIJN KANTOOR"
+      type: "maps"

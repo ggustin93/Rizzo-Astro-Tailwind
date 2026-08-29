@@ -6,6 +6,7 @@ test.describe('European Institutions Service Page', () => {
     fr: 'Fonctionnaires et institutions',
     en: 'EU institutions and staff members',
     it: 'Istituzioni e agenzie europee',
+    nl: 'Ambtenaren en instellingen van de Europese Unie',
   };
 
   for (const lang of languages) {
@@ -46,6 +47,11 @@ test.describe('Homepage Expertise Grid', () => {
       employeurs: 'Siete un datore di lavoro',
       travailleurs: 'Lavoratori',
       europeennes: 'Istituzioni europee',
+    },
+    nl: {
+      employeurs: 'U bent werkgever',
+      travailleurs: 'U bent werknemer',
+      europeennes: 'Europese instellingen & ambtenaren',
     },
   };
 
@@ -98,6 +104,7 @@ test.describe('Navigation Dropdown - European Institutions Link', () => {
     fr: 'FONCTIONNAIRES & INSTITUTIONS UE',
     en: 'EU OFFICIALS & INSTITUTIONS',
     it: 'FUNZIONARI & ISTITUZIONI UE',
+    nl: 'AMBTENAREN & EU-INSTELLINGEN',
   };
 
   for (const lang of languages) {

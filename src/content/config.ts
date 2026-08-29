@@ -216,5 +216,4 @@ export const collections = {
   'travailleurs': dataCollection,
   'europeennes': dataCollection,
   'legal': dataCollection,
-  'legal-info': dataCollection,
 };

@@ -95,6 +95,10 @@ collections:
             name: "it"
             widget: "object"
             fields: *homeFields
+          - label: "Nederlands"
+            name: "nl"
+            widget: "object"
+            fields: *homeFields
 
   # Pages Services
   - name: "travailleurs"
@@ -143,6 +147,10 @@ collections:
             name: "it"
             widget: "object"
             fields: *travailleursFields
+          - label: "Nederlands"
+            name: "nl"
+            widget: "object"
+            fields: *travailleursFields
 
   - name: "employeurs"
     label: "Page Employeurs"
@@ -188,6 +196,10 @@ collections:
             fields: *employeursFields
           - label: "Italiano"
             name: "it"
+            widget: "object"
+            fields: *employeursFields
+          - label: "Nederlands"
+            name: "nl"
             widget: "object"
             fields: *employeursFields
 
@@ -273,6 +285,10 @@ collections:
             fields: *europeennesFields
           - label: "Italiano"
             name: "it"
+            widget: "object"
+            fields: *europeennesFields
+          - label: "Nederlands"
+            name: "nl"
             widget: "object"
             fields: *europeennesFields
 
@@ -365,6 +381,10 @@ collections:
             name: "it"
             widget: "object"
             fields: *profileFields
+          - label: "Nederlands"
+            name: "nl"
+            widget: "object"
+            fields: *profileFields
 
   # Pages Honoraires
   - name: "honoraires"
@@ -441,6 +461,10 @@ collections:
             name: "it"
             widget: "object"
             fields: *honorairesFields
+          - label: "Nederlands"
+            name: "nl"
+            widget: "object"
+            fields: *honorairesFields
 
   # Pages légales
   - name: "legal-pages"
@@ -471,6 +495,10 @@ collections:
             name: "it"
             widget: "object"
             fields: *legalFields
+          - label: "Nederlands"
+            name: "nl"
+            widget: "object"
+            fields: *legalFields
 
       - file: "src/content/legal/privacy.yml"
         name: "privacy-policy"
@@ -497,6 +525,10 @@ collections:
             name: "it"
             widget: "object"
             fields: *privacyFields
+          - label: "Nederlands"
+            name: "nl"
+            widget: "object"
+            fields: *privacyFields
 
       - file: "src/content/legal/legal-info.yml"
         name: "legal-info"
@@ -521,6 +553,10 @@ collections:
             fields: *legalInfoFields
           - label: "Italiano"
             name: "it"
+            widget: "object"
+            fields: *legalInfoFields
+          - label: "Nederlands"
+            name: "nl"
             widget: "object"
             fields: *legalInfoFields
 
@@ -605,6 +641,11 @@ collections:
         name: "keywords"
         hint: "Opzionale. Aggiungi parole chiave rilevanti per il SEO."
       - {label: "Contenuto", name: "body", widget: "markdown"}
+
+  - <<: *blogCollection
+    name: "blog-nl"
+    label: "Blog NL"
+    folder: "src/content/blog/nl"
 
   # Configuration du site
   - name: "siteConfig"
@@ -796,6 +837,10 @@ collections:
             name: "it"
             widget: "object"
             fields: *navigationFields
+          - label: "Nederlands"
+            name: "nl"
+            widget: "object"
+            fields: *navigationFields
       
       - file: "src/content/ui-translations/ui-translations.yml"
         name: "ui-translations"
@@ -901,3 +946,7 @@ collections:
             name: "it"
             widget: "object"
             fields: *uiTranslationsFields 
+          - label: "Nederlands"
+            name: "nl"
+            widget: "object"
+            fields: *uiTranslationsFields

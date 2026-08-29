@@ -169,3 +169,60 @@ it:
         url: /it/honoraires
       - label: CONTATTO
         url: /it/contact
+nl:
+  header:
+    mainLinks:
+      - label: HOME
+        url: /nl
+        hasDropdown: false
+      - label: DIENSTEN
+        url: /nl#expertise
+        hasDropdown: true
+        dropdownItems:
+          - label: VOOR WERKGEVERS
+            url: /nl/services/employeurs
+          - label: VOOR WERKNEMERS
+            url: /nl/services/travailleurs
+          - label: AMBTENAREN & EU-INSTELLINGEN
+            url: /nl/services/europeennes
+      - label: HET TEAM
+        url: /nl/equipe
+        hasDropdown: true
+        dropdownItems:
+          - label: OVERZICHT
+            url: /nl/equipe
+          - label: CHRISTINE RIZZO
+            url: /nl/equipe/christine-rizzo
+          - label: STEPHANIE MICHIELS
+            url: /nl/equipe/stephanie-michiels
+      - label: ERELONEN
+        url: /nl/honoraires
+        hasDropdown: false
+    contactButtonText: CONTACTEER ONS
+  footer:
+    legalLinks:
+      - label: Wettelijke vermeldingen
+        url: /nl/legal/notice
+      - label: Privacybeleid
+        url: /nl/legal/privacy
+      - label: Juridische info & AV
+        url: /nl/legal/informations-legales
+    ecoDesignUrl: https://www.websitecarbon.com/website/rizzo-michiels-be-fr/
+    ecoDesignTitle: Ecologische website
+    pwablo:
+      pwabloText: Design by Pwablo
+      pwabloUrl: https://pwablo.be
+    contactTitle: Contact
+    menuTitle: Menu
+    ecoDesignText: Ecodesignscore
+    menuLinks:
+      - label: HOME
+        url: /nl
+      - label: DIENSTEN
+        url: /nl#expertise
+      - label: HET TEAM
+        url: /nl/equipe
+      - label: ERELONEN
+        url: /nl/honoraires
+      - label: CONTACT
+        url: /nl/contact

@@ -238,3 +238,75 @@ it:
     cta: Ecco maggiori dettagli sulle tariffe
     description: Assisto il vostro team HR nella gestione delle controversie e delle
       relazioni di lavoro quotidiane
+nl:
+  expertise:
+    title: Expertise & Diensten
+    description: Wij begeleiden zowel ondernemingen als werknemers bij hun
+      dagelijkse vraagstukken en hun projecten rond werkgelegenheid.
+    travailleurs:
+      title: U bent werknemer
+      description: Wij begeleiden u gedurende uw hele loopbaan, of het nu gaat om een
+        eenmalige vraag, de onderhandeling van een vertrek of het inleiden van
+        een gerechtelijke procedure voor de arbeidsrechtbank tegen uw werkgever.
+      cta: Meer weten
+    employeurs:
+      title: U bent werkgever, zaakvoerder of HR-verantwoordelijke
+      description: Concentreer u op uw activiteit. Wij adviseren en verdedigen u in
+        uw sociaalrechtelijke vraagstukken — van aanwerving tot beëindiging, van
+        preventie tot geschillen.
+      cta: Meer weten
+    europeennes:
+      title: Europese instellingen & ambtenaren
+      subtitle: Agentschappen · Ambtenaren & Personeelsleden
+      description: Wij adviseren de Europese instellingen en agentschappen bij het
+        beheer van hun arbeidsrelaties en begeleiden ambtenaren en
+        personeelsleden in hun stappen, van de onderhandeling tot de
+        precontentieuze en gerechtelijke procedure.
+      cta: Meer weten
+    honoraires:
+      title: Erelonen
+      intro: Transparante erelonen, afgestemd op uw situatie.
+      linkText: Meer weten
+      advantages:
+        - Uur- of forfaitaire tarieven voor een betere voorspelbaarheid
+        - Mogelijkheid tot maandelijkse betaling
+      cta: Meer weten
+  viewAllArticles: Meer artikels lezen
+  hero:
+    title: Christine Rizzo en Stephanie Michiels
+    subtitle: Advocaten in Belgisch en Europees arbeidsrecht
+    description: Wij adviseren en verdedigen u met expertise en engagement
+    cta: CONTACTEER ONS
+  articlesTitle: Artikels
+  profil:
+    title: Het team
+    description: >-
+      Christine Rizzo en Stephanie Michiels, advocaten aan de balie van Brussel,
+      hebben hun vakkennis opgebouwd door zowel werknemers als lokale en
+      internationale ondernemingen te adviseren en te verdedigen.
+
+
+      Het beheer van de arbeidsrelatie van aanwerving tot beëindiging, het opstellen van overeenkomsten en van auditverslagen in het kader van overnameprojecten, het welzijn op het werk, de instrumenten die het evenwicht tussen privé- en beroepsleven verbeteren, discriminatievraagstukken en schijnzelfstandigheid maken deel uit van hun dagelijkse praktijk.
+    cta: Ontdek het team
+  seo:
+    title: Christine Rizzo en Stephanie Michiels | Advocaten arbeidsrecht in Brussel
+    description: Expertise in arbeidsrecht voor werknemers en werkgevers. Advies,
+      verdediging en persoonlijke juridische begeleiding in Brussel door ons
+      team van advocaten arbeidsrecht.
+    image: https://rizzo-michiels.be/default-social-image.png
+    keywords:
+      - advocaat arbeidsrecht Brussel
+      - expertise sociaal recht
+      - juridisch advies werkgever
+      - verdediging werknemer
+      - arbeidsgeschil België
+      - persoonlijke juridische begeleiding
+  mentionsLegales:
+    title: Wettelijke vermeldingen
+    content:
+      - Lettertypes geleverd door Web Fonts onder CC BY 4.0-licentie
+  employeurs:
+    title: U bent werkgever
+    description: Ik begeleid uw HR-team bij het beheer van uw geschillen en van de
+      dagelijkse arbeidsrelaties.
+    cta: Meer weten

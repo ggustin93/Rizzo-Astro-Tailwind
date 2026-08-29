@@ -120,3 +120,43 @@ it:
       - contenzioso lavoro Belgio
       - assistenza legale personalizzata lavoratori
     image: /default-social-image.png
+nl:
+  title: Begeleiding en verdediging van werknemers
+  description: ""
+  questions:
+    - Wilt u uw arbeidsovereenkomst laten nakijken?
+    - "Uw werkgever stelt u een dading voor, maar u weet niet of dat in uw
+      belang is?"
+    - Wilt u ontslag nemen?
+    - Wilt u uw ontslag betwisten (kennelijk onredelijk, onrechtmatig of
+      discriminerend motief)?
+    - Wilt u de berekening van uw opzeggingsvergoeding en de naleving van uw
+      rechten na een ontslag laten controleren?
+    - Zijn uw arbeidsvoorwaarden gewijzigd? Tijdens of na een zwangerschap? Wilt
+      u tijdskrediet of ouderschapsverlof opnemen?
+    - Bent u slachtoffer van discriminatie of pesterijen? Wordt u aan de kant
+      gezet wegens een burn-out?
+    - Bent u slachtoffer van een arbeidsongeval?
+    - Is uw statuut onduidelijk? Denkt u een schijnzelfstandige te zijn?
+  servicesTitle: Onze diensten
+  services:
+    - icon: BriefCase
+      text: Juridisch advies van aanwerving tot beëindiging van de arbeidsrelatie
+    - icon: Shield
+      text: Verdediging voor de arbeidsrechtbanken en -hoven
+    - icon: Handshake
+      text: Onderhandeling van minnelijke schikkingen - Collaboratief recht
+  ctaText: Meer weten over de tarieven
+  seo:
+    title: Juridische diensten voor werknemers | Rizzo & Michiels Advocaten
+    description: Expertise in arbeidsrecht voor werknemers. Advies, verdediging en
+      persoonlijke juridische begeleiding in Brussel.
+    image: /default-social-image.png
+    keywords:
+      - advocaat arbeidsrecht werknemers Brussel
+      - expertise sociaal recht werknemers
+      - juridisch advies werknemer
+      - verdediging werknemer arbeidsrechtbank
+      - arbeidsgeschil België
+      - persoonlijke juridische begeleiding werknemers
+  specialFocus: ""

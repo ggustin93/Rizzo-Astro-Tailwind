@@ -200,3 +200,76 @@ it:
     - title: Aggiornamenti della politica
       text: Questa politica sulla privacy può essere aggiornata periodicamente. Gli
         utenti sono invitati a consultarla regolarmente.
+nl:
+  title: Privacybeleid
+  sections:
+    - title: Voorwerp
+      text: >-
+        Dit privacybeleid omschrijft en informeert de gebruikers van de website
+        www.rizzo-michiels.be over de wijze waarop hun persoonsgegevens worden
+        verwerkt door de verwerkingsverantwoordelijke, de BV RIZZO & MICHIELS.
+        Deze site werd ontworpen door 
+
+        de BV RIZZO & MICHIELS in samenwerking met Guillaume Gustin, vanuit een verantwoorde benadering die de privacy van de gebruikers respecteert. Onze aanpak is gebaseerd op de eerbiediging van de persoonlijke levenssfeer en een minimaal gebruik van gegevens, overeenkomstig de beginselen van verantwoord digitaal ontwerp.
+    - title: Identiteit en contactgegevens van de verwerkingsverantwoordelijke
+      text: >-
+        
+        RIZZO & MICHIELS BV vertegenwoordigd door Mr. Christine Rizzo en Mr. Stephanie Michiels\
+
+        Adres: %%ADDRESS%%\
+
+        E-mail: rizzomichiels@gmail.com\
+
+        KBO-nr.: 1034.645.352
+
+        Tel: +32 488 40 45 49 - +32 498 50 29 01
+    - title: Verwerkte persoonsgegevens
+      text: >-
+        In het kader van het gebruik van de website verbindt de
+        verwerkingsverantwoordelijke zich ertoe de verzameling van
+        persoonsgegevens tot een minimum te beperken. De verzamelde
+        persoonsgegevens beperken zich tot:
+
+        - **Via het contactformulier** (Netlify Forms): naam, e-mailadres,
+          telefoon (optioneel), onderwerp en bericht. Deze gegevens worden
+          uitsluitend gebruikt om uw vraag te beantwoorden en worden bewaard
+          gedurende de tijd die nodig is voor de behandeling ervan.
+        - **Via Cal.com**: de gegevens die worden verstrekt bij het online maken
+          van een afspraak, beheerd door de externe dienst Cal.com.
+        - **Via Netlify (host)**: bepaalde technische gegevens (IP-adres,
+          serverlogs) die automatisch worden verzameld met het oog op de
+          veiligheid en de performantie van de site.
+    - title: Hosting van de site
+      text: De website www.rizzo-michiels.be wordt gehost door Netlify, een
+        hostingdienst die bekendstaat om haar betrouwbaarheid en veiligheid.
+        Netlify kan bepaalde technische gegevens (zoals IP-adressen) verzamelen
+        met het oog op de veiligheid en de performantie van de site. Voor meer
+        informatie over de privacypraktijken van Netlify kunt u hun
+        privacybeleid op hun officiële website raadplegen.
+    - title: Doeleinde van de verwerking
+      text: De persoonsgegevens die via Cal.com worden verzameld, worden uitsluitend
+        gebruikt om de afspraken te beheren en met de cliënten te communiceren in
+        het kader van de professionele relatie.
+    - title: Rechtsgrond van de verwerking
+      text: De verwerking van de persoonsgegevens is gebaseerd op de toestemming van
+        de gebruiker bij het maken van een afspraak, alsook op het gerechtvaardigd
+        belang van meester Christine Rizzo om haar juridische diensten te
+        verlenen.
+    - title: Bewaartermijn
+      text: De persoonsgegevens worden uitsluitend bewaard gedurende de tijd die nodig
+        is voor het beheer van de professionele relatie en overeenkomstig de
+        wettelijke verplichtingen die op het beroep van advocaat van toepassing
+        zijn.
+    - title: Rechten van de gebruikers
+      text: Overeenkomstig de Algemene Verordening Gegevensbescherming (AVG)
+        beschikken de gebruikers over rechten met betrekking tot hun
+        persoonsgegevens, met name het recht op inzage, verbetering, wissing en
+        bezwaar tegen de verwerking. Deze rechten kunnen worden uitgeoefend door
+        Rizzo & Michiels BV te contacteren op het adres rizzomichiels@gmail.com.
+    - title: Beveiliging
+      text: Er worden passende beveiligingsmaatregelen genomen om de persoonsgegevens
+        te beschermen tegen ongeoorloofde toegang, wijziging, openbaarmaking of
+        vernietiging.
+    - title: Bijwerking van het beleid
+      text: Dit privacybeleid kan periodiek worden bijgewerkt. De gebruikers worden
+        uitgenodigd het regelmatig te raadplegen.

@@ -4,9 +4,9 @@
  * Adding a language means editing LOCALES here and translating content —
  * not touching every page's getStaticPaths (issue #8).
  */
-export const LOCALES = ['fr', 'en', 'it'] as const;
+export const LOCALES = ['fr', 'en', 'it', 'nl'] as const;
 
-/** Union of the locale codes the site ships, e.g. 'fr' | 'en' | 'it'. */
+/** Union of the locale codes the site ships, e.g. 'fr' | 'en' | 'it' | 'nl'. */
 export type Locale = (typeof LOCALES)[number];
 
 /** French is the default locale and the hreflang x-default target. */
@@ -18,7 +18,7 @@ export const localePaths = () => LOCALES.map((lang) => ({ params: { lang } }));
 export const isLocale = (value: string): value is Locale =>
   (LOCALES as readonly string[]).includes(value);
 
-/** Alternation group for URL matching, e.g. /^\/(fr|en|it)/ */
+/** Alternation group for URL matching, e.g. /^\/(fr|en|it|nl)/ */
 export const LOCALE_PATTERN = LOCALES.join('|');
 
 /**
