@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import netlify from "@astrojs/netlify";
 // import robotsTxt from 'astro-robots-txt';
 import sitemap from '@astrojs/sitemap';
+import { LOCALE_PATTERN } from './src/config/locales';
 
 // Function to filter pages from sitemap
 function sitemapFilter(page) {
@@ -9,11 +10,11 @@ function sitemapFilter(page) {
 
   // Exclude individual blog posts (e.g., /fr/blog/post-slug)
   // This will keep main blog listing pages like /fr/blog, /en/blog etc.
-  if (path.match(/^\/(fr|en|it)\/blog\/.+/)) {
+  if (path.match(new RegExp(`^/(${LOCALE_PATTERN})/blog/.+`))) {
     return false; // Exclude
   }
 
-  const pathWithoutLang = path.replace(/^\/(fr|en|it)/, '');
+  const pathWithoutLang = path.replace(new RegExp(`^/(${LOCALE_PATTERN})`), '');
 
   // Exclude all pages under the /legal/ path
   if (pathWithoutLang.startsWith('/legal')) {

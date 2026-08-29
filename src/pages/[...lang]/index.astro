@@ -11,7 +11,7 @@ import Button from '../../components/Button.astro';
 import heroImage from '../../assets/images/hero_image_wbg.svg';
 import illustrationServices from '../../assets/images/illustration_services.svg';
 
-const supportedLanguages = ['fr', 'en', 'it'] as const;
+const supportedLanguages = LOCALES;
 type SupportedLanguage = typeof supportedLanguages[number];
 
 export interface Props {
@@ -19,7 +19,7 @@ export interface Props {
 }
 
 export async function getStaticPaths() {
-  return ['fr', 'en', 'it'].map(lang => ({
+  return LOCALES.map(lang => ({
     params: { lang },
     props: { currentLang: lang as SupportedLanguage }
   }));
@@ -34,6 +34,7 @@ if (typeof rawLangParam !== 'string' || !supportedLanguages.includes(rawLangPara
 
 const { currentLang } = Astro.props;
 import { getUiTranslations } from '../../utils/ui-translations';
+import { LOCALES } from '../../config/locales';
 const uiTranslations = await getUiTranslations(currentLang);
 
 const homeEntry = await getDataEntryById('home', 'home');

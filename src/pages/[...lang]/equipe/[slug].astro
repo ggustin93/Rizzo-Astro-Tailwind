@@ -1,0 +1,179 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { ChevronLeft, Linkedin } from 'astro-feather-icons2';
+import { LOCALES } from '../../../config/locales';
+import { getTeam } from '../../../utils/team.js';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const perLocale = await Promise.all(
+    LOCALES.map(async (lang) =>
+      (await getTeam(lang)).map((lawyer) => ({
+        params: { lang, slug: lawyer.slug },
+        props: { lawyer }
+      }))
+    )
+  );
+  return perLocale.flat();
+}
+
+const { lang } = Astro.params;
+const { lawyer } = Astro.props as { lawyer: any };
+
+const translations = {
+  fr: {
+    backToTeam: "Retour à l'équipe",
+    languages: 'Langues',
+    career: 'Parcours',
+    conferences: 'Conférences',
+    publications: 'Publications',
+    inCollaborationWith: 'En collaboration avec'
+  },
+  en: {
+    backToTeam: 'Back to team',
+    languages: 'Languages',
+    career: 'Career',
+    conferences: 'Conferences',
+    publications: 'Publications',
+    inCollaborationWith: 'In collaboration with'
+  },
+  it: {
+    backToTeam: 'Torna al team',
+    languages: 'Lingue',
+    career: 'Percorso',
+    conferences: 'Conferenze',
+    publications: 'Pubblicazioni',
+    inCollaborationWith: 'In collaborazione con'
+  }
+};
+
+const t = translations[lang as keyof typeof translations] || translations.fr;
+
+const seoData = {
+  title: lawyer.seo?.title || lawyer.name,
+  description:
+    lawyer.seo?.description ||
+    `${lawyer.name}, avocate au Barreau de Bruxelles en droit du travail. Expertise pour entreprises et travailleurs.`,
+  image: lawyer.seo?.image || lawyer.profileImage,
+  keywords:
+    lawyer.seo?.keywords?.join(', ') ||
+    `${lawyer.name}, avocat droit du travail, Bruxelles`
+};
+---
+
+<BaseLayout
+  title={seoData.title}
+  description={seoData.description}
+  image={seoData.image}
+  keywords={seoData.keywords}
+  lang={lang}
+>
+  <div class="bg-white md:my-20 p-4 md:p-8">
+    <div class="max-w-6xl mx-auto px-4 py-8 md:py-12">
+
+      <!-- Back to team link -->
+      <div class="mb-6">
+        <a
+          href={`/${lang}/equipe/`}
+          class="inline-flex items-center text-gray-500 hover:text-gray-700 transition-colors duration-300 text-sm"
+        >
+          <ChevronLeft class="w-4 h-4 mr-1" />
+          <span>{t.backToTeam}</span>
+        </a>
+      </div>
+
+      <!-- Image visible only on mobile, above title -->
+      <div class="md:hidden mb-8">
+        <img src={lawyer.profileImage} alt={lawyer.name} class="w-full rounded-lg shadow-lg">
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+        <div class="w-full md:w-2/3">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-light text-accent mb-2">{lawyer.name}</h1>
+          <h2 class="text-xl md:text-2xl font-light text-gray-600 mb-4">{lawyer.title}</h2>
+
+          <!-- LinkedIn Button -->
+          {lawyer.linkedin && (
+            <a
+              href={lawyer.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 hover:shadow-lg transform hover:scale-105 transition-all duration-300 mb-6"
+            >
+              <Linkedin class="w-5 h-5 mr-2" />
+              <span class="text-sm font-medium">LinkedIn</span>
+            </a>
+          )}
+
+          <div class="space-y-4 md:space-y-6">
+            {lawyer.bio && lawyer.bio.map((paragraph: string) => (
+              <p class="text-sm md:text-base text-dark-gray">{paragraph}</p>
+            ))}
+          </div>
+
+          <div class="space-y-6 md:space-y-8 mt-6 md:mt-8">
+            {lawyer.careerPath && lawyer.careerPath.length > 0 && (
+              <div>
+                <h3 class="text-lg md:text-xl font-semibold text-black mb-2 md:mb-3">{t.career}</h3>
+                <ul class="space-y-2 mb-4 md:mb-6">
+                  {lawyer.careerPath.map((item: any) => (
+                    <li class="flex flex-col sm:flex-row">
+                      <span class="font-semibold text-accent sm:w-24 flex-shrink-0">{item.year}</span>
+                      <span class="text-sm md:text-base text-dark-gray">{item.event}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {lawyer.languages && (
+              <div>
+                <h3 class="text-lg md:text-xl font-semibold text-black mb-2 md:mb-3">{t.languages}</h3>
+                <p class="text-sm md:text-base text-dark-gray mb-4 md:mb-6">{lawyer.languages}</p>
+              </div>
+            )}
+
+            {lawyer.conferences && lawyer.conferences.length > 0 && (
+              <div>
+                <h3 class="text-lg md:text-xl font-semibold text-black mb-2 md:mb-4">{t.conferences}</h3>
+                <ul class="space-y-2 mb-6 md:mb-8">
+                  {lawyer.conferences.map((conf: string) => (
+                    <li class="text-sm md:text-base text-dark-gray flex items-start">
+                      <span class="text-accent mr-2 text-2xl md:text-4xl">•</span>
+                      <span>{conf}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {lawyer.publications && lawyer.publications.length > 0 && (
+              <div>
+                <h3 class="text-lg md:text-xl font-semibold text-black mb-2 md:mb-3">{t.publications}</h3>
+                <ul class="space-y-3">
+                  {lawyer.publications.map((pub: any) => (
+                    <li class="text-sm md:text-base text-dark-gray flex items-start">
+                      <span class="text-accent mr-2 text-2xl md:text-4xl">•</span>
+                      <div>
+                        <span>{pub.date}:</span> "{pub.title}", {pub.publisher}
+                        {pub.coAuthors && <span class="italic"> ({t.inCollaborationWith} {pub.coAuthors.join(', ')})</span>}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <!-- Image visible only on desktop -->
+        <div class="hidden md:block md:w-1/3">
+          <div class="md:mt-[7.5rem]">
+            <img src={lawyer.profileImage} alt={lawyer.name} class="w-full rounded-lg shadow-lg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

@@ -2,9 +2,10 @@
 import { getEntry } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { marked } from 'marked';
+import { localePaths } from '../../../config/locales';
 
 export async function getStaticPaths() {
-  return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
+  return localePaths();
 }
 
 const { lang } = Astro.params;

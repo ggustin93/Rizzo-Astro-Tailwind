@@ -4,11 +4,12 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import CTA from '../../../components/CTA.astro';
 import { ChevronRight, ArrowRight, ArrowDown, Briefcase, Shield, FileText, CheckSquare, User } from 'astro-feather-icons2';
 import IconHandshake from '../../../components/IconHandshake.astro';
+import { localePaths } from '../../../config/locales';
 
 export const prerender = true;
 
 export async function getStaticPaths() {
-  return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
+  return localePaths();
 }
 
 const { lang } = Astro.params;

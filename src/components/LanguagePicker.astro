@@ -1,8 +1,9 @@
 ---
 // Import des props
 import Icon from './Icon.astro';
+import { LOCALES } from '../config/locales';
 const { currentLang } = Astro.props;
-const langs = ['fr', 'en', 'it'];
+const langs = LOCALES;
 ---
 
 <style>

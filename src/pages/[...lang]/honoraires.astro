@@ -2,11 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getDataEntryById } from 'astro:content';
 import { FileText, Briefcase, User, Shield, HelpCircle, YouTube, Users as UsersIcon, Calendar, Clock, Check, DollarSign, Award, Info } from 'astro-feather-icons2';
+import { localePaths } from '../../config/locales';
 
 export const prerender = true;
 
 export async function getStaticPaths() {
-  return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
+  return localePaths();
 }
 
 const { lang } = Astro.params;

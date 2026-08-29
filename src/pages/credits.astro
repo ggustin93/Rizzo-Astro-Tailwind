@@ -1,7 +1,8 @@
 ---
 // src/pages/credits.astro
 import BaseLayout from '../layouts/BaseLayout.astro';
-const supportedLanguages = ['fr', 'en', 'it'] as const;
+import { LOCALES, localePaths } from '../config/locales';
+const supportedLanguages = LOCALES;
 type SupportedLanguage = typeof supportedLanguages[number];
 
 export interface Props {
@@ -9,7 +10,7 @@ export interface Props {
 }
 
 export async function getStaticPaths() {
-  return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
+  return localePaths();
 }
 
 const { lang } = Astro.params;

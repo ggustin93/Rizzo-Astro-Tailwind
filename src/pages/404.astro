@@ -2,9 +2,10 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { Home } from 'astro-feather-icons2';
 import illustration404 from '../assets/images/404_illustration.svg';
+import { LOCALES } from '../config/locales';
 
 // Définit les langues supportées et la langue par défaut
-const supportedLanguages = ['fr', 'en', 'it'] as const;
+const supportedLanguages = LOCALES;
 type SupportedLanguage = typeof supportedLanguages[number];
 const defaultLang = 'fr' as SupportedLanguage;
 

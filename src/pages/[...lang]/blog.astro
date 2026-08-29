@@ -4,8 +4,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
 import { getUiTranslations } from '../../utils/ui-translations';
 import { getEntry } from 'astro:content';
+import { LOCALES } from '../../config/locales';
 
-export const supportedLanguages = ['fr', 'en', 'it'] as const;
+export const supportedLanguages = LOCALES;
 type SupportedLanguage = typeof supportedLanguages[number];
 
 export interface Props {

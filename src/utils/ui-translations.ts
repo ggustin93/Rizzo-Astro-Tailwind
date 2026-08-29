@@ -40,7 +40,8 @@ export interface UiTranslations {
   };
 }
 
-export type SupportedLanguage = 'fr' | 'en' | 'it';
+export type { Locale as SupportedLanguage } from '../config/locales';
+type SupportedLanguage = import('../config/locales').Locale;
 
 // Fonction pour récupérer les traductions UI depuis le CMS
 export async function getUiTranslations(lang: SupportedLanguage): Promise<UiTranslations> {

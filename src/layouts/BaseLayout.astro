@@ -5,6 +5,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import SvgSprite from "../components/SvgSprite.astro";
 import "../styles/global.css";
+import { LOCALES, DEFAULT_LOCALE } from '../config/locales';
 
 declare global {
   interface Window {
@@ -57,7 +58,7 @@ const finalDescription = description || defaultDescription;
 const finalCanonical = canonical ? (new URL(canonical, siteUrl).toString()) : (new URL(Astro.url.pathname, siteUrl).toString());
 const keywordsString = Array.isArray(keywords) ? keywords.join(', ') : keywords;
 
-const supportedLanguages = ['fr', 'en', 'it'];
+const supportedLanguages = LOCALES;
 const pathname = Astro.url.pathname;
 ---
 

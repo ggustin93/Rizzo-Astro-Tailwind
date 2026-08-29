@@ -3,6 +3,11 @@ teamImages:
     image: /assets/images/christine-optimized.webp
   - name: Stephanie Michiels
     image: /assets/images/smichiels-optimized.webp
+lawyerSlugs:
+  - name: Christine Rizzo
+    slug: christine-rizzo
+  - name: Stephanie Michiels
+    slug: stephanie-michiels
 profileImages:
   - name: Christine Rizzo
     image: /assets/images/christine-optimized.webp

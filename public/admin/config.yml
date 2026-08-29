@@ -296,6 +296,15 @@ collections:
             fields:
               - {label: "Nom de l'avocate", name: "name", widget: "string", hint: "Doit correspondre exactement au nom utilisé dans les profils"}
               - {label: "Photo", name: "image", widget: "image"}
+          - label: "Adresses des profils (partagées entre toutes les langues)"
+            name: "lawyerSlugs"
+            widget: "list"
+            summary: "{{fields.name}} → /equipe/{{fields.slug}}/"
+            collapsed: false
+            hint: "Adresse publique de chaque profil. Ne la modifiez pas une fois le profil en ligne : les liens existants cesseraient de fonctionner."
+            fields:
+              - {label: "Nom de l'avocate", name: "name", widget: "string", hint: "Doit correspondre exactement au nom utilisé dans les profils"}
+              - {label: "Adresse du profil", name: "slug", widget: "string", pattern: ['^[a-z0-9]+(-[a-z0-9]+)*$', "Uniquement des minuscules, chiffres et tirets (ex. romain-archalaus)"]}
           - label: "Français"
             name: "fr"
             widget: "object"

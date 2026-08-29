@@ -4,11 +4,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 import ContactForm from '../../components/ContactForm.astro';
 import CTA from '../../components/CTA.astro';
+import { localePaths } from '../../config/locales';
 
 export const prerender = true;
 
 export async function getStaticPaths() {
-  return ['fr', 'en', 'it'].map(lang => ({ params: { lang } }));
+  return localePaths();
 }
 
 const { lang } = Astro.params;
