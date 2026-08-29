@@ -863,6 +863,13 @@ collections:
                 fields:
                   - {label: "Prendre rendez-vous avec", name: "bookWith", widget: "string", default: "Prendre rendez-vous avec", hint: "Précède le nom de l'avocate dans le menu de réservation."}
                   - {label: "Formulaire de contact", name: "contactForm", widget: "string", default: "Formulaire de contact", hint: "Dernière entrée du menu de réservation."}
+              - label: "Pied de page"
+                name: "footer"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - {label: "Téléphones", name: "phones", widget: "string", default: "Téléphones", hint: "Titre de l'accordéon des numéros de téléphone."}
+                  - {label: "E-mails", name: "emails", widget: "string", default: "E-mails", hint: "Titre de l'accordéon des adresses e-mail."}
               - label: "Bloc contact (CTA)"
                 name: "cta"
                 widget: "object"

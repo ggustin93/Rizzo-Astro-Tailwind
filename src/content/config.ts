@@ -117,6 +117,10 @@ const uiTranslationsSchema = z.object({
     bookWith: z.string(),
     contactForm: z.string()
   }),
+  footer: z.object({
+    phones: z.string(),
+    emails: z.string()
+  }),
   cta: z.object({
     title: z.string(),
     email: z.string(),

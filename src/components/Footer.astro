@@ -7,6 +7,7 @@ import logoPwablo from '../assets/images/logo_pwablo.svg';
 import { getEntry } from 'astro:content';
 import { localeFromPath } from '../config/locales';
 import { getNavigation } from '../utils/navigation';
+import { getUiTranslations } from '../utils/ui-translations';
 
 const { pathname } = Astro.url;
 const currentLang = localeFromPath(pathname);
@@ -19,6 +20,7 @@ const address = siteConfigEntry?.data?.address || "Chaussée de Waterloo 1151, 1
 
 // Récupérer la configuration de navigation
 const navConfig = await getNavigation(currentLang);
+const { footer: footerLabels } = await getUiTranslations(currentLang);
 
 // Année courante pour le copyright
 const currentYear = new Date().getFullYear();
@@ -108,7 +110,7 @@ const handleContactAction = (type: string, action: string) => {
             <summary class="flex items-center justify-between p-3 cursor-pointer hover:bg-gray-50 transition-colors">
               <div class="flex items-center">
                 <Phone class="w-5 h-5 mr-3 text-travailleur" />
-                <span class="text-sm md:text-base font-semibold">Téléphones</span>
+                <span class="text-sm md:text-base font-semibold">{footerLabels.phones}</span>
               </div>
               <ChevronDown class="w-4 h-4 transition-transform duration-300 group-open:rotate-180" />
             </summary>
@@ -132,7 +134,7 @@ const handleContactAction = (type: string, action: string) => {
             <summary class="flex items-center justify-between p-3 cursor-pointer hover:bg-gray-50 transition-colors">
               <div class="flex items-center">
                 <Mail class="w-5 h-5 mr-3 text-employeur" />
-                <span class="text-sm md:text-base font-semibold">E-mails</span>
+                <span class="text-sm md:text-base font-semibold">{footerLabels.emails}</span>
               </div>
               <ChevronDown class="w-4 h-4 transition-transform duration-300 group-open:rotate-180" />
             </summary>

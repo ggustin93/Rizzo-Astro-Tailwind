@@ -12,6 +12,9 @@ fr:
   header:
     bookWith: "Prendre rendez-vous avec"
     contactForm: "Formulaire de contact"
+  footer:
+    phones: "Téléphones"
+    emails: "E-mails"
   cta:
     title: "Contactez-nous"
     email: "EMAIL"
@@ -75,6 +78,9 @@ en:
   header:
     bookWith: "Book an appointment with"
     contactForm: "Contact form"
+  footer:
+    phones: "Phone numbers"
+    emails: "Email addresses"
   cta:
     title: "Contact us"
     email: "EMAIL"
@@ -138,6 +144,9 @@ it:
   header:
     bookWith: "Prenota un appuntamento con"
     contactForm: "Modulo di contatto"
+  footer:
+    phones: "Telefoni"
+    emails: "Indirizzi e-mail"
   cta:
     title: "Contattaci"
     email: "EMAIL"
@@ -201,6 +210,9 @@ nl:
   header:
     bookWith: "Maak een afspraak met"
     contactForm: "Contactformulier"
+  footer:
+    phones: "Telefoonnummers"
+    emails: "E-mailadressen"
   cta:
     title: "Contacteer ons"
     email: "E-MAIL"

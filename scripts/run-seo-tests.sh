@@ -32,10 +32,7 @@ fi
 # Every locale's home page and contact page.
 PAGES_TO_TEST=()
 for locale in "${LOCALES[@]}"; do
-  PAGES_TO_TEST+=("/${locale}/")
-done
-for locale in "${LOCALES[@]}"; do
-  PAGES_TO_TEST+=("/${locale}/contact/")
+  PAGES_TO_TEST+=("/${locale}/" "/${locale}/contact/")
 done
 
 # User-Agents

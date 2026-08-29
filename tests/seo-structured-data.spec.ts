@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { BASE_URL, address, languages, lawyers } from './helpers';
+import { BASE_URL, DEFAULT_LOCALE, address, languages, lawyers } from './helpers';
 
 // Issue #10: crawlers and generative engines need structured firm/lawyer facts,
 // an llms.txt summary, and explicit AI-crawler rules — without waiting for NL (#11)
@@ -130,8 +130,9 @@ test.describe('JSON-LD localisation', () => {
       return { id: firm['@id'], url: firm.url };
     };
 
-    const reference = await firmOn('fr');
-    expect(await firmOn('en')).toEqual(reference);
-    expect(await firmOn('it')).toEqual(reference);
+    const reference = await firmOn(DEFAULT_LOCALE);
+    for (const lang of languages.filter((lang) => lang !== DEFAULT_LOCALE)) {
+      expect(await firmOn(lang)).toEqual(reference);
+    }
   });
 });
