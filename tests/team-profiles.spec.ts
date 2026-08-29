@@ -1,14 +1,12 @@
 import { test, expect } from '@playwright/test';
-
-const BASE_URL = process.env.BASE_URL || 'http://localhost:4321';
+import { BASE_URL, languages } from './helpers';
 
 // Issue #8: profile pages come from one slug-driven route, but the public URLs
 // visitors and search engines already know must not move.
-const languages = ['fr', 'en', 'it'];
 
 const profiles = [
-  { slug: 'christine-rizzo', name: 'Christine Rizzo' },
-  { slug: 'stephanie-michiels', name: 'Stephanie Michiels' },
+  { slug: 'christine-rizzo', name: 'Christine Rizzo', careerEntry: 'Barreau de Bruxelles' },
+  { slug: 'stephanie-michiels', name: 'Stephanie Michiels', careerEntry: 'Barreau de Bruxelles' },
 ];
 
 test.describe('Team profile routes', () => {
@@ -19,8 +17,10 @@ test.describe('Team profile routes', () => {
         expect(response?.status()).toBe(200);
 
         await expect(page.locator('main h1')).toContainText(profile.name);
-        // Career timeline is part of the shared canvas.
-        await expect(page.locator('main')).toContainText('20');
+        // Career timeline is part of the shared canvas: assert a real entry, not
+        // a substring that any page would satisfy.
+        await expect(page.locator('main h3').first()).toBeVisible();
+        await expect(page.locator('main')).toContainText(profile.careerEntry);
         // Back-link returns to the team listing in the same language.
         await expect(page.locator(`main a[href="/${lang}/equipe/"]`).first()).toBeVisible();
       });

@@ -47,3 +47,8 @@ replit.nix
 *.local
 .env*
 !.env.example
+
+# Agent tooling / session state (local, not project config)
+.agents/
+.codex/
+.omo/

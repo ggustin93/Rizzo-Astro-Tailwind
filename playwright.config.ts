@@ -15,7 +15,7 @@ export default defineConfig({
   ],
   // Tests assert against production output: the dev server injects Astro's dev-toolbar
   // DOM (extra <h1>s) which breaks strict-mode locators. BASE_URL overrides this to
-  // point at a Netlify deploy preview instead (issue #14).
+  // point at a deploy preview or any already-running host instead.
   webServer: process.env.BASE_URL
     ? undefined
     : {

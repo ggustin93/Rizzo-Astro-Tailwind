@@ -1,11 +1,12 @@
 import { test, expect } from '@playwright/test';
-
-const BASE_URL = process.env.BASE_URL || 'http://localhost:4321';
+import { BASE_URL, languages } from './helpers';
 
 // Issue #10: crawlers and generative engines need structured firm/lawyer facts,
 // an llms.txt summary, and explicit AI-crawler rules — without waiting for NL (#11)
 // or a third lawyer (#12).
-const languages = ['fr', 'en', 'it'];
+
+// The firm node is site-wide, so its identity does not vary by page.
+const firmOrigin = 'https://rizzo-michiels.be';
 
 async function jsonLdGraph(page) {
   const blocks = await page.locator('script[type="application/ld+json"]').allTextContents();
@@ -26,8 +27,10 @@ test.describe('JSON-LD structured data', () => {
       expect(firm.name).toBeTruthy();
       expect(firm.address?.addressLocality).toBe('Bruxelles');
       expect(firm.address?.streetAddress).toContain('Chaussée de Waterloo 1151');
-      expect(firm.url).toContain(`/${lang}/`);
+      expect(firm.url).toBe(`${firmOrigin}/`);
       expect(firm.inLanguage).toContain(lang);
+      // @id is constant across the site, so url must be too.
+      expect(firm['@id']).toBe(`${firmOrigin}/#firm`);
     });
 
     test(`/${lang}/ describes each lawyer as a Person`, async ({ page }) => {
@@ -42,6 +45,7 @@ test.describe('JSON-LD structured data', () => {
         expect(person.email, `${person.name} has an email`).toBeTruthy();
         expect(person.telephone, `${person.name} has a phone`).toBeTruthy();
         expect(person.worksFor, `${person.name} is linked to the firm`).toBeTruthy();
+        expect(person.jobTitle, `${person.name} has a job title`).toBeTruthy();
       }
     });
   }
@@ -79,5 +83,34 @@ test.describe('robots.txt', () => {
     }
     expect(body).toContain('Sitemap: https://rizzo-michiels.be/sitemap-index.xml');
     expect(body).toContain('/llms.txt');
+  });
+});
+
+test.describe('JSON-LD localisation', () => {
+  test('job titles follow the page language', async ({ page }) => {
+    const titleOn = async (lang: string) => {
+      await page.goto(`${BASE_URL}/${lang}/`);
+      const graph = await jsonLdGraph(page);
+      return graph.find((node) => node.name === 'Christine Rizzo')?.jobTitle;
+    };
+
+    const fr = await titleOn('fr');
+    const en = await titleOn('en');
+
+    expect(fr).toBeTruthy();
+    expect(en).toBeTruthy();
+    expect(en, 'the English page must not advertise the French title').not.toBe(fr);
+  });
+
+  test('the firm node is identical across locales', async ({ page }) => {
+    const firmOn = async (lang: string) => {
+      await page.goto(`${BASE_URL}/${lang}/`);
+      const graph = await jsonLdGraph(page);
+      const firm = graph.find((node) => node['@type'] === 'LegalService');
+      return { id: firm['@id'], url: firm.url };
+    };
+
+    expect(await firmOn('en')).toEqual(await firmOn('fr'));
+    expect(await firmOn('it')).toEqual(await firmOn('fr'));
   });
 });

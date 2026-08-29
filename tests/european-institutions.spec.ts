@@ -1,8 +1,5 @@
 import { test, expect } from '@playwright/test';
-
-const BASE_URL = process.env.BASE_URL || 'http://localhost:4321';
-
-const languages = ['fr', 'en', 'it'];
+import { BASE_URL, languages } from './helpers';
 
 test.describe('European Institutions Service Page', () => {
   const expectedTitles: Record<string, string> = {
