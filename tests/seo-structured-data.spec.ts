@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { BASE_URL, languages, lawyers } from './helpers';
+import { BASE_URL, address, languages, lawyers } from './helpers';
 
 // Issue #10: crawlers and generative engines need structured firm/lawyer facts,
 // an llms.txt summary, and explicit AI-crawler rules — without waiting for NL (#11)
@@ -64,11 +64,31 @@ test.describe('llms.txt', () => {
     expect(response.headers()['content-type']).toContain('text/plain');
 
     const body = await response.text();
-    expect(body).toContain('Rizzo');
-    expect(body).toContain('Michiels');
     expect(body).toContain('droit du travail');
+    expect(body).toContain(address);
     // Points crawlers at the real pages rather than restating the whole site.
-    expect(body).toContain('https://rizzo-michiels.be/fr/');
+    expect(body).toContain(`${firmOrigin}/fr/`);
+  });
+
+  // #16: the file is generated from the content collections, so the roster and
+  // the locale list cannot drift from site-config/profile/locales.ts.
+  test('names every lawyer on the published roster', async ({ request }) => {
+    const body = await (await request.get(`${BASE_URL}/llms.txt`)).text();
+
+    for (const lawyer of lawyers) {
+      expect(body, `${lawyer.name} is summarised`).toContain(lawyer.name);
+      expect(body, `${lawyer.name} has a linked profile`).toContain(
+        `${firmOrigin}/fr/equipe/${lawyer.slug}`
+      );
+    }
+  });
+
+  test('links the home page of every locale the site ships', async ({ request }) => {
+    const body = await (await request.get(`${BASE_URL}/llms.txt`)).text();
+
+    for (const lang of languages) {
+      expect(body, `${lang} home page is linked`).toContain(`${firmOrigin}/${lang}/`);
+    }
   });
 });
 
