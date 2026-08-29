@@ -1,19 +1,11 @@
 import { test, expect } from '@playwright/test';
 
-const BASE_URL = process.env.BASE_URL || 'http://localhost:4321';
+import { BASE_URL, languages, lawyers as roster, address } from './helpers';
 
 const lawyers = {
-  christine: {
-    email: 'christine@rizzoavocate.be',
-    phone: '+32 488 40 45 49',
-  },
-  stephanie: {
-    email: 'stephanie@michielsavocate.be',
-    phone: '+32 498 50 29 01',
-  },
+  christine: roster[0],
+  stephanie: roster[1],
 };
-
-const address = 'Chaussée de Waterloo 1151';
 
 // Legal pages expose the firm's shared editor mailbox, not a lawyer's personal address.
 const editorEmail = 'rizzomichiels@gmail.com';
@@ -21,7 +13,6 @@ const editorEmail = 'rizzomichiels@gmail.com';
 test.describe('Contact Information Verification', () => {
 
   test.describe('Contact Page', () => {
-    const languages = ['fr', 'en', 'it'];
     for (const lang of languages) {
       test(`should display correct info on /${lang}/contact`, async ({ page }) => {
         await page.goto(`${BASE_URL}/${lang}/contact`);

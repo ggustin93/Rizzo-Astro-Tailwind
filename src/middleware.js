@@ -3,9 +3,6 @@
 
 import { LOCALE_PATTERN, DEFAULT_LOCALE } from './config/locales';
 
-// Les locales viennent de src/config/locales.ts : le middleware est la porte de
-// routage, donc une langue oubliée ici est rejetée avant d'atteindre les pages.
-const LOCALE_PREFIX = new RegExp(`^/(${LOCALE_PATTERN})(?:/|$)`);
 const DEFAULT_HOME = `/${DEFAULT_LOCALE}/`;
 
 // Fonction principale du middleware Astro
@@ -23,12 +20,7 @@ export function onRequest({ request }, next) {
     });
   }
 
-  // Ne pas interférer avec les URL qui ont déjà un code de langue
-  if (LOCALE_PREFIX.test(url.pathname)) {
-    return next(); // On laisse passer ces URL sans modification
-  }
-
-  // Sinon, continuer normalement
+  // Toute autre URL (y compris celles déjà préfixées d'une langue) passe telle quelle.
   return next();
 }
 
@@ -41,12 +33,7 @@ export default function middleware(request) {
     return Response.redirect(new URL(DEFAULT_HOME, request.url), 302);
   }
 
-  // Ne pas interférer avec les URL qui ont déjà un code de langue
-  if (LOCALE_PREFIX.test(url.pathname)) {
-    return; // On laisse passer ces URL sans modification
-  }
-
-  // Sinon, continuer normalement
+  // Toute autre URL (y compris celles déjà préfixées d'une langue) passe telle quelle.
   return;
 }
 

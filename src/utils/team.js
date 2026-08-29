@@ -50,9 +50,3 @@ export async function getTeam(lang) {
     };
   });
 }
-
-/** One lawyer by public slug, or undefined. */
-export async function getTeamMember(lang, slug) {
-  const team = await getTeam(lang);
-  return team.find((lawyer) => lawyer.slug === slug);
-}

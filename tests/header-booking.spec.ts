@@ -1,12 +1,8 @@
 import { test, expect } from '@playwright/test';
-import { BASE_URL } from './helpers';
+import { BASE_URL, bookableLawyers } from './helpers';
 
 // Issue #9: booking moves into the header so visitors do not have to scroll to
 // the footer CTA. Items come from the lawyers array in site-config.yml.
-const bookableLawyers = [
-  { name: 'Christine Rizzo', calSlug: 'c.rizzo-avocat.be/rendez-vous' },
-  { name: 'Stephanie Michiels', calSlug: 'stephanie-michiels-v76dvl' },
-];
 
 test.describe('Header appointment dropdown — desktop', () => {
   // The desktop nav is `hidden lg:flex`; these assertions are meaningless on a

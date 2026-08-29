@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
+import { languages as langs } from './helpers';
 
-const langs = ['fr', 'en', 'it'] as const;
+
 
 const contactLabels: Record<string, string> = { fr: 'CONTACT', en: 'CONTACT', it: 'CONTATTO' };
 const servicesLabels: Record<string, string> = { fr: 'SERVICES', en: 'SERVICES', it: 'SERVIZI' };

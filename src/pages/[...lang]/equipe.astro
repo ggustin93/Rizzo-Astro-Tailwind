@@ -20,33 +20,9 @@ const lawyersToDisplay = await getTeam(lang);
 
 // Translations
 const translations = {
-  fr: {
-    teamTitle: "L'équipe",
-    languages: "Langues",
-    career: "Parcours",
-    conferences: "Conférences",
-    publications: "Publications",
-    with: "avec",
-    inCollaborationWith: "En collaboration avec"
-  },
-  en: {
-    teamTitle: "The Team",
-    languages: "Languages",
-    career: "Career",
-    conferences: "Conferences",
-    publications: "Publications",
-    with: "with",
-    inCollaborationWith: "In collaboration with"
-  },
-  it: {
-    teamTitle: "Il Team",
-    languages: "Lingue",
-    career: "Percorso",
-    conferences: "Conferenze",
-    publications: "Pubblicazioni",
-    with: "con",
-    inCollaborationWith: "In collaborazione con"
-  }
+  fr: { teamTitle: "L'équipe", viewProfile: 'Découvrir le profil complet' },
+  en: { teamTitle: 'The Team', viewProfile: 'View full profile' },
+  it: { teamTitle: 'Il Team', viewProfile: 'Scopri il profilo completo' }
 };
 
 const t = translations[lang as keyof typeof translations];
@@ -92,7 +68,7 @@ const seoData = {
                   href={`/${lang}/equipe/${lawyer.slug}/`}
                   class="inline-flex items-center px-6 py-3 bg-travailleur text-white font-semibold rounded-lg hover:bg-travailleur/90 hover:shadow-lg transform hover:scale-105 transition-all duration-300 shadow-md"
                 >
-                  {lang === 'fr' ? 'Découvrir le profil complet' : lang === 'en' ? 'View full profile' : 'Scopri il profilo completo'}
+                  {t.viewProfile}
                   <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                   </svg>

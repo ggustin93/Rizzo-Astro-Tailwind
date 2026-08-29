@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { BASE_URL, languages } from './helpers';
+import { BASE_URL, languages, lawyers } from './helpers';
 
 // Issue #10: crawlers and generative engines need structured firm/lawyer facts,
 // an llms.txt summary, and explicit AI-crawler rules — without waiting for NL (#11)
@@ -39,7 +39,7 @@ test.describe('JSON-LD structured data', () => {
 
       const people = graph.filter((node) => node['@type'] === 'Person');
       expect(people.map((p) => p.name)).toEqual(
-        expect.arrayContaining(['Christine Rizzo', 'Stephanie Michiels'])
+        expect.arrayContaining(lawyers.map((lawyer) => lawyer.name))
       );
       for (const person of people) {
         expect(person.email, `${person.name} has an email`).toBeTruthy();
@@ -110,7 +110,8 @@ test.describe('JSON-LD localisation', () => {
       return { id: firm['@id'], url: firm.url };
     };
 
-    expect(await firmOn('en')).toEqual(await firmOn('fr'));
-    expect(await firmOn('it')).toEqual(await firmOn('fr'));
+    const reference = await firmOn('fr');
+    expect(await firmOn('en')).toEqual(reference);
+    expect(await firmOn('it')).toEqual(reference);
   });
 });

@@ -1,22 +1,13 @@
 import { test, expect } from '@playwright/test';
 
-const BASE_URL = process.env.BASE_URL || 'http://localhost:4321';
+import { BASE_URL, languages, lawyers as roster } from './helpers';
 
 const lawyers = {
-  christine: {
-    name: 'Christine Rizzo',
-    email: 'christine@rizzoavocate.be',
-    phone: '+32 488 40 45 49',
-  },
-  stephanie: {
-    name: 'Stephanie Michiels',
-    email: 'stephanie@michielsavocate.be',
-    phone: '+32 498 50 29 01',
-  },
+  christine: roster[0],
+  stephanie: roster[1],
 };
 
 test.describe('Contact Page Link Functionality', () => {
-  const languages = ['fr', 'en', 'it'];
 
   for (const lang of languages) {
     test(`should have correct contact actions on /${lang}/contact`, async ({ page }) => {

@@ -37,6 +37,8 @@ export interface UiTranslations {
     lastUpdated?: string;
     contactMe?: string;
     bookAppointment?: string;
+    bookWith?: string;
+    contactForm?: string;
   };
 }
 

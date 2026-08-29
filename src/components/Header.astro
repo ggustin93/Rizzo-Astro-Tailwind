@@ -6,6 +6,7 @@ import { getEntry } from 'astro:content';
 import Icon from './Icon.astro';
 import { LOCALES } from '../config/locales';
 import { bookableLawyers, calEmbedTarget } from '../utils/calendar.js';
+import { getUiTranslations, type SupportedLanguage } from '../utils/ui-translations';
 
 export interface Props {
   currentLang: string;
@@ -30,47 +31,11 @@ const navigationEntry = await getEntry('navigation', 'navigation');
 const navConfig = navigationEntry?.data?.[currentLang] || navigationEntry?.data?.fr; // Fallback à FR
 
 // Récupérer les traductions UI
-const uiTranslationsEntry = await getEntry('ui-translations', 'ui-translations');
-const uiTranslations = uiTranslationsEntry?.data?.[currentLang] || uiTranslationsEntry?.data?.fr;
+const uiTranslations = await getUiTranslations(currentLang as SupportedLanguage);
 
-const translations = {
-  fr: {
-    home: "ACCUEIL",
-    services: "SERVICES",
-    profil: "PROFIL",
-    tarifs: "HONORAIRES",
-    articles: "ARTICLES",
-    contact: "ME CONTACTER",
-    honoraires: "HONORAIRES",
-    travailleurs: "POUR LES TRAVAILLEURS",
-    employeurs: "POUR LES EMPLOYEURS"
-  },
-  en: {
-    home: "HOME",
-    services: "SERVICES",
-    profil: "PROFILE",
-    tarifs: "FEES",
-    articles: "ARTICLES",
-    contact: "CONTACT ME",
-    honoraires: "FEES",
-    travailleurs: "FOR EMPLOYEES",
-    employeurs: "FOR EMPLOYERS"
-  },
-  it: {
-    home: "HOME",
-    services: "SERVIZI",
-    profil: "PROFILO",
-    tarifs: "TARIFFE",
-    articles: "ARTICOLI",
-    contact: "CONTATTAMI",
-    honoraires: "ONORARI",
-    travailleurs: "PER I LAVORATORI",
-    employeurs: "PER I DATORI DI LAVORO"
-  }
-};
-
-// Utiliser les traductions de navigation du CMS si disponibles, sinon utiliser les valeurs par défaut
-const t = translations[currentLang as keyof typeof translations] || translations.fr;
+// Libellés de repli si le CMS ne fournit rien. Les libellés de navigation
+// viennent de navigation.yml (mainLinks), pas d'ici.
+const fallbackContactLabel = { fr: 'ME CONTACTER', en: 'CONTACT ME', it: 'CONTATTAMI' };
 
 const isHomePage = pathname === `/${currentLang}` || pathname === `/${currentLang}/`;
 
@@ -130,12 +95,13 @@ const rightNavLinks = showArticlesSection ?
   }));
 
 // Texte du bouton Contact depuis la configuration
-const contactButtonText = navConfig?.header?.contactButtonText || t.contact;
+const contactButtonText =
+  navConfig?.header?.contactButtonText || fallbackContactLabel[currentLang] || fallbackContactLabel.fr;
 
 // Libellés du menu de réservation, éditables dans le CMS (ui-translations).
-const bookingLabels: Record<string, string> = uiTranslations?.additionalTranslations ?? {};
-const bookWithLabel = bookingLabels.bookWith || 'Prendre rendez-vous avec';
-const contactFormLabel = bookingLabels.contactForm || 'Formulaire de contact';
+const bookingLabels = uiTranslations?.additionalTranslations;
+const bookWithLabel = bookingLabels?.bookWith ?? 'Prendre rendez-vous avec';
+const contactFormLabel = bookingLabels?.contactForm ?? 'Formulaire de contact';
 ---
 
 <style>

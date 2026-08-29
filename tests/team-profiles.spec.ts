@@ -1,13 +1,8 @@
 import { test, expect } from '@playwright/test';
-import { BASE_URL, languages } from './helpers';
+import { BASE_URL, languages, lawyers as profiles } from './helpers';
 
 // Issue #8: profile pages come from one slug-driven route, but the public URLs
 // visitors and search engines already know must not move.
-
-const profiles = [
-  { slug: 'christine-rizzo', name: 'Christine Rizzo', careerEntry: 'Barreau de Bruxelles' },
-  { slug: 'stephanie-michiels', name: 'Stephanie Michiels', careerEntry: 'Barreau de Bruxelles' },
-];
 
 test.describe('Team profile routes', () => {
   for (const lang of languages) {
