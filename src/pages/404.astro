@@ -2,12 +2,12 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { Home } from 'astro-feather-icons2';
 import illustration404 from '../assets/images/404_illustration.svg';
-import { LOCALES } from '../config/locales';
+import { LOCALES, LOCALE_PATTERN, DEFAULT_LOCALE } from '../config/locales';
 
 // Définit les langues supportées et la langue par défaut
 const supportedLanguages = LOCALES;
 type SupportedLanguage = typeof supportedLanguages[number];
-const defaultLang = 'fr' as SupportedLanguage;
+const defaultLang = DEFAULT_LOCALE as SupportedLanguage;
 
 // Récupère la langue depuis l'URL
 const lang = supportedLanguages.find(l => Astro.url.pathname.startsWith(`/${l}/`)) || defaultLang;
@@ -76,13 +76,13 @@ const t = translations[lang];
   </main>
 </BaseLayout>
 
-<script>
-  // Si on arrive sur la page 404 à la racine exacte, rediriger vers /fr/
-  // Vérifier explicitement qu'on est bien à la racine du site pour ne pas interférer avec le changeur de langue
+<script define:vars={{ localePattern: LOCALE_PATTERN, defaultHome: `/${DEFAULT_LOCALE}/` }}>
+  // Si on arrive sur la page 404 à la racine exacte, rediriger vers la langue par défaut.
+  // Le motif de langues vient de src/config/locales.ts, pas d'une liste recopiée ici.
   if (window.location.pathname === "/" || window.location.pathname === "") {
     // Double vérification pour s'assurer qu'on est vraiment à la racine
-    if (!window.location.pathname.match(/^\/(fr|en|it)(?:\/|$)/)) {
-      window.location.href = "/fr/";
+    if (!window.location.pathname.match(new RegExp(`^/(${localePattern})(?:/|$)`))) {
+      window.location.href = defaultHome;
     }
   }
 </script>

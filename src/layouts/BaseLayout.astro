@@ -105,7 +105,7 @@ const pathname = Astro.url.pathname;
     <meta name="twitter:creator" content="@ChristineRizzo">
 
     <!-- Structured data: firm + lawyers, for rich results and AI citations (#10) -->
-    <StructuredData siteUrl={String(siteUrl)} pageUrl={finalCanonical} />
+    <StructuredData lang={currentLang} siteUrl={String(siteUrl)} />
 
     <!-- Hreflang links -->
     {supportedLanguages.map(l => (

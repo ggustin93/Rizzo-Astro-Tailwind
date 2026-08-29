@@ -43,9 +43,7 @@ const translations = {
     contact: "ME CONTACTER",
     honoraires: "HONORAIRES",
     travailleurs: "POUR LES TRAVAILLEURS",
-    employeurs: "POUR LES EMPLOYEURS",
-    bookWith: "Prendre rendez-vous avec",
-    contactForm: "Formulaire de contact"
+    employeurs: "POUR LES EMPLOYEURS"
   },
   en: {
     home: "HOME",
@@ -56,9 +54,7 @@ const translations = {
     contact: "CONTACT ME",
     honoraires: "FEES",
     travailleurs: "FOR EMPLOYEES",
-    employeurs: "FOR EMPLOYERS",
-    bookWith: "Book an appointment with",
-    contactForm: "Contact form"
+    employeurs: "FOR EMPLOYERS"
   },
   it: {
     home: "HOME",
@@ -69,9 +65,7 @@ const translations = {
     contact: "CONTATTAMI",
     honoraires: "ONORARI",
     travailleurs: "PER I LAVORATORI",
-    employeurs: "PER I DATORI DI LAVORO",
-    bookWith: "Prenota un appuntamento con",
-    contactForm: "Modulo di contatto"
+    employeurs: "PER I DATORI DI LAVORO"
   }
 };
 
@@ -137,6 +131,11 @@ const rightNavLinks = showArticlesSection ?
 
 // Texte du bouton Contact depuis la configuration
 const contactButtonText = navConfig?.header?.contactButtonText || t.contact;
+
+// Libellés du menu de réservation, éditables dans le CMS (ui-translations).
+const bookingLabels: Record<string, string> = uiTranslations?.additionalTranslations ?? {};
+const bookWithLabel = bookingLabels.bookWith || 'Prendre rendez-vous avec';
+const contactFormLabel = bookingLabels.contactForm || 'Formulaire de contact';
 ---
 
 <style>
@@ -296,7 +295,7 @@ const contactButtonText = navConfig?.header?.contactButtonText || t.contact;
                   class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer"
                   data-cal-link={calEmbedTarget(lawyer.calendarLink)}
                   data-cal-config='{"layout":"month_view"}'
-                  aria-label={`${t.bookWith} ${lawyer.name}`}
+                  aria-label={`${bookWithLabel} ${lawyer.name}`}
                 >
                   {lawyer.name}
                 </button>
@@ -305,7 +304,7 @@ const contactButtonText = navConfig?.header?.contactButtonText || t.contact;
                 href={`/${currentLang}/contact`}
                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 border-t border-gray-100 mt-1 pt-2"
               >
-                {t.contactForm}
+                {contactFormLabel}
               </a>
             </div>
           </div>
@@ -365,9 +364,12 @@ const contactButtonText = navConfig?.header?.contactButtonText || t.contact;
         <!-- Booking rows use the always-open submenu pattern, like Services and
              Team above: no hover target exists on touch. -->
         <div id="header-booking-mobile" class="mt-6">
-          <span class="block py-2 text-black uppercase text-base font-light border-b border-gray-200">
-            {contactButtonText}
-          </span>
+          <Button
+            href={`/${currentLang}/contact`}
+            text={contactButtonText}
+            variant="secondary"
+            class={`text-base py-3 px-6 ${isActivePage(`/${currentLang}/contact`) ? 'font-medium' : ''}`}
+          />
           <div class="py-2 px-4 bg-white bg-opacity-60 rounded-sm my-2">
             {lawyersToBook.map(lawyer => (
               <button
@@ -375,7 +377,7 @@ const contactButtonText = navConfig?.header?.contactButtonText || t.contact;
                 class="mobile-submenu-link block w-full py-2 text-black text-sm font-light transition-colors duration-300 cursor-pointer"
                 data-cal-link={calEmbedTarget(lawyer.calendarLink)}
                 data-cal-config='{"layout":"month_view"}'
-                aria-label={`${t.bookWith} ${lawyer.name}`}
+                aria-label={`${bookWithLabel} ${lawyer.name}`}
               >
                 {lawyer.name}
               </button>
@@ -384,7 +386,7 @@ const contactButtonText = navConfig?.header?.contactButtonText || t.contact;
               href={`/${currentLang}/contact`}
               class={`mobile-submenu-link block py-2 text-black text-sm font-light transition-colors duration-300 ${isActivePage(`/${currentLang}/contact`) ? 'active' : ''}`}
             >
-              {t.contactForm}
+              {contactFormLabel}
             </a>
           </div>
         </div>
