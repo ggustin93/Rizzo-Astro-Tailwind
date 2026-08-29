@@ -4,6 +4,15 @@ import { DEFAULT_LOCALE } from '../config/locales';
 const findByName = (list, name) => list.find((item) => item.name === name);
 
 /**
+ * URL of a lawyer's profile page.
+ *
+ * Uses the slug getTeam() resolved from profile.yml. Deriving it from the name
+ * instead (lowercase + replace) drops accents and every space after the first,
+ * which silently produces a 404 for the names it was not written for.
+ */
+export const profilePath = (lang, lawyer) => `/${lang}/equipe/${lawyer.slug}/`;
+
+/**
  * Lawyers for one locale, with their public slug and images resolved.
  *
  * Slugs are declared explicitly in profile.yml (`lawyerSlugs`) rather than

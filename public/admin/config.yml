@@ -808,7 +808,6 @@ collections:
             widget: "object"
             fields: &uiTranslationsFields
               - {label: "Lire la suite", name: "readMore", widget: "string", default: "Lire la suite"}
-              - {label: "Voir tous les articles", name: "viewAllArticles", widget: "string", default: "Voir tous les articles"}
               - {label: "Titre du blog", name: "blogTitle", widget: "string", default: "Articles"}
               - {label: "Aucun article trouvé", name: "noArticles", widget: "string", default: "Aucun article trouvé."}
               - {label: "Toutes catégories", name: "allCategories", widget: "string", default: "Toutes catégories"}
@@ -817,22 +816,8 @@ collections:
                 widget: "object"
                 collapsed: true
                 fields:
-                  - {label: "Bouton contact", name: "contactButton", widget: "string", default: "ME CONTACTER"}
                   - {label: "Prendre rendez-vous avec", name: "bookWith", widget: "string", default: "Prendre rendez-vous avec", hint: "Précède le nom de l'avocate dans le menu de réservation."}
                   - {label: "Formulaire de contact", name: "contactForm", widget: "string", default: "Formulaire de contact", hint: "Dernière entrée du menu de réservation."}
-              - label: "Pied de page"
-                name: "footer"
-                widget: "object"
-                collapsed: true
-                fields:
-                  - {label: "Menu", name: "menu", widget: "string", default: "Menu"}
-                  - {label: "Contact", name: "contact", widget: "string", default: "Contact"}
-                  - {label: "Mentions légales", name: "legalNotice", widget: "string", default: "Mentions légales"}
-                  - {label: "Politique de confidentialité", name: "privacyPolicy", widget: "string", default: "Politique de confidentialité"}
-                  - {label: "Infos légales & CGV", name: "legalInfo", widget: "string", default: "Infos légales & CGV"}
-                  - {label: "Crédit design", name: "design", widget: "string", default: "Design by Pwablo"}
-                  - {label: "Score d'éco-conception", name: "ecoDesign", widget: "string", default: "Score d'éco-conception"}
-                  - {label: "Titre éco-conception", name: "ecoDesignTitle", widget: "string", default: "Site web écologique"}
               - label: "Bloc contact (CTA)"
                 name: "cta"
                 widget: "object"

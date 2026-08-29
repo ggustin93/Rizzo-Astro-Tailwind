@@ -2,7 +2,7 @@
 import { getDataEntryById } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { localePaths } from '../../config/locales';
-import { getTeam } from '../../utils/team.js';
+import { getTeam, profilePath } from '../../utils/team.js';
 import { getUiTranslations } from '../../utils/ui-translations';
 
 export const prerender = true;
@@ -59,7 +59,7 @@ const seoData = {
               
               <div class="mt-6">
                 <a 
-                  href={`/${lang}/equipe/${lawyer.slug}/`}
+                  href={profilePath(lang, lawyer)}
                   class="inline-flex items-center px-6 py-3 bg-travailleur text-white font-semibold rounded-lg hover:bg-travailleur/90 hover:shadow-lg transform hover:scale-105 transition-all duration-300 shadow-md"
                 >
                   {t.viewProfile}

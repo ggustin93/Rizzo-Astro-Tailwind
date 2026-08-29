@@ -26,7 +26,7 @@ const {
 } = Astro.props;
 
 const { lang: pathLang } = Astro.params;
-const currentLang = propLang || pathLang || 'fr';
+const currentLang = propLang || pathLang || DEFAULT_LOCALE;
 
 const siteConfigEntry = await getEntry('config', 'site-config');
 if (!siteConfigEntry) {

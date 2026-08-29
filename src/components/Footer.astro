@@ -6,7 +6,7 @@ import logoImage from '../assets/images/logo_crizzo_calli3.svg';
 import logoPwablo from '../assets/images/logo_pwablo.svg';
 import { getEntry } from 'astro:content';
 import { localeFromPath } from '../config/locales';
-import { getUiTranslations } from '../utils/ui-translations';
+import { getNavigation } from '../utils/navigation';
 
 const { pathname } = Astro.url;
 const currentLang = localeFromPath(pathname);
@@ -18,37 +18,10 @@ const lawyers = siteConfigEntry?.data?.lawyers || [];
 const address = siteConfigEntry?.data?.address || "Chaussée de Waterloo 1151, 1180 Bruxelles";
 
 // Récupérer la configuration de navigation
-const navigationEntry = await getEntry('navigation', 'navigation');
-const navConfig = navigationEntry?.data?.[currentLang];
-
-// Récupérer les traductions UI
-const t = (await getUiTranslations(currentLang)).footer;
+const navConfig = await getNavigation(currentLang);
 
 // Année courante pour le copyright
 const currentYear = new Date().getFullYear();
-
-// Interface for footer configuration
-interface PwabloConfig {
-  pwabloText?: string;
-  pwabloUrl?: string;
-}
-
-interface LegalLink {
-  label: string;
-  url: string;
-}
-
-interface FooterConfig {
-  legalLinks?: LegalLink[];
-  menuLinks?: LegalLink[];
-  ecoDesignTitle?: string;
-  ecoDesignText?: string;
-  ecoDesignUrl?: string;
-  pwablo?: PwabloConfig;
-  copyrightText?: string;
-  menuTitle?: string;
-  contactTitle?: string;
-}
 
 const isHomePage = pathname === `/${currentLang}` || pathname === `/${currentLang}/`;
 
@@ -75,7 +48,7 @@ const isActivePage = (href: string) => {
 };
 
 // Utiliser les données de navigation du CMS
-const footerConfig: FooterConfig = navConfig?.footer || {};
+const footerConfig = navConfig.footer;
 
 if (!lawyers || lawyers.length === 0) {
   // This will stop the build if the contact info is missing, which is what we want.
@@ -83,23 +56,15 @@ if (!lawyers || lawyers.length === 0) {
 }
 
 // Récupérer les liens principaux du Header
-const mainLinks = navConfig?.header?.mainLinks || [];
+const mainLinks = navConfig.header.mainLinks;
 // Utiliser les liens de menu du footer s'ils existent, sinon fallback sur mainLinks
 const footerMenuLinks = footerConfig.menuLinks || mainLinks;
 
-// Liens légaux du Footer
-const legalLinks = footerConfig.legalLinks || [
-  { label: t.legalNotice, url: `/${currentLang}/legal/notice` },
-  { label: t.privacyPolicy, url: `/${currentLang}/legal/privacy` },
-  { label: t.legalInfo, url: `/${currentLang}/legal/informations-legales` }
-];
-
-// Textes pour la section Eco-design
-const ecoDesignTitle = footerConfig.ecoDesignTitle || t.ecoDesignTitle;
-const ecoDesignText = footerConfig.ecoDesignText || t.ecoDesign;
-const ecoDesignUrl = footerConfig.ecoDesignUrl || "https://www.websitecarbon.com/website/rizzo-michiels-be-fr/";
-const pwabloText = footerConfig.pwablo?.pwabloText || t.design;
-const pwabloUrl = footerConfig.pwablo?.pwabloUrl || "https://pwablo.be";
+// Ces champs sont requis par navigationSchema : navigation.yml en est la
+// source unique, un repli côté composant serait du code mort.
+const legalLinks = footerConfig.legalLinks;
+const { ecoDesignTitle, ecoDesignText, ecoDesignUrl } = footerConfig;
+const { pwabloText, pwabloUrl } = footerConfig.pwablo;
 // Récupérer le copyright depuis site-config (source unique de vérité)
 const copyrightText = siteConfigEntry?.data?.copyrightText || 'C. Rizzo & S. Michiels';
 
@@ -107,8 +72,7 @@ const copyrightText = siteConfigEntry?.data?.copyrightText || 'C. Rizzo & S. Mic
 const formattedCopyrightText = `© ${currentYear} ${copyrightText}`;
 
 // Titres des sections
-const menuTitle = footerConfig.menuTitle || t.menu;
-const contactTitle = footerConfig.contactTitle || t.contact;
+const { menuTitle, contactTitle } = footerConfig;
 
 // Ajout d'une fonction pour gérer les actions de contact
 const handleContactAction = (type: string, action: string) => {

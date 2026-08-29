@@ -6,6 +6,7 @@ import CTA from '../../components/CTA.astro';
 import { ChevronDown, Briefcase, User, FileText } from 'astro-feather-icons2';
 import { Calendar } from 'astro-feather-icons';
 import { getArticles } from '../../utils/articles';
+import { getTeam, profilePath } from '../../utils/team.js';
 import ArticleCard from '../../components/ArticleCard.astro';
 import Button from '../../components/Button.astro';
 // Import des images locales
@@ -43,23 +44,9 @@ if (!homeEntry) {
 }
 const content = homeEntry.data[currentLang] || homeEntry.data['fr'];
 
-// Récupérer les données des profils pour les photos CMS
-const profileEntry = await getDataEntryById('profile', 'profile');
-if (!profileEntry) {
-  throw new Error("Profile entry not found! Make sure you have a `profile.yml` file in `src/content/profile`.");
-}
-const profileData = profileEntry.data[currentLang] || profileEntry.data['fr'];
-const teamImages = profileEntry.data.teamImages || [];
-
-// Mapper les photos aux avocates par nom
-const lawyers = profileData.lawyers || [];
-const lawyersWithImages = lawyers.map(lawyer => {
-  const imageData = teamImages.find(img => img.name === lawyer.name);
-  return {
-    ...lawyer,
-    image: imageData ? imageData.image : null
-  };
-});
+// Les avocates, leurs photos et leurs slugs sont résolus centralement pour que
+// les liens de la home ne puissent pas diverger des routes de [slug].astro.
+const lawyersWithImages = await getTeam(currentLang);
 
 // Récupérer la configuration du site
 const siteConfigEntry = await getEntry('config', 'site-config');
@@ -211,7 +198,7 @@ export const prerender = true;
           <div class="grid grid-cols-2 gap-4 md:gap-6 mb-8">
             {lawyersWithImages.map((lawyer) => (
               <div class="text-center">
-                <a href={`/${currentLang}/equipe/${lawyer.name.toLowerCase().replace(' ', '-')}`} class="block group">
+                <a href={profilePath(currentLang, lawyer)} class="block group">
                   <div class="aspect-square overflow-hidden rounded-lg shadow-lg mb-3 border border-gray-900 relative max-w-[200px] md:max-w-[250px] mx-auto">
                     {lawyer.image ? (
                       <img 
@@ -250,7 +237,7 @@ export const prerender = true;
     </section>
   </div>
 
-  <CTA lang={currentLang} uiTranslations={uiTranslations} />
+  <CTA />
 
   {showArticlesSection && (
     <div id="articles" class="full-bleed bg-beige">

@@ -1,7 +1,9 @@
 import type { APIRoute } from 'astro';
 import { getEntry } from 'astro:content';
 import { LOCALES, DEFAULT_LOCALE } from '../config/locales';
-import { getTeam } from '../utils/team.js';
+import { getTeam, profilePath } from '../utils/team.js';
+import { getContactInfo } from '../utils/contact-info.js';
+import { getNavigation } from '../utils/navigation';
 
 export const prerender = true;
 
@@ -12,33 +14,32 @@ export const prerender = true;
  * second edit here that someone will forget (issue #16).
  */
 export const GET: APIRoute = async () => {
-  const { seo, address } = (await getEntry('config', 'site-config'))!.data;
-  const navigation = (await getEntry('navigation', 'navigation'))!.data[DEFAULT_LOCALE];
+  const { seo } = (await getEntry('config', 'site-config'))!.data;
+  const { address } = await getContactInfo();
+  const navigation = await getNavigation(DEFAULT_LOCALE);
   const team = await getTeam(DEFAULT_LOCALE);
 
-  const origin = seo.siteUrl.replace(/\/$/, '');
-  const url = (path: string) => `${origin}${path.replace(/\/?$/, '/')}`;
+  const url = (path: string) => new URL(path.replace(/\/?$/, '/'), seo.siteUrl).href;
 
   // Locale names in the file's own language, so a new locale needs no table here.
   const localeName = new Intl.DisplayNames([DEFAULT_LOCALE], { type: 'language' });
   const capitalise = (word: string) => word.charAt(0).toUpperCase() + word.slice(1);
 
-  const profileUrl = (lawyer: { slug: string }) =>
-    url(`/${DEFAULT_LOCALE}/equipe/${lawyer.slug}`);
-
-  // The roster owns the profile links: a lawyer added to profile.yml but not to
-  // the nav must still appear. Seeding `seen` keeps the nav from repeating them.
-  const seen = new Set(team.map(profileUrl));
+  const profileUrl = (lawyer: { slug: string }) => url(profilePath(DEFAULT_LOCALE, lawyer));
 
   // Header links plus the footer menu, so the pages the site itself considers
-  // primary are the pages crawlers are pointed at. Anchors are not pages.
-  const pageLines = [
+  // primary are the pages crawlers are pointed at. Anchors are not pages, and
+  // the roster below already owns the profile links.
+  const profileUrls = new Set(team.map(profileUrl));
+  const pages = new Map<string, string>();
+  for (const link of [
     ...navigation.header.mainLinks.flatMap((link) => [link, ...(link.dropdownItems ?? [])]),
     ...(navigation.footer.menuLinks ?? [])
-  ]
-    .filter((link) => !link.url.includes('#'))
-    .filter((link) => !seen.has(url(link.url)) && seen.add(url(link.url)))
-    .map((link) => `- [${link.label}](${url(link.url)})`);
+  ]) {
+    const href = url(link.url);
+    if (link.url.includes('#') || profileUrls.has(href) || pages.has(href)) continue;
+    pages.set(href, link.label);
+  }
 
   const body = `# ${seo.siteName}
 
@@ -52,7 +53,7 @@ ${team.map((lawyer) => `- [${lawyer.name}](${profileUrl(lawyer)}) — ${lawyer.t
 
 ## Pages principales
 
-${pageLines.join('\n')}
+${[...pages].map(([href, label]) => `- [${label}](${href})`).join('\n')}
 
 ## Langues du site
 

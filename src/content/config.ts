@@ -1,5 +1,5 @@
 import { defineCollection, z } from 'astro:content';
-import { LOCALES } from '../config/locales';
+import { LOCALES, type Locale } from '../config/locales';
 
 /**
  * Wraps a schema in one required entry per shipped locale.
@@ -9,7 +9,13 @@ import { LOCALES } from '../config/locales';
  * French at runtime (issue #15).
  */
 const perLocale = <T extends z.ZodTypeAny>(schema: T) =>
-  z.object(Object.fromEntries(LOCALES.map((locale) => [locale, schema])) as Record<typeof LOCALES[number], T>);
+  z.object(Object.fromEntries(LOCALES.map((locale) => [locale, schema])) as Record<Locale, T>);
+
+/**
+ * A locale's content, whatever its shape. `z.any()` would accept a *missing*
+ * locale, which is the failure this whole mechanism exists to catch.
+ */
+const localeContent = z.record(z.string(), z.any());
 
 const blog = defineCollection({
   schema: z.object({
@@ -104,24 +110,12 @@ const navigationCollection = defineCollection({
 // Collection UI Translations — every string the interface renders.
 const uiTranslationsSchema = z.object({
   readMore: z.string(),
-  viewAllArticles: z.string(),
   blogTitle: z.string(),
   noArticles: z.string(),
   allCategories: z.string(),
   header: z.object({
-    contactButton: z.string(),
     bookWith: z.string(),
     contactForm: z.string()
-  }),
-  footer: z.object({
-    menu: z.string(),
-    contact: z.string(),
-    legalNotice: z.string(),
-    privacyPolicy: z.string(),
-    legalInfo: z.string(),
-    design: z.string(),
-    ecoDesign: z.string(),
-    ecoDesignTitle: z.string()
   }),
   cta: z.object({
     title: z.string(),
@@ -192,7 +186,7 @@ const uiTranslationsCollection = defineCollection({
 // surface as a runtime throw when a profile route is generated.
 const profileCollection = defineCollection({
   type: 'data',
-  schema: z.object({
+  schema: perLocale(localeContent).extend({
     lawyerSlugs: z.array(z.object({
       name: z.string(),
       slug: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/, 'Slug must be lowercase words separated by hyphens'),
@@ -200,10 +194,12 @@ const profileCollection = defineCollection({
   }).catchall(z.any()),
 });
 
-// Generic data collection for YAML/JSON files
+// Page content whose shape is free-form but whose locales are not: every one of
+// these is read as `data[lang] || data.fr`, so an untranslated locale would
+// publish French body copy under a `lang`/`hreflang` that claims otherwise.
 const dataCollection = defineCollection({
   type: 'data',
-  schema: z.any()
+  schema: perLocale(localeContent)
 });
 
 export const collections = {

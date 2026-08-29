@@ -6,23 +6,12 @@
 
 fr:
   readMore: "Lire la suite"
-  viewAllArticles: "Voir tous les articles"
   blogTitle: "Articles"
   noArticles: "Aucun article trouvé."
   allCategories: "Toutes catégories"
   header:
-    contactButton: "ME CONTACTER"
     bookWith: "Prendre rendez-vous avec"
     contactForm: "Formulaire de contact"
-  footer:
-    menu: "Menu"
-    contact: "Contact"
-    legalNotice: "Mentions légales"
-    privacyPolicy: "Politique de confidentialité"
-    legalInfo: "Infos légales & CGV"
-    design: "Design by Pwablo"
-    ecoDesign: "Score d'éco-conception"
-    ecoDesignTitle: "Site web écologique"
   cta:
     title: "Contactez-nous"
     email: "EMAIL"
@@ -80,23 +69,12 @@ fr:
 
 en:
   readMore: "Read more"
-  viewAllArticles: "View all articles"
   blogTitle: "Blog Posts"
   noArticles: "No articles found."
   allCategories: "All categories"
   header:
-    contactButton: "CONTACT ME"
     bookWith: "Book an appointment with"
     contactForm: "Contact form"
-  footer:
-    menu: "Menu"
-    contact: "Contact"
-    legalNotice: "Legal Notice"
-    privacyPolicy: "Privacy Policy"
-    legalInfo: "Legal Info & T&C"
-    design: "Design by Pwablo"
-    ecoDesign: "Eco-design Score"
-    ecoDesignTitle: "Eco-friendly Website"
   cta:
     title: "Contact us"
     email: "EMAIL"
@@ -154,23 +132,12 @@ en:
 
 it:
   readMore: "Leggi di più"
-  viewAllArticles: "Vedi tutti gli articoli"
   blogTitle: "Articoli"
   noArticles: "Nessun articolo trovato."
   allCategories: "Tutte le categorie"
   header:
-    contactButton: "CONTATTAMI"
     bookWith: "Prenota un appuntamento con"
     contactForm: "Modulo di contatto"
-  footer:
-    menu: "Menu"
-    contact: "Contatto"
-    legalNotice: "Note legali"
-    privacyPolicy: "Politica sulla riservatezza"
-    legalInfo: "Info legali & CGV"
-    design: "Design di Pwablo"
-    ecoDesign: "Punteggio di eco-design"
-    ecoDesignTitle: "Sito web ecologico"
   cta:
     title: "Contattaci"
     email: "EMAIL"

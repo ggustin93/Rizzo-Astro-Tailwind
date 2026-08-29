@@ -5,6 +5,7 @@ import Button from '../components/Button.astro';
 import { getEntry } from 'astro:content';
 import Icon from './Icon.astro';
 import { LOCALES, localeFromPath } from '../config/locales';
+import { getNavigation } from '../utils/navigation';
 import { bookableLawyers, calEmbedTarget } from '../utils/calendar.js';
 import { getUiTranslations } from '../utils/ui-translations';
 
@@ -23,8 +24,7 @@ const showArticlesSection = siteConfigEntry?.data?.sectionsVisibility || false;
 const lawyersToBook = bookableLawyers(siteConfigEntry?.data?.lawyers);
 
 // Récupérer la configuration de navigation
-const navigationEntry = await getEntry('navigation', 'navigation');
-const navConfig = navigationEntry?.data?.[currentLang];
+const navConfig = await getNavigation(currentLang);
 
 // Récupérer les traductions UI
 const uiTranslations = await getUiTranslations(currentLang);
@@ -86,8 +86,8 @@ const rightNavLinks = showArticlesSection ?
     isActive: isActivePage(link.url)
   }));
 
-// Texte du bouton Contact depuis la configuration, sinon le libellé CMS.
-const contactButtonText = navConfig?.header?.contactButtonText || uiTranslations.header.contactButton;
+// Requis par navigationSchema : pas de repli à maintenir.
+const contactButtonText = navConfig.header.contactButtonText;
 
 // Libellés du menu de réservation, éditables dans le CMS (ui-translations).
 const { bookWith: bookWithLabel, contactForm: contactFormLabel } = uiTranslations.header;
