@@ -7,10 +7,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Added
+- **Dutch locale (`nl`) across the whole site** (#11): routes, language picker, navigation, hreflang, sitemap, `/llms.txt` and Decap CMS. `nl` is declared once in `src/config/locales.ts`; every page, schema and test loop derives from that list. An `nl:` block was added to the fourteen multilingual YAML files, translated from the French source block. **The Dutch copy is an AI pre-translation — cabinet linguistic review is required before production, especially on the legal pages.**
+- **Decap CMS "Nederlands" tab** on the eleven `single_file` collections (via the existing field anchors), plus a `blog-nl` collection and `src/content/blog/nl/`. No Dutch blog articles yet — an empty NL blog list renders correctly.
+- **Footer contact labels in `ui-translations.yml`** (`footer.phones`, `footer.emails`): the "Téléphones" / "E-mails" accordion titles were hardcoded in `Footer.astro` and stayed French in EN/IT/NL. Now required per locale by the Zod schema and editable in Decap.
 - **SVG sprite system** (`SvgSprite.astro`, `Icon.astro`): inline Feather icon SVGs replaced by a single `<symbol>` sprite sheet + `<use>` references for icons used 2+ times (calendar, mail, phone, chevron-down, map-pin, globe). Reduces DOM nodes by ~3-5 per icon instance. Sprite included once in `BaseLayout.astro`.
 - **DNS health check script** (`scripts/run-dns-tests.sh`): comprehensive migration health check — DNSSEC status, NS propagation, SSL certs, redirect chain analysis, GSC readiness, SEO signals. Supports `--quick` flag for DNS-only checks.
 
 ### Changed
+- **`scripts/run-seo-tests.sh` derives its locales from `src/config/locales.ts`**: the page list and the hreflang assertion hardcoded `fr/en/it`, so a new language was silently untested. Shipping a locale now extends the suite without editing it.
+- **`tests/helpers.ts`**: the career-timeline anchor was `Barreau de Bruxelles`, a French string absent from the translated timelines. Replaced with proper nouns that survive translation (`Reliance Littler`, `Fulbright`), which also fixes two pre-existing EN/IT failures.
+- **`tests/seo-structured-data.spec.ts`**: the JSON-LD firm-node comparison named `en` and `it` explicitly and skipped `nl`; it now loops over every non-default locale.
+- **Removed `src/content/legal-info/legal-info.yml` and the `legal-info` collection**: a diverged duplicate of `legal/legal-info.yml` that no page read and the CMS did not expose.
+- **`CLAUDE.md` / `AGENTS.md`**: the supported-language list and the "validate language params" rule now point at `LOCALES` instead of repeating `['fr', 'en', 'it']`.
 - **EcoIndex DOM optimization**: flattened redundant wrapper `<div>` elements in Header (dropdown inner div) and homepage (single-child flex container). Homepage DOM: 437→417, Europeennes: 546→541.
 - **DNS configuration**: migrated `rizzo-michiels.be` from Infomaniak DNS (A record) to Netlify DNS for automatic CDN-level alias redirects and single-hop redirect chain (fixes GSC "Change of Address" validation).
 - **Image optimization**: compressed 3 DSCF photos from 20 MB total to 1.1 MB (resized to 1600px, quality 80%). `dscf3258.jpg` 11MB→274KB, `dscf3259.jpg` 3.8MB→589KB, `dscf3286.jpg` 5.2MB→267KB.
