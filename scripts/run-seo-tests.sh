@@ -14,7 +14,7 @@
 # ==============================================================================
 
 # --- Configuration ---
-# Override to point the suite at a Netlify deploy preview (issue #14), e.g.
+# Override to point the suite at a deploy preview or a local build, e.g.
 #   BASE_URL=https://deploy-preview-42--site.netlify.app ./scripts/run-seo-tests.sh
 BASE_URL="${BASE_URL:-https://rizzo-michiels.be}"
 # Canonical URLs and the robots.txt sitemap entry always point at production,
@@ -218,7 +218,7 @@ test_json_ld() {
   fi
 
   # Extract the JSON-LD payload and check the two node types we publish.
-  local payload=$(echo "$content" | tr -d '\n' | sed -n 's/.*<script type="application\/ld+json">\(.*\)<\/script>.*/\1/p')
+  local payload=$(echo "$content" | tr -d '\n' | grep -o '<script type="application/ld+json">[^<]*' | head -1)
 
   if echo "$payload" | grep -q '"LegalService"'; then
     print_pass "JSON-LD declares the firm as a LegalService"

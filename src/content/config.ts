@@ -217,10 +217,25 @@ const uiTranslationsCollection = defineCollection({
         relatedArticles: z.string().optional(),
         lastUpdated: z.string().optional(),
         contactMe: z.string().optional(),
-        bookAppointment: z.string().optional()
+        bookAppointment: z.string().optional(),
+        bookWith: z.string().optional(),
+        contactForm: z.string().optional()
       }).optional()
     })
   )
+});
+
+// Profile: only the shared, locale-independent keys are typed. Per-locale lawyer
+// content stays free-form, but a missing slug must fail the build rather than
+// surface as a runtime throw when a profile route is generated.
+const profileCollection = defineCollection({
+  type: 'data',
+  schema: z.object({
+    lawyerSlugs: z.array(z.object({
+      name: z.string(),
+      slug: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/, 'Slug must be lowercase words separated by hyphens'),
+    })),
+  }).catchall(z.any()),
 });
 
 // Generic data collection for YAML/JSON files
@@ -236,7 +251,7 @@ export const collections = {
   'ui-translations': uiTranslationsCollection,
   // Add all other data collections here
   'home': dataCollection,
-  'profile': dataCollection,
+  'profile': profileCollection,
   'contact': dataCollection,
   'honoraires': dataCollection,
   'employeurs': dataCollection,

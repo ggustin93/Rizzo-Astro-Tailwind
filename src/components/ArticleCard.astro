@@ -1,4 +1,5 @@
 ---
+import type { Locale } from '../config/locales';
 import { Image } from 'astro:assets';
 import { isExternalImage } from '../utils/imageHelpers';
 
@@ -14,7 +15,7 @@ interface Props {
     };
     slug: string;
   };
-  lang: 'en' | 'fr' | 'it';
+  lang: Locale;
   url?: string;
   lazyLoad?: boolean;
   uiTranslations: any;

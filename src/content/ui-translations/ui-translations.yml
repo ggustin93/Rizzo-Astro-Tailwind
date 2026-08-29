@@ -33,6 +33,8 @@ fr:
     relatedArticles: "Articles similaires"
     lastUpdated: "Dernière mise à jour"
     contactMe: "Me contacter"
+    bookWith: "Prendre rendez-vous avec"
+    contactForm: "Formulaire de contact"
     bookAppointment: "Réserver un rendez-vous"
 
 en:
@@ -70,6 +72,8 @@ en:
     relatedArticles: "Related articles"
     lastUpdated: "Last updated"
     contactMe: "Contact me"
+    bookWith: "Book an appointment with"
+    contactForm: "Contact form"
     bookAppointment: "Book an appointment"
 
 it:
@@ -107,4 +111,6 @@ it:
     relatedArticles: "Articoli correlati"
     lastUpdated: "Ultimo aggiornamento"
     contactMe: "Contattami"
+    bookWith: "Prenota un appuntamento con"
+    contactForm: "Modulo di contatto"
     bookAppointment: "Prenota un appuntamento" 

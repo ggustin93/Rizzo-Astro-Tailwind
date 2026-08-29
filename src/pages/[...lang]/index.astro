@@ -1,6 +1,7 @@
 ---
 import { getEntry, getDataEntryById } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { LOCALES } from '../../config/locales';
 import CTA from '../../components/CTA.astro';
 import { ChevronDown, Briefcase, User, FileText } from 'astro-feather-icons2';
 import { Calendar } from 'astro-feather-icons';
@@ -34,7 +35,6 @@ if (typeof rawLangParam !== 'string' || !supportedLanguages.includes(rawLangPara
 
 const { currentLang } = Astro.props;
 import { getUiTranslations } from '../../utils/ui-translations';
-import { LOCALES } from '../../config/locales';
 const uiTranslations = await getUiTranslations(currentLang);
 
 const homeEntry = await getDataEntryById('home', 'home');

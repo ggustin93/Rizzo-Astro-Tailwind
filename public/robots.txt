@@ -13,6 +13,11 @@ Allow: /
 User-agent: Googlebot-Mobile
 Allow: /
 
+# Bing (recherche classique)
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+
 # Crawlers IA et moteurs de réponse.
 # Le cabinet autorise l'indexation et la citation par les moteurs génératifs :
 # le contenu est public et la visibilité y est recherchée (issue #10).
@@ -49,10 +54,6 @@ Allow: /
 Disallow: /admin/
 
 User-agent: Applebot-Extended
-Allow: /
-Disallow: /admin/
-
-User-agent: Bingbot
 Allow: /
 Disallow: /admin/
 

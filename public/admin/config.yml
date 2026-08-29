@@ -834,6 +834,8 @@ collections:
                   - {label: "Annuler", name: "cancel", widget: "string", default: "Annuler"}
                   - {label: "Rechercher", name: "search", widget: "string", default: "Rechercher"}
                   - {label: "Fermer", name: "close", widget: "string", default: "Fermer"}
+                  - {label: "Prendre rendez-vous avec (menu header)", name: "bookWith", widget: "string", required: false, default: "Prendre rendez-vous avec", hint: "Précède le nom de l'avocate dans le menu de réservation du header."}
+                  - {label: "Formulaire de contact (menu header)", name: "contactForm", widget: "string", required: false, default: "Formulaire de contact", hint: "Dernière entrée du menu de réservation du header."}
 
           - label: "English"
             name: "en"
