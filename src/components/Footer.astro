@@ -5,9 +5,11 @@ import IconLinkedin from './IconLinkedIn.astro';
 import logoImage from '../assets/images/logo_crizzo_calli3.svg';
 import logoPwablo from '../assets/images/logo_pwablo.svg';
 import { getEntry } from 'astro:content';
+import { localeFromPath } from '../config/locales';
+import { getUiTranslations } from '../utils/ui-translations';
 
 const { pathname } = Astro.url;
-const currentLang = pathname.split('/')[1] || 'fr';
+const currentLang = localeFromPath(pathname);
 
 // Récupérer la configuration du site
 const siteConfigEntry = await getEntry('config', 'site-config');
@@ -17,59 +19,13 @@ const address = siteConfigEntry?.data?.address || "Chaussée de Waterloo 1151, 1
 
 // Récupérer la configuration de navigation
 const navigationEntry = await getEntry('navigation', 'navigation');
-const navConfig = navigationEntry?.data?.[currentLang] || navigationEntry?.data?.fr; // Fallback à FR
+const navConfig = navigationEntry?.data?.[currentLang];
 
 // Récupérer les traductions UI
-const uiTranslationsEntry = await getEntry('ui-translations', 'ui-translations');
-const uiTranslations = uiTranslationsEntry?.data?.[currentLang] || uiTranslationsEntry?.data?.fr;
+const t = (await getUiTranslations(currentLang)).footer;
 
 // Année courante pour le copyright
 const currentYear = new Date().getFullYear();
-
-const translations = {
-  fr: {
-    expertise: "Expertise",
-    profil: "Profil",
-    honoraires: "Honoraires",
-    articles: "Articles",
-    contact: "Contact",
-    legalNotice: "Mentions légales",
-    privacyPolicy: "Politique de confidentialité",
-    legalInfo: "Infos légales & CGV",
-    design: "Design by Pwablo",
-    ecoDesign: "Score d'éco-conception",
-    ecoDesignPwablo: "Site web écologique",
-    menu: "Menu"
-  },
-  en: {
-    expertise: "Expertise",
-    profil: "Profile",
-    honoraires: "Fees",
-    articles: "Articles",
-    contact: "Contact",
-    legalNotice: "Legal Notice",
-    privacyPolicy: "Privacy Policy",
-    legalInfo: "Legal Info & T&C",
-    design: "Design by Pwablo",
-    ecoDesign: "Eco-design Score",
-    ecoDesignPwablo: "Eco-friendly Website",
-    menu: "Menu"
-  },
-  it: {
-    expertise: "Esperienza",
-    profil: "Profilo",
-    honoraires: "Onorari",
-    articles: "Articoli",
-    contact: "Contatto",
-    legalNotice: "Note legali",
-    privacyPolicy: "Politica sulla riservatezza",
-    legalInfo: "Info legali & CGV",
-    design: "Design di Pwablo",
-    ecoDesign: "Punteggio di eco-design",
-    ecoDesignPwablo: "Sito web ecologico",
-    menu: "Menu"
-  }
-};
 
 // Interface for footer configuration
 interface PwabloConfig {
@@ -93,9 +49,6 @@ interface FooterConfig {
   menuTitle?: string;
   contactTitle?: string;
 }
-
-// Utiliser les traductions du CMS si disponibles
-const t = translations[currentLang as keyof typeof translations] || translations.fr;
 
 const isHomePage = pathname === `/${currentLang}` || pathname === `/${currentLang}/`;
 
@@ -142,7 +95,7 @@ const legalLinks = footerConfig.legalLinks || [
 ];
 
 // Textes pour la section Eco-design
-const ecoDesignTitle = footerConfig.ecoDesignTitle || t.ecoDesignPwablo;
+const ecoDesignTitle = footerConfig.ecoDesignTitle || t.ecoDesignTitle;
 const ecoDesignText = footerConfig.ecoDesignText || t.ecoDesign;
 const ecoDesignUrl = footerConfig.ecoDesignUrl || "https://www.websitecarbon.com/website/rizzo-michiels-be-fr/";
 const pwabloText = footerConfig.pwablo?.pwabloText || t.design;

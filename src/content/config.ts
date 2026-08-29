@@ -1,4 +1,15 @@
 import { defineCollection, z } from 'astro:content';
+import { LOCALES } from '../config/locales';
+
+/**
+ * Wraps a schema in one required entry per shipped locale.
+ *
+ * Adding a language to LOCALES therefore fails the build with
+ * `nl: Required` until the YAML is translated, instead of falling back to
+ * French at runtime (issue #15).
+ */
+const perLocale = <T extends z.ZodTypeAny>(schema: T) =>
+  z.object(Object.fromEntries(LOCALES.map((locale) => [locale, schema])) as Record<typeof LOCALES[number], T>);
 
 const blog = defineCollection({
   schema: z.object({
@@ -41,188 +52,139 @@ const configCollection = defineCollection({
 });
 
 // Collection Navigation
-const navigationCollection = defineCollection({
-  type: 'data',
-  schema: z.object({
-    fr: z.object({
-      header: z.object({
-        mainLinks: z.array(
-          z.object({
-            label: z.string(),
-            url: z.string(),
-            hasDropdown: z.boolean().optional().default(false),
-            dropdownItems: z.array(
-              z.object({
-                label: z.string(),
-                url: z.string()
-              })
-            ).optional()
-          })
-        ),
-        contactButtonText: z.string()
-      }),
-      footer: z.object({
-        menuTitle: z.string(),
-        contactTitle: z.string(),
-        contactInfo: z.object({
-          phone: z.string(),
-          email: z.string(),
-          linkedin: z.string(),
-          address: z.string()
-        }).optional(),
-        menuLinks: z.array(z.object({ label: z.string(), url: z.string() })).optional(),
-        legalLinks: z.array(
+const navigationSchema = z.object({
+  header: z.object({
+    mainLinks: z.array(
+      z.object({
+        label: z.string(),
+        url: z.string(),
+        hasDropdown: z.boolean().optional().default(false),
+        dropdownItems: z.array(
           z.object({
             label: z.string(),
             url: z.string()
           })
-        ),
-        ecoDesignTitle: z.string(),
-        ecoDesignText: z.string(),
-        ecoDesignUrl: z.string(),
-        pwablo: z.object({
-          pwabloText: z.string(),
-          pwabloUrl: z.string()
-        }),
-        copyrightText: z.string().optional()
+        ).optional()
       })
-    }),
-    en: z.object({
-      header: z.object({
-        mainLinks: z.array(
-          z.object({
-            label: z.string(),
-            url: z.string(),
-            hasDropdown: z.boolean().optional().default(false),
-            dropdownItems: z.array(
-              z.object({
-                label: z.string(),
-                url: z.string()
-              })
-            ).optional()
-          })
-        ),
-        contactButtonText: z.string()
-      }),
-      footer: z.object({
-        menuTitle: z.string(),
-        contactTitle: z.string(),
-        contactInfo: z.object({
-          phone: z.string(),
-          email: z.string(),
-          linkedin: z.string(),
-          address: z.string()
-        }).optional(),
-        menuLinks: z.array(z.object({ label: z.string(), url: z.string() })).optional(),
-        legalLinks: z.array(
-          z.object({
-            label: z.string(),
-            url: z.string()
-          })
-        ),
-        ecoDesignTitle: z.string(),
-        ecoDesignText: z.string(),
-        ecoDesignUrl: z.string(),
-        pwablo: z.object({
-          pwabloText: z.string(),
-          pwabloUrl: z.string()
-        }),
-        copyrightText: z.string().optional()
+    ),
+    contactButtonText: z.string()
+  }),
+  footer: z.object({
+    menuTitle: z.string(),
+    contactTitle: z.string(),
+    contactInfo: z.object({
+      phone: z.string(),
+      email: z.string(),
+      linkedin: z.string(),
+      address: z.string()
+    }).optional(),
+    menuLinks: z.array(z.object({ label: z.string(), url: z.string() })).optional(),
+    legalLinks: z.array(
+      z.object({
+        label: z.string(),
+        url: z.string()
       })
+    ),
+    ecoDesignTitle: z.string(),
+    ecoDesignText: z.string(),
+    ecoDesignUrl: z.string(),
+    pwablo: z.object({
+      pwabloText: z.string(),
+      pwabloUrl: z.string()
     }),
-    it: z.object({
-      header: z.object({
-        mainLinks: z.array(
-          z.object({
-            label: z.string(),
-            url: z.string(),
-            hasDropdown: z.boolean().optional().default(false),
-            dropdownItems: z.array(
-              z.object({
-                label: z.string(),
-                url: z.string()
-              })
-            ).optional()
-          })
-        ),
-        contactButtonText: z.string()
-      }),
-      footer: z.object({
-        menuTitle: z.string(),
-        contactTitle: z.string(),
-        contactInfo: z.object({
-          phone: z.string(),
-          email: z.string(),
-          linkedin: z.string(),
-          address: z.string()
-        }).optional(),
-        menuLinks: z.array(z.object({ label: z.string(), url: z.string() })).optional(),
-        legalLinks: z.array(
-          z.object({
-            label: z.string(),
-            url: z.string()
-          })
-        ),
-        ecoDesignTitle: z.string(),
-        ecoDesignText: z.string(),
-        ecoDesignUrl: z.string(),
-        pwablo: z.object({
-          pwabloText: z.string(),
-          pwabloUrl: z.string()
-        }),
-        copyrightText: z.string().optional()
-      })
-    }),
+    copyrightText: z.string().optional()
   })
 });
 
-// Collection UI Translations
+const navigationCollection = defineCollection({
+  type: 'data',
+  schema: perLocale(navigationSchema)
+});
+
+// Collection UI Translations — every string the interface renders.
+const uiTranslationsSchema = z.object({
+  readMore: z.string(),
+  viewAllArticles: z.string(),
+  blogTitle: z.string(),
+  noArticles: z.string(),
+  allCategories: z.string(),
+  header: z.object({
+    contactButton: z.string(),
+    bookWith: z.string(),
+    contactForm: z.string()
+  }),
+  footer: z.object({
+    menu: z.string(),
+    contact: z.string(),
+    legalNotice: z.string(),
+    privacyPolicy: z.string(),
+    legalInfo: z.string(),
+    design: z.string(),
+    ecoDesign: z.string(),
+    ecoDesignTitle: z.string()
+  }),
+  cta: z.object({
+    title: z.string(),
+    email: z.string(),
+    appointment: z.string(),
+    call: z.string(),
+    bookAction: z.string()
+  }),
+  contactForm: z.object({
+    formTitle: z.string(),
+    nameLabel: z.string(),
+    namePlaceholder: z.string(),
+    emailLabel: z.string(),
+    emailPlaceholder: z.string(),
+    phoneLabel: z.string(),
+    phonePlaceholder: z.string(),
+    subjectLabel: z.string(),
+    subjectPlaceholder: z.string(),
+    messageLabel: z.string(),
+    messagePlaceholder: z.string(),
+    submitButton: z.string(),
+    sending: z.string(),
+    successMessage: z.string(),
+    errorMessage: z.string()
+  }),
+  contactSuccess: z.object({
+    title: z.string(),
+    heading: z.string(),
+    message: z.string(),
+    info: z.string(),
+    backToHome: z.string(),
+    backToContact: z.string()
+  }),
+  blog: z.object({
+    seoTitle: z.string(),
+    seoDescription: z.string(),
+    seoKeywords: z.array(z.string()),
+    backToArticles: z.string(),
+    keyPoints: z.string(),
+    readTime: z.string()
+  }),
+  team: z.object({
+    title: z.string(),
+    viewProfile: z.string(),
+    backToTeam: z.string(),
+    languages: z.string(),
+    career: z.string(),
+    conferences: z.string(),
+    publications: z.string(),
+    inCollaborationWith: z.string()
+  }),
+  notFound: z.object({
+    title: z.string(),
+    message: z.string(),
+    backHome: z.string()
+  })
+});
+
+export type UiTranslations = z.infer<typeof uiTranslationsSchema>;
+
 const uiTranslationsCollection = defineCollection({
   type: 'data',
-  schema: z.record(
-    z.string(), // language key
-    z.object({
-      readMore: z.string(),
-      viewAllArticles: z.string(),
-      contactCta: z.string(),
-      navigation: z.string(),
-      legalPages: z.string(),
-      ecoDesignPwablo: z.string(),
-      copyright: z.string().optional(),
-      blogTitle: z.string(),
-      noArticles: z.string(),
-      allCategories: z.string(),
-      ctaTitle: z.string(),
-      ctaSubtitle: z.string(),
-      takeAppointment: z.string(),
-      call: z.string(),
-      whatsapp: z.string(),
-      email: z.string(),
-      learnMore: z.string(),
-      additionalTranslations: z.object({
-        activePage: z.string(),
-        submit: z.string(),
-        cancel: z.string(),
-        search: z.string(),
-        close: z.string(),
-        menu: z.string().optional(),
-        backToTop: z.string().optional(),
-        share: z.string().optional(),
-        readingTime: z.string().optional(),
-        minutes: z.string().optional(),
-        publishedOn: z.string().optional(),
-        categories: z.string().optional(),
-        nextArticle: z.string().optional(),
-        previousArticle: z.string().optional(),
-        relatedArticles: z.string().optional(),
-        lastUpdated: z.string().optional(),
-        contactMe: z.string().optional(),
-        bookAppointment: z.string().optional(),
-        bookWith: z.string().optional(),
-        contactForm: z.string().optional()
-      }).optional()
-    })
-  )
+  schema: perLocale(uiTranslationsSchema)
 });
 
 // Profile: only the shared, locale-independent keys are typed. Per-locale lawyer

@@ -2,39 +2,13 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { Home } from 'astro-feather-icons2';
 import illustration404 from '../assets/images/404_illustration.svg';
-import { LOCALES, LOCALE_PATTERN, DEFAULT_LOCALE } from '../config/locales';
-
-// Définit les langues supportées et la langue par défaut
-const supportedLanguages = LOCALES;
-type SupportedLanguage = typeof supportedLanguages[number];
-const defaultLang = DEFAULT_LOCALE as SupportedLanguage;
+import { LOCALE_PATTERN, DEFAULT_LOCALE, localeFromPath } from '../config/locales';
+import { getUiTranslations } from '../utils/ui-translations';
 
 // Récupère la langue depuis l'URL
-const lang = supportedLanguages.find(l => Astro.url.pathname.startsWith(`/${l}/`)) || defaultLang;
+const lang = localeFromPath(Astro.url.pathname);
 
-const translations = {
-  fr: {
-    title: 'Page non trouvée - 404',
-    message: 'La page que vous recherchez n\'existe pas ou a été déplacée.',
-    backHome: 'Retour à l\'accueil',
-    description: 'Erreur 404 - Page non trouvée sur le site de Me Christine Rizzo, avocate en droit du travail à Bruxelles.'
-  },
-  en: {
-    title: 'Page not found - 404',
-    message: 'The page you are looking for doesn\'t exist or has been moved.',
-    backHome: 'Back to home',
-    description: 'Error 404 - Page not found on Christine Rizzo\'s website, attorney specialized in labor law in Brussels.'
-  },
-  it: {
-    title: 'Pagina non trovata - 404',
-    message: 'La pagina che stai cercando non esiste o è stata spostata.',
-    backHome: 'Torna alla home',
-    description: 'Errore 404 - Pagina non trovata sul sito di Christine Rizzo, avvocato specializzato in diritto del lavoro a Bruxelles.'
-  }
-};
-
-// On est certain que 'lang' est une clé valide ici
-const t = translations[lang];
+const t = (await getUiTranslations(lang)).notFound;
 ---
 
 <BaseLayout 

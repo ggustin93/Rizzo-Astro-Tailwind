@@ -2,8 +2,8 @@
 import { getCollection, getEntry } from 'astro:content';
 import { Image } from 'astro:assets';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-
-type Language = 'fr' | 'it' | 'en';
+import { getUiTranslations } from '../../../utils/ui-translations';
+import type { Locale } from '../../../config/locales';
 
 // Récupérer la configuration du site
 const siteConfigEntry = await getEntry('config', 'site-config');
@@ -17,7 +17,7 @@ export async function getStaticPaths() {
   const blogEntries = await getCollection('blog');
 
   return blogEntries.map(entry => {
-    const [lang, ...slugParts] = entry.slug.split('/');
+    const [lang, ...slugParts] = entry.slug.split('/') as [Locale, ...string[]];
     return {
       params: { lang, slug: slugParts.join('/') },
       props: { entry, lang },
@@ -28,13 +28,7 @@ export async function getStaticPaths() {
 const { entry, lang } = Astro.props;
 const { Content } = await entry.render();
 
-const translations = {
-  fr: { backToArticles: "← Retour aux articles", keyPoints: "Points clés :", readTime: "temps de lecture" },
-  en: { backToArticles: "← Back to articles", keyPoints: "Key points:", readTime: "read time" },
-  it: { backToArticles: "← Torna agli articoli", keyPoints: "Punti chiave:", readTime: "tempo di lettura" }
-};
-
-const t = translations[lang as Language];
+const t = (await getUiTranslations(lang)).blog;
 
 // Function to generate LinkedIn share text
 function generateLinkedInShareText(title: string, url: string) {

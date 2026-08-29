@@ -4,9 +4,10 @@ import { MessageCircle } from 'astro-feather-icons';
 import ctaIllustration from '../assets/images/illustration_cta_2.svg';
 import { getEntry } from 'astro:content';
 import { isValidCalendarLink, calEmbedTarget } from '../utils/calendar.js';
+import { localeFromPath } from '../config/locales';
+import { getUiTranslations } from '../utils/ui-translations';
 
-const { pathname } = Astro.url;
-const lang = pathname.split('/')[1] || 'fr';
+const lang = localeFromPath(Astro.url.pathname);
 
 // Récupérer la configuration du site
 const siteConfigEntry = await getEntry('config', 'site-config');
@@ -16,34 +17,7 @@ if (!lawyers || lawyers.length === 0) {
   throw new Error("FATAL: No lawyers found in site-config.yml for CTA component.");
 }
 
-const translations = {
-  fr: {
-    ctaTitle: "Contactez-nous",
-    ctaSubtitle: "",
-    email: "EMAIL",
-    appointment: "RDV",
-    call: "APPEL",
-    bookAction: "Réserver"
-  },
-  en: {
-    ctaTitle: "Contact us",
-    ctaSubtitle: "",
-    email: "EMAIL",
-    appointment: "APPOINTMENT",
-    call: "CALL",
-    bookAction: "Book"
-  },
-  it: {
-    ctaTitle: "Contattaci",
-    ctaSubtitle: "",
-    email: "EMAIL",
-    appointment: "APPUNTAMENTO",
-    call: "CHIAMA",
-    bookAction: "Prenota"
-  }
-};
-
-const t = translations[lang as keyof typeof translations] || translations.fr;
+const t = (await getUiTranslations(lang)).cta;
 
 const handleAction = (type: string, action: string, calendarLink?: string) => {
   switch(type) {
@@ -70,7 +44,7 @@ const handleAction = (type: string, action: string, calendarLink?: string) => {
             <div class="w-12 sm:w-16 lg:w-16 h-px bg-white/40 mr-3"></div>
             <h2 class="text-lg sm:text-xl lg:text-2xl font-light text-white uppercase flex items-center whitespace-nowrap tracking-widest">
               <MessageCircle class="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-accent" />
-              {t.ctaTitle}
+              {t.title}
             </h2>
             <div class="w-12 sm:w-16 lg:w-16 h-px bg-white/40 ml-3"></div>
           </div>

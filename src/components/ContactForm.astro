@@ -1,8 +1,9 @@
 ---
 import { getEntry } from 'astro:content';
+import { localeFromPath } from '../config/locales';
+import { getUiTranslations } from '../utils/ui-translations';
 
-const { pathname } = Astro.url;
-const lang = pathname.split('/')[1] || 'fr';
+const lang = localeFromPath(Astro.url.pathname);
 
 // Get site configuration
 const siteConfigEntry = await getEntry('config', 'site-config');
@@ -12,62 +13,7 @@ const showContactForm = siteConfigEntry?.data?.showContactForm ?? true;
 // Get all lawyer emails for form notifications
 const lawyerEmails = lawyers.map((lawyer: any) => lawyer.email).join(', ');
 
-// Translations
-const translations = {
-  fr: {
-    formTitle: "Envoyez-nous un message",
-    nameLabel: "Nom complet *",
-    namePlaceholder: "Jean Dupont",
-    emailLabel: "Email *",
-    emailPlaceholder: "jean.dupont@exemple.com",
-    phoneLabel: "Téléphone",
-    phonePlaceholder: "+32 4XX XX XX XX",
-    subjectLabel: "Objet *",
-    subjectPlaceholder: "Objet de votre demande",
-    messageLabel: "Message *",
-    messagePlaceholder: "Décrivez votre situation ou votre question...",
-    submitButton: "Envoyer le message",
-    sending: "Envoi en cours...",
-    successMessage: "Merci pour votre message. Nous vous répondrons dans les plus brefs délais.",
-    errorMessage: "Une erreur s'est produite. Veuillez réessayer ou nous contacter directement."
-  },
-  en: {
-    formTitle: "Send us a message",
-    nameLabel: "Full Name *",
-    namePlaceholder: "John Doe",
-    emailLabel: "Email *",
-    emailPlaceholder: "john.doe@example.com",
-    phoneLabel: "Phone",
-    phonePlaceholder: "+32 4XX XX XX XX",
-    subjectLabel: "Subject *",
-    subjectPlaceholder: "Subject of your inquiry",
-    messageLabel: "Message *",
-    messagePlaceholder: "Describe your situation or question...",
-    submitButton: "Send Message",
-    sending: "Sending...",
-    successMessage: "Thank you for your message. We will respond as soon as possible.",
-    errorMessage: "An error occurred. Please try again or contact us directly."
-  },
-  it: {
-    formTitle: "Inviaci un messaggio",
-    nameLabel: "Nome completo *",
-    namePlaceholder: "Mario Rossi",
-    emailLabel: "Email *",
-    emailPlaceholder: "mario.rossi@esempio.com",
-    phoneLabel: "Telefono",
-    phonePlaceholder: "+32 4XX XX XX XX",
-    subjectLabel: "Oggetto *",
-    subjectPlaceholder: "Oggetto della richiesta",
-    messageLabel: "Messaggio *",
-    messagePlaceholder: "Descrivi la tua situazione o domanda...",
-    submitButton: "Invia messaggio",
-    sending: "Invio in corso...",
-    successMessage: "Grazie per il tuo messaggio. Risponderemo il prima possibile.",
-    errorMessage: "Si è verificato un errore. Riprova o contattaci direttamente."
-  }
-};
-
-const t = translations[lang as keyof typeof translations] || translations.fr;
+const t = (await getUiTranslations(lang)).contactForm;
 ---
 
 {showContactForm && (

@@ -20,3 +20,13 @@ export const isLocale = (value: string): value is Locale =>
 
 /** Alternation group for URL matching, e.g. /^\/(fr|en|it)/ */
 export const LOCALE_PATTERN = LOCALES.join('|');
+
+/**
+ * Locale of a URL path, e.g. '/en/blog/' -> 'en'. Falls back to the default
+ * locale for paths that carry none (`/`, `/404`), so callers never have to
+ * repeat `split('/')[1] || 'fr'`.
+ */
+export const localeFromPath = (pathname: string): Locale => {
+  const segment = pathname.split('/')[1] ?? '';
+  return isLocale(segment) ? segment : DEFAULT_LOCALE;
+};

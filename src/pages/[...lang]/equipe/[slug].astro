@@ -3,6 +3,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { ChevronLeft, Linkedin } from 'astro-feather-icons2';
 import { LOCALES } from '../../../config/locales';
 import { getTeam } from '../../../utils/team.js';
+import { getUiTranslations } from '../../../utils/ui-translations';
 
 export const prerender = true;
 
@@ -21,34 +22,7 @@ export async function getStaticPaths() {
 const { lang } = Astro.params;
 const { lawyer } = Astro.props as { lawyer: any };
 
-const translations = {
-  fr: {
-    backToTeam: "Retour à l'équipe",
-    languages: 'Langues',
-    career: 'Parcours',
-    conferences: 'Conférences',
-    publications: 'Publications',
-    inCollaborationWith: 'En collaboration avec'
-  },
-  en: {
-    backToTeam: 'Back to team',
-    languages: 'Languages',
-    career: 'Career',
-    conferences: 'Conferences',
-    publications: 'Publications',
-    inCollaborationWith: 'In collaboration with'
-  },
-  it: {
-    backToTeam: 'Torna al team',
-    languages: 'Lingue',
-    career: 'Percorso',
-    conferences: 'Conferenze',
-    publications: 'Pubblicazioni',
-    inCollaborationWith: 'In collaborazione con'
-  }
-};
-
-const t = translations[lang as keyof typeof translations] || translations.fr;
+const t = (await getUiTranslations(lang)).team;
 
 const seoData = {
   title: lawyer.seo?.title || lawyer.name,

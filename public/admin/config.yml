@@ -809,33 +809,103 @@ collections:
             fields: &uiTranslationsFields
               - {label: "Lire la suite", name: "readMore", widget: "string", default: "Lire la suite"}
               - {label: "Voir tous les articles", name: "viewAllArticles", widget: "string", default: "Voir tous les articles"}
-              - {label: "Prendre rendez-vous", name: "contactCta", widget: "string", default: "Prendre rendez-vous"}
-              - {label: "Navigation", name: "navigation", widget: "string", default: "Navigation"}
-              - {label: "Pages légales", name: "legalPages", widget: "string", default: "Pages légales"}
-              - {label: "Eco-design & Pwablo", name: "ecoDesignPwablo", widget: "string", default: "Eco-design & Pwablo"}
-              - {label: "Copyright", name: "copyright", widget: "string", default: "© 2024 Christine Rizzo"}
               - {label: "Titre du blog", name: "blogTitle", widget: "string", default: "Articles"}
               - {label: "Aucun article trouvé", name: "noArticles", widget: "string", default: "Aucun article trouvé."}
               - {label: "Toutes catégories", name: "allCategories", widget: "string", default: "Toutes catégories"}
-              - {label: "Titre CTA", name: "ctaTitle", widget: "string", default: "Une question en droit du travail?"}
-              - {label: "Sous-titre CTA", name: "ctaSubtitle", widget: "string", default: "Contactez-moi. Je suis à votre écoute."}
-              - {label: "Prendre RDV", name: "takeAppointment", widget: "string", default: "Prendre RDV"}
-              - {label: "Appeler", name: "call", widget: "string", default: "Appeler"}
-              - {label: "WhatsApp", name: "whatsapp", widget: "string", default: "WhatsApp"}
-              - {label: "Email", name: "email", widget: "string", default: "Email"}
-              - {label: "En savoir plus", name: "learnMore", widget: "string", default: "En savoir plus"}
-              - label: "Autres traductions"
-                name: "additionalTranslations"
+              - label: "En-tête"
+                name: "header"
                 widget: "object"
                 collapsed: true
                 fields:
-                  - {label: "Page active", name: "activePage", widget: "string", default: "Page active"}
-                  - {label: "Soumettre", name: "submit", widget: "string", default: "Soumettre"}
-                  - {label: "Annuler", name: "cancel", widget: "string", default: "Annuler"}
-                  - {label: "Rechercher", name: "search", widget: "string", default: "Rechercher"}
-                  - {label: "Fermer", name: "close", widget: "string", default: "Fermer"}
-                  - {label: "Prendre rendez-vous avec (menu header)", name: "bookWith", widget: "string", required: false, default: "Prendre rendez-vous avec", hint: "Précède le nom de l'avocate dans le menu de réservation du header."}
-                  - {label: "Formulaire de contact (menu header)", name: "contactForm", widget: "string", required: false, default: "Formulaire de contact", hint: "Dernière entrée du menu de réservation du header."}
+                  - {label: "Bouton contact", name: "contactButton", widget: "string", default: "ME CONTACTER"}
+                  - {label: "Prendre rendez-vous avec", name: "bookWith", widget: "string", default: "Prendre rendez-vous avec", hint: "Précède le nom de l'avocate dans le menu de réservation."}
+                  - {label: "Formulaire de contact", name: "contactForm", widget: "string", default: "Formulaire de contact", hint: "Dernière entrée du menu de réservation."}
+              - label: "Pied de page"
+                name: "footer"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - {label: "Menu", name: "menu", widget: "string", default: "Menu"}
+                  - {label: "Contact", name: "contact", widget: "string", default: "Contact"}
+                  - {label: "Mentions légales", name: "legalNotice", widget: "string", default: "Mentions légales"}
+                  - {label: "Politique de confidentialité", name: "privacyPolicy", widget: "string", default: "Politique de confidentialité"}
+                  - {label: "Infos légales & CGV", name: "legalInfo", widget: "string", default: "Infos légales & CGV"}
+                  - {label: "Crédit design", name: "design", widget: "string", default: "Design by Pwablo"}
+                  - {label: "Score d'éco-conception", name: "ecoDesign", widget: "string", default: "Score d'éco-conception"}
+                  - {label: "Titre éco-conception", name: "ecoDesignTitle", widget: "string", default: "Site web écologique"}
+              - label: "Bloc contact (CTA)"
+                name: "cta"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - {label: "Titre", name: "title", widget: "string", default: "Contactez-nous"}
+                  - {label: "Email", name: "email", widget: "string", default: "EMAIL"}
+                  - {label: "Rendez-vous", name: "appointment", widget: "string", default: "RDV"}
+                  - {label: "Appel", name: "call", widget: "string", default: "APPEL"}
+                  - {label: "Réserver", name: "bookAction", widget: "string", default: "Réserver"}
+              - label: "Formulaire de contact"
+                name: "contactForm"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - {label: "Titre du formulaire", name: "formTitle", widget: "string", default: "Envoyez-nous un message"}
+                  - {label: "Libellé nom", name: "nameLabel", widget: "string", default: "Nom complet *"}
+                  - {label: "Exemple nom", name: "namePlaceholder", widget: "string", default: "Jean Dupont"}
+                  - {label: "Libellé email", name: "emailLabel", widget: "string", default: "Email *"}
+                  - {label: "Exemple email", name: "emailPlaceholder", widget: "string", default: "jean.dupont@exemple.com"}
+                  - {label: "Libellé téléphone", name: "phoneLabel", widget: "string", default: "Téléphone"}
+                  - {label: "Exemple téléphone", name: "phonePlaceholder", widget: "string", default: "+32 4XX XX XX XX"}
+                  - {label: "Libellé objet", name: "subjectLabel", widget: "string", default: "Objet *"}
+                  - {label: "Exemple objet", name: "subjectPlaceholder", widget: "string", default: "Objet de votre demande"}
+                  - {label: "Libellé message", name: "messageLabel", widget: "string", default: "Message *"}
+                  - {label: "Exemple message", name: "messagePlaceholder", widget: "string", default: "Décrivez votre situation ou votre question..."}
+                  - {label: "Bouton d'envoi", name: "submitButton", widget: "string", default: "Envoyer le message"}
+                  - {label: "Envoi en cours", name: "sending", widget: "string", default: "Envoi en cours..."}
+                  - {label: "Message de succès", name: "successMessage", widget: "string", default: "Merci pour votre message. Nous vous répondrons dans les plus brefs délais."}
+                  - {label: "Message d'erreur", name: "errorMessage", widget: "string", default: "Une erreur s'est produite. Veuillez réessayer ou nous contacter directement."}
+              - label: "Page de confirmation d'envoi"
+                name: "contactSuccess"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - {label: "Titre (onglet)", name: "title", widget: "string", default: "Message envoyé avec succès"}
+                  - {label: "Titre affiché", name: "heading", widget: "string", default: "Merci pour votre message !"}
+                  - {label: "Message", name: "message", widget: "string", default: "Nous avons bien reçu votre message et nous vous répondrons dans les plus brefs délais."}
+                  - {label: "Information de délai", name: "info", widget: "string", default: "Un membre de notre équipe examinera votre demande et vous contactera sous 24 à 48 heures ouvrables."}
+                  - {label: "Retour à l'accueil", name: "backToHome", widget: "string", default: "Retour à l'accueil"}
+                  - {label: "Envoyer un autre message", name: "backToContact", widget: "string", default: "Envoyer un autre message"}
+              - label: "Blog"
+                name: "blog"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - {label: "Titre SEO", name: "seoTitle", widget: "string", default: "Blog | Christine Rizzo - Avocate en droit du travail à Bruxelles"}
+                  - {label: "Description SEO", name: "seoDescription", widget: "text", default: "Découvrez les derniers articles sur le droit du travail en Belgique."}
+                  - {label: "Mots-clés SEO", name: "seoKeywords", widget: "list", field: {label: "Mot-clé", name: "keyword", widget: "string"}}
+                  - {label: "Retour aux articles", name: "backToArticles", widget: "string", default: "← Retour aux articles"}
+                  - {label: "Points clés", name: "keyPoints", widget: "string", default: "Points clés :"}
+                  - {label: "Temps de lecture", name: "readTime", widget: "string", default: "temps de lecture"}
+              - label: "Équipe"
+                name: "team"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - {label: "Titre", name: "title", widget: "string", default: "L'équipe"}
+                  - {label: "Voir le profil", name: "viewProfile", widget: "string", default: "Découvrir le profil complet"}
+                  - {label: "Retour à l'équipe", name: "backToTeam", widget: "string", default: "Retour à l'équipe"}
+                  - {label: "Langues", name: "languages", widget: "string", default: "Langues"}
+                  - {label: "Parcours", name: "career", widget: "string", default: "Parcours"}
+                  - {label: "Conférences", name: "conferences", widget: "string", default: "Conférences"}
+                  - {label: "Publications", name: "publications", widget: "string", default: "Publications"}
+                  - {label: "En collaboration avec", name: "inCollaborationWith", widget: "string", default: "En collaboration avec"}
+              - label: "Page 404"
+                name: "notFound"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - {label: "Titre", name: "title", widget: "string", default: "Page non trouvée - 404"}
+                  - {label: "Message", name: "message", widget: "string", default: "La page que vous recherchez n'existe pas ou a été déplacée."}
+                  - {label: "Retour à l'accueil", name: "backHome", widget: "string", default: "Retour à l'accueil"}
 
           - label: "English"
             name: "en"

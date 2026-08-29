@@ -3,6 +3,7 @@ import { getEntry } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { CheckCircle } from 'astro-feather-icons';
 import { localePaths } from '../../../config/locales';
+import { getUiTranslations } from '../../../utils/ui-translations';
 
 export const prerender = true;
 
@@ -16,35 +17,7 @@ const { lang } = Astro.params;
 const contactEntry = await getEntry('contact', 'contact');
 const contactData = contactEntry?.data[lang] || contactEntry?.data['fr'];
 
-// Translations for success page
-const translations = {
-  fr: {
-    title: "Message envoyé avec succès",
-    heading: "Merci pour votre message !",
-    message: "Nous avons bien reçu votre message et nous vous répondrons dans les plus brefs délais.",
-    info: "Un membre de notre équipe examinera votre demande et vous contactera sous 24 à 48 heures ouvrables.",
-    backToHome: "Retour à l'accueil",
-    backToContact: "Envoyer un autre message"
-  },
-  en: {
-    title: "Message Sent Successfully",
-    heading: "Thank you for your message!",
-    message: "We have received your message and will respond as soon as possible.",
-    info: "A member of our team will review your request and contact you within 24 to 48 business hours.",
-    backToHome: "Back to Home",
-    backToContact: "Send Another Message"
-  },
-  it: {
-    title: "Messaggio inviato con successo",
-    heading: "Grazie per il tuo messaggio!",
-    message: "Abbiamo ricevuto il tuo messaggio e risponderemo il prima possibile.",
-    info: "Un membro del nostro team esaminerà la tua richiesta e ti contatterà entro 24-48 ore lavorative.",
-    backToHome: "Torna alla Home",
-    backToContact: "Invia un altro messaggio"
-  }
-};
-
-const t = translations[lang as keyof typeof translations] || translations.fr;
+const t = (await getUiTranslations(lang)).contactSuccess;
 
 // SEO data
 const seoData = {

@@ -4,16 +4,12 @@ import LanguagePicker from '../components/LanguagePicker.astro';
 import Button from '../components/Button.astro';
 import { getEntry } from 'astro:content';
 import Icon from './Icon.astro';
-import { LOCALES } from '../config/locales';
+import { LOCALES, localeFromPath } from '../config/locales';
 import { bookableLawyers, calEmbedTarget } from '../utils/calendar.js';
-import { getUiTranslations, type SupportedLanguage } from '../utils/ui-translations';
-
-export interface Props {
-  currentLang: string;
-}
+import { getUiTranslations } from '../utils/ui-translations';
 
 const { pathname } = Astro.url;
-const currentLang = pathname.split('/')[1] || 'fr'; // Par défaut à 'fr' si aucune langue n'est trouvée
+const currentLang = localeFromPath(pathname);
 
 // Langues disponibles pour le site
 const langs = LOCALES;
@@ -28,14 +24,10 @@ const lawyersToBook = bookableLawyers(siteConfigEntry?.data?.lawyers);
 
 // Récupérer la configuration de navigation
 const navigationEntry = await getEntry('navigation', 'navigation');
-const navConfig = navigationEntry?.data?.[currentLang] || navigationEntry?.data?.fr; // Fallback à FR
+const navConfig = navigationEntry?.data?.[currentLang];
 
 // Récupérer les traductions UI
-const uiTranslations = await getUiTranslations(currentLang as SupportedLanguage);
-
-// Libellés de repli si le CMS ne fournit rien. Les libellés de navigation
-// viennent de navigation.yml (mainLinks), pas d'ici.
-const fallbackContactLabel = { fr: 'ME CONTACTER', en: 'CONTACT ME', it: 'CONTATTAMI' };
+const uiTranslations = await getUiTranslations(currentLang);
 
 const isHomePage = pathname === `/${currentLang}` || pathname === `/${currentLang}/`;
 
@@ -94,14 +86,11 @@ const rightNavLinks = showArticlesSection ?
     isActive: isActivePage(link.url)
   }));
 
-// Texte du bouton Contact depuis la configuration
-const contactButtonText =
-  navConfig?.header?.contactButtonText || fallbackContactLabel[currentLang] || fallbackContactLabel.fr;
+// Texte du bouton Contact depuis la configuration, sinon le libellé CMS.
+const contactButtonText = navConfig?.header?.contactButtonText || uiTranslations.header.contactButton;
 
 // Libellés du menu de réservation, éditables dans le CMS (ui-translations).
-const bookingLabels = uiTranslations?.additionalTranslations;
-const bookWithLabel = bookingLabels?.bookWith ?? 'Prendre rendez-vous avec';
-const contactFormLabel = bookingLabels?.contactForm ?? 'Formulaire de contact';
+const { bookWith: bookWithLabel, contactForm: contactFormLabel } = uiTranslations.header;
 ---
 
 <style>
