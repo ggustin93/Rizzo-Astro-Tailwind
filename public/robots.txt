@@ -13,5 +13,50 @@ Allow: /
 User-agent: Googlebot-Mobile
 Allow: /
 
+# Crawlers IA et moteurs de réponse.
+# Le cabinet autorise l'indexation et la citation par les moteurs génératifs :
+# le contenu est public et la visibilité y est recherchée (issue #10).
+User-agent: GPTBot
+Allow: /
+Disallow: /admin/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /admin/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /admin/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /admin/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /admin/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /admin/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /admin/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /admin/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+
+# Résumé du cabinet destiné aux moteurs génératifs : /llms.txt
+
 # Sitemap pour faciliter l'indexation
 Sitemap: https://rizzo-michiels.be/sitemap-index.xml

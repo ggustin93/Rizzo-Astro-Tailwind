@@ -4,6 +4,7 @@ import { ViewTransitions } from "astro:transitions";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import SvgSprite from "../components/SvgSprite.astro";
+import StructuredData from "../components/StructuredData.astro";
 import "../styles/global.css";
 import { LOCALES, DEFAULT_LOCALE } from '../config/locales';
 
@@ -103,11 +104,14 @@ const pathname = Astro.url.pathname;
     <meta name="twitter:site" content="@ChristineRizzo">
     <meta name="twitter:creator" content="@ChristineRizzo">
 
+    <!-- Structured data: firm + lawyers, for rich results and AI citations (#10) -->
+    <StructuredData siteUrl={String(siteUrl)} pageUrl={finalCanonical} />
+
     <!-- Hreflang links -->
     {supportedLanguages.map(l => (
         <link rel="alternate" hreflang={l} href={`${siteUrl}/${l}${pathname.substring(3)}`} />
     ))}
-    <link rel="alternate" hreflang="x-default" href={`${siteUrl}/fr${pathname.substring(3)}`} />
+    <link rel="alternate" hreflang="x-default" href={`${siteUrl}/${DEFAULT_LOCALE}${pathname.substring(3)}`} />
 
     <!-- Préconnexions -->
     <link rel="preconnect" href="https://app.cal.com">

@@ -1,0 +1,71 @@
+---
+import { getEntry } from 'astro:content';
+import { LOCALES } from '../config/locales';
+import { isValidCalendarLink } from '../utils/calendar.js';
+
+export interface Props {
+  siteUrl: string;
+  pageUrl: string;
+}
+
+const { siteUrl, pageUrl } = Astro.props;
+
+const siteConfigEntry = await getEntry('config', 'site-config');
+const { seo, lawyers = [], address = '' } = siteConfigEntry?.data ?? {};
+
+// "Chaussée de Waterloo 1151, 1180 Bruxelles" -> street / postal code / city.
+// The address is a single free-text field in site-config (its single source of
+// truth); schema.org wants the parts separately.
+const [streetAddress = address, locality = ''] = address.split(',').map((part) => part.trim());
+const localityMatch = locality.match(/^(\d{4})\s+(.+)$/);
+
+const firmId = `${siteUrl}/#firm`;
+
+const firm = {
+  '@type': 'LegalService',
+  '@id': firmId,
+  name: seo?.siteName,
+  description: seo?.siteDescription,
+  url: pageUrl,
+  areaServed: 'BE',
+  inLanguage: [...LOCALES],
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress,
+    postalCode: localityMatch?.[1] ?? '',
+    addressLocality: localityMatch?.[2] ?? locality,
+    addressCountry: 'BE'
+  },
+  telephone: lawyers[0]?.phone,
+  email: lawyers[0]?.email,
+  knowsLanguage: [...LOCALES],
+  serviceType: 'Droit du travail'
+};
+
+const people = lawyers.map((lawyer) => ({
+  '@type': 'Person',
+  '@id': `${siteUrl}/#${lawyer.email}`,
+  name: lawyer.name,
+  jobTitle: 'Avocate',
+  email: lawyer.email,
+  telephone: lawyer.phone,
+  worksFor: { '@id': firmId },
+  ...(lawyer.linkedin ? { sameAs: [lawyer.linkedin] } : {}),
+  ...(isValidCalendarLink(lawyer.calendarLink)
+    ? {
+        potentialAction: {
+          '@type': 'ScheduleAction',
+          target: lawyer.calendarLink,
+          name: `Prendre rendez-vous avec ${lawyer.name}`
+        }
+      }
+    : {})
+}));
+
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [{ ...firm, employee: people.map((person) => ({ '@id': person['@id'] })) }, ...people]
+};
+---
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(graph)} />
