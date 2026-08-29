@@ -3,6 +3,7 @@ import Icon from './Icon.astro';
 import { MessageCircle } from 'astro-feather-icons';
 import ctaIllustration from '../assets/images/illustration_cta_2.svg';
 import { getEntry } from 'astro:content';
+import { isValidCalendarLink, calEmbedTarget } from '../utils/calendar.js';
 
 const { pathname } = Astro.url;
 const lang = pathname.split('/')[1] || 'fr';
@@ -43,13 +44,6 @@ const translations = {
 };
 
 const t = translations[lang as keyof typeof translations] || translations.fr;
-
-// Helper function to validate if a calendar link is valid
-const isValidCalendarLink = (link: string | undefined): boolean => {
-  if (!link) return false;
-  // Check if it's a valid Cal.com URL
-  return link.startsWith('https://cal.com/') || link.startsWith('http://cal.com/');
-};
 
 const handleAction = (type: string, action: string, calendarLink?: string) => {
   switch(type) {
@@ -126,7 +120,7 @@ const handleAction = (type: string, action: string, calendarLink?: string) => {
                         <button
                           class="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full flex items-center justify-center mb-2 hover:bg-travailleur hover:shadow-lg transition-all duration-300 transform hover:scale-105 group cursor-pointer"
                           onclick={handleAction('appointment', t.bookAction, lawyer.calendarLink)}
-                          data-cal-link={lawyer.calendarLink?.replace('https://cal.com/', '')}
+                          data-cal-link={calEmbedTarget(lawyer.calendarLink)}
                           data-cal-config='{"layout":"month_view"}'
                           aria-label={`Book appointment with ${lawyer.name}`}
                         >
@@ -136,7 +130,7 @@ const handleAction = (type: string, action: string, calendarLink?: string) => {
                         <button 
                           class="text-sm sm:text-base text-white/70 font-light hover:text-white transition-colors duration-200 hover:underline cursor-pointer"
                           onclick={handleAction('appointment', t.bookAction, lawyer.calendarLink)}
-                          data-cal-link={lawyer.calendarLink?.replace('https://cal.com/', '')}
+                          data-cal-link={calEmbedTarget(lawyer.calendarLink)}
                           data-cal-config='{"layout":"month_view"}'
                         >
                           {t.bookAction}
