@@ -13,4 +13,15 @@ export default defineConfig({
     { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
     { name: 'mobile-safari', use: { ...devices['iPhone 14'] } },
   ],
+  // Tests assert against production output: the dev server injects Astro's dev-toolbar
+  // DOM (extra <h1>s) which breaks strict-mode locators. BASE_URL overrides this to
+  // point at a Netlify deploy preview instead (issue #14).
+  webServer: process.env.BASE_URL
+    ? undefined
+    : {
+        command: 'npm run build && npm run preview',
+        url: 'http://localhost:4321/fr/',
+        reuseExistingServer: true,
+        timeout: 300_000,
+      },
 });

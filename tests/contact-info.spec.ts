@@ -15,6 +15,9 @@ const lawyers = {
 
 const address = 'Chaussée de Waterloo 1151';
 
+// Legal pages expose the firm's shared editor mailbox, not a lawyer's personal address.
+const editorEmail = 'rizzomichiels@gmail.com';
+
 test.describe('Contact Information Verification', () => {
 
   test.describe('Contact Page', () => {
@@ -56,7 +59,7 @@ test.describe('Contact Information Verification', () => {
 
         // Target the specific main content area of the legal pages
         const mainContent = page.locator('div.bg-white > main');
-        await expect(mainContent).toContainText(lawyers.christine.email);
+        await expect(mainContent).toContainText(editorEmail);
         await expect(mainContent).toContainText(lawyers.christine.phone);
         await expect(mainContent).toContainText(address);
       });

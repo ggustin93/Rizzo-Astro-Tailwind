@@ -6,8 +6,8 @@ const languages = ['fr', 'en', 'it'];
 
 test.describe('European Institutions Service Page', () => {
   const expectedTitles: Record<string, string> = {
-    fr: 'Institutions et agences européennes',
-    en: 'European institutions and agencies',
+    fr: 'Fonctionnaires et institutions',
+    en: 'EU institutions and staff members',
     it: 'Istituzioni e agenzie europee',
   };
 
@@ -36,17 +36,17 @@ test.describe('European Institutions Service Page', () => {
 test.describe('Homepage Expertise Grid', () => {
   const expertiseBlocks: Record<string, { employeurs: string; travailleurs: string; europeennes: string }> = {
     fr: {
-      employeurs: 'Vous êtes une entreprise',
+      employeurs: 'Vous êtes employeur',
       travailleurs: 'Vous êtes un.e travailleur·euse',
-      europeennes: 'Institutions européennes',
+      europeennes: 'Institutions & fonctionnaires européens',
     },
     en: {
       employeurs: 'You are an employer',
       travailleurs: 'You are an employee',
-      europeennes: 'European Institutions',
+      europeennes: 'European institutions & officials',
     },
     it: {
-      employeurs: 'Aziende',
+      employeurs: 'Siete un datore di lavoro',
       travailleurs: 'Lavoratori',
       europeennes: 'Istituzioni europee',
     },
@@ -98,9 +98,9 @@ test.describe('Honoraires Intro Block Removed from Homepage', () => {
 
 test.describe('Navigation Dropdown - European Institutions Link', () => {
   const navLabels: Record<string, string> = {
-    fr: 'INSTITUTIONS EUROPÉENNES',
-    en: 'EUROPEAN INSTITUTIONS',
-    it: 'ISTITUZIONI EUROPEE',
+    fr: 'FONCTIONNAIRES & INSTITUTIONS UE',
+    en: 'EU OFFICIALS & INSTITUTIONS',
+    it: 'FUNZIONARI & ISTITUZIONI UE',
   };
 
   for (const lang of languages) {
