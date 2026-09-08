@@ -16,11 +16,11 @@ fr:
 
       Les frais liés à l'intervention de tiers (huissiers, experts, traducteurs, avocats spécialisés dans d'autres domaines) ou les frais de justice (droits de greffe) sont refacturés au prix coûtant ou directement payables au tiers intervenant.
   forfaits:
-    title: Avoir une réponse rapide à une question - Première consultation 45 min -
-      200 € htva.
-    intro: "La première réunion de 45 minutes est facturée 200 € htva. La TVA est de
-      21%. N'hésitez pas à y apporter tous les documents que vous jugez utiles
-      pour cette première rencontre. "
+    title: Besoin d'un premier avis ?
+    intro: Consultez nos disponibilités directement sur notre calendrier en ligne et
+      réservez votre créneau. Le premier rendez-vous est facturé 275 € TVAC.
+      N'hésitez pas à apporter tous les documents que vous jugez utiles pour
+      cette première rencontre.
     exemples: []
   transparence:
     title: Transparence
@@ -87,11 +87,10 @@ en:
 
       Costs related to third-party interventions (bailiffs, experts, translators, lawyers specialized in other fields) or court fees (registry fees) are invoiced at cost or directly payable to the intervening third party.
   forfaits:
-    title: Get a quick answer to a question - First consultation 45 min - 200 €
-      excl. tax.
-    intro: "The first 45-minute meeting is charged at 200 € excluding VAT. VAT is
-      21%. Please feel free to bring any documents you consider useful for this
-      initial meeting. "
+    title: Need a first opinion?
+    intro: Check our availability directly on our online calendar and book your
+      slot. The first meeting is billed at €275, VAT included. Feel free to
+      bring any documents you consider useful for this first meeting.
     exemples: []
   transparence:
     title: Transparency
@@ -159,11 +158,11 @@ it:
 
       I costi relativi all'intervento di terzi (ufficiali giudiziari, esperti, traduttori, avvocati specializzati in altri settori) o le spese giudiziarie (diritti di cancelleria) vengono rifatturati al costo o sono direttamente pagabili al terzo interveniente.
   forfaits:
-    title: Avere una risposta rapida a una domanda - Primo appuntamento 45 min - 200
-      € IVA esclusa.
-    intro: "Il primo incontro di 45 minuti ha un costo di 200 € IVA esclusa. L'IVA è
-      del 21%. Non esitate a portare con voi tutti i documenti che ritenete
-      utili per questo primo incontro. "
+    title: Ha bisogno di un primo parere?
+    intro: Consulti le nostre disponibilità direttamente sul nostro calendario
+      online e prenoti il suo appuntamento. Il primo incontro è fatturato 275 €
+      IVA inclusa. Non esiti a portare tutti i documenti che ritiene utili per
+      questo primo incontro.
     exemples: []
   transparence:
     title: Trasparenza
