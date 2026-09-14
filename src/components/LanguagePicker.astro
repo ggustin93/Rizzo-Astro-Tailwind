@@ -4,6 +4,7 @@ import Icon from './Icon.astro';
 import { LOCALES } from '../config/locales';
 const { currentLang } = Astro.props;
 const langs = LOCALES;
+const languageLabel = { fr: 'Choisir la langue', en: 'Choose language', it: 'Scegli la lingua', nl: 'Kies de taal' }[currentLang] || 'Choisir la langue';
 ---
 
 <style>
@@ -56,6 +57,7 @@ const langs = LOCALES;
   <div class="lang-select-wrapper">
     <select 
       id="language-select"
+      aria-label={languageLabel}
       class="appearance-none text-black text-sm font-light bg-transparent border-0 pr-6 uppercase transition-colors duration-300 focus:outline-none group-hover:text-gray-700"
     >
       {langs.map((lang) => (

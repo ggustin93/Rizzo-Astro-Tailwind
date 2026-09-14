@@ -115,7 +115,6 @@ const pathname = Astro.url.pathname;
     <link rel="alternate" hreflang="x-default" href={`${siteUrl}/${DEFAULT_LOCALE}${pathname.substring(3)}`} />
 
     <!-- Préconnexions -->
-    <link rel="preconnect" href="https://app.cal.com">
     <link rel="preconnect" href="https://unpkg.com">
 
     <!-- Favicons et manifeste -->
@@ -125,38 +124,6 @@ const pathname = Astro.url.pathname;
     <link rel="manifest" href="/site.webmanifest">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-    <!-- Cal.com Script -->
-    <script is:inline type="text/javascript">
-    (function (C, A, L) {
-      let p = function (a, ar) { a.q.push(ar); };
-      let d = C.document;
-      C.Cal = C.Cal || function () {
-        let cal = C.Cal;
-        let ar = arguments;
-        if (!cal.loaded) {
-          cal.ns = {};
-          cal.q = cal.q || [];
-          d.head.appendChild(d.createElement("script")).src = A;
-          cal.loaded = true;
-        }
-        if (ar[0] === L) {
-          const api = function () { p(api, arguments); };
-          const namespace = ar[1];
-          api.q = api.q || [];
-          typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar);
-          return;
-        }
-        p(cal, ar);
-      };
-    })(window, "https://app.cal.com/embed/embed.js", "init");
-    Cal("init", {origin:"https://cal.com"});
-
-    Cal("ui", {
-      styles: {branding: {brandColor: "#000000"}},
-      hideEventTypeDetails: false,
-      layout: "month_view"
-    });
-    </script>
 </head>
 <body class="bg-beige bg-svg-pattern">
   <SvgSprite />
@@ -168,20 +135,41 @@ const pathname = Astro.url.pathname;
     <Footer currentLang={currentLang}/>
   </div>
 
-  <!-- Script for Cal.com -->
+  <!-- Load booking only after an explicit appointment request. -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      document.body.addEventListener('click', function(e) {
-        if (e.target instanceof HTMLElement && e.target.hasAttribute('data-cal-link')) {
-          window.Cal("ui", {
-            styles: {branding: {brandColor: "#000000"}},
-            hideEventTypeDetails: false,
-            layout: "month_view"
-          });
+    let bookingReady = false;
+    let bookingLoad;
+    document.addEventListener('click', async (event) => {
+      const link = event.target instanceof Element ? event.target.closest('a[data-cal-link]') : null;
+      if (!(link instanceof HTMLAnchorElement) || bookingReady || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      if (!bookingLoad) {
+        bookingLoad = new Promise((resolve, reject) => {
+          const cal = function (...args) { cal.q.push(args); };
+          cal.q = [];
+          cal.ns = {};
+          window.Cal = cal;
+          cal('init', { origin: 'https://cal.com' });
+          const script = document.createElement('script');
+          script.src = 'https://app.cal.com/embed/embed.js';
+          script.onload = resolve;
+          script.onerror = reject;
+          document.head.appendChild(script);
+        });
+      }
+      try {
+        await bookingLoad;
+        if (!bookingReady) {
+          window.Cal('ui', { hideEventTypeDetails: false, layout: 'month_view' });
+          bookingReady = true;
         }
-      });
-    });
-    </script>
+        window.Cal('modal', { calLink: link.dataset.calLink, config: JSON.parse(link.dataset.calConfig || '{}') });
+      } catch {
+        window.location.assign(link.href);
+      }
+    }, true);
+  </script>
     <!-- Script pour l'amélioration de l'accessibilité -->
     <script>
       document.addEventListener('keydown', function(e) {
