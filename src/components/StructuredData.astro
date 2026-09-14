@@ -3,7 +3,7 @@ import { getEntry } from 'astro:content';
 import { LOCALES } from '../config/locales';
 import { isValidCalendarLink } from '../utils/calendar.js';
 import { getContactInfo } from '../utils/contact-info.js';
-import { getTeam } from '../utils/team.js';
+import { getTeam, profilePath } from '../utils/team.js';
 
 export interface Props {
   lang: string;
@@ -13,7 +13,7 @@ export interface Props {
 const { lang, siteUrl } = Astro.props;
 
 const siteConfigEntry = await getEntry('config', 'site-config');
-const { seo, lawyers = [] } = siteConfigEntry?.data ?? {};
+const { seo } = siteConfigEntry?.data ?? {};
 
 // The firm's advertised contact is resolved by getContactInfo(), not by taking
 // lawyers[0] — reordering the array must not change the cabinet's public identity.
@@ -22,7 +22,7 @@ const contact = await getContactInfo();
 // Job titles are per-locale, so they come from the team content rather than a
 // hardcoded French string on every language's pages.
 const team = await getTeam(lang);
-const titleFor = (name) => team.find((member) => member.name === name)?.title;
+
 
 // "Chaussée de Waterloo 1151, 1180 Bruxelles" -> street / postal code / city.
 // The address is a single free-text field in site-config (its single source of
@@ -57,19 +57,21 @@ const firm = {
   knowsLanguage: [...LOCALES]
 };
 
-const people = lawyers.map((lawyer) => {
-  const jobTitle = titleFor(lawyer.name);
+const people = team.map((lawyer) => {
+  const contact = lawyer.contact;
   return {
     '@type': 'Person',
-    '@id': `${siteUrl}/#${lawyer.email}`,
+    '@id': `${siteUrl}/#${lawyer.id}`,
     name: lawyer.name,
-    ...(jobTitle ? { jobTitle } : {}),
-    email: lawyer.email,
-    telephone: lawyer.phone,
+    jobTitle: lawyer.title,
+    url: `${siteUrl}${profilePath(lang, lawyer)}`,
+    image: new URL(lawyer.profileImage, siteUrl).href,
+    ...(contact?.email ? { email: contact.email } : {}),
+    ...(contact?.phone ? { telephone: contact.phone } : {}),
     worksFor: { '@id': firmId },
     ...(lawyer.linkedin ? { sameAs: [lawyer.linkedin] } : {}),
-    ...(isValidCalendarLink(lawyer.calendarLink)
-      ? { potentialAction: { '@type': 'ScheduleAction', target: lawyer.calendarLink } }
+    ...(isValidCalendarLink(contact?.calendarLink)
+      ? { potentialAction: { '@type': 'ScheduleAction', target: contact.calendarLink } }
       : {})
   };
 });

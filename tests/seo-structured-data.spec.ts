@@ -42,8 +42,13 @@ test.describe('JSON-LD structured data', () => {
         expect.arrayContaining(lawyers.map((lawyer) => lawyer.name))
       );
       for (const person of people) {
-        expect(person.email, `${person.name} has an email`).toBeTruthy();
-        expect(person.telephone, `${person.name} has a phone`).toBeTruthy();
+        const contact = lawyers.find(lawyer => lawyer.name === person.name);
+        if (contact) {
+          expect(person.email).toBe(contact.email);
+          expect(person.telephone).toBe(contact.phone);
+        } else {
+          expect(person.email).toBeUndefined();
+        }
         expect(person.worksFor, `${person.name} is linked to the firm`).toBeTruthy();
         expect(person.jobTitle, `${person.name} has a job title`).toBeTruthy();
       }

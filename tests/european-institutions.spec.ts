@@ -36,24 +36,24 @@ test.describe('European Institutions Service Page', () => {
 test.describe('Homepage Expertise Grid', () => {
   const expertiseBlocks: Record<string, { employeurs: string; travailleurs: string; europeennes: string }> = {
     fr: {
-      employeurs: 'Vous êtes employeur',
-      travailleurs: 'Vous êtes un.e travailleur·euse',
-      europeennes: 'Institutions & fonctionnaires européens',
+      employeurs: 'Vous dirigez une PME, une TPE ou une start-up belge ?',
+      travailleurs: 'Vous êtes salarié·e et rencontrez un litige avec votre employeur ? Vous êtes indépendant ?',
+      europeennes: 'Vous êtes une institution européenne, un·e fonctionnaire ou un·e agent·e contractuel·le ?',
     },
     en: {
-      employeurs: 'You are an employer',
-      travailleurs: 'You are an employee',
-      europeennes: 'European institutions & officials',
+      employeurs: 'Do you run a Belgian SME, micro-enterprise or start-up?',
+      travailleurs: 'Are you an employee in a dispute with your employer? Are you self-employed?',
+      europeennes: 'Are you a European institution, an official or a member of the contract staff?',
     },
     it: {
-      employeurs: 'Siete un datore di lavoro',
-      travailleurs: 'Lavoratori',
-      europeennes: 'Istituzioni europee',
+      employeurs: 'Dirigete una PMI, una microimpresa o una start-up belga?',
+      travailleurs: 'Siete lavoratori dipendenti e avete una controversia con il vostro datore di lavoro? Siete lavoratori autonomi?',
+      europeennes: 'Siete un’istituzione europea, un funzionario o un agente contrattuale?',
     },
     nl: {
-      employeurs: 'U bent werkgever',
-      travailleurs: 'U bent werknemer',
-      europeennes: 'Europese instellingen & ambtenaren',
+      employeurs: 'Leidt u een Belgische kmo, micro-onderneming of start-up?',
+      travailleurs: 'Bent u werknemer en hebt u een geschil met uw werkgever? Bent u zelfstandige?',
+      europeennes: 'Bent u een Europese instelling, een ambtenaar of een contractueel personeelslid?',
     },
   };
 
@@ -79,9 +79,9 @@ test.describe('Homepage Expertise Grid', () => {
       await expect(blocks.nth(2)).toContainText(titles.europeennes);
 
       // Links to service pages exist
-      await expect(expertiseSection.locator(`a[href="/${lang}/services/employeurs"]`)).toBeVisible();
-      await expect(expertiseSection.locator(`a[href="/${lang}/services/travailleurs"]`)).toBeVisible();
-      await expect(expertiseSection.locator(`a[href="/${lang}/services/europeennes"]`)).toBeVisible();
+      await expect(expertiseSection.locator(`a[href="/${lang}/services/employeurs/"]`)).toBeVisible();
+      await expect(expertiseSection.locator(`a[href="/${lang}/services/travailleurs/"]`)).toBeVisible();
+      await expect(expertiseSection.locator(`a[href="/${lang}/services/europeennes/"]`)).toBeVisible();
     });
   }
 });
