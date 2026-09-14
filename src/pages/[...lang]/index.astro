@@ -151,28 +151,27 @@ export const prerender = true;
   </div>
   
   <div class="full-bleed bg-white">
-    <section id="profil" class="py-16 md:py-24 bg-svg-pattern">
+    <section id="profil" class="team-section">
       <div class="container mx-auto px-4">
         <div class="flex items-center mb-6 md:mb-8 lg:mb-12 justify-center">
           <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
           <h2 class="text-2xl sm:text-3xl font-light text-gray-800 mx-4 md:mx-8 text-center flex items-center">
-            <User class="w-5 h-5 md:w-6 md:h-6 mr-2 md:mr-3 text-travailleur" />
             {content.profil.title}
           </h2>
           <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
         </div>
-        <img src={media.team} alt={content.profil.imageAlt} class="w-full h-auto max-w-2xl mx-auto mb-8" width="1200" height="600" loading="lazy" />
+        <img src={media.team} alt={content.profil.imageAlt} class="team-illustration" width="1200" height="600" loading="lazy" />
         <div class="max-w-5xl mx-auto text-center">
           <p class="text-dark-gray text-base md:text-lg font-light leading-relaxed mb-6 max-w-3xl mx-auto">{content.profil.description}</p>
           <p class="text-lg font-medium text-gray-800 mb-8">{content.profil.cta}</p>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <div class="team-grid">
             {lawyersWithImages.map(lawyer => {
               const Tag = portraitLinks === 'profiles' ? 'a' : 'div';
               return (
-                <Tag href={portraitLinks === 'profiles' ? profilePath(currentLang, lawyer) : undefined} class="block rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">
+                <Tag href={portraitLinks === 'profiles' ? profilePath(currentLang, lawyer) : undefined} class="team-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">
                   <img src={lawyer.image} alt={lawyer.imageAlt || lawyer.name} width="500" height="500" loading="lazy" decoding="async"
-                    class="aspect-square w-full max-w-[180px] mx-auto object-cover rounded-xl mb-4" />
-                  <h3 class="text-base md:text-lg font-semibold text-gray-800">{lawyer.name}</h3>
+                    class="team-portrait" />
+                  <div class="team-card-caption"><h3>{lawyer.name}</h3>{portraitLinks === 'profiles' && <ArrowRight aria-hidden="true" class="team-card-arrow" />}</div>
                 </Tag>
               );
             })}
@@ -223,6 +222,24 @@ export const prerender = true;
 </BaseLayout>
 
 <style>
+  .team-section { padding-block: clamp(2.5rem, 5vw, 4rem); }
+  .team-illustration { width: min(100%, 24rem); height: auto; margin: 0 auto 1.5rem; }
+  .team-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; text-align: left; }
+  .team-card { display: flex; flex-direction: column; min-width: 0; background: #faf6f1; border: 1px solid #e8e1d9; border-radius: 16px; overflow: hidden; text-decoration: none; transition: border-color .2s, box-shadow .2s; }
+  a.team-card:hover { border-color: #c5b99f; box-shadow: 0 6px 20px rgba(38,57,82,.08); }
+  .team-portrait { aspect-ratio: 1 / 1; width: 100%; object-fit: cover; }
+  .team-card-caption { display: flex; align-items: center; justify-content: space-between; gap: .6rem; padding: 1rem; flex: 1; border-top: 3px solid #ffcc33; }
+  .team-card-caption h3 { font-size: 1rem; line-height: 1.4; font-weight: 500; color: #263952; }
+  .team-card-caption :global(.team-card-arrow) { width: 18px; height: 18px; flex-shrink: 0; color: #087b8a; }
+  @media (max-width: 767px) {
+    .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .85rem; }
+    .team-illustration { max-width: 17rem; }
+    .team-card-caption { padding: .8rem .65rem; }
+    .team-card-caption h3 { font-size: .9375rem; }
+    .team-card-caption :global(.team-card-arrow) { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { .team-card { transition: none; } }
+
   .home-hero { padding-block: clamp(2.5rem, 5vw, 5rem); }
   .hero-layout { display: grid; align-items: center; gap: 2.5rem; }
   .hero-copy { min-width: 0; }
