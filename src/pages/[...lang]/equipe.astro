@@ -1,5 +1,7 @@
 ---
 import { getDataEntryById } from 'astro:content';
+import '../../styles/editorial.css';
+import { ArrowRight } from 'astro-feather-icons2';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { localePaths } from '../../config/locales';
 import { getTeam, profilePath } from '../../utils/team.js';
@@ -37,23 +39,23 @@ const seoData = {
   keywords={seoData.keywords}
   lang={lang}
 >
-  <div class="bg-white md:my-20 p-4 md:p-8">
+  <div class="editorial-page">
     <div class="max-w-6xl mx-auto px-4 py-8 md:py-12">
       <h1 class="text-3xl md:text-4xl lg:text-5xl font-light text-gray-800 mb-8 md:mb-12 text-center">{t.title}</h1>
       
       <div class="space-y-12 md:space-y-16">
         {lawyersToDisplay.map((lawyer: any, index: number) => (
-          <div class={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 md:gap-12 items-start`}>
+          <div class="team-entry flex flex-col md:flex-row gap-8 md:gap-12 items-start">
             <!-- Lawyer Image -->
             <div class="w-full md:w-1/3">
-              <img src={lawyer.image} alt={lawyer.imageAlt || lawyer.name} class="w-full rounded-lg shadow-lg">
+              <img src={lawyer.image} alt={lawyer.imageAlt || lawyer.name} class="portrait" width="500" height="500" loading={index === 0 ? "eager" : "lazy"} decoding="async">
             </div>
             
             <!-- Lawyer Information - Overview Only -->
             <div class="w-full md:w-2/3">
-              <h2 class="text-2xl md:text-3xl lg:text-4xl font-light text-accent mb-4 md:mb-6">{lawyer.name}</h2>
+              <h2 class="text-2xl md:text-3xl lg:text-4xl font-light text-employeur mb-4 md:mb-6">{lawyer.name}</h2>
               
-              {lawyer.role && <p class="text-accent mb-4">{lawyer.role}</p>}
+              {lawyer.role && <p class="text-employeur mb-4">{lawyer.role}</p>}
               {lawyer.presentation.map((paragraph: string) => (
                 <p class="text-sm md:text-base text-dark-gray mb-4 md:mb-6">{paragraph}</p>
               ))}
@@ -61,12 +63,10 @@ const seoData = {
               <div class="mt-6">
                 <a 
                   href={profilePath(lang, lawyer)}
-                  class="inline-flex items-center px-6 py-3 bg-travailleur text-white font-semibold rounded-lg hover:bg-travailleur/90 hover:shadow-lg transform hover:scale-105 transition-all duration-300 shadow-md"
+                  class="profile-link"
                 >
                   {t.viewProfile}
-                  <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                  </svg>
+                  <ArrowRight aria-hidden="true" title="" class="w-4 h-4" />
                 </a>
               </div>
             </div>

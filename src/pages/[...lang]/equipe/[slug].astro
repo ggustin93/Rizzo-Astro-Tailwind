@@ -1,6 +1,7 @@
 ---
+import '../../../styles/editorial.css';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { ChevronLeft, Linkedin } from 'astro-feather-icons2';
+import { ChevronLeft, Linkedin, Briefcase, Globe, Mic, BookOpen } from 'astro-feather-icons2';
 import { LOCALES } from '../../../config/locales';
 import { getTeam } from '../../../utils/team.js';
 import { getUiTranslations } from '../../../utils/ui-translations';
@@ -43,7 +44,7 @@ const seoData = {
   keywords={seoData.keywords}
   lang={lang}
 >
-  <div class="bg-white md:my-20 p-4 md:p-8">
+  <div class="editorial-page">
     <div class="max-w-6xl mx-auto px-4 py-8 md:py-12">
 
       <!-- Back to team link -->
@@ -52,20 +53,20 @@ const seoData = {
           href={`/${lang}/equipe/`}
           class="inline-flex items-center text-gray-500 hover:text-gray-700 transition-colors duration-300 text-sm"
         >
-          <ChevronLeft aria-hidden="true" class="w-4 h-4 mr-1" />
+          <ChevronLeft aria-hidden="true" title="" class="w-4 h-4 mr-1" />
           <span>{t.backToTeam}</span>
         </a>
       </div>
 
       <!-- Image visible only on mobile, above title -->
       <div class="md:hidden mb-8">
-        <img src={lawyer.profileImage} alt={lawyer.imageAlt || lawyer.name} class="w-full rounded-lg shadow-lg">
+        <img src={lawyer.profileImage} alt={lawyer.imageAlt || lawyer.name} class="portrait" width="600" height="750" decoding="async">
       </div>
 
       <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
         <div class="w-full md:w-2/3">
-          <h1 class="text-3xl md:text-4xl lg:text-5xl font-light text-accent mb-2">{lawyer.name}</h1>
-          <h2 class="text-xl md:text-2xl font-light text-gray-600 mb-4">{lawyer.title}</h2>
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-light text-employeur mb-2">{lawyer.name}</h1>
+          <p class="text-xl md:text-2xl text-gray-600 mb-4">{lawyer.title}</p>
 
           {lawyer.role && <p class="text-gray-600 mb-4">{lawyer.role}</p>}
 
@@ -75,9 +76,9 @@ const seoData = {
               href={lawyer.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 hover:shadow-lg transform hover:scale-105 transition-all duration-300 mb-6"
+              class="profile-link mb-6"
             >
-              <Linkedin aria-hidden="true" class="w-5 h-5 mr-2" />
+              <Linkedin aria-hidden="true" title="" class="w-5 h-5 mr-2" />
               <span class="text-sm font-medium">LinkedIn</span>
             </a>
           )}
@@ -90,12 +91,12 @@ const seoData = {
 
           <div class="space-y-6 md:space-y-8 mt-6 md:mt-8">
             {lawyer.careerPath && lawyer.careerPath.length > 0 && (
-              <div>
-                <h3 class="text-lg md:text-xl font-semibold text-black mb-2 md:mb-3">{t.career}</h3>
-                <ul class="space-y-2 mb-4 md:mb-6">
+              <div class="profile-section">
+                <h2 class="text-lg md:text-xl font-semibold text-black mb-2 md:mb-3"><Briefcase aria-hidden="true" title="" />{t.career}</h2>
+                <ul class="profile-timeline space-y-2 mb-4 md:mb-6">
                   {lawyer.careerPath.map((item: any) => (
                     <li class="flex flex-col sm:flex-row">
-                      <span class="font-semibold text-accent sm:w-24 flex-shrink-0">{item.year}</span>
+                      <span class="font-semibold text-employeur sm:w-24 flex-shrink-0">{item.year}</span>
                       <span class="text-sm md:text-base text-dark-gray">{item.event}</span>
                     </li>
                   ))}
@@ -104,19 +105,19 @@ const seoData = {
             )}
 
             {lawyer.languages && (
-              <div>
-                <h3 class="text-lg md:text-xl font-semibold text-black mb-2 md:mb-3">{t.languages}</h3>
+              <div class="profile-section">
+                <h2 class="text-lg md:text-xl font-semibold text-black mb-2 md:mb-3"><Globe aria-hidden="true" title="" />{t.languages}</h2>
                 <p class="text-sm md:text-base text-dark-gray mb-4 md:mb-6">{lawyer.languages}</p>
               </div>
             )}
 
             {lawyer.conferences && lawyer.conferences.length > 0 && (
-              <div>
-                <h3 class="text-lg md:text-xl font-semibold text-black mb-2 md:mb-4">{t.conferences}</h3>
+              <div class="profile-section">
+                <h2 class="text-lg md:text-xl font-semibold text-black mb-2 md:mb-4"><Mic aria-hidden="true" title="" />{t.conferences}</h2>
                 <ul class="space-y-2 mb-6 md:mb-8">
                   {lawyer.conferences.map((conf: string) => (
                     <li class="text-sm md:text-base text-dark-gray flex items-start">
-                      <span class="text-accent mr-2 text-2xl md:text-4xl">•</span>
+                      <span class="text-employeur mr-2 text-2xl md:text-4xl">•</span>
                       <span>{conf}</span>
                     </li>
                   ))}
@@ -125,13 +126,13 @@ const seoData = {
             )}
 
             {(lawyer.publicationsIntro || lawyer.publications.length > 0) && (
-              <div>
-                <h3 class="text-lg md:text-xl font-semibold text-black mb-2 md:mb-3">{t.publications}</h3>
+              <div class="profile-section">
+                <h2 class="text-lg md:text-xl font-semibold text-black mb-2 md:mb-3"><BookOpen aria-hidden="true" title="" />{t.publications}</h2>
                 {lawyer.publicationsIntro && <p class="text-dark-gray mb-4">{lawyer.publicationsIntro}</p>}
                 <ul class="space-y-3">
                   {lawyer.publications.map((pub: any) => (
                     <li class="text-sm md:text-base text-dark-gray flex items-start">
-                      <span class="text-accent mr-2 text-2xl md:text-4xl">•</span>
+                      <span class="text-employeur mr-2 text-2xl md:text-4xl">•</span>
                       <div>
                         <span>{pub.date}:</span> "{pub.title}", {pub.publisher}
                         {pub.coAuthors?.length > 0 && <span class="italic"> ({t.inCollaborationWith} {pub.coAuthors.join(', ')})</span>}
@@ -145,9 +146,9 @@ const seoData = {
         </div>
 
         <!-- Image visible only on desktop -->
-        <div class="hidden md:block md:w-1/3">
-          <div class="md:mt-[7.5rem]">
-            <img src={lawyer.profileImage} alt={lawyer.imageAlt || lawyer.name} class="w-full rounded-lg shadow-lg">
+        <div class="hidden md:block md:w-1/3 md:sticky md:top-28">
+          <div>
+            <img src={lawyer.profileImage} alt={lawyer.imageAlt || lawyer.name} class="portrait" width="600" height="750" decoding="async">
           </div>
         </div>
       </div>

@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from './Button.astro';
-import { ArrowRight } from 'astro-feather-icons2';
+import { ArrowRight, Briefcase, User, ChevronDown } from 'astro-feather-icons2';
 const { content, lang, audience } = Astro.props;
 const isWorkerPage = audience === 'travailleurs';
+const AudienceIcon = isWorkerPage ? User : Briefcase;
 ---
 <BaseLayout
   title={content.seo.title}
@@ -13,25 +14,42 @@ const isWorkerPage = audience === 'travailleurs';
   keywords={content.seo.keywords?.join(', ')}
   lang={lang}
 >
-  <div class="bg-white my-6 md:my-20 px-6 py-10 md:p-16 rounded-lg">
-    <div class="max-w-3xl mx-auto">
-      <h1 class="text-3xl md:text-4xl font-light text-black mb-8">{content.title}</h1>
-      {content.description && <p class="whitespace-pre-line text-dark-gray leading-relaxed mb-8">{content.description}</p>}
-      <p class="text-xl text-dark-gray mb-8">{content.servicesTitle}</p>
+  <article class:list={['services-page', { 'services-page--worker': isWorkerPage }]}>
+    <header class="services-header">
+      <span class="audience-icon"><AudienceIcon aria-hidden="true" title="" class="w-7 h-7" /></span>
+      <h1>{content.title}</h1>
+      {content.description && <p class="whitespace-pre-line">{content.description}</p>}
+    </header>
+    <div class="services-layout">
+      <nav class="services-index" aria-label={content.servicesTitle}>
+        <p class="index-title">{content.servicesTitle}</p>
+        {content.sections.map((section, index) => (
+          <a href={`#service-${index}`}><span>{section.title}</span><ArrowRight aria-hidden="true" title="" class="w-4 h-4 shrink-0" /></a>
+        ))}
+      </nav>
+      <div class="services-content">
       <div class="space-y-10">
+
         {content.sections.map((section, index) => (
           <section aria-labelledby={`service-${index}`}>
             <h2
               id={`service-${index}`}
-              class:list={['text-xl md:text-2xl font-semibold mb-4', isWorkerPage ? 'text-travailleur' : 'text-employeur']}
+              class="service-title"
             >{section.title}</h2>
             {section.description && <p class="whitespace-pre-line leading-relaxed text-dark-gray">{section.description}</p>}
             {section.situations?.length > 0 && (
-              <ul class:list={['space-y-5 text-dark-gray leading-relaxed', isWorkerPage ? 'list-disc pl-6' : 'list-none', section.description && 'mt-5']}>
+              <ul class:list={['situations text-dark-gray leading-relaxed', section.description && 'mt-5']}>
                 {section.situations.map(situation => (
                   <li>
-                    <em class="whitespace-pre-line">{situation.question}</em>{' '}
-                    <span class="whitespace-pre-line">{situation.answer}</span>
+                    {content.situationsDisplay === 'accordion' ? (
+                      <details class="situation-disclosure">
+                        <summary><span>{situation.question}</span><ChevronDown aria-hidden="true" title="" class="w-5 h-5 shrink-0" /></summary>
+                        <p class="whitespace-pre-line">{situation.answer}</p>
+                      </details>
+                    ) : (
+                      <><strong class="situation-question whitespace-pre-line">{situation.question}</strong>{' '}
+                      <span class="whitespace-pre-line">{situation.answer}</span></>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -48,5 +66,39 @@ const isWorkerPage = audience === 'travailleurs';
         />
       </div>
     </div>
-  </div>
+    </div>
+  </article>
 </BaseLayout>
+
+<style>
+  .services-page { --service-color: var(--employer-brand); --service-ink: var(--employer-brand); margin: 2rem 0 5rem; }
+  .services-page--worker { --service-color: var(--worker-brand); --service-ink: var(--worker-ink); }
+  .services-header { max-width: 62rem; padding: clamp(2rem, 6vw, 5rem) 0 3rem; }
+  .audience-icon { display: inline-flex; padding: .9rem; border: 1px solid #d8dce4; border-radius: 50%; color: var(--service-color); margin-bottom: 1.5rem; }
+  h1 { font-size: clamp(2rem, 4vw, 3.6rem); line-height: 1.16; letter-spacing: -.035em; color: #263952; text-wrap: balance; }
+  .services-header p { max-width: 65ch; margin-top: 1.5rem; color: #414852; }
+  .services-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; align-items: start; }
+  .services-index { border-top: 3px solid var(--service-color); padding-top: 1rem; }
+  .index-title { color: #263952; font-weight: 600; margin-bottom: .8rem; }
+  .services-index a { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .9rem 0; border-bottom: 1px solid #dedbd8; font-size: .9rem; line-height: 1.5; color: #414852; }
+  .services-index a:hover { color: var(--service-color); text-decoration: underline; text-underline-offset: .2em; }
+  .services-index a:focus-visible { outline: 2px solid var(--service-color); outline-offset: 4px; }
+  .services-content { background: white; border-radius: 1rem; padding: clamp(1.5rem, 4vw, 3.5rem); min-width: 0; }
+  .service-title { scroll-margin-top: 8rem; }
+  section + section { border-top: 1px solid #e4e7ea; padding-top: 2.5rem; }
+  .service-title { font-size: clamp(1.35rem, 2vw, 1.7rem); line-height: 1.35; color: var(--service-ink); font-weight: 600; margin-bottom: 1.25rem; text-wrap: pretty; }
+  .situations { list-style: none; display: grid; gap: 1.75rem; }
+  .situations li { border-bottom: 1px solid #e4e7ea; padding-bottom: 1rem; }
+  .situation-disclosure summary { display: flex; align-items: start; justify-content: space-between; gap: 1rem; min-height: 44px; cursor: pointer; color: #263952; font-weight: 600; list-style: none; }
+  .situation-disclosure summary::-webkit-details-marker { display: none; }
+  .situation-disclosure summary:focus-visible { outline: 2px solid var(--service-color); outline-offset: 5px; }
+  .situation-disclosure summary :global(svg) { color: var(--service-color); margin-top: .2rem; }
+  .situation-disclosure[open] summary :global(svg) { transform: rotate(180deg); }
+  .situation-disclosure[open] summary { color: var(--service-ink); }
+  .situation-disclosure p { padding: .75rem 0 .25rem; max-width: 65ch; }
+  .situation-question { display: block; font-weight: 600; color: #263952; margin-bottom: .4rem; }
+  @media (min-width: 1024px) {
+    .services-layout { grid-template-columns: minmax(14rem, 1fr) minmax(0, 2.5fr); gap: 3rem; }
+    .services-index { position: sticky; top: 7rem; }
+  }
+</style>

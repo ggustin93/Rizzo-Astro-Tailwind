@@ -2,6 +2,7 @@ fr:
   title: Accompagnement et défense des travailleur·euse.s
   description: ''
   servicesTitle: Nos services
+  situationsDisplay: accordion
   ctaText: En savoir plus sur les tarifs
   seo:
     title: Services juridiques pour travailleurs | Rizzo & Michiels Avocates
@@ -85,6 +86,7 @@ en:
   title: Support and defense for employees
   description: ''
   servicesTitle: Our services
+  situationsDisplay: accordion
   ctaText: Learn more about fees
   seo:
     title: Legal services for employees | Rizzo & Michiels Attorneys
@@ -165,6 +167,7 @@ it:
   title: Supporto e difesa dei lavoratori
   description: ''
   servicesTitle: I nostri servizi
+  situationsDisplay: accordion
   ctaText: Scopri di più sulle tariffe
   seo:
     title: Servizi legali per i lavoratori | Rizzo & Michiels Avvocate
@@ -245,6 +248,7 @@ nl:
   title: Begeleiding en verdediging van werknemers
   description: ''
   servicesTitle: Onze diensten
+  situationsDisplay: accordion
   ctaText: Meer weten over de tarieven
   seo:
     title: Juridische diensten voor werknemers | Rizzo & Michiels Advocaten

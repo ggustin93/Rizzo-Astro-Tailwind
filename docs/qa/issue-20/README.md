@@ -164,3 +164,9 @@ Vérifications exécutées le 14 septembre après cette nouvelle passe :
 réussi (64 tests, 11,2 s), `git diff --check` réussi. La suite complète et la recette CMS ne sont
 pas répétées pour cette modification de lisibilité ; leurs preuves précédentes restent datées
 ci-dessus. Preview locale reconstruite ; aucun merge, push ou déploiement réalisé.
+
+## Ajustement UI du 14 septembre
+
+À la demande de Guillaume, les situations peuvent maintenant être affichées en accordéons natifs. Dans Decap, ouvrir la page Travailleurs ou Employeurs, puis la langue et **Affichage des situations** : « Tout déplié » ou « Accordéons ». Le choix est indépendant par page et langue. Les descriptions restent toujours visibles et les réponses sont présentes dans le HTML statique. Aucun balisage FAQ ajouté.
+
+Le sommaire utilise les titres des rubriques éditables. Les thèmes conservent leur couleur : turquoise Travailleurs, violet Employeurs, bleu Institutions européennes. La nuance foncée du turquoise sert uniquement la lisibilité des textes.

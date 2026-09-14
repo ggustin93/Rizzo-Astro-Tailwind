@@ -14,7 +14,7 @@ test.describe('Team profile routes', () => {
         await expect(page.locator('main h1')).toContainText(profile.name);
         // Career timeline is part of the shared canvas: assert a real entry, not
         // a substring that any page would satisfy.
-        await expect(page.locator('main h3').first()).toBeVisible();
+        await expect(page.locator('main h2').first()).toBeVisible();
         await expect(page.locator('main')).toContainText(profile.careerEntry);
         // Back-link returns to the team listing in the same language.
         await expect(page.locator(`main a[href="/${lang}/equipe/"]`).first()).toBeVisible();
@@ -35,8 +35,8 @@ test.describe('Team profile routes', () => {
     // Stephanie has `conferences: []` but a non-empty publications list.
     await page.goto(`${BASE_URL}/fr/equipe/stephanie-michiels/`);
     const main = page.locator('main');
-    await expect(main.locator('h3', { hasText: /^Parcours$/ })).toHaveCount(1);
-    await expect(main.locator('h3', { hasText: /^Publications$/ })).toHaveCount(1);
-    await expect(main.locator('h3', { hasText: /^Conférences$/ })).toHaveCount(0);
+    await expect(main.getByRole('heading', { level: 2, name: /^Parcours$/ })).toHaveCount(1);
+    await expect(main.getByRole('heading', { level: 2, name: /^Publications$/ })).toHaveCount(1);
+    await expect(main.getByRole('heading', { level: 2, name: /^Conférences$/ })).toHaveCount(0);
   });
 });

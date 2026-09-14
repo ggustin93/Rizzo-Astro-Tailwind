@@ -322,6 +322,7 @@ const belgianServicesCollection = defineCollection({
     title: requiredEditorialText('Titre'),
     description: z.string().optional(),
     servicesTitle: requiredEditorialText('Titre des services'),
+    situationsDisplay: z.enum(['expanded', 'accordion']).default('expanded'),
     sections: z.array(z.object({
       title: requiredEditorialText('Titre'),
       description: z.string().optional(),

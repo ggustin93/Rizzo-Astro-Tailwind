@@ -78,7 +78,14 @@ for (const lang of ['fr', 'en', 'it', 'nl']) {
       await expect(page).toHaveTitle(/Rizzo/);
       await expect(page.locator('main')).not.toContainText(/STEPH|MINI PHOTO|TODO|à valider|traduction provisoire/);
       await expect(page.locator('script[type="application/ld+json"]')).not.toContainText('FAQPage');
-      await expect(page.locator('main details')).toHaveCount(0);
+      await expect(page.locator('main details')).toHaveCount(audience === 'travailleurs' ? 10 : 4);
+      const disclosure = page.locator('main details').first();
+      await disclosure.locator('summary').focus();
+      await page.keyboard.press('Enter');
+      await expect(disclosure).toHaveAttribute('open', '');
+      await expect(disclosure.locator('p')).toBeVisible();
+      await page.keyboard.press('Enter');
+      await expect(disclosure).not.toHaveAttribute('open', '');
       const image = await page.locator('meta[property="og:image"]').getAttribute('content');
       expect((await request.get(new URL(image).pathname)).ok()).toBeTruthy();
       await expect(page.locator('meta[property="og:image:alt"]')).toHaveAttribute('content', /\S/);
@@ -102,6 +109,7 @@ for (const audience of ['travailleurs', 'employeurs']) {
     const { readFileSync } = await import('node:fs');
     const source = JSON.parse(readFileSync(new URL('./fixtures/belgian-services-fr.json', import.meta.url), 'utf8'));
     await page.goto(`/fr/services/${audience}/`);
+    for (const summary of await page.locator('main details summary').all()) await summary.click();
     for (const paragraph of source[audience]) {
       await expect(page.locator('main')).toContainText(paragraph);
     }

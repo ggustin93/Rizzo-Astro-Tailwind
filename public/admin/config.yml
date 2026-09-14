@@ -144,6 +144,14 @@ collections:
               - {label: "Titre de la page", name: "title", widget: "string", pattern: ['\S', "Le titre est obligatoire."]}
               - {label: "Introduction (facultative)", name: "description", widget: "text", required: false}
               - {label: "Titre des services", name: "servicesTitle", widget: "string", pattern: ['\S', "Le titre est obligatoire."]}
+              - label: "Affichage des situations"
+                name: "situationsDisplay"
+                widget: "select"
+                default: "expanded"
+                hint: "Les questions restent visibles. En accordéons, chaque réponse s’ouvre au clic ou au clavier."
+                options:
+                  - {label: "Tout déplié", value: "expanded"}
+                  - {label: "Accordéons", value: "accordion"}
               - label: "Rubriques"
                 name: "sections"
                 widget: "list"

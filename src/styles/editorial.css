@@ -1,0 +1,17 @@
+
+.editorial-page { color: #333; background: #fff; border-radius: 1rem; margin-block: 2rem 5rem; padding: clamp(1.25rem, 4vw, 3.5rem); }
+.editorial-page h1 { color: #263952; letter-spacing: -.035em; line-height: 1.15; text-wrap: balance; }
+.editorial-page h2, .editorial-page h3 { color: #263952; text-wrap: pretty; }
+.editorial-page p { max-width: 70ch; line-height: 1.8; }
+.editorial-page a:focus-visible { outline: 2px solid var(--worker-ink); outline-offset: 5px; }
+.editorial-page .portrait { border-radius: .75rem; background: #e6f3f6; box-shadow: none; width: 100%; height: auto; }
+.editorial-page .profile-link { display: inline-flex; align-items: center; gap: .75rem; min-height: 44px; padding: .7rem 1.15rem; border: 1px solid var(--worker-ink); color: #065e6b; border-radius: .5rem; font-weight: 600; transition: background-color .15s; }
+.editorial-page .profile-link:hover { background: #eaf5f6; }
+.team-entry + .team-entry { border-top: 1px solid #e1e6e8; padding-top: 3.5rem; }
+.team-entry .portrait { aspect-ratio: 1; object-fit: cover; max-width: 22rem; }
+.profile-section { border-top: 1px solid #e1e6e8; padding-top: 1.75rem; }
+.profile-section h2 { display: flex; align-items: center; gap: .75rem; }
+.profile-section h2 svg { width: 1.25rem; height: 1.25rem; flex-shrink: 0; color: var(--worker-ink); }
+.profile-timeline { border-left: 2px solid #dce8ea; padding-left: 1.25rem; }
+.profile-timeline li + li { margin-top: 1.1rem; }
+@media (prefers-reduced-motion: reduce) { .editorial-page a { transition: none; } }

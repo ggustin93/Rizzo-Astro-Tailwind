@@ -3,7 +3,7 @@ import { getEntry, getDataEntryById } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { LOCALES } from '../../config/locales';
 import CTA from '../../components/CTA.astro';
-import { ChevronDown, Briefcase, User, FileText } from 'astro-feather-icons2';
+import { ChevronDown, Briefcase, User, FileText, Globe, ArrowRight } from 'astro-feather-icons2';
 import { Calendar } from 'astro-feather-icons';
 import { getArticles } from '../../utils/articles';
 import { getTeam, profilePath } from '../../utils/team.js';
@@ -44,7 +44,8 @@ if (!homeEntry) {
 }
 const content = homeEntry.data[currentLang] || homeEntry.data['fr'];
 const { media, portraitLinks, serviceOrder } = homeEntry.data;
-const serviceColors = { employeurs: 'bg-employeur', travailleurs: 'bg-travailleur', europeennes: 'bg-europeenne' };
+const serviceColors = { employeurs: 'service-employer', travailleurs: 'service-worker', europeennes: 'service-europe' };
+const serviceIcons = { employeurs: Briefcase, travailleurs: User, europeennes: Globe };
 
 // Les avocates, leurs photos et leurs slugs sont résolus centralement pour que
 // les liens de la home ne puissent pas diverger des routes de [slug].astro.
@@ -71,11 +72,11 @@ export const prerender = true;
 
 <BaseLayout title={title} description={description} keywords={keywords} image={image} lang={currentLang}>  
   <div class="full-bleed bg-white bg-svg-pattern">
-    <section class="py-6 md:py-10 relative">
+    <section class="home-hero py-12 md:py-20 relative">
       <div class="container mx-auto px-4 flex flex-col items-center md:flex-row md:items-center md:justify-between">
         <div class="w-full md:w-1/2 text-center md:text-left">
-          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-2 md:mb-3 text-gray-800 leading-tight">{content.hero.title}</h1>
-          <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-3 md:mb-4 text-accent font-light leading-snug">{content.hero.subtitle}</h2>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light mb-2 md:mb-3 text-gray-800 leading-tight">{content.hero.title}</h1>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl mb-6 text-employeur font-light leading-snug">{content.hero.subtitle}</h2>
           <p class="mb-5 md:mb-6 text-base md:text-lg text-dark-gray max-w-xl mx-auto md:mx-0 font-light leading-relaxed">{content.hero.description}</p>
           <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start space-y-3 sm:space-y-0 sm:space-x-4">
             <Button 
@@ -90,7 +91,7 @@ export const prerender = true;
             <Button 
               variant="secondary"
               icon={ChevronDown}
-              onClick="document.getElementById('expertise').scrollIntoView({behavior: 'smooth'})"
+              href="#expertise"
               class="border-gray-400 hover:bg-beige hover:text-gray-900 text-center justify-center"
             >
               <span class="whitespace-nowrap">{content.hero.more}</span>
@@ -117,7 +118,7 @@ export const prerender = true;
       <div class="container px-4">
         <div class="flex items-center mb-4 md:mb-6 justify-center">
           <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
-          <h2 class="text-xl sm:text-2xl font-light text-gray-600 mx-6 md:mx-10 uppercase text-center flex items-center">
+          <h2 class="text-2xl sm:text-3xl font-light text-gray-800 mx-4 md:mx-8 text-center flex items-center">
             <Briefcase class="w-5 h-5 md:w-6 md:h-6 mr-2 md:mr-3 text-travailleur" />
             {content.expertise.title}
           </h2>
@@ -131,14 +132,16 @@ export const prerender = true;
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-0">
           {serviceOrder.map(key => {
             const service = content.expertise[key];
+            const ServiceIcon = serviceIcons[key];
             return (
-              <div class={`${serviceColors[key]} p-4 md:p-6 rounded-lg text-white flex flex-col justify-between`}>
+              <div class={`service-card ${serviceColors[key]} p-6 md:p-8 rounded-lg flex flex-col justify-between`}>
                 <div>
+                  <ServiceIcon aria-hidden="true" title="" class="service-icon w-8 h-8 mb-6" />
                   <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">{service.title}</h3>
                   <p class="text-base md:text-lg font-light mb-4">{service.description}</p>
                 </div>
-                <Button href={`/${currentLang}${service.destination}`} text={`${service.cta} →`} variant="secondary"
-                  class="self-end bg-white text-gray-900 hover:bg-transparent hover:text-white border-white" />
+                <Button href={`/${currentLang}${service.destination}`} text={service.cta} icon={ArrowRight} variant="secondary"
+                  class="self-start mt-4 border-current hover:bg-beige" />
               </div>
             );
           })}
@@ -153,13 +156,13 @@ export const prerender = true;
       <div class="container mx-auto px-4">
         <div class="flex items-center mb-6 md:mb-8 lg:mb-12 justify-center">
           <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
-          <h2 class="text-xl sm:text-2xl font-light text-gray-600 mx-6 md:mx-10 uppercase text-center flex items-center">
+          <h2 class="text-2xl sm:text-3xl font-light text-gray-800 mx-4 md:mx-8 text-center flex items-center">
             <User class="w-5 h-5 md:w-6 md:h-6 mr-2 md:mr-3 text-travailleur" />
             {content.profil.title}
           </h2>
           <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
         </div>
-        <img src={media.team} alt={content.profil.imageAlt} class="w-full h-auto max-w-4xl mx-auto mb-8" width="1200" height="600" loading="lazy" />
+        <img src={media.team} alt={content.profil.imageAlt} class="w-full h-auto max-w-2xl mx-auto mb-8" width="1200" height="600" loading="lazy" />
         <div class="max-w-5xl mx-auto text-center">
           <p class="text-dark-gray text-base md:text-lg font-light leading-relaxed mb-6 max-w-3xl mx-auto">{content.profil.description}</p>
           <p class="uppercase text-sm mb-8">{content.profil.cta}</p>
@@ -169,8 +172,8 @@ export const prerender = true;
               return (
                 <Tag href={portraitLinks === 'profiles' ? profilePath(currentLang, lawyer) : undefined} class="block rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">
                   <img src={lawyer.image} alt={lawyer.imageAlt || lawyer.name} width="500" height="500" loading="lazy" decoding="async"
-                    class="aspect-square w-full max-w-[180px] mx-auto object-cover rounded-lg shadow-lg mb-3" />
-                  <h3 class="text-base md:text-lg font-semibold text-travailleur">{lawyer.name}</h3>
+                    class="aspect-square w-full max-w-[180px] mx-auto object-cover rounded-xl mb-4" />
+                  <h3 class="text-base md:text-lg font-semibold text-gray-800">{lawyer.name}</h3>
                 </Tag>
               );
             })}
@@ -188,7 +191,7 @@ export const prerender = true;
         <div class="container mx-auto px-4">
           <div class="flex items-center mb-6 md:mb-8 lg:mb-12 justify-center">
             <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
-            <h2 class="text-xl sm:text-2xl font-light text-gray-600 mx-6 md:mx-10 uppercase text-center flex items-center">
+            <h2 class="text-2xl sm:text-3xl font-light text-gray-800 mx-4 md:mx-8 text-center flex items-center">
               <FileText class="w-5 h-5 md:w-6 md:h-6 mr-2 md:mr-3 text-travailleur" />
               {content.articlesTitle}
             </h2>
@@ -220,16 +223,15 @@ export const prerender = true;
 
 </BaseLayout>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const scrollBtn = document.querySelector('.scroll-btn');
-    if (scrollBtn) {
-      scrollBtn.addEventListener('click', () => {
-        const servicesSection = document.getElementById('services');
-        if (servicesSection) {
-          servicesSection.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    }
-  });
-</script>
+<style>
+  .home-hero h1 { letter-spacing: -.025em; color: #263952; }
+  .home-hero h2 { text-wrap: balance; }
+  .service-card { background: white; border: 1px solid #e0e3e5; border-top: 4px solid var(--service-color); color: #333; }
+  .service-employer { --service-color: var(--employer-brand); }
+  .service-worker { --service-color: var(--worker-brand); }
+  .service-europe { --service-color: var(--europe-brand); }
+  .service-card h3 { color: #263952; line-height: 1.4; }
+  .service-icon { color: var(--service-color); }
+  #expertise { scroll-margin-top: 6rem; }
+  :global(main a:focus-visible), :global(main button:focus-visible) { outline: 2px solid var(--worker-ink); outline-offset: 4px; }
+</style>
