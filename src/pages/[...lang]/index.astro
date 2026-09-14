@@ -264,14 +264,14 @@ export const prerender = true;
     .hero-copy { text-align: center; }
     .hero-subtitle, .hero-description { margin-inline: auto; }
     .hero-subtitle::after { margin-inline: auto; }
-    .hero-actions { width: 100%; max-width: 25rem; margin-inline: auto; }
+    .hero-actions { width: 100%; max-width: 22rem; margin-inline: auto; }
     .hero-title { font-size: clamp(1.6rem, 6.7vw, 2rem); margin-bottom: .85rem; }
     .hero-subtitle { font-size: clamp(1.15rem, 4.9vw, 1.45rem); line-height: 1.45; max-width: 32ch; text-wrap: pretty; }
     .hero-subtitle::after { width: 2.75rem; height: 3px; margin-block: 1rem; }
     .hero-description { max-width: 40ch; font-size: 1rem; line-height: 1.65; }
-    .hero-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; margin-top: 1.25rem; }
+    .hero-actions { display: grid; grid-template-columns: minmax(0, 1fr); gap: .65rem; margin-top: 1.25rem; }
     .hero-actions :global(a) { min-width: 0; min-height: 48px; padding: .75rem .5rem; font-size: .8125rem; line-height: 1.35; text-align: center; }
-    .hero-actions :global(span) { white-space: normal; }
+    .hero-actions :global(span) { white-space: nowrap; }
     .hero-actions :global(svg) { width: 16px; height: 16px; flex-shrink: 0; }
     .hero-illustration { max-width: 13.2rem; }
   }
