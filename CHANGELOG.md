@@ -7,6 +7,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Added
+- **Revised homepage and four-member team (#12)**: stable profile identities, shared portraits and ordering, independent introductions and biographies, and editable content and metadata in Decap across FR/EN/IT/NL.
+- **Belgian services (#20)**: complete workers and employers copy, shared editable sections and situations, localized fee links and metadata. French source preserved; translations and editorial choices await cabinet review before production.
 - **Dutch locale (`nl`) across the whole site** (#11): routes, language picker, navigation, hreflang, sitemap, `/llms.txt` and Decap CMS. `nl` is declared once in `src/config/locales.ts`; every page, schema and test loop derives from that list. An `nl:` block was added to the fourteen multilingual YAML files, translated from the French source block. **The Dutch copy is an AI pre-translation — cabinet linguistic review is required before production, especially on the legal pages.**
 - **Decap CMS "Nederlands" tab** on the eleven `single_file` collections (via the existing field anchors), plus a `blog-nl` collection and `src/content/blog/nl/`. No Dutch blog articles yet — an empty NL blog list renders correctly.
 - **Footer contact labels in `ui-translations.yml`** (`footer.phones`, `footer.emails`): the "Téléphones" / "E-mails" accordion titles were hardcoded in `Footer.astro` and stayed French in EN/IT/NL. Now required per locale by the Zod schema and editable in Decap.
