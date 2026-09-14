@@ -167,11 +167,29 @@ const { bookWith: bookWithLabel, contactForm: contactFormLabel } = uiTranslation
     padding-left: 0.5rem;
     background-color: rgba(0, 0, 0, 0.05);
   }
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    .site-header { margin-block: 1rem; padding-block: 1rem; }
+    .logo img { height: 80px; }
+  }
+  @media (max-width: 1023px) {
+    .site-header { margin-block: .5rem; padding-block: .5rem; }
+    .header-bar { display: grid; grid-template-columns: 44px minmax(0, 1fr) 44px; min-height: 68px; }
+    .logo { grid-column: 2; min-width: 0; }
+    .logo img { height: 68px; max-width: 100%; }
+    #menu-toggle { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; margin: 0; border: 1px solid #e4ddd6; border-radius: 10px; }
+    #menu-toggle:hover { background: #f0eae4; }
+    #menu-toggle:focus-visible { outline: 2px solid #06616c; outline-offset: 3px; }
+  }
+  @media (max-width: 639px) {
+    .site-header { margin-block: .25rem; }
+    .header-bar { min-height: 58px; }
+    .logo img { height: 58px; }
+  }
 </style>
 
-<header class="py-2 my-4 lg:py-6 lg:my-8">
+<header class="site-header py-2 my-4 lg:py-6 lg:my-8">
   <div class="container mx-auto px-4">
-    <div class="flex justify-between items-center">
+    <div class="header-bar flex justify-between items-center">
       <!-- Menu hamburger for mobile and tablet -->
       <button id="menu-toggle" class="lg:hidden text-black z-20 p-2 -m-2" aria-label="Toggle menu">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
