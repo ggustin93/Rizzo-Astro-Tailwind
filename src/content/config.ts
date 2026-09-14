@@ -206,6 +206,34 @@ const dataCollection = defineCollection({
   schema: perLocale(localeContent)
 });
 
+// Belgian services share one editorial model; EU retains its existing two audiences.
+const requiredEditorialText = (label) => z.string().regex(/\S/, `${label} : texte obligatoire`);
+const belgianServicesCollection = defineCollection({
+  type: 'data',
+  schema: perLocale(z.object({
+    title: requiredEditorialText('Titre'),
+    description: z.string().optional(),
+    servicesTitle: requiredEditorialText('Titre des services'),
+    sections: z.array(z.object({
+      title: requiredEditorialText('Titre'),
+      description: z.string().optional(),
+      situations: z.array(z.object({
+        question: requiredEditorialText('Question'),
+        answer: requiredEditorialText('Réponse'),
+      })).optional(),
+    })).default([]),
+    ctaText: requiredEditorialText('Libellé du lien tarifs'),
+    ctaDestination: z.enum(['honoraires', 'contact']),
+    seo: z.object({
+      title: requiredEditorialText('Titre'),
+      description: requiredEditorialText('Description SEO').refine(value => value.length <= 320, 'Maximum 320 caractères'),
+      image: z.string().regex(/^(\/[^/]|https:\/\/)/, 'Image de la médiathèque ou URL HTTPS').optional().or(z.literal('')),
+      imageAlt: z.string().optional(),
+      keywords: z.array(requiredEditorialText('Mot-clé')).optional(),
+    }),
+  })),
+});
+
 export const collections = {
   'blog': blog,
   'config': configCollection,
@@ -216,8 +244,8 @@ export const collections = {
   'profile': profileCollection,
   'contact': dataCollection,
   'honoraires': dataCollection,
-  'employeurs': dataCollection,
-  'travailleurs': dataCollection,
+  'employeurs': belgianServicesCollection,
+  'travailleurs': belgianServicesCollection,
   'europeennes': dataCollection,
   'legal': dataCollection,
 };
