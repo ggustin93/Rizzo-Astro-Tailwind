@@ -1,4 +1,5 @@
 import { getEntry } from 'astro:content';
+import { getTeam, profilePath } from './team.js';
 import type { Locale } from '../config/locales';
 
 /**
@@ -19,5 +20,25 @@ export async function getNavigation(lang: Locale) {
     );
   }
 
-  return navigation;
+  const members = await getTeam(lang);
+  const teamPath = `/${lang}/equipe`;
+  return {
+    ...navigation,
+    header: {
+      ...navigation.header,
+      mainLinks: navigation.header.mainLinks.map(link => {
+        if (link.url.replace(/\/$/, '') !== teamPath) return link;
+        const overviewLinks = (link.dropdownItems || []).filter(item =>
+          item.url.replace(/\/$/, '') === teamPath
+        );
+        return {
+          ...link,
+          dropdownItems: [
+            ...overviewLinks,
+            ...members.map(member => ({ label: member.name, url: profilePath(lang, member) })),
+          ],
+        };
+      }),
+    },
+  };
 }

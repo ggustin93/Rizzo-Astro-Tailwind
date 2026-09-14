@@ -1,61 +1,36 @@
 import { getEntry } from 'astro:content';
-import { DEFAULT_LOCALE } from '../config/locales';
 
-const findByName = (list, name) => list.find((item) => item.name === name);
+export function profilePath(lang, member) {
+  return `/${lang}/equipe/${member.slug}/`;
+}
 
-/**
- * URL of a lawyer's profile page.
- *
- * Uses the slug getTeam() resolved from profile.yml. Deriving it from the name
- * instead (lowercase + replace) drops accents and every space after the first,
- * which silently produces a 404 for the names it was not written for.
- */
-export const profilePath = (lang, lawyer) => `/${lang}/equipe/${lawyer.slug}/`;
-
-/**
- * Lawyers for one locale, with their public slug and images resolved.
- *
- * Slugs are declared explicitly in profile.yml (`lawyerSlugs`) rather than
- * derived from the name: transliterating accents in code silently produces
- * the wrong URL for names it was not written for (issue #8).
- */
+/** Shared identity and order, localized editorial content, independent contacts. */
 export async function getTeam(lang) {
-  const entry = await getEntry('profile', 'profile');
-  if (!entry) {
-    throw new Error('Profile entry not found! Make sure you have a `profile.yml` file in `src/content/profile`.');
+  const [profiles, config] = await Promise.all([
+    getEntry('profile', 'profile'),
+    getEntry('config', 'site-config'),
+  ]);
+  const localized = profiles?.data[lang]?.lawyers;
+  const members = config?.data.team;
+  if (!localized || !members) {
+    throw new Error(`Missing team content for ${lang}`);
+  }
+  const profileIds = new Set(localized.map(item => item.id));
+  if (localized.length !== members.length || profileIds.size !== members.length) {
+    throw new Error(`Each team member needs exactly one ${lang} profile`);
   }
 
-  const localized = entry.data[lang] || entry.data[DEFAULT_LOCALE];
-  if (!localized) {
-    throw new Error(`Content not found for language: ${lang}`);
-  }
-
-  const lawyers = localized.lawyers || [];
-  if (lawyers.length === 0) {
-    throw new Error(`No lawyers found in profile data for language: ${lang}`);
-  }
-
-  const slugs = entry.data.lawyerSlugs || [];
-  const teamImages = entry.data.teamImages || [];
-  const profileImages = entry.data.profileImages || [];
-
-  return lawyers.map((lawyer) => {
-    const slugEntry = findByName(slugs, lawyer.name);
-    if (!slugEntry?.slug) {
-      throw new Error(
-        `No slug configured for "${lawyer.name}". Add an entry to \`lawyerSlugs\` in src/content/profile/profile.yml.`
-      );
+  return members.map(member => {
+    const content = localized.find(item => item.id === member.id);
+    if (!content) {
+      throw new Error(`Missing ${lang} profile: ${member.id}`);
     }
-
-    const teamImage = findByName(teamImages, lawyer.name)?.image;
-    const profileImage = findByName(profileImages, lawyer.name)?.image;
-
+    const contact = config.data.lawyers.find(item => item.id === member.id);
     return {
-      ...lawyer,
-      slug: slugEntry.slug,
-      // Square portrait for the listing, tall portrait for the profile page.
-      image: teamImage ?? lawyer.image,
-      profileImage: profileImage ?? teamImage ?? lawyer.image,
+      ...content,
+      ...member,
+      profileImage: member.profileImage || member.image,
+      contact,
     };
   });
 }

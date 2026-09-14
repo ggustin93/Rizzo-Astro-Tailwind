@@ -44,17 +44,42 @@ const configCollection = defineCollection({
     sectionsVisibility: z.boolean(),
     showContactForm: z.boolean().optional().default(true),
     allowIndexing: z.boolean(),
+    team: z.array(z.object({
+      id: z.string().min(1),
+      slug: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/),
+      name: z.string().min(1),
+      image: z.string().min(1),
+      profileImage: z.string().optional(),
+      linkedin: z.string().url().or(z.literal('')).optional(),
+    })).nonempty(),
     lawyers: z.array(z.object({
-      name: z.string(),
+      id: z.string().min(1),
       phone: z.string(),
       whatsapp: z.string().optional(),
       email: z.string(),
-      linkedin: z.string(),
-      calendarLink: z.string(),
+      calendarLink: z.string().optional().default(''),
     })),
     address: z.string(),
     copyrightText: z.string().optional(),
-  }),
+  }).superRefine((data, ctx) => {
+    for (const key of ['id', 'slug']) {
+      if (new Set(data.team.map(member => member[key])).size !== data.team.length)
+        ctx.addIssue({ code: z.ZodIssueCode.custom, path: ['team'], message: `Duplicate team ${key}` });
+    }
+    for (const contact of data.lawyers) {
+      if (!data.team.some(member => member.id === contact.id))
+        ctx.addIssue({ code: z.ZodIssueCode.custom, path: ['lawyers'], message: `Unknown member: ${contact.id}` });
+    }
+  }).transform(data => ({
+    ...data,
+    // Existing contact consumers keep their contract; identities are entered once.
+    // Publishing a profile does not add a recipient or a contact card.
+    lawyers: data.lawyers.map(contact => {
+      const member = data.team.find(member => member.id === contact.id);
+      if (!member) throw new Error(`Unknown contact member: ${contact.id}`);
+      return { ...contact, name: member.name, linkedin: member.linkedin || '' };
+    }),
+  })),
 });
 
 // Collection Navigation
@@ -185,17 +210,100 @@ const uiTranslationsCollection = defineCollection({
   schema: perLocale(uiTranslationsSchema)
 });
 
-// Profile: only the shared, locale-independent keys are typed. Per-locale lawyer
-// content stays free-form, but a missing slug must fail the build rather than
-// surface as a runtime throw when a profile route is generated.
+const profileSeoSchema = z.object({
+  title: z.string().optional(),
+  description: z.string().optional(),
+  image: z.string().optional(),
+  keywords: z.array(z.string()).optional(),
+});
+
+// Localized editorial content references the shared team by stable ID.
 const profileCollection = defineCollection({
   type: 'data',
-  schema: perLocale(localeContent).extend({
-    lawyerSlugs: z.array(z.object({
-      name: z.string(),
-      slug: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/, 'Slug must be lowercase words separated by hyphens'),
-    })),
-  }).catchall(z.any()),
+  schema: perLocale(z.object({
+    seo: profileSeoSchema.optional(),
+    lawyers: z.array(z.object({
+      id: z.string().min(1),
+      title: z.string().min(1),
+      role: z.string().min(1),
+      imageAlt: z.string().optional(),
+      presentation: z.array(z.string().min(1)).nonempty(),
+      bio: z.array(z.string().min(1)).default([]),
+      languages: z.string(),
+      careerPath: z.array(z.object({
+        year: z.string().min(1),
+        event: z.string().min(1),
+      })).default([]),
+      conferences: z.array(z.string().min(1)).default([]),
+      publicationsIntro: z.string().optional(),
+      publications: z.array(z.object({
+        date: z.string().min(1),
+        title: z.string().min(1),
+        publisher: z.string().min(1),
+        coAuthors: z.array(z.string()).optional(),
+      })).default([]),
+      seo: profileSeoSchema.optional(),
+    })).nonempty(),
+  })),
+});
+
+// The CMS offers only existing internal destinations, independently of locale.
+const editorialDestination = z.enum([
+  '/contact/',
+  '/equipe/',
+  '/services/employeurs/',
+  '/services/travailleurs/',
+  '/services/europeennes/',
+]);
+const homeService = z.object({
+  title: z.string().min(1),
+  description: z.string().min(1),
+  cta: z.string().min(1),
+  destination: editorialDestination,
+});
+const homeCollection = defineCollection({
+  type: 'data',
+  schema: perLocale(z.object({
+    seo: z.object({
+      title: z.string(),
+      description: z.string(),
+      image: z.string(),
+      keywords: z.array(z.string()),
+    }),
+    articlesTitle: z.string(),
+    viewAllArticles: z.string(),
+    hero: z.object({
+      title: z.string().min(1),
+      subtitle: z.string().min(1),
+      description: z.string().min(1),
+      cta: z.string().min(1),
+      more: z.string().min(1),
+      destination: editorialDestination,
+      imageAlt: z.string().min(1),
+    }),
+    expertise: z.object({
+      title: z.string().min(1),
+      description: z.string().min(1),
+      employeurs: homeService,
+      travailleurs: homeService,
+      europeennes: homeService,
+    }).passthrough(),
+    profil: z.object({
+      title: z.string().min(1),
+      description: z.string().min(1),
+      cta: z.string().min(1),
+      imageAlt: z.string().min(1),
+    }),
+  }).passthrough()).extend({
+    media: z.object({
+      hero: z.string().min(1),
+      team: z.string().min(1),
+    }),
+    portraitLinks: z.enum(['none', 'profiles']),
+    serviceOrder: z.array(z.enum(['employeurs', 'travailleurs', 'europeennes']))
+      .length(3)
+      .refine(items => new Set(items).size === 3, 'Each service must appear exactly once'),
+  }),
 });
 
 // Page content whose shape is free-form but whose locales are not: every one of
@@ -212,7 +320,7 @@ export const collections = {
   'navigation': navigationCollection,
   'ui-translations': uiTranslationsCollection,
   // Add all other data collections here
-  'home': dataCollection,
+  'home': homeCollection,
   'profile': profileCollection,
   'contact': dataCollection,
   'honoraires': dataCollection,

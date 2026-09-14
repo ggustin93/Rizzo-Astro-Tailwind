@@ -16,6 +16,27 @@ collections:
         i18n:
           structure: single_file
         fields:
+          - label: "Images partagées de l’accueil"
+            name: "media"
+            widget: "object"
+            fields:
+              - {label: "Illustration d’en-tête", name: "hero", widget: "image"}
+              - {label: "Illustration de l’équipe", name: "team", widget: "image"}
+          - label: "Liens des mini-portraits"
+            name: "portraitLinks"
+            widget: "select"
+            default: "none"
+            hint: "Choix de preview à faire valider par le cabinet. Le libellé Découvrir l’équipe reste toujours non cliquable."
+            options:
+              - {label: "Sans lien (arbitrage en attente)", value: "none"}
+              - {label: "Vers les profils", value: "profiles"}
+          - label: "Ordre des parcours Services"
+            name: "serviceOrder"
+            widget: "list"
+            min: 3
+            max: 3
+            hint: "Chaque parcours doit apparaître une seule fois. Ordre commun aux quatre langues."
+            field: {label: "Parcours", name: "service", widget: "select", options: ["employeurs", "travailleurs", "europeennes"]}
           - label: "Français"
             name: "fr"
             widget: "object"
@@ -27,7 +48,10 @@ collections:
                   - {label: "Titre", name: "title", widget: "string"}
                   - {label: "Sous-titre", name: "subtitle", widget: "string"}
                   - {label: "Description", name: "description", widget: "text"}
-                  - {label: "CTA", name: "cta", widget: "string"}
+                  - {label: "Libellé principal", name: "cta", widget: "string"}
+                  - {label: "Destination du lien", name: "destination", widget: "select", options: ["/contact/", "/equipe/", "/services/employeurs/", "/services/travailleurs/", "/services/europeennes/"]}
+                  - {label: "Libellé vers les services", name: "more", widget: "string"}
+                  - {label: "Alternative de l’illustration", name: "imageAlt", widget: "string"}
               
               - label: "Expertise"
                 name: "expertise"
@@ -41,21 +65,24 @@ collections:
                     fields:
                       - {label: "Titre", name: "title", widget: "string"}
                       - {label: "Description", name: "description", widget: "text"}
-                      - {label: "CTA", name: "cta", widget: "string"}
+                      - {label: "Libellé du lien", name: "cta", widget: "string"}
+                      - {label: "Destination", name: "destination", widget: "select", options: ["/services/employeurs/", "/services/travailleurs/", "/services/europeennes/", "/contact/"]}
                   - label: "Employeurs"
                     name: "employeurs"
                     widget: "object"
                     fields:
                       - {label: "Titre", name: "title", widget: "string"}
                       - {label: "Description", name: "description", widget: "text"}
-                      - {label: "CTA", name: "cta", widget: "string"}
+                      - {label: "Libellé du lien", name: "cta", widget: "string"}
+                      - {label: "Destination", name: "destination", widget: "select", options: ["/services/employeurs/", "/services/travailleurs/", "/services/europeennes/", "/contact/"]}
                   - label: "Institutions Européennes"
                     name: "europeennes"
                     widget: "object"
                     fields:
                       - {label: "Titre", name: "title", widget: "string"}
                       - {label: "Description", name: "description", widget: "text"}
-                      - {label: "CTA", name: "cta", widget: "string"}
+                      - {label: "Libellé du lien", name: "cta", widget: "string"}
+                      - {label: "Destination", name: "destination", widget: "select", options: ["/services/employeurs/", "/services/travailleurs/", "/services/europeennes/", "/contact/"]}
                   - label: "Honoraires"
                     name: "honoraires"
                     widget: "object"
@@ -73,7 +100,8 @@ collections:
                 fields:
                   - {label: "Titre", name: "title", widget: "string"}
                   - {label: "Description", name: "description", widget: "text"}
-                  - {label: "CTA", name: "cta", widget: "string"}
+                  - {label: "Libellé au-dessus des portraits (sans lien)", name: "cta", widget: "string"}
+                  - {label: "Alternative de l’illustration", name: "imageAlt", widget: "string"}
 
               - {label: "Titre des articles", name: "articlesTitle", widget: "string"}
               - {label: "Voir tous les articles", name: "viewAllArticles", widget: "string"}
@@ -85,7 +113,7 @@ collections:
                   - {label: "Titre", name: "title", widget: "string"}
                   - {label: "Description", name: "description", widget: "text"}
                   - {label: "Mots-clés", name: "keywords", widget: "list"}
-                  - {label: "Image", name: "image", widget: "string"}
+                  - {label: "Image", name: "image", widget: "image"}
 
           - label: "English"
             name: "en"
@@ -302,39 +330,40 @@ collections:
         i18n:
           structure: single_file
         fields:
-          # Images centralisées - upload une seule fois pour toutes les langues
-          - label: "Photos de l'équipe (partagées entre toutes les langues)"
-            name: "teamImages"
-            widget: "list"
-            summary: "{{fields.name}}"
-            collapsed: false
-            hint: "Téléchargez les photos ici une seule fois. Elles seront automatiquement utilisées pour toutes les langues."
-            fields:
-              - {label: "Nom de l'avocate", name: "name", widget: "string", hint: "Doit correspondre exactement au nom utilisé dans les profils"}
-              - {label: "Photo", name: "image", widget: "image"}
-          - label: "Adresses des profils (partagées entre toutes les langues)"
-            name: "lawyerSlugs"
-            widget: "list"
-            summary: "{{fields.name}} → /equipe/{{fields.slug}}/"
-            collapsed: false
-            hint: "Adresse publique de chaque profil. Ne la modifiez pas une fois le profil en ligne : les liens existants cesseraient de fonctionner."
-            fields:
-              - {label: "Nom de l'avocate", name: "name", widget: "string", hint: "Doit correspondre exactement au nom utilisé dans les profils"}
-              - {label: "Adresse du profil", name: "slug", widget: "string", pattern: ['^[a-z0-9]+(-[a-z0-9]+)*$', "Uniquement des minuscules, chiffres et tirets (ex. romain-archalaus)"]}
           - label: "Français"
             name: "fr"
             widget: "object"
             fields: &profileFields
-              - label: "Avocates"
+              - label: "Référencement de la page Équipe"
+                name: "seo"
+                widget: "object"
+                required: false
+                collapsed: true
+                fields:
+                  - {label: "Titre", name: "title", widget: "string", required: false}
+                  - {label: "Description", name: "description", widget: "text", required: false}
+                  - {label: "Image de partage", name: "image", widget: "image", required: false}
+                  - {label: "Mots-clés", name: "keywords", widget: "list", required: false}
+              - label: "Membres de l’équipe"
                 name: "lawyers"
                 widget: "list"
-                summary: "{{fields.name}} - {{fields.title}}"
+                summary: "{{fields.id}} — {{fields.title}}"
+                collapsed: true
                 fields:
-                  - {label: "Nom", name: "name", widget: "string", hint: "Doit correspondre au nom dans 'Photos de l'équipe' pour lier l'image"}
+                  - {label: "Membre", name: "id", widget: "relation", collection: "siteConfig", file: "site-config", search_fields: ["team.*.name"], value_field: "team.*.id", display_fields: ["team.*.name"]}
+                  - {label: "Rôle dans le cabinet", name: "role", widget: "string"}
+                  - label: "Présentation sur la page Équipe"
+                    name: "presentation"
+                    widget: "list"
+                    hint: "Texte intégral, indépendant de la biographie individuelle et de l’accueil."
+                    field: {label: "Paragraphe", name: "paragraph", widget: "text"}
                   - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Alternative du portrait", name: "imageAlt", widget: "string", required: false, hint: "Vide : utilise le nom du membre."}
                   - label: "Biographie"
                     name: "bio"
                     widget: "list"
+                    required: false
+                    default: []
                     field: {label: "Paragraphe", name: "paragraph", widget: "text"}
                   - label: "Langues"
                     name: "languages"
@@ -342,16 +371,26 @@ collections:
                   - label: "Parcours"
                     name: "careerPath"
                     widget: "list"
+                    required: false
+                    default: []
+                    collapsed: true
                     fields:
                       - {label: "Année", name: "year", widget: "string"}
                       - {label: "Événement", name: "event", widget: "string"}
                   - label: "Conférences"
                     name: "conferences"
                     widget: "list"
+                    required: false
+                    default: []
+                    collapsed: true
                     field: {label: "Conférence", name: "conference", widget: "text"}
+                  - {label: "Introduction des publications", name: "publicationsIntro", widget: "text", required: false}
                   - label: "Publications"
                     name: "publications"
                     widget: "list"
+                    required: false
+                    default: []
+                    collapsed: true
                     fields:
                       - {label: "Date", name: "date", widget: "string"}
                       - {label: "Titre", name: "title", widget: "string"}
@@ -359,6 +398,7 @@ collections:
                       - label: "Co-auteurs"
                         name: "coAuthors"
                         widget: "list"
+                        required: false
                         field: {label: "Auteur", name: "author", widget: "string"}
                   - label: "SEO"
                     name: "seo"
@@ -367,7 +407,7 @@ collections:
                     fields:
                       - {label: "Titre SEO", name: "title", widget: "string", required: false}
                       - {label: "Description SEO", name: "description", widget: "text", required: false, pattern: ['^.{0,320}$', "La description idéale fait 155-160 caractères (max 320)"]}
-                      - {label: "Image SEO", name: "image", widget: "string", required: false}
+                      - {label: "Image SEO", name: "image", widget: "image", required: false}
                       - label: "Mots-clés SEO"
                         name: "keywords"
                         widget: "list"
@@ -670,20 +710,29 @@ collections:
             default: true
             hint: "Active ou désactive le formulaire de contact sur la page Contact"
           
-          - label: "Équipe d'avocates"
+          - label: "Membres de l’équipe — identité, ordre et portraits partagés"
+            name: "team"
+            widget: "list"
+            summary: "{{fields.name}}"
+            collapsed: true
+            hint: "L’ordre s’applique à l’accueil, à l’équipe et à la navigation dans les quatre langues. Ajouter un profil n’ajoute pas de destinataire au formulaire."
+            fields:
+              - {label: "Identifiant stable", name: "id", widget: "string", hint: "Ne pas modifier après création ; indépendant du nom affiché."}
+              - {label: "Adresse du profil", name: "slug", widget: "string", pattern: ['^[a-z0-9]+(-[a-z0-9]+)*$', "Minuscules, chiffres et tirets"], hint: "Conserver les adresses déjà publiées."}
+              - {label: "Nom affiché", name: "name", widget: "string"}
+              - {label: "Portrait carré", name: "image", widget: "image"}
+              - {label: "Portrait individuel", name: "profileImage", widget: "image", required: false, hint: "Vide : utilise le portrait carré."}
+              - {label: "LinkedIn", name: "linkedin", widget: "string", required: false, hint: "Lien partagé entre les quatre langues."}
+          - label: "Contacts existants du cabinet"
             name: "lawyers"
             widget: "list"
-            summary: "{{fields.name}} - {{fields.email}}"
+            summary: "{{fields.id}} - {{fields.email}}"
             collapsed: false
             description: >
               Informations de contact pour chaque avocate du cabinet.
               Ces informations apparaîtront partout sur le site (header, footer, page contact, etc.).
             fields:
-              - label: "Nom"
-                name: "name"
-                widget: "string"
-                hint: "Nom complet de l'avocate"
-              
+              - {label: "Membre", name: "id", widget: "relation", collection: "siteConfig", file: "site-config", search_fields: ["team.*.name"], value_field: "team.*.id", display_fields: ["team.*.name"]}
               - label: "Numéro de téléphone"
                 name: "phone"
                 widget: "string"
@@ -698,11 +747,6 @@ collections:
                 name: "email"
                 widget: "string"
                 hint: "Adresse email professionnelle"
-              
-              - label: "Profil LinkedIn"
-                name: "linkedin"
-                widget: "string"
-                hint: "URL complète du profil LinkedIn"
               
               - label: "Lien calendrier Cal.com"
                 name: "calendarLink"

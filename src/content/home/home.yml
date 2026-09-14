@@ -1,30 +1,33 @@
 fr:
   expertise:
     title: Expertise & Services
-    description: Nous accompagnons à la fois les entreprises et les
-      travailleur·euse·s dans leurs problématiques quotidiennes et leurs projets
-      liés à l'emploi.
+    description: >-
+      Nous accompagnons les entreprises (PME, TPE et start-up) belges, les institutions européennes
+      et leurs agents (fonctionnaires et agents contractuels), ainsi que les travailleurs salariés
+      et indépendants, dans leurs problématiques quotidiennes et leurs projets liés aux ressources
+      humaines et à l'emploi.
     travailleurs:
-      title: Vous êtes un.e travailleur·euse
-      description: Nous vous accompagnons tout au long de votre parcours professionnel
-        que ce soit pour une question ponctuelle, la négociation d'un départ ou
-        l'introduction d'une procédure judiciaire devant le tribunal du travail
-        contre votre employeur.
+      title: Vous êtes salarié·e et rencontrez un litige avec votre employeur ? Vous êtes indépendant ?
+      description: >-
+        Nous vous accompagnons tout au long de votre parcours professionnel que ce soit pour une
+        question ponctuelle, la fin d’une collaboration ou un litige.
       cta: En savoir plus
+      destination: /services/travailleurs/
     employeurs:
-      title: Vous êtes employeur, gérant ou responsable RH
-      description: Concentrez-vous sur votre activité. Nous vous conseillons et
-        défendons sur vos questions sociales — de l'engagement à la rupture, de
-        la prévention au contentieux.
+      title: Vous dirigez une PME, une TPE ou une start-up belge ?
+      description: >-
+        Nous vous conseillons et défendons sur toutes vos problématiques RH : contrat de travail,
+        règlement de travail, licenciement, prévention et contentieux.
       cta: En savoir plus
+      destination: /services/employeurs/
     europeennes:
-      title: Institutions & fonctionnaires européens
-      subtitle: Agences · Fonctionnaires & Agents
-      description: Nous conseillons les institutions et agences européennes dans la
-        gestion de leurs relations de travail et accompagnons les fonctionnaires
-        et agents dans leurs démarches, de la négociation à la procédure
-        précontentieuse et contentieuse.
+      title: Vous êtes une institution européenne, un·e fonctionnaire ou un·e agent·e contractuel·le ?
+      description: >-
+        Nous conseillons les institutions et agences européennes dans la gestion de leurs relations
+        de travail et accompagnons les fonctionnaires et agents dans leurs démarches, de la
+        négociation à la procédure précontentieuse et contentieuse.
       cta: En savoir plus
+      destination: /services/europeennes/
     honoraires:
       title: Honoraires
       intro: Des honoraires transparents et adaptés à votre situation.
@@ -35,28 +38,28 @@ fr:
       cta: En savoir plus
   viewAllArticles: Lire plus d'articles
   hero:
-    title: Christine Rizzo et Stephanie Michiels
-    subtitle: Avocates en droit du travail belge et européen
-    description: Nous vous conseillons et vous défendons avec expertise et engagement
+    title: RIZZO & MICHIELS
+    subtitle: Cabinet d’avocats en droit du travail belge et droit de la fonction publique européenne
+    description: Nous vous conseillons et vous défendons avec expertise et engagement.
     cta: NOUS CONTACTER
+    destination: /contact/
+    more: En savoir plus
+    imageAlt: Illustration du cabinet
   articlesTitle: Articles
   profil:
     title: L'équipe
     description: >-
-      Christine Rizzo et Stephanie Michiels, avocates au Barreau de Bruxelles,
-      ont acquis l'expérience de leur métier en conseillant et défendant à la
-      fois des travailleur·euse.s et des entreprises locales et
-      internationales. 
-
-
-      La gestion de la relation de travail du recrutement à la rupture, la rédaction de contrats, de rapports d'audit dans le cadre de projets d'acquisition, le bien-être au travail, les outils destinés à améliorer l'équilibre vie privée-vie professionnelle, les questions de discrimination et les faux indépendants font partie de leur pratique quotidienne.
-    cta: Découvrir l'équipe
+      Rizzo & Michiels est une équipe de quatre avocats du Barreau de Bruxelles, tous issus de
+      cabinets d’avocats spécialisés en droit du travail et de la sécurité sociale. Cette expertise
+      qui couvre l’ensemble des questions liées aux ressources humaines est mise au service d’un
+      accompagnement de proximité, en français, néerlandais, anglais et italien.
+    cta: Découvrir l’équipe
+    imageAlt: Réunion de travail
   seo:
-    title: Christine Rizzo et Stephanie Michiels | Avocates en droit du travail à
-      Bruxelles
-    description: Expertise en droit du travail pour salariés et employeurs.
-      Conseils, défense et accompagnement juridique personnalisé à Bruxelles par
-      notre équipe d'avocates en droit du travail.
+    title: Christine Rizzo et Stephanie Michiels | Avocates en droit du travail à Bruxelles
+    description: >-
+      Expertise en droit du travail pour salariés et employeurs. Conseils, défense et accompagnement
+      juridique personnalisé à Bruxelles par notre équipe d'avocates en droit du travail.
     image: https://rizzo-michiels.be/default-social-image.png
     keywords:
       - avocat droit du travail Bruxelles
@@ -71,8 +74,9 @@ fr:
       - Polices fournies par Web Fonts sous licence CC BY 4.0
   employeurs:
     title: Vous êtes employeur
-    description: J'accompagne votre équipe RH dans la gestion de vos litiges et des
-      relations de travail au quotidien.
+    description: >-
+      J'accompagne votre équipe RH dans la gestion de vos litiges et des relations de travail au
+      quotidien.
     cta: En savoir plus
 en:
   keywords:
@@ -84,36 +88,41 @@ en:
     - personalized legal support
   travailleurs:
     title: You are an employee
-    description: I assist you at every stage of your career, whether it's a one-shot
-      question, negotiating a departure or taking legal action against your
-      employer before the labor courts.
+    description: >-
+      I assist you at every stage of your career, whether it's a one-shot question, negotiating a
+      departure or taking legal action against your employer before the labor courts.
     cta: Here are more details
   honoraires:
     title: Fees
     cta: Here are more details
   expertise:
-    title: Services
-    description: We support and advise both companies and employees in their
-      employment-related day-to-day issues and projects.
+    title: Expertise & Services
+    description: >-
+      We support Belgian businesses (SMEs, micro-enterprises and start-ups), European institutions
+      and their staff (officials and contract staff), as well as employees and self-employed
+      workers, in their day-to-day issues and projects relating to human resources and employment.
     travailleurs:
-      title: You are an employee
-      description: We can help you at every stage of your career. We support you
-        whether it's a one-off issue, negotiating a departure or taking legal
-        action against your employer before the employment tribunal.
-      cta: Learn More
+      title: Are you an employee in a dispute with your employer? Are you self-employed?
+      description: >-
+        We support you throughout your professional life, whether with a specific question, the end
+        of a working relationship or a dispute.
+      cta: Learn more
+      destination: /services/travailleurs/
     employeurs:
-      title: You are an employer, manager or HR officer
-      description: Focus on your business. We advise and represent you on all
-        employment matters — from hiring to termination, from prevention to
-        litigation.
-      cta: Learn More
+      title: Do you run a Belgian SME, micro-enterprise or start-up?
+      description: >-
+        We advise and represent you on all your HR issues: employment contracts, work rules,
+        dismissal, prevention and litigation.
+      cta: Learn more
+      destination: /services/employeurs/
     europeennes:
-      title: European institutions & officials
-      subtitle: Agencies · Officials & Contract Staff
-      description: We advise European institutions, bodies and agencies on managing
-        their employment relations and support officials and agents in their
-        proceedings, from negotiation to (pre)litigation.
-      cta: Learn More
+      title: Are you a European institution, an official or a member of the contract staff?
+      description: >-
+        We advise European institutions and agencies on managing their employment relationships and
+        assist officials and other staff in their steps, from negotiation to pre-litigation and
+        litigation proceedings.
+      cta: Learn more
+      destination: /services/europeennes/
     honoraires:
       intro: Transparent and tailored fees
       linkText: Learn more
@@ -123,26 +132,28 @@ en:
       cta: Learn more about our fees
   viewAllArticles: View All Resources
   hero:
-    title: Christine Rizzo and Stephanie Michiels
-    subtitle: Lawyers in Belgian and European employment law
-    description: We advise and defend you with expertise and commitment
+    title: RIZZO & MICHIELS
+    subtitle: Law firm specialising in Belgian employment law and European civil service law
+    description: We advise and represent you with expertise and commitment.
     cta: CONTACT US
+    destination: /contact/
+    more: Learn more
+    imageAlt: Illustration of the firm
   articlesTitle: Articles
   profil:
     title: The Team
     description: >-
-      Christine Rizzo and Stephanie Michiels, admitted to the Brussels Bar, have
-      gained experience in their profession by defending and advising both
-      individuals and local and international companies. 
-
-
-      Managing employment relationships from recruitment to termination, drafting agreements, audit reports for acquisition projects, well-being at work, tools for improving work-life balance, discrimination issues and classification issues (employee vs independent contractor) are all part of their daily practice.
-    cta: Meet The Team
+      Rizzo & Michiels is a team of four lawyers at the Brussels Bar, all with backgrounds in law
+      firms specialising in employment and social security law. This expertise, covering the full
+      range of human resources matters, underpins close, personal support in French, Dutch, English
+      and Italian.
+    cta: Meet the team
+    imageAlt: Working meeting
   seo:
     title: Christine Rizzo and Stephanie Michiels | Employment Lawyers in Brussels
-    description: Expertise in employment law for employees and employers. Advice,
-      defense and personalized legal support in Brussels by our team of
-      specialist lawyers.
+    description: >-
+      Expertise in employment law for employees and employers. Advice, defense and personalized
+      legal support in Brussels by our team of specialist lawyers.
     keywords:
       - lawyer
       - labor law
@@ -153,8 +164,7 @@ en:
     image: https://rizzo-michiels.be/default-social-image.png
   employeurs:
     title: You are an employer
-    description: I support your HR team in managing your disputes and day-to-day
-      employment relationships.
+    description: I support your HR team in managing your disputes and day-to-day employment relationships.
     cta: Here are more details
 it:
   keywords:
@@ -166,39 +176,44 @@ it:
     - assistenza legale personalizzata
   travailleurs:
     title: Sei un lavoratore
-    description: Ti accompagno durante tutto il tuo percorso professionale, sia per
-      una domanda specifica, la negoziazione di una partenza o l'avvio di un
-      procedimento giudiziario davanti al tribunale del lavoro contro il tuo
-      datore di lavoro.
+    description: >-
+      Ti accompagno durante tutto il tuo percorso professionale, sia per una domanda specifica, la
+      negoziazione di una partenza o l'avvio di un procedimento giudiziario davanti al tribunale del
+      lavoro contro il tuo datore di lavoro.
     cta: Ecco maggiori dettagli sulle tariffe
   honoraires:
     title: Onorari
     cta: Scorpi di più
   expertise:
-    title: Servizi
-    description: Assistenza legale alle aziende ed ai lavoratori in tutte le
-      tematiche riguardanti il rapporto di lavoro, dalla sua instaurazione fino
-      all'esecuzione e cessazione.
+    title: Competenze e servizi
+    description: >-
+      Assistiamo le imprese belghe (PMI, microimprese e start-up), le istituzioni europee e il loro
+      personale (funzionari e agenti contrattuali), nonché i lavoratori dipendenti e autonomi, nelle
+      problematiche quotidiane e nei progetti legati alle risorse umane e all’occupazione.
     travailleurs:
-      title: Lavoratori
-      description: Vi assistiamo in ogni fase della vostro percorso professionale, sia
-        che si tratti di un problema occasionale, sia nell'ambito di una
-        negoziazione o di un'azione legale specifica davanti al tribunale del
-        lavoro.
-      cta: Scopri di più
+      title: >-
+        Siete lavoratori dipendenti e avete una controversia con il vostro datore di lavoro? Siete
+        lavoratori autonomi?
+      description: >-
+        Vi accompagniamo lungo tutto il vostro percorso professionale, sia per una questione
+        specifica, sia per la fine di una collaborazione o una controversia.
+      cta: Per saperne di più
+      destination: /services/travailleurs/
     employeurs:
-      title: Siete un datore di lavoro, dirigente o responsabile HR
-      description: Concentratevi sulla vostra attività. Vi consigliamo e difendiamo su
-        tutte le questioni di diritto del lavoro — dall'assunzione alla
-        risoluzione del contratto, dalla prevenzione al contenzioso.
-      cta: Scopri di più
+      title: Dirigete una PMI, una microimpresa o una start-up belga?
+      description: >-
+        Vi consigliamo e vi difendiamo su tutte le questioni relative alle risorse umane: contratto
+        di lavoro, regolamento di lavoro, licenziamento, prevenzione e contenzioso.
+      cta: Per saperne di più
+      destination: /services/employeurs/
     europeennes:
-      title: Istituzioni europee
-      subtitle: Agenzie · Funzionari & Agenti contrattuali
-      description: Assistiamo le istituzioni e le agenzie europee nella gestione dei
-        rapporti di lavoro e accompagniamo i funzionari e gli agenti nelle loro
-        procedure, dalla negoziazione al contenzioso.
-      cta: Scopri di più
+      title: Siete un’istituzione europea, un funzionario o un agente contrattuale?
+      description: >-
+        Consigliamo le istituzioni e le agenzie europee nella gestione dei loro rapporti di lavoro e
+        assistiamo funzionari e agenti nelle loro iniziative, dalla negoziazione alle procedure
+        precontenziose e contenziose.
+      cta: Per saperne di più
+      destination: /services/europeennes/
     honoraires:
       intro: Tariffe trasparenti e personalizzate
       linkText: Scopri di più
@@ -208,61 +223,72 @@ it:
       cta: Scopri di più sui nostri onorari
   viewAllArticles: Visualizza tutte le risorse
   hero:
-    title: Christine Rizzo e Stephanie Michiels
-    subtitle: Avvocate in diritto del lavoro belga ed europeo
-    description: Vi offriamo consulenza e difesa con competenza e dedizione
+    title: RIZZO & MICHIELS
+    subtitle: Studio legale in diritto del lavoro belga e diritto della funzione pubblica europea
+    description: Vi consigliamo e vi difendiamo con competenza e impegno.
     cta: CONTATTACI
+    destination: /contact/
+    more: Per saperne di più
+    imageAlt: Illustrazione dello studio
   articlesTitle: Articoli
   profil:
     title: Il Team
-    description: Christine Rizzo e Stephanie Michiels, avvocate presso il foro di
-      Bruxelles, hanno acquisito esperienza nella loro professione difendendo e
-      consigliando sia lavoratori che aziende locali e internazionali. La
-      gestione dei rapporti di lavoro, dall'assunzione alla cessazione, la
-      redazione di contratti e di relazioni pre‐acquisition "due diligence", il
-      benessere sul lavoro, gli strumenti per migliorare l'equilibrio tra lavoro
-      e vita privata, le questioni di discriminazione e la qualificazione del
-      rapporto di lavoro (falso lavoro autonomo) fanno parte delle loro attività
-      quotidiane.
-    cta: Scopri il Team
+    description: >-
+      Rizzo & Michiels è un gruppo di quattro avvocati del Foro di Bruxelles, tutti provenienti da
+      studi legali specializzati in diritto del lavoro e della sicurezza sociale. Questa competenza,
+      che copre l’insieme delle questioni relative alle risorse umane, è messa al servizio di
+      un’assistenza di prossimità, in francese, nederlandese, inglese e italiano.
+    cta: Scoprite il gruppo
+    imageAlt: Riunione di lavoro
   seo:
     title: Christine Rizzo e Stephanie Michiels | Avvocati del lavoro a Bruxelles
-    description: Diritto del lavoro per lavoratori e aziende. Consulenza, difesa e
-      assistenza legale personalizzata a Bruxelles dal nostro team di avvocati
-      specializzati.
-    keywords: avvocato, diritto del lavoro, Bruxelles, consulenza legale, difesa dei
-      dipendenti, supporto ai datori di lavoro
+    description: >-
+      Diritto del lavoro per lavoratori e aziende. Consulenza, difesa e assistenza legale
+      personalizzata a Bruxelles dal nostro team di avvocati specializzati.
+    keywords:
+      - avvocato
+      - diritto del lavoro
+      - Bruxelles
+      - consulenza legale
+      - difesa dei dipendenti
+      - supporto ai datori di lavoro
     image: https://rizzo-michiels.be/default-social-image.png
   employeurs:
     title: Sei un datore di lavoro
     cta: Ecco maggiori dettagli sulle tariffe
-    description: Assisto il vostro team HR nella gestione delle controversie e delle
-      relazioni di lavoro quotidiane
+    description: >-
+      Assisto il vostro team HR nella gestione delle controversie e delle relazioni di lavoro
+      quotidiane
 nl:
   expertise:
     title: Expertise & Diensten
-    description: Wij begeleiden zowel ondernemingen als werknemers bij hun
-      dagelijkse vraagstukken en hun projecten rond werkgelegenheid.
+    description: >-
+      Wij begeleiden Belgische ondernemingen (kmo’s, micro-ondernemingen en start-ups), Europese
+      instellingen en hun personeelsleden (ambtenaren en contractuele personeelsleden), evenals
+      werknemers en zelfstandigen, bij hun dagelijkse vraagstukken en projecten rond human resources
+      en werkgelegenheid.
     travailleurs:
-      title: U bent werknemer
-      description: Wij begeleiden u gedurende uw hele loopbaan, of het nu gaat om een
-        eenmalige vraag, de onderhandeling van een vertrek of het inleiden van
-        een gerechtelijke procedure voor de arbeidsrechtbank tegen uw werkgever.
+      title: Bent u werknemer en hebt u een geschil met uw werkgever? Bent u zelfstandige?
+      description: >-
+        Wij begeleiden u tijdens uw volledige loopbaan, of het nu gaat om een specifieke vraag, het
+        einde van een samenwerking of een geschil.
       cta: Meer weten
+      destination: /services/travailleurs/
     employeurs:
-      title: U bent werkgever, zaakvoerder of HR-verantwoordelijke
-      description: Concentreer u op uw activiteit. Wij adviseren en verdedigen u in
-        uw sociaalrechtelijke vraagstukken — van aanwerving tot beëindiging, van
-        preventie tot geschillen.
+      title: Leidt u een Belgische kmo, micro-onderneming of start-up?
+      description: >-
+        Wij adviseren en verdedigen u bij al uw HR-vraagstukken: arbeidsovereenkomst,
+        arbeidsreglement, ontslag, preventie en geschillen.
       cta: Meer weten
+      destination: /services/employeurs/
     europeennes:
-      title: Europese instellingen & ambtenaren
-      subtitle: Agentschappen · Ambtenaren & Personeelsleden
-      description: Wij adviseren de Europese instellingen en agentschappen bij het
-        beheer van hun arbeidsrelaties en begeleiden ambtenaren en
-        personeelsleden in hun stappen, van de onderhandeling tot de
-        precontentieuze en gerechtelijke procedure.
+      title: Bent u een Europese instelling, een ambtenaar of een contractueel personeelslid?
+      description: >-
+        Wij adviseren Europese instellingen en agentschappen bij het beheer van hun arbeidsrelaties
+        en begeleiden ambtenaren en personeelsleden bij hun stappen, van onderhandelingen tot
+        precontentieuze en gerechtelijke procedures.
       cta: Meer weten
+      destination: /services/europeennes/
     honoraires:
       title: Erelonen
       intro: Transparante erelonen, afgestemd op uw situatie.
@@ -273,26 +299,28 @@ nl:
       cta: Meer weten
   viewAllArticles: Meer artikels lezen
   hero:
-    title: Christine Rizzo en Stephanie Michiels
-    subtitle: Advocaten in Belgisch en Europees arbeidsrecht
-    description: Wij adviseren en verdedigen u met expertise en engagement
+    title: RIZZO & MICHIELS
+    subtitle: Advocatenkantoor in Belgisch arbeidsrecht en Europees ambtenarenrecht
+    description: Wij adviseren en verdedigen u met expertise en engagement.
     cta: CONTACTEER ONS
+    destination: /contact/
+    more: Meer weten
+    imageAlt: Illustratie van het kantoor
   articlesTitle: Artikels
   profil:
     title: Het team
     description: >-
-      Christine Rizzo en Stephanie Michiels, advocaten aan de balie van Brussel,
-      hebben hun vakkennis opgebouwd door zowel werknemers als lokale en
-      internationale ondernemingen te adviseren en te verdedigen.
-
-
-      Het beheer van de arbeidsrelatie van aanwerving tot beëindiging, het opstellen van overeenkomsten en van auditverslagen in het kader van overnameprojecten, het welzijn op het werk, de instrumenten die het evenwicht tussen privé- en beroepsleven verbeteren, discriminatievraagstukken en schijnzelfstandigheid maken deel uit van hun dagelijkse praktijk.
+      Rizzo & Michiels is een team van vier advocaten aan de balie van Brussel, allen afkomstig uit
+      advocatenkantoren gespecialiseerd in arbeidsrecht en socialezekerheidsrecht. Deze expertise,
+      die alle aspecten van human resources omvat, wordt ingezet voor een nabije begeleiding in het
+      Frans, Nederlands, Engels en Italiaans.
     cta: Ontdek het team
+    imageAlt: Werkvergadering
   seo:
     title: Christine Rizzo en Stephanie Michiels | Advocaten arbeidsrecht in Brussel
-    description: Expertise in arbeidsrecht voor werknemers en werkgevers. Advies,
-      verdediging en persoonlijke juridische begeleiding in Brussel door ons
-      team van advocaten arbeidsrecht.
+    description: >-
+      Expertise in arbeidsrecht voor werknemers en werkgevers. Advies, verdediging en persoonlijke
+      juridische begeleiding in Brussel door ons team van advocaten arbeidsrecht.
     image: https://rizzo-michiels.be/default-social-image.png
     keywords:
       - advocaat arbeidsrecht Brussel
@@ -307,6 +335,13 @@ nl:
       - Lettertypes geleverd door Web Fonts onder CC BY 4.0-licentie
   employeurs:
     title: U bent werkgever
-    description: Ik begeleid uw HR-team bij het beheer van uw geschillen en van de
-      dagelijkse arbeidsrelaties.
+    description: Ik begeleid uw HR-team bij het beheer van uw geschillen en van de dagelijkse arbeidsrelaties.
     cta: Meer weten
+media:
+  hero: /assets/images/hero_image_wbg.svg
+  team: /assets/images/illustration_services.svg
+portraitLinks: none
+serviceOrder:
+  - employeurs
+  - travailleurs
+  - europeennes

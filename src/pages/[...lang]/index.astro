@@ -10,8 +10,8 @@ import { getTeam, profilePath } from '../../utils/team.js';
 import ArticleCard from '../../components/ArticleCard.astro';
 import Button from '../../components/Button.astro';
 // Import des images locales
-import heroImage from '../../assets/images/hero_image_wbg.svg';
-import illustrationServices from '../../assets/images/illustration_services.svg';
+
+
 
 const supportedLanguages = LOCALES;
 type SupportedLanguage = typeof supportedLanguages[number];
@@ -43,6 +43,8 @@ if (!homeEntry) {
   throw new Error("Home entry not found! Make sure you have a `home.yml` file in `src/content/home`.");
 }
 const content = homeEntry.data[currentLang] || homeEntry.data['fr'];
+const { media, portraitLinks, serviceOrder } = homeEntry.data;
+const serviceColors = { employeurs: 'bg-employeur', travailleurs: 'bg-travailleur', europeennes: 'bg-europeenne' };
 
 // Les avocates, leurs photos et leurs slugs sont résolus centralement pour que
 // les liens de la home ne puissent pas diverger des routes de [slug].astro.
@@ -72,17 +74,17 @@ export const prerender = true;
     <section class="py-6 md:py-10 relative">
       <div class="container mx-auto px-4 flex flex-col items-center md:flex-row md:items-center md:justify-between">
         <div class="w-full md:w-1/2 text-center md:text-left">
-          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-2 md:mb-3 text-gray-800 leading-tight">{content.hero.title.replace(' et ', ' & ')}</h1>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-2 md:mb-3 text-gray-800 leading-tight">{content.hero.title}</h1>
           <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-3 md:mb-4 text-accent font-light leading-snug">{content.hero.subtitle}</h2>
           <p class="mb-5 md:mb-6 text-base md:text-lg text-dark-gray max-w-xl mx-auto md:mx-0 font-light leading-relaxed">{content.hero.description}</p>
           <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start space-y-3 sm:space-y-0 sm:space-x-4">
             <Button 
-              href={`/${currentLang}/contact`}
+              href={`/${currentLang}${content.hero.destination}`}
               text={content.hero.cta}
               variant="primary"
               icon={Calendar}
               iconPosition="left"
-              ariaLabel="Prendre rendez-vous"
+              ariaLabel={content.hero.cta}
               class="bg-accent text-white font-medium hover:bg-travailleur text-center justify-center"
             />
             <Button 
@@ -91,14 +93,14 @@ export const prerender = true;
               onClick="document.getElementById('expertise').scrollIntoView({behavior: 'smooth'})"
               class="border-gray-400 hover:bg-beige hover:text-gray-900 text-center justify-center"
             >
-              <span class="whitespace-nowrap">{content.expertise.travailleurs.cta}</span>
+              <span class="whitespace-nowrap">{content.hero.more}</span>
             </Button>
           </div>
         </div>
         <div class="w-full md:w-1/2 flex justify-center md:justify-end mt-6 md:mt-0">
           <img 
-            src={heroImage.src} 
-            alt="Christine Rizzo et Stephanie Michiels"
+            src={media.hero}
+            alt={content.hero.imageAlt}
             class="w-full h-auto max-w-sm md:max-w-xl object-contain" 
             decoding="async" 
             loading="eager" 
@@ -127,57 +129,21 @@ export const prerender = true;
         </p> 
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-0">
-          <!-- BLOC 1 : EMPLOYEURS -->
-          <div class="bg-employeur p-4 md:p-6 rounded-lg text-white flex flex-col justify-between">
-            <div>
-              <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">{content.expertise.employeurs.title}</h3>
-              <p class="text-base md:text-lg font-light mb-4">{content.expertise.employeurs.description}</p>
-            </div>
-            <Button
-              href={`/${currentLang}/services/employeurs`}
-              text={`${content.expertise.employeurs.cta} →`}
-              variant="secondary"
-              class="self-end bg-white text-gray-900 hover:bg-transparent hover:text-white border-white"
-            />
-          </div>
-          <!-- BLOC 2 : TRAVAILLEURS -->
-          <div class="bg-travailleur p-4 md:p-6 rounded-lg text-white flex flex-col justify-between">
-            <div>
-              <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">{content.expertise.travailleurs.title}</h3>
-              <p class="text-base md:text-lg font-light mb-4">{content.expertise.travailleurs.description}</p>
-            </div>
-            <Button
-              href={`/${currentLang}/services/travailleurs`}
-              text={`${content.expertise.travailleurs.cta} →`}
-              variant="secondary"
-              class="self-end bg-white text-gray-900 hover:bg-transparent hover:text-white border-white"
-            />
-          </div>
-          <!-- BLOC 3 : INSTITUTIONS EUROPÉENNES -->
-          <div class="bg-europeenne p-4 md:p-6 rounded-lg text-white flex flex-col justify-between">
-            <div>
-              <h3 class="text-lg md:text-xl font-semibold mb-1 md:mb-2">{content.expertise.europeennes.title}</h3>
-              {content.expertise.europeennes.subtitle && (
-                <p class="text-xs md:text-sm font-light opacity-75 mb-3 uppercase tracking-wide">{content.expertise.europeennes.subtitle}</p>
-              )}
-              <p class="text-base md:text-lg font-light mb-4">{content.expertise.europeennes.description}</p>
-            </div>
-            <Button
-              href={`/${currentLang}/services/europeennes`}
-              text={`${content.expertise.europeennes.cta} →`}
-              variant="secondary"
-              class="self-end bg-white text-gray-900 hover:bg-transparent hover:text-white border-white"
-            />
-          </div>
+          {serviceOrder.map(key => {
+            const service = content.expertise[key];
+            return (
+              <div class={`${serviceColors[key]} p-4 md:p-6 rounded-lg text-white flex flex-col justify-between`}>
+                <div>
+                  <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">{service.title}</h3>
+                  <p class="text-base md:text-lg font-light mb-4">{service.description}</p>
+                </div>
+                <Button href={`/${currentLang}${service.destination}`} text={`${service.cta} →`} variant="secondary"
+                  class="self-end bg-white text-gray-900 hover:bg-transparent hover:text-white border-white" />
+              </div>
+            );
+          })}
         </div>
 
-        <img 
-          src={illustrationServices.src} 
-          alt="Illustration des services" 
-          class="w-full max-w-3xl md:max-w-4xl mx-auto mb-8"
-          width="1200"
-        />
-        
       </div>
     </section>
   </div>
@@ -193,44 +159,21 @@ export const prerender = true;
           </h2>
           <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
         </div>
-        <div class="max-w-2xl mx-auto">
-          <!-- Photo montage of both lawyers using CMS images -->
-          <div class="grid grid-cols-2 gap-4 md:gap-6 mb-8">
-            {lawyersWithImages.map((lawyer) => (
-              <div class="text-center">
-                <a href={profilePath(currentLang, lawyer)} class="block group">
-                  <div class="aspect-square overflow-hidden rounded-lg shadow-lg mb-3 border border-gray-900 relative max-w-[200px] md:max-w-[250px] mx-auto">
-                    {lawyer.image ? (
-                      <img 
-                        src={lawyer.image} 
-                        alt={lawyer.name} 
-                        class="w-full h-full object-cover object-center transition-all duration-300 group-hover:scale-105" 
-                        decoding="async" 
-                        loading="lazy" 
-                        height="500"
-                        width="500" 
-                      />
-                    ) : (
-                      <div class="w-full h-full bg-gray-200 flex items-center justify-center">
-                        <span class="text-gray-500">Photo à venir</span>
-                      </div>
-                    )}
-                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
-                  </div>
-                  <h3 class="text-base md:text-lg font-semibold text-travailleur group-hover:text-travailleur/80 transition-colors">{lawyer.name}</h3>
-                </a>
-              </div>
-            ))}
-          </div>
-          <!-- Description and CTA -->
-          <div class="text-center">
-            <p class="text-dark-gray text-base md:text-lg font-light leading-relaxed mb-6 max-w-3xl mx-auto">{content.profil.description}</p>
-            <Button
-                href={`/${currentLang}/equipe`}
-                text={`${content.profil.cta} →`}
-                variant="secondary"
-                class="uppercase text-sm font-light hover:text-gray-900"
-              />
+        <img src={media.team} alt={content.profil.imageAlt} class="w-full h-auto max-w-4xl mx-auto mb-8" width="1200" height="600" loading="lazy" />
+        <div class="max-w-5xl mx-auto text-center">
+          <p class="text-dark-gray text-base md:text-lg font-light leading-relaxed mb-6 max-w-3xl mx-auto">{content.profil.description}</p>
+          <p class="uppercase text-sm mb-8">{content.profil.cta}</p>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {lawyersWithImages.map(lawyer => {
+              const Tag = portraitLinks === 'profiles' ? 'a' : 'div';
+              return (
+                <Tag href={portraitLinks === 'profiles' ? profilePath(currentLang, lawyer) : undefined} class="block rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">
+                  <img src={lawyer.image} alt={lawyer.imageAlt || lawyer.name} width="500" height="500" loading="lazy" decoding="async"
+                    class="aspect-square w-full max-w-[180px] mx-auto object-cover rounded-lg shadow-lg mb-3" />
+                  <h3 class="text-base md:text-lg font-semibold text-travailleur">{lawyer.name}</h3>
+                </Tag>
+              );
+            })}
           </div>
         </div>
       </div>
