@@ -19,16 +19,12 @@ fr:
     actions:
       - type: message
         label: Message
-        help: Écrivez-nous via le formulaire.
       - type: email
         label: Email avec documents
-        help: Joignez vos documents à votre email.
       - type: appointment
         label: Rendez-vous
-        help: Choisissez votre avocat.
       - type: phone
         label: Appelez-nous
-        help: Choisissez la personne à joindre.
   contactForm:
     formTitle: "Envoyez-nous un message"
     nameLabel: "Nom complet *"
@@ -92,16 +88,12 @@ en:
     actions:
       - type: message
         label: Message
-        help: Write to us using the form.
       - type: email
         label: Email with documents
-        help: Attach your documents to your email.
       - type: appointment
         label: Appointment
-        help: Choose your lawyer.
       - type: phone
         label: Call us
-        help: Choose whom to call.
   contactForm:
     formTitle: "Send us a message"
     nameLabel: "Full Name *"
@@ -165,16 +157,12 @@ it:
     actions:
       - type: message
         label: Messaggio
-        help: Scriveteci tramite il modulo.
       - type: email
         label: Email con documenti
-        help: Allegate i documenti alla vostra email.
       - type: appointment
         label: Appuntamento
-        help: Scegliete il vostro avvocato.
       - type: phone
         label: Chiamateci
-        help: Scegliete chi contattare.
   contactForm:
     formTitle: "Inviaci un messaggio"
     nameLabel: "Nome completo *"
@@ -238,16 +226,12 @@ nl:
     actions:
       - type: message
         label: Bericht
-        help: Schrijf ons via het formulier.
       - type: email
         label: E-mail met documenten
-        help: Voeg uw documenten toe aan uw e-mail.
       - type: appointment
         label: Afspraak
-        help: Kies uw advocaat.
       - type: phone
         label: Bel ons
-        help: Kies wie u wilt bellen.
   contactForm:
     formTitle: "Stuur ons een bericht"
     nameLabel: "Volledige naam *"

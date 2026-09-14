@@ -13,7 +13,7 @@ Dans Decap, Configuration du site :
 - **Afficher le formulaire de contact** : masque aussi les accès Message des bannières et les liens Formulaire du menu. Les autres contacts restent disponibles.
 - **Illustration de la bannière Contact** : média commun aux langues.
 
-Dans Traductions de l’interface, pour chaque langue : **Bloc contact** permet de modifier titre, alternative de l’image, libellé Contact individuel, textes et aides des quatre actions et leur ordre. Chaque type doit apparaître exactement une fois. Les destinations sont calculées depuis les réglages centraux. Les anciens champs EMAIL/RDV/APPEL/Réserver et les menus footer téléphones/emails sont retirés. Le titre « Nos bureaux » reste dans Navigation → Pied de page. Les textes du formulaire et de sa page de succès restent dans leurs sections de traduction.
+Dans Traductions de l’interface, pour chaque langue : **Bloc contact** permet de modifier titre, alternative de l’image, libellé Contact individuel, libellés des quatre actions et leur ordre. Chaque type doit apparaître exactement une fois. Les destinations sont calculées depuis les réglages centraux. Les anciens champs EMAIL/RDV/APPEL/Réserver et les menus footer téléphones/emails sont retirés. Le titre « Nos bureaux » reste dans Navigation → Pied de page. Les textes du formulaire et de sa page de succès restent dans leurs sections de traduction.
 
 Après enregistrement, attendre la reconstruction Netlify puis recharger la page. Un enregistrement CMS seul ne prouve pas que le nouveau contenu est publié.
 
@@ -51,3 +51,7 @@ Revue séparée : utilisation de `Picture`, centralisation des substitutions lé
 ## Spec
 
 Revue séparée : adresse anglaise centralisée, aucun écart fonctionnel local restant identifié. L’acceptation globale reste partielle : édition Decap réelle, preview distante, réception Netlify/email et arbitrages/validation cliente ne sont pas prouvés. Aucune clôture automatique du ticket.
+
+### Ajustement visuel complémentaire
+
+À la demande de Guillaume : titre au-dessus des actions, descriptions supprimées du rendu et de Decap dans les quatre langues, cartes compactes sans hauteur de 156 px. Illustration réservée au desktop pour raccourcir le parcours mobile. Build et huit tests de menus multilingues vérifiés.

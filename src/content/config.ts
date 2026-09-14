@@ -153,7 +153,6 @@ const uiTranslationsSchema = z.object({
     actions: z.array(z.object({
       type: z.enum(['message', 'email', 'appointment', 'phone']),
       label: z.string().min(1),
-      help: z.string(),
     })).length(4).refine(actions => new Set(actions.map(action => action.type)).size === 4, 'Chaque action doit apparaître une seule fois'),
   }),
   contactForm: z.object({

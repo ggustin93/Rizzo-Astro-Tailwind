@@ -18,17 +18,9 @@ const actions = t.actions.filter(action => action.type !== 'message' || config.s
 <div class="full-bleed bg-employeur rounded-lg overflow-hidden">
   <section id="contact" class="contact-banner">
     <div class="container mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-      <div class="lg:w-2/5 flex flex-col items-center order-first lg:order-last">
-        <div class="flex items-center mb-4 w-full justify-center pt-0">
-          <div class="w-12 sm:w-16 h-px bg-white/40 mr-3"></div>
-          <h2 class="text-lg sm:text-xl lg:text-2xl font-light text-white uppercase flex items-center whitespace-nowrap tracking-widest">
-            <MessageCircle class="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-accent" />{t.title}
-          </h2>
-          <div class="w-12 sm:w-16 h-px bg-white/40 ml-3"></div>
-        </div>
-        <Picture src={config.contactIllustration} alt={t.illustrationAlt} class="w-full h-auto max-w-[200px] sm:max-w-[240px] lg:max-w-[280px] opacity-75 drop-shadow-[0_0_12px_rgba(255,255,255,0.1)]" width="280" height="112" loading="lazy" />
-      </div>
-      <div class="contact-options lg:w-3/5 order-last lg:order-first">
+      <div class="contact-content">
+        <h2 class="contact-heading">{t.title}</h2>
+        <div class="contact-options">
         {actions.map(action => {
           const ActionIcon = actionIcons[action.type];
           return (
@@ -38,7 +30,7 @@ const actions = t.actions.filter(action => action.type !== 'message' || config.s
                 <span class="action-icon"><ActionIcon aria-hidden="true" title="" /></span>
                 <span class="action-copy">
                   <span class="action-title">{action.label}</span>
-                  <span class="action-help">{action.help}</span>
+
                   {action.type === 'email' && <span class="action-email">{config.cabinetEmail}</span>}
                 </span>
                 <ArrowUpRight aria-hidden="true" title="" class="action-indicator" />
@@ -49,7 +41,7 @@ const actions = t.actions.filter(action => action.type !== 'message' || config.s
                   <span class="action-icon"><ActionIcon aria-hidden="true" title="" /></span>
                   <span class="action-copy">
                     <span class="action-title">{action.label}</span>
-                    <span class="action-help">{action.help}</span>
+
                   </span>
                   <ChevronDown aria-hidden="true" title="" class="action-indicator" />
                 </summary>
@@ -73,6 +65,10 @@ const actions = t.actions.filter(action => action.type !== 'message' || config.s
             )}
           </div>
         ); })}
+        </div>
+      </div>
+      <div class="contact-illustration">
+        <Picture src={config.contactIllustration} alt={t.illustrationAlt} class="w-full h-auto max-w-[220px] opacity-75" width="280" height="112" loading="lazy" />
       </div>
     </div>
   </section>
@@ -81,14 +77,13 @@ const actions = t.actions.filter(action => action.type !== 'message' || config.s
   .contact-banner { padding: clamp(1.5rem, 4vw, 3.5rem) clamp(1rem, 4vw, 3rem); }
   .contact-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; width: 100%; align-items: start; }
   .contact-card { background: #fffdfa; border: 1px solid rgba(255,255,255,.55); border-radius: 14px; color: #363b70; box-shadow: 0 2px 4px rgba(27,31,66,.04); }
-  .contact-action { display: grid; grid-template-columns: 42px minmax(0, 1fr) 18px; align-items: start; gap: .85rem; padding: 1.4rem 1.2rem; min-height: 156px; cursor: pointer; text-decoration: none; transition: background-color .18s, border-color .18s; }
+  .contact-action { display: grid; grid-template-columns: 42px minmax(0, 1fr) 18px; align-items: center; gap: .85rem; padding: 1rem 1.2rem; min-height: 90px; cursor: pointer; text-decoration: none; transition: background-color .18s, border-color .18s; }
   .contact-action:hover { background: #f5f3fc; border-color: #dadcf4; }
   .action-icon { display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 12px; background: #edecf7; color: #53599a; }
   .action-icon :global(svg) { width: 21px; height: 21px; stroke-width: 1.6; }
   .action-copy { min-width: 0; padding-top: .05rem; }
   .action-title { display: block; font-size: 1.1rem; line-height: 1.4; font-weight: 600; }
-  .action-help { display: block; margin-top: .5rem; font-size: .86rem; line-height: 1.5; color: #61637c; }
-  .action-email { display: block; margin-top: .6rem; font-size: .8rem; line-height: 1.4; color: #454b89; overflow-wrap: anywhere; }
+  .action-email { display: block; margin-top: .25rem; font-size: .8rem; line-height: 1.4; color: #454b89; overflow-wrap: anywhere; }
   .contact-action :global(.action-indicator) { width: 18px; height: 18px; margin-top: .25rem; color: #7c80a6; transition: transform .18s; }
   summary.contact-action { list-style: none; }
   summary.contact-action::-webkit-details-marker { display: none; }
@@ -102,7 +97,11 @@ const actions = t.actions.filter(action => action.type !== 'message' || config.s
   .choice-phone { display: block; font-size: .82rem; color: #61637c; margin-top: .2rem; }
   .contact-choice :global(.choice-arrow) { width: 16px; height: 16px; flex-shrink: 0; }
   .contact-action:focus-visible, .contact-choice:focus-visible { outline: 3px solid #ffcc33; outline-offset: 4px; }
-  @media (min-width: 1024px) { .contact-options { width: 60%; } }
+  .contact-content { width: 100%; min-width: 0; }
+  .contact-heading { margin: 0 0 1.25rem; color: white; font-size: clamp(1.6rem, 2.5vw, 2rem); line-height: 1.2; font-weight: 400; letter-spacing: -.02em; }
+  .contact-illustration { display: flex; justify-content: center; flex-shrink: 0; }
+  @media (min-width: 1024px) { .contact-content { flex: 1; } .contact-illustration { width: 28%; } }
+  @media (max-width: 1023px) { .contact-illustration { display: none; } }
   @media (max-width: 639px) {
     .contact-options { grid-template-columns: minmax(0, 1fr); gap: .75rem; }
     .contact-action { min-height: 0; padding: 1.2rem; }

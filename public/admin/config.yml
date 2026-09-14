@@ -929,7 +929,6 @@ collections:
                           - {label: "Rendez-vous — calendriers", value: "appointment"}
                           - {label: "Appelez-nous — annuaire", value: "phone"}
                       - {label: "Libellé", name: "label", widget: "string"}
-                      - {label: "Aide", name: "help", widget: "text"}
               - label: "Formulaire de contact"
                 name: "contactForm"
                 widget: "object"
