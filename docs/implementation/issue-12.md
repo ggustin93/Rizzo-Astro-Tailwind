@@ -6,7 +6,7 @@ Les lots #12 et #20 sont intégrés et publiés sur `feat/oct-2026-romain-nl-seo
 
 [Ouvrir la preview](https://feat-oct-2026-romain-nl-seo--crizzo-pwablo-dev.netlify.app/fr/).
 
-- Accueil : boutons mobiles compacts, bouton « Découvrir l’équipe » et portraits cliquables vers les profils. Les photos de la page Équipe sont également cliquables.
+- Accueil : boutons mobiles compacts, libellé « Découvrir l’équipe » sans lien, conformément au PDF de Christine, et portraits cliquables vers les profils (portée du « sans lien » à confirmer avec le cabinet). Les photos de la page Équipe sont également cliquables.
 - Services : en-têtes centrés sur fond thématique, texte blanc, sommaire, accordéons natifs et séparateur unique entre rubriques. Turquoise Travailleurs, violet Employeurs, bleu Institutions européennes conservés ; nuance foncée du turquoise pour le contraste.
 - Decap : textes et médias restent éditables. `portraitLinks: profiles` active les liens des mini-portraits. « Affichage des situations » propose `accordion` ou `expanded`, indépendamment pour chaque page/langue.
 - Preuves : 215 tests réussis et 5 ignorés sur la refonte générale ; 62 tests distants réussis sur `8b75992b`. Dernières corrections : build réussi et 90 tests locaux réussis ; bouton, portrait lié et en-tête coloré vérifiés par HTTP sur la preview de `25ae308e`. Ne pas confondre ces séries de vérifications.
@@ -32,7 +32,7 @@ Seams confirmés par Guillaume : build Astro/typecheck, Playwright sur productio
 
 ## Réserves externes
 
-- Liens : arbitrage validé par Guillaume le 14 septembre. Bouton vers Équipe et portraits vers les profils.
+- Liens : Christine demande « Découvrir l’équipe (mais sans lien) ». Le libellé reste non cliquable. Les portraits sont cliquables selon la demande de Guillaume ; confirmer avec le cabinet si son annotation devait aussi les concerner.
 - Traductions : prétraductions à relire par le cabinet ; aucune validation juridique acquise.
 - Accès effectif Decap, enregistrement et réouverture dans le CMS : preuve externe distincte des modifications YAML et builds locaux.
 - Preview distante publiée ; production non déployée. Ticket ouvert pour les recettes et relectures restantes.
@@ -43,7 +43,7 @@ Seams confirmés par Guillaume : build Astro/typecheck, Playwright sur productio
 - `site-config.yml → lawyers` reste la sélection de contacts existants, désormais reliés par `id`. Le schéma résout leur nom et LinkedIn depuis l’annuaire pour conserver le contrat des composants existants. L’ajout d’Arnaud et Romain à `team` n’ajoute aucun destinataire au formulaire ni carte de contact. #19 devra rattacher ses coordonnées aux mêmes identifiants, sans recopier l’identité.
 - `profile.yml → fr/en/it/nl → lawyers` référence chaque membre par `id`. L’ordre localisé ne pilote pas l’affichage. Présentation Équipe, biographie individuelle et présentation collective de l’accueil sont indépendantes. Le PDF ne fournit aucune nouvelle biographie introductive individuelle : les profils commencent par les parcours.
 - La navigation, les routes, les quatre nœuds Person, le sitemap et `llms.txt` utilisent l’annuaire. Les données de contact inconnues ne sont pas inventées. Les commandes de réservation supplémentaires relèvent des lots #13/#19.
-- `home.yml → portraitLinks` vaut `profiles` en preview. Le bouton « Découvrir l’équipe » ouvre la page Équipe ; son libellé reste éditable dans Page Accueil → langue → Équipe. Le choix `none` désactive uniquement les liens des mini-portraits.
+- `home.yml → portraitLinks` vaut `profiles` en preview. Le libellé « Découvrir l’équipe » reste sans lien conformément au PDF ; il reste éditable dans Page Accueil → langue → Équipe. Le choix `none` désactive uniquement les liens des mini-portraits.
 
 ## Aide Decap ciblée
 

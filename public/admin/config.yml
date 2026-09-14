@@ -26,7 +26,7 @@ collections:
             name: "portraitLinks"
             widget: "select"
             default: "profiles"
-            hint: "Les portraits peuvent ouvrir le profil individuel. Le bouton Découvrir l’équipe ouvre la page Équipe."
+            hint: "Les portraits peuvent ouvrir le profil individuel (portée à confirmer avec le cabinet). Le libellé Découvrir l’équipe reste sans lien conformément au PDF."
             options:
               - {label: "Sans lien", value: "none"}
               - {label: "Vers les profils", value: "profiles"}
@@ -100,7 +100,7 @@ collections:
                 fields:
                   - {label: "Titre", name: "title", widget: "string"}
                   - {label: "Description", name: "description", widget: "text"}
-                  - {label: "Libellé du bouton vers l’équipe", name: "cta", widget: "string"}
+                  - {label: "Libellé au-dessus des portraits (sans lien)", name: "cta", widget: "string"}
                   - {label: "Alternative de l’illustration", name: "imageAlt", widget: "string"}
 
               - {label: "Titre des articles", name: "articlesTitle", widget: "string"}

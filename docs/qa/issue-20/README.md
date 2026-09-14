@@ -6,7 +6,7 @@ Les lots #12 et #20 sont intégrés et publiés sur `feat/oct-2026-romain-nl-seo
 
 [Ouvrir la preview](https://feat-oct-2026-romain-nl-seo--crizzo-pwablo-dev.netlify.app/fr/).
 
-- Accueil : boutons mobiles compacts, bouton « Découvrir l’équipe » et portraits cliquables vers les profils. Les photos de la page Équipe sont également cliquables.
+- Accueil : boutons mobiles compacts, libellé « Découvrir l’équipe » sans lien, conformément au PDF de Christine, et portraits cliquables vers les profils (portée du « sans lien » à confirmer avec le cabinet). Les photos de la page Équipe sont également cliquables.
 - Services : en-têtes centrés sur fond thématique, texte blanc, sommaire, accordéons natifs et séparateur unique entre rubriques. Turquoise Travailleurs, violet Employeurs, bleu Institutions européennes conservés ; nuance foncée du turquoise pour le contraste.
 - Decap : textes et médias restent éditables. `portraitLinks: profiles` active les liens des mini-portraits. « Affichage des situations » propose `accordion` ou `expanded`, indépendamment pour chaque page/langue.
 - Preuves : 215 tests réussis et 5 ignorés sur la refonte générale ; 62 tests distants réussis sur `8b75992b`. Dernières corrections : build réussi et 90 tests locaux réussis ; bouton, portrait lié et en-tête coloré vérifiés par HTTP sur la preview de `25ae308e`. Ne pas confondre ces séries de vérifications.

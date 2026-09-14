@@ -165,7 +165,7 @@ export const prerender = true;
         <img src={media.team} alt={content.profil.imageAlt} class="w-full h-auto max-w-2xl mx-auto mb-8" width="1200" height="600" loading="lazy" />
         <div class="max-w-5xl mx-auto text-center">
           <p class="text-dark-gray text-base md:text-lg font-light leading-relaxed mb-6 max-w-3xl mx-auto">{content.profil.description}</p>
-          <div class="mb-8"><Button href={`/${currentLang}/equipe/`} text={content.profil.cta} icon={ArrowRight} class="team-discover" /></div>
+          <p class="text-lg font-medium text-gray-800 mb-8">{content.profil.cta}</p>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {lawyersWithImages.map(lawyer => {
               const Tag = portraitLinks === 'profiles' ? 'a' : 'div';
@@ -253,7 +253,6 @@ export const prerender = true;
     .hero-illustration { max-width: 17rem; }
 
   }
-  :global(.team-discover) { min-height: 44px; color: var(--worker-ink); border-color: var(--worker-brand); }
   #profil a img { transition: opacity .15s; }
   #profil a:hover img { opacity: .85; }
   .service-card { background: white; border: 1px solid #e0e3e5; border-top: 4px solid var(--service-color); color: #333; }
