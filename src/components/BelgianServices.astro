@@ -2,8 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from './Button.astro';
 import { ArrowRight } from 'astro-feather-icons2';
-const { lang, audience } = Astro.props;
-const content = Astro.props.content;
+const { content, lang, audience } = Astro.props;
 const isWorkerPage = audience === 'travailleurs';
 ---
 <BaseLayout
@@ -22,7 +21,10 @@ const isWorkerPage = audience === 'travailleurs';
       <div class="space-y-10">
         {content.sections.map((section, index) => (
           <section aria-labelledby={`service-${index}`}>
-            <h2 id={`service-${index}`} class:list={['text-xl md:text-2xl font-semibold mb-4', isWorkerPage ? 'text-travailleur' : 'text-employeur']}>{section.title}</h2>
+            <h2
+              id={`service-${index}`}
+              class:list={['text-xl md:text-2xl font-semibold mb-4', isWorkerPage ? 'text-travailleur' : 'text-employeur']}
+            >{section.title}</h2>
             {section.description && <p class="whitespace-pre-line leading-relaxed text-dark-gray">{section.description}</p>}
             {section.situations?.length > 0 && (
               <ul class:list={['space-y-5 text-dark-gray leading-relaxed', isWorkerPage ? 'list-disc pl-6' : 'list-none', section.description && 'mt-5']}>
@@ -38,7 +40,12 @@ const isWorkerPage = audience === 'travailleurs';
         ))}
       </div>
       <div class="mt-10">
-        <Button href={`/${lang}/${content.ctaDestination}/`} text={content.ctaText} icon={ArrowRight} class="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4" />
+        <Button
+          href={`/${lang}/${content.ctaDestination}/`}
+          text={content.ctaText}
+          icon={ArrowRight}
+          class="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
+        />
       </div>
     </div>
   </div>

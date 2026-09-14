@@ -144,3 +144,23 @@ L'installation initiale a échoué faute d'espace disque. Les dépendances de ce
 été lues via des liens locaux vers le `node_modules` existant du checkout source, avec caches
 Astro/Vite séparés dans le worktree. Aucun fichier du checkout source n'a été édité. Pour une
 reprise autonome, disposer d'espace et exécuter `npm ci` pour installer les dépendances locales.
+
+## Nouvelle passe simplify après `790224c3`
+
+Skill `/Users/pwablo/.agents/skills/simplify/SKILL.md` relu et diff du ticket examiné.
+Deux améliorations limitées :
+
+- Les titres attendus des tests traduits sont indexés par public (`travailleurs` / `employeurs`),
+  supprimant le couplage implicite entre deux tableaux parallèles. Même couverture et mêmes valeurs.
+- `BelgianServices.astro` regroupe la lecture de ses propriétés et aère les attributs des titres
+  et du bouton. Classes, conditions, textes et destinations identiques.
+
+Aucune modification des YAML, schémas ou champs CMS. Relecture locale du nouveau diff : aucun
+changement fonctionnel identifié. Les revues indépendantes ci-dessus portent sur `ba1b5809`.
+
+Vérifications exécutées le 14 septembre après cette nouvelle passe :
+`npm run build` réussi (0 erreur, 0 avertissement, 46 hints, 64 pages),
+`BASE_URL=http://127.0.0.1:4323 npx playwright test tests/belgian-services.spec.js tests/european-institutions.spec.ts --retries=0`
+réussi (64 tests, 11,2 s), `git diff --check` réussi. La suite complète et la recette CMS ne sont
+pas répétées pour cette modification de lisibilité ; leurs preuves précédentes restent datées
+ci-dessus. Preview locale reconstruite ; aucun merge, push ou déploiement réalisé.

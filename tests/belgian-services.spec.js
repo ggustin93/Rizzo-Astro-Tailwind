@@ -38,18 +38,27 @@ test('Employeurs FR presents five sections, four individual situations and fees'
 });
 
 const translatedHeadings = {
-  en: ['Contract, termination and end of collaboration', 'Audit – Due diligence in labour and social security law'],
-  it: ['Contratto, risoluzione e fine della collaborazione', 'Audit – Due diligence in diritto del lavoro e della sicurezza sociale'],
-  nl: ['Overeenkomst, beëindiging en einde van de samenwerking', 'Audit – Due diligence inzake arbeidsrecht en sociale zekerheid'],
+  en: {
+    travailleurs: 'Contract, termination and end of collaboration',
+    employeurs: 'Audit – Due diligence in labour and social security law',
+  },
+  it: {
+    travailleurs: 'Contratto, risoluzione e fine della collaborazione',
+    employeurs: 'Audit – Due diligence in diritto del lavoro e della sicurezza sociale',
+  },
+  nl: {
+    travailleurs: 'Overeenkomst, beëindiging en einde van de samenwerking',
+    employeurs: 'Audit – Due diligence inzake arbeidsrecht en sociale zekerheid',
+  },
 };
 for (const [lang, headings] of Object.entries(translatedHeadings)) {
-  for (const [index, audience] of ['travailleurs', 'employeurs'].entries()) {
+  for (const [audience, heading] of Object.entries(headings)) {
     test(`${audience} ${lang} offers the complete translated service structure`, async ({ page }) => {
       await page.goto(`/${lang}/services/${audience}/`);
       const sections = page.locator('main section');
       await expect(sections).toHaveCount(5);
-      await expect(sections.first().locator('h2')).toHaveText(headings[index]);
-      await expect(sections.locator('li')).toHaveCount(index === 0 ? 10 : 4);
+      await expect(sections.first().locator('h2')).toHaveText(heading);
+      await expect(sections.locator('li')).toHaveCount(audience === 'travailleurs' ? 10 : 4);
       await expect(page.locator('main')).not.toContainText('Nous vous');
       await expect(page.locator(`main a[href="/${lang}/honoraires/"]`)).toBeVisible();
     });
