@@ -72,13 +72,13 @@ export const prerender = true;
 
 <BaseLayout title={title} description={description} keywords={keywords} image={image} lang={currentLang}>  
   <div class="full-bleed bg-white bg-svg-pattern">
-    <section class="home-hero py-12 md:py-20 relative">
-      <div class="container mx-auto px-4 flex flex-col items-center md:flex-row md:items-center md:justify-between">
-        <div class="w-full md:w-1/2 text-center md:text-left">
-          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-light mb-2 md:mb-3 text-gray-800 leading-tight">{content.hero.title}</h1>
-          <h2 class="text-2xl sm:text-3xl lg:text-4xl mb-6 text-employeur font-light leading-snug">{content.hero.subtitle}</h2>
-          <p class="mb-5 md:mb-6 text-base md:text-lg text-dark-gray max-w-xl mx-auto md:mx-0 font-light leading-relaxed">{content.hero.description}</p>
-          <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start space-y-3 sm:space-y-0 sm:space-x-4">
+    <section class="home-hero">
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <h1 class="hero-title">{content.hero.title}</h1>
+          <h2 class="hero-subtitle">{content.hero.subtitle}</h2>
+          <p class="hero-description">{content.hero.description}</p>
+          <div class="hero-actions">
             <Button 
               href={`/${currentLang}${content.hero.destination}`}
               text={content.hero.cta}
@@ -86,23 +86,23 @@ export const prerender = true;
               icon={Calendar}
               iconPosition="left"
               ariaLabel={content.hero.cta}
-              class="bg-accent text-white font-medium hover:bg-travailleur text-center justify-center"
+              class="hero-primary"
             />
             <Button 
               variant="secondary"
               icon={ChevronDown}
               href="#expertise"
-              class="border-gray-400 hover:bg-beige hover:text-gray-900 text-center justify-center"
+              class="hero-secondary"
             >
               <span class="whitespace-nowrap">{content.hero.more}</span>
             </Button>
           </div>
         </div>
-        <div class="w-full md:w-1/2 flex justify-center md:justify-end mt-6 md:mt-0">
+        <div class="hero-art">
           <img 
             src={media.hero}
             alt={content.hero.imageAlt}
-            class="w-full h-auto max-w-sm md:max-w-xl object-contain" 
+            class="hero-illustration"
             decoding="async" 
             loading="eager" 
             width="950" 
@@ -224,8 +224,28 @@ export const prerender = true;
 </BaseLayout>
 
 <style>
-  .home-hero h1 { letter-spacing: -.025em; color: #263952; }
-  .home-hero h2 { text-wrap: balance; }
+  .home-hero { padding-block: clamp(2.5rem, 5vw, 5rem); }
+  .hero-layout { display: grid; align-items: center; gap: 2.5rem; }
+  .hero-copy { min-width: 0; }
+  .hero-title { color: #263952; font-size: clamp(2rem, 3.6vw, 3.25rem); font-weight: 400; line-height: 1.12; letter-spacing: -.025em; margin-bottom: 1.5rem; }
+  .hero-subtitle { color: #333; font-size: clamp(1.5rem, 2.5vw, 2.25rem); font-weight: 400; line-height: 1.35; text-wrap: balance; max-width: 27ch; }
+  .hero-subtitle::after { content: ""; display: block; width: 4rem; height: 4px; background: #ffcc33; border-radius: 2px; margin-block: 1.5rem; }
+  .hero-description { color: #4b5158; max-width: 47ch; font-size: 1.0625rem; line-height: 1.75; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.75rem; }
+  .hero-actions :global(a) { min-height: 48px; padding: .85rem 1.35rem; border-radius: .5rem; }
+  .hero-actions :global(.hero-primary) { background: var(--worker-ink); border-color: var(--worker-ink); color: white; }
+  .hero-actions :global(.hero-primary:hover) { background: #055f6b; }
+  .hero-actions :global(.hero-secondary) { border-color: #b1b7bc; background: white; color: #333; }
+  .hero-actions :global(.hero-secondary:hover) { background: #faf5f0; border-color: #68727b; }
+  .hero-art { display: flex; justify-content: center; }
+  .hero-illustration { width: 100%; height: auto; max-width: 32rem; object-fit: contain; }
+  @media (min-width: 768px) {
+    .hero-layout { grid-template-columns: 1.1fr 1fr; gap: clamp(2rem, 5vw, 5rem); }
+  }
+  @media (max-width: 767px) {
+    .hero-illustration { max-width: 20rem; }
+    .hero-actions :global(a) { flex: 1 1 12rem; }
+  }
   .service-card { background: white; border: 1px solid #e0e3e5; border-top: 4px solid var(--service-color); color: #333; }
   .service-employer { --service-color: var(--employer-brand); }
   .service-worker { --service-color: var(--worker-brand); }
