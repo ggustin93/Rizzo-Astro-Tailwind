@@ -227,6 +227,10 @@ export const prerender = true;
   .team-section { padding-block: clamp(2.5rem, 5vw, 4rem); }
   .team-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.8fr); align-items: center; gap: 2rem; max-width: 64rem; margin: 0 auto 2rem; }
   .team-illustration { width: 100%; height: auto; margin: 0 auto; }
+  /* Compensate for the illustration's internal whitespace, aligning the visible artwork with the cards. */
+  @media (min-width: 768px) {
+    .team-illustration { transform: translateX(-7%) scale(1.12); }
+  }
   .team-description { font-size: 1.125rem; line-height: 1.75; font-weight: 300; color: #333; text-align: left; }
 
   .team-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; text-align: left; }
