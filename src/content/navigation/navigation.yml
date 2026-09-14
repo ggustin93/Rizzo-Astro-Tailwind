@@ -37,7 +37,7 @@ fr:
     pwablo:
       pwabloText: Design by Pwablo
       pwabloUrl: https://pwablo.be
-    contactTitle: "Nos bureaux"
+    contactTitle: "Contact"
     menuTitle: Menu
     ecoDesignText: Score d'éco-conception
     menuLinks:
@@ -90,7 +90,7 @@ en:
     pwablo:
       pwabloText: Design by Pwablo
       pwabloUrl: https://pwablo.be
-    contactTitle: "Our offices"
+    contactTitle: "Contact"
     menuTitle: Menu
     ecoDesignText: Eco-design Score
     menuLinks:
@@ -143,7 +143,7 @@ it:
     pwablo:
       pwabloText: Design di Pwablo
       pwabloUrl: https://pwablo.be
-    contactTitle: "I nostri uffici"
+    contactTitle: "Contatti"
     menuTitle: Menu
     ecoDesignText: Punteggio di eco-design
     menuLinks:
@@ -196,7 +196,7 @@ nl:
     pwablo:
       pwabloText: Design by Pwablo
       pwabloUrl: https://pwablo.be
-    contactTitle: "Onze kantoren"
+    contactTitle: "Contact"
     menuTitle: Menu
     ecoDesignText: Ecodesignscore
     menuLinks:

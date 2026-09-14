@@ -31,7 +31,7 @@ test.describe('Contact Information Verification', () => {
     const footer = page.locator('footer');
     await expect(footer.getByRole('link', { name: editorEmail, exact: true })).toHaveAttribute('href', `mailto:${editorEmail}`);
     await expect(footer.locator('a[href^="tel:"]')).toHaveCount(0);
-    await expect(footer).toContainText('Nos bureaux');
+    await expect(footer.getByRole('heading', { name: 'Contact', exact: true })).toBeVisible();
     // Check for address parts to be resilient to formatting
     await expect(footer).toContainText(address);
     await expect(footer).toContainText('1180 Bruxelles');

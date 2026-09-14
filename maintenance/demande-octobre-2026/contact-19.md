@@ -63,3 +63,7 @@ Guillaume a demandé de réintroduire l’email général dans le footer : cette
 Sur les profils, téléphone/email/WhatsApp/LinkedIn sont regroupés dans `MemberContactCard`, une grille à deux colonnes sur desktop et une sur mobile, avec icônes décoratives et omissions dérivées des coordonnées disponibles. Les cartes de la bannière conservent leurs arrondis au survol ; deux tracés fins habillent l’illustration.
 
 Build final réussi. Vérification ciblée : 89 tests réussis et un test formulaire Safari réussi au retry ; recontrôle indépendant sans retry des 12 parcours individuels/formulaire entièrement réussi. Captures desktop/mobile de la carte et du survol inspectées ; email mobile sans retour à la ligne artificiel.
+
+### Libellé final du footer
+
+Le 14 septembre, Guillaume valide le suivi GitHub et le push de la branche. Avec adresse et email général, le titre devient Contact (FR/EN/NL) / Contatti (IT), remplaçant Nos bureaux. Les réserves CMS, messagerie et recette cliente restent ouvertes.

@@ -839,7 +839,7 @@ collections:
                     name: "menuTitle"
                     widget: "string"
                     default: "Menu"
-                  - label: "Titre de la section Nos bureaux"
+                  - label: "Titre de la section Contact"
                     name: "contactTitle"
                     widget: "string"
                     default: "Contact"
