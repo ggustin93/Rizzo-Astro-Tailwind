@@ -1,5 +1,21 @@
 # Services belges — recette et reprise du ticket #20
 
+## État actuel au 14 septembre 2026
+
+Les lots #12 et #20 sont intégrés et publiés sur `feat/oct-2026-romain-nl-seo`. Dernière révision fonctionnelle : `25ae308e`, déploiement Netlify `6aa83cd0a738ed0008da3e53`, confirmé `ready` en contexte branche. Les worktrees de réalisation ont été supprimés après intégration.
+
+[Ouvrir la preview](https://feat-oct-2026-romain-nl-seo--crizzo-pwablo-dev.netlify.app/fr/).
+
+- Accueil : boutons mobiles compacts, bouton « Découvrir l’équipe » et portraits cliquables vers les profils. Les photos de la page Équipe sont également cliquables.
+- Services : en-têtes centrés sur fond thématique, texte blanc, sommaire, accordéons natifs et séparateur unique entre rubriques. Turquoise Travailleurs, violet Employeurs, bleu Institutions européennes conservés ; nuance foncée du turquoise pour le contraste.
+- Decap : textes et médias restent éditables. `portraitLinks: profiles` active les liens des mini-portraits. « Affichage des situations » propose `accordion` ou `expanded`, indépendamment pour chaque page/langue.
+- Preuves : 215 tests réussis et 5 ignorés sur la refonte générale ; 62 tests distants réussis sur `8b75992b`. Dernières corrections : build réussi et 90 tests locaux réussis ; bouton, portrait lié et en-tête coloré vérifiés par HTTP sur la preview de `25ae308e`. Ne pas confondre ces séries de vérifications.
+- Restent ouverts : recette CMS distante sur backend de test et relecture juridique/linguistique du cabinet. #19 (contact/RDV), #22 (UE) et #24 (messagerie) ne sont pas livrés par ces lots. Production inchangée.
+
+Le dossier de réunion, ses mails et ses PDF restent locaux sous `maintenance/`, ignorés par Git. Ne pas les ajouter aux commits.
+
+## Historique de réalisation initiale
+
 Branche locale : `codex/20-services-belges`. Base et référence fixe de revue :
 `14d3a4c5f2019b8f8ee81eb6870ec0bbdbf27ce7` (`feat/oct-2026-romain-nl-seo`),
 présente avant toute modification. Worktree exclusivement consacré à #20.
@@ -12,8 +28,7 @@ Deux pages sur un composant commun : cinq rubriques chacune, dix situations Trav
 (répartition 4/2/2/2), quatre situations Employeurs et tous les paragraphes FR reçus.
 Sources intégrales : `2026-09-14-nos-services.pdf` (3 pages contrôlées visuellement) et
 son extraction dans le dossier partagé `meeting-2026-09-15/sources/`, lus sans modification.
-Les questions Travailleurs restent en liste, celles des Employeurs en paragraphes ouverts.
-Aucune FAQ séparée, aucun accordéon ni balisage FAQ ajouté. Prétraductions EN/IT/NL préparées.
+La version initiale affichait toutes les situations dépliées. Les accordéons ont ensuite été autorisés par Guillaume et livrés avec un choix d’affichage dans Decap. Aucune FAQ séparée ni balisage FAQ ajouté. Prétraductions EN/IT/NL préparées.
 URLs et médias historiques préservés. Le schéma et les deux publics UE restent inchangés.
 
 Une seule définition des champs Decap couvre les huit éditions. Le schéma Astro est partagé

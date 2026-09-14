@@ -1,7 +1,23 @@
 # Accueil, équipe et profils — #12
 
+## État actuel au 14 septembre 2026
+
+Les lots #12 et #20 sont intégrés et publiés sur `feat/oct-2026-romain-nl-seo`. Dernière révision fonctionnelle : `25ae308e`, déploiement Netlify `6aa83cd0a738ed0008da3e53`, confirmé `ready` en contexte branche. Les worktrees de réalisation ont été supprimés après intégration.
+
+[Ouvrir la preview](https://feat-oct-2026-romain-nl-seo--crizzo-pwablo-dev.netlify.app/fr/).
+
+- Accueil : boutons mobiles compacts, bouton « Découvrir l’équipe » et portraits cliquables vers les profils. Les photos de la page Équipe sont également cliquables.
+- Services : en-têtes centrés sur fond thématique, texte blanc, sommaire, accordéons natifs et séparateur unique entre rubriques. Turquoise Travailleurs, violet Employeurs, bleu Institutions européennes conservés ; nuance foncée du turquoise pour le contraste.
+- Decap : textes et médias restent éditables. `portraitLinks: profiles` active les liens des mini-portraits. « Affichage des situations » propose `accordion` ou `expanded`, indépendamment pour chaque page/langue.
+- Preuves : 215 tests réussis et 5 ignorés sur la refonte générale ; 62 tests distants réussis sur `8b75992b`. Dernières corrections : build réussi et 90 tests locaux réussis ; bouton, portrait lié et en-tête coloré vérifiés par HTTP sur la preview de `25ae308e`. Ne pas confondre ces séries de vérifications.
+- Restent ouverts : recette CMS distante sur backend de test et relecture juridique/linguistique du cabinet. #19 (contact/RDV), #22 (UE) et #24 (messagerie) ne sont pas livrés par ces lots. Production inchangée.
+
+Le dossier de réunion, ses mails et ses PDF restent locaux sous `maintenance/`, ignorés par Git. Ne pas les ajouter aux commits.
+
+## Historique de réalisation initiale
+
 Base fixe de revue : `14d3a4c5f2019b8f8ee81eb6870ec0bbdbf27ce7`.
-Branche : `codex/12-accueil-equipe`. Aucun push ni déploiement autorisé.
+Branche initiale : `codex/12-accueil-equipe` (worktree supprimé après intégration). Les restrictions ci-dessous décrivent la réalisation initiale ; l’état actuel figure en tête.
 
 Sources : GitHub #12, #18 et #23 (corps complets et commentaires lus le 14 septembre 2026 ; aucun commentaire), copie locale `meeting-2026-09-15/tickets/01-equipe-accueil.md`, PDF Équipe de 8 pages et PDF Accueil de 3 pages. Textes extraits et toutes les pages inspectées visuellement. Les annotations sont dessinées dans les pages, pas des objets PDF `/Annots`. Les trois paragraphes de Christine et les cinq de Stephanie sont intégralement barrés sur les profils ; les présentations Équipe doivent être conservées en entier.
 
@@ -16,10 +32,10 @@ Seams confirmés par Guillaume : build Astro/typecheck, Playwright sur productio
 
 ## Réserves externes
 
-- Liens des mini-portraits : arbitrage client ouvert. Préparation réversible, sans prétendre à un accord.
+- Liens : arbitrage validé par Guillaume le 14 septembre. Bouton vers Équipe et portraits vers les profils.
 - Traductions : prétraductions à relire par le cabinet ; aucune validation juridique acquise.
 - Accès effectif Decap, enregistrement et réouverture dans le CMS : preuve externe distincte des modifications YAML et builds locaux.
-- Preview distante et production non déployées. Ticket à conserver ouvert tant que ses critères externes restent ouverts.
+- Preview distante publiée ; production non déployée. Ticket ouvert pour les recettes et relectures restantes.
 
 ## Modèle livré et reprise des autres lots
 
@@ -27,7 +43,7 @@ Seams confirmés par Guillaume : build Astro/typecheck, Playwright sur productio
 - `site-config.yml → lawyers` reste la sélection de contacts existants, désormais reliés par `id`. Le schéma résout leur nom et LinkedIn depuis l’annuaire pour conserver le contrat des composants existants. L’ajout d’Arnaud et Romain à `team` n’ajoute aucun destinataire au formulaire ni carte de contact. #19 devra rattacher ses coordonnées aux mêmes identifiants, sans recopier l’identité.
 - `profile.yml → fr/en/it/nl → lawyers` référence chaque membre par `id`. L’ordre localisé ne pilote pas l’affichage. Présentation Équipe, biographie individuelle et présentation collective de l’accueil sont indépendantes. Le PDF ne fournit aucune nouvelle biographie introductive individuelle : les profils commencent par les parcours.
 - La navigation, les routes, les quatre nœuds Person, le sitemap et `llms.txt` utilisent l’annuaire. Les données de contact inconnues ne sont pas inventées. Les commandes de réservation supplémentaires relèvent des lots #13/#19.
-- `home.yml → portraitLinks` vaut `none` en preview. L’option `profiles` active les liens individuels, sans transformer « Découvrir l’équipe » en bouton. Ce réglage ne constitue pas une décision cliente.
+- `home.yml → portraitLinks` vaut `profiles` en preview. Le bouton « Découvrir l’équipe » ouvre la page Équipe ; son libellé reste éditable dans Page Accueil → langue → Équipe. Le choix `none` désactive uniquement les liens des mini-portraits.
 
 ## Aide Decap ciblée
 
@@ -45,7 +61,7 @@ Les textes et alternatives sont traduits ; l’identité, les portraits et l’o
 
 Le backend CMS reste `main`, conformément à la configuration de production. **Avant toute recette authentifiée**, une personne autorisée doit préparer le backend et la preview sur la branche de test ; ne pas enregistrer ces données de démonstration sur `main`. Aucun changement de branche distante n’a été effectué dans ce lot.
 
-## Validation locale et revue
+## Validation locale et revue initiales
 
 Les logs complets et captures locales sont dans `maintenance/issue-12/` (non versionné). Le rapport local `rapport.md` contient le hash du commit final et les résultats exacts. Le commit contenant ce document est la livraison locale du lot.
 
@@ -73,8 +89,8 @@ node scripts/verify-team-editing.mjs
 
 Vérifier le port annoncé par Astro avant les tests. La configuration Playwright standard garde son port historique ; `BASE_URL` est obligatoire pour ce worktree. `js-yaml` est déclaré comme dépendance de développement pour la recette, à la version déjà verrouillée par le projet.
 
-Après intégration autorisée ultérieure : refaire la recette CMS sur une branche de test, faire relire textes/traductions et choix de liens, puis préparer la preview cliente. Aucun push, merge, déploiement, clôture GitHub, email, rendez-vous réel ou changement DNS n’a été réalisé.
+Prochaine étape : recette CMS sur backend de test et relecture des textes/traductions du cabinet. La preview est publiée ; aucun changement DNS, envoi de mail ni réservation réelle ne fait partie de cette livraison.
 
-## Passe simplify complémentaire
+## Historique : passe simplify complémentaire
 
 Passe réellement appliquée après `61cf6336`, sur trois fichiers du lot : schémas Accueil/Profils mis en forme champ par champ ; gardes de `getTeam()` explicites, ensemble `profileIds` nommé et spreads séparés ; chemin `teamPath` calculé hors de la boucle de navigation. Aucun champ, contenu ou réglage CMS modifié. Comparaison structurelle de l’AST des schémas : identique. `npm run build` réussi puis commande ciblée équipe/profils/SEO ci-dessus : **84 réussis (30,2 s)**. Relecture Standards et Spec de ce seul delta : aucun finding. Aucun merge, push ou déploiement ; intégration coordonnée en attente des deux retours.
