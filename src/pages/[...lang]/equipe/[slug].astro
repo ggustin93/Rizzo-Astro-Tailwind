@@ -70,6 +70,14 @@ const seoData = {
 
           {lawyer.role && <p class="text-gray-600 mb-4">{lawyer.role}</p>}
 
+          {lawyer.contact && (
+            <div id="coordonnees" class="flex flex-wrap gap-4 mb-6">
+              <a class="profile-link" href={`tel:${lawyer.contact.phone.replace(/\s/g, '')}`}>{lawyer.contact.phone}</a>
+              {lawyer.contact.email && <a class="profile-link break-all" href={`mailto:${lawyer.contact.email}`}>{lawyer.contact.email}</a>}
+              {lawyer.contact.whatsapp && <a class="profile-link" href={`https://wa.me/${lawyer.contact.whatsapp}`}>WhatsApp</a>}
+            </div>
+          )}
+
           <!-- LinkedIn Button -->
           {lawyer.linkedin && (
             <a

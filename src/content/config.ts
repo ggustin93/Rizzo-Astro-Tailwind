@@ -54,18 +54,22 @@ const configCollection = defineCollection({
     })).nonempty(),
     lawyers: z.array(z.object({
       id: z.string().min(1),
-      phone: z.string(),
-      whatsapp: z.string().optional(),
-      email: z.string(),
-      calendarLink: z.string().optional().default(''),
+      phone: z.string().regex(/^\+[1-9][0-9 ]{7,20}$/),
+      whatsapp: z.string().regex(/^[1-9][0-9]{7,14}$/).or(z.literal('')).optional(),
+      email: z.string().email().or(z.literal('')).optional(),
+      calendarLink: z.string().url().regex(/^https:\/\/cal\.com\/[^\s/?#]+(?:[^\s]*)$/).or(z.literal('')).optional().default(''),
     })),
     address: z.string(),
+    cabinetEmail: z.string().email(),
+    contactIllustration: z.string().min(1),
     copyrightText: z.string().optional(),
   }).superRefine((data, ctx) => {
     for (const key of ['id', 'slug']) {
       if (new Set(data.team.map(member => member[key])).size !== data.team.length)
         ctx.addIssue({ code: z.ZodIssueCode.custom, path: ['team'], message: `Duplicate team ${key}` });
     }
+    if (new Set(data.lawyers.map(contact => contact.id)).size !== data.lawyers.length)
+      ctx.addIssue({ code: z.ZodIssueCode.custom, path: ['lawyers'], message: 'Duplicate contact member' });
     for (const contact of data.lawyers) {
       if (!data.team.some(member => member.id === contact.id))
         ctx.addIssue({ code: z.ZodIssueCode.custom, path: ['lawyers'], message: `Unknown member: ${contact.id}` });
@@ -142,16 +146,15 @@ const uiTranslationsSchema = z.object({
     bookWith: z.string(),
     contactForm: z.string()
   }),
-  footer: z.object({
-    phones: z.string(),
-    emails: z.string()
-  }),
   cta: z.object({
     title: z.string(),
-    email: z.string(),
-    appointment: z.string(),
-    call: z.string(),
-    bookAction: z.string()
+    illustrationAlt: z.string().optional().default(''),
+    contactLabel: z.string().min(1),
+    actions: z.array(z.object({
+      type: z.enum(['message', 'email', 'appointment', 'phone']),
+      label: z.string().min(1),
+      help: z.string(),
+    })).length(4).refine(actions => new Set(actions.map(action => action.type)).size === 4, 'Chaque action doit apparaître une seule fois'),
   }),
   contactForm: z.object({
     formTitle: z.string(),
@@ -167,7 +170,6 @@ const uiTranslationsSchema = z.object({
     messagePlaceholder: z.string(),
     submitButton: z.string(),
     sending: z.string(),
-    successMessage: z.string(),
     errorMessage: z.string()
   }),
   contactSuccess: z.object({

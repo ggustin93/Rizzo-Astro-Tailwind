@@ -12,15 +12,23 @@ fr:
   header:
     bookWith: "Prendre rendez-vous avec"
     contactForm: "Formulaire de contact"
-  footer:
-    phones: "Téléphones"
-    emails: "E-mails"
   cta:
-    title: "Contactez-nous"
-    email: "EMAIL"
-    appointment: "RDV"
-    call: "APPEL"
-    bookAction: "Réserver"
+    title: Contactez-nous
+    illustrationAlt: Illustration de contact
+    contactLabel: Contact
+    actions:
+      - type: message
+        label: Message
+        help: Écrivez-nous via le formulaire.
+      - type: email
+        label: Email avec documents
+        help: Joignez vos documents à votre email.
+      - type: appointment
+        label: Rendez-vous
+        help: Choisissez votre avocat.
+      - type: phone
+        label: Appelez-nous
+        help: Choisissez la personne à joindre.
   contactForm:
     formTitle: "Envoyez-nous un message"
     nameLabel: "Nom complet *"
@@ -35,7 +43,6 @@ fr:
     messagePlaceholder: "Décrivez votre situation ou votre question..."
     submitButton: "Envoyer le message"
     sending: "Envoi en cours..."
-    successMessage: "Merci pour votre message. Nous vous répondrons dans les plus brefs délais."
     errorMessage: "Une erreur s'est produite. Veuillez réessayer ou nous contacter directement."
   contactSuccess:
     title: "Message envoyé avec succès"
@@ -78,15 +85,23 @@ en:
   header:
     bookWith: "Book an appointment with"
     contactForm: "Contact form"
-  footer:
-    phones: "Phone numbers"
-    emails: "Email addresses"
   cta:
-    title: "Contact us"
-    email: "EMAIL"
-    appointment: "APPOINTMENT"
-    call: "CALL"
-    bookAction: "Book"
+    title: Contact us
+    illustrationAlt: Contact illustration
+    contactLabel: Contact
+    actions:
+      - type: message
+        label: Message
+        help: Write to us using the form.
+      - type: email
+        label: Email with documents
+        help: Attach your documents to your email.
+      - type: appointment
+        label: Appointment
+        help: Choose your lawyer.
+      - type: phone
+        label: Call us
+        help: Choose whom to call.
   contactForm:
     formTitle: "Send us a message"
     nameLabel: "Full Name *"
@@ -101,7 +116,6 @@ en:
     messagePlaceholder: "Describe your situation or question..."
     submitButton: "Send Message"
     sending: "Sending..."
-    successMessage: "Thank you for your message. We will respond as soon as possible."
     errorMessage: "An error occurred. Please try again or contact us directly."
   contactSuccess:
     title: "Message Sent Successfully"
@@ -144,15 +158,23 @@ it:
   header:
     bookWith: "Prenota un appuntamento con"
     contactForm: "Modulo di contatto"
-  footer:
-    phones: "Telefoni"
-    emails: "Indirizzi e-mail"
   cta:
-    title: "Contattaci"
-    email: "EMAIL"
-    appointment: "APPUNTAMENTO"
-    call: "CHIAMA"
-    bookAction: "Prenota"
+    title: Contattaci
+    illustrationAlt: Illustrazione di contatto
+    contactLabel: Contatto
+    actions:
+      - type: message
+        label: Messaggio
+        help: Scriveteci tramite il modulo.
+      - type: email
+        label: Email con documenti
+        help: Allegate i documenti alla vostra email.
+      - type: appointment
+        label: Appuntamento
+        help: Scegliete il vostro avvocato.
+      - type: phone
+        label: Chiamateci
+        help: Scegliete chi contattare.
   contactForm:
     formTitle: "Inviaci un messaggio"
     nameLabel: "Nome completo *"
@@ -167,7 +189,6 @@ it:
     messagePlaceholder: "Descrivi la tua situazione o domanda..."
     submitButton: "Invia messaggio"
     sending: "Invio in corso..."
-    successMessage: "Grazie per il tuo messaggio. Risponderemo il prima possibile."
     errorMessage: "Si è verificato un errore. Riprova o contattaci direttamente."
   contactSuccess:
     title: "Messaggio inviato con successo"
@@ -210,15 +231,23 @@ nl:
   header:
     bookWith: "Maak een afspraak met"
     contactForm: "Contactformulier"
-  footer:
-    phones: "Telefoonnummers"
-    emails: "E-mailadressen"
   cta:
-    title: "Contacteer ons"
-    email: "E-MAIL"
-    appointment: "AFSPRAAK"
-    call: "BELLEN"
-    bookAction: "Reserveren"
+    title: Contacteer ons
+    illustrationAlt: Contactillustratie
+    contactLabel: Contact
+    actions:
+      - type: message
+        label: Bericht
+        help: Schrijf ons via het formulier.
+      - type: email
+        label: E-mail met documenten
+        help: Voeg uw documenten toe aan uw e-mail.
+      - type: appointment
+        label: Afspraak
+        help: Kies uw advocaat.
+      - type: phone
+        label: Bel ons
+        help: Kies wie u wilt bellen.
   contactForm:
     formTitle: "Stuur ons een bericht"
     nameLabel: "Volledige naam *"
@@ -233,7 +262,6 @@ nl:
     messagePlaceholder: "Beschrijf uw situatie of uw vraag..."
     submitButton: "Bericht versturen"
     sending: "Bezig met versturen..."
-    successMessage: "Bedankt voor uw bericht. Wij antwoorden u zo snel mogelijk."
     errorMessage: "Er is een fout opgetreden. Probeer het opnieuw of neem rechtstreeks contact met ons op."
   contactSuccess:
     title: "Bericht succesvol verzonden"

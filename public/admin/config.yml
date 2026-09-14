@@ -718,7 +718,7 @@ collections:
             name: "showContactForm"
             widget: "boolean"
             default: true
-            hint: "Active ou désactive le formulaire de contact sur la page Contact"
+            hint: "Masque le formulaire et ses accès Message dans les bannières et menus. Les autres contacts restent disponibles."
           
           - label: "Membres de l’équipe — identité, ordre et portraits partagés"
             name: "team"
@@ -732,43 +732,30 @@ collections:
               - {label: "Nom affiché", name: "name", widget: "string"}
               - {label: "Portrait carré", name: "image", widget: "image"}
               - {label: "Portrait individuel", name: "profileImage", widget: "image", required: false, hint: "Vide : utilise le portrait carré."}
-              - {label: "LinkedIn", name: "linkedin", widget: "string", required: false, hint: "Lien partagé entre les quatre langues."}
-          - label: "Contacts existants du cabinet"
+              - {label: "LinkedIn", name: "linkedin", widget: "string", required: false, pattern: ['^https://(www\.)?linkedin\.com/.*$|^$', "Lien LinkedIn https ou champ vide"], hint: "Lien partagé entre les quatre langues."}
+          - {label: "Illustration de la bannière Contact", name: "contactIllustration", widget: "image", hint: "Image commune aux quatre langues. Alternatives dans les traductions du bloc contact."}
+          - label: "Coordonnées du cabinet — adresse"
+            name: "address"
+            widget: "string"
+            hint: "Adresse commune aux quatre langues, affichée dans Nos bureaux."
+          - label: "Coordonnées du cabinet — email général"
+            name: "cabinetEmail"
+            widget: "string"
+            pattern: ['^[^\s@]+@[^\s@]+\.[^\s@]+$', "Adresse email valide"]
+            hint: "Adresse publique pour les documents. Activation et réception à vérifier dans le ticket messagerie avant publication ; ne configure pas Netlify."
+          - label: "Annuaire — coordonnées individuelles"
             name: "lawyers"
             widget: "list"
-            summary: "{{fields.id}} - {{fields.email}}"
-            collapsed: false
-            description: >
-              Informations de contact pour chaque avocate du cabinet.
-              Ces informations apparaîtront partout sur le site (header, footer, page contact, etc.).
+            summary: "{{fields.id}} — {{fields.phone}}"
+            collapsed: true
+            hint: "Partagé entre les langues. Ajouter un membre ne change pas les destinataires du formulaire, gérés dans Netlify. LinkedIn se règle dans Identité et portraits."
             fields:
               - {label: "Membre", name: "id", widget: "relation", collection: "siteConfig", file: "site-config", search_fields: ["team.*.name"], value_field: "team.*.id", display_fields: ["team.*.name"]}
-              - label: "Numéro de téléphone"
-                name: "phone"
-                widget: "string"
-                hint: "Format international recommandé avec espaces (ex: +32 488 40 45 49)"
-              
-              - label: "Numéro WhatsApp"
-                name: "whatsapp"
-                widget: "string"
-                hint: "Numéro sans espaces ni + pour WhatsApp (ex: 32488404549)"
-              
-              - label: "Adresse email"
-                name: "email"
-                widget: "string"
-                hint: "Adresse email professionnelle"
-              
-              - label: "Lien calendrier Cal.com"
-                name: "calendarLink"
-                widget: "string"
-                hint: "URL complète du calendrier Cal.com (ex: https://cal.com/username/meeting)"
-                required: false
-              
-              - label: "Adresse du cabinet"
-                name: "address"
-                widget: "string"
-                hint: "Adresse complète du cabinet"
-          
+              - {label: "Téléphone", name: "phone", widget: "string", pattern: ['^\+[1-9][0-9 ]{7,20}$', "Numéro international avec + et espaces"], hint: "Exemple : +32 488 40 45 49. Affiché dans le profil et le menu Appelez-nous."}
+              - {label: "WhatsApp", name: "whatsapp", widget: "string", required: false, pattern: ['^([1-9][0-9]{7,14})?$', "Chiffres uniquement, sans + ni espaces"], hint: "Facultatif. Vide : aucun lien WhatsApp."}
+              - {label: "Email professionnel", name: "email", widget: "string", required: false, pattern: ['^([^\s@]+@[^\s@]+\.[^\s@]+)?$', "Adresse email valide ou champ vide"], hint: "À renseigner après confirmation. Vide : aucun lien email ; le téléphone reste accessible. Ne pas saisir une adresse provisoire."}
+              - {label: "Calendrier Cal.com", name: "calendarLink", widget: "string", required: false, pattern: ['^(https://cal\.com/[^\s/?#]+[^\s]*)?$', "URL https://cal.com/nom ou champ vide"], hint: "Vide : aucune commande de réservation. Romain reste joignable par ses coordonnées. Une URL valide active header, Équipe et bannière."}
+
           - label: "SEO et apparence"
             name: "seo"
             widget: "object"
@@ -852,7 +839,7 @@ collections:
                     name: "menuTitle"
                     widget: "string"
                     default: "Menu"
-                  - label: "Titre de la section Contact"
+                  - label: "Titre de la section Nos bureaux"
                     name: "contactTitle"
                     widget: "string"
                     default: "Contact"
@@ -917,23 +904,32 @@ collections:
                 fields:
                   - {label: "Prendre rendez-vous avec", name: "bookWith", widget: "string", default: "Prendre rendez-vous avec", hint: "Précède le nom de l'avocate dans le menu de réservation."}
                   - {label: "Formulaire de contact", name: "contactForm", widget: "string", default: "Formulaire de contact", hint: "Dernière entrée du menu de réservation."}
-              - label: "Pied de page"
-                name: "footer"
-                widget: "object"
-                collapsed: true
-                fields:
-                  - {label: "Téléphones", name: "phones", widget: "string", default: "Téléphones", hint: "Titre de l'accordéon des numéros de téléphone."}
-                  - {label: "E-mails", name: "emails", widget: "string", default: "E-mails", hint: "Titre de l'accordéon des adresses e-mail."}
               - label: "Bloc contact (CTA)"
                 name: "cta"
                 widget: "object"
                 collapsed: true
                 fields:
                   - {label: "Titre", name: "title", widget: "string", default: "Contactez-nous"}
-                  - {label: "Email", name: "email", widget: "string", default: "EMAIL"}
-                  - {label: "Rendez-vous", name: "appointment", widget: "string", default: "RDV"}
-                  - {label: "Appel", name: "call", widget: "string", default: "APPEL"}
-                  - {label: "Réserver", name: "bookAction", widget: "string", default: "Réserver"}
+                  - {label: "Alternative de l’illustration", name: "illustrationAlt", widget: "string", required: false, default: ""}
+                  - {label: "Contact individuel sans calendrier", name: "contactLabel", widget: "string"}
+                  - label: "Actions de contact"
+                    name: "actions"
+                    widget: "list"
+                    min: 4
+                    max: 4
+                    summary: "{{fields.label}} ({{fields.type}})"
+                    hint: "Une action de chaque type. Réordonner librement ; destinations issues des coordonnées centrales. Message disparaît si le formulaire est masqué."
+                    fields:
+                      - label: "Type d’action"
+                        name: "type"
+                        widget: "select"
+                        options:
+                          - {label: "Message — formulaire", value: "message"}
+                          - {label: "Email avec documents", value: "email"}
+                          - {label: "Rendez-vous — calendriers", value: "appointment"}
+                          - {label: "Appelez-nous — annuaire", value: "phone"}
+                      - {label: "Libellé", name: "label", widget: "string"}
+                      - {label: "Aide", name: "help", widget: "text"}
               - label: "Formulaire de contact"
                 name: "contactForm"
                 widget: "object"
@@ -952,7 +948,6 @@ collections:
                   - {label: "Exemple message", name: "messagePlaceholder", widget: "string", default: "Décrivez votre situation ou votre question..."}
                   - {label: "Bouton d'envoi", name: "submitButton", widget: "string", default: "Envoyer le message"}
                   - {label: "Envoi en cours", name: "sending", widget: "string", default: "Envoi en cours..."}
-                  - {label: "Message de succès", name: "successMessage", widget: "string", default: "Merci pour votre message. Nous vous répondrons dans les plus brefs délais."}
                   - {label: "Message d'erreur", name: "errorMessage", widget: "string", default: "Une erreur s'est produite. Veuillez réessayer ou nous contacter directement."}
               - label: "Page de confirmation d'envoi"
                 name: "contactSuccess"

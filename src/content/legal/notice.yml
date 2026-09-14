@@ -5,14 +5,14 @@ fr:
       text: |-
         RiZZO & MICHIELS SRL
         %%ADDRESS%%
-        Téléphone : +32 488 40 45 49 - +32 498 50 29 01
+        Téléphone : %%PHONES%%
         Numéro d'entreprise : 1034.645.352
     - title: Hébergeur
       text: Le Site est hébergé par Netlify, dont le siège social est situé 2325 3rd
         Street, Suite 215, San Francisco, California 94107, USA.
     - title: Contact
       text: "Pour toute question ou demande concernant le site, vous pouvez contacter
-        l'éditeur à l'adresse mail suivante : rizzomichiels@gmail.com"
+        l'éditeur à l'adresse mail suivante : %%EMAIL%%"
     - title: Propriété intellectuelle
       text: L'intégralité du contenu du site rizzo-michiels.be (textes, images,
         vidéos...) est la propriété de l'éditeur et est protégée par le droit
@@ -48,14 +48,14 @@ en:
       text: |-
         RIZZO & MICHIELS SRL
         %%ADDRESS%%
-        Phone: +32 488 40 45 49 - +32 498 50 29 01
+        Phone: %%PHONES%%
         Company number: 1034.645.352
     - title: Hosting
       text: The Site is hosted by Netlify, whose registered office is located at 2325
         3rd Street, Suite 215, San Francisco, California 94107, USA.
     - title: Contact
       text: "For any questions or requests regarding the site, you can contact the
-        publisher at the following email address: rizzomichiels@gmail.com"
+        publisher at the following email address: %%EMAIL%%"
     - title: Intellectual property
       text: The entire content of the rizzo-michiels.be website (texts, images,
         videos...) is the property of the publisher and is protected by
@@ -88,7 +88,7 @@ it:
       text: |-
         RIZZO & MICHIELS SRL
         %%ADDRESS%%
-        Telefono: +32 488 40 45 49 - +32 498 50 29 01
+        Telefono: %%PHONES%%
         Numero di impresa: 1034.645.352
     - title: Hosting
       text: Il Sito è ospitato da Netlify, la cui sede legale si trova a 2325 3rd
@@ -96,7 +96,7 @@ it:
     - title: Contatto
       text: "Per qualsiasi domanda o richiesta riguardante il sito, è possibile
         contattare l'editore al seguente indirizzo email:
-        rizzomichiels@gmail.com"
+        %%EMAIL%%"
     - title: Proprietà intellettuale
       text: L'intero contenuto del sito rizzo-michiels.be (testi, immagini, video...)
         è di proprietà dell'editore ed è protetto dal diritto d'autore. La
@@ -130,14 +130,14 @@ nl:
       text: |-
         RiZZO & MICHIELS SRL
         %%ADDRESS%%
-        Telefoon: +32 488 40 45 49 - +32 498 50 29 01
+        Telefoon: %%PHONES%%
         Ondernemingsnummer: 1034.645.352
     - title: Host
       text: De Site wordt gehost door Netlify, met maatschappelijke zetel te 2325 3rd
         Street, Suite 215, San Francisco, California 94107, USA.
     - title: Contact
       text: "Voor elke vraag of verzoek betreffende de site kunt u de uitgever
-        contacteren op het volgende e-mailadres: rizzomichiels@gmail.com"
+        contacteren op het volgende e-mailadres: %%EMAIL%%"
     - title: Intellectuele eigendom
       text: De volledige inhoud van de site rizzo-michiels.be (teksten, beelden,
         video's...) is eigendom van de uitgever en wordt beschermd door het

@@ -12,6 +12,7 @@ export async function getStaticPaths() {
 }
 
 const { lang } = Astro.params;
+const config = await getEntry('config', 'site-config');
 
 // Get contact entry for translations
 const contactEntry = await getEntry('contact', 'contact');
@@ -61,12 +62,12 @@ const seoData = {
         >
           {t.backToHome}
         </a>
-        <a 
-          href={`/${lang}/contact/`}
+        {config?.data.showContactForm && <a
+          href={`/${lang}/contact/#contact-form`}
           class="inline-block px-6 py-3 bg-white text-travailleur border-2 border-travailleur font-semibold rounded-lg hover:bg-travailleur/10 transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg"
         >
           {t.backToContact}
-        </a>
+        </a>}
       </div>
     </div>
   </main>

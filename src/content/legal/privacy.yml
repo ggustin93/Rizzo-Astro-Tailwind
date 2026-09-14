@@ -16,11 +16,11 @@ fr:
 
         Adresse: %%ADDRESS%%\
 
-        E-mail: rizzomichiels@gmail.com\
+        E-mail: %%EMAIL%%\
 
         n° BCE : 1034.645.352
 
-        Tel: +32 488 40 45 49 - +32 498 50 29 01
+        Tel: %%PHONES%%
     - title: Données personnelles traitées
       text: >-
         Dans le cadre de l'utilisation du site web, la responsable du traitement
@@ -61,7 +61,7 @@ fr:
         les utilisateurs disposent de droits sur leurs données personnelles,
         notamment les droits d'accès, de rectification, d'effacement, et
         d'opposition au traitement. Ces droits peuvent être exercés en
-        contactant Rizzo & Michiels SRL à l'adresse rizzomichiels@gmail.com.
+        contactant Rizzo & Michiels SRL à l'adresse %%EMAIL%%.
     - title: Sécurité
       text: Des mesures de sécurité appropriées sont mises en place pour protéger les
         données personnelles contre tout accès, modification, divulgation ou
@@ -84,9 +84,9 @@ en:
       text: |-
         RIZZO & MICHIELS SRL 
 
-        Chaussée de Waterloo 1151, 1180 Brussels
+        %%ADDRESS%%
 
-        Telephone: +32 488 40 45 49 - +32 498 50 29 01
+        Telephone: %%PHONES%%
 
         Company registration number: 1034.645.352
     - title: Personal data processed
@@ -125,7 +125,7 @@ en:
         have rights over their personal data, including the rights of access,
         rectification, erasure, and opposition to processing. These rights can
         be exercised by contacting RIZZO & MICHIELS SRL at
-        rizzomichiels@gmail.com.
+        %%EMAIL%%.
     - title: Security
       text: Appropriate security measures are in place to protect personal data
         against any unauthorized access, modification, disclosure or
@@ -148,9 +148,9 @@ it:
       text: |-
         RIZZO & MICHIELS SRL 
 
-        Chaussée de Waterloo 1151, 1180 Bruxelles
+        %%ADDRESS%%
 
-        Telefono: +32 488 40 45 49 - +32 498 50 29 01
+        Telefono: %%PHONES%%
 
         Numero di registrazione: 1034.645.352
     - title: Dati personali trattati
@@ -192,7 +192,7 @@ it:
         (GDPR), gli utenti hanno diritti sui propri dati personali, tra cui i
         diritti di accesso, rettifica, cancellazione e opposizione al
         trattamento. Questi diritti possono essere esercitati contattando la SRL
-        RIZZO & MICHIELS all'indirizzo rizzomichiels@gmail.com.
+        RIZZO & MICHIELS all'indirizzo %%EMAIL%%.
     - title: Sicurezza
       text: Sono in atto misure di sicurezza appropriate per proteggere i dati
         personali da qualsiasi accesso, modifica, divulgazione o distruzione non
@@ -218,11 +218,11 @@ nl:
 
         Adres: %%ADDRESS%%\
 
-        E-mail: rizzomichiels@gmail.com\
+        E-mail: %%EMAIL%%\
 
         KBO-nr.: 1034.645.352
 
-        Tel: +32 488 40 45 49 - +32 498 50 29 01
+        Tel: %%PHONES%%
     - title: Verwerkte persoonsgegevens
       text: >-
         In het kader van het gebruik van de website verbindt de
@@ -265,7 +265,7 @@ nl:
         beschikken de gebruikers over rechten met betrekking tot hun
         persoonsgegevens, met name het recht op inzage, verbetering, wissing en
         bezwaar tegen de verwerking. Deze rechten kunnen worden uitgeoefend door
-        Rizzo & Michiels BV te contacteren op het adres rizzomichiels@gmail.com.
+        Rizzo & Michiels BV te contacteren op het adres %%EMAIL%%.
     - title: Beveiliging
       text: Er worden passende beveiligingsmaatregelen genomen om de persoonsgegevens
         te beschermen tegen ongeoorloofde toegang, wijziging, openbaarmaking of

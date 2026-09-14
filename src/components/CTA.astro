@@ -1,173 +1,112 @@
 ---
-import Icon from './Icon.astro';
-import { MessageCircle } from 'astro-feather-icons';
-import ctaIllustration from '../assets/images/illustration_cta_2.svg';
+import { Picture } from 'astro:assets';
+import { MessageCircle, Mail, Calendar, Phone, ArrowUpRight, ChevronDown } from 'astro-feather-icons2';
 import { getEntry } from 'astro:content';
-import { isValidCalendarLink, calEmbedTarget } from '../utils/calendar.js';
+import { bookableLawyers, calEmbedTarget } from '../utils/calendar.js';
 import { localeFromPath } from '../config/locales';
 import { getUiTranslations } from '../utils/ui-translations';
 
 const lang = localeFromPath(Astro.url.pathname);
-
-// Récupérer la configuration du site
-const siteConfigEntry = await getEntry('config', 'site-config');
-const lawyers = siteConfigEntry?.data?.lawyers || [];
-
-if (!lawyers || lawyers.length === 0) {
-  throw new Error("FATAL: No lawyers found in site-config.yml for CTA component.");
-}
-
+const entry = await getEntry('config', 'site-config');
+if (!entry) throw new Error('Missing site configuration');
+const config = entry.data;
 const t = (await getUiTranslations(lang)).cta;
-
-const handleAction = (type: string, action: string, calendarLink?: string) => {
-  switch(type) {
-    case 'email':
-      return `window.location.href = 'mailto:${action}'`;
-    case 'appointment':
-      return ''; // Handled by data-cal-link script listener
-    case 'phone':
-      return `window.location.href = 'tel:${action}'`;
-    default:
-      return '';
-  }
-};
+const actionIcons = { message: MessageCircle, email: Mail, appointment: Calendar, phone: Phone };
+const actions = t.actions.filter(action => action.type !== 'message' || config.showContactForm);
 ---
 
 <div class="full-bleed bg-employeur rounded-lg overflow-hidden">
-  <section id="contact" class="py-4 pb-8 sm:py-6 px-4 sm:px-6 lg:px-8">
-    <div class="container mx-auto">
-      <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
-        <!-- Right column appears first on mobile, second on desktop -->
-        <div class="lg:w-2/5 flex flex-col items-center justify-start order-first lg:order-last">
-          <!-- Title visible on all screen sizes -->
-          <div class="flex items-center mb-4 w-full justify-center pt-0">
-            <div class="w-12 sm:w-16 lg:w-16 h-px bg-white/40 mr-3"></div>
-            <h2 class="text-lg sm:text-xl lg:text-2xl font-light text-white uppercase flex items-center whitespace-nowrap tracking-widest">
-              <MessageCircle class="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-accent" />
-              {t.title}
-            </h2>
-            <div class="w-12 sm:w-16 lg:w-16 h-px bg-white/40 ml-3"></div>
-          </div>
-          <!-- Image below the title -->
-          <img
-            src={ctaIllustration.src}
-            alt="Contact illustration"
-            class="w-full h-auto max-w-[200px] sm:max-w-[240px] lg:max-w-[280px] opacity-75 drop-shadow-[0_0_12px_rgba(255,255,255,0.1)]"
-            width={280}
-            height={112}
-            loading="lazy"
-          />
+  <section id="contact" class="contact-banner">
+    <div class="container mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+      <div class="lg:w-2/5 flex flex-col items-center order-first lg:order-last">
+        <div class="flex items-center mb-4 w-full justify-center pt-0">
+          <div class="w-12 sm:w-16 h-px bg-white/40 mr-3"></div>
+          <h2 class="text-lg sm:text-xl lg:text-2xl font-light text-white uppercase flex items-center whitespace-nowrap tracking-widest">
+            <MessageCircle class="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-accent" />{t.title}
+          </h2>
+          <div class="w-12 sm:w-16 h-px bg-white/40 ml-3"></div>
         </div>
-        
-        <!-- Left column appears second on mobile, first on desktop -->
-        <div class="lg:w-3/5 text-center lg:text-left order-last lg:order-first">
-          <div class="space-y-4 max-w-2xl mx-auto lg:mx-0">
-            {lawyers.map((lawyer: any, index: number) => (
-              <div class={`${index > 0 ? 'pt-4 border-t border-white/20' : ''}`}>
-                <h3 class="text-xl font-medium text-accent mb-3 text-center">
-                  {lawyer.name}
-                </h3>
-                <div class="grid grid-cols-3 gap-2 sm:gap-3 max-w-md mx-auto">
-                  <!-- Email Button -->
-                  <div class="flex flex-col items-center">
-                    <button
-                      class="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full flex items-center justify-center mb-2 hover:bg-travailleur hover:shadow-lg transition-all duration-300 transform hover:scale-105 group cursor-pointer"
-                      onclick={handleAction('email', lawyer.email)}
-                      aria-label={`Email ${lawyer.name}`}
-                    >
-                      <Icon name="mail" class="w-7 h-7 sm:w-8 sm:h-8 text-employeur group-hover:text-white transition-colors duration-300 pointer-events-none"/>
-                    </button>
-                    <span class="text-sm uppercase text-white/90 font-medium tracking-wider mb-1">{t.email}</span>
-                    <button 
-                      class="text-xs sm:text-sm text-white/70 font-light hover:text-white transition-colors duration-200 hover:underline cursor-pointer max-w-full break-all px-1"
-                      onclick={handleAction('email', lawyer.email)}
-                      title={lawyer.email}
-                    >
-                      {lawyer.email || ''}
-                    </button>
-                  </div>
-                  
-                  <!-- Appointment Button -->
-                  <div class="flex flex-col items-center">
-                    {isValidCalendarLink(lawyer.calendarLink) ? (
-                      <>
-                        <button
-                          class="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full flex items-center justify-center mb-2 hover:bg-travailleur hover:shadow-lg transition-all duration-300 transform hover:scale-105 group cursor-pointer"
-                          onclick={handleAction('appointment', t.bookAction, lawyer.calendarLink)}
-                          data-cal-link={calEmbedTarget(lawyer.calendarLink)}
-                          data-cal-config='{"layout":"month_view"}'
-                          aria-label={`Book appointment with ${lawyer.name}`}
-                        >
-                          <Icon name="calendar" class="w-7 h-7 sm:w-8 sm:h-8 text-employeur group-hover:text-white transition-colors duration-300 pointer-events-none" />
-                        </button>
-                        <span class="text-sm uppercase text-white/90 font-medium tracking-wider mb-1">{t.appointment}</span>
-                        <button 
-                          class="text-sm sm:text-base text-white/70 font-light hover:text-white transition-colors duration-200 hover:underline cursor-pointer"
-                          onclick={handleAction('appointment', t.bookAction, lawyer.calendarLink)}
-                          data-cal-link={calEmbedTarget(lawyer.calendarLink)}
-                          data-cal-config='{"layout":"month_view"}'
-                        >
-                          {t.bookAction}
-                        </button>
-                      </>
-                    ) : (
-                      <>
-                        <div
-                          class="w-16 h-16 sm:w-20 sm:h-20 bg-white/50 rounded-full flex items-center justify-center mb-2 cursor-not-allowed opacity-50"
-                          aria-label={`Appointment booking not available for ${lawyer.name}`}
-                        >
-                          <Icon name="calendar" class="w-7 h-7 sm:w-8 sm:h-8 text-employeur/50 pointer-events-none" />
-                        </div>
-                        <span class="text-sm uppercase text-white/50 font-medium tracking-wider mb-1">{t.appointment}</span>
-                        <span class="text-sm sm:text-base text-white/30 font-light">
-                          -
+        <Picture src={config.contactIllustration} alt={t.illustrationAlt} class="w-full h-auto max-w-[200px] sm:max-w-[240px] lg:max-w-[280px] opacity-75 drop-shadow-[0_0_12px_rgba(255,255,255,0.1)]" width="280" height="112" loading="lazy" />
+      </div>
+      <div class="contact-options lg:w-3/5 order-last lg:order-first">
+        {actions.map(action => {
+          const ActionIcon = actionIcons[action.type];
+          return (
+          <div class="min-w-0">
+            {['message', 'email'].includes(action.type) ? (
+              <a class="contact-action contact-card" href={action.type === 'message' ? `/${lang}/contact/#contact-form` : `mailto:${config.cabinetEmail}`}>
+                <span class="action-icon"><ActionIcon aria-hidden="true" title="" /></span>
+                <span class="action-copy">
+                  <span class="action-title">{action.label}</span>
+                  <span class="action-help">{action.help}</span>
+                  {action.type === 'email' && <span class="action-email">{config.cabinetEmail}</span>}
+                </span>
+                <ArrowUpRight aria-hidden="true" title="" class="action-indicator" />
+              </a>
+            ) : (
+              <details class="contact-card contact-disclosure">
+                <summary class="contact-action cursor-pointer">
+                  <span class="action-icon"><ActionIcon aria-hidden="true" title="" /></span>
+                  <span class="action-copy">
+                    <span class="action-title">{action.label}</span>
+                    <span class="action-help">{action.help}</span>
+                  </span>
+                  <ChevronDown aria-hidden="true" title="" class="action-indicator" />
+                </summary>
+                <ul class="contact-choices">
+                  {(action.type === 'phone' ? config.lawyers : bookableLawyers(config.lawyers)).map(lawyer => (
+                    <li>
+                      <a class="contact-choice"
+                        href={action.type === 'phone' ? `tel:${lawyer.phone.replace(/\s/g, '')}` : lawyer.calendarLink}
+                        data-cal-link={action.type === 'appointment' ? calEmbedTarget(lawyer.calendarLink) : undefined}
+                        data-cal-config={action.type === 'appointment' ? '{"layout":"month_view"}' : undefined}>
+                        <span>
+                          <span class="choice-name">{lawyer.name}</span>
+                          {action.type === 'phone' && <span class="choice-phone">{lawyer.phone}</span>}
                         </span>
-                      </>
-                    )}
-                  </div>
-                  
-                  <!-- Phone Button -->
-                  <div class="flex flex-col items-center">
-                    <button
-                      class="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full flex items-center justify-center mb-2 hover:bg-travailleur hover:shadow-lg transition-all duration-300 transform hover:scale-105 group cursor-pointer"
-                      onclick={handleAction('phone', lawyer.phone)}
-                      aria-label={`Call ${lawyer.name}`}
-                    >
-                      <Icon name="phone" class="w-7 h-7 sm:w-8 sm:h-8 text-employeur group-hover:text-white transition-colors duration-300 pointer-events-none" />
-                    </button>
-                    <span class="text-sm uppercase text-white/90 font-medium tracking-wider mb-1">{t.call}</span>
-                    <button 
-                      class="text-sm sm:text-base text-white/70 font-light hover:text-white transition-colors duration-200 hover:underline cursor-pointer whitespace-nowrap"
-                      onclick={handleAction('phone', lawyer.phone)}
-                    >
-                      {lawyer.phone || ''}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
+                        <ArrowUpRight aria-hidden="true" title="" class="choice-arrow" />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            )}
           </div>
-        </div>
+        ); })}
       </div>
     </div>
   </section>
 </div>
-
-<script>
-  document.addEventListener('astro:page-load', () => {
-    const appointmentButtons = document.querySelectorAll('[data-cal-link]');
-    appointmentButtons.forEach(button => {
-      button.addEventListener('click', (e) => {
-        e.preventDefault();
-        // @ts-ignore
-        if (typeof Cal !== 'undefined') {
-          (window as any).Cal("ui", {
-            styles: {branding: {brandColor: "#000000"}},
-            hideEventTypeDetails: false,
-            layout: "month_view"
-          });
-        }
-      });
-    });
-  });
-</script>
+<style>
+  .contact-banner { padding: clamp(1.5rem, 4vw, 3.5rem) clamp(1rem, 4vw, 3rem); }
+  .contact-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; width: 100%; align-items: start; }
+  .contact-card { background: #fffdfa; border: 1px solid rgba(255,255,255,.55); border-radius: 14px; color: #363b70; box-shadow: 0 2px 4px rgba(27,31,66,.04); }
+  .contact-action { display: grid; grid-template-columns: 42px minmax(0, 1fr) 18px; align-items: start; gap: .85rem; padding: 1.4rem 1.2rem; min-height: 156px; cursor: pointer; text-decoration: none; transition: background-color .18s, border-color .18s; }
+  .contact-action:hover { background: #f5f3fc; border-color: #dadcf4; }
+  .action-icon { display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 12px; background: #edecf7; color: #53599a; }
+  .action-icon :global(svg) { width: 21px; height: 21px; stroke-width: 1.6; }
+  .action-copy { min-width: 0; padding-top: .05rem; }
+  .action-title { display: block; font-size: 1.1rem; line-height: 1.4; font-weight: 600; }
+  .action-help { display: block; margin-top: .5rem; font-size: .86rem; line-height: 1.5; color: #61637c; }
+  .action-email { display: block; margin-top: .6rem; font-size: .8rem; line-height: 1.4; color: #454b89; overflow-wrap: anywhere; }
+  .contact-action :global(.action-indicator) { width: 18px; height: 18px; margin-top: .25rem; color: #7c80a6; transition: transform .18s; }
+  summary.contact-action { list-style: none; }
+  summary.contact-action::-webkit-details-marker { display: none; }
+  .contact-disclosure[open] summary :global(.action-indicator) { transform: rotate(180deg); }
+  .contact-disclosure[open] summary { min-height: 0; background: #f5f3fc; border-radius: 13px 13px 0 0; }
+  .contact-choices { margin: 0 1.1rem; padding: .45rem 0; border-top: 1px solid #e1e2ef; list-style: none; }
+  .contact-choices li + li { border-top: 1px solid #eeedf3; }
+  .contact-choice { display: flex; align-items: center; justify-content: space-between; gap: .5rem; padding: .85rem .2rem; border-radius: 5px; text-decoration: none; }
+  .contact-choice:hover { color: #06616c; background: #f2f7f7; }
+  .choice-name { display: block; font-size: .9rem; line-height: 1.45; overflow-wrap: anywhere; }
+  .choice-phone { display: block; font-size: .82rem; color: #61637c; margin-top: .2rem; }
+  .contact-choice :global(.choice-arrow) { width: 16px; height: 16px; flex-shrink: 0; }
+  .contact-action:focus-visible, .contact-choice:focus-visible { outline: 3px solid #ffcc33; outline-offset: 4px; }
+  @media (min-width: 1024px) { .contact-options { width: 60%; } }
+  @media (max-width: 639px) {
+    .contact-options { grid-template-columns: minmax(0, 1fr); gap: .75rem; }
+    .contact-action { min-height: 0; padding: 1.2rem; }
+    .action-title { font-size: 1.05rem; }
+  }
+  @media (prefers-reduced-motion: reduce) { .contact-action, .contact-action :global(.action-indicator) { transition: none; } }
+</style>

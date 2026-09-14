@@ -30,6 +30,6 @@ export const lawyers = [
 ];
 
 /** Lawyers who should get a booking row in the header (#9). */
-export const bookableLawyers = lawyers.filter((lawyer) => lawyer.calSlug);
+export const bookableLawyers = [...lawyers, { name: 'Arnaud Vanderhoeven Jacobs', calSlug: 'arnaudvanderhoeven' }];
 
 export const address = 'Chaussée de Waterloo 1151';

@@ -2,6 +2,7 @@
 import { getEntry } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { marked } from 'marked';
+import { resolveLegalContent } from '../../../utils/legal-content.js';
 import { localePaths } from '../../../config/locales';
 
 export async function getStaticPaths() {
@@ -13,37 +14,11 @@ const legalInfoEntry = await getEntry('legal', 'legal-info');
 if (!legalInfoEntry) {
   throw new Error("Legal info entry not found!");
 }
-const content = legalInfoEntry.data[lang as keyof typeof legalInfoEntry.data] || legalInfoEntry.data['fr'];
+const content = await resolveLegalContent(legalInfoEntry.data[lang as keyof typeof legalInfoEntry.data] || legalInfoEntry.data['fr']);
 
-// Récupérer la configuration du site pour les placeholders
-const siteConfigEntry = await getEntry('config', 'site-config');
-const lawyers = siteConfigEntry?.data?.lawyers || [];
-const address = siteConfigEntry?.data?.address;
-
-if (!lawyers || lawyers.length === 0) {
-  throw new Error("FATAL: No lawyers found in site-config.yml for legal pages.");
-}
-
-// Use the primary lawyer (Christine Rizzo) for legal pages
-const primaryLawyer = lawyers.find((lawyer: any) => lawyer.name === "Christine Rizzo") || lawyers[0];
-
-// Remplacer les placeholders
-content.sections.forEach((section: any) => {
-  section.text = section.text
-    .replace('%%ADDRESS%%', address)
-    .replace('%%EMAIL%%', primaryLawyer.email)
-    .replace('%%PHONE%%', primaryLawyer.phone);
-});
-
-// Ajoutez cette vérification
-if (!content) {
-  throw new Error(`Content not found for language: ${lang}`);
-}
-
-// SEO data
 const seoData = {
-  title: content.title || `Informations légales - Christine Rizzo`,
-  description: `Informations légales et conditions générales de Christine Rizzo, avocate au Barreau de Bruxelles`,
+  title: content.title || 'Informations légales - Christine Rizzo',
+  description: 'Informations légales et conditions générales de Christine Rizzo, avocate au Barreau de Bruxelles',
 };
 ---
 

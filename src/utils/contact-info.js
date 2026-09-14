@@ -17,7 +17,7 @@ export async function getContactInfo() {
   return {
     phone: primaryLawyer.phone,
     whatsapp: primaryLawyer.whatsapp,
-    email: primaryLawyer.email,
+    email: siteConfigEntry.data.cabinetEmail,
     linkedin: primaryLawyer.linkedin,
     address: address // L'adresse de base est en français
   };

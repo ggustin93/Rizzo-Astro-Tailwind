@@ -1,13 +1,12 @@
 ---
 import { Image } from 'astro:assets';
-import { Phone, Mail, MapPin, ChevronDown } from 'astro-feather-icons2';
+import { MapPin, ChevronDown } from 'astro-feather-icons2';
 import IconLinkedin from './IconLinkedIn.astro';
 import logoImage from '../assets/images/logo_crizzo_calli3.svg';
 import logoPwablo from '../assets/images/logo_pwablo.svg';
 import { getEntry } from 'astro:content';
 import { localeFromPath } from '../config/locales';
 import { getNavigation } from '../utils/navigation';
-import { getUiTranslations } from '../utils/ui-translations';
 
 const { pathname } = Astro.url;
 const currentLang = localeFromPath(pathname);
@@ -20,7 +19,6 @@ const address = siteConfigEntry?.data?.address || "Chaussée de Waterloo 1151, 1
 
 // Récupérer la configuration de navigation
 const navConfig = await getNavigation(currentLang);
-const { footer: footerLabels } = await getUiTranslations(currentLang);
 
 // Année courante pour le copyright
 const currentYear = new Date().getFullYear();
@@ -76,21 +74,6 @@ const formattedCopyrightText = `© ${currentYear} ${copyrightText}`;
 // Titres des sections
 const { menuTitle, contactTitle } = footerConfig;
 
-// Ajout d'une fonction pour gérer les actions de contact
-const handleContactAction = (type: string, action: string) => {
-  switch(type) {
-    case 'phone':
-      return `window.location.href = 'tel:${action}'`;
-    case 'email':
-      return `window.location.href = 'mailto:${action}'`;
-    case 'maps':
-      return `window.open('https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(action)}', '_blank')`;
-    case 'linkedin':
-      return `window.open('${action}', '_blank')`;
-    default:
-      return '';
-  }
-};
 
 ---
 
@@ -102,129 +85,11 @@ const handleContactAction = (type: string, action: string) => {
       </div>
 
       <div>
-        <h3 class="font-medium mb-5 text-lg md:text-xl hidden md:block">{contactTitle}</h3>
-        <div class="hidden md:block space-y-2 w-fit">
-
-          <!-- Phone numbers accordion -->
-          <details class="group border border-gray-300 rounded-lg overflow-hidden min-w-[240px]">
-            <summary class="flex items-center justify-between p-3 cursor-pointer hover:bg-gray-50 transition-colors">
-              <div class="flex items-center">
-                <Phone class="w-5 h-5 mr-3 text-travailleur" />
-                <span class="text-sm md:text-base font-semibold">{footerLabels.phones}</span>
-              </div>
-              <ChevronDown class="w-4 h-4 transition-transform duration-300 group-open:rotate-180" />
-            </summary>
-            <div class="px-4 py-3 space-y-2">
-              {lawyers.map((lawyer: any) => (
-                <div class="pl-8">
-                  <div class="text-xs font-semibold text-gray-600">{lawyer.name}</div>
-                  <button 
-                    onclick={handleContactAction('phone', lawyer.phone)}
-                    class="text-sm md:text-base hover:text-travailleur hover:underline cursor-pointer block"
-                  >
-                    {lawyer.phone}
-                  </button>
-                </div>
-              ))}
-            </div>
-          </details>
-
-          <!-- Email addresses accordion -->
-          <details class="group border border-gray-300 rounded-lg overflow-hidden min-w-[240px]">
-            <summary class="flex items-center justify-between p-3 cursor-pointer hover:bg-gray-50 transition-colors">
-              <div class="flex items-center">
-                <Mail class="w-5 h-5 mr-3 text-employeur" />
-                <span class="text-sm md:text-base font-semibold">{footerLabels.emails}</span>
-              </div>
-              <ChevronDown class="w-4 h-4 transition-transform duration-300 group-open:rotate-180" />
-            </summary>
-            <div class="px-4 py-3 space-y-2">
-              {lawyers.map((lawyer: any) => (
-                <div class="pl-8">
-                  <div class="text-xs font-semibold text-gray-600">{lawyer.name}</div>
-                  <button 
-                    onclick={handleContactAction('email', lawyer.email)}
-                    class="text-sm md:text-base hover:text-travailleur hover:underline cursor-pointer block"
-                  >
-                    {lawyer.email}
-                  </button>
-                </div>
-              ))}
-            </div>
-          </details>
-          
-          <!-- Address (shared) -->
-          <button 
-            onclick={handleContactAction('maps', address)}
-            class="text-sm md:text-base flex items-start hover:text-travailleur hover:underline cursor-pointer w-full text-left"
-          >
-            <MapPin class="w-5 h-5 mr-3 mt-1 flex-shrink-0" /> 
-            <span>
-              {address.split(',').map((line, idx) => (
-                <Fragment>
-                  {idx > 0 && <br />}
-                  {line.trim()}
-                </Fragment>
-              ))}
-            </span>
-          </button>
-        </div>
-        <details class="md:hidden">
-          <summary class="font-medium mb-3 text-lg flex justify-between items-center cursor-pointer text-center">
-            <span class="w-full">{contactTitle}</span>
-            <ChevronDown class="w-5 h-5 absolute right-0 transform transition-transform duration-300" />
-          </summary>
-          <div class="mt-3 flex flex-col items-center space-y-5">
-            
-            <!-- Phone section for mobile -->
-            <div class="flex flex-col items-center">
-              <Phone class="w-6 h-6 mb-2 text-travailleur" />
-              {lawyers.map((lawyer: any) => (
-                <div class="text-center mb-2">
-                  <div class="text-xs font-semibold text-gray-600">{lawyer.name}</div>
-                  <button
-                    onclick={handleContactAction('phone', lawyer.phone)}
-                    class="text-sm hover:underline cursor-pointer"
-                  >
-                    {lawyer.phone}
-                  </button>
-                </div>
-              ))}
-            </div>
-
-            <!-- Email section for mobile -->
-            <div class="flex flex-col items-center">
-              <Mail class="w-6 h-6 mb-2 text-employeur" />
-              {lawyers.map((lawyer: any) => (
-                <div class="text-center mb-2">
-                  <div class="text-xs font-semibold text-gray-600">{lawyer.name}</div>
-                  <button
-                    onclick={handleContactAction('email', lawyer.email)}
-                    class="text-sm hover:underline cursor-pointer"
-                  >
-                    {lawyer.email}
-                  </button>
-                </div>
-              ))}
-            </div>
-
-            <!-- Address section for mobile -->
-            <button
-              onclick={handleContactAction('maps', address)}
-              class="text-sm flex flex-col items-center hover:underline cursor-pointer"
-            >
-              <MapPin class="w-6 h-6 mb-2 text-travailleur" />
-              <span class="text-center">
-                {address.split(',').map((line, idx) => (
-                  <Fragment>
-                    {idx > 0 && <br />}
-                    {line.trim()}
-                  </Fragment>
-                ))}
-              </span>
-            </button>
-          </div>
-        </details>
+        <h3 class="font-medium mb-5 text-lg md:text-xl">{contactTitle}</h3>
+        <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`} class="flex items-start gap-3 hover:underline">
+          <MapPin class="w-5 h-5 flex-shrink-0" />
+          <span>{address}</span>
+        </a>
       </div>
 
       <div>
@@ -242,7 +107,7 @@ const handleContactAction = (type: string, action: string) => {
           ))}
         </ul>
         <details class="md:hidden">
-          <summary class="font-medium mb-3 text-lg flex justify-between items-center cursor-pointer text-center">
+          <summary class="relative font-medium mb-3 text-lg flex justify-between items-center cursor-pointer text-center">
             <span class="w-full">{menuTitle}</span>
             <ChevronDown class="w-5 h-5 absolute right-0" />
           </summary>
@@ -271,7 +136,7 @@ const handleContactAction = (type: string, action: string) => {
           </a>
         </div>
         <details class="md:hidden">
-          <summary class="font-medium mb-3 text-lg flex justify-between items-center cursor-pointer text-center">
+          <summary class="relative font-medium mb-3 text-lg flex justify-between items-center cursor-pointer text-center">
             <span class="w-full">{ecoDesignTitle}</span>
             <ChevronDown class="w-5 h-5 absolute right-0" />
           </summary>

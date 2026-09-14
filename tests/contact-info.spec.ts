@@ -8,7 +8,7 @@ const lawyers = {
 };
 
 // Legal pages expose the firm's shared editor mailbox, not a lawyer's personal address.
-const editorEmail = 'rizzomichiels@gmail.com';
+const editorEmail = 'info@rizzo-michiels.be';
 
 test.describe('Contact Information Verification', () => {
 
@@ -18,9 +18,8 @@ test.describe('Contact Information Verification', () => {
         await page.goto(`${BASE_URL}/${lang}/contact`);
 
         // Check for both lawyers' contact info
-        await expect(page.locator('body')).toContainText(lawyers.christine.email);
+        await expect(page.locator('body')).toContainText(editorEmail);
         await expect(page.locator('body')).toContainText(lawyers.christine.phone);
-        await expect(page.locator('body')).toContainText(lawyers.stephanie.email);
         await expect(page.locator('body')).toContainText(lawyers.stephanie.phone);
       });
     }
@@ -30,8 +29,8 @@ test.describe('Contact Information Verification', () => {
     await page.goto(`${BASE_URL}/fr/`);
 
     const footer = page.locator('footer');
-    await expect(footer).toContainText(lawyers.christine.email);
-    await expect(footer).toContainText(lawyers.christine.phone);
+    await expect(footer.locator('a[href^="mailto:"], a[href^="tel:"]')).toHaveCount(0);
+    await expect(footer).toContainText('Nos bureaux');
     // Check for address parts to be resilient to formatting
     await expect(footer).toContainText(address);
     await expect(footer).toContainText('1180 Bruxelles');

@@ -255,12 +255,12 @@ const { bookWith: bookWithLabel, contactForm: contactFormLabel } = uiTranslation
                   {lawyer.name}
                 </button>
               ))}
-              <a
+              {siteConfigEntry?.data.showContactForm && <a
                 href={`/${currentLang}/contact`}
                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 border-t border-gray-100 mt-1 pt-2"
               >
                 {contactFormLabel}
-              </a>
+              </a>}
             </div>
           </div>
 
@@ -337,12 +337,12 @@ const { bookWith: bookWithLabel, contactForm: contactFormLabel } = uiTranslation
                 {lawyer.name}
               </button>
             ))}
-            <a
+            {siteConfigEntry?.data.showContactForm && <a
               href={`/${currentLang}/contact`}
               class={`mobile-submenu-link block py-2 text-black text-sm font-light transition-colors duration-300 ${isActivePage(`/${currentLang}/contact`) ? 'active' : ''}`}
             >
               {contactFormLabel}
-            </a>
+            </a>}
           </div>
         </div>
         
