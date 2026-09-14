@@ -135,50 +135,75 @@ collections:
       - file: "src/content/travailleurs/travailleurs.yml"
         name: "travailleurs"
         label: "Contenu de la page Travailleurs"
-        i18n:
-          structure: single_file
         fields:
           - label: "Français"
             name: "fr"
             widget: "object"
-            fields: &travailleursFields
-              - {label: "Titre", name: "title", widget: "string"}
-              - label: "Questions"
-                name: "questions"
+            collapsed: true
+            fields: &belgianServicesFields
+              - {label: "Titre de la page", name: "title", widget: "string", pattern: ['\S', "Le titre est obligatoire."]}
+              - {label: "Introduction (facultative)", name: "description", widget: "text", required: false}
+              - {label: "Titre des services", name: "servicesTitle", widget: "string", pattern: ['\S', "Le titre est obligatoire."]}
+              - label: "Rubriques"
+                name: "sections"
                 widget: "list"
-                field: {label: Question, name: question, widget: "string"}
-              - {label: "Titre des services", name: "servicesTitle", widget: "string"}
-              - label: "Services"
-                name: "services"
-                widget: "list"
+                required: false
+                default: []
+                collapsed: true
+                summary: "{{fields.title}}"
+                hint: "Glissez les rubriques pour changer leur ordre. Les textes de cette langue restent indépendants des autres langues et publics."
                 fields:
-                  - {label: "Icône", name: "icon", widget: "select", options: ["BriefCase", "Shield", "FileText", "Handshake"]}
-                  - {label: "Texte", name: "text", widget: "string"}
-              - {label: "Texte du bouton CTA", name: "ctaText", widget: "string"}
-              - label: "SEO"
+                  - {label: "Titre de la rubrique", name: "title", widget: "string", pattern: ['\S', "Le titre est obligatoire."]}
+                  - {label: "Description (facultative)", name: "description", widget: "text", required: false, hint: "Une description seule suffit ; aucune question artificielle n'est nécessaire."}
+                  - label: "Situations (facultatives)"
+                    name: "situations"
+                    widget: "list"
+                    required: false
+                    default: []
+                    collapsed: true
+                    summary: "{{fields.question}}"
+                    hint: "Chaque situation comporte une question et une réponse. Glissez pour réordonner."
+                    fields:
+                      - {label: "Question", name: "question", widget: "text", pattern: ['\S', "Renseignez la question ou retirez cette situation."]}
+                      - {label: "Réponse", name: "answer", widget: "text", pattern: ['\S', "Renseignez la réponse ou retirez cette situation."]}
+              - {label: "Libellé du lien tarifs", name: "ctaText", widget: "string", pattern: ['\S', "Le libellé est obligatoire."]}
+              - label: "Destination du lien"
+                name: "ctaDestination"
+                widget: "select"
+                default: "honoraires"
+                options:
+                  - {label: "Honoraires", value: "honoraires"}
+                  - {label: "Contact", value: "contact"}
+                hint: "La destination s'ouvre automatiquement dans la langue de la page."
+              - label: "Référencement et aperçu de partage"
                 name: "seo"
                 widget: "object"
+                collapsed: true
                 fields:
-                  - {label: "Titre SEO", name: "title", widget: "string", required: false}
-                  - {label: "Description SEO", name: "description", widget: "text", required: false, pattern: ['^.{0,320}$', "La description idéale fait 155-160 caractères (max 320)"], hint: "Description pour le SEO - idéalement 155-160 caractères (max 320)"}
-                  - {label: "Image SEO", name: "image", widget: "image", required: false}
+                  - {label: "Titre SEO", name: "title", widget: "string", pattern: ['\S', "Le titre SEO est obligatoire."]}
+                  - {label: "Description SEO", name: "description", widget: "text", pattern: ['^(?=[\s\S]*\S)[\s\S]{1,320}$', "Description obligatoire, maximum 320 caractères."]}
+                  - {label: "Image de partage", name: "image", widget: "image", required: false, hint: "Si vide, utilise l'image commune du site. Les médias existants sont conservés."}
+                  - {label: "Alternative textuelle de l'image", name: "imageAlt", widget: "string", required: false, hint: "Décrivez l'image dans cette langue. Si vide, utilise le titre de la page."}
                   - label: "Mots-clés SEO"
                     name: "keywords"
                     widget: "list"
                     required: false
-                    field: {label: "Mot-clé", name: keyword, widget: string}
-          - label: "English"
+                    field: {label: "Mot-clé", name: "keyword", widget: "string", pattern: ['\S', "Renseignez ou retirez le mot-clé."]}
+          - label: "Anglais"
             name: "en"
             widget: "object"
-            fields: *travailleursFields
-          - label: "Italiano"
+            collapsed: true
+            fields: *belgianServicesFields
+          - label: "Italien"
             name: "it"
             widget: "object"
-            fields: *travailleursFields
-          - label: "Nederlands"
+            collapsed: true
+            fields: *belgianServicesFields
+          - label: "Néerlandais"
             name: "nl"
             widget: "object"
-            fields: *travailleursFields
+            collapsed: true
+            fields: *belgianServicesFields
 
   - name: "employeurs"
     label: "Page Employeurs"
@@ -186,50 +211,27 @@ collections:
       - file: "src/content/employeurs/employeurs.yml"
         name: "employeurs"
         label: "Contenu de la page Employeurs"
-        i18n:
-          structure: single_file
         fields:
           - label: "Français"
             name: "fr"
             widget: "object"
-            fields: &employeursFields
-              - {label: "Titre", name: "title", widget: "string"}
-              - label: "Questions"
-                name: "questions"
-                widget: "list"
-                field: {label: Question, name: question, widget: "string"}
-              - {label: "Titre des prestations", name: "servicesTitle", widget: "string"}
-              - label: "Prestations"
-                name: "services"
-                widget: "list"
-                fields:
-                  - {label: "Icône", name: "icon", widget: "select", options: ["FileText", "UserPlus", "Shield", "Search", "Handshake"]}
-                  - {label: "Texte", name: "text", widget: "string"}
-              - {label: "Texte du bouton CTA", name: "ctaText", widget: "string"}
-              - label: "SEO"
-                name: "seo"
-                widget: "object"
-                fields:
-                  - {label: "Titre SEO", name: "title", widget: "string", required: false}
-                  - {label: "Description SEO", name: "description", widget: "text", required: false, pattern: ['^.{0,320}$', "La description idéale fait 155-160 caractères (max 320)"], hint: "Description pour le SEO - idéalement 155-160 caractères (max 320)"}
-                  - {label: "Image SEO", name: "image", widget: "image", required: false}
-                  - label: "Mots-clés SEO"
-                    name: "keywords"
-                    widget: "list"
-                    required: false
-                    field: {label: "Mot-clé", name: keyword, widget: string}
-          - label: "English"
+            collapsed: true
+            fields: *belgianServicesFields
+          - label: "Anglais"
             name: "en"
             widget: "object"
-            fields: *employeursFields
-          - label: "Italiano"
+            collapsed: true
+            fields: *belgianServicesFields
+          - label: "Italien"
             name: "it"
             widget: "object"
-            fields: *employeursFields
-          - label: "Nederlands"
+            collapsed: true
+            fields: *belgianServicesFields
+          - label: "Néerlandais"
             name: "nl"
             widget: "object"
-            fields: *employeursFields
+            collapsed: true
+            fields: *belgianServicesFields
 
   # Page Institutions Européennes
   - name: "europeennes"

@@ -1,0 +1,36 @@
+{
+  "source": "Nos services, PDF reçu le 14 septembre 2026, pages 1–3. Espaces et césure sous-évaluation normalisés.",
+  "travailleurs": [
+    "Contrat, rupture et fin de collaboration",
+    "Vous voulez faire relire votre contrat de travail avant de signer ? Nous analysons vos clauses (rémunération, bonus, non-concurrence, etc.) et vous conseillons sur vos droits et obligations.",
+    "Votre employeur vous propose une rupture de commun accord mais vous ne savez pas si c'est dans votre intérêt ? Nous évaluons l'offre et déterminons avec vous comment négocier de meilleures conditions.",
+    "Vous voulez démissionner ? Nous vous informons sur le préavis à respecter et les conséquences de votre démission.",
+    "Vous voulez contester votre licenciement (motif manifestement déraisonnable, abusif ou discriminatoire) ou vérifier votre indemnité de préavis ? Nous analysons les motifs invoqués et introduisons une action devant le tribunal du travail si vous pouvez prétendre à une indemnisation.",
+    "Discrimination, harcèlement et bien-être au travail",
+    "Vous êtes victime de discrimination ou de harcèlement ? Vous êtes mis à l'écart à cause d'un burn-out ? Nous vous écoutons et vous orientons d'abord vers les démarches internes appropriées (conseiller en prévention, personne de confiance), vous conseillons sur vos options et, si nécessaire, constituons le dossier de preuve, saisissons l'auditorat du travail ou engageons une procédure si vous pouvez prétendre à une indemnisation.",
+    "Vos conditions de travail ont changé, pendant ou suite à une grossesse ? Vous souhaitez prendre un crédit-temps ou un congé parental ? Nous vous conseillons sur vos droits et vous défendons en cas de non-respect de ceux-ci.",
+    "Statut professionnel",
+    "Votre statut n'est pas clair ? Vous pensez être un faux indépendant ? Nous analysons les critères de subordination et, si nécessaire, introduisons une demande devant la Commission administrative de règlement de la relation de travail ou une action en requalification devant le tribunal du travail.",
+    "Vous êtes victime d'un accident du travail ? Nous vérifions la reconnaissance de l'accident par l'assureur-loi et vous défendons en cas de refus ou de sous-évaluation de l'indemnisation.",
+    "Cadres, dirigeants et mandataires sociaux",
+    "Vous négociez un poste de cadre ou de direction ? Vous voulez faire relire votre clause de non-concurrence, votre package de rémunération variable (bonus, stock-options, warrants) ou votre clause de garantie de rémunération ? Nous analysons et négocions ces clauses, et en défendons la validité ou l'application en cas de litige (non-concurrence contestée, bonus différés remis en cause après un licenciement).",
+    "Vous êtes cadre dirigeant et on vous propose une indemnité de départ négociée ? Nous évaluons l'offre et négocions les conditions de votre départ.",
+    "Négociation ou défense en justice",
+    "Selon votre situation, nous privilégions, lorsque c'est possible, une résolution rapide et négociée de votre différend avec votre employeur, plutôt qu'une procédure judiciaire longue et incertaine. Lorsque la négociation n'aboutit pas ou n'est pas indiquée, nous vous représentons et défendons vos droits devant les cours et tribunaux du travail."
+  ],
+  "employeurs": [
+    "Audit – Due Diligence en droit du travail et de la sécurité sociale",
+    "Vous êtes en phase d'acquisition, de fusion ou de restructuration et vous voulez évaluer les risques sociaux de la cible ? Nous réalisons l'audit social complet : analyse des contrats de travail, conformité aux réglementations du travail et de la sécurité sociale, identification des risques (faux indépendants, litiges en cours, passif social) et rédaction du rapport de due diligence à destination de votre équipe de transaction ou de vos conseils financiers.",
+    "Rédaction et révision de vos contrats de travail, règlement de travail et politiques RH et GDPR",
+    "Vous voulez sécuriser vos contrats de travail, votre règlement de travail ou vos politiques RH ? Nous rédigeons et actualisons vos contrats de travail (CDI, CDD, étudiant, indépendant, flexi-job), règlement de travail, politiques RH (remboursement de frais, IT, télétravail, déconnexion) et politiques de traitement des données personnelles (GDPR).",
+    "Conseils – gestion de la relation individuelle de travail, du recrutement à la rupture",
+    "Vous embauchez votre premier salarié en Belgique, ou vous voulez structurer un package de rémunération avec bonus ? Nous vous conseillons dès le premier engagement et durant toute l’évolution de vos collaborateurs au sein de votre entreprise.",
+    "Un de vos salariés est en incapacité de longue durée ou revient d'un burn-out, comment gérer son absence et sa réintégration ? Nous vous accompagnons pour gérer l’absence de longue durée et, le cas échéant, la réintégration après une telle absence.",
+    "Vous devez licencier un salarié — avec préavis, indemnité compensatoire, fin de CDD ou rupture de commun accord ? Nous vous conseillons sur la rupture de contrat, les protections contre le licenciement et les éventuelles procédures spéciales de licenciement applicables.",
+    "Un salarié dénonce une situation de discrimination ou de harcèlement dans votre entreprise, ou vous voulez mettre en place une politique de prévention des risques psychosociaux ? Nous vous conseillons sur la gestion de la situation individuelle et vous accompagnons dans la mise en place de mesures de prévention et dans le cadre des procédures en la matière (procédure interne, personne de confiance, conseiller en prévention).",
+    "Négociation d'accords amiables",
+    "Vous voulez éviter une procédure judiciaire longue et incertaine avec un salarié ? Nous privilégions, lorsque c'est possible, une résolution négociée et rapide des différends dans l'intérêt de l'entreprise comme du travailleur.",
+    "Défense devant les cours et tribunaux du travail et devant les inspections du travail et de l'ONSS",
+    "Un ancien salarié conteste son licenciement, ou vous recevez un contrôle de l'inspection sociale ou de l'ONSS ? Nous vous accompagnons et défendons vos intérêts dans le cadre de ces procédures."
+  ]
+}
