@@ -160,9 +160,11 @@ export const prerender = true;
           </h2>
           <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
         </div>
-        <img src={media.team} alt={content.profil.imageAlt} class="team-illustration" width="1200" height="600" loading="lazy" />
+        <div class="team-intro">
+          <img src={media.team} alt={content.profil.imageAlt} class="team-illustration" width="1200" height="600" loading="lazy" />
+          <p class="team-description">{content.profil.description}</p>
+        </div>
         <div class="max-w-5xl mx-auto text-center">
-          <p class="text-dark-gray text-base md:text-lg font-light leading-relaxed mb-6 max-w-3xl mx-auto">{content.profil.description}</p>
           <p class="text-lg font-medium text-gray-800 mb-8">{content.profil.cta}</p>
           <div class="team-grid">
             {lawyersWithImages.map(lawyer => {
@@ -223,7 +225,10 @@ export const prerender = true;
 
 <style>
   .team-section { padding-block: clamp(2.5rem, 5vw, 4rem); }
-  .team-illustration { width: min(100%, 24rem); height: auto; margin: 0 auto 1.5rem; }
+  .team-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.8fr); align-items: center; gap: 2rem; max-width: 64rem; margin: 0 auto 2rem; }
+  .team-illustration { width: 100%; height: auto; margin: 0 auto; }
+  .team-description { font-size: 1.125rem; line-height: 1.75; font-weight: 300; color: #333; text-align: left; }
+
   .team-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; text-align: left; }
   .team-card { display: flex; flex-direction: column; min-width: 0; background: #faf6f1; border: 1px solid #e8e1d9; border-radius: 16px; overflow: hidden; text-decoration: none; transition: border-color .2s, box-shadow .2s; }
   a.team-card:hover { border-color: #c5b99f; box-shadow: 0 6px 20px rgba(38,57,82,.08); }
@@ -233,7 +238,9 @@ export const prerender = true;
   .team-card-caption :global(.team-card-arrow) { width: 18px; height: 18px; flex-shrink: 0; color: #087b8a; }
   @media (max-width: 767px) {
     .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .85rem; }
+    .team-intro { grid-template-columns: minmax(0, 1fr); gap: .5rem; margin-bottom: 1.5rem; }
     .team-illustration { max-width: 17rem; }
+    .team-description { font-size: 1rem; line-height: 1.65; text-align: center; }
     .team-card-caption { padding: .8rem .65rem; }
     .team-card-caption h3 { font-size: .9375rem; }
     .team-card-caption :global(.team-card-arrow) { display: none; }
