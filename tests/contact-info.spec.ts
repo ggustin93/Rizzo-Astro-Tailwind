@@ -29,7 +29,8 @@ test.describe('Contact Information Verification', () => {
     await page.goto(`${BASE_URL}/fr/`);
 
     const footer = page.locator('footer');
-    await expect(footer.locator('a[href^="mailto:"], a[href^="tel:"]')).toHaveCount(0);
+    await expect(footer.getByRole('link', { name: editorEmail, exact: true })).toHaveAttribute('href', `mailto:${editorEmail}`);
+    await expect(footer.locator('a[href^="tel:"]')).toHaveCount(0);
     await expect(footer).toContainText('Nos bureaux');
     // Check for address parts to be resilient to formatting
     await expect(footer).toContainText(address);

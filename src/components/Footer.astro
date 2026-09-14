@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import { MapPin, ChevronDown } from 'astro-feather-icons2';
+import { MapPin, Mail, ChevronDown } from 'astro-feather-icons2';
 import IconLinkedin from './IconLinkedIn.astro';
 import logoImage from '../assets/images/logo_crizzo_calli3.svg';
 import logoPwablo from '../assets/images/logo_pwablo.svg';
@@ -89,6 +89,10 @@ const { menuTitle, contactTitle } = footerConfig;
         <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`} class="flex items-start gap-3 hover:underline">
           <MapPin class="w-5 h-5 flex-shrink-0" />
           <span>{address}</span>
+        </a>
+        <a href={`mailto:${siteConfigEntry?.data.cabinetEmail}`} class="flex items-center gap-3 mt-4 hover:underline break-all">
+          <Mail aria-hidden="true" title="" class="w-5 h-5 flex-shrink-0" />
+          <span>{siteConfigEntry?.data.cabinetEmail}</span>
         </a>
       </div>
 

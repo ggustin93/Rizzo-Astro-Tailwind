@@ -55,3 +55,11 @@ Revue séparée : adresse anglaise centralisée, aucun écart fonctionnel local 
 ### Ajustement visuel complémentaire
 
 À la demande de Guillaume : titre au-dessus des actions, descriptions supprimées du rendu et de Decap dans les quatre langues, cartes compactes sans hauteur de 156 px. Illustration réservée au desktop pour raccourcir le parcours mobile. Build et huit tests de menus multilingues vérifiés.
+
+### Contacts individuels et footer — ajustement demandé
+
+Guillaume a demandé de réintroduire l’email général dans le footer : cette décision remplace ici la consigne initiale « adresse seule ». Adresse et `info@rizzo-michiels.be` restent centralisés ; les menus des téléphones individuels ne reviennent pas dans le footer. La condition d’activation de l’email avant publication reste applicable.
+
+Sur les profils, téléphone/email/WhatsApp/LinkedIn sont regroupés dans `MemberContactCard`, une grille à deux colonnes sur desktop et une sur mobile, avec icônes décoratives et omissions dérivées des coordonnées disponibles. Les cartes de la bannière conservent leurs arrondis au survol ; deux tracés fins habillent l’illustration.
+
+Build final réussi. Vérification ciblée : 89 tests réussis et un test formulaire Safari réussi au retry ; recontrôle indépendant sans retry des 12 parcours individuels/formulaire entièrement réussi. Captures desktop/mobile de la carte et du survol inspectées ; email mobile sans retour à la ligne artificiel.

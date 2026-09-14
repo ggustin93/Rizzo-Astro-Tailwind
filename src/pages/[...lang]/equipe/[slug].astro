@@ -1,7 +1,8 @@
 ---
 import '../../../styles/editorial.css';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { ChevronLeft, Linkedin, Briefcase, Globe, Mic, BookOpen } from 'astro-feather-icons2';
+import MemberContactCard from '../../../components/MemberContactCard.astro';
+import { ChevronLeft, Briefcase, Globe, Mic, BookOpen } from 'astro-feather-icons2';
 import { LOCALES } from '../../../config/locales';
 import { getTeam } from '../../../utils/team.js';
 import { getUiTranslations } from '../../../utils/ui-translations';
@@ -70,26 +71,7 @@ const seoData = {
 
           {lawyer.role && <p class="text-gray-600 mb-4">{lawyer.role}</p>}
 
-          {lawyer.contact && (
-            <div id="coordonnees" class="flex flex-wrap gap-4 mb-6">
-              <a class="profile-link" href={`tel:${lawyer.contact.phone.replace(/\s/g, '')}`}>{lawyer.contact.phone}</a>
-              {lawyer.contact.email && <a class="profile-link break-all" href={`mailto:${lawyer.contact.email}`}>{lawyer.contact.email}</a>}
-              {lawyer.contact.whatsapp && <a class="profile-link" href={`https://wa.me/${lawyer.contact.whatsapp}`}>WhatsApp</a>}
-            </div>
-          )}
-
-          <!-- LinkedIn Button -->
-          {lawyer.linkedin && (
-            <a
-              href={lawyer.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="profile-link mb-6"
-            >
-              <Linkedin aria-hidden="true" title="" class="w-5 h-5 mr-2" />
-              <span class="text-sm font-medium">LinkedIn</span>
-            </a>
-          )}
+          <MemberContactCard lawyer={lawyer} />
 
           <div class="space-y-4 md:space-y-6">
             {lawyer.bio && lawyer.bio.map((paragraph: string) => (

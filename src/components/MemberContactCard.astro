@@ -1,0 +1,34 @@
+---
+import { Phone, Mail, MessageCircle, Linkedin, ArrowUpRight } from 'astro-feather-icons2';
+const { lawyer } = Astro.props;
+const contact = lawyer.contact;
+const links = [
+  ...(contact?.phone ? [{ label: contact.phone, href: `tel:${contact.phone.replace(/\s/g, '')}`, icon: Phone }] : []),
+  ...(contact?.email ? [{ label: contact.email, href: `mailto:${contact.email}`, icon: Mail }] : []),
+  ...(contact?.whatsapp ? [{ label: 'WhatsApp', href: `https://wa.me/${contact.whatsapp}`, icon: MessageCircle }] : []),
+  ...(lawyer.linkedin ? [{ label: 'LinkedIn', href: lawyer.linkedin, icon: Linkedin }] : []),
+];
+---
+{links.length > 0 && (
+  <div id="coordonnees" class="member-contact-card" role="group" aria-label={lawyer.name}>
+    {links.map(({ label, href, icon: Icon }) => (
+      <a href={href} class="member-contact" target={href.startsWith('https:') ? '_blank' : undefined} rel={href.startsWith('https:') ? 'noopener noreferrer' : undefined}>
+        <span class="contact-icon"><Icon aria-hidden="true" title="" /></span>
+        <span class="contact-label">{label}</span>
+        <ArrowUpRight aria-hidden="true" title="" class="contact-arrow" />
+      </a>
+    ))}
+  </div>
+)}
+<style>
+  .member-contact-card { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; padding: 1rem; margin: 1.5rem 0 2rem; border: 1px solid #dce7e9; border-top: 3px solid #068d9d; border-radius: 14px; background: #f6faf9; }
+  .member-contact { display: grid; grid-template-columns: 36px minmax(0, 1fr) 14px; align-items: center; gap: .65rem; min-height: 68px; padding: .75rem; border: 1px solid #e1eaec; border-radius: 9px; background: #fff; color: #28545c; text-decoration: none; transition: background-color .15s, border-color .15s; }
+  .member-contact:hover { background: #edf6f5; border-color: #a9cdd1; }
+  .member-contact:focus-visible { outline: 3px solid #068d9d; outline-offset: 3px; }
+  .contact-icon { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 9px; background: #edf6f5; color: #06616c; }
+  .contact-icon :global(svg) { width: 19px; height: 19px; stroke-width: 1.6; }
+  .contact-label { min-width: 0; font-size: .88rem; line-height: 1.5; overflow-wrap: anywhere; }
+  .member-contact :global(.contact-arrow) { width: 14px; height: 14px; color: #557d83; }
+  @media (max-width: 639px) { .member-contact-card { grid-template-columns: minmax(0, 1fr); padding: .75rem; } .member-contact { grid-template-columns: 36px minmax(0, 1fr); } .member-contact :global(.contact-arrow) { display: none; } }
+  @media (prefers-reduced-motion: reduce) { .member-contact { transition: none; } }
+</style>
