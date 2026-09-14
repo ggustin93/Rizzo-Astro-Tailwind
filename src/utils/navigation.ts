@@ -21,12 +21,12 @@ export async function getNavigation(lang: Locale) {
   }
 
   const members = await getTeam(lang);
+  const teamPath = `/${lang}/equipe`;
   return {
     ...navigation,
     header: {
       ...navigation.header,
       mainLinks: navigation.header.mainLinks.map(link => {
-        const teamPath = `/${lang}/equipe`;
         if (link.url.replace(/\/$/, '') !== teamPath) return link;
         const overviewLinks = (link.dropdownItems || []).filter(item =>
           item.url.replace(/\/$/, '') === teamPath

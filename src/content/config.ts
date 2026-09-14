@@ -230,31 +230,79 @@ const profileCollection = defineCollection({
       presentation: z.array(z.string().min(1)).nonempty(),
       bio: z.array(z.string().min(1)).default([]),
       languages: z.string(),
-      careerPath: z.array(z.object({ year: z.string().min(1), event: z.string().min(1) })).default([]),
+      careerPath: z.array(z.object({
+        year: z.string().min(1),
+        event: z.string().min(1),
+      })).default([]),
       conferences: z.array(z.string().min(1)).default([]),
       publicationsIntro: z.string().optional(),
-      publications: z.array(z.object({ date: z.string().min(1), title: z.string().min(1), publisher: z.string().min(1), coAuthors: z.array(z.string()).optional() })).default([]),
+      publications: z.array(z.object({
+        date: z.string().min(1),
+        title: z.string().min(1),
+        publisher: z.string().min(1),
+        coAuthors: z.array(z.string()).optional(),
+      })).default([]),
       seo: profileSeoSchema.optional(),
     })).nonempty(),
   })),
 });
 
 // The CMS offers only existing internal destinations, independently of locale.
-const editorialDestination = z.enum(['/contact/', '/equipe/', '/services/employeurs/', '/services/travailleurs/', '/services/europeennes/']);
-const homeService = z.object({ title: z.string().min(1), description: z.string().min(1), cta: z.string().min(1), destination: editorialDestination });
+const editorialDestination = z.enum([
+  '/contact/',
+  '/equipe/',
+  '/services/employeurs/',
+  '/services/travailleurs/',
+  '/services/europeennes/',
+]);
+const homeService = z.object({
+  title: z.string().min(1),
+  description: z.string().min(1),
+  cta: z.string().min(1),
+  destination: editorialDestination,
+});
 const homeCollection = defineCollection({
   type: 'data',
   schema: perLocale(z.object({
-    seo: z.object({ title: z.string(), description: z.string(), image: z.string(), keywords: z.array(z.string()) }),
+    seo: z.object({
+      title: z.string(),
+      description: z.string(),
+      image: z.string(),
+      keywords: z.array(z.string()),
+    }),
     articlesTitle: z.string(),
     viewAllArticles: z.string(),
-    hero: z.object({ title: z.string().min(1), subtitle: z.string().min(1), description: z.string().min(1), cta: z.string().min(1), more: z.string().min(1), destination: editorialDestination, imageAlt: z.string().min(1) }),
-    expertise: z.object({ title: z.string().min(1), description: z.string().min(1), employeurs: homeService, travailleurs: homeService, europeennes: homeService }).passthrough(),
-    profil: z.object({ title: z.string().min(1), description: z.string().min(1), cta: z.string().min(1), imageAlt: z.string().min(1) }),
+    hero: z.object({
+      title: z.string().min(1),
+      subtitle: z.string().min(1),
+      description: z.string().min(1),
+      cta: z.string().min(1),
+      more: z.string().min(1),
+      destination: editorialDestination,
+      imageAlt: z.string().min(1),
+    }),
+    expertise: z.object({
+      title: z.string().min(1),
+      description: z.string().min(1),
+      employeurs: homeService,
+      travailleurs: homeService,
+      europeennes: homeService,
+    }).passthrough(),
+    profil: z.object({
+      title: z.string().min(1),
+      description: z.string().min(1),
+      cta: z.string().min(1),
+      imageAlt: z.string().min(1),
+    }),
   }).passthrough()).extend({
-    media: z.object({ hero: z.string().min(1), team: z.string().min(1) }),
+    media: z.object({
+      hero: z.string().min(1),
+      team: z.string().min(1),
+    }),
     portraitLinks: z.enum(['none', 'profiles']),
-    serviceOrder: z.array(z.enum(['employeurs', 'travailleurs', 'europeennes'])).length(3).refine(items => new Set(items).size === 3, 'Each service must appear exactly once'),
+    serviceOrder: z.array(z.enum(['employeurs', 'travailleurs', 'europeennes']))
+      .length(3)
+      .refine(items => new Set(items).size === 3, 'Each service must appear exactly once'),
   }),
 });
 

@@ -74,3 +74,7 @@ node scripts/verify-team-editing.mjs
 Vérifier le port annoncé par Astro avant les tests. La configuration Playwright standard garde son port historique ; `BASE_URL` est obligatoire pour ce worktree. `js-yaml` est déclaré comme dépendance de développement pour la recette, à la version déjà verrouillée par le projet.
 
 Après intégration autorisée ultérieure : refaire la recette CMS sur une branche de test, faire relire textes/traductions et choix de liens, puis préparer la preview cliente. Aucun push, merge, déploiement, clôture GitHub, email, rendez-vous réel ou changement DNS n’a été réalisé.
+
+## Passe simplify complémentaire
+
+Passe réellement appliquée après `61cf6336`, sur trois fichiers du lot : schémas Accueil/Profils mis en forme champ par champ ; gardes de `getTeam()` explicites, ensemble `profileIds` nommé et spreads séparés ; chemin `teamPath` calculé hors de la boucle de navigation. Aucun champ, contenu ou réglage CMS modifié. Comparaison structurelle de l’AST des schémas : identique. `npm run build` réussi puis commande ciblée équipe/profils/SEO ci-dessus : **84 réussis (30,2 s)**. Relecture Standards et Spec de ce seul delta : aucun finding. Aucun merge, push ou déploiement ; intégration coordonnée en attente des deux retours.
