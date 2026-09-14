@@ -100,3 +100,35 @@ test.describe('Header appointment dropdown — mobile', () => {
     await expect(cta).toHaveAttribute('href', '/fr/contact');
   });
 });
+
+test.describe('Mobile navigation panel', () => {
+  test.use({ viewport: { width: 390, height: 844 } });
+
+  test('contains keyboard focus and restores the trigger on Escape', async ({ page }) => {
+    await page.goto(`${BASE_URL}/fr/`);
+    const trigger = page.locator('#menu-toggle');
+    await trigger.click();
+    await expect(trigger).toHaveAttribute('aria-expanded', 'true');
+    await expect(page.locator('#close-menu')).toBeFocused();
+    await page.keyboard.press('Shift+Tab');
+    expect(await page.evaluate(() => !!document.activeElement?.closest('#mobile-menu'))).toBe(true);
+    await page.keyboard.press('Escape');
+    await expect(page.locator('#mobile-menu')).toBeHidden();
+    await expect(trigger).toBeFocused();
+    await expect(trigger).toHaveAttribute('aria-expanded', 'false');
+    await expect(page.locator('body')).not.toHaveClass(/overflow-hidden/);
+  });
+
+  test('opens submenus on tap and closes when following a link', async ({ page }) => {
+    await page.goto(`${BASE_URL}/fr/`);
+    await page.locator('#menu-toggle').click();
+    const group = page.locator('.mobile-nav-group').first();
+    const link = group.locator('a').first();
+    await expect(link).toBeHidden();
+    await group.locator('summary').click();
+    await expect(link).toBeVisible();
+    await link.click();
+    await expect(page.locator('#mobile-menu')).toBeHidden();
+    await expect(page.locator('body')).not.toHaveClass(/overflow-hidden/);
+  });
+});

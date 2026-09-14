@@ -185,13 +185,32 @@ const { bookWith: bookWithLabel, contactForm: contactFormLabel } = uiTranslation
     .header-bar { min-height: 58px; }
     .logo img { height: 58px; }
   }
+  #mobile-menu { position: fixed; inset: 0; margin: 0 0 0 auto; width: min(100%, 30rem); height: 100dvh; max-height: 100dvh; max-width: 100%; padding: 0; border: 0; background: #faf6f1; color: #263952; overflow-y: auto; overscroll-behavior: contain; }
+  #mobile-menu::backdrop { background: rgba(25, 38, 53, .4); }
+  .mobile-menu-top { position: sticky; top: 0; z-index: 1; display: flex; align-items: center; justify-content: space-between; padding: max(1rem, env(safe-area-inset-top)) 1.25rem 1rem; background: #faf6f1; border-bottom: 1px solid #e4ddd6; }
+  #mobile-menu-title { font-size: 1.25rem; font-weight: 500; }
+  #mobile-menu-title::after { content: ''; display: block; width: 1.75rem; height: 3px; margin-top: .35rem; background: #ffcc33; border-radius: 2px; }
+  #close-menu { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid #e4ddd6; border-radius: 12px; background: #fffdfa; }
+  .mobile-menu-body { padding: .5rem 1.25rem max(1.25rem, env(safe-area-inset-bottom)); }
+  #mobile-menu .mobile-nav-link { display: flex; align-items: center; justify-content: space-between; gap: .75rem; min-height: 56px; padding: .85rem .25rem; border: 0; border-bottom: 1px solid #e4ddd6; font-size: 1rem; line-height: 1.4; font-weight: 500; text-transform: none; color: #263952; list-style: none; cursor: pointer; }
+  .mobile-nav-group summary::-webkit-details-marker { display: none; }
+  .mobile-nav-group[open] summary :global(svg) { transform: rotate(180deg); }
+  #mobile-menu .mobile-submenu-link { display: flex; align-items: center; min-height: 44px; padding: .65rem .6rem; text-align: left; font-size: .9375rem; line-height: 1.4; color: #4f5967; border-radius: 8px; }
+  #mobile-menu .mobile-submenu-link:hover, #mobile-menu .mobile-submenu-link.active { background: #efe9e1; }
+  #mobile-menu .mobile-nav-link.active { color: #067889; }
+  #header-booking-mobile { margin-top: 1.25rem; }
+  #header-booking-mobile > :global(a) { display: flex; width: 100%; min-height: 48px; background: #087b8a; color: white; border-color: #087b8a; font-size: .9375rem; }
+  #mobile-menu a:focus-visible, #mobile-menu button:focus-visible, #mobile-menu summary:focus-visible { outline: 3px solid #087b8a; outline-offset: 2px; }
+  #mobile-menu .mt-8 { margin-top: 1.25rem; padding-top: 1rem; }
+  #mobile-menu .mt-8 a, #mobile-menu .mt-8 span { display: grid; place-items: center; min-width: 44px; min-height: 44px; border-radius: 8px; }
+  #mobile-menu .mt-8 span { background: #ffedab; font-weight: 600; }
 </style>
 
 <header class="site-header py-2 my-4 lg:py-6 lg:my-8">
   <div class="container mx-auto px-4">
     <div class="header-bar flex justify-between items-center">
       <!-- Menu hamburger for mobile and tablet -->
-      <button id="menu-toggle" class="lg:hidden text-black z-20 p-2 -m-2" aria-label="Toggle menu">
+      <button id="menu-toggle" class="lg:hidden text-black z-20 p-2 -m-2" aria-label="Toggle menu" aria-controls="mobile-menu" aria-expanded="false">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
@@ -288,29 +307,26 @@ const { bookWith: bookWithLabel, contactForm: contactFormLabel } = uiTranslation
     </div>
     
     <!-- Mobile and tablet menu -->
-    <nav id="mobile-menu" class="lg:hidden fixed inset-0 bg-beige bg-opacity-95 z-50 flex flex-col justify-center items-center hidden">
-      <button id="close-menu" class="absolute top-4 right-4 text-black z-20" aria-label="Close menu">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-      
+    <dialog id="mobile-menu" aria-labelledby="mobile-menu-title">
+      <div class="mobile-menu-top">
+        <span id="mobile-menu-title">{navConfig.footer.menuTitle}</span>
+        <button id="close-menu" aria-label="Close menu">
+          <svg aria-hidden="true" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-width="1.8" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
       <!-- Menu principal pour mobile avec style amélioré et simplifié -->
-      <div class="w-64 mx-auto text-center">
+      <div class="mobile-menu-body">
         <!-- Afficher tous les liens de navigation principaux -->
-        {mainLinks.map((link, index) => (
+        {mainLinks.filter(link => showArticlesSection || !link.url.includes('/blog')).map((link, index) => (
           link.hasDropdown ? (
-            <div class="mb-4">
-              <a 
-                href={link.url}
-                class={`mobile-nav-link block py-3 text-black uppercase text-base font-light border-b border-gray-200 ${
-                  link.url.includes('/services/') ? isServicesPage : isActivePage(link.url) ? 'active' : ''
-                }`}
-              >
-                {link.label}
-              </a>
-              
-              <!-- Sous-menu services simplifié (toujours visible) -->
+            <details class="mobile-nav-group">
+              <summary class="mobile-nav-link">
+                <span>{link.label}</span>
+                <Icon name="chevron-down" class="mobile-chevron w-4 h-4" />
+              </summary>
+              <!-- Native disclosure for touch and keyboard navigation -->
               <div class="py-2 px-4 bg-white bg-opacity-60 rounded-sm my-2">
                 {link.dropdownItems?.map(item => (
                   <a 
@@ -321,7 +337,7 @@ const { bookWith: bookWithLabel, contactForm: contactFormLabel } = uiTranslation
                   </a>
                 ))}
               </div>
-            </div>
+            </details>
           ) : (
             <a 
               href={link.url} 
@@ -379,61 +395,53 @@ const { bookWith: bookWithLabel, contactForm: contactFormLabel } = uiTranslation
           </div>
         </div>
       </div>
-    </nav>
+    </dialog>
   </div>
 </header>
 
 <script>
-  // Mobile menu functionality - compatible with Astro View Transitions
+  // Native dialog provides focus containment and makes the page behind inert.
   function initMobileMenu() {
     const menuToggle = document.getElementById('menu-toggle');
     const closeMenu = document.getElementById('close-menu');
     const mobileMenu = document.getElementById('mobile-menu');
-    
-    function toggleMobileMenu() {
-      if (mobileMenu) {
-        mobileMenu.classList.toggle('hidden');
-        document.body.classList.toggle('overflow-hidden');
-      }
-    }
-    
-    if (menuToggle) {
-      menuToggle.addEventListener('click', function(e) {
-        e.preventDefault();
-        toggleMobileMenu();
-      });
-    }
-
-    if (closeMenu) {
-      closeMenu.addEventListener('click', function(e) {
-        e.preventDefault();
-        toggleMobileMenu();
-      });
-    }
-    
-    // Close menu when clicking outside
-    if (mobileMenu) {
-      mobileMenu.addEventListener('click', function(e) {
-        if (e.target === mobileMenu) {
-          toggleMobileMenu();
-        }
-      });
-    }
-    
-    // Close menu on escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && mobileMenu && !mobileMenu.classList.contains('hidden')) {
-        toggleMobileMenu();
-      }
+    if (!(mobileMenu instanceof HTMLDialogElement) || !menuToggle || !closeMenu) return;
+    const resetMenu = () => {
+      document.body.classList.remove('overflow-hidden');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    };
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.showModal();
+      document.body.classList.add('overflow-hidden');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      closeMenu.focus();
     });
+    const dismissMenu = () => { mobileMenu.close(); menuToggle.focus(); };
+    closeMenu.addEventListener('click', dismissMenu);
+    mobileMenu.addEventListener('cancel', event => { event.preventDefault(); dismissMenu(); });
+    mobileMenu.addEventListener('keydown', event => {
+      if (event.key !== 'Tab') return;
+      const targets = Array.from(mobileMenu.querySelectorAll('a[href], button, summary')).filter(element => element.getClientRects().length);
+      const first = targets[0];
+      const last = targets[targets.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); if (last instanceof HTMLElement) last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); if (first instanceof HTMLElement) first.focus(); }
+    });
+    mobileMenu.addEventListener('close', resetMenu);
+    mobileMenu.addEventListener('click', event => {
+      if (event.target instanceof Element && event.target.closest('a, [data-cal-link]')) mobileMenu.close();
+    });
+    const desktop = window.matchMedia('(min-width: 1024px)');
+    const onResize = () => { if (desktop.matches && mobileMenu.open) mobileMenu.close(); };
+    desktop.addEventListener('change', onResize);
+    document.addEventListener('astro:before-swap', () => {
+      resetMenu();
+      desktop.removeEventListener('change', onResize);
+    }, { once: true });
   }
-  
-  // Initialize on first load
   initMobileMenu();
-  
-  // Re-initialize after Astro page transitions
   document.addEventListener('astro:after-swap', initMobileMenu);
-  
+
   // Smooth scrolling for anchor links - improved version
   document.addEventListener('click', function(e) {
     const target = e.target as HTMLElement;
