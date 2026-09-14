@@ -79,12 +79,12 @@ const { menuTitle, contactTitle } = footerConfig;
 
 <footer class="bg-beige text-dark-gray py-6 md:py-10">
   <div class="container mx-auto px-4">
-    <div class="grid grid-cols-1 md:grid-cols-[1.2fr_1.2fr_0.9fr_0.9fr] gap-6 md:gap-10 items-start md:grid-rows-[auto]">
+    <div class="footer-grid grid grid-cols-1 md:grid-cols-[1.2fr_1.2fr_0.9fr_0.9fr] gap-6 md:gap-10 items-start md:grid-rows-[auto]">
       <div class="flex justify-center md:justify-start items-center md:items-start md:self-start">
-        <Image src={logoImage} alt="Christine Rizzo Logo" class="h-40 md:h-96 w-auto mt-0 md:mt-[-6rem]" />
+        <Image src={logoImage} alt="Christine Rizzo Logo" class="footer-logo h-40 md:h-96 w-auto mt-0 md:mt-[-6rem]" />
       </div>
 
-      <div>
+      <div class="footer-contact">
         <h3 class="font-medium mb-5 text-lg md:text-xl">{contactTitle}</h3>
         <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`} class="flex items-start gap-3 hover:underline">
           <MapPin class="w-5 h-5 flex-shrink-0" />
@@ -170,6 +170,21 @@ const { menuTitle, contactTitle } = footerConfig;
 </footer>
 
 <style>
+  @media (max-width: 767px) {
+    .footer-grid { gap: 1.25rem; max-width: 26rem; margin-inline: auto; }
+    .footer-logo { height: 6rem; max-width: 100%; }
+    .footer-contact { text-align: center; }
+    .footer-contact h3 { margin-bottom: .75rem; }
+    .footer-contact a { justify-content: center; gap: .5rem; font-size: .9375rem; line-height: 1.6; min-height: 44px; }
+    .footer-contact a:first-of-type { max-width: 19rem; margin-inline: auto; }
+    .footer-contact a:first-of-type :global(svg) { margin-top: .2rem; }
+    .footer-contact a + a { margin-top: .35rem; }
+    details { border-top: 1px solid #e2dbd3; }
+    details > summary { min-height: 48px; margin-bottom: 0; padding: .65rem 1.5rem; font-size: 1rem; }
+    details > summary :global(svg) { right: .25rem; }
+    details a { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; }
+  }
+
   @media (max-width: 768px) {
     details summary::-webkit-details-marker {
       display: none;

@@ -99,15 +99,23 @@ const actions = t.actions.filter(action => action.type !== 'message' || config.s
   .contact-action:focus-visible, .contact-choice:focus-visible { outline: 3px solid #ffcc33; outline-offset: 4px; }
   .contact-content { width: 100%; min-width: 0; }
   .contact-heading { margin: 0 0 1.25rem; color: white; font-size: clamp(1.6rem, 2.5vw, 2rem); line-height: 1.2; font-weight: 400; letter-spacing: -.02em; }
+  .contact-heading::after { content: ''; display: block; width: 2.5rem; height: 3px; margin-top: .7rem; border-radius: 2px; background: #ffcc33; }
   .contact-illustration { position: relative; display: flex; justify-content: center; flex-shrink: 0; isolation: isolate; }
   .contact-illustration::before, .contact-illustration::after { content: ''; position: absolute; pointer-events: none; z-index: -1; width: 250px; height: 250px; border: 1px solid rgba(255,255,255,.12); border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%); }
   .contact-illustration::after { width: 290px; height: 290px; border-style: dashed; border-color: rgba(255,255,255,.09); }
   @media (min-width: 1024px) { .contact-content { flex: 1; } .contact-illustration { width: 28%; } }
   @media (max-width: 1023px) { .contact-illustration { display: none; } }
   @media (max-width: 639px) {
-    .contact-options { grid-template-columns: minmax(0, 1fr); gap: .75rem; }
-    .contact-action { min-height: 0; padding: 1.2rem; }
-    .action-title { font-size: 1.05rem; }
+    .contact-banner { padding: 1.5rem 1rem; }
+    .contact-heading { font-size: 1.5rem; text-align: center; margin-bottom: 1rem; }
+    .contact-heading::after { margin-inline: auto; }
+    .contact-options { grid-template-columns: minmax(0, 1fr); gap: .6rem; max-width: 26rem; margin-inline: auto; }
+    .contact-action { grid-template-columns: 34px minmax(0, 1fr) 16px; gap: .65rem; min-height: 64px; padding: .75rem .85rem; }
+    .action-icon { width: 34px; height: 34px; border-radius: 10px; background: #fff1bd; color: #535078; }
+    .action-icon :global(svg) { width: 18px; height: 18px; }
+    .action-title { font-size: .9375rem; }
+    .action-email { font-size: .75rem; margin-top: .15rem; }
+
   }
   @media (prefers-reduced-motion: reduce) { .contact-action, .contact-action :global(.action-indicator) { transition: none; } }
 </style>
