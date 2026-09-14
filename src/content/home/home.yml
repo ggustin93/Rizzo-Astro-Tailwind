@@ -340,7 +340,7 @@ nl:
 media:
   hero: /assets/images/hero_image_wbg.svg
   team: /assets/images/illustration_services.svg
-portraitLinks: none
+portraitLinks: profiles
 serviceOrder:
   - employeurs
   - travailleurs

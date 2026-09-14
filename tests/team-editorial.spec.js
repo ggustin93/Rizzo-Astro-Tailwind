@@ -4,7 +4,7 @@ test('la présentation complète de Christine est distincte de son profil', asyn
   await page.goto('/fr/equipe/');
   await expect(page.locator('main')).toContainText("Elle copréside la Commission Bien-être psychosociale");
   await expect(page.locator('main')).toContainText("l'Association des Juristes Praticiens du Droit Social");
-  await page.locator('main a[href="/fr/equipe/christine-rizzo/"]').click();
+  await page.locator('main a[href="/fr/equipe/christine-rizzo/"] img').click();
   await expect(page.locator('main')).not.toContainText('Je suis actuellement membre');
   await expect(page.locator('main')).toContainText('2025-2027');
 });
@@ -20,7 +20,7 @@ for (const lang of ['fr', 'en', 'it', 'nl']) {
     await page.goto(`/${lang}/equipe/`);
     await expect(page.locator('main h2')).toHaveText(members.map(x => x[1]));
     for (const [slug, name, career] of members) {
-      await expect(page.locator(`main a[href="/${lang}/equipe/${slug}/"]`)).toHaveCount(1);
+      await expect(page.locator(`main a[href="/${lang}/equipe/${slug}/"]`)).toHaveCount(2);
       const response = await request.get(`/${lang}/equipe/${slug}/`);
       expect(response.status()).toBe(200);
       await page.goto(`/${lang}/equipe/${slug}/`);
@@ -39,14 +39,18 @@ test('accueil : promesse fournie, réunion sous équipe et quatre mini-portraits
   await expect(page.locator('#profil')).toContainText('Rizzo & Michiels est une équipe de quatre avocats');
   await expect(page.locator('#profil img[alt="Réunion de travail"]')).toBeVisible();
   await expect(page.locator('#expertise img')).toHaveCount(0);
-  await expect(page.locator('#profil a')).toHaveCount(0);
+  await expect(page.locator('#profil a')).toHaveCount(5);
+  await expect(page.locator('#profil a[href="/fr/equipe/"]')).toBeVisible();
+  await page.locator('#profil a[href="/fr/equipe/romain-archalaus/"] img').click();
+  await expect(page).toHaveURL(/\/fr\/equipe\/romain-archalaus\//);
+  await page.goBack();
   await expect(page.locator('#profil')).toContainText('Découvrir l’équipe');
 });
 
 for (const lang of ['fr','en','it','nl']) {
   test(`${lang} : parcours équipe au clavier et médias accessibles`, async ({ page, isMobile }) => {
     await page.goto(`/${lang}/equipe/`);
-    const link=page.locator(`main a[href="/${lang}/equipe/arnaud-vanderhoeven-jacobs/"]`);
+    const link=page.locator(`main a.profile-link[href="/${lang}/equipe/arnaud-vanderhoeven-jacobs/"]`);
     await link.focus();
     await expect(link).toBeFocused();
     await page.keyboard.press('Enter');

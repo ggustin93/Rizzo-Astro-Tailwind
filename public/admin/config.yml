@@ -25,10 +25,10 @@ collections:
           - label: "Liens des mini-portraits"
             name: "portraitLinks"
             widget: "select"
-            default: "none"
-            hint: "Choix de preview à faire valider par le cabinet. Le libellé Découvrir l’équipe reste toujours non cliquable."
+            default: "profiles"
+            hint: "Les portraits peuvent ouvrir le profil individuel. Le bouton Découvrir l’équipe ouvre la page Équipe."
             options:
-              - {label: "Sans lien (arbitrage en attente)", value: "none"}
+              - {label: "Sans lien", value: "none"}
               - {label: "Vers les profils", value: "profiles"}
           - label: "Ordre des parcours Services"
             name: "serviceOrder"
@@ -100,7 +100,7 @@ collections:
                 fields:
                   - {label: "Titre", name: "title", widget: "string"}
                   - {label: "Description", name: "description", widget: "text"}
-                  - {label: "Libellé au-dessus des portraits (sans lien)", name: "cta", widget: "string"}
+                  - {label: "Libellé du bouton vers l’équipe", name: "cta", widget: "string"}
                   - {label: "Alternative de l’illustration", name: "imageAlt", widget: "string"}
 
               - {label: "Titre des articles", name: "articlesTitle", widget: "string"}

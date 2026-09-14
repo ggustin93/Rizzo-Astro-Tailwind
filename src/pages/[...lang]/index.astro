@@ -165,7 +165,7 @@ export const prerender = true;
         <img src={media.team} alt={content.profil.imageAlt} class="w-full h-auto max-w-2xl mx-auto mb-8" width="1200" height="600" loading="lazy" />
         <div class="max-w-5xl mx-auto text-center">
           <p class="text-dark-gray text-base md:text-lg font-light leading-relaxed mb-6 max-w-3xl mx-auto">{content.profil.description}</p>
-          <p class="uppercase text-sm mb-8">{content.profil.cta}</p>
+          <div class="mb-8"><Button href={`/${currentLang}/equipe/`} text={content.profil.cta} icon={ArrowRight} class="team-discover" /></div>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {lawyersWithImages.map(lawyer => {
               const Tag = portraitLinks === 'profiles' ? 'a' : 'div';
@@ -232,7 +232,7 @@ export const prerender = true;
   .hero-subtitle::after { content: ""; display: block; width: 4rem; height: 4px; background: #ffcc33; border-radius: 2px; margin-block: 1.5rem; }
   .hero-description { color: #4b5158; max-width: 47ch; font-size: 1.0625rem; line-height: 1.75; }
   .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.75rem; }
-  .hero-actions :global(a) { min-height: 48px; padding: .85rem 1.35rem; border-radius: .5rem; }
+  .hero-actions :global(a) { min-height: 44px; padding: .7rem 1.1rem; border-radius: .5rem; }
   .hero-actions :global(.hero-primary) { background: var(--worker-ink); border-color: var(--worker-ink); color: white; }
   .hero-actions :global(.hero-primary:hover) { background: #055f6b; }
   .hero-actions :global(.hero-secondary) { border-color: #b1b7bc; background: white; color: #333; }
@@ -244,8 +244,18 @@ export const prerender = true;
   }
   @media (max-width: 767px) {
     .hero-illustration { max-width: 20rem; }
-    .hero-actions :global(a) { flex: 1 1 12rem; }
+    .hero-actions { gap: .75rem; }
+    .hero-actions :global(a) { flex: 0 1 auto; padding: .65rem .65rem; font-size: .75rem; }
+    .hero-layout { gap: 1.5rem; }
+    .hero-title { margin-bottom: 1.15rem; }
+    .hero-subtitle::after { margin-block: 1.15rem; }
+    .hero-description { max-width: 38ch; }
+    .hero-illustration { max-width: 17rem; }
+
   }
+  :global(.team-discover) { min-height: 44px; color: var(--worker-ink); border-color: var(--worker-brand); }
+  #profil a img { transition: opacity .15s; }
+  #profil a:hover img { opacity: .85; }
   .service-card { background: white; border: 1px solid #e0e3e5; border-top: 4px solid var(--service-color); color: #333; }
   .service-employer { --service-color: var(--employer-brand); }
   .service-worker { --service-color: var(--worker-brand); }

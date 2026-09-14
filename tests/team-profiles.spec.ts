@@ -26,7 +26,7 @@ test.describe('Team profile routes', () => {
       for (const profile of profiles) {
         await expect(
           page.locator(`main a[href="/${lang}/equipe/${profile.slug}/"]`)
-        ).toHaveCount(1);
+        ).toHaveCount(2);
       }
     });
   }
