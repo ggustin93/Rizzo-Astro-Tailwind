@@ -261,6 +261,10 @@ export const prerender = true;
   @media (max-width: 639px) {
     .home-hero { padding-block: 1.75rem 2rem; }
     .hero-layout { gap: 1.4rem; }
+    .hero-copy { text-align: center; }
+    .hero-subtitle, .hero-description { margin-inline: auto; }
+    .hero-subtitle::after { margin-inline: auto; }
+    .hero-actions { width: 100%; max-width: 25rem; margin-inline: auto; }
     .hero-title { font-size: clamp(1.6rem, 6.7vw, 2rem); margin-bottom: .85rem; }
     .hero-subtitle { font-size: clamp(1.15rem, 4.9vw, 1.45rem); line-height: 1.45; max-width: 32ch; text-wrap: pretty; }
     .hero-subtitle::after { width: 2.75rem; height: 3px; margin-block: 1rem; }
