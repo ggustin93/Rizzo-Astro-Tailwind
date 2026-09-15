@@ -13,9 +13,10 @@ for (const lang of ['fr', 'en', 'it', 'nl']) {
     const main = page.locator('main');
     await expect(main.locator('[data-cal-link]')).toHaveCount(3);
     await expect(main.locator('a[href="https://cal.com/arnaudvanderhoeven"]')).toBeVisible();
-    await main.locator(`a[href="/${lang}/equipe/romain-archalaus/#coordonnees"]`).click();
-    await expect(page.locator('#coordonnees a[href="tel:+32495693191"]')).toBeVisible();
-    await expect(page.locator('#coordonnees a[href^="mailto:"]')).toHaveCount(0);
+    const romain = main.locator('.team-entry').filter({ has: page.locator(`a[href="/${lang}/equipe/romain-archalaus/"]`) });
+    await expect(romain.locator('a[href="tel:+32495693191"]')).toBeVisible();
+    await expect(romain.locator('a[href^="mailto:"]')).toHaveCount(0);
+    await expect(romain.locator('[data-cal-link]')).toHaveCount(0);
   });
 }
 

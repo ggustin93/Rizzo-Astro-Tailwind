@@ -165,7 +165,6 @@ export const prerender = true;
           <p class="team-description">{content.profil.description}</p>
         </div>
         <div class="max-w-5xl mx-auto text-center">
-          <p class="text-lg font-medium text-gray-800 mb-8">{content.profil.cta}</p>
           <div class="team-grid">
             {lawyersWithImages.map(lawyer => {
               const Tag = portraitLinks === 'profiles' ? 'a' : 'div';
@@ -177,6 +176,9 @@ export const prerender = true;
                 </Tag>
               );
             })}
+          </div>
+          <div class="text-center mt-10">
+            <Button href={`/${currentLang}/equipe/`} text={`${content.profil.cta} →`} ariaLabel={content.profil.cta} variant="secondary" class="uppercase text-sm font-light hover:text-gray-900" />
           </div>
         </div>
       </div>

@@ -37,7 +37,8 @@ fr:
     pwablo:
       pwabloText: Design by Pwablo
       pwabloUrl: https://pwablo.be
-    contactTitle: "Contact"
+    contactTitle: "Nos bureaux"
+    mapLinkLabel: "Ouvrir dans Google Maps"
     menuTitle: Menu
     ecoDesignText: Score d'éco-conception
     menuLinks:
@@ -90,7 +91,8 @@ en:
     pwablo:
       pwabloText: Design by Pwablo
       pwabloUrl: https://pwablo.be
-    contactTitle: "Contact"
+    contactTitle: "Our office"
+    mapLinkLabel: "Open in Google Maps"
     menuTitle: Menu
     ecoDesignText: Eco-design Score
     menuLinks:
@@ -143,7 +145,8 @@ it:
     pwablo:
       pwabloText: Design di Pwablo
       pwabloUrl: https://pwablo.be
-    contactTitle: "Contatti"
+    contactTitle: "Il nostro studio"
+    mapLinkLabel: "Apri in Google Maps"
     menuTitle: Menu
     ecoDesignText: Punteggio di eco-design
     menuLinks:
@@ -196,7 +199,8 @@ nl:
     pwablo:
       pwabloText: Design by Pwablo
       pwabloUrl: https://pwablo.be
-    contactTitle: "Contact"
+    contactTitle: "Ons kantoor"
+    mapLinkLabel: "Openen in Google Maps"
     menuTitle: Menu
     ecoDesignText: Ecodesignscore
     menuLinks:

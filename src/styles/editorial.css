@@ -5,8 +5,33 @@
 .editorial-page p { max-width: 70ch; line-height: 1.8; }
 .editorial-page a:focus-visible { outline: 2px solid var(--worker-ink); outline-offset: 5px; }
 .editorial-page .portrait { border-radius: .75rem; background: #e6f3f6; box-shadow: none; width: 100%; height: auto; }
-.editorial-page .profile-link { display: inline-flex; align-items: center; gap: .75rem; min-height: 44px; padding: .7rem 1.15rem; border: 1px solid var(--worker-ink); color: #065e6b; border-radius: .5rem; font-weight: 600; transition: background-color .15s; }
-.editorial-page .profile-link:hover { background: #eaf5f6; }
+.editorial-page .profile-actions { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 1.5rem; }
+.editorial-page .profile-link { display: inline-flex; align-items: center; gap: .65rem; min-height: 50px; padding: .4rem 1rem .4rem .4rem; border: 1px solid #e1eaec; border-radius: 9px; background: #fff; color: #28545c; font-size: .9rem; font-weight: 500; overflow-wrap: anywhere; transition: background-color .15s, border-color .15s; }
+.editorial-page .profile-link:hover { background: #edf6f5; border-color: #a9cdd1; }
+.editorial-page .profile-link:focus-visible { outline: 3px solid #068d9d; outline-offset: 3px; }
+.editorial-page .profile-link-icon { display: grid; place-items: center; flex-shrink: 0; width: 36px; height: 36px; border-radius: 9px; background: #edf6f5; color: #06616c; }
+.editorial-page .profile-link-icon svg { width: 19px; height: 19px; stroke-width: 1.6; }
+.editorial-page .profile-link--more { padding-left: 1rem; border-color: var(--worker-ink); color: #065e6b; font-weight: 600; }
+@media (max-width: 639px) { .editorial-page .profile-link { flex: 1 1 100%; } }
+/* Compact take on the services-page banner */
+.team-header { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: clamp(2rem, 5vw, 3.5rem); padding: clamp(1.25rem, 3vw, 2rem) 1.25rem; border-radius: 1rem; background: var(--worker-ink); color: #fff; }
+.editorial-page .team-header h1 { color: #fff; font-size: clamp(1.75rem, 3.2vw, 2.5rem); font-weight: 300; }
+.team-header-icon { display: inline-flex; padding: .6rem; border: 1px solid #ffffff66; border-radius: 50%; }
+.team-header-icon svg { width: 1.4rem; height: 1.4rem; }
+.team-entry { display: grid; grid-template-areas: "photo" "text" "actions"; gap: 1.5rem; }
+.team-photo { grid-area: photo; }
+.team-text { grid-area: text; }
+.team-text > p:last-child { margin-bottom: 0; }
+.team-entry .profile-actions { grid-area: actions; margin-top: 0; }
+@media (min-width: 768px) {
+  .team-entry { grid-template-columns: minmax(0, 22rem) minmax(0, 1fr); grid-template-rows: auto 1fr; grid-template-areas: "photo text" "actions text"; column-gap: 3rem; row-gap: 1.25rem; }
+  .team-entry .profile-actions { flex-direction: column; align-self: start; }
+  .team-entry .profile-link { width: 100%; }
+  .team-entry .profile-link--more { justify-content: space-between; }
+}
+.team-role { display: flex; align-items: center; gap: .75rem; margin-top: .5rem; font-size: 1.125rem; font-weight: 500; letter-spacing: .01em; color: #065e6b; }
+.team-role::before { content: ""; width: 1.75rem; height: 2px; background: currentColor; border-radius: 2px; }
+@media (min-width: 768px) { .team-role { font-size: 1.25rem; } }
 .team-entry + .team-entry { border-top: 1px solid #e1e6e8; padding-top: 3.5rem; }
 .team-entry .portrait { aspect-ratio: 1; object-fit: cover; max-width: 22rem; }
 .profile-section { border-top: 1px solid #e1e6e8; padding-top: 1.75rem; }

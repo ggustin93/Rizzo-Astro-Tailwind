@@ -39,12 +39,11 @@ test('accueil : promesse fournie, réunion sous équipe et quatre mini-portraits
   await expect(page.locator('#profil')).toContainText('Rizzo & Michiels est une équipe de quatre avocats');
   await expect(page.locator('#profil img[alt="Réunion de travail"]')).toBeVisible();
   await expect(page.locator('#expertise img')).toHaveCount(0);
-  await expect(page.locator('#profil a')).toHaveCount(4);
-  await expect(page.locator('#profil a[href="/fr/equipe/"]')).toHaveCount(0);
+  await expect(page.locator('#profil a')).toHaveCount(5);
+  await expect(page.locator('#profil a[href="/fr/equipe/"]')).toHaveText(/Découvrir l’équipe/);
   await page.locator('#profil a[href="/fr/equipe/romain-archalaus/"] img').click();
   await expect(page).toHaveURL(/\/fr\/equipe\/romain-archalaus\//);
   await page.goBack();
-  await expect(page.locator('#profil')).toContainText('Découvrir l’équipe');
 });
 
 for (const lang of ['fr','en','it','nl']) {

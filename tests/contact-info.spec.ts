@@ -29,9 +29,11 @@ test.describe('Contact Information Verification', () => {
     await page.goto(`${BASE_URL}/fr/`);
 
     const footer = page.locator('footer');
-    await expect(footer.getByRole('link', { name: editorEmail, exact: true })).toHaveAttribute('href', `mailto:${editorEmail}`);
+    // Phones and emails live in the CTA above; the footer only shows the office.
+    await expect(footer.locator('a[href^="mailto:"]')).toHaveCount(0);
     await expect(footer.locator('a[href^="tel:"]')).toHaveCount(0);
-    await expect(footer.getByRole('heading', { name: 'Contact', exact: true })).toBeVisible();
+    await expect(footer.getByRole('heading', { name: 'Nos bureaux', exact: true })).toBeVisible();
+    await expect(footer.getByRole('link', { name: /Ouvrir dans Google Maps/ })).toHaveAttribute('href', /google\.com\/maps/);
     // Check for address parts to be resilient to formatting
     await expect(footer).toContainText(address);
     await expect(footer).toContainText('1180 Bruxelles');

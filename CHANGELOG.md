@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- **Footer "Nos bureaux"**: the contact column now shows only the office address, on two lines with an explicit "Ouvrir dans Google Maps ↗" link (label editable in Decap, FR/EN/IT/NL). Phones and emails remain in the contact banner above.
+- **Team page**: every member gets the same icon buttons (appointment, phone, email, full profile), placed under the portrait on desktop; the role line is larger and distinct from body text; a compact teal banner titles the page, echoing the services pages.
+- **Homepage team section**: "Découvrir l'équipe" is now a real link to the team page below the portraits instead of non-clickable text above them.
+
+### Fixed
+- **Lighthouse and agentic browsing checks**: the language selector now has an accessible label in FR/EN/IT/NL, and Cal.com loads only after an explicit appointment request. The deployed `feat/oct-2026-romain-nl-seo` preview reaches 100/100 for Best Practices, Accessibility and SEO, plus 3/3 Agentic Browsing on mobile and desktop (Lighthouse 13.4.1, 14 September 2026).
+
 ### Added
 - **Cabinet and individual contacts (#19, incorporating #13)**: four central phone numbers, three Cal.com calendars (Christine, Stephanie and Arnaud), and responsive individual contact cards with phone, email, WhatsApp and LinkedIn icons. Empty collaborator emails remain absent; Romain has no booking control.
 - **Editable contact settings**: shared cabinet address/email, member directory with validated optional calendars, localized action labels/order and shared illustration in Decap. Form notification recipients remain managed independently in Netlify.

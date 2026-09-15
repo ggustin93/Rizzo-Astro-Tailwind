@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import { MapPin, Mail, ChevronDown } from 'astro-feather-icons2';
+import { MapPin, ExternalLink, ChevronDown } from 'astro-feather-icons2';
 import IconLinkedin from './IconLinkedIn.astro';
 import logoImage from '../assets/images/logo_crizzo_calli3.svg';
 import logoPwablo from '../assets/images/logo_pwablo.svg';
@@ -16,6 +16,10 @@ const siteConfigEntry = await getEntry('config', 'site-config');
 const lawyers = siteConfigEntry?.data?.lawyers || [];
 // Get the shared office address from the root level
 const address = siteConfigEntry?.data?.address || "Chaussée de Waterloo 1151, 1180 Bruxelles";
+// "Rue 1, 1180 Ville" → deux lignes, lecture postale plus claire
+const [street, ...cityParts] = address.split(', ');
+const city = cityParts.join(', ');
+const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
 
 // Récupérer la configuration de navigation
 const navConfig = await getNavigation(currentLang);
@@ -72,7 +76,7 @@ const copyrightText = siteConfigEntry?.data?.copyrightText || 'C. Rizzo & S. Mic
 const formattedCopyrightText = `© ${currentYear} ${copyrightText}`;
 
 // Titres des sections
-const { menuTitle, contactTitle } = footerConfig;
+const { menuTitle, contactTitle, mapLinkLabel } = footerConfig;
 
 
 ---
@@ -86,13 +90,15 @@ const { menuTitle, contactTitle } = footerConfig;
 
       <div class="footer-contact">
         <h3 class="font-medium mb-5 text-lg md:text-xl">{contactTitle}</h3>
-        <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`} class="flex items-start gap-3 hover:underline">
-          <MapPin class="w-5 h-5 flex-shrink-0" />
-          <span>{address}</span>
-        </a>
-        <a href={`mailto:${siteConfigEntry?.data.cabinetEmail}`} class="flex items-center gap-3 mt-4 hover:underline break-all">
-          <Mail aria-hidden="true" title="" class="w-5 h-5 flex-shrink-0" />
-          <span>{siteConfigEntry?.data.cabinetEmail}</span>
+        <a href={mapsUrl} target="_blank" rel="noopener" class="office-link group">
+          <span class="office-pin text-travailleur"><MapPin aria-hidden="true" /></span>
+          <div>
+            <address class="not-italic">{street}{city && <><br />{city}</>}</address>
+            <span class="office-maps">
+              {mapLinkLabel}
+              <ExternalLink aria-hidden="true" class="w-4 h-4" />
+            </span>
+          </div>
         </a>
       </div>
 
@@ -170,15 +176,19 @@ const { menuTitle, contactTitle } = footerConfig;
 </footer>
 
 <style>
+  .office-link { display: flex; align-items: flex-start; gap: .85rem; width: fit-content; padding: .75rem 1rem .75rem .75rem; margin-inline: -.75rem; border-radius: .75rem; line-height: 1.55; transition: background-color .2s; }
+  .office-link:hover { background: rgb(255 255 255 / .6); }
+  .office-link:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+  .office-pin { display: grid; place-items: center; flex-shrink: 0; width: 2.5rem; height: 2.5rem; border-radius: 999px; background: #fff; box-shadow: 0 1px 2px rgb(0 0 0 / .08); }
+  .office-pin :global(svg) { width: 1.2rem; height: 1.2rem; }
+  .office-maps { display: inline-flex; align-items: center; gap: .35rem; margin-top: .5rem; font-size: .875rem; font-weight: 500; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgb(0 0 0 / .25); transition: text-decoration-color .2s; }
+  .office-link:hover .office-maps { text-decoration-color: currentColor; }
   @media (max-width: 767px) {
     .footer-grid { gap: 1.25rem; max-width: 26rem; margin-inline: auto; }
     .footer-logo { height: 6rem; max-width: 100%; }
     .footer-contact { text-align: center; }
     .footer-contact h3 { margin-bottom: .75rem; }
-    .footer-contact a { justify-content: center; gap: .5rem; font-size: .9375rem; line-height: 1.6; min-height: 44px; }
-    .footer-contact a:first-of-type { max-width: 19rem; margin-inline: auto; }
-    .footer-contact a:first-of-type :global(svg) { margin-top: .2rem; }
-    .footer-contact a + a { margin-top: .35rem; }
+    .office-link { margin-inline: auto; text-align: left; }
     details { border-top: 1px solid #e2dbd3; }
     details > summary { min-height: 48px; margin-bottom: 0; padding: .65rem 1.5rem; font-size: 1rem; }
     details > summary :global(svg) { right: .25rem; }

@@ -107,6 +107,7 @@ const navigationSchema = z.object({
   footer: z.object({
     menuTitle: z.string(),
     contactTitle: z.string(),
+    mapLinkLabel: z.string(),
     contactInfo: z.object({
       phone: z.string(),
       email: z.string(),
