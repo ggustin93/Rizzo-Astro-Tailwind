@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - **Footer "Nos bureaux"**: the contact column now shows only the office address, on two lines with an explicit "Ouvrir dans Google Maps ↗" link (label editable in Decap, FR/EN/IT/NL). Phones and emails remain in the contact banner above.
 - **Team page**: every member gets the same icon buttons (appointment, phone, email, full profile), placed under the portrait on desktop; the role line is larger and distinct from body text; a compact teal banner titles the page, echoing the services pages.
 - **Homepage team section**: "Découvrir l'équipe" is now a real link to the team page below the portraits instead of non-clickable text above them.
+- **DNS: Microsoft 365 domain verification (#24)**: added TXT `MS=ms69676448` at the apex in Netlify DNS (19 September 2026) so the cabinet can create `info@rizzo-michiels.be`. The earlier attempt failed because the record went to Infomaniak, which is only the registrar since the April migration. Records must go in Netlify DNS. The MX, SPF, autodiscover and DKIM records still need to be added once Microsoft provides them.
 
 ### Fixed
 - **Lighthouse and agentic browsing checks**: the language selector now has an accessible label in FR/EN/IT/NL, and Cal.com loads only after an explicit appointment request. The deployed `feat/oct-2026-romain-nl-seo` preview reaches 100/100 for Best Practices, Accessibility and SEO, plus 3/3 Agentic Browsing on mobile and desktop (Lighthouse 13.4.1, 14 September 2026).
