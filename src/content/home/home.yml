@@ -185,34 +185,34 @@ it:
     title: Onorari
     cta: Scorpi di più
   expertise:
-    title: Competenze e servizi
+    title: Servizi
     description: >-
-      Assistiamo le imprese belghe (PMI, microimprese e start-up), le istituzioni europee e il loro
-      personale (funzionari e agenti contrattuali), nonché i lavoratori dipendenti e autonomi, nelle
-      problematiche quotidiane e nei progetti legati alle risorse umane e all’occupazione.
+      Assistenza legale alle aziende, dalle PMI e micro-imprese belghe alle start-up, le istituzioni
+      europee e il loro personale (funzionari e agenti contrattuali), e ai lavoratori dipendenti e
+      autonomi, nelle loro problematiche quotidiane legate al lavoro.
     travailleurs:
       title: >-
-        Siete lavoratori dipendenti e avete una controversia con il vostro datore di lavoro? Siete
-        lavoratori autonomi?
+        È un lavoratore o una lavoratrice e ha una vertenza con il suo datore di lavoro? È un
+        lavoratore autonomo?
       description: >-
-        Vi accompagniamo lungo tutto il vostro percorso professionale, sia per una questione
-        specifica, sia per la fine di una collaborazione o una controversia.
-      cta: Per saperne di più
+        La consigliamo e difendiamo su tutte le questioni di diritto del lavoro: licenziamento,
+        discriminazione, molestie, cessazione del contratto, indennità.
+      cta: Scopri di più
       destination: /services/travailleurs/
     employeurs:
-      title: Dirigete una PMI, una microimpresa o una start-up belga?
+      title: Gestisce una PMI, una micro-impresa o una start-up belga?
       description: >-
-        Vi consigliamo e vi difendiamo su tutte le questioni relative alle risorse umane: contratto
-        di lavoro, regolamento di lavoro, licenziamento, prevenzione e contenzioso.
-      cta: Per saperne di più
+        La assistiamo in italiano su tutte le questioni di diritto del lavoro: contratto di lavoro,
+        regolamento di lavoro, licenziamento, prevenzione e contenzioso.
+      cta: Scopri di più
       destination: /services/employeurs/
     europeennes:
-      title: Siete un’istituzione europea, un funzionario o un agente contrattuale?
+      title: È un'istituzione europea, un funzionario o un agente contrattuale?
       description: >-
-        Consigliamo le istituzioni e le agenzie europee nella gestione dei loro rapporti di lavoro e
-        assistiamo funzionari e agenti nelle loro iniziative, dalla negoziazione alle procedure
-        precontenziose e contenziose.
-      cta: Per saperne di più
+        Assistiamo le istituzioni e le agenzie europee nella gestione dei rapporti di lavoro e
+        accompagniamo i funzionari e gli agenti nelle loro procedure, dalla negoziazione al
+        contenzioso.
+      cta: Scopri di più
       destination: /services/europeennes/
     honoraires:
       intro: Tariffe trasparenti e personalizzate
