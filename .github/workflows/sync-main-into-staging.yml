@@ -1,0 +1,56 @@
+# The client edits content in the production CMS, which commits to main.
+# Merge every push to main back into staging so the next release never overwrites those edits.
+# A conflict is left to a human: the job opens an issue instead of guessing.
+name: Sync main into staging
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency: sync-main-into-staging
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: staging
+          fetch-depth: 0
+
+      - name: Merge main into staging
+        id: merge
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git merge --no-edit origin/main; then
+            git push origin staging
+          else
+            git merge --abort
+            echo "conflict=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Ask for a manual merge
+        if: steps.merge.outputs.conflict == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="main → staging: conflit à résoudre à la main"
+          # One open issue is enough; later runs hit the same conflict.
+          if [ -z "$(gh issue list --state open --search "in:title \"$title\"" --json number --jq '.[0].number')" ]; then
+            gh issue create --title "$title" --body "La fusion automatique de \`main\` dans \`staging\` a échoué (commit ${GITHUB_SHA::8}).
+
+          À faire avant toute mise en production :
+          \`\`\`
+          git switch staging && git pull
+          git merge origin/main   # résoudre le conflit
+          git push
+          \`\`\`
+          Run : ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          fi
