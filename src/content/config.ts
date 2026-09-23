@@ -127,8 +127,7 @@ const navigationSchema = z.object({
     pwablo: z.object({
       pwabloText: z.string(),
       pwabloUrl: z.string()
-    }),
-    copyrightText: z.string().optional()
+    })
   })
 });
 

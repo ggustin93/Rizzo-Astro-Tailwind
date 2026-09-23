@@ -5,6 +5,10 @@ backend:
 media_folder: "public/assets/images"
 public_folder: "/assets/images"
 
+# The real preview is the staging site (staging.rizzo-michiels.be), rebuilt after each save.
+editor:
+  preview: false
+
 collections:
   # Page d'accueil
   - name: "home"
@@ -743,6 +747,11 @@ collections:
             widget: "string"
             pattern: ['^[^\s@]+@[^\s@]+\.[^\s@]+$', "Adresse email valide"]
             hint: "Adresse publique pour les documents. Activation et réception à vérifier dans le ticket messagerie avant publication ; ne configure pas Netlify."
+          - label: "Texte du copyright"
+            name: "copyrightText"
+            widget: "string"
+            required: false
+            hint: "Nom affiché dans le pied de page. L'année et le symbole © sont ajoutés automatiquement."
           - label: "Annuaire — coordonnées individuelles"
             name: "lawyers"
             widget: "list"
@@ -867,11 +876,6 @@ collections:
                       - {label: "Texte Pwablo", name: "pwabloText", widget: "string", default: "Design by Pwablo", readonly: true}
                       - {label: "URL Pwablo", name: "pwabloUrl", widget: "string", default: "https://pwablo.be", readonly: true}
                     hint: "Ces champs sont réservés à l'agence Pwablo et ne peuvent pas être modifiés."
-                  - label: "Texte du copyright"
-                    name: "copyrightText"
-                    widget: "string"
-                    default: "Christine Rizzo"
-                    hint: "Entrez le nom ou l'entité pour le copyright. L'année et le symbole © sont ajoutés automatiquement."
 
           - label: "English"
             name: "en"
