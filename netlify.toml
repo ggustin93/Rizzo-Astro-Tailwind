@@ -15,6 +15,14 @@
 [build.environment]
   NODE_VERSION = "22"
 
+# Branch deploys (staging.rizzo-michiels.be, feature branches) point Decap CMS at
+# their own branch instead of main. The committed config stays on main for production.
+[context.branch-deploy]
+  command = "sed -i \"s/^  branch: main$/  branch: ${HEAD}/\" public/admin/config.yml && npm run build"
+
+[context.deploy-preview]
+  command = "sed -i \"s/^  branch: main$/  branch: ${HEAD}/\" public/admin/config.yml && npm run build"
+
 # --- Redirects ---
 # Cross-domain redirect: crizzo-avocate.be → rizzo-michiels.be
 # Netlify alias domains serve the same site — they do NOT auto-redirect to the primary.

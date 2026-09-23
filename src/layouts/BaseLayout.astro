@@ -37,7 +37,9 @@ const { seo, sectionsVisibility, lawyers, allowIndexing: siteAllowIndexing } = s
 // Get primary lawyer's calendar link (first in the list)
 const calendarLink = lawyers?.[0]?.calendarLink || 'https://cal.com/c.rizzo-avocat.be/rendez-vous?duration=15';
 
-const allowIndexing = pageAllowIndexing === undefined ? siteAllowIndexing : pageAllowIndexing;
+// Netlify sets CONTEXT at build time; staging and deploy previews must never be indexed.
+const isProductionBuild = (process.env.CONTEXT ?? 'production') === 'production';
+const allowIndexing = isProductionBuild && (pageAllowIndexing === undefined ? siteAllowIndexing : pageAllowIndexing);
 
 const productionSiteUrl = seo.siteUrl || Astro.site || 'https://rizzo-michiels.be';
 const siteUrl = import.meta.env.DEV ? Astro.url.origin : productionSiteUrl;
