@@ -51,3 +51,6 @@ replit.nix
 # Agent tooling / session state (local, not project config)
 .codex/
 .omo/
+
+# Local agent tooling (may contain API keys)
+.codex/
