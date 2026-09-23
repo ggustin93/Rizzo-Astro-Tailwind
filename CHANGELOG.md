@@ -6,13 +6,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- **Permanent staging at `staging.rizzo-michiels.be`**: long-lived `staging` branch (Netlify branch subdomain). The client reviews the next version there and edits content through `/admin/`, whose commits land on `staging`. Only `main` and `staging` remain; dead branches were deleted and Netlify deploys only these two.
+- **Per-branch CMS**: branch deploys and deploy previews run `scripts/set-cms-branch.mjs`, which points Decap at the deployed branch (name validated) instead of `main`. `public/admin/config.yml` stays on `main` in git; no more manual switch.
+- **Back-sync workflow** (`.github/workflows/sync-main-into-staging.yml`): every push to `main` (including client CMS edits in production) is merged into `staging`; a conflict opens one GitHub issue instead of guessing. Active once the file reaches `main`.
+
 ### Changed
+- **Production content merged into staging**: the client's CMS edits from 8 and 11 September (Honoraires price, homepage copy) are now on `staging`, so the 1 October release cannot overwrite them. Homepage: FR/EN from staging, Italian copy written by Christine.
+- **Decap preview pane disabled**: the unstyled preview is hidden; the staging site is the real preview.
 - **Footer "Nos bureaux"**: the contact column now shows only the office address, on two lines with an explicit "Ouvrir dans Google Maps ↗" link (label editable in Decap, FR/EN/IT/NL). Phones and emails remain in the contact banner above.
 - **Team page**: every member gets the same icon buttons (appointment, phone, email, full profile), placed under the portrait on desktop; the role line is larger and distinct from body text; a compact teal banner titles the page, echoing the services pages.
 - **Homepage team section**: "Découvrir l'équipe" is now a real link to the team page below the portraits instead of non-clickable text above them.
-- **DNS: Microsoft 365 domain verification (#24)**: added TXT `MS=ms69676448` at the apex in Netlify DNS (19 September 2026) so the cabinet can create `info@rizzo-michiels.be`. The earlier attempt failed because the record went to Infomaniak, which is only the registrar since the April migration. Records must go in Netlify DNS. The MX, SPF, autodiscover and DKIM records still need to be added once Microsoft provides them.
+- **DNS: Microsoft 365 domain verification (#24)**: added TXT `MS=ms69676448` at the apex in Netlify DNS (19 September 2026) so the cabinet can create `info@rizzo-michiels.be`. The earlier attempt failed because the record went to Infomaniak, which is only the registrar since the April migration. Records must go in Netlify DNS. As of 23 September only this TXT exists: no MX, SPF, autodiscover, DKIM or DMARC, so the domain receives no email yet. The MX and DKIM values are tenant-specific and will be added once Christine completes verification and Microsoft displays them.
 
 ### Fixed
+- **CMS navigation could not be saved**: a required but unused "Texte du copyright" field in Navigation blocked every save. The field now lives in general settings, where the footer reads it.
+- **Security**: staging and deploy previews are always `noindex, nofollow` (only `CONTEXT=production` can be indexed); Decap CMS is pinned to 3.16.3 with subresource integrity instead of `^3.1.2` from unpkg. A full history scan found no committed secret.
 - **Lighthouse and agentic browsing checks**: the language selector now has an accessible label in FR/EN/IT/NL, and Cal.com loads only after an explicit appointment request. The deployed `feat/oct-2026-romain-nl-seo` preview reaches 100/100 for Best Practices, Accessibility and SEO, plus 3/3 Agentic Browsing on mobile and desktop (Lighthouse 13.4.1, 14 September 2026).
 
 ### Added
