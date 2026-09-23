@@ -18,10 +18,10 @@
 # Branch deploys (staging.rizzo-michiels.be, feature branches) point Decap CMS at
 # their own branch instead of main. The committed config stays on main for production.
 [context.branch-deploy]
-  command = "sed -i \"s/^  branch: main$/  branch: ${HEAD}/\" public/admin/config.yml && npm run build"
+  command = "node scripts/set-cms-branch.mjs && npm run build"
 
 [context.deploy-preview]
-  command = "sed -i \"s/^  branch: main$/  branch: ${HEAD}/\" public/admin/config.yml && npm run build"
+  command = "node scripts/set-cms-branch.mjs && npm run build"
 
 # --- Redirects ---
 # Cross-domain redirect: crizzo-avocate.be → rizzo-michiels.be
