@@ -67,19 +67,18 @@ fr:
     cta: Découvrir l’équipe
     imageAlt: Réunion de travail
   seo:
-    title: Christine Rizzo et Stephanie Michiels | Avocates en droit du travail à
-      Bruxelles
-    description: Expertise en droit du travail pour salariés et employeurs.
-      Conseils, défense et accompagnement juridique personnalisé à Bruxelles par
-      notre équipe d'avocates en droit du travail.
+    title: Rizzo & Michiels — Avocats en droit du travail à Bruxelles
+    description: Cabinet d'avocats spécialisé en droit du travail à Bruxelles. Rizzo
+      & Michiels conseille et défend les employeurs, travailleurs et
+      fonctionnaires européens — de la rédaction des contrats jusqu'au tribunal.
     image: https://rizzo-michiels.be/default-social-image.png
     keywords:
       - avocat droit du travail Bruxelles
-      - expertise droit social
-      - conseil juridique employeur
-      - défense salarié
-      - litige travail Belgique
-      - accompagnement juridique personnalisé
+      - cabinet droit social PME
+      - conseil juridique employeur Belgique
+      - défense travailleur licenciement
+      - fonctionnaire européen avocat
+      - litige tribunal du travail
   mentionsLegales:
     title: Mentions Légales
     content:
@@ -161,17 +160,17 @@ en:
     cta: Meet the team
     imageAlt: Working meeting
   seo:
-    title: Christine Rizzo and Stephanie Michiels | Employment Lawyers in Brussels
-    description: Expertise in employment law for employees and employers. Advice,
-      defense and personalized legal support in Brussels by our team of
-      specialist lawyers.
+    title: Rizzo & Michiels — Employment Law Lawyers in Brussels
+    description: Brussels-based law firm specialising in employment and labour law.
+      Rizzo & Michiels advises and represents employers, employees and EU
+      officials — from drafting contracts to courtroom defence.
     keywords:
-      - lawyer
-      - labor law
-      - Brussels
-      - legal advice
-      - employee defense
-      - employer support
+      - employment lawyer Brussels
+      - labour law firm Belgium
+      - employer legal advice Brussels
+      - employee dismissal lawyer
+      - EU civil servant legal representation
+      - employment tribunal Belgium
     image: https://rizzo-michiels.be/default-social-image.png
   employeurs:
     title: You are an employer
@@ -253,17 +252,16 @@ it:
     cta: Scoprite il gruppo
     imageAlt: Riunione di lavoro
   seo:
-    title: Christine Rizzo e Stephanie Michiels | Avvocati del lavoro a Bruxelles
-    description: Diritto del lavoro per lavoratori e aziende. Consulenza, difesa e
-      assistenza legale personalizzata a Bruxelles dal nostro team di avvocati
-      specializzati.
+    title: Rizzo & Michiels — Avvocati in diritto del lavoro a Bruxelles
+    description: Studio legale specializzato in diritto del lavoro a Bruxelles.
+      Rizzo & Michiels assiste e difende datori di lavoro, lavoratori e
+      funzionari europei — dalla redazione dei contratti fino al tribunale.
     keywords:
-      - avvocato
-      - diritto del lavoro
-      - Bruxelles
-      - consulenza legale
-      - difesa dei dipendenti
-      - supporto ai datori di lavoro
+      - avvocato diritto del lavoro Bruxelles
+      - consulenza legale datore di lavoro Belgio
+      - licenziamento lavoratore avvocato
+      - funzionario europeo assistenza legale
+      - tribunale del lavoro Belgio
     image: https://rizzo-michiels.be/default-social-image.png
   employeurs:
     title: Sei un datore di lavoro
@@ -329,18 +327,17 @@ nl:
     cta: Ontdek het team
     imageAlt: Werkvergadering
   seo:
-    title: Christine Rizzo en Stephanie Michiels | Advocaten arbeidsrecht in Brussel
-    description: Expertise in arbeidsrecht voor werknemers en werkgevers. Advies,
-      verdediging en persoonlijke juridische begeleiding in Brussel door ons
-      team van advocaten arbeidsrecht.
+    title: Rizzo & Michiels — Advocaten arbeidsrecht Brussel
+    description: Advocatenkantoor gespecialiseerd in arbeidsrecht in Brussel. Rizzo
+      & Michiels adviseert en verdedigt werkgevers, werknemers en Europese
+      ambtenaren — van contractopstelling tot rechtbank.
     image: https://rizzo-michiels.be/default-social-image.png
     keywords:
       - advocaat arbeidsrecht Brussel
-      - expertise sociaal recht
-      - juridisch advies werkgever
-      - verdediging werknemer
-      - arbeidsgeschil België
-      - persoonlijke juridische begeleiding
+      - juridisch advies werkgever België
+      - ontslag werknemer advocaat
+      - Europese ambtenaar juridische bijstand
+      - arbeidsrechtbank Brussel
   mentionsLegales:
     title: Wettelijke vermeldingen
     content:
