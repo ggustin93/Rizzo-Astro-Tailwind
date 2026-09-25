@@ -1,14 +1,13 @@
 fr:
-  title: Accompagnement et défense des travailleur·euse.s
-  description: ''
+  title: Accompagnement et défense des travailleurs
+  description: ""
   servicesTitle: Nos services
   situationsDisplay: accordion
   ctaText: En savoir plus sur les tarifs
   seo:
     title: Services juridiques pour travailleurs | Rizzo & Michiels Avocates
-    description: >-
-      Expertise en droit du travail pour les employés. Conseils, défense et accompagnement juridique
-      personnalisé à Bruxelles.
+    description: Expertise en droit du travail pour les employés. Conseils, défense
+      et accompagnement juridique personnalisé à Bruxelles.
     image: /default-social-image.png
     keywords:
       - avocat droit du travail employés Bruxelles
@@ -21,78 +20,73 @@ fr:
     - title: Contrat, rupture et fin de collaboration
       situations:
         - question: Vous voulez faire relire votre contrat de travail avant de signer ?
-          answer: >-
-            Nous analysons vos clauses (rémunération, bonus, non-concurrence, etc.) et vous
-            conseillons sur vos droits et obligations.
-        - question: >-
-            Votre employeur vous propose une rupture de commun accord mais vous ne savez pas si
-            c'est dans votre intérêt ?
-          answer: >-
-            Nous évaluons l'offre et déterminons avec vous comment négocier de meilleures
-            conditions.
+          answer: Nous analysons vos clauses (rémunération, bonus, non-concurrence, etc.)
+            et vous conseillons sur vos droits et obligations.
+        - question: Votre employeur vous propose une rupture de commun accord mais vous ne
+            savez pas si c'est dans votre intérêt ?
+          answer: Nous évaluons l'offre et déterminons avec vous comment négocier de
+            meilleures conditions.
         - question: Vous voulez démissionner ?
-          answer: Nous vous informons sur le préavis à respecter et les conséquences de votre démission.
-        - question: >-
-            Vous voulez contester votre licenciement (motif manifestement déraisonnable, abusif ou
-            discriminatoire) ou vérifier votre indemnité de préavis ?
-          answer: >-
-            Nous analysons les motifs invoqués et introduisons une action devant le tribunal du
-            travail si vous pouvez prétendre à une indemnisation.
+          answer: Nous vous informons sur le préavis à respecter et les conséquences de
+            votre démission.
+        - question: Vous voulez contester votre licenciement (motif manifestement
+            déraisonnable, abusif ou discriminatoire) ou vérifier votre
+            indemnité de préavis ?
+          answer: Nous analysons les motifs invoqués et introduisons une action devant le
+            tribunal du travail si vous pouvez prétendre à une indemnisation.
     - title: Discrimination, harcèlement et bien-être au travail
       situations:
-        - question: >-
-            Vous êtes victime de discrimination ou de harcèlement ? Vous êtes mis à l'écart à cause
-            d'un burn-out ?
-          answer: >-
-            Nous vous écoutons et vous orientons d'abord vers les démarches internes appropriées
-            (conseiller en prévention, personne de confiance), vous conseillons sur vos options et,
-            si nécessaire, constituons le dossier de preuve, saisissons l'auditorat du travail ou
-            engageons une procédure si vous pouvez prétendre à une indemnisation.
-        - question: >-
-            Vos conditions de travail ont changé, pendant ou suite à une grossesse ? Vous souhaitez
-            prendre un crédit-temps ou un congé parental ?
-          answer: Nous vous conseillons sur vos droits et vous défendons en cas de non-respect de ceux-ci.
+        - question: Vous êtes victime de discrimination ou de harcèlement ? Vous êtes mis
+            à l'écart à cause d'un burn-out ?
+          answer: Nous vous écoutons et vous orientons d'abord vers les démarches internes
+            appropriées (conseiller en prévention, personne de confiance), vous
+            conseillons sur vos options et, si nécessaire, constituons le
+            dossier de preuve, saisissons l'auditorat du travail ou engageons
+            une procédure si vous pouvez prétendre à une indemnisation.
+        - question: Vos conditions de travail ont changé, pendant ou suite à une grossesse
+            ? Vous souhaitez prendre un crédit-temps ou un congé parental ?
+          answer: Nous vous conseillons sur vos droits et vous défendons en cas de
+            non-respect de ceux-ci.
     - title: Statut professionnel
       situations:
         - question: Votre statut n'est pas clair ? Vous pensez être un faux indépendant ?
-          answer: >-
-            Nous analysons les critères de subordination et, si nécessaire, introduisons une demande
-            devant la Commission administrative de règlement de la relation de travail ou une action
-            en requalification devant le tribunal du travail.
+          answer: Nous analysons les critères de subordination et, si nécessaire,
+            introduisons une demande devant la Commission administrative de
+            règlement de la relation de travail ou une action en requalification
+            devant le tribunal du travail.
         - question: Vous êtes victime d'un accident du travail ?
-          answer: >-
-            Nous vérifions la reconnaissance de l'accident par l'assureur-loi et vous défendons en
-            cas de refus ou de sous-évaluation de l'indemnisation.
-    - title: Cadres, dirigeants et mandataires sociaux
+          answer: Nous vérifions la reconnaissance de l'accident par l'assureur-loi et
+            vous défendons en cas de refus ou de sous-évaluation de
+            l'indemnisation.
+    - title: Cadres, dirigeants
       situations:
-        - question: >-
-            Vous négociez un poste de cadre ou de direction ? Vous voulez faire relire votre clause
-            de non-concurrence, votre package de rémunération variable (bonus, stock-options,
-            warrants) ou votre clause de garantie de rémunération ?
-          answer: >-
-            Nous analysons et négocions ces clauses, et en défendons la validité ou l'application en
-            cas de litige (non-concurrence contestée, bonus différés remis en cause après un
-            licenciement).
-        - question: Vous êtes cadre dirigeant et on vous propose une indemnité de départ négociée ?
+        - question: Vous négociez un poste de direction ? Vous voulez faire relire votre
+            clause de non-concurrence, votre package de rémunération variable
+            (bonus, stock-options, warrants) ou votre clause de garantie de
+            rémunération ?
+          answer: Nous analysons et négocions ces clauses, et en défendons la validité ou
+            l'application en cas de litige (non-concurrence contestée, bonus
+            différés remis en cause après un licenciement).
+        - question: On vous propose un départ négocié ?
           answer: Nous évaluons l'offre et négocions les conditions de votre départ.
     - title: Négociation ou défense en justice
-      description: >-
-        Selon votre situation, nous privilégions, lorsque c'est possible, une résolution rapide et
-        négociée de votre différend avec votre employeur, plutôt qu'une procédure judiciaire longue
-        et incertaine. Lorsque la négociation n'aboutit pas ou n'est pas indiquée, nous vous
-        représentons et défendons vos droits devant les cours et tribunaux du travail.
+      description: Selon votre situation, nous privilégions, lorsque c'est possible,
+        une résolution rapide et négociée de votre différend avec votre
+        employeur, plutôt qu'une procédure judiciaire longue et incertaine.
+        Lorsque la négociation n'aboutit pas ou n'est pas indiquée, nous vous
+        représentons et défendons vos droits devant les cours et tribunaux du
+        travail.
   ctaDestination: honoraires
 en:
   title: Support and defense for employees
-  description: ''
+  description: ""
   servicesTitle: Our services
   situationsDisplay: accordion
   ctaText: Learn more about fees
   seo:
     title: Legal services for employees | Rizzo & Michiels Attorneys
-    description: >-
-      Employment law expertise for employees. Legal advice, defense and personalized legal support
-      in Brussels.
+    description: Employment law expertise for employees. Legal advice, defense and
+      personalized legal support in Brussels.
     keywords:
       - employment lawyer Brussels
       - labor law expertise
@@ -105,75 +99,73 @@ en:
     - title: Contract, termination and end of collaboration
       situations:
         - question: Would you like your employment contract reviewed before signing?
-          answer: >-
-            We analyse your clauses (remuneration, bonuses, non-compete clauses, etc.) and advise
-            you on your rights and obligations.
-        - question: >-
-            Has your employer proposed termination by mutual agreement, but you are unsure whether
-            it is in your interest?
-          answer: We assess the offer and determine with you how to negotiate better terms.
+          answer: We analyse your clauses (remuneration, bonuses, non-compete clauses,
+            etc.) and advise you on your rights and obligations.
+        - question: Has your employer proposed termination by mutual agreement, but you
+            are unsure whether it is in your interest?
+          answer: We assess the offer and determine with you how to negotiate better
+            terms.
         - question: Do you want to resign?
-          answer: We explain the notice period you must observe and the consequences of your resignation.
-        - question: >-
-            Do you want to challenge your dismissal (on manifestly unreasonable, wrongful or
-            discriminatory grounds) or check your payment in lieu of notice?
-          answer: >-
-            We analyse the reasons given and bring proceedings before the labour tribunal if you may
-            be entitled to compensation.
+          answer: We explain the notice period you must observe and the consequences of
+            your resignation.
+        - question: Do you want to challenge your dismissal (on manifestly unreasonable,
+            wrongful or discriminatory grounds) or check your payment in lieu of
+            notice?
+          answer: We analyse the reasons given and bring proceedings before the labour
+            tribunal if you may be entitled to compensation.
     - title: Discrimination, harassment and well-being at work
       situations:
-        - question: >-
-            Are you a victim of discrimination or harassment? Are you being sidelined because of
-            burnout?
-          answer: >-
-            We listen to you and first guide you towards the appropriate internal steps (prevention
-            adviser, confidential counsellor), advise you on your options and, if necessary, compile
-            the evidence, refer the matter to the labour prosecutor or initiate proceedings if you
-            may be entitled to compensation.
-        - question: >-
-            Have your working conditions changed during or after pregnancy? Would you like to take
-            time credit or parental leave?
+        - question: Are you a victim of discrimination or harassment? Are you being
+            sidelined because of burnout?
+          answer: We listen to you and first guide you towards the appropriate internal
+            steps (prevention adviser, confidential counsellor), advise you on
+            your options and, if necessary, compile the evidence, refer the
+            matter to the labour prosecutor or initiate proceedings if you may
+            be entitled to compensation.
+        - question: Have your working conditions changed during or after pregnancy? Would
+            you like to take time credit or parental leave?
           answer: We advise you on your rights and defend you if they are not respected.
     - title: Professional status
       situations:
-        - question: Is your status unclear? Do you think you are falsely classified as self-employed?
-          answer: >-
-            We analyse the criteria of subordination and, if necessary, submit an application to the
-            Administrative Commission for the Settlement of Employment Relationships or bring
-            reclassification proceedings before the labour tribunal.
+        - question: Is your status unclear? Do you think you are falsely classified as
+            self-employed?
+          answer: We analyse the criteria of subordination and, if necessary, submit an
+            application to the Administrative Commission for the Settlement of
+            Employment Relationships or bring reclassification proceedings
+            before the labour tribunal.
         - question: Have you suffered an accident at work?
-          answer: >-
-            We check whether the statutory occupational accident insurer recognises the accident and
-            defend you if recognition is refused or compensation is underestimated.
+          answer: We check whether the statutory occupational accident insurer recognises
+            the accident and defend you if recognition is refused or
+            compensation is underestimated.
     - title: Executives, senior managers and corporate officers
       situations:
-        - question: >-
-            Are you negotiating an executive or management position? Would you like your non-compete
-            clause, variable remuneration package (bonuses, stock options, warrants) or remuneration
-            guarantee clause reviewed?
-          answer: >-
-            We analyse and negotiate these clauses and defend their validity or application in
-            disputes (contested non-compete clauses, deferred bonuses challenged after dismissal).
-        - question: Are you a senior executive being offered a negotiated severance payment?
+        - question: Are you negotiating an executive or management position? Would you
+            like your non-compete clause, variable remuneration package
+            (bonuses, stock options, warrants) or remuneration guarantee clause
+            reviewed?
+          answer: We analyse and negotiate these clauses and defend their validity or
+            application in disputes (contested non-compete clauses, deferred
+            bonuses challenged after dismissal).
+        - question: Are you a senior executive being offered a negotiated severance
+            payment?
           answer: We assess the offer and negotiate the terms of your departure.
     - title: Negotiation or representation in court
-      description: >-
-        Depending on your situation, we favour, whenever possible, a swift negotiated resolution of
-        your dispute with your employer over lengthy and uncertain court proceedings. When
-        negotiation is unsuccessful or inappropriate, we represent you and defend your rights before
-        the labour tribunals and courts.
+      description: Depending on your situation, we favour, whenever possible, a swift
+        negotiated resolution of your dispute with your employer over lengthy
+        and uncertain court proceedings. When negotiation is unsuccessful or
+        inappropriate, we represent you and defend your rights before the labour
+        tribunals and courts.
   ctaDestination: honoraires
 it:
   title: Supporto e difesa dei lavoratori
-  description: ''
+  description: ""
   servicesTitle: I nostri servizi
   situationsDisplay: accordion
   ctaText: Scopri di più sulle tariffe
   seo:
     title: Servizi legali per i lavoratori | Rizzo & Michiels Avvocate
-    description: >-
-      Competenza in diritto del lavoro per i dipendenti. Consulenza legale, difesa e assistenza
-      legale personalizzata a Bruxelles.
+    description: Competenza in diritto del lavoro per i dipendenti. Consulenza
+      legale, difesa e assistenza legale personalizzata a Bruxelles.
     keywords:
       - avvocato diritto del lavoro Bruxelles
       - competenza diritto sociale
@@ -186,75 +178,74 @@ it:
     - title: Contratto, risoluzione e fine della collaborazione
       situations:
         - question: Vuoi far esaminare il tuo contratto di lavoro prima di firmarlo?
-          answer: >-
-            Analizziamo le clausole (retribuzione, bonus, non concorrenza, ecc.) e ti consigliamo
-            sui tuoi diritti e obblighi.
-        - question: >-
-            Il tuo datore di lavoro ti propone una risoluzione consensuale, ma non sai se sia nel
-            tuo interesse?
-          answer: Valutiamo l'offerta e definiamo insieme a te come negoziare condizioni migliori.
+          answer: Analizziamo le clausole (retribuzione, bonus, non concorrenza, ecc.) e
+            ti consigliamo sui tuoi diritti e obblighi.
+        - question: Il tuo datore di lavoro ti propone una risoluzione consensuale, ma non
+            sai se sia nel tuo interesse?
+          answer: Valutiamo l'offerta e definiamo insieme a te come negoziare condizioni
+            migliori.
         - question: Vuoi dimetterti?
-          answer: Ti informiamo sul preavviso da rispettare e sulle conseguenze delle dimissioni.
-        - question: >-
-            Vuoi contestare il tuo licenziamento (per un motivo manifestamente irragionevole,
-            abusivo o discriminatorio) o verificare la tua indennità sostitutiva del preavviso?
-          answer: >-
-            Analizziamo i motivi addotti e promuoviamo un'azione davanti al tribunale del lavoro se
-            puoi avere diritto a un indennizzo.
+          answer: Ti informiamo sul preavviso da rispettare e sulle conseguenze delle
+            dimissioni.
+        - question: Vuoi contestare il tuo licenziamento (per un motivo manifestamente
+            irragionevole, abusivo o discriminatorio) o verificare la tua
+            indennità sostitutiva del preavviso?
+          answer: Analizziamo i motivi addotti e promuoviamo un'azione davanti al
+            tribunale del lavoro se puoi avere diritto a un indennizzo.
     - title: Discriminazione, molestie e benessere sul lavoro
       situations:
-        - question: Sei vittima di discriminazione o molestie? Vieni emarginato a causa di un burnout?
-          answer: >-
-            Ti ascoltiamo e ti indirizziamo prima verso le opportune procedure interne (consulente
-            per la prevenzione, persona di fiducia), ti consigliamo sulle possibilità a tua
-            disposizione e, se necessario, raccogliamo le prove, ci rivolgiamo all'auditorato del
-            lavoro o avviamo un procedimento se puoi avere diritto a un indennizzo.
-        - question: >-
-            Le tue condizioni di lavoro sono cambiate durante o dopo una gravidanza? Desideri
-            usufruire del credito di tempo o del congedo parentale?
-          answer: Ti consigliamo sui tuoi diritti e ti difendiamo se non vengono rispettati.
+        - question: Sei vittima di discriminazione o molestie? Vieni emarginato a causa di
+            un burnout?
+          answer: Ti ascoltiamo e ti indirizziamo prima verso le opportune procedure
+            interne (consulente per la prevenzione, persona di fiducia), ti
+            consigliamo sulle possibilità a tua disposizione e, se necessario,
+            raccogliamo le prove, ci rivolgiamo all'auditorato del lavoro o
+            avviamo un procedimento se puoi avere diritto a un indennizzo.
+        - question: Le tue condizioni di lavoro sono cambiate durante o dopo una
+            gravidanza? Desideri usufruire del credito di tempo o del congedo
+            parentale?
+          answer: Ti consigliamo sui tuoi diritti e ti difendiamo se non vengono
+            rispettati.
     - title: Status professionale
       situations:
-        - question: Il tuo status non è chiaro? Pensi di essere un falso lavoratore autonomo?
-          answer: >-
-            Analizziamo i criteri di subordinazione e, se necessario, presentiamo una domanda alla
-            Commissione amministrativa per la regolamentazione del rapporto di lavoro o un'azione di
-            riqualificazione davanti al tribunale del lavoro.
+        - question: Il tuo status non è chiaro? Pensi di essere un falso lavoratore
+            autonomo?
+          answer: Analizziamo i criteri di subordinazione e, se necessario, presentiamo
+            una domanda alla Commissione amministrativa per la regolamentazione
+            del rapporto di lavoro o un'azione di riqualificazione davanti al
+            tribunale del lavoro.
         - question: Sei vittima di un infortunio sul lavoro?
-          answer: >-
-            Verifichiamo il riconoscimento dell'infortunio da parte dell'assicuratore obbligatorio
-            contro gli infortuni sul lavoro e ti difendiamo in caso di rifiuto o di sottovalutazione
-            dell'indennizzo.
+          answer: Verifichiamo il riconoscimento dell'infortunio da parte
+            dell'assicuratore obbligatorio contro gli infortuni sul lavoro e ti
+            difendiamo in caso di rifiuto o di sottovalutazione dell'indennizzo.
     - title: Quadri, dirigenti e mandatari societari
       situations:
-        - question: >-
-            Stai negoziando una posizione di quadro o dirigente? Vuoi far esaminare la tua clausola
-            di non concorrenza, il tuo pacchetto di retribuzione variabile (bonus, stock option,
-            warrant) o la tua clausola di garanzia della retribuzione?
-          answer: >-
-            Analizziamo e negoziamo queste clausole e ne difendiamo la validità o l'applicazione in
-            caso di controversia (non concorrenza contestata, bonus differiti rimessi in discussione
-            dopo un licenziamento).
+        - question: Stai negoziando una posizione di quadro o dirigente? Vuoi far
+            esaminare la tua clausola di non concorrenza, il tuo pacchetto di
+            retribuzione variabile (bonus, stock option, warrant) o la tua
+            clausola di garanzia della retribuzione?
+          answer: Analizziamo e negoziamo queste clausole e ne difendiamo la validità o
+            l'applicazione in caso di controversia (non concorrenza contestata,
+            bonus differiti rimessi in discussione dopo un licenziamento).
         - question: Sei un dirigente e ti viene proposta un'indennità di uscita negoziata?
           answer: Valutiamo l'offerta e negoziamo le condizioni della tua uscita.
     - title: Negoziazione o difesa in giudizio
-      description: >-
-        In base alla tua situazione, privilegiamo, quando possibile, una risoluzione rapida e
-        negoziata della controversia con il tuo datore di lavoro rispetto a un procedimento
-        giudiziario lungo e incerto. Quando la negoziazione non ha esito positivo o non è indicata,
-        ti rappresentiamo e difendiamo i tuoi diritti davanti ai tribunali e alle corti del lavoro.
+      description: In base alla tua situazione, privilegiamo, quando possibile, una
+        risoluzione rapida e negoziata della controversia con il tuo datore di
+        lavoro rispetto a un procedimento giudiziario lungo e incerto. Quando la
+        negoziazione non ha esito positivo o non è indicata, ti rappresentiamo e
+        difendiamo i tuoi diritti davanti ai tribunali e alle corti del lavoro.
   ctaDestination: honoraires
 nl:
   title: Begeleiding en verdediging van werknemers
-  description: ''
+  description: ""
   servicesTitle: Onze diensten
   situationsDisplay: accordion
   ctaText: Meer weten over de tarieven
   seo:
     title: Juridische diensten voor werknemers | Rizzo & Michiels Advocaten
-    description: >-
-      Expertise in arbeidsrecht voor werknemers. Advies, verdediging en persoonlijke juridische
-      begeleiding in Brussel.
+    description: Expertise in arbeidsrecht voor werknemers. Advies, verdediging en
+      persoonlijke juridische begeleiding in Brussel.
     image: /default-social-image.png
     keywords:
       - advocaat arbeidsrecht werknemers Brussel
@@ -267,68 +258,61 @@ nl:
     - title: Overeenkomst, beëindiging en einde van de samenwerking
       situations:
         - question: Wilt u uw arbeidsovereenkomst laten nalezen voordat u tekent?
-          answer: >-
-            Wij analyseren uw bedingen (loon, bonussen, niet-concurrentiebeding enz.) en adviseren u
-            over uw rechten en plichten.
-        - question: >-
-            Stelt uw werkgever een beëindiging in onderling akkoord voor, maar weet u niet of dit in
-            uw belang is?
-          answer: >-
-            Wij beoordelen het voorstel en bepalen samen met u hoe u betere voorwaarden kunt
-            onderhandelen.
+          answer: Wij analyseren uw bedingen (loon, bonussen, niet-concurrentiebeding
+            enz.) en adviseren u over uw rechten en plichten.
+        - question: Stelt uw werkgever een beëindiging in onderling akkoord voor, maar
+            weet u niet of dit in uw belang is?
+          answer: Wij beoordelen het voorstel en bepalen samen met u hoe u betere
+            voorwaarden kunt onderhandelen.
         - question: Wilt u ontslag nemen?
-          answer: >-
-            Wij informeren u over de opzeggingstermijn die u moet naleven en de gevolgen van uw
-            ontslagname.
-        - question: >-
-            Wilt u uw ontslag betwisten (wegens een kennelijk onredelijk, onrechtmatig of
-            discriminerend motief) of uw opzeggingsvergoeding laten controleren?
-          answer: >-
-            Wij analyseren de aangevoerde redenen en stellen een vordering in bij de
+          answer: Wij informeren u over de opzeggingstermijn die u moet naleven en de
+            gevolgen van uw ontslagname.
+        - question: Wilt u uw ontslag betwisten (wegens een kennelijk onredelijk,
+            onrechtmatig of discriminerend motief) of uw opzeggingsvergoeding
+            laten controleren?
+          answer: Wij analyseren de aangevoerde redenen en stellen een vordering in bij de
             arbeidsrechtbank als u aanspraak kunt maken op een vergoeding.
     - title: Discriminatie, pesterijen en welzijn op het werk
       situations:
-        - question: >-
-            Bent u slachtoffer van discriminatie of pesterijen? Wordt u aan de kant gezet wegens een
-            burn-out?
-          answer: >-
-            Wij luisteren naar u en verwijzen u eerst naar de passende interne stappen
-            (preventieadviseur, vertrouwenspersoon), adviseren u over uw mogelijkheden en stellen zo
-            nodig het bewijsdossier samen, schakelen het arbeidsauditoraat in of starten een
-            procedure als u aanspraak kunt maken op een vergoeding.
-        - question: >-
-            Zijn uw arbeidsvoorwaarden tijdens of na een zwangerschap veranderd? Wilt u tijdskrediet
-            of ouderschapsverlof opnemen?
-          answer: Wij adviseren u over uw rechten en verdedigen u wanneer die niet worden nageleefd.
+        - question: Bent u slachtoffer van discriminatie of pesterijen? Wordt u aan de
+            kant gezet wegens een burn-out?
+          answer: Wij luisteren naar u en verwijzen u eerst naar de passende interne
+            stappen (preventieadviseur, vertrouwenspersoon), adviseren u over uw
+            mogelijkheden en stellen zo nodig het bewijsdossier samen, schakelen
+            het arbeidsauditoraat in of starten een procedure als u aanspraak
+            kunt maken op een vergoeding.
+        - question: Zijn uw arbeidsvoorwaarden tijdens of na een zwangerschap veranderd?
+            Wilt u tijdskrediet of ouderschapsverlof opnemen?
+          answer: Wij adviseren u over uw rechten en verdedigen u wanneer die niet worden
+            nageleefd.
     - title: Beroepsstatuut
       situations:
         - question: Is uw statuut onduidelijk? Denkt u een schijnzelfstandige te zijn?
-          answer: >-
-            Wij analyseren de criteria van ondergeschiktheid en dienen zo nodig een aanvraag in bij
-            de Administratieve Commissie ter regeling van de Arbeidsrelatie of stellen een vordering
-            tot herkwalificatie in bij de arbeidsrechtbank.
+          answer: Wij analyseren de criteria van ondergeschiktheid en dienen zo nodig een
+            aanvraag in bij de Administratieve Commissie ter regeling van de
+            Arbeidsrelatie of stellen een vordering tot herkwalificatie in bij
+            de arbeidsrechtbank.
         - question: Bent u slachtoffer van een arbeidsongeval?
-          answer: >-
-            Wij controleren of de arbeidsongevallenverzekeraar het ongeval erkent en verdedigen u
-            bij een weigering of een te lage raming van de vergoeding.
+          answer: Wij controleren of de arbeidsongevallenverzekeraar het ongeval erkent en
+            verdedigen u bij een weigering of een te lage raming van de
+            vergoeding.
     - title: Kaderleden, leidinggevenden en vennootschapsmandatarissen
       situations:
-        - question: >-
-            Onderhandelt u over een kader- of directiefunctie? Wilt u uw niet-concurrentiebeding, uw
-            variabele loonpakket (bonussen, aandelenopties, warrants) of uw loongarantiebeding laten
-            nalezen?
-          answer: >-
-            Wij analyseren en onderhandelen over deze bedingen en verdedigen de geldigheid of
-            toepassing ervan bij een geschil (betwist niet-concurrentiebeding, uitgestelde bonussen
-            die na een ontslag ter discussie worden gesteld).
-        - question: >-
-            Bent u een leidinggevend kaderlid en wordt u een onderhandelde vertrekvergoeding
-            voorgesteld?
-          answer: Wij beoordelen het voorstel en onderhandelen over de voorwaarden van uw vertrek.
+        - question: Onderhandelt u over een kader- of directiefunctie? Wilt u uw
+            niet-concurrentiebeding, uw variabele loonpakket (bonussen,
+            aandelenopties, warrants) of uw loongarantiebeding laten nalezen?
+          answer: Wij analyseren en onderhandelen over deze bedingen en verdedigen de
+            geldigheid of toepassing ervan bij een geschil (betwist
+            niet-concurrentiebeding, uitgestelde bonussen die na een ontslag ter
+            discussie worden gesteld).
+        - question: Bent u een leidinggevend kaderlid en wordt u een onderhandelde
+            vertrekvergoeding voorgesteld?
+          answer: Wij beoordelen het voorstel en onderhandelen over de voorwaarden van uw
+            vertrek.
     - title: Onderhandeling of verdediging in rechte
-      description: >-
-        Afhankelijk van uw situatie geven wij waar mogelijk de voorkeur aan een snelle,
-        onderhandelde oplossing voor uw geschil met uw werkgever boven een lange en onzekere
-        gerechtelijke procedure. Wanneer onderhandelingen niet slagen of niet aangewezen zijn,
-        vertegenwoordigen wij u en verdedigen wij uw rechten voor de arbeidsrechtbanken en -hoven.
+      description: Afhankelijk van uw situatie geven wij waar mogelijk de voorkeur aan
+        een snelle, onderhandelde oplossing voor uw geschil met uw werkgever
+        boven een lange en onzekere gerechtelijke procedure. Wanneer
+        onderhandelingen niet slagen of niet aangewezen zijn, vertegenwoordigen
+        wij u en verdedigen wij uw rechten voor de arbeidsrechtbanken en -hoven.
   ctaDestination: honoraires
