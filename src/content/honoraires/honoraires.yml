@@ -1,44 +1,52 @@
 fr:
   previsibilite:
-    title: "Prévisibilité "
+    title: Ce que couvrent nos honoraires
     full_content: >-
-      Ne pas savoir combien va coûter l'intervention de votre avocat.e peut être
-      une source d'inquiétude. 
-
-      Nous vous proposons nos prestations soit à un tarif horaire soit, dans certains cas, à un tarif forfaitaire fixe "tout compris" augmenté le cas échéant d'un honoraire de résultat. 
-
-
-      Si nous choisissons de travailler ensemble sur base d'un tarif horaire, nos prestations vous sont facturées chaque mois, au fur et à mesure des prestations. Un détail des prestations accomplies vous est communiqué avec la facture. 
-
-
-      Il n'y a pas de frais de dossier ou de bureau.
+      Nos honoraires rémunèrent l'ensemble des prestations accomplies dans le
+      cadre de votre dossier. Certaines sont directement visibles : les
+      réunions, les plaidoiries, la rédaction de conclusions ou de courriers.
+      D'autres, tout aussi indispensables, le sont moins : l'étude approfondie
+      du dossier, les recherches juridiques, les échanges avec les parties
+      adverses, les démarches administratives, la préparation des pièces, le
+      temps d'attente aux audiences.
 
 
-      Les frais liés à l'intervention de tiers (huissiers, experts, traducteurs, avocats spécialisés dans d'autres domaines) ou les frais de justice (droits de greffe) sont refacturés au prix coûtant ou directement payables au tiers intervenant.
+      Pour maîtriser vos coûts, nous vous invitons à transmettre des documents complets et structurés, à regrouper vos questions dans la mesure du possible, et à répondre rapidement à nos demandes. Une collaboration fluide accélère le traitement de votre dossier et optimise le temps facturable.\
+
+      \
+
+      Nous utilisons des outils d'intelligence artificielle (notamment JEF, outil spécialisé pour les avocats belges, ainsi que d'autres outils comme Claude ou ChatGPT, toujours de manière anonymisée) pour gagner en efficacité sans jamais déléguer le raisonnement juridique.
+
+
+      Concrètement, cela se traduit par une meilleure réactivité, des délais de traitement réduits et un rapport qualité-prix optimisé pour vous. Notre expertise juridique reste au cœur de chaque décision : l'IA est un outil, le jugement de l'avocat est irremplaçable.
+
+
+      De votre côté, un message court et ciblé reste toujours le plus efficace, qu'il soit rédigé par vous ou avec l'aide d'un outil IA. Pensez à vérifier que les points soulevés n'ont pas déjà reçu une réponse avant d'envoyer : cela accélère le traitement de votre dossier et maîtrise vos honoraires.
   forfaits:
-    title: Besoin d'un premier avis ?
-    intro: Consultez nos disponibilités directement sur notre calendrier en ligne et
-      réservez votre créneau. Le premier rendez-vous est facturé 275 € TVAC.
-      N'hésitez pas à apporter tous les documents que vous jugez utiles pour
-      cette première rencontre.
+    title: Transparence & prévisibilité
+    intro: >-
+      Les modalités de calcul de nos honoraires vous sont communiquées par écrit
+      avant le début de notre intervention.
+
+
+      Nous travaillons soit à un tarif horaire — facturé mensuellement, au fur et à mesure des prestations — soit, dans certains cas, à un forfait fixe "tout compris", augmenté le cas échéant d'un honoraire de résultat. Il n'y a pas de frais de dossier ni de frais de bureau. Un détail des prestations accomplies est joint à chaque facture. 
+
+
+      Nous demandons régulièrement des provisions au cours du dossier, afin d'assurer un suivi financier transparent et d'éviter l'accumulation de montants importants en fin de mission.
+
+
+      Les frais liés à l'intervention de tiers (huissiers, experts, traducteurs) ou les frais de justice sont refacturés au prix coûtant ou directement payables au tiers concerné.
     exemples: []
   transparence:
-    title: Transparence
+    title: Besoin d'un premier avis ?
     points:
-      - "Les modalités de calcul de nos honoraires ainsi que les conditions de
-        notre intervention vous sont communiquées par écrit avant le début de
-        notre intervention.;Nos honoraires rémunèrent l'ensemble des prestations
-        liées à votre dossier : entretiens"
-      - recherches
-      - rédaction
-      - échanges avec les parties adverses
-      - audiences
-      - démarches administratives… y compris les nombreuses tâches moins
-        visibles mais indispensables à la bonne gestion de votre affaire. Pour
-        maîtriser les coûts
-      - nous vous invitons à transmettre des documents complets et structurés
-      - à regrouper vos questions dans la mesure du possible et à répondre
-        rapidement à nos demandes.
+      - Réservez directement votre créneau via notre calendrier en ligne.
+        N'hésitez pas à apporter tous les documents que vous jugez utiles
+        (contrat de travail
+      - correspondances
+      - fiches de paie
+      - etc.) pour que nous puissions analyser votre situation concrètement dès
+        ce premier échange.
   assurance:
     title: Pensez à l'assurance protection juridique
     content: >
