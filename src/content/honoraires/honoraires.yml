@@ -25,9 +25,20 @@ fr:
   transparence:
     title: Transparence
     points:
-      - Les modalités de calcul de nos honoraires ainsi que les conditions de
+      - "Les modalités de calcul de nos honoraires ainsi que les conditions de
         notre intervention vous sont communiquées par écrit avant le début de
-        notre intervention.
+        notre intervention.;Nos honoraires rémunèrent l'ensemble des prestations
+        liées à votre dossier : entretiens"
+      - recherches
+      - rédaction
+      - échanges avec les parties adverses
+      - audiences
+      - démarches administratives… y compris les nombreuses tâches moins
+        visibles mais indispensables à la bonne gestion de votre affaire. Pour
+        maîtriser les coûts
+      - nous vous invitons à transmettre des documents complets et structurés
+      - à regrouper vos questions dans la mesure du possible et à répondre
+        rapidement à nos demandes.
   assurance:
     title: Pensez à l'assurance protection juridique
     content: >
@@ -64,13 +75,7 @@ fr:
 
       Si vous remplissez les conditions pour bénéficier de l'aide juridique de 2ème ligne mais que vous souhaitez y renoncer et solliciter notre intervention en dehors de ce cadre, un formulaire de renonciation devra nous être remis signé.
   subtitle: "Les honoraires de l'avocat constituent la contrepartie du travail
-    qu'il accomplit pour vous. Nos honoraires rémunèrent l'ensemble des
-    prestations liées à votre dossier : entretiens, recherches, rédaction,
-    échanges avec les parties adverses, audiences, démarches administratives… y
-    compris les nombreuses tâches moins visibles mais indispensables à la bonne
-    gestion de votre affaire. Pour maîtriser les coûts, nous vous invitons à
-    transmettre des documents complets et structurés, à regrouper vos questions
-    dans la mesure du possible et à répondre rapidement à nos demandes."
+    qu'il accomplit pour vous. "
   title: Honoraires
   video:
     title: En savoir plus
