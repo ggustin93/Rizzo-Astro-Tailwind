@@ -5,9 +5,8 @@ fr:
   ctaText: En savoir plus sur les tarifs
   seo:
     title: Services juridiques pour employeurs | Rizzo & Michiels Avocates
-    description: >-
-      Expertise en droit du travail pour les entreprises. Conseils, défense et accompagnement
-      juridique personnalisé à Bruxelles.
+    description: Expertise en droit du travail pour les entreprises. Conseils,
+      défense et accompagnement juridique personnalisé à Bruxelles.
     keywords:
       - avocat droit du travail entreprises Bruxelles
       - expertise droit social employeurs
@@ -18,61 +17,54 @@ fr:
     image: /default-social-image.jpg
   sections:
     - title: Audit – Due Diligence en droit du travail et de la sécurité sociale
-      description: >-
-        Vous êtes en phase d'acquisition, de fusion ou de restructuration et vous voulez évaluer les
-        risques sociaux de la cible ? Nous réalisons l'audit social complet : analyse des contrats
-        de travail, conformité aux réglementations du travail et de la sécurité sociale,
-        identification des risques (faux indépendants, litiges en cours, passif social) et rédaction
-        du rapport de due diligence à destination de votre équipe de transaction ou de vos conseils
-        financiers.
-    - title: >-
-        Rédaction et révision de vos contrats de travail, règlement de travail et politiques RH et
-        GDPR
-      description: >-
-        Vous voulez sécuriser vos contrats de travail, votre règlement de travail ou vos politiques
-        RH ? Nous rédigeons et actualisons vos contrats de travail (CDI, CDD, étudiant, indépendant,
-        flexi-job), règlement de travail, politiques RH (remboursement de frais, IT, télétravail,
-        déconnexion) et politiques de traitement des données personnelles (GDPR).
-    - title: Conseils – gestion de la relation individuelle de travail, du recrutement à la rupture
+      description: "Vous êtes en phase d'acquisition, de fusion ou de restructuration
+        et vous voulez évaluer les risques sociaux de la cible ? Nous réalisons
+        l'audit social complet : analyse des contrats de travail, conformité aux
+        réglementations du travail et de la sécurité sociale, identification des
+        risques (faux indépendants, litiges en cours, passif social) et
+        rédaction du rapport de due diligence à destination de votre équipe de
+        transaction ou de vos conseils financiers."
+    - title: Rédaction et révision de vos contrats de travail, règlement de travail et
+        politiques RH et GDPR
+      description: Vous voulez sécuriser vos contrats de travail, votre règlement de
+        travail ou vos politiques RH ? Nous rédigeons et actualisons vos
+        contrats de travail (CDI, CDD, étudiant, indépendant, flexi-job),
+        règlement de travail, politiques RH (remboursement de frais, IT,
+        télétravail, déconnexion) et politiques de traitement des données
+        personnelles (GDPR).
+    - title: Conseils – gestion de la relation individuelle de travail, du recrutement
+        à la rupture
       situations:
-        - question: >-
-            Vous embauchez votre premier salarié en Belgique, ou vous voulez structurer un package
-            de rémunération avec bonus ?
-          answer: >-
-            Nous vous conseillons dès le premier engagement et durant toute l’évolution de vos
-            collaborateurs au sein de votre entreprise.
-        - question: >-
-            Un de vos salariés est en incapacité de longue durée ou revient d'un burn-out, comment
-            gérer son absence et sa réintégration ?
-          answer: >-
-            Nous vous accompagnons pour gérer l’absence de longue durée et, le cas échéant, la
-            réintégration après une telle absence.
-        - question: >-
-            Vous devez licencier un salarié — avec préavis, indemnité compensatoire, fin de CDD ou
-            rupture de commun accord ?
-          answer: >-
-            Nous vous conseillons sur la rupture de contrat, les protections contre le licenciement
-            et les éventuelles procédures spéciales de licenciement applicables.
-        - question: >-
-            Un salarié dénonce une situation de discrimination ou de harcèlement dans votre
-            entreprise, ou vous voulez mettre en place une politique de prévention des risques
-            psychosociaux ?
-          answer: >-
-            Nous vous conseillons sur la gestion de la situation individuelle et vous accompagnons
-            dans la mise en place de mesures de prévention et dans le cadre des procédures en la
-            matière (procédure interne, personne de confiance, conseiller en prévention).
+        - question: Vous embauchez votre premier salarié en Belgique, ou vous voulez
+            structurer un package de rémunération avec bonus ?
+          answer: Nous vous conseillons dès le premier engagement et durant toute
+            l’évolution de vos collaborateurs au sein de votre entreprise.
+        - question: Un de vos salariés est en incapacité de longue durée ou revient d'un
+            burn-out, comment gérer son absence et sa réintégration ?
+          answer: Nous vous accompagnons pour gérer l’absence de longue durée et, le cas
+            échéant, la réintégration après une telle absence.
+        - question: Vous devez licencier un salarié — avec préavis, indemnité
+            compensatoire, fin de CDD ou rupture de commun accord ?
+          answer: Nous vous conseillons sur la rupture de contrat, les protections contre
+            le licenciement et les éventuelles procédures spéciales de
+            licenciement applicables.
+        - question: Un salarié dénonce une situation de discrimination ou de harcèlement
+            dans votre entreprise, ou vous voulez mettre en place une politique
+            de prévention des risques psychosociaux ?
+          answer: Nous vous conseillons sur la gestion de la situation individuelle et
+            vous accompagnons dans la mise en place de mesures de prévention et
+            dans le cadre des procédures en la matière (procédure interne,
+            personne de confiance, conseiller en prévention).
     - title: Négociation d'accords amiables
-      description: >-
-        Vous voulez éviter une procédure judiciaire longue et incertaine avec un salarié ? Nous
-        privilégions, lorsque c'est possible, une résolution négociée et rapide des différends dans
-        l'intérêt de l'entreprise comme du travailleur.
-    - title: >-
-        Défense devant les cours et tribunaux du travail et devant les inspections du travail et de
-        l'ONSS
-      description: >-
-        Un ancien salarié conteste son licenciement, ou vous recevez un contrôle de l'inspection
-        sociale ou de l'ONSS ? Nous vous accompagnons et défendons vos intérêts dans le cadre de ces
-        procédures.
+      description: Vous voulez éviter une procédure judiciaire longue et incertaine
+        avec un salarié ? Nous privilégions, lorsque c'est possible, une
+        résolution négociée et rapide des différends dans l'intérêt de
+        l'entreprise comme du travailleur.
+    - title: Défense devant les cours et tribunaux du travail et devant les
+        inspections du travail et de l'ONSS
+      description: Un ancien salarié conteste son licenciement, ou vous recevez un
+        contrôle de l'inspection sociale ou de l'ONSS ? Nous vous accompagnons
+        et défendons vos intérêts dans le cadre de ces procédures.
   ctaDestination: honoraires
 en:
   title: Legal counsel and defense for employers
@@ -80,10 +72,9 @@ en:
   situationsDisplay: accordion
   ctaText: Learn more about fees
   seo:
-    title: Legal Services for Employers | Rizzo & Michiels Attorneys
-    description: >-
-      Labor law expertise for companies. Legal advice, defense, and personalized support for
-      employers in Brussels.
+    title: Employment Law Services for Employers | Rizzo & Michiels
+    description: Employment law expertise for companies. Legal advice, defense, and
+      personalized support for employers in Brussels.
     keywords:
       - labor law attorney for companies Brussels
       - employment law expertise for employers
@@ -100,56 +91,50 @@ en:
     image: /default-social-image.jpg
   sections:
     - title: Audit – Due diligence in labour and social security law
-      description: >-
-        Are you planning an acquisition, merger or restructuring and looking to assess the target's
-        employment and social security risks? We carry out a full employment and social security
-        audit: analysis of employment contracts, compliance with labour and social security
-        regulations, identification of risks (false self-employment, ongoing disputes,
-        employment-related liabilities) and preparation of a due diligence report for your
-        transaction team or financial advisers.
-    - title: Drafting and review of your employment contracts, work regulations and HR and GDPR policies
-      description: >-
-        Do you want to ensure your employment contracts, work regulations or HR policies are legally
-        sound? We draft and update your employment contracts (indefinite-term, fixed-term, student,
-        self-employed, flexi-job), work regulations, HR policies (expense reimbursement, IT,
-        teleworking, right to disconnect) and personal data processing policies (GDPR).
-    - title: Advice – Managing the individual employment relationship, from recruitment to termination
+      description: "Are you planning an acquisition, merger or restructuring and
+        looking to assess the target's employment and social security risks? We
+        carry out a full employment and social security audit: analysis of
+        employment contracts, compliance with labour and social security
+        regulations, identification of risks (false self-employment, ongoing
+        disputes, employment-related liabilities) and preparation of a due
+        diligence report for your transaction team or financial advisers."
+    - title: Drafting and review of your employment contracts, work regulations and HR
+        and GDPR policies
+      description: Do you want to ensure your employment contracts, work regulations
+        or HR policies are legally sound? We draft and update your employment
+        contracts (indefinite-term, fixed-term, student, self-employed,
+        flexi-job), work regulations, HR policies (expense reimbursement, IT,
+        teleworking, right to disconnect) and personal data processing policies
+        (GDPR).
+    - title: Advice – Managing the individual employment relationship, from
+        recruitment to termination
       situations:
-        - question: >-
-            Are you hiring your first employee in Belgium, or looking to structure a remuneration
-            package with a bonus?
-          answer: >-
-            We advise you from the first hire and throughout your employees' development within your
-            company.
-        - question: >-
-            Is one of your employees on long-term sick leave or returning after burnout, and how
-            should you manage their absence and reintegration?
-          answer: >-
-            We support you in managing long-term absence and, where appropriate, reintegration
-            following such an absence.
-        - question: >-
-            Do you need to dismiss an employee — with notice, payment in lieu of notice, at the end
-            of a fixed-term contract or by mutual agreement?
-          answer: >-
-            We advise you on contract termination, protection against dismissal and any applicable
-            special dismissal procedures.
-        - question: >-
-            Has an employee reported discrimination or harassment in your company, or do you want to
-            implement a policy for preventing psychosocial risks?
-          answer: >-
-            We advise you on managing the individual situation and support you in implementing
-            prevention measures and in the relevant procedures (internal procedure, confidential
-            counsellor, prevention adviser).
+        - question: Are you hiring your first employee in Belgium, or looking to structure
+            a remuneration package with a bonus?
+          answer: We advise you from the first hire and throughout your employees'
+            development within your company.
+        - question: Is one of your employees on long-term sick leave or returning after
+            burnout, and how should you manage their absence and reintegration?
+          answer: We support you in managing long-term absence and, where appropriate,
+            reintegration following such an absence.
+        - question: Do you need to dismiss an employee — with notice, payment in lieu of
+            notice, at the end of a fixed-term contract or by mutual agreement?
+          answer: We advise you on contract termination, protection against dismissal and
+            any applicable special dismissal procedures.
+        - question: Has an employee reported discrimination or harassment in your company,
+            or do you want to implement a policy for preventing psychosocial
+            risks?
+          answer: We advise you on managing the individual situation and support you in
+            implementing prevention measures and in the relevant procedures
+            (internal procedure, confidential counsellor, prevention adviser).
     - title: Negotiation of settlement agreements
-      description: >-
-        Do you want to avoid lengthy and uncertain court proceedings with an employee? Whenever
-        possible, we favour a swift negotiated resolution of disputes in the interests of both the
-        company and the employee.
-    - title: Defence before labour tribunals and courts and before labour and ONSS inspections
-      description: >-
-        Is a former employee challenging their dismissal, or are you facing an inspection by the
-        social inspectorate or the ONSS? We support you and defend your interests in these
-        proceedings.
+      description: Do you want to avoid lengthy and uncertain court proceedings with
+        an employee? Whenever possible, we favour a swift negotiated resolution
+        of disputes in the interests of both the company and the employee.
+    - title: Representation before labour courts and social inspections
+      description: Is a former employee challenging their dismissal, or are you facing
+        an inspection by the social inspectorate or the National Social Security
+        Office ? We support you and defend your interests in these proceedings.
   ctaDestination: honoraires
 it:
   title: Consulenza e difesa per le aziende
@@ -158,64 +143,59 @@ it:
   ctaText: Scopri di più sulle tariffe
   seo:
     title: Servizi legali per datori di lavoro | Rizzo & Michiels Avvocate
-    description: >-
-      Consulenza legale specializzata in diritto del lavoro per aziende a Bruxelles. Difesa e
-      assistenza personalizzata.
+    description: Consulenza legale specializzata in diritto del lavoro per aziende a
+      Bruxelles. Difesa e assistenza personalizzata.
   sections:
     - title: Audit – Due diligence in diritto del lavoro e della sicurezza sociale
-      description: >-
-        Sei in fase di acquisizione, fusione o ristrutturazione e vuoi valutare i rischi in materia
-        di lavoro e sicurezza sociale della società interessata? Realizziamo un audit completo:
-        analisi dei contratti di lavoro, conformità alle normative sul lavoro e sulla sicurezza
-        sociale, identificazione dei rischi (falsi lavoratori autonomi, contenziosi in corso,
-        passività in materia di lavoro e sicurezza sociale) e redazione del rapporto di due
-        diligence destinato al team che segue l'operazione o ai tuoi consulenti finanziari.
-    - title: >-
-        Redazione e revisione dei contratti di lavoro, del regolamento di lavoro e delle politiche
-        HR e GDPR
-      description: >-
-        Vuoi rendere giuridicamente sicuri i tuoi contratti di lavoro, il regolamento di lavoro o le
-        politiche HR? Redigiamo e aggiorniamo i contratti di lavoro (a tempo indeterminato,
-        determinato, per studenti, autonomi, flexi-job), il regolamento di lavoro, le politiche HR
-        (rimborso spese, IT, telelavoro, disconnessione) e le politiche di trattamento dei dati
-        personali (GDPR).
-    - title: Consulenza – Gestione del rapporto di lavoro individuale, dall'assunzione alla cessazione
+      description: "Sei in fase di acquisizione, fusione o ristrutturazione e vuoi
+        valutare i rischi in materia di lavoro e sicurezza sociale della società
+        interessata? Realizziamo un audit completo: analisi dei contratti di
+        lavoro, conformità alle normative sul lavoro e sulla sicurezza sociale,
+        identificazione dei rischi (falsi lavoratori autonomi, contenziosi in
+        corso, passività in materia di lavoro e sicurezza sociale) e redazione
+        del rapporto di due diligence destinato al team che segue l'operazione o
+        ai tuoi consulenti finanziari."
+    - title: Redazione e revisione dei contratti di lavoro, del regolamento di lavoro
+        e delle politiche HR e GDPR
+      description: Vuoi rendere giuridicamente sicuri i tuoi contratti di lavoro, il
+        regolamento di lavoro o le politiche HR? Redigiamo e aggiorniamo i
+        contratti di lavoro (a tempo indeterminato, determinato, per studenti,
+        autonomi, flexi-job), il regolamento di lavoro, le politiche HR
+        (rimborso spese, IT, telelavoro, disconnessione) e le politiche di
+        trattamento dei dati personali (GDPR).
+    - title: Consulenza – Gestione del rapporto di lavoro individuale, dall'assunzione
+        alla cessazione
       situations:
-        - question: >-
-            Stai assumendo il tuo primo dipendente in Belgio o vuoi strutturare un pacchetto
-            retributivo con bonus?
-          answer: >-
-            Ti consigliamo fin dalla prima assunzione e durante tutta l'evoluzione dei tuoi
-            collaboratori all'interno dell'azienda.
-        - question: >-
-            Uno dei tuoi dipendenti è inabile al lavoro da lungo tempo o rientra dopo un burnout:
-            come gestire l'assenza e il reinserimento?
-          answer: >-
-            Ti affianchiamo nella gestione dell'assenza di lunga durata e, se del caso, nel
-            reinserimento dopo tale assenza.
-        - question: >-
-            Devi licenziare un dipendente — con preavviso, indennità sostitutiva, fine di un
-            contratto a termine o risoluzione consensuale?
-          answer: >-
-            Ti consigliamo sulla cessazione del contratto, sulle tutele contro il licenziamento e
-            sulle eventuali procedure speciali di licenziamento applicabili.
-        - question: >-
-            Un dipendente denuncia una situazione di discriminazione o molestie nella tua azienda,
-            oppure vuoi introdurre una politica di prevenzione dei rischi psicosociali?
-          answer: >-
-            Ti consigliamo sulla gestione della situazione individuale e ti affianchiamo
-            nell'introduzione di misure di prevenzione e nelle relative procedure (procedura
-            interna, persona di fiducia, consulente per la prevenzione).
+        - question: Stai assumendo il tuo primo dipendente in Belgio o vuoi strutturare un
+            pacchetto retributivo con bonus?
+          answer: Ti consigliamo fin dalla prima assunzione e durante tutta l'evoluzione
+            dei tuoi collaboratori all'interno dell'azienda.
+        - question: "Uno dei tuoi dipendenti è inabile al lavoro da lungo tempo o rientra
+            dopo un burnout: come gestire l'assenza e il reinserimento?"
+          answer: Ti affianchiamo nella gestione dell'assenza di lunga durata e, se del
+            caso, nel reinserimento dopo tale assenza.
+        - question: Devi licenziare un dipendente — con preavviso, indennità sostitutiva,
+            fine di un contratto a termine o risoluzione consensuale?
+          answer: Ti consigliamo sulla cessazione del contratto, sulle tutele contro il
+            licenziamento e sulle eventuali procedure speciali di licenziamento
+            applicabili.
+        - question: Un dipendente denuncia una situazione di discriminazione o molestie
+            nella tua azienda, oppure vuoi introdurre una politica di
+            prevenzione dei rischi psicosociali?
+          answer: Ti consigliamo sulla gestione della situazione individuale e ti
+            affianchiamo nell'introduzione di misure di prevenzione e nelle
+            relative procedure (procedura interna, persona di fiducia,
+            consulente per la prevenzione).
     - title: Negoziazione di accordi transattivi
-      description: >-
-        Vuoi evitare un procedimento giudiziario lungo e incerto con un dipendente? Privilegiamo,
-        quando possibile, una risoluzione negoziata e rapida delle controversie nell'interesse sia
-        dell'azienda sia del lavoratore.
-    - title: Difesa davanti ai tribunali e alle corti del lavoro e alle ispezioni del lavoro e dell'ONSS
-      description: >-
-        Un ex dipendente contesta il licenziamento, oppure ricevi un controllo dell'ispettorato
-        sociale o dell'ONSS? Ti affianchiamo e difendiamo i tuoi interessi nell'ambito di queste
-        procedure.
+      description: Vuoi evitare un procedimento giudiziario lungo e incerto con un
+        dipendente? Privilegiamo, quando possibile, una risoluzione negoziata e
+        rapida delle controversie nell'interesse sia dell'azienda sia del
+        lavoratore.
+    - title: Difesa davanti ai tribunali e alle corti del lavoro e alle ispezioni del
+        lavoro e dell'ONSS
+      description: Un ex dipendente contesta il licenziamento, oppure ricevi un
+        controllo dell'ispettorato sociale o dell'ONSS? Ti affianchiamo e
+        difendiamo i tuoi interessi nell'ambito di queste procedure.
   ctaDestination: honoraires
 nl:
   title: Begeleiding en verdediging van ondernemingen
@@ -224,9 +204,8 @@ nl:
   ctaText: Meer weten over de tarieven
   seo:
     title: Juridische diensten voor werkgevers | Rizzo & Michiels Advocaten
-    description: >-
-      Expertise in arbeidsrecht voor ondernemingen. Advies, verdediging en persoonlijke juridische
-      begeleiding in Brussel.
+    description: Expertise in arbeidsrecht voor ondernemingen. Advies, verdediging
+      en persoonlijke juridische begeleiding in Brussel.
     keywords:
       - advocaat arbeidsrecht ondernemingen Brussel
       - expertise sociaal recht werkgevers
@@ -237,52 +216,53 @@ nl:
     image: /default-social-image.jpg
   sections:
     - title: Audit – Due diligence inzake arbeidsrecht en sociale zekerheid
-      description: >-
-        Plant u een overname, fusie of herstructurering en wilt u de sociale risico's van de
-        doelonderneming beoordelen? Wij voeren een volledige sociale audit uit: analyse van de
-        arbeidsovereenkomsten, naleving van de arbeids- en socialezekerheidsregelgeving,
-        identificatie van risico's (schijnzelfstandigen, lopende geschillen, sociale verplichtingen)
-        en opstelling van het due-diligencerapport voor uw transactieteam of financiële adviseurs.
-    - title: Opstellen en herzien van uw arbeidsovereenkomsten, arbeidsreglement en HR- en GDPR-beleid
-      description: >-
-        Wilt u uw arbeidsovereenkomsten, arbeidsreglement of HR-beleid juridisch veiligstellen? Wij
-        stellen uw overeenkomsten op en actualiseren ze (onbepaalde duur, bepaalde duur, studenten,
-        zelfstandigen, flexi-jobs), evenals uw arbeidsreglement, HR-beleid (onkostenvergoeding, IT,
-        telewerk, deconnectie) en beleid inzake de verwerking van persoonsgegevens (GDPR).
-    - title: Advies – Beheer van de individuele arbeidsrelatie, van aanwerving tot beëindiging
+      description: "Plant u een overname, fusie of herstructurering en wilt u de
+        sociale risico's van de doelonderneming beoordelen? Wij voeren een
+        volledige sociale audit uit: analyse van de arbeidsovereenkomsten,
+        naleving van de arbeids- en socialezekerheidsregelgeving, identificatie
+        van risico's (schijnzelfstandigen, lopende geschillen, sociale
+        verplichtingen) en opstelling van het due-diligencerapport voor uw
+        transactieteam of financiële adviseurs."
+    - title: Opstellen en herzien van uw arbeidsovereenkomsten, arbeidsreglement en
+        HR- en GDPR-beleid
+      description: Wilt u uw arbeidsovereenkomsten, arbeidsreglement of HR-beleid
+        juridisch veiligstellen? Wij stellen uw overeenkomsten op en
+        actualiseren ze (onbepaalde duur, bepaalde duur, studenten,
+        zelfstandigen, flexi-jobs), evenals uw arbeidsreglement, HR-beleid
+        (onkostenvergoeding, IT, telewerk, deconnectie) en beleid inzake de
+        verwerking van persoonsgegevens (GDPR).
+    - title: Advies – Beheer van de individuele arbeidsrelatie, van aanwerving tot
+        beëindiging
       situations:
-        - question: >-
-            Werft u uw eerste werknemer in België aan of wilt u een loonpakket met bonus
-            samenstellen?
-          answer: >-
-            Wij adviseren u vanaf de eerste aanwerving en gedurende de volledige ontwikkeling van uw
-            medewerkers binnen uw onderneming.
-        - question: >-
-            Is een van uw werknemers langdurig arbeidsongeschikt of keert die terug na een burn-out:
-            hoe beheert u de afwezigheid en re-integratie?
-          answer: >-
-            Wij begeleiden u bij het beheer van langdurige afwezigheid en, waar nodig, de
-            re-integratie na een dergelijke afwezigheid.
-        - question: >-
-            Moet u een werknemer ontslaan — met opzegging, opzeggingsvergoeding, einde van een
-            overeenkomst van bepaalde duur of beëindiging in onderling akkoord?
-          answer: >-
-            Wij adviseren u over de beëindiging van de overeenkomst, de ontslagbescherming en
-            eventuele toepasselijke bijzondere ontslagprocedures.
-        - question: >-
-            Meldt een werknemer discriminatie of pesterijen in uw onderneming, of wilt u een beleid
-            ter preventie van psychosociale risico's invoeren?
-          answer: >-
-            Wij adviseren u over het beheer van de individuele situatie en begeleiden u bij het
-            invoeren van preventiemaatregelen en de betrokken procedures (interne procedure,
-            vertrouwenspersoon, preventieadviseur).
+        - question: Werft u uw eerste werknemer in België aan of wilt u een loonpakket met
+            bonus samenstellen?
+          answer: Wij adviseren u vanaf de eerste aanwerving en gedurende de volledige
+            ontwikkeling van uw medewerkers binnen uw onderneming.
+        - question: "Is een van uw werknemers langdurig arbeidsongeschikt of keert die
+            terug na een burn-out: hoe beheert u de afwezigheid en
+            re-integratie?"
+          answer: Wij begeleiden u bij het beheer van langdurige afwezigheid en, waar
+            nodig, de re-integratie na een dergelijke afwezigheid.
+        - question: Moet u een werknemer ontslaan — met opzegging, opzeggingsvergoeding,
+            einde van een overeenkomst van bepaalde duur of beëindiging in
+            onderling akkoord?
+          answer: Wij adviseren u over de beëindiging van de overeenkomst, de
+            ontslagbescherming en eventuele toepasselijke bijzondere
+            ontslagprocedures.
+        - question: Meldt een werknemer discriminatie of pesterijen in uw onderneming, of
+            wilt u een beleid ter preventie van psychosociale risico's invoeren?
+          answer: Wij adviseren u over het beheer van de individuele situatie en
+            begeleiden u bij het invoeren van preventiemaatregelen en de
+            betrokken procedures (interne procedure, vertrouwenspersoon,
+            preventieadviseur).
     - title: Onderhandeling van minnelijke schikkingen
-      description: >-
-        Wilt u een lange en onzekere gerechtelijke procedure met een werknemer vermijden? Waar
-        mogelijk geven wij de voorkeur aan een snelle, onderhandelde oplossing van geschillen in het
-        belang van zowel de onderneming als de werknemer.
-    - title: Verdediging voor de arbeidsrechtbanken en -hoven en voor de arbeidsinspectie en de RSZ
-      description: >-
-        Betwist een voormalige werknemer zijn ontslag, of krijgt u een controle van de sociale
-        inspectie of de RSZ? Wij begeleiden u en verdedigen uw belangen in deze procedures.
+      description: Wilt u een lange en onzekere gerechtelijke procedure met een
+        werknemer vermijden? Waar mogelijk geven wij de voorkeur aan een snelle,
+        onderhandelde oplossing van geschillen in het belang van zowel de
+        onderneming als de werknemer.
+    - title: Verdediging voor de arbeidsrechtbanken en -hoven en voor de
+        arbeidsinspectie en de RSZ
+      description: Betwist een voormalige werknemer zijn ontslag, of krijgt u een
+        controle van de sociale inspectie of de RSZ? Wij begeleiden u en
+        verdedigen uw belangen in deze procedures.
   ctaDestination: honoraires
