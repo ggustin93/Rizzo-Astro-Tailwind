@@ -107,7 +107,7 @@ en:
     cta: Here are more details
   expertise:
     title: Expertise & Services
-    description: We support Belgian businesses (SMEs, micro-enterprises and
+    description: We support Belgian businesses (SMEs, small businesses and
       start-ups), European institutions and their staff (officials and contract
       staff), as well as employees and self-employed workers, in their
       day-to-day issues and projects relating to human resources and employment.
@@ -119,7 +119,7 @@ en:
       cta: Learn more
       destination: /services/travailleurs/
     employeurs:
-      title: Do you run a Belgian SME, micro-enterprise or start-up?
+      title: Do you run a Belgian a SME, a small business or a start-up?
       description: "We advise and represent you on all your HR issues: employment
         contracts, work rules, dismissal, prevention and litigation."
       cta: Learn more
@@ -166,7 +166,7 @@ en:
       officials — from drafting contracts to courtroom defence.
     keywords:
       - employment lawyer Brussels
-      - labour law firm Belgium
+      - employment law firm Belgium
       - employer legal advice Brussels
       - employee dismissal lawyer
       - EU civil servant legal representation
