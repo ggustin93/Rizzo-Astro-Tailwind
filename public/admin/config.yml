@@ -827,10 +827,10 @@ collections:
                           - {label: "Libellé", name: "label", widget: "string"}
                           - {label: "URL", name: "url", widget: "string"}
                         hint: "Ajouter des éléments au sous-menu (seulement si Sous-menu est activé)"
-                  - label: "Texte du bouton Contact"
+                  - label: "Texte du bouton Prendre rendez-vous"
                     name: "contactButtonText"
                     widget: "string"
-                    default: "ME CONTACTER"
+                    default: "PRENDRE RENDEZ-VOUS"
 
               - label: "Footer"
                 name: "footer"

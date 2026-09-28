@@ -23,7 +23,7 @@ fr:
       - label: HONORAIRES
         url: /fr/honoraires
         hasDropdown: false
-    contactButtonText: NOUS CONTACTER
+    contactButtonText: PRENDRE RENDEZ-VOUS
   footer:
     legalLinks:
       - label: Mentions légales
@@ -77,7 +77,7 @@ en:
       - label: FEES
         url: /en/honoraires
         hasDropdown: false
-    contactButtonText: CONTACT US
+    contactButtonText: BOOK AN APPOINTMENT
   footer:
     legalLinks:
       - label: Legal Notice
@@ -131,7 +131,7 @@ it:
       - label: ONORARI
         url: /it/honoraires
         hasDropdown: false
-    contactButtonText: CONTATTACI
+    contactButtonText: PRENOTA UN APPUNTAMENTO
   footer:
     legalLinks:
       - label: Note legali
@@ -185,7 +185,7 @@ nl:
       - label: ERELONEN
         url: /nl/honoraires
         hasDropdown: false
-    contactButtonText: CONTACTEER ONS
+    contactButtonText: AFSPRAAK MAKEN
   footer:
     legalLinks:
       - label: Wettelijke vermeldingen

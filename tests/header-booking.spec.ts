@@ -1,5 +1,16 @@
 import { test, expect } from '@playwright/test';
-import { BASE_URL, bookableLawyers } from './helpers';
+import { BASE_URL, bookableLawyers, languages } from './helpers';
+
+// #26: « Prendre rendez-vous » replaces « Nous contacter », mauve outlined.
+const bookLabels = { fr: 'Prendre rendez-vous', en: 'Book an appointment', it: 'Prenota un appuntamento', nl: 'Afspraak maken' };
+const mauve = 'rgb(83, 89, 154)';
+
+// Outlined, not filled: mauve text and border on a transparent background.
+async function expectMauveOutline(cta) {
+  await expect(cta).toHaveCSS('color', mauve);
+  await expect(cta).toHaveCSS('border-top-color', mauve);
+  await expect(cta).toHaveCSS('background-color', 'rgba(0, 0, 0, 0)');
+}
 
 // Issue #9: booking moves into the header so visitors do not have to scroll to
 // the footer CTA. Items come from the lawyers array in site-config.yml.
@@ -11,6 +22,25 @@ test.describe('Header appointment dropdown — desktop', () => {
 
   const trigger = (page) => page.locator('header a[href="/fr/contact"]').first();
   const menu = (page) => page.locator('#header-booking-desktop');
+
+  for (const lang of languages) {
+    test(`${lang}: the header CTA books an appointment`, async ({ page }) => {
+      await page.goto(`${BASE_URL}/${lang}/`);
+      await expect(page.locator(`header a[href="/${lang}/contact"]`).first()).toHaveText(new RegExp(bookLabels[lang], 'i'));
+    });
+  }
+
+  test('is a mauve outlined button with visible hover and focus', async ({ page }) => {
+    await page.goto(`${BASE_URL}/fr/`);
+    const cta = trigger(page);
+    await expectMauveOutline(cta);
+    await cta.hover();
+    await expect(cta).not.toHaveCSS('background-color', 'rgba(0, 0, 0, 0)');
+    await page.mouse.move(0, 0);
+    await page.keyboard.press('Tab');
+    await cta.focus();
+    await expect(cta).not.toHaveCSS('outline-style', 'none');
+  });
 
   test('lists one booking row per lawyer with a calendar and no contact form', async ({ page }) => {
     await page.goto(`${BASE_URL}/fr/`);
@@ -86,7 +116,7 @@ test.describe('Header appointment dropdown — mobile', () => {
     await expect(menu.locator('a.mobile-submenu-link')).toHaveCount(0);
   });
 
-  test('keeps the contact CTA button next to the booking rows', async ({ page }) => {
+  test('keeps the booking CTA button next to the booking rows', async ({ page }) => {
     await openMenu(page);
 
     // The booking rows were added *beside* the contact CTA, not in place of it:
@@ -96,6 +126,8 @@ test.describe('Header appointment dropdown — mobile', () => {
     await expect(cta).toBeVisible();
     await expect(cta).toHaveClass(/border/);
     await expect(cta).toHaveAttribute('href', '/fr/contact');
+    await expect(cta).toHaveText(/Prendre rendez-vous/i);
+    await expectMauveOutline(cta);
   });
 });
 

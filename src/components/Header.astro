@@ -199,7 +199,7 @@ const { bookWith: bookWithLabel } = uiTranslations.header;
   #mobile-menu .mobile-submenu-link:hover, #mobile-menu .mobile-submenu-link.active { background: #efe9e1; }
   #mobile-menu .mobile-nav-link.active { color: #067889; }
   #header-booking-mobile { margin-top: 1.25rem; }
-  #header-booking-mobile > :global(a) { display: flex; width: 100%; min-height: 48px; background: #087b8a; color: white; border-color: #087b8a; font-size: .9375rem; }
+  #header-booking-mobile > :global(a) { display: flex; width: 100%; min-height: 48px; font-size: .9375rem; }
   #mobile-menu a:focus-visible, #mobile-menu button:focus-visible, #mobile-menu summary:focus-visible { outline: 3px solid #087b8a; outline-offset: 2px; }
   #mobile-menu .mt-8 { margin-top: 1.25rem; padding-top: 1rem; }
   #mobile-menu .mt-8 a, #mobile-menu .mt-8 span { display: grid; place-items: center; min-width: 44px; min-height: 44px; border-radius: 8px; }
@@ -274,7 +274,7 @@ const { bookWith: bookWithLabel } = uiTranslations.header;
             <Button
               href={`/${currentLang}/contact`}
               text={contactButtonText}
-              variant="secondary"
+              variant="outline"
               class={`py-1 px-3 text-sm ${isActivePage(`/${currentLang}/contact`) ? 'font-medium' : ''}`}
             />
             <div
@@ -350,7 +350,7 @@ const { bookWith: bookWithLabel } = uiTranslations.header;
           <Button
             href={`/${currentLang}/contact`}
             text={contactButtonText}
-            variant="secondary"
+            variant="outline"
             class={`text-base py-3 px-6 ${isActivePage(`/${currentLang}/contact`) ? 'font-medium' : ''}`}
           />
           <div class="py-2 px-4 bg-white bg-opacity-60 rounded-sm my-2">
