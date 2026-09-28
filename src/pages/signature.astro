@@ -63,9 +63,11 @@ const formattedPhone = primaryLawyer.phone.replace('+32 ', '').replace(/(\d{3})(
               <a href={primaryLawyer.linkedin} style="text-decoration: none; margin-right: 10px;">
                 <img src="https://cdn.prod.website-files.com/66a3633bf638ce4da95b8ad7/66d4b460d66aad3c82aea265_Logo_LinkedIn.png" alt="LinkedIn" width="20" height="20" style="vertical-align: middle; border: 0;">
               </a>
-              <a href={`https://wa.me/${primaryLawyer.whatsapp || ''}`} style="text-decoration: none;">
-                <img src="https://cdn.prod.website-files.com/66a3633bf638ce4da95b8ad7/66d4b460e9cbcd03c68d5d77_Logo_WhatsApp.png" alt="WhatsApp Business" width="20" height="20" style="vertical-align: middle; border: 0;">
-              </a>
+              {primaryLawyer.whatsapp && (
+                <a href={`https://wa.me/${primaryLawyer.whatsapp}`} style="text-decoration: none;">
+                  <img src="https://cdn.prod.website-files.com/66a3633bf638ce4da95b8ad7/66d4b460e9cbcd03c68d5d77_Logo_WhatsApp.png" alt="WhatsApp Business" width="20" height="20" style="vertical-align: middle; border: 0;">
+                </a>
+              )}
             </td>
           </tr>
         </table>

@@ -4,7 +4,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { LOCALES } from '../../config/locales';
 import CTA from '../../components/CTA.astro';
 import { ChevronDown, Briefcase, User, FileText, Globe, ArrowRight } from 'astro-feather-icons2';
-import { Calendar } from 'astro-feather-icons';
 import { getArticles } from '../../utils/articles';
 import { getTeam, profilePath } from '../../utils/team.js';
 import ArticleCard from '../../components/ArticleCard.astro';
@@ -79,15 +78,6 @@ export const prerender = true;
           <h2 class="hero-subtitle">{content.hero.subtitle}</h2>
           <p class="hero-description">{content.hero.description}</p>
           <div class="hero-actions">
-            <Button 
-              href={`/${currentLang}${content.hero.destination}`}
-              text={content.hero.cta}
-              variant="primary"
-              icon={Calendar}
-              iconPosition="left"
-              ariaLabel={content.hero.cta}
-              class="hero-primary"
-            />
             <Button 
               variant="secondary"
               icon={ChevronDown}
@@ -262,8 +252,6 @@ export const prerender = true;
   .hero-description { color: #4b5158; max-width: 47ch; font-size: 1.0625rem; line-height: 1.75; }
   .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.75rem; }
   .hero-actions :global(a) { min-height: 44px; padding: .7rem 1.1rem; border-radius: .5rem; }
-  .hero-actions :global(.hero-primary) { background: var(--worker-ink); border-color: var(--worker-ink); color: white; }
-  .hero-actions :global(.hero-primary:hover) { background: #055f6b; }
   .hero-actions :global(.hero-secondary) { border-color: #b1b7bc; background: white; color: #333; }
   .hero-actions :global(.hero-secondary:hover) { background: #faf5f0; border-color: #68727b; }
   .hero-art { display: flex; justify-content: center; }

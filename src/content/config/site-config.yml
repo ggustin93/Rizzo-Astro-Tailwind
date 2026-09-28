@@ -3,12 +3,12 @@ showContactForm: true
 allowIndexing: true
 lawyers:
   - phone: +32 488 40 45 49
-    whatsapp: '32488404549'
+    whatsapp: ''
     email: christine@rizzoavocate.be
     calendarLink: https://cal.com/c.rizzo-avocat.be/rendez-vous?duration=15
     id: christine-rizzo
   - phone: +32 498 50 29 01
-    whatsapp: '32498502901'
+    whatsapp: ''
     email: stephanie@michielsavocate.be
     calendarLink: https://cal.com/stephanie-michiels-v76dvl
     id: stephanie-michiels

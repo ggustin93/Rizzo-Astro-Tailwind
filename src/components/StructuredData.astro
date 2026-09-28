@@ -63,7 +63,7 @@ const people = team.map((lawyer) => {
     '@type': 'Person',
     '@id': `${siteUrl}/#${lawyer.id}`,
     name: lawyer.name,
-    jobTitle: lawyer.title,
+    jobTitle: lawyer.title || lawyer.role,
     url: `${siteUrl}${profilePath(lang, lawyer)}`,
     image: new URL(lawyer.profileImage, siteUrl).href,
     ...(contact?.email ? { email: contact.email } : {}),

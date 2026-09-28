@@ -81,19 +81,6 @@ function prepareContent(content: string) {
     </section>
     )}
 
-    <section class="mb-8 md:mb-12">
-      <h2 class="text-xl md:text-2xl font-light mb-4 md:mb-6 text-black flex items-center">
-        <User class="w-5 h-5 md:w-6 md:h-6 mr-2 text-employeur" />
-        {content.previsibilite.title}
-      </h2>
-      <div class="bg-gray-50 p-4 md:p-8 rounded-lg">
-        {/* Display the full content from the markdown field */}
-        {content.previsibilite.full_content && (
-          <div class="text-dark-gray text-sm md:text-base prose max-w-none" set:html={prepareContent(content.previsibilite.full_content)} />
-        )}
-      </div>
-    </section>
-
     <section class="mb-8 md:mb-16">
       <h2 class="text-xl md:text-2xl font-light mb-4 md:mb-6 text-black flex items-center">
         <Briefcase class="w-5 h-5 md:w-6 md:h-6 mr-2 text-employeur" />
@@ -154,6 +141,19 @@ function prepareContent(content: string) {
             </div>
           </div>
         ))}
+      </div>
+    </section>
+
+    <section class="mb-8 md:mb-12">
+      <h2 class="text-xl md:text-2xl font-light mb-4 md:mb-6 text-black flex items-center">
+        <User class="w-5 h-5 md:w-6 md:h-6 mr-2 text-employeur" />
+        {content.previsibilite.title}
+      </h2>
+      <div class="bg-gray-50 p-4 md:p-8 rounded-lg">
+        {/* Display the full content from the markdown field */}
+        {content.previsibilite.full_content && (
+          <div class="text-dark-gray text-sm md:text-base prose max-w-none" set:html={prepareContent(content.previsibilite.full_content)} />
+        )}
       </div>
     </section>
 

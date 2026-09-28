@@ -67,7 +67,7 @@ const seoData = {
       <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
         <div class="w-full md:w-2/3">
           <h1 class="text-3xl md:text-4xl lg:text-5xl font-light text-employeur mb-2">{lawyer.name}</h1>
-          <p class="text-xl md:text-2xl text-gray-600 mb-4">{lawyer.title}</p>
+          {lawyer.title && <p class="text-xl md:text-2xl text-gray-600 mb-4">{lawyer.title}</p>}
 
           {lawyer.role && <p class="text-gray-600 mb-4">{lawyer.role}</p>}
 

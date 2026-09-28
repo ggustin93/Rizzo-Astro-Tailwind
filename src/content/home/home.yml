@@ -20,14 +20,14 @@ fr:
       description: Nous vous accompagnons tout au long de votre parcours professionnel
         que ce soit pour une question ponctuelle, la fin d’une collaboration ou
         un litige.
-      cta: En savoir plus
+      cta: Nos services pour travailleurs
       destination: /services/travailleurs/
     employeurs:
       title: Vous dirigez une PME, une TPE ou une start-up belge ?
       description: "Nous vous conseillons et défendons sur toutes vos problématiques
         RH : contrat de travail, règlement de travail, licenciement, prévention
         et contentieux."
-      cta: En savoir plus
+      cta: Nos services pour employeurs
       destination: /services/employeurs/
     europeennes:
       title: Vous êtes une institution européenne, fonctionnaire ou agent contractuel
@@ -36,7 +36,7 @@ fr:
         gestion de leurs relations de travail et accompagnons les fonctionnaires
         et agents dans leurs démarches, de la négociation à la procédure
         précontentieuse et contentieuse.
-      cta: En savoir plus
+      cta: Nos services pour la fonction publique UE
       destination: /services/europeennes/
     honoraires:
       title: Honoraires
@@ -52,8 +52,6 @@ fr:
     subtitle: Cabinet d’avocats en droit du travail belge et droit de la fonction
       publique européenne
     description: Nous vous conseillons et vous défendons avec expertise et engagement.
-    cta: NOUS CONTACTER
-    destination: /contact/
     more: En savoir plus
     imageAlt: Illustration du cabinet
   articlesTitle: Articles
@@ -145,8 +143,6 @@ en:
     subtitle: Law firm specialising in Belgian employment law and European civil
       service law
     description: We advise and represent you with expertise and commitment.
-    cta: CONTACT US
-    destination: /contact/
     more: Learn more
     imageAlt: Illustration of the firm
   articlesTitle: Articles
@@ -236,8 +232,6 @@ it:
     subtitle: Studio legale in diritto del lavoro belga e diritto della funzione
       pubblica europea
     description: Vi consigliamo e vi difendiamo con competenza e impegno.
-    cta: CONTATTACI
-    destination: /contact/
     more: Per saperne di più
     imageAlt: Illustrazione dello studio
   articlesTitle: Articoli
@@ -312,8 +306,6 @@ nl:
     title: RIZZO & MICHIELS
     subtitle: Advocatenkantoor in Belgisch arbeidsrecht en Europees ambtenarenrecht
     description: Wij adviseren en verdedigen u met expertise en engagement.
-    cta: CONTACTEER ONS
-    destination: /contact/
     more: Meer weten
     imageAlt: Illustratie van het kantoor
   articlesTitle: Artikels

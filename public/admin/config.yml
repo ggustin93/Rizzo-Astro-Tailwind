@@ -52,8 +52,6 @@ collections:
                   - {label: "Titre", name: "title", widget: "string"}
                   - {label: "Sous-titre", name: "subtitle", widget: "string"}
                   - {label: "Description", name: "description", widget: "text"}
-                  - {label: "Libellé principal", name: "cta", widget: "string"}
-                  - {label: "Destination du lien", name: "destination", widget: "select", options: ["/contact/", "/equipe/", "/services/employeurs/", "/services/travailleurs/", "/services/europeennes/"]}
                   - {label: "Libellé vers les services", name: "more", widget: "string"}
                   - {label: "Alternative de l’illustration", name: "imageAlt", widget: "string"}
               
@@ -461,19 +459,7 @@ collections:
                 widget: "object"
                 fields:
                   - {label: "Titre", name: "title", widget: "string"}
-                  - {label: "Points", name: "points", widget: "list"}
-              - label: "Prévisibilité"
-                name: "previsibilite"
-                widget: "object"
-                fields:
-                  - {label: "Titre", name: "title", widget: "string"}
-                  - {label: "Contenu complet", name: "full_content", widget: "markdown", required: false}
-              - label: "Assurance"
-                name: "assurance"
-                widget: "object"
-                fields:
-                  - {label: "Titre", name: "title", widget: "string"}
-                  - {label: "Contenu", name: "content", widget: "text"}
+                  - {label: "Points", name: "points", widget: "list", field: {label: "Point", name: "point", widget: "text"}}
               - label: "Exemples de formules forfaitaires"
                 name: "forfaits"
                 widget: "object"
@@ -501,6 +487,18 @@ collections:
                         fields:
                           - {label: "Description", name: "description", widget: "string"}
                           - {label: "Prix", name: "prix", widget: "string"}
+              - label: "Prévisibilité"
+                name: "previsibilite"
+                widget: "object"
+                fields:
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Contenu complet", name: "full_content", widget: "markdown", required: false}
+              - label: "Assurance"
+                name: "assurance"
+                widget: "object"
+                fields:
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Contenu", name: "content", widget: "text"}
               - label: "Aide juridique"
                 name: "aideJuridique"
                 widget: "object"

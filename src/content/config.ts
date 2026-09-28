@@ -225,7 +225,7 @@ const profileCollection = defineCollection({
     seo: profileSeoSchema.optional(),
     lawyers: z.array(z.object({
       id: z.string().min(1),
-      title: z.string().min(1),
+      title: z.string().optional(),
       role: z.string().min(1),
       imageAlt: z.string().optional(),
       presentation: z.array(z.string().min(1)).nonempty(),
@@ -277,9 +277,7 @@ const homeCollection = defineCollection({
       title: z.string().min(1),
       subtitle: z.string().min(1),
       description: z.string().min(1),
-      cta: z.string().min(1),
       more: z.string().min(1),
-      destination: editorialDestination,
       imageAlt: z.string().min(1),
     }),
     expertise: z.object({
