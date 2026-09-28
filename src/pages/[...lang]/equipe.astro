@@ -28,8 +28,8 @@ const appointmentLabel = ui.cta.actions.find(action => action.type === 'appointm
 
 // SEO data
 const seoData = {
-  title: profileData.seo?.title || `${t.title} - Christine Rizzo & Stephanie Michiels`,
-  description: profileData.seo?.description || `Découvrez l'équipe d'avocates en droit du travail à Bruxelles.`,
+  title: profileData.seo?.title || t.title,
+  description: profileData.seo?.description || '',
   image: profileData.seo?.image || '/default-social-image.jpg',
   keywords: profileData.seo?.keywords?.join(', ') || ''
 };

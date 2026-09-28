@@ -5,7 +5,7 @@ fr:
   situationsDisplay: accordion
   ctaText: En savoir plus sur les tarifs
   seo:
-    title: Services juridiques pour travailleurs | Rizzo & Michiels Avocates
+    title: Services juridiques pour travailleurs | Rizzo & Michiels Avocats
     description: Expertise en droit du travail pour les employés. Conseils, défense
       et accompagnement juridique personnalisé à Bruxelles.
     image: /default-social-image.png
@@ -84,7 +84,7 @@ en:
   situationsDisplay: accordion
   ctaText: Learn more about fees
   seo:
-    title: Legal services for employees | Rizzo & Michiels Attorneys
+    title: Legal services for employees | Rizzo & Michiels Lawyers
     description: Employment law expertise for employees. Legal advice, defense and
       personalized legal support in Brussels.
     keywords:
@@ -163,7 +163,7 @@ it:
   situationsDisplay: accordion
   ctaText: Scopri di più sulle tariffe
   seo:
-    title: Servizi legali per i lavoratori | Rizzo & Michiels Avvocate
+    title: Servizi legali per i lavoratori | Rizzo & Michiels Avvocati
     description: Competenza in diritto del lavoro per i dipendenti. Consulenza
       legale, difesa e assistenza legale personalizzata a Bruxelles.
     keywords:

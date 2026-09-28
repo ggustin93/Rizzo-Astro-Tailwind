@@ -47,7 +47,7 @@ export const GET: APIRoute = async () => {
 
 Adresse : ${address}, Belgique.
 
-## Avocates
+## Avocats
 
 ${team.map((lawyer) => `- [${lawyer.name}](${profileUrl(lawyer)}) — ${lawyer.title || lawyer.role}. ${lawyer.languages}`).join('\n')}
 

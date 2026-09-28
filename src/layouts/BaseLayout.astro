@@ -44,8 +44,8 @@ const allowIndexing = isProductionBuild && (pageAllowIndexing === undefined ? si
 const productionSiteUrl = seo.siteUrl || Astro.site || 'https://rizzo-michiels.be';
 const siteUrl = import.meta.env.DEV ? Astro.url.origin : productionSiteUrl;
 
-const siteName = seo.siteName || 'Christine Rizzo - Avocate';
-const defaultDescription = seo.siteDescription || 'Avocate en droit du travail à Bruxelles.';
+const siteName = seo.siteName || 'Rizzo & Michiels';
+const defaultDescription = seo.siteDescription || 'Cabinet d\'avocats en droit du travail à Bruxelles.';
 const defaultImage = seo.defaultSocialImage || '/default-social-image.png';
 
 let fullImageUrl;
@@ -57,7 +57,8 @@ if (image && (image.startsWith('http://') || image.startsWith('https://'))) {
   fullImageUrl = new URL(defaultImage, siteUrl).toString();
 }
 
-const finalTitle = title ? `${title} | ${siteName}` : siteName;
+// Titles that already name the firm are not suffixed a second time (#28).
+const finalTitle = !title ? siteName : title.includes(siteName) ? title : `${title} | ${siteName}`;
 const finalDescription = description || defaultDescription;
 const finalCanonical = canonical ? (new URL(canonical, siteUrl).toString()) : (new URL(Astro.url.pathname, siteUrl).toString());
 const keywordsString = Array.isArray(keywords) ? keywords.join(', ') : keywords;
