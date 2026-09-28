@@ -29,11 +29,12 @@ collections:
           - label: "Liens des mini-portraits"
             name: "portraitLinks"
             widget: "select"
-            default: "profiles"
-            hint: "Les portraits peuvent ouvrir le profil individuel (portée à confirmer avec le cabinet). Le libellé Découvrir l’équipe reste sans lien conformément au PDF."
+            default: "team"
+            hint: "Les portraits peuvent ouvrir la section de la personne sur la page Équipe (d’où le profil complet reste accessible) ou directement son profil individuel."
             options:
               - {label: "Sans lien", value: "none"}
               - {label: "Vers les profils", value: "profiles"}
+              - {label: "Vers la section de la page Équipe", value: "team"}
           - label: "Ordre des parcours Services"
             name: "serviceOrder"
             widget: "list"

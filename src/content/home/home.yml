@@ -1,7 +1,7 @@
 media:
   hero: /assets/images/hero_image_wbg.svg
   team: /assets/images/illustration_services.svg
-portraitLinks: profiles
+portraitLinks: team
 serviceOrder:
   - employeurs
   - travailleurs

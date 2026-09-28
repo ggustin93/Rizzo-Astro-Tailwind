@@ -51,7 +51,7 @@ const seoData = {
       
       <div class="space-y-12 md:space-y-16">
         {lawyersToDisplay.map((lawyer: any, index: number) => (
-          <div class="team-entry">
+          <div class="team-entry" id={lawyer.slug}>
             <!-- Lawyer Image -->
             <div class="team-photo">
               <a href={profilePath(lang, lawyer)} class="block rounded-lg">
