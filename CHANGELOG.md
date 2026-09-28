@@ -12,6 +12,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - **Back-sync workflow** (`.github/workflows/sync-main-into-staging.yml`): every push to `main` (including client CMS edits in production) is merged into `staging`; a conflict opens one GitHub issue instead of guessing. Active once the file reaches `main`.
 
 ### Changed
+- **No more contact form (#25)**: the form, its confirmation page and every « Message » / « Formulaire de contact » access are removed (home, header, Contact page, CMS). The Contact page keeps only the contact block (#32). The e-mail action is labelled just « E-mail » (Email/E-mail/E-mail), without inviting documents; the privacy policy no longer lists form data.
+- **Header « Prendre rendez-vous » (#26)**: replaces « Nous contacter » in FR/EN/IT/NL as a mauve outlined button (employeur colour, AA contrast, filled on hover, visible focus), desktop and mobile; the dropdown lists Christine, Stephanie and Arnaud.
 - **Production content merged into staging**: the client's CMS edits from 8 and 11 September (Honoraires price, homepage copy) are now on `staging`, so the 1 October release cannot overwrite them. Homepage: FR/EN from staging, Italian copy written by Christine.
 - **Decap preview pane disabled**: the unstyled preview is hidden; the staging site is the real preview.
 - **Footer "Nos bureaux"**: the contact column now shows only the office address, on two lines with an explicit "Ouvrir dans Google Maps ↗" link (label editable in Decap, FR/EN/IT/NL). Phones and emails remain in the contact banner above.

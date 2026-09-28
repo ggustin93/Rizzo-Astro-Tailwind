@@ -90,7 +90,7 @@ const rightNavLinks = showArticlesSection ?
 const contactButtonText = navConfig.header.contactButtonText;
 
 // Libellés du menu de réservation, éditables dans le CMS (ui-translations).
-const { bookWith: bookWithLabel, contactForm: contactFormLabel } = uiTranslations.header;
+const { bookWith: bookWithLabel } = uiTranslations.header;
 ---
 
 <style>
@@ -199,7 +199,7 @@ const { bookWith: bookWithLabel, contactForm: contactFormLabel } = uiTranslation
   #mobile-menu .mobile-submenu-link:hover, #mobile-menu .mobile-submenu-link.active { background: #efe9e1; }
   #mobile-menu .mobile-nav-link.active { color: #067889; }
   #header-booking-mobile { margin-top: 1.25rem; }
-  #header-booking-mobile > :global(a) { display: flex; width: 100%; min-height: 48px; background: #087b8a; color: white; border-color: #087b8a; font-size: .9375rem; }
+  #header-booking-mobile > :global(a) { display: flex; width: 100%; min-height: 48px; font-size: .9375rem; }
   #mobile-menu a:focus-visible, #mobile-menu button:focus-visible, #mobile-menu summary:focus-visible { outline: 3px solid #087b8a; outline-offset: 2px; }
   #mobile-menu .mt-8 { margin-top: 1.25rem; padding-top: 1rem; }
   #mobile-menu .mt-8 a, #mobile-menu .mt-8 span { display: grid; place-items: center; min-width: 44px; min-height: 44px; border-radius: 8px; }
@@ -274,8 +274,8 @@ const { bookWith: bookWithLabel, contactForm: contactFormLabel } = uiTranslation
             <Button
               href={`/${currentLang}/contact`}
               text={contactButtonText}
-              variant="secondary"
-              class={`py-1 px-3 text-sm ${isActivePage(`/${currentLang}/contact`) ? 'font-medium' : ''}`}
+              variant="outline"
+              class={`py-1 px-3 lg:px-3 xl:px-6 text-sm ${isActivePage(`/${currentLang}/contact`) ? 'font-medium' : ''}`}
             />
             <div
               id="header-booking-desktop"
@@ -292,12 +292,6 @@ const { bookWith: bookWithLabel, contactForm: contactFormLabel } = uiTranslation
                   {lawyer.name}
                 </button>
               ))}
-              {siteConfigEntry?.data.showContactForm && <a
-                href={`/${currentLang}/contact`}
-                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 border-t border-gray-100 mt-1 pt-2"
-              >
-                {contactFormLabel}
-              </a>}
             </div>
           </div>
 
@@ -356,7 +350,7 @@ const { bookWith: bookWithLabel, contactForm: contactFormLabel } = uiTranslation
           <Button
             href={`/${currentLang}/contact`}
             text={contactButtonText}
-            variant="secondary"
+            variant="outline"
             class={`text-base py-3 px-6 ${isActivePage(`/${currentLang}/contact`) ? 'font-medium' : ''}`}
           />
           <div class="py-2 px-4 bg-white bg-opacity-60 rounded-sm my-2">
@@ -371,12 +365,6 @@ const { bookWith: bookWithLabel, contactForm: contactFormLabel } = uiTranslation
                 {lawyer.name}
               </button>
             ))}
-            {siteConfigEntry?.data.showContactForm && <a
-              href={`/${currentLang}/contact`}
-              class={`mobile-submenu-link block py-2 text-black text-sm font-light transition-colors duration-300 ${isActivePage(`/${currentLang}/contact`) ? 'active' : ''}`}
-            >
-              {contactFormLabel}
-            </a>}
           </div>
         </div>
         

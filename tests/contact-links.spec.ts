@@ -2,7 +2,24 @@ import { test, expect } from '@playwright/test';
 import { languages } from './helpers';
 
 const phones = ['+32488404549', '+32498502901', '+32498797356', '+32495693191'];
-const labels = { fr: ['Appelez-nous', 'Rendez-vous'], en: ['Call us', 'Appointment'], it: ['Chiamateci', 'Appuntamento'], nl: ['Bel ons', 'Afspraak'] };
+const labels = { fr: ['Appelez-nous', 'Rendez-vous', 'E-mail'], en: ['Call us', 'Appointment', 'Email'], it: ['Chiamateci', 'Appuntamento', 'E-mail'], nl: ['Bel ons', 'Afspraak', 'E-mail'] };
+const documentWords = /document|pièce|stukken/i;
+
+// #25: no form anywhere, and the e-mail is labelled plainly, without inviting documents.
+for (const lang of languages) {
+  test(`${lang}: contact page offers only the contact block, no form`, async ({ page }) => {
+    await page.goto(`/${lang}/contact/`);
+    await expect(page.locator('form')).toHaveCount(0);
+    await expect(page.locator('a[href*="#contact-form"]')).toHaveCount(0);
+    const banner = page.locator('#contact');
+    await expect(banner.locator('a[href="mailto:info@rizzo-michiels.be"]')).toHaveAccessibleName(`${labels[lang][2]} info@rizzo-michiels.be`);
+    await expect(banner).not.toContainText(documentWords);
+    await expect(page.locator('header')).not.toContainText(/Formulaire de contact|Contact form|Modulo di contatto|Contactformulier/);
+    await page.goto(`/${lang}/`);
+    await expect(page.locator('form')).toHaveCount(0);
+    await expect(page.locator('#contact')).not.toContainText(documentWords);
+  });
+}
 for (const lang of languages) {
   test(`${lang}: contact menus open by keyboard and lead to central destinations`, async ({ page, isMobile }) => {
     await page.route('https://app.cal.com/**', route => route.abort());
@@ -10,7 +27,6 @@ for (const lang of languages) {
     await page.goto(`/${lang}/contact/`);
     const banner = page.locator('#contact');
     await expect(banner.locator('a[href="mailto:info@rizzo-michiels.be"]')).toBeVisible();
-    await expect(banner.locator(`a[href="/${lang}/contact/#contact-form"]`)).toBeVisible();
     const call = banner.locator('summary').filter({ hasText: labels[lang][0] });
     await expect(banner.locator('a[href="tel:+32495693191"]')).toBeHidden();
     if (isMobile) await call.tap();

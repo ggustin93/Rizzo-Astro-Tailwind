@@ -27,10 +27,6 @@ fr:
         s'engage à minimiser la collecte de données personnelles. Les données
         personnelles collectées se limitent à :
 
-        - **Via le formulaire de contact** (Netlify Forms) : nom, adresse email,
-          téléphone (optionnel), objet et message. Ces données sont utilisées
-          uniquement pour répondre à votre demande et conservées le temps
-          nécessaire à son traitement.
         - **Via Cal.com** : les données fournies lors de la prise de rendez-vous
           en ligne, gérées par le service externe Cal.com.
         - **Via Netlify (hébergeur)** : certaines données techniques (adresse IP,
@@ -95,9 +91,6 @@ en:
         minimizing the collection of personal data. Personal data collected is
         limited to:
 
-        - **Via the contact form** (Netlify Forms): name, email address, phone
-          number (optional), subject, and message. This data is used solely to
-          respond to your enquiry and retained for the time necessary to handle it.
         - **Via Cal.com**: data provided when booking an online appointment,
           managed by the external service Cal.com.
         - **Via Netlify (host)**: certain technical data (IP address, server logs)
@@ -159,10 +152,6 @@ it:
         si impegna a minimizzare la raccolta di dati personali. I dati personali
         raccolti si limitano a:
 
-        - **Tramite il modulo di contatto** (Netlify Forms): nome, indirizzo email,
-          numero di telefono (opzionale), oggetto e messaggio. Questi dati vengono
-          utilizzati esclusivamente per rispondere alla richiesta e conservati per
-          il tempo necessario alla sua gestione.
         - **Tramite Cal.com**: i dati forniti durante la prenotazione di un
           appuntamento online, gestiti dal servizio esterno Cal.com.
         - **Tramite Netlify (host)**: alcuni dati tecnici (indirizzo IP, log del
@@ -230,10 +219,6 @@ nl:
         persoonsgegevens tot een minimum te beperken. De verzamelde
         persoonsgegevens beperken zich tot:
 
-        - **Via het contactformulier** (Netlify Forms): naam, e-mailadres,
-          telefoon (optioneel), onderwerp en bericht. Deze gegevens worden
-          uitsluitend gebruikt om uw vraag te beantwoorden en worden bewaard
-          gedurende de tijd die nodig is voor de behandeling ervan.
         - **Via Cal.com**: de gegevens die worden verstrekt bij het online maken
           van een afspraak, beheerd door de externe dienst Cal.com.
         - **Via Netlify (host)**: bepaalde technische gegevens (IP-adres,
