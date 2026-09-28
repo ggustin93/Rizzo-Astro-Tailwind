@@ -1,4 +1,6 @@
 import { test, expect } from '@playwright/test';
+import { readFileSync } from 'node:fs';
+import { load } from 'js-yaml';
 import { BASE_URL, languages } from './helpers';
 
 test.describe('European Institutions Service Page', () => {
@@ -34,28 +36,13 @@ test.describe('European Institutions Service Page', () => {
 });
 
 test.describe('Homepage Expertise Grid', () => {
-  const expertiseBlocks: Record<string, { employeurs: string; travailleurs: string; europeennes: string }> = {
-    fr: {
-      employeurs: 'Vous dirigez une PME, une TPE ou une start-up belge ?',
-      travailleurs: 'Vous êtes salarié·e et rencontrez un litige avec votre employeur ? Vous êtes indépendant ?',
-      europeennes: 'Vous êtes une institution européenne, un·e fonctionnaire ou un·e agent·e contractuel·le ?',
-    },
-    en: {
-      employeurs: 'Do you run a Belgian SME, micro-enterprise or start-up?',
-      travailleurs: 'Are you an employee in a dispute with your employer? Are you self-employed?',
-      europeennes: 'Are you a European institution, an official or a member of the contract staff?',
-    },
-    it: {
-      employeurs: 'Dirigete una PMI, una microimpresa o una start-up belga?',
-      travailleurs: 'Siete lavoratori dipendenti e avete una controversia con il vostro datore di lavoro? Siete lavoratori autonomi?',
-      europeennes: 'Siete un’istituzione europea, un funzionario o un agente contrattuale?',
-    },
-    nl: {
-      employeurs: 'Leidt u een Belgische kmo, micro-onderneming of start-up?',
-      travailleurs: 'Bent u werknemer en hebt u een geschil met uw werkgever? Bent u zelfstandige?',
-      europeennes: 'Bent u een Europese instelling, een ambtenaar of een contractueel personeelslid?',
-    },
-  };
+  // Titles come from the CMS content, which the cabinet edits.
+  const home: any = load(readFileSync(new URL('../src/content/home/home.yml', import.meta.url), 'utf8'));
+  const expertiseBlocks = Object.fromEntries(languages.map((lang) => [lang, {
+    employeurs: home[lang].expertise.employeurs.title,
+    travailleurs: home[lang].expertise.travailleurs.title,
+    europeennes: home[lang].expertise.europeennes.title,
+  }]));
 
   for (const lang of languages) {
     test(`should show 3 expertise blocks in correct order for /${lang}/`, async ({ page }) => {

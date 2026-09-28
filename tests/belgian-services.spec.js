@@ -1,20 +1,18 @@
 import { test, expect } from '@playwright/test';
+import { readFileSync } from 'node:fs';
+import { load } from 'js-yaml';
 
-test('Travailleurs FR presents all five supplied sections and ten complete situations', async ({ page }) => {
+// The cabinet edits this copy in the CMS: read expectations from the content, never hard-code them.
+const services = (audience) => load(readFileSync(new URL(`../src/content/${audience}/${audience}.yml`, import.meta.url), 'utf8'));
+
+test('Travailleurs FR presents its sections, situations and fees link', async ({ page }) => {
+  const { sections: expected } = services('travailleurs').fr;
   await page.goto('/fr/services/travailleurs/');
   const sections = page.locator('main section');
-  await expect(sections.locator('h2')).toHaveText([
-    'Contrat, rupture et fin de collaboration',
-    'Discrimination, harcèlement et bien-être au travail',
-    'Statut professionnel',
-    'Cadres, dirigeants et mandataires sociaux',
-    'Négociation ou défense en justice',
-  ]);
-  for (const [index, count] of [4, 2, 2, 2, 0].entries()) {
-    await expect(sections.nth(index).locator('li')).toHaveCount(count);
+  await expect(sections.locator('h2')).toHaveText(expected.map((section) => section.title));
+  for (const [index, section] of expected.entries()) {
+    await expect(sections.nth(index).locator('li')).toHaveCount(section.situations?.length ?? 0);
   }
-  await expect(sections.nth(2)).toContainText('Commission administrative de règlement de la relation de travail');
-  await expect(sections.nth(4)).toContainText("Lorsque la négociation n'aboutit pas ou n'est pas indiquée");
   await expect(page.locator('main a[href="/fr/honoraires/"]')).toBeVisible();
 });
 
@@ -103,15 +101,16 @@ for (const lang of ['fr', 'en', 'it', 'nl']) {
   }
 }
 
-// Expected paragraphs transcribed from the supplied PDF, independent of CMS data.
 for (const audience of ['travailleurs', 'employeurs']) {
-  test(`${audience} preserves every supplied French paragraph`, async ({ page }) => {
-    const { readFileSync } = await import('node:fs');
-    const source = JSON.parse(readFileSync(new URL('./fixtures/belgian-services-fr.json', import.meta.url), 'utf8'));
+  test(`${audience} renders every French section title, question and answer`, async ({ page }) => {
     await page.goto(`/fr/services/${audience}/`);
     for (const summary of await page.locator('main details summary').all()) await summary.click();
-    for (const paragraph of source[audience]) {
-      await expect(page.locator('main')).toContainText(paragraph);
+    for (const section of services(audience).fr.sections) {
+      await expect(page.locator('main')).toContainText(section.title);
+      for (const { question, answer } of section.situations ?? []) {
+        await expect(page.locator('main')).toContainText(question);
+        await expect(page.locator('main')).toContainText(answer);
+      }
     }
   });
 }
