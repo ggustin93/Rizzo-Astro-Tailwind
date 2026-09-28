@@ -87,9 +87,7 @@ function prepareContent(content: string) {
         {content.forfaits.title}
       </h2>
       <div class="bg-gray-50 p-4 md:p-8 rounded-lg">
-        <p class="mb-6 md:mb-8 leading-relaxed text-sm md:text-base text-dark-gray">
-          {content.forfaits.intro}
-        </p>
+        <p class="mb-6 md:mb-8 leading-relaxed text-sm md:text-base text-dark-gray" set:html={prepareContent(content.forfaits.intro)} />
         
         {content.forfaits.exemples.map((exemple: any) => (
           <div class="bg-white rounded-lg overflow-hidden shadow-sm mb-6 md:mb-8">

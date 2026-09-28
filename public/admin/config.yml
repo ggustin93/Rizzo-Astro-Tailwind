@@ -359,7 +359,7 @@ collections:
               - label: "Membres de l’équipe"
                 name: "lawyers"
                 widget: "list"
-                summary: "{{fields.id}} — {{fields.title}}"
+                summary: "{{fields.id}} — {{fields.role}}"
                 collapsed: true
                 fields:
                   - {label: "Membre", name: "id", widget: "relation", collection: "siteConfig", file: "site-config", search_fields: ["team.*.name"], value_field: "team.*.id", display_fields: ["team.*.name"]}
@@ -369,7 +369,7 @@ collections:
                     widget: "list"
                     hint: "Texte intégral, indépendant de la biographie individuelle et de l’accueil."
                     field: {label: "Paragraphe", name: "paragraph", widget: "text"}
-                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Titre", name: "title", widget: "string", required: false, hint: "Facultatif. Vide : aucun sous-titre sous le nom."}
                   - {label: "Alternative du portrait", name: "imageAlt", widget: "string", required: false, hint: "Vide : utilise le nom du membre."}
                   - label: "Biographie"
                     name: "bio"

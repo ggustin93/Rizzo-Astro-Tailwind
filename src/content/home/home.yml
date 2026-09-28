@@ -114,13 +114,13 @@ en:
         self-employed?
       description: We support you throughout your professional life, whether with a
         specific question, the end of a working relationship or a dispute.
-      cta: Learn more
+      cta: Our services for employees
       destination: /services/travailleurs/
     employeurs:
       title: Do you run a Belgian a SME, a small business or a start-up?
       description: "We advise and represent you on all your HR issues: employment
         contracts, work rules, dismissal, prevention and litigation."
-      cta: Learn more
+      cta: Our services for employers
       destination: /services/employeurs/
     europeennes:
       title: Are you a European institution, an official or a member of the contract
@@ -128,7 +128,7 @@ en:
       description: We advise European institutions and agencies on managing their
         employment relationships and assist officials and other staff in their
         steps, from negotiation to pre-litigation and litigation proceedings.
-      cta: Learn more
+      cta: Our services for the EU civil service
       destination: /services/europeennes/
     honoraires:
       intro: Transparent and tailored fees
@@ -203,21 +203,21 @@ it:
       description: "La consigliamo e difendiamo su tutte le questioni di diritto del
         lavoro: licenziamento, discriminazione, molestie, cessazione del
         contratto, indennità."
-      cta: Scopri di più
+      cta: I nostri servizi per i lavoratori
       destination: /services/travailleurs/
     employeurs:
       title: Gestisce una PMI, una micro-impresa o una start-up belga?
       description: "La assistiamo in italiano su tutte le questioni di diritto del
         lavoro: contratto di lavoro, regolamento di lavoro, licenziamento,
         prevenzione e contenzioso."
-      cta: Scopri di più
+      cta: I nostri servizi per i datori di lavoro
       destination: /services/employeurs/
     europeennes:
       title: È un'istituzione europea, un funzionario o un agente contrattuale?
       description: Assistiamo le istituzioni e le agenzie europee nella gestione dei
         rapporti di lavoro e accompagniamo i funzionari e gli agenti nelle loro
         procedure, dalla negoziazione al contenzioso.
-      cta: Scopri di più
+      cta: I nostri servizi per la funzione pubblica UE
       destination: /services/europeennes/
     honoraires:
       intro: Tariffe trasparenti e personalizzate
@@ -275,14 +275,14 @@ nl:
         zelfstandige?
       description: Wij begeleiden u tijdens uw volledige loopbaan, of het nu gaat om
         een specifieke vraag, het einde van een samenwerking of een geschil.
-      cta: Meer weten
+      cta: Onze diensten voor werknemers
       destination: /services/travailleurs/
     employeurs:
       title: Leidt u een Belgische kmo, micro-onderneming of start-up?
       description: "Wij adviseren en verdedigen u bij al uw HR-vraagstukken:
         arbeidsovereenkomst, arbeidsreglement, ontslag, preventie en
         geschillen."
-      cta: Meer weten
+      cta: Onze diensten voor werkgevers
       destination: /services/employeurs/
     europeennes:
       title: Bent u een Europese instelling, een ambtenaar of een contractueel
@@ -291,7 +291,7 @@ nl:
         van hun arbeidsrelaties en begeleiden ambtenaren en personeelsleden bij
         hun stappen, van onderhandelingen tot precontentieuze en gerechtelijke
         procedures.
-      cta: Meer weten
+      cta: Onze diensten voor het Europees openbaar ambt
       destination: /services/europeennes/
     honoraires:
       title: Erelonen

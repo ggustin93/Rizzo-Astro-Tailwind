@@ -49,7 +49,7 @@ Adresse : ${address}, Belgique.
 
 ## Avocates
 
-${team.map((lawyer) => `- [${lawyer.name}](${profileUrl(lawyer)}) — ${lawyer.title}. ${lawyer.languages}`).join('\n')}
+${team.map((lawyer) => `- [${lawyer.name}](${profileUrl(lawyer)}) — ${lawyer.title || lawyer.role}. ${lawyer.languages}`).join('\n')}
 
 ## Pages principales
 
