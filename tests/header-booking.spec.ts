@@ -54,7 +54,7 @@ test.describe('Header appointment dropdown — desktop', () => {
     }
 
     // #25: the form is gone, so the menu holds only the calendars.
-    await expect(menu(page).locator('a')).toHaveCount(0);
+    await expect(menu(page).locator('a:not([data-cal-link])')).toHaveCount(0);
   });
 
   test('never renders a booking row without a valid cal.com URL', async ({ page }) => {
@@ -82,6 +82,18 @@ test.describe('Header appointment dropdown — desktop', () => {
     await expect(firstRow).toBeHidden();
     await trigger(page).hover();
     await expect(firstRow).toBeVisible();
+  });
+
+  // A row must actually start booking: the deferred Cal.com loader only handles
+  // links, so a <button> row silently did nothing (28/09).
+  test('clicking a row opens that lawyer\'s calendar', async ({ page }) => {
+    await page.route('https://app.cal.com/**', route => route.abort());
+    await page.route('https://cal.com/**', route => route.fulfill({ status: 200, contentType: 'text/html; charset=utf-8', body: '<h1>Calendar preview</h1>' }));
+    await page.goto(`${BASE_URL}/fr/`);
+    await trigger(page).hover();
+    await menu(page).locator('[data-cal-link]').first().click();
+    await expect(page).toHaveURL(/^https:\/\/cal\.com\/c\.rizzo-avocat\.be\//);
+    await expect(page.getByRole('heading', { name: 'Calendar preview' })).toBeVisible();
   });
 
   test('opens on keyboard focus, not only on hover', async ({ page }) => {
@@ -113,7 +125,7 @@ test.describe('Header appointment dropdown — mobile', () => {
     for (const lawyer of bookableLawyers) {
       await expect(menu.locator(`[data-cal-link*="${lawyer.calSlug}"]`)).toBeVisible();
     }
-    await expect(menu.locator('a.mobile-submenu-link')).toHaveCount(0);
+    await expect(menu.locator('a.mobile-submenu-link:not([data-cal-link])')).toHaveCount(0);
   });
 
   test('keeps the booking CTA button next to the booking rows', async ({ page }) => {
