@@ -1,8 +1,10 @@
 ---
-import { Phone, Mail, MessageCircle, Linkedin, ArrowUpRight } from 'astro-feather-icons2';
-const { lawyer } = Astro.props;
+import { Calendar, Phone, Mail, MessageCircle, Linkedin, ArrowUpRight } from 'astro-feather-icons2';
+import { calEmbedTarget, isValidCalendarLink } from '../utils/calendar.js';
+const { lawyer, appointmentLabel, bookWith } = Astro.props;
 const contact = lawyer.contact;
 const links = [
+  ...(isValidCalendarLink(contact?.calendarLink) ? [{ label: appointmentLabel, href: contact.calendarLink, icon: Calendar, cal: calEmbedTarget(contact.calendarLink), ariaLabel: `${bookWith} ${lawyer.name}` }] : []),
   ...(contact?.phone ? [{ label: contact.phone, href: `tel:${contact.phone.replace(/\s/g, '')}`, icon: Phone }] : []),
   ...(contact?.email ? [{ label: contact.email, href: `mailto:${contact.email}`, icon: Mail }] : []),
   ...(contact?.whatsapp ? [{ label: 'WhatsApp', href: `https://wa.me/${contact.whatsapp}`, icon: MessageCircle }] : []),
@@ -11,13 +13,16 @@ const links = [
 ---
 {links.length > 0 && (
   <div id="coordonnees" class="member-contact-card" role="group" aria-label={lawyer.name}>
-    {links.map(({ label, href, icon: Icon }) => (
-      <a href={href} class="member-contact" target={href.startsWith('https:') ? '_blank' : undefined} rel={href.startsWith('https:') ? 'noopener noreferrer' : undefined}>
+    {links.map(({ label, href, icon: Icon, cal, ariaLabel }) => {
+      const external = href.startsWith('https:') && !cal;
+      return (
+      <a href={href} class="member-contact" target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined} data-cal-link={cal} data-cal-config={cal && '{"layout":"month_view"}'} aria-label={ariaLabel}>
         <span class="contact-icon"><Icon aria-hidden="true" title="" /></span>
         <span class="contact-label">{label}</span>
         <ArrowUpRight aria-hidden="true" title="" class="contact-arrow" />
       </a>
-    ))}
+      );
+    })}
   </div>
 )}
 <style>

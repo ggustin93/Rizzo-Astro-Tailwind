@@ -31,6 +31,33 @@ test.describe('Team profile routes', () => {
     });
   }
 
+  // Issue #27: profiles get a booking link (WhatsApp was dropped), only for
+  // members with a cal.com agenda. The exact URL is CMS-editable, so only its
+  // shape is asserted.
+  const appointmentLabels = { fr: 'Rendez-vous', en: 'Appointment', it: 'Appuntamento', nl: 'Afspraak' };
+  const agendas = [
+    { slug: 'christine-rizzo', bookable: true },
+    { slug: 'stephanie-michiels', bookable: true },
+    { slug: 'arnaud-vanderhoeven-jacobs', bookable: true },
+    { slug: 'romain-archalaus', bookable: false },
+  ];
+  for (const lang of languages) {
+    for (const { slug, bookable } of agendas) {
+      test(`/${lang}/equipe/${slug} ${bookable ? 'offers' : 'omits'} booking`, async ({ page }) => {
+        await page.goto(`${BASE_URL}/${lang}/equipe/${slug}/`);
+        const booking = page.locator('#coordonnees a[data-cal-link]');
+        if (!bookable) {
+          await expect(booking).toHaveCount(0);
+          return;
+        }
+        await expect(booking).toHaveCount(1);
+        await expect(booking).toHaveAttribute('data-cal-link', /\S/);
+        await expect(booking).toHaveAttribute('href', /^https:\/\/cal\.com\/\S/);
+        await expect(booking).toContainText(appointmentLabels[lang]);
+      });
+    }
+  }
+
   test('empty sections are omitted from the profile canvas', async ({ page }) => {
     // Stephanie has `conferences: []` but a non-empty publications list.
     await page.goto(`${BASE_URL}/fr/equipe/stephanie-michiels/`);
