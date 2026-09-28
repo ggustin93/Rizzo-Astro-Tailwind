@@ -298,7 +298,7 @@ const homeCollection = defineCollection({
       hero: z.string().min(1),
       team: z.string().min(1),
     }),
-    portraitLinks: z.enum(['none', 'profiles']),
+    portraitLinks: z.enum(['none', 'profiles', 'team']),
     serviceOrder: z.array(z.enum(['employeurs', 'travailleurs', 'europeennes']))
       .length(3)
       .refine(items => new Set(items).size === 3, 'Each service must appear exactly once'),

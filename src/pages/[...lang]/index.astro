@@ -157,12 +157,13 @@ export const prerender = true;
         <div class="max-w-5xl mx-auto text-center">
           <div class="team-grid">
             {lawyersWithImages.map(lawyer => {
-              const Tag = portraitLinks === 'profiles' ? 'a' : 'div';
+              const href = { profiles: profilePath(currentLang, lawyer), team: `/${currentLang}/equipe/#${lawyer.slug}` }[portraitLinks];
+              const Tag = href ? 'a' : 'div';
               return (
-                <Tag href={portraitLinks === 'profiles' ? profilePath(currentLang, lawyer) : undefined} class="team-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">
+                <Tag href={href} class="team-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">
                   <img src={lawyer.image} alt={lawyer.imageAlt || lawyer.name} width="500" height="500" loading="lazy" decoding="async"
                     class="team-portrait" />
-                  <div class="team-card-caption"><h3>{lawyer.name}</h3>{portraitLinks === 'profiles' && <ArrowRight aria-hidden="true" class="team-card-arrow" />}</div>
+                  <div class="team-card-caption"><h3>{lawyer.name}</h3>{href && <ArrowRight aria-hidden="true" class="team-card-arrow" />}</div>
                 </Tag>
               );
             })}

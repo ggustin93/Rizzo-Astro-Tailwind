@@ -41,8 +41,8 @@ test('accueil : promesse fournie, réunion sous équipe et quatre mini-portraits
   await expect(page.locator('#expertise img')).toHaveCount(0);
   await expect(page.locator('#profil a')).toHaveCount(5);
   await expect(page.locator('#profil a[href="/fr/equipe/"]')).toHaveText(/Découvrir l’équipe/);
-  await page.locator('#profil a[href="/fr/equipe/romain-archalaus/"] img').click();
-  await expect(page).toHaveURL(/\/fr\/equipe\/romain-archalaus\//);
+  await page.locator('#profil a[href="/fr/equipe/#romain-archalaus"] img').click();
+  await expect(page).toHaveURL(/\/fr\/equipe\/#romain-archalaus$/);
   await page.goBack();
 });
 
@@ -77,5 +77,39 @@ for (const lang of ['fr','en','it','nl']) {
     const heading={fr:'Publications',en:'Publications',it:'Pubblicazioni',nl:'Publicaties'}[lang];
     await expect(page.locator('main').getByRole('heading',{name:heading,exact:true})).toBeVisible();
     await expect(page.locator('main')).toContainText('Le contrat de travail : aspects théoriques et pratiques');
+  });
+}
+
+// #29: a CMS paragraph break must become its own <p>, not a collapsed newline.
+test('la présentation de Christine s’affiche en paragraphes distincts', async ({ page }) => {
+  await page.goto('/fr/equipe/');
+  const paragraphs = page.locator('#christine-rizzo .team-text > p');
+  await expect(paragraphs).toHaveCount(4);
+  await expect(paragraphs.nth(1)).toHaveText(/^Gestion de la relation de travail/);
+});
+
+for (const lang of ['fr', 'en', 'it', 'nl']) {
+  test(`${lang} : aucun paragraphe de présentation ne contient de saut de ligne`, async ({ page }) => {
+    const slugs = ['christine-rizzo', 'stephanie-michiels', 'arnaud-vanderhoeven-jacobs', 'romain-archalaus'];
+    for (const path of ['', ...slugs.map(slug => `${slug}/`)]) {
+      await page.goto(`/${lang}/equipe/${path}`);
+      const texts = await page.locator('main p').allTextContents();
+      expect(texts.filter(text => text.trim().includes('\n'))).toEqual([]);
+    }
+  });
+}
+
+// #30: home portraits open the person's section of the team page.
+for (const lang of ['fr', 'en', 'it', 'nl']) {
+  test(`${lang} : un portrait de l’accueil mène à sa section de la page Équipe, au clavier`, async ({ page }) => {
+    await page.goto(`/${lang}/`);
+    const portrait = page.locator(`#profil a[href="/${lang}/equipe/#romain-archalaus"]`);
+    await portrait.focus();
+    await page.keyboard.press('Enter');
+    await expect(page).toHaveURL(new RegExp(`/${lang}/equipe/#romain-archalaus$`));
+    const section = page.locator('#romain-archalaus');
+    await expect(section.locator('h2')).toHaveText('Romain Archalaüs');
+    await expect(section).toBeInViewport();
+    await expect(section.locator(`a[href="/${lang}/equipe/romain-archalaus/"]`)).toHaveCount(2);
   });
 }
