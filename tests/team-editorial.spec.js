@@ -89,12 +89,16 @@ test('la présentation de Christine s’affiche en paragraphes distincts', async
 });
 
 for (const lang of ['fr', 'en', 'it', 'nl']) {
-  test(`${lang} : aucun paragraphe de présentation ne contient de saut de ligne`, async ({ page }) => {
+  test(`${lang} : chaque présentation est rendue en plusieurs paragraphes, sans saut de ligne résiduel`, async ({ page }) => {
     const slugs = ['christine-rizzo', 'stephanie-michiels', 'arnaud-vanderhoeven-jacobs', 'romain-archalaus'];
     for (const path of ['', ...slugs.map(slug => `${slug}/`)]) {
       await page.goto(`/${lang}/equipe/${path}`);
       const texts = await page.locator('main p').allTextContents();
       expect(texts.filter(text => text.trim().includes('\n'))).toEqual([]);
+    }
+    await page.goto(`/${lang}/equipe/`);
+    for (const slug of slugs) {
+      expect(await page.locator(`#${slug} .team-text > p`).count()).toBeGreaterThan(1);
     }
   });
 }

@@ -5,7 +5,7 @@ import { LOCALES } from '../../config/locales';
 import CTA from '../../components/CTA.astro';
 import { ChevronDown, Briefcase, User, FileText, Globe, ArrowRight } from 'astro-feather-icons2';
 import { getArticles } from '../../utils/articles';
-import { getTeam, profilePath } from '../../utils/team.js';
+import { getTeam, profilePath, teamSectionPath } from '../../utils/team.js';
 import ArticleCard from '../../components/ArticleCard.astro';
 import Button from '../../components/Button.astro';
 // Import des images locales
@@ -157,7 +157,7 @@ export const prerender = true;
         <div class="max-w-5xl mx-auto text-center">
           <div class="team-grid">
             {lawyersWithImages.map(lawyer => {
-              const href = { profiles: profilePath(currentLang, lawyer), team: `/${currentLang}/equipe/#${lawyer.slug}` }[portraitLinks];
+              const href = { profiles: profilePath(currentLang, lawyer), team: teamSectionPath(currentLang, lawyer) }[portraitLinks];
               const Tag = href ? 'a' : 'div';
               return (
                 <Tag href={href} class="team-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">

@@ -4,6 +4,10 @@ export function profilePath(lang, member) {
   return `/${lang}/equipe/${member.slug}/`;
 }
 
+export function teamSectionPath(lang, member) {
+  return `/${lang}/equipe/#${member.slug}`;
+}
+
 /** A CMS text field may hold several paragraphs: each line break starts a new one. */
 function paragraphs(items) {
   return items.flatMap(item => item.split(/\s*\n\s*/)).filter(Boolean);
