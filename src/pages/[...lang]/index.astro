@@ -79,10 +79,10 @@ export const prerender = true;
           <p class="hero-description">{content.hero.description}</p>
           <div class="hero-actions">
             <Button 
-              variant="secondary"
+              variant="primary"
               icon={ChevronDown}
               href="#expertise"
-              class="hero-secondary"
+              class="hero-cta"
             >
               <span class="whitespace-nowrap">{content.hero.more}</span>
             </Button>
@@ -252,8 +252,8 @@ export const prerender = true;
   .hero-description { color: #4b5158; max-width: 47ch; font-size: 1.0625rem; line-height: 1.75; }
   .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.75rem; }
   .hero-actions :global(a) { min-height: 44px; padding: .7rem 1.1rem; border-radius: .5rem; }
-  .hero-actions :global(.hero-secondary) { border-color: #b1b7bc; background: white; color: #333; }
-  .hero-actions :global(.hero-secondary:hover) { background: #faf5f0; border-color: #68727b; }
+  .hero-actions :global(.hero-cta) { background: var(--worker-ink); border-color: var(--worker-ink); color: white; }
+  .hero-actions :global(.hero-cta:hover) { background: #055f6b; }
   .hero-art { display: flex; justify-content: center; }
   .hero-illustration { width: 100%; height: auto; max-width: 32rem; object-fit: contain; }
   @media (min-width: 1024px) {
