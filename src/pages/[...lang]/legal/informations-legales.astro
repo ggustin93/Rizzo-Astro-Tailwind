@@ -17,8 +17,8 @@ if (!legalInfoEntry) {
 const content = await resolveLegalContent(legalInfoEntry.data[lang as keyof typeof legalInfoEntry.data] || legalInfoEntry.data['fr']);
 
 const seoData = {
-  title: content.title || 'Informations légales - Christine Rizzo',
-  description: 'Informations légales et conditions générales de Christine Rizzo, avocate au Barreau de Bruxelles',
+  title: content.title || 'Informations légales',
+  description: content.title || 'Informations légales et conditions générales de Rizzo & Michiels',
 };
 ---
 

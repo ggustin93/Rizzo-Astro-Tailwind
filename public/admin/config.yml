@@ -786,7 +786,7 @@ collections:
                 name: "siteDescription"
                 widget: "text"
                 required: false
-                default: "Christine Rizzo - Avocate en droit du travail à Bruxelles. Expertise pour employeurs et travailleurs."
+                default: "Rizzo & Michiels, cabinet d'avocats à Bruxelles en droit du travail belge et droit de la fonction publique européenne. Une équipe de quatre avocats."
                 pattern: ['^.{0,320}$', "La description idéale fait 155-160 caractères (max 320)"]
                 hint: "Description générale du site pour le référencement - idéalement 155-160 caractères (max 320)"
 
@@ -794,7 +794,7 @@ collections:
                 name: "siteName"
                 widget: "string" 
                 required: false
-                default: "Christine Rizzo - Avocate"
+                default: "Rizzo & Michiels"
                 hint: "Nom qui apparaîtra dans les métadonnées et les partages sur réseaux sociaux"
               
               - label: "URL du site"
@@ -970,7 +970,7 @@ collections:
                 widget: "object"
                 collapsed: true
                 fields:
-                  - {label: "Titre SEO", name: "seoTitle", widget: "string", default: "Blog | Christine Rizzo - Avocate en droit du travail à Bruxelles"}
+                  - {label: "Titre SEO", name: "seoTitle", widget: "string", default: "Blog | Rizzo & Michiels, avocats en droit du travail à Bruxelles"}
                   - {label: "Description SEO", name: "seoDescription", widget: "text", default: "Découvrez les derniers articles sur le droit du travail en Belgique."}
                   - {label: "Mots-clés SEO", name: "seoKeywords", widget: "list", field: {label: "Mot-clé", name: "keyword", widget: "string"}}
                   - {label: "Retour aux articles", name: "backToArticles", widget: "string", default: "← Retour aux articles"}

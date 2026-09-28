@@ -141,3 +141,55 @@ test.describe('JSON-LD localisation', () => {
     }
   });
 });
+
+// Issue #28: the site speaks for the firm "Rizzo & Michiels" and its team of
+// four, not for the two founders under the old "Avocates" name.
+const firmName = 'Rizzo & Michiels';
+const pagesWithTitles = [
+  '',
+  'contact/',
+  'equipe/',
+  'equipe/christine-rizzo/',
+  'honoraires/',
+  'services/employeurs/',
+  'services/travailleurs/',
+  'services/europeennes/',
+];
+
+test.describe('Firm name (#28)', () => {
+  for (const lang of languages) {
+    test(`/${lang}/ page titles carry the firm name once`, async ({ page }) => {
+      for (const path of pagesWithTitles) {
+        await page.goto(`${BASE_URL}/${lang}/${path}`);
+        const title = await page.title();
+        expect(title.split(firmName).length - 1, `${path}: "${title}"`).toBe(1);
+        expect(title, path).not.toContain('Christine Rizzo & Stephanie Michiels');
+        // The firm is four lawyers, not the two founders' feminine plural.
+        expect(title, path).not.toMatch(/Avocates|Avvocate/);
+      }
+    });
+  }
+
+  test('the JSON-LD firm and llms.txt are named after the firm', async ({ page, request }) => {
+    await page.goto(`${BASE_URL}/en/`);
+    const firm = (await jsonLdGraph(page)).find((node) => node['@type'] === 'LegalService');
+    expect(firm.name).toBe(firmName);
+    expect(firm.description).not.toContain('Christine Rizzo & Stephanie Michiels');
+
+    const body = await (await request.get(`${BASE_URL}/llms.txt`)).text();
+    expect(body.split('\n')[0]).toBe(`# ${firmName}`);
+  });
+
+  for (const path of ['equipe/', 'contact/']) {
+    test(`/${path} meta description follows the page language`, async ({ page }) => {
+      const descriptionOn = async (lang: string) => {
+        await page.goto(`${BASE_URL}/${lang}/${path}`);
+        return page.locator('meta[name="description"]').getAttribute('content');
+      };
+      const reference = await descriptionOn(DEFAULT_LOCALE);
+      for (const lang of languages.filter((lang) => lang !== DEFAULT_LOCALE)) {
+        expect(await descriptionOn(lang), lang).not.toBe(reference);
+      }
+    });
+  }
+});

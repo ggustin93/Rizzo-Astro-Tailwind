@@ -1,4 +1,6 @@
 fr:
+  seo:
+    description: "Rencontrez l'équipe de Rizzo & Michiels : quatre avocats du Barreau de Bruxelles en droit du travail belge et droit de la fonction publique européenne."
   lawyers:
     - careerPath:
         - year: "2026"
@@ -275,6 +277,8 @@ fr:
         connaissance du néerlandais.
       id: romain-archalaus
 en:
+  seo:
+    description: "Meet the Rizzo & Michiels team: four Brussels Bar lawyers in Belgian employment law and EU civil service law, for employers, employees and EU staff."
   lawyers:
     - careerPath:
         - year: "2026"
@@ -550,6 +554,8 @@ en:
       languages: Romain works in French and English and also has a knowledge of Dutch.
       id: romain-archalaus
 it:
+  seo:
+    description: "Conosci il team di Rizzo & Michiels: quattro avvocati del Foro di Bruxelles in diritto del lavoro belga e diritto della funzione pubblica europea."
   lawyers:
     - careerPath:
         - year: "2026"
@@ -839,6 +845,8 @@ it:
         nederlandese.
       id: romain-archalaus
 nl:
+  seo:
+    description: "Maak kennis met het team van Rizzo & Michiels: vier advocaten aan de Brusselse balie, gespecialiseerd in Belgisch arbeidsrecht en Europees ambtenarenrecht."
   lawyers:
     - careerPath:
         - year: "2026"
