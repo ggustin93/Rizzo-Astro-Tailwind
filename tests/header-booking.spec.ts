@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { BASE_URL, bookableLawyers, languages } from './helpers';
 
 // #26: « Prendre rendez-vous » replaces « Nous contacter », mauve outlined.
-const bookLabels = { fr: 'Prendre rendez-vous', en: 'Book an appointment', it: 'Prenota un appuntamento', nl: 'Afspraak maken' };
+const bookLabels = { fr: 'Prendre rendez-vous', en: 'Book an appointment', it: 'Prendi appuntamento', nl: 'Afspraak maken' };
 const mauve = 'rgb(83, 89, 154)';
 
 // Outlined, not filled: mauve text and border on a transparent background.
@@ -39,7 +39,7 @@ test.describe('Header appointment dropdown — desktop', () => {
     await page.mouse.move(0, 0);
     await page.keyboard.press('Tab');
     await cta.focus();
-    await expect(cta).not.toHaveCSS('outline-style', 'none');
+    await expect(cta).toHaveCSS('outline-color', mauve);
   });
 
   test('lists one booking row per lawyer with a calendar and no contact form', async ({ page }) => {
