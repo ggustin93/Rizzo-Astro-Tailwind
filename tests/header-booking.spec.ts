@@ -12,7 +12,7 @@ test.describe('Header appointment dropdown — desktop', () => {
   const trigger = (page) => page.locator('header a[href="/fr/contact"]').first();
   const menu = (page) => page.locator('#header-booking-desktop');
 
-  test('lists one booking row per lawyer with a calendar, plus the contact form', async ({ page }) => {
+  test('lists one booking row per lawyer with a calendar and no contact form', async ({ page }) => {
     await page.goto(`${BASE_URL}/fr/`);
     await trigger(page).hover();
 
@@ -23,10 +23,8 @@ test.describe('Header appointment dropdown — desktop', () => {
       await expect(row).toContainText(lawyer.name);
     }
 
-    // Last item is the contact form, so writing stays possible.
-    const formLink = menu(page).locator('a[href="/fr/contact"]');
-    await expect(formLink).toHaveCount(1);
-    await expect(formLink).toBeVisible();
+    // #25: the form is gone, so the menu holds only the calendars.
+    await expect(menu(page).locator('a')).toHaveCount(0);
   });
 
   test('never renders a booking row without a valid cal.com URL', async ({ page }) => {
@@ -85,7 +83,7 @@ test.describe('Header appointment dropdown — mobile', () => {
     for (const lawyer of bookableLawyers) {
       await expect(menu.locator(`[data-cal-link*="${lawyer.calSlug}"]`)).toBeVisible();
     }
-    await expect(menu.locator('a.mobile-submenu-link[href="/fr/contact"]')).toBeVisible();
+    await expect(menu.locator('a.mobile-submenu-link')).toHaveCount(0);
   });
 
   test('keeps the contact CTA button next to the booking rows', async ({ page }) => {

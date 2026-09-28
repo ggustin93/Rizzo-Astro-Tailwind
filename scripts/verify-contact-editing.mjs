@@ -16,7 +16,6 @@ try {
   const arnaud = config.lawyers.find(member => member.id === 'arnaud-vanderhoeven-jacobs');
   arnaud.phone = '+32 498 79 00 00';
   arnaud.calendarLink = '';
-  config.showContactForm = false;
   config.contactIllustration = '/assets/images/team-placeholder.svg';
   ui.fr.cta.actions.find(action => action.type === 'email').label = 'Écrivez au cabinet — recette';
   ui.nl.cta.actions.find(action => action.type === 'email').label = 'Schrijf het kantoor — controle';

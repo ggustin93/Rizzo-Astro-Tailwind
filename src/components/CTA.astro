@@ -1,6 +1,6 @@
 ---
 import { Picture } from 'astro:assets';
-import { MessageCircle, Mail, Calendar, Phone, ArrowUpRight, ChevronDown } from 'astro-feather-icons2';
+import { Mail, Calendar, Phone, ArrowUpRight, ChevronDown } from 'astro-feather-icons2';
 import { getEntry } from 'astro:content';
 import { bookableLawyers, calEmbedTarget } from '../utils/calendar.js';
 import { localeFromPath } from '../config/locales';
@@ -11,8 +11,7 @@ const entry = await getEntry('config', 'site-config');
 if (!entry) throw new Error('Missing site configuration');
 const config = entry.data;
 const t = (await getUiTranslations(lang)).cta;
-const actionIcons = { message: MessageCircle, email: Mail, appointment: Calendar, phone: Phone };
-const actions = t.actions.filter(action => action.type !== 'message' || config.showContactForm);
+const actionIcons = { email: Mail, appointment: Calendar, phone: Phone };
 ---
 
 <div class="full-bleed bg-employeur rounded-lg overflow-hidden">
@@ -21,17 +20,17 @@ const actions = t.actions.filter(action => action.type !== 'message' || config.s
       <div class="contact-content">
         <h2 class="contact-heading">{t.title}</h2>
         <div class="contact-options">
-        {actions.map(action => {
+        {t.actions.map(action => {
           const ActionIcon = actionIcons[action.type];
           return (
           <div class="min-w-0">
-            {['message', 'email'].includes(action.type) ? (
-              <a class="contact-action contact-card" href={action.type === 'message' ? `/${lang}/contact/#contact-form` : `mailto:${config.cabinetEmail}`}>
+            {action.type === 'email' ? (
+              <a class="contact-action contact-card" href={`mailto:${config.cabinetEmail}`}>
                 <span class="action-icon"><ActionIcon aria-hidden="true" title="" /></span>
                 <span class="action-copy">
                   <span class="action-title">{action.label}</span>
 
-                  {action.type === 'email' && <span class="action-email">{config.cabinetEmail}</span>}
+                  <span class="action-email">{config.cabinetEmail}</span>
                 </span>
                 <ArrowUpRight aria-hidden="true" title="" class="action-indicator" />
               </a>
@@ -75,7 +74,7 @@ const actions = t.actions.filter(action => action.type !== 'message' || config.s
 </div>
 <style>
   .contact-banner { padding: clamp(1.5rem, 4vw, 3.5rem) clamp(1rem, 4vw, 3rem); }
-  .contact-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; width: 100%; align-items: start; }
+  .contact-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; width: 100%; align-items: start; }
   .contact-card { background: #fffdfa; border: 1px solid rgba(255,255,255,.55); border-radius: 14px; color: #363b70; box-shadow: 0 2px 4px rgba(27,31,66,.04); }
   .contact-action { display: grid; grid-template-columns: 42px minmax(0, 1fr) 18px; align-items: center; gap: .85rem; padding: 1rem 1.2rem; min-height: 90px; cursor: pointer; text-decoration: none; transition: background-color .18s, border-color .18s; }
   .contact-action:hover { background: #f5f3fc; border-color: #dadcf4; }

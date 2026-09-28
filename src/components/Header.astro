@@ -90,7 +90,7 @@ const rightNavLinks = showArticlesSection ?
 const contactButtonText = navConfig.header.contactButtonText;
 
 // Libellés du menu de réservation, éditables dans le CMS (ui-translations).
-const { bookWith: bookWithLabel, contactForm: contactFormLabel } = uiTranslations.header;
+const { bookWith: bookWithLabel } = uiTranslations.header;
 ---
 
 <style>
@@ -292,12 +292,6 @@ const { bookWith: bookWithLabel, contactForm: contactFormLabel } = uiTranslation
                   {lawyer.name}
                 </button>
               ))}
-              {siteConfigEntry?.data.showContactForm && <a
-                href={`/${currentLang}/contact`}
-                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 border-t border-gray-100 mt-1 pt-2"
-              >
-                {contactFormLabel}
-              </a>}
             </div>
           </div>
 
@@ -371,12 +365,6 @@ const { bookWith: bookWithLabel, contactForm: contactFormLabel } = uiTranslation
                 {lawyer.name}
               </button>
             ))}
-            {siteConfigEntry?.data.showContactForm && <a
-              href={`/${currentLang}/contact`}
-              class={`mobile-submenu-link block py-2 text-black text-sm font-light transition-colors duration-300 ${isActivePage(`/${currentLang}/contact`) ? 'active' : ''}`}
-            >
-              {contactFormLabel}
-            </a>}
           </div>
         </div>
         

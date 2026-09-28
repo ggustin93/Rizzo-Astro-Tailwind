@@ -42,7 +42,6 @@ const configCollection = defineCollection({
       defaultSocialImage: z.string(),
     }),
     sectionsVisibility: z.boolean(),
-    showContactForm: z.boolean().optional().default(true),
     allowIndexing: z.boolean(),
     team: z.array(z.object({
       id: z.string().min(1),
@@ -143,41 +142,16 @@ const uiTranslationsSchema = z.object({
   noArticles: z.string(),
   allCategories: z.string(),
   header: z.object({
-    bookWith: z.string(),
-    contactForm: z.string()
+    bookWith: z.string()
   }),
   cta: z.object({
     title: z.string(),
     illustrationAlt: z.string().optional().default(''),
     contactLabel: z.string().min(1),
     actions: z.array(z.object({
-      type: z.enum(['message', 'email', 'appointment', 'phone']),
+      type: z.enum(['email', 'appointment', 'phone']),
       label: z.string().min(1),
-    })).length(4).refine(actions => new Set(actions.map(action => action.type)).size === 4, 'Chaque action doit apparaître une seule fois'),
-  }),
-  contactForm: z.object({
-    formTitle: z.string(),
-    nameLabel: z.string(),
-    namePlaceholder: z.string(),
-    emailLabel: z.string(),
-    emailPlaceholder: z.string(),
-    phoneLabel: z.string(),
-    phonePlaceholder: z.string(),
-    subjectLabel: z.string(),
-    subjectPlaceholder: z.string(),
-    messageLabel: z.string(),
-    messagePlaceholder: z.string(),
-    submitButton: z.string(),
-    sending: z.string(),
-    errorMessage: z.string()
-  }),
-  contactSuccess: z.object({
-    title: z.string(),
-    heading: z.string(),
-    message: z.string(),
-    info: z.string(),
-    backToHome: z.string(),
-    backToContact: z.string()
+    })).length(3).refine(actions => new Set(actions.map(action => action.type)).size === 3, 'Chaque action doit apparaître une seule fois'),
   }),
   blog: z.object({
     seoTitle: z.string(),
