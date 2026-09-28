@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { languages } from './helpers';
 
 const phones = ['+32488404549', '+32498502901', '+32498797356', '+32495693191'];
-const labels = { fr: ['Appelez-nous', 'Rendez-vous', 'E-mail'], en: ['Call us', 'Appointment', 'Email'], it: ['Chiamateci', 'Appuntamento', 'E-mail'], nl: ['Bel ons', 'Afspraak', 'E-mail'] };
+const labels = { fr: ['Appelez-nous', 'Prendre rendez-vous', 'E-mail'], en: ['Call us', 'Book an appointment', 'Email'], it: ['Chiamateci', 'Prendi appuntamento', 'E-mail'], nl: ['Bel ons', 'Afspraak maken', 'E-mail'] };
 const documentWords = /document|pièce|stukken/i;
 
 // #25: no form anywhere, and the e-mail is labelled plainly, without inviting documents.

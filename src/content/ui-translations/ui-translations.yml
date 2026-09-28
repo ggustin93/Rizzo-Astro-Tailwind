@@ -19,7 +19,7 @@ fr:
       - type: email
         label: E-mail
       - type: appointment
-        label: Rendez-vous
+        label: Prendre rendez-vous
       - type: phone
         label: Appelez-nous
   blog:
@@ -63,7 +63,7 @@ en:
       - type: email
         label: Email
       - type: appointment
-        label: Appointment
+        label: Book an appointment
       - type: phone
         label: Call us
   blog:
@@ -107,7 +107,7 @@ it:
       - type: email
         label: E-mail
       - type: appointment
-        label: Appuntamento
+        label: Prendi appuntamento
       - type: phone
         label: Chiamateci
   blog:
@@ -151,7 +151,7 @@ nl:
       - type: email
         label: E-mail
       - type: appointment
-        label: Afspraak
+        label: Afspraak maken
       - type: phone
         label: Bel ons
   blog:

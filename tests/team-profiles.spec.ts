@@ -34,7 +34,7 @@ test.describe('Team profile routes', () => {
   // Issue #27: profiles get a booking link (WhatsApp was dropped), only for
   // members with a cal.com agenda. The exact URL is CMS-editable, so only its
   // shape is asserted.
-  const appointmentLabels = { fr: 'Rendez-vous', en: 'Appointment', it: 'Appuntamento', nl: 'Afspraak' };
+  const appointmentLabels = { fr: 'Prendre rendez-vous', en: 'Book an appointment', it: 'Prendi appuntamento', nl: 'Afspraak maken' };
   const agendas = [
     { slug: 'christine-rizzo', bookable: true },
     { slug: 'stephanie-michiels', bookable: true },
