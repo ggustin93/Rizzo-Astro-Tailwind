@@ -1,4 +1,14 @@
+import { readFileSync } from 'node:fs';
+import { load } from 'js-yaml';
+
 export { LOCALES as languages, DEFAULT_LOCALE } from '../src/config/locales';
+
+/** CMS content, so specs never hard-code copy the cabinet can edit. */
+export const content = (file: string): any => load(readFileSync(new URL(`../src/content/${file}`, import.meta.url), 'utf8'));
+
+/** Label of a contact action (email | appointment | phone) from ui-translations. */
+export const ctaLabel = (lang: string, type: string): string =>
+  content('ui-translations/ui-translations.yml')[lang].cta.actions.find((a) => a.type === type).label;
 
 export const BASE_URL = process.env.BASE_URL || 'http://localhost:4321';
 

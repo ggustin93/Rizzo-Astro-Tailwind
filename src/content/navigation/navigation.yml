@@ -131,7 +131,7 @@ it:
       - label: ONORARI
         url: /it/honoraires
         hasDropdown: false
-    contactButtonText: PRENDI APPUNTAMENTO
+    contactButtonText: PRENDI UN APPUNTAMENTO
   footer:
     legalLinks:
       - label: Note legali
