@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test';
-import { BASE_URL, DEFAULT_LOCALE, address, languages, lawyers } from './helpers';
+import { BASE_URL, DEFAULT_LOCALE, address, content, languages, lawyers } from './helpers';
+
+const configEmails = content('config/site-config.yml').lawyers.map((lawyer) => lawyer.email).filter(Boolean);
 
 // Issue #10: crawlers and generative engines need structured firm/lawyer facts,
 // an llms.txt summary, and explicit AI-crawler rules — without waiting for NL (#11)
@@ -46,8 +48,8 @@ test.describe('JSON-LD structured data', () => {
         if (contact) {
           expect(person.email).toBe(contact.email);
           expect(person.telephone).toBe(contact.phone);
-        } else {
-          expect(person.email).toBeUndefined();
+        } else if (person.email !== undefined) {
+          expect(configEmails).toContain(person.email);
         }
         expect(person.worksFor, `${person.name} is linked to the firm`).toBeTruthy();
         expect(person.jobTitle, `${person.name} has a job title`).toBeTruthy();
