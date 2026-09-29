@@ -1,9 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getDataEntryById } from 'astro:content';
+import { getDataEntryById, getEntry } from 'astro:content';
 import { FileText, Briefcase, User, Shield, HelpCircle, YouTube, Users as UsersIcon, Calendar, Clock, Check, DollarSign, Award, Info } from 'astro-feather-icons2';
 import { localePaths } from '../../config/locales';
 import { marked } from 'marked';
+import { ChevronDown } from 'astro-feather-icons2';
+import { bookableLawyers, calEmbedTarget } from '../../utils/calendar.js';
+import { getUiTranslations } from '../../utils/ui-translations';
 
 export const prerender = true;
 
@@ -17,6 +20,12 @@ if (!honoraires) {
   throw new Error("Honoraires entry not found! Make sure you have a `honoraires.yml` file in `src/content/honoraires`.");
 }
 const content = honoraires.data[lang as keyof typeof honoraires.data];
+
+// RM-20: book straight from « Besoin d'un premier avis ? », same agendas as the header.
+const siteConfig = await getEntry('config', 'site-config');
+const lawyersToBook = bookableLawyers(siteConfig?.data.lawyers);
+const ui = await getUiTranslations(lang);
+const bookLabel = ui.cta.actions.find(action => action.type === 'appointment')?.label;
 
 const iconMap = {
   FileText,
@@ -64,6 +73,29 @@ function getYouTubeID(url: string) {
               <li class="leading-relaxed">{point}</li>
             ))}
           </ul>
+        )}
+        {lawyersToBook.length > 0 && (
+          <details class="booking mt-4 md:mt-6">
+            <summary class="inline-flex items-center gap-2 rounded-lg uppercase text-sm font-medium border border-employeur !text-employeur hover:bg-employeur hover:!text-white px-4 py-2 md:px-6 md:py-3 cursor-pointer transition duration-300">
+              {bookLabel}
+              <ChevronDown aria-hidden="true" title="" class="w-4 h-4" />
+            </summary>
+            <ul class="mt-2 w-64 max-w-full bg-white shadow-lg rounded-sm py-2">
+              {lawyersToBook.map(lawyer => (
+                <li>
+                  <a
+                    href={lawyer.calendarLink}
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    data-cal-link={calEmbedTarget(lawyer.calendarLink)}
+                    data-cal-config='{"layout":"month_view"}'
+                    aria-label={`${ui.header.bookWith} ${lawyer.name}`}
+                  >
+                    {lawyer.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </details>
         )}
       </div>
     </section>
@@ -203,6 +235,9 @@ function getYouTubeID(url: string) {
 </BaseLayout>
 
 <style>
+.booking summary { list-style: none; }
+.booking summary::-webkit-details-marker { display: none; }
+.booking[open] summary :global(svg) { transform: rotate(180deg); }
 .text-employeur {
   color: #00558B;
 }
