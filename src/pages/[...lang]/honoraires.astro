@@ -1,10 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getDataEntryById, getEntry } from 'astro:content';
-import { FileText, Briefcase, User, Shield, HelpCircle, YouTube, Users as UsersIcon, Calendar, Clock, Check, DollarSign, Award, Info } from 'astro-feather-icons2';
+import { FileText, Briefcase, User, Shield, HelpCircle, YouTube, Users as UsersIcon, Calendar, Clock, Check, DollarSign, Award, Info, ChevronDown } from 'astro-feather-icons2';
 import { localePaths } from '../../config/locales';
-import { marked } from 'marked';
-import { ChevronDown } from 'astro-feather-icons2';
+import { Marked } from 'marked';
 import { bookableLawyers, calEmbedTarget } from '../../utils/calendar.js';
 import { getUiTranslations } from '../../utils/ui-translations';
 
@@ -20,6 +19,16 @@ if (!honoraires) {
   throw new Error("Honoraires entry not found! Make sure you have a `honoraires.yml` file in `src/content/honoraires`.");
 }
 const content = honoraires.data[lang as keyof typeof honoraires.data];
+
+// CMS text is markdown (RM-18). External links keep opening in a new tab.
+const md = new Marked({
+  renderer: {
+    link({ href, tokens }) {
+      if (!/^https?:\/\//.test(href)) return false;
+      return `<a href="${href.replace(/"/g, '&quot;')}" target="_blank" rel="noopener noreferrer">${this.parser.parseInline(tokens)}</a>`;
+    },
+  },
+});
 
 // RM-20: book straight from « Besoin d'un premier avis ? », same agendas as the header.
 const siteConfig = await getEntry('config', 'site-config');
@@ -58,7 +67,7 @@ function getYouTubeID(url: string) {
     <h1 class="text-3xl md:text-4xl font-light mb-3 md:mb-4 text-center text-black">{content.title}</h1>
     <p class="text-lg md:text-xl mb-8 md:mb-12 text-center text-dark-gray">{content.subtitle}</p>
 
-    {content.transparence.points.length > 0 && (
+    {(content.transparence.points.length > 0 || lawyersToBook.length > 0) && (
     <section class="mb-8 md:mb-12">
       <h2 class="text-xl md:text-2xl font-light mb-4 md:mb-6 text-black flex items-center">
         <FileText class="w-5 h-5 md:w-6 md:h-6 mr-2 text-employeur" />
@@ -66,11 +75,11 @@ function getYouTubeID(url: string) {
       </h2>
       <div class="bg-gray-50 p-4 md:p-8 rounded-lg">
         {content.transparence.points.length === 1 ? (
-          <p class="text-dark-gray text-sm md:text-base leading-relaxed">{content.transparence.points[0]}</p>
-        ) : (
+          <p class="text-dark-gray text-sm md:text-base leading-relaxed" set:html={md.parseInline(content.transparence.points[0])} />
+        ) : content.transparence.points.length > 1 && (
           <ul class="list-disc ml-4 md:ml-6 space-y-2 md:space-y-3 text-dark-gray text-sm md:text-base">
             {content.transparence.points.map((point: string) => (
-              <li class="leading-relaxed">{point}</li>
+              <li class="leading-relaxed" set:html={md.parseInline(point)} />
             ))}
           </ul>
         )}
@@ -107,7 +116,7 @@ function getYouTubeID(url: string) {
         {content.forfaits.title}
       </h2>
       <div class="bg-gray-50 p-4 md:p-8 rounded-lg">
-        <div class="mb-6 md:mb-8 text-dark-gray text-sm md:text-base prose max-w-none" set:html={marked.parse(content.forfaits.intro)} />
+        <div class="mb-6 md:mb-8 text-dark-gray text-sm md:text-base prose max-w-none" set:html={md.parse(content.forfaits.intro)} />
         
         {content.forfaits.exemples.map((exemple: any) => (
           <div class="bg-white rounded-lg overflow-hidden shadow-sm mb-6 md:mb-8">
@@ -170,7 +179,7 @@ function getYouTubeID(url: string) {
       <div class="bg-gray-50 p-4 md:p-8 rounded-lg">
         {/* Display the full content from the markdown field */}
         {content.previsibilite.full_content && (
-          <div class="text-dark-gray text-sm md:text-base prose max-w-none" set:html={marked.parse(content.previsibilite.full_content)} />
+          <div class="text-dark-gray text-sm md:text-base prose max-w-none" set:html={md.parse(content.previsibilite.full_content)} />
         )}
       </div>
     </section>
@@ -184,7 +193,7 @@ function getYouTubeID(url: string) {
       <div class="bg-gray-50 p-4 md:p-8 rounded-lg">
         <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-center">
           <div class="w-full md:w-1/2">
-            <p class="text-sm md:text-base text-dark-gray leading-relaxed">{content.assurance.content}</p>
+            <div class="text-dark-gray text-sm md:text-base prose max-w-none" set:html={md.parse(content.assurance.content)} />
           </div>
           
           <div class="w-full md:w-1/2 mt-4 md:mt-0">
@@ -227,7 +236,7 @@ function getYouTubeID(url: string) {
       </h2>
       
       <div class="bg-gray-50 p-4 md:p-8 rounded-lg">
-        <div class="text-dark-gray text-sm md:text-base prose max-w-none" set:html={marked.parse(content.aideJuridique.content)} />
+        <div class="text-dark-gray text-sm md:text-base prose max-w-none" set:html={md.parse(content.aideJuridique.content)} />
       </div>
     </section>
   </main>
@@ -240,15 +249,5 @@ function getYouTubeID(url: string) {
 .booking[open] summary :global(svg) { transform: rotate(180deg); }
 .text-employeur {
   color: #00558B;
-}
-
-.text-employeur-dark {
-  color: #003d6b;
-}
-
-/* Animation pour les liens */
-a.text-employeur {
-  position: relative;
-  text-decoration-thickness: 1px;
 }
 </style>
