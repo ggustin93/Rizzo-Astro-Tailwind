@@ -1,9 +1,7 @@
 import { test, expect } from '@playwright/test';
-import { readFileSync } from 'node:fs';
-import { load } from 'js-yaml';
+import { content } from './helpers';
 
-const siteConfig = load(readFileSync(new URL('../src/content/config/site-config.yml', import.meta.url), 'utf8'));
-const romainEmail = siteConfig.lawyers.find(lawyer => lawyer.id === 'romain-archalaus').email;
+const romainEmail = content('config/site-config.yml').lawyers.find(lawyer => lawyer.id === 'romain-archalaus').email;
 
 test('Romain can be called from his profile without a booking control', async ({ page }) => {
   await page.goto('/fr/equipe/romain-archalaus/');
