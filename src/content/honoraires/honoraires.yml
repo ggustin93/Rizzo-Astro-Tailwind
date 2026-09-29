@@ -88,6 +88,8 @@ fr:
   video:
     title: En savoir plus
     url: https://youtu.be/Y-SKuT-XqGk
+  seo:
+    description: "Tarif horaire ou forfait, sans frais de dossier. Premier rendez-vous à 275 € TVAC. Rizzo & Michiels vous explique clairement le coût de notre intervention avant tout engagement."
 en:
   previsibilite:
     title: What our fees cover
@@ -169,6 +171,8 @@ en:
   video:
     title: Learn more
     url: https://youtu.be/Y-SKuT-XqGk
+  seo:
+    description: "Hourly rate or fixed fee, with no file-opening costs. First meeting €275, VAT included. Rizzo & Michiels clearly explains the cost of our work before any commitment."
 it:
   previsibilite:
     title: Cosa coprono i nostri onorari
@@ -255,6 +259,8 @@ it:
   video:
     title: Per saperne di più
     url: https://youtu.be/Y-SKuT-XqGk
+  seo:
+    description: "Tariffa oraria o forfait, senza spese di apertura pratica. Primo appuntamento a 275 € IVA inclusa. Rizzo & Michiels vi spiega chiaramente il costo del nostro intervento prima di qualsiasi impegno."
 nl:
   previsibilite:
     title: Wat onze erelonen dekken
@@ -341,3 +347,5 @@ nl:
   video:
     title: Meer weten
     url: https://youtu.be/Y-SKuT-XqGk
+  seo:
+    description: "Uurtarief of forfait, zonder dossierkosten. Eerste afspraak aan 275 €, btw inbegrepen. Rizzo & Michiels legt u duidelijk uit wat onze tussenkomst kost, nog vóór u zich tot iets verbindt."

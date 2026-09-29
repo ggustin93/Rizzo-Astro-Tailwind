@@ -1,4 +1,9 @@
 import { test, expect } from '@playwright/test';
+import { readFileSync } from 'node:fs';
+import { load } from 'js-yaml';
+
+const siteConfig = load(readFileSync(new URL('../src/content/config/site-config.yml', import.meta.url), 'utf8'));
+const romainEmail = siteConfig.lawyers.find(lawyer => lawyer.id === 'romain-archalaus').email;
 
 test('Romain can be called from his profile without a booking control', async ({ page }) => {
   await page.goto('/fr/equipe/romain-archalaus/');
@@ -15,7 +20,7 @@ for (const lang of ['fr', 'en', 'it', 'nl']) {
     await expect(main.locator('a[href="https://cal.com/arnaudvanderhoeven"]')).toBeVisible();
     const romain = main.locator('.team-entry').filter({ has: page.locator(`a[href="/${lang}/equipe/romain-archalaus/"]`) });
     await expect(romain.locator('a[href="tel:+32495693191"]')).toBeVisible();
-    await expect(romain.locator('a[href^="mailto:"]')).toHaveCount(0);
+    await expect(romain.locator('a[href^="mailto:"]')).toHaveCount(romainEmail ? 1 : 0);
     await expect(romain.locator('[data-cal-link]')).toHaveCount(0);
   });
 }

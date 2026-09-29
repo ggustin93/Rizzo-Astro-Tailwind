@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { BASE_URL, languages, lawyers as profiles } from './helpers';
+import { BASE_URL, ctaLabel, languages, lawyers as profiles } from './helpers';
 
 // Issue #8: profile pages come from one slug-driven route, but the public URLs
 // visitors and search engines already know must not move.
@@ -34,7 +34,6 @@ test.describe('Team profile routes', () => {
   // Issue #27: profiles get a booking link (WhatsApp was dropped), only for
   // members with a cal.com agenda. The exact URL is CMS-editable, so only its
   // shape is asserted.
-  const appointmentLabels = { fr: 'Prendre rendez-vous', en: 'Book an appointment', it: 'Prendi appuntamento', nl: 'Afspraak maken' };
   const agendas = [
     { slug: 'christine-rizzo', bookable: true },
     { slug: 'stephanie-michiels', bookable: true },
@@ -53,7 +52,7 @@ test.describe('Team profile routes', () => {
         await expect(booking).toHaveCount(1);
         await expect(booking).toHaveAttribute('data-cal-link', /\S/);
         await expect(booking).toHaveAttribute('href', /^https:\/\/cal\.com\/\S/);
-        await expect(booking).toContainText(appointmentLabels[lang]);
+        await expect(booking).toContainText(ctaLabel(lang, 'appointment'));
       });
     }
   }

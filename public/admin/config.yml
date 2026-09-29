@@ -506,6 +506,12 @@ collections:
                 fields:
                   - {label: "Titre", name: "title", widget: "string", default: "Aide juridique"}
                   - {label: "Contenu", name: "content", widget: "markdown"}
+              - label: "SEO"
+                name: "seo"
+                widget: "object"
+                required: false
+                fields:
+                  - {label: "Description SEO", name: "description", widget: "text", required: false, pattern: ['^.{0,320}$', "La description idéale fait 155-160 caractères (max 320)"], hint: "Texte affiché sous le titre dans Google. Vide : le sous-titre de la page est utilisé."}
           - label: "English"
             name: "en"
             widget: "object"

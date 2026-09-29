@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
-import { BASE_URL, bookableLawyers, languages } from './helpers';
+import { BASE_URL, bookableLawyers, content, languages } from './helpers';
 
 // #26: « Prendre rendez-vous » replaces « Nous contacter », mauve outlined.
-const bookLabels = { fr: 'Prendre rendez-vous', en: 'Book an appointment', it: 'Prendi appuntamento', nl: 'Afspraak maken' };
+const bookLabel = (lang) => content('navigation/navigation.yml')[lang].header.contactButtonText;
 const mauve = 'rgb(83, 89, 154)';
 
 // Outlined, not filled: mauve text and border on a transparent background.
@@ -26,7 +26,7 @@ test.describe('Header appointment dropdown — desktop', () => {
   for (const lang of languages) {
     test(`${lang}: the header CTA books an appointment`, async ({ page }) => {
       await page.goto(`${BASE_URL}/${lang}/`);
-      await expect(page.locator(`header a[href="/${lang}/contact"]`).first()).toHaveText(new RegExp(bookLabels[lang], 'i'));
+      await expect(page.locator(`header a[href="/${lang}/contact"]`).first()).toHaveText(new RegExp(bookLabel(lang), 'i'));
     });
   }
 
