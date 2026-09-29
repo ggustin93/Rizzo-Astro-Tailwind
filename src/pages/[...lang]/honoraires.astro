@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getDataEntryById } from 'astro:content';
 import { FileText, Briefcase, User, Shield, HelpCircle, YouTube, Users as UsersIcon, Calendar, Clock, Check, DollarSign, Award, Info } from 'astro-feather-icons2';
 import { localePaths } from '../../config/locales';
+import { marked } from 'marked';
 
 export const prerender = true;
 
@@ -39,19 +40,6 @@ function getYouTubeID(url: string) {
   return (match && match[2].length === 11) ? match[2] : null;
 }
 
-// Fonction pour convertir les liens Markdown en liens HTML
-function convertMarkdownLinks(text: string) {
-  // Format: [text](url)
-  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
-  return text.replace(linkRegex, '<a href="$2" class="text-employeur underline hover:text-employeur-dark" target="_blank" rel="noopener noreferrer">$1</a>');
-}
-
-// Prépare le contenu avec des sauts de ligne et des liens formatés
-function prepareContent(content: string) {
-  const withLinks = convertMarkdownLinks(content);
-  const withLineBreaks = withLinks.replace(/\n\n/g, '<br><br>');
-  return withLineBreaks;
-}
 ---
 
 <BaseLayout title={content.title} description={content.subtitle} lang={lang}>
@@ -87,7 +75,7 @@ function prepareContent(content: string) {
         {content.forfaits.title}
       </h2>
       <div class="bg-gray-50 p-4 md:p-8 rounded-lg">
-        <p class="mb-6 md:mb-8 leading-relaxed text-sm md:text-base text-dark-gray" set:html={prepareContent(content.forfaits.intro)} />
+        <div class="mb-6 md:mb-8 text-dark-gray text-sm md:text-base prose max-w-none" set:html={marked.parse(content.forfaits.intro)} />
         
         {content.forfaits.exemples.map((exemple: any) => (
           <div class="bg-white rounded-lg overflow-hidden shadow-sm mb-6 md:mb-8">
@@ -150,7 +138,7 @@ function prepareContent(content: string) {
       <div class="bg-gray-50 p-4 md:p-8 rounded-lg">
         {/* Display the full content from the markdown field */}
         {content.previsibilite.full_content && (
-          <div class="text-dark-gray text-sm md:text-base prose max-w-none" set:html={prepareContent(content.previsibilite.full_content)} />
+          <div class="text-dark-gray text-sm md:text-base prose max-w-none" set:html={marked.parse(content.previsibilite.full_content)} />
         )}
       </div>
     </section>
@@ -207,7 +195,7 @@ function prepareContent(content: string) {
       </h2>
       
       <div class="bg-gray-50 p-4 md:p-8 rounded-lg">
-        <div class="text-sm md:text-base text-dark-gray leading-relaxed" set:html={prepareContent(content.aideJuridique.content)} />
+        <div class="text-dark-gray text-sm md:text-base prose max-w-none" set:html={marked.parse(content.aideJuridique.content)} />
       </div>
     </section>
   </main>
