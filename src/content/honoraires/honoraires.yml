@@ -40,11 +40,11 @@ fr:
   transparence:
     title: Besoin d'un premier avis ?
     points:
-      - Réservez directement votre créneau via notre calendrier en ligne.
-        N'hésitez pas à apporter tous les documents que vous jugez utiles
-        (contrat de travail, correspondances, fiches de paie, etc.) pour que
-        nous puissions analyser votre situation concrètement dès ce premier
-        échange.
+      - Le premier rendez-vous est facturé 275€ tvac. Réservez directement votre
+        créneau via notre calendrier en ligne. N'hésitez pas à apporter tous les
+        documents que vous jugez utiles (contrat de travail, correspondances,
+        fiches de paie, etc.) pour que nous puissions analyser votre situation
+        concrètement dès ce premier échange.
   assurance:
     title: Pensez à l'assurance protection juridique
     content: >
@@ -80,7 +80,7 @@ fr:
 
 
       Si vous remplissez les conditions pour bénéficier de l'aide juridique de 2ème ligne mais que vous souhaitez y renoncer et solliciter notre intervention en dehors de ce cadre, un formulaire de renonciation devra nous être remis signé.
-  subtitle: une relation de confiance commence par une tarification claire. Voici
+  subtitle: Une relation de confiance commence par une tarification claire. Voici
     comment nous travaillons.
   title: Honoraires
   video:
@@ -88,32 +88,48 @@ fr:
     url: https://youtu.be/Y-SKuT-XqGk
 en:
   previsibilite:
-    title: "What our fees cover"
-    full_content: |-
-      Our fees cover all the work carried out on your matter. Some of it is directly visible: meetings, court hearings, drafting submissions or letters. Other work, just as essential, is less visible: in-depth study of the file, legal research, exchanges with the opposing parties, administrative formalities, preparing documents, waiting time at hearings.
+    title: What our fees cover
+    full_content: >-
+      Our fees cover all the work carried out on your matter. Some of it is
+      directly visible: meetings, court hearings, drafting submissions or
+      letters. Other work, just as essential, is less visible: in-depth study of
+      the file, legal research, exchanges with the opposing parties,
+      administrative formalities, preparing documents, waiting time at hearings.
+
 
       To keep your costs under control, we invite you to send complete and well-organised documents, to group your questions together where possible, and to respond promptly to our requests. Smooth collaboration speeds up the handling of your matter and optimises billable time.
 
+
       We use artificial intelligence tools (in particular JEF, a tool designed for Belgian lawyers, as well as other tools such as Claude or ChatGPT, always with anonymised data) to work more efficiently, without ever delegating legal reasoning.
+
 
       In practice, this means greater responsiveness, shorter turnaround times and better value for money for you. Our legal expertise remains at the heart of every decision: AI is a tool, a lawyer's judgement is irreplaceable.
 
+
       On your side, a short and focused message is always the most effective, whether you write it yourself or with the help of an AI tool. Please check that the points you raise have not already been answered before sending: this speeds up the handling of your matter and keeps your fees under control.
   forfaits:
-    title: "Transparency & predictability"
-    intro: |-
-      The way our fees are calculated is communicated to you in writing before we begin working on your matter.
+    title: Transparency & predictability
+    intro: >-
+      The way our fees are calculated is communicated to you in writing before
+      we begin working on your matter.
+
 
       We work either at an hourly rate, billed monthly as the work progresses, or, in certain cases, at a fixed "all-inclusive" fee, plus a success fee where applicable. There are no file-opening or office fees. A breakdown of the work carried out is attached to each invoice.
 
+
       We regularly request advance payments during the matter, to ensure transparent financial follow-up and to avoid large amounts building up at the end of the engagement.
+
 
       Costs related to the involvement of third parties (bailiffs, experts, translators) and court costs are re-invoiced at cost or are payable directly to the third party concerned.
     exemples: []
   transparence:
-    title: "Need a first opinion?"
+    title: Need a first opinion?
     points:
-      - "Book your slot directly via our online calendar. Feel free to bring any documents you consider useful (employment contract, correspondence, payslips, etc.) so that we can analyse your situation in concrete terms from this first meeting."
+      - Book your slot directly via our online calendar. The first meeting is
+        billed at €275, VAT included. Feel free to bring any documents you
+        consider useful (employment contract, correspondence, payslips, etc.) so
+        that we can analyse your situation in concrete terms from this first
+        meeting.
   assurance:
     title: Consider legal protection insurance
     content: >-
@@ -146,39 +162,57 @@ en:
 
 
       For individuals meeting the conditions for second line legal aid, you may request our assistance outside of this framework and a signed waiver form must be submitted to us.
-  subtitle: "A relationship of trust starts with clear pricing. Here is how we work."
+  subtitle: A relationship of trust starts with clear pricing. Here is how we work.
   title: Fees
   video:
     title: Learn more
     url: https://youtu.be/Y-SKuT-XqGk
 it:
   previsibilite:
-    title: "Cosa coprono i nostri onorari"
-    full_content: |-
-      I nostri onorari remunerano l'insieme delle prestazioni svolte nell'ambito della vostra pratica. Alcune sono direttamente visibili: le riunioni, le udienze, la redazione di memorie o di lettere. Altre, altrettanto indispensabili, lo sono meno: lo studio approfondito della pratica, le ricerche giuridiche, gli scambi con le controparti, le pratiche amministrative, la preparazione dei documenti, i tempi di attesa alle udienze.
+    title: Cosa coprono i nostri onorari
+    full_content: >-
+      I nostri onorari remunerano l'insieme delle prestazioni svolte nell'ambito
+      della vostra pratica. Alcune sono direttamente visibili: le riunioni, le
+      udienze, la redazione di memorie o di lettere. Altre, altrettanto
+      indispensabili, lo sono meno: lo studio approfondito della pratica, le
+      ricerche giuridiche, gli scambi con le controparti, le pratiche
+      amministrative, la preparazione dei documenti, i tempi di attesa alle
+      udienze.
+
 
       Per contenere i costi, vi invitiamo a trasmetterci documenti completi e ordinati, a raggruppare per quanto possibile le vostre domande e a rispondere rapidamente alle nostre richieste. Una collaborazione fluida accelera la gestione della vostra pratica e ottimizza il tempo fatturabile.
 
+
       Utilizziamo strumenti di intelligenza artificiale (in particolare JEF, strumento specializzato per gli avvocati belgi, oltre ad altri strumenti come Claude o ChatGPT, sempre in forma anonimizzata) per guadagnare in efficienza senza mai delegare il ragionamento giuridico.
+
 
       In concreto, ciò si traduce in una maggiore reattività, tempi di gestione ridotti e un miglior rapporto qualità-prezzo per voi. La nostra competenza giuridica resta al centro di ogni decisione: l'IA è uno strumento, il giudizio dell'avvocato è insostituibile.
 
+
       Da parte vostra, un messaggio breve e mirato resta sempre il più efficace, che sia scritto da voi o con l'aiuto di uno strumento di IA. Prima di inviarlo, verificate che i punti sollevati non abbiano già ricevuto risposta: ciò accelera la gestione della vostra pratica e contiene i vostri onorari.
   forfaits:
-    title: "Trasparenza e prevedibilità"
-    intro: |-
-      Le modalità di calcolo dei nostri onorari vi vengono comunicate per iscritto prima dell'inizio del nostro intervento.
+    title: Trasparenza e prevedibilità
+    intro: >-
+      Le modalità di calcolo dei nostri onorari vi vengono comunicate per
+      iscritto prima dell'inizio del nostro intervento.
+
 
       Lavoriamo a tariffa oraria, fatturata mensilmente man mano che le prestazioni vengono svolte, oppure, in alcuni casi, a forfait fisso "tutto compreso", eventualmente maggiorato di un onorario di risultato. Non ci sono spese di apertura pratica né spese d'ufficio. A ogni fattura è allegato il dettaglio delle prestazioni svolte.
 
+
       Nel corso della pratica chiediamo regolarmente degli acconti, per garantire un monitoraggio finanziario trasparente ed evitare l'accumulo di importi elevati alla fine dell'incarico.
+
 
       Le spese legate all'intervento di terzi (ufficiali giudiziari, periti, traduttori) e le spese di giustizia sono rifatturate al prezzo di costo o pagabili direttamente al terzo interessato.
     exemples: []
   transparence:
-    title: "Avete bisogno di un primo parere?"
+    title: Avete bisogno di un primo parere?
     points:
-      - "Prenotate direttamente il vostro appuntamento tramite il nostro calendario online. Non esitate a portare tutti i documenti che ritenete utili (contratto di lavoro, corrispondenza, buste paga, ecc.) affinché possiamo analizzare concretamente la vostra situazione fin da questo primo incontro."
+      - Prenotate direttamente il vostro appuntamento tramite il nostro
+        calendario online. Non esitate a portare tutti i documenti che ritenete
+        utili (contratto di lavoro, corrispondenza, buste paga, ecc.) affinché
+        possiamo analizzare concretamente la vostra situazione fin da questo
+        primo incontro.
   assurance:
     title: Pensate all'assicurazione di protezione giuridica
     content: >-
@@ -214,39 +248,56 @@ it:
 
 
       Se soddisfate le condizioni per beneficiare dell'assistenza legale di 2° livello ma desiderate rinunciarvi e richiedere il nostro intervento al di fuori di questo quadro, un modulo di rinuncia dovrà esserci consegnato firmato.
-  subtitle: "Un rapporto di fiducia inizia con tariffe chiare. Ecco come lavoriamo."
+  subtitle: Un rapporto di fiducia inizia con tariffe chiare. Ecco come lavoriamo.
   title: Onorari
   video:
     title: Per saperne di più
     url: https://youtu.be/Y-SKuT-XqGk
 nl:
   previsibilite:
-    title: "Wat onze erelonen dekken"
-    full_content: |-
-      Onze erelonen vergoeden alle prestaties die in het kader van uw dossier worden verricht. Sommige zijn rechtstreeks zichtbaar: vergaderingen, pleidooien, het opstellen van conclusies of brieven. Andere, even onmisbaar, zijn minder zichtbaar: de grondige studie van het dossier, juridisch opzoekingswerk, de contacten met de tegenpartijen, administratieve stappen, het voorbereiden van de stukken, de wachttijd op zittingen.
+    title: Wat onze erelonen dekken
+    full_content: >-
+      Onze erelonen vergoeden alle prestaties die in het kader van uw dossier
+      worden verricht. Sommige zijn rechtstreeks zichtbaar: vergaderingen,
+      pleidooien, het opstellen van conclusies of brieven. Andere, even
+      onmisbaar, zijn minder zichtbaar: de grondige studie van het dossier,
+      juridisch opzoekingswerk, de contacten met de tegenpartijen,
+      administratieve stappen, het voorbereiden van de stukken, de wachttijd op
+      zittingen.
+
 
       Om uw kosten te beheersen, vragen wij u volledige en gestructureerde documenten te bezorgen, uw vragen zoveel mogelijk te bundelen en snel op onze verzoeken te reageren. Een vlotte samenwerking versnelt de behandeling van uw dossier en optimaliseert de factureerbare tijd.
 
+
       Wij gebruiken tools op basis van artificiële intelligentie (met name JEF, een tool speciaal voor Belgische advocaten, en andere tools zoals Claude of ChatGPT, steeds geanonimiseerd) om efficiënter te werken, zonder ooit het juridische denkwerk uit handen te geven.
+
 
       Concreet betekent dit voor u een grotere reactiesnelheid, kortere behandelingstermijnen en een betere prijs-kwaliteitverhouding. Onze juridische expertise blijft de kern van elke beslissing: AI is een hulpmiddel, het oordeel van de advocaat is onvervangbaar.
 
+
       Van uw kant blijft een kort en gericht bericht altijd het meest efficiënt, of u het nu zelf schrijft of met behulp van een AI-tool. Controleer vóór het verzenden of de aangehaalde punten nog niet werden beantwoord: dat versnelt de behandeling van uw dossier en houdt uw erelonen onder controle.
   forfaits:
-    title: "Transparantie & voorspelbaarheid"
-    intro: |-
-      De berekeningswijze van onze erelonen wordt u schriftelijk meegedeeld vóór de aanvang van onze tussenkomst.
+    title: Transparantie & voorspelbaarheid
+    intro: >-
+      De berekeningswijze van onze erelonen wordt u schriftelijk meegedeeld vóór
+      de aanvang van onze tussenkomst.
+
 
       Wij werken ofwel tegen een uurtarief, maandelijks gefactureerd naarmate de prestaties worden verricht, ofwel, in bepaalde gevallen, tegen een vast forfait "alles inbegrepen", in voorkomend geval verhoogd met een resultaatsereloon. Er zijn geen dossier- of kantoorkosten. Bij elke factuur wordt een overzicht van de verrichte prestaties gevoegd.
 
+
       In de loop van het dossier vragen wij regelmatig provisies, om een transparante financiële opvolging te verzekeren en te vermijden dat zich op het einde van de opdracht hoge bedragen opstapelen.
+
 
       Kosten verbonden aan de tussenkomst van derden (gerechtsdeurwaarders, deskundigen, vertalers) en gerechtskosten worden tegen kostprijs doorgerekend of zijn rechtstreeks aan de betrokken derde verschuldigd.
     exemples: []
   transparence:
-    title: "Nood aan een eerste advies?"
+    title: Nood aan een eerste advies?
     points:
-      - "Reserveer rechtstreeks uw tijdslot via onze online agenda. Breng gerust alle documenten mee die u nuttig acht (arbeidsovereenkomst, briefwisseling, loonfiches, enz.), zodat wij uw situatie al tijdens dit eerste gesprek concreet kunnen analyseren."
+      - Reserveer rechtstreeks uw tijdslot via onze online agenda. Breng gerust
+        alle documenten mee die u nuttig acht (arbeidsovereenkomst,
+        briefwisseling, loonfiches, enz.), zodat wij uw situatie al tijdens dit
+        eerste gesprek concreet kunnen analyseren.
   assurance:
     title: Denk aan de rechtsbijstandsverzekering
     content: >
@@ -282,7 +333,7 @@ nl:
 
 
       Voldoet u aan de voorwaarden voor tweedelijnsbijstand maar wenst u daarvan af te zien en mijn tussenkomst buiten dat kader te vragen, dan dient het formulier dat u [hier](https://docs.google.com/document/d/1342gFQP0Wfvejg3RrRpynr_0xgowMhOHl3XHTDWqWA4/edit?tab=t.0#heading=h.xth8kae1d4z1) kunt downloaden, ondertekend aan ons te worden bezorgd.
-  subtitle: "Een vertrouwensrelatie begint met duidelijke tarieven. Zo werken wij."
+  subtitle: Een vertrouwensrelatie begint met duidelijke tarieven. Zo werken wij.
   title: Erelonen
   video:
     title: Meer weten
