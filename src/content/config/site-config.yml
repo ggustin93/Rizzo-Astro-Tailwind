@@ -13,11 +13,11 @@ lawyers:
     id: stephanie-michiels
   - id: arnaud-vanderhoeven-jacobs
     phone: +32 498 79 73 56
-    email: ''
+    email: arnaud@vanderhoevenavocat.be
     calendarLink: https://cal.com/arnaudvanderhoeven
   - id: romain-archalaus
     phone: +32 495 69 31 91
-    email: ''
+    email: romain@archalausavocat.be
     calendarLink: ''
 contactIllustration: /assets/images/illustration_cta_2.svg
 cabinetEmail: info@rizzo-michiels.be
