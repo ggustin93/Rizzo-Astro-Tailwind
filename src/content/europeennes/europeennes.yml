@@ -323,8 +323,7 @@ it:
     servicesTitle: I nostri servizi
     services:
       - icon: CheckSquare
-        text: Analisi della vostra situazione professionale e dei vostri diritti e dei
-          vostri diritti
+        text: Analisi della vostra situazione professionale e dei vostri diritti
       - icon: BriefCase
         text: Consulenza strategica prima di intraprendere qualsiasi iniziativa formale
       - icon: FileText
