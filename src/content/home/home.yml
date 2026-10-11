@@ -214,10 +214,11 @@ it:
       cta: I nostri servizi per i datori di lavoro
       destination: /services/employeurs/
     europeennes:
-      title: Siete un'istituzione europea, un funzionario o un agente contrattuale?
+      title: Rappresentate un'istituzione europea, siete un funzionario o un agente
+        contrattuale?
       description: Assistiamo le istituzioni e le agenzie europee nella gestione dei
-        rapporti di lavoro e accompagniamo i funzionari e gli agenti nelle loro
-        procedure, dalla negoziazione al contenzioso.
+        rapporti di lavoro e accompagniamo i funzionari e gli agenti, dalla
+        negoziazione alle procedure precontenziose e contenziose.
       cta: I nostri servizi per la funzione pubblica UE
       destination: /services/europeennes/
     honoraires:
