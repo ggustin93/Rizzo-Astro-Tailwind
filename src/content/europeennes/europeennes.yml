@@ -232,7 +232,7 @@ en:
       - personalized legal support EU officials
     image: https://rizzo-michiels.be/default-social-image.png
 it:
-  title: Istituzioni e agenzie europee
+  title: Funzionari e istituzioni o agenzie dell’Unione europea
   navigationCards:
     agences: Siete un’istituzione, un organo o un’agenzia europea
     fonctionnaires: Siete un funzionario o un membro del personale europeo
@@ -365,7 +365,8 @@ nl:
 
 
       Onze expertise combineert het Belgische arbeidsrecht met de bijzonderheden van het Europese ambtenarenrecht.
-    accompagnementTitle: Begeleiding en verdediging van Europese instellingen, organen en agentschappen
+    accompagnementTitle: Begeleiding en verdediging van Europese instellingen,
+      organen en agentschappen
     accompagnement:
       - title: Advies en begeleiding bij de invoering van een HR-beleid
         items:
@@ -395,8 +396,8 @@ nl:
     services:
       - icon: CheckSquare
         text: Opstellen van antwoorden op verzoeken (art. 90 §1 van het Statuut),
-          verzoeken om bijstand (art. 24 van het Statuut) en klachten (art. 90 §2
-          van het Statuut)
+          verzoeken om bijstand (art. 24 van het Statuut) en klachten (art. 90
+          §2 van het Statuut)
       - icon: FileText
         text: "Opstellen en nazien van overeenkomsten, HR-beleid, interne reglementen en
           AVG-documenten "
@@ -445,11 +446,12 @@ nl:
       - icon: Handshake
         text: Strategisch advies vóór elke stap
       - icon: FileText
-        text: Opstellen van verzoeken (art. 90 §1 van het Statuut), verzoeken om bijstand
-          (art. 24 van het Statuut), klachten (art. 90 §2 van het Statuut)
+        text: Opstellen van verzoeken (art. 90 §1 van het Statuut), verzoeken om
+          bijstand (art. 24 van het Statuut), klachten (art. 90 §2 van het
+          Statuut)
       - icon: Handshake
-        text: "Bijstand in de interne administratieve procedures en in de
-          contentieuze procedures voor het Hof van Justitie van de Europese Unie "
+        text: "Bijstand in de interne administratieve procedures en in de contentieuze
+          procedures voor het Hof van Justitie van de Europese Unie "
       - icon: Shield
         text: Verdediging voor de bevoegde rechtscolleges
   ctaText: Meer weten over de tarieven
