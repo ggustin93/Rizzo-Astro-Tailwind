@@ -199,22 +199,22 @@ it:
       delle problematiche quotidiane e dei progetti legati alle risorse umane e
       al mondo del lavoro.
     travailleurs:
-      title: È un lavoratore o una lavoratrice e ha una vertenza con il suo datore di
-        lavoro? È un lavoratore autonomo?
-      description: "La consigliamo e difendiamo su tutte le questioni di diritto del
+      title: Siete un lavoratore o una lavoratrice e avete una vertenza con il vostro
+        datore di lavoro? Siete un lavoratore autonomo?
+      description: "Vi consigliamo e difendiamo su tutte le questioni di diritto del
         lavoro: licenziamento, discriminazione, molestie, cessazione del
         contratto, indennità."
       cta: I nostri servizi per i lavoratori
       destination: /services/travailleurs/
     employeurs:
-      title: Gestisce una PMI, una micro-impresa o una start-up belga?
-      description: "La assistiamo in italiano su tutte le questioni di diritto del
+      title: Gestite una PMI, una micro-impresa o una start-up belga?
+      description: "Vi assistiamo in italiano su tutte le questioni di diritto del
         lavoro: contratto di lavoro, regolamento di lavoro, licenziamento,
         prevenzione e contenzioso."
       cta: I nostri servizi per i datori di lavoro
       destination: /services/employeurs/
     europeennes:
-      title: È un'istituzione europea, un funzionario o un agente contrattuale?
+      title: Siete un'istituzione europea, un funzionario o un agente contrattuale?
       description: Assistiamo le istituzioni e le agenzie europee nella gestione dei
         rapporti di lavoro e accompagniamo i funzionari e gli agenti nelle loro
         procedure, dalla negoziazione al contenzioso.
