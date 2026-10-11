@@ -517,11 +517,12 @@ en:
       id: arnaud-vanderhoeven-jacobs
     - careerPath:
         - year: 2024-2026
-          event: Trainee lawyer – practice of Me Vannes
+          event: Trainee lawyer – law firm of Viviane Vannes
         - year: 2023-2024
-          event: Legal officer – practice of Me Vannes
+          event: Legal officer – law firm of Viviane Vannes
         - year: "2023"
-          event: Master in public and international law - Université Libre de Bruxelles
+          event: Master's degree in Public and International law - Université Libre de
+            Bruxelles
         - year: "2022"
           event: Equality Law Clinic - Université Libre de Bruxelles
         - year: "2021"
@@ -531,16 +532,15 @@ en:
         - year: 2020-2021
           event: Writer at Maze, an independent cultural media outlet
         - year: "2019"
-          event: Bachelor of Laws - Université St Louis – Bruxelles; Philippe Maystad
-            Prize
+          event: Bachelor of Laws - Université St Louis, Bruxelles; Philippe Maystad Prize
         - year: "2018"
-          event: "Certificate of completion: annual course in international humanitarian
-            law"
+          event: Certificate of completion of the annual course in international
+            humanitarian law, the Red Cross
         - year: "2018"
           event: Member of the Parlement Jeunesse ASBL
         - year: 2017-2019
           event: Active member of ELSA (European Law Students’ Association).
-      publicationsIntro: "Romain contributed to the research and writing of the book
+      publicationsIntro: "Romain contributed to the research and drafting of the book
         by Me Viviane Vannes, “Le contrat de travail : aspects théoriques et
         pratiques” (5th edition, Larcier, 2025)."
       publications: []
@@ -561,7 +561,8 @@ en:
 
 
           He sees his role as that of a trusted adviser, combining legal rigour, attentive listening and pragmatism.
-      languages: Romain works in French and English and also has a knowledge of Dutch.
+      languages: Romain works in French and English and also has a working knowledge
+        of Dutch.
       id: romain-archalaus
 it:
   seo:
@@ -1136,21 +1137,18 @@ nl:
       conferences: []
       title: ""
       presentation:
-        - Romain is sinds 2024 advocaat-stagiair aan de balie van Brussel en is
-          actief in het arbeidsrecht en het socialezekerheidsrecht.
-        - Zijn belangstelling voor deze materies kreeg tussen 2022 en 2024 vorm
-          als jurist in een kantoor gespecialiseerd in sociaal recht, aan de
-          zijde van een erkende advocaat in dit domein, waar hij brede ervaring
-          opdeed door zowel werkgevers als werknemers bij te staan.
-        - "Sinds zijn inschrijving aan de balie ontwikkelt hij deze praktijk in
-          adviesverlening en geschillen. Zijn keuze voor het arbeidsrecht berust
-          op de menselijke en concrete dimensie ervan: arbeidsgerelateerde
-          kwesties raken rechtstreeks aan het dagelijkse leven, de zekerheid en
-          het evenwicht van de betrokken personen. Hij ziet zijn rol als die van
-          een raadgever die juridische nauwkeurigheid, luisterbereidheid en
-          pragmatisme combineert."
-        - Op 1 oktober 2026 treedt hij toe tot Rizzo & Michiels voor zijn derde
-          stagejaar.
+        - >
+          Romain is sinds 2024 advocaat-stagiair aan de balie van Brussel en en
+          legt zich toe op het arbeidsrecht en de sociale zekerheid. 
+
+
+          Zijn belangstelling voor deze rechtsgebieden ontstond tussen 2022 en 2024, toen hij als juridisch medewerker werkzaam was bij een kantoor gespecialiseerd in sociaal recht, onder begeleiding van een gerenommeerd advocaat in dit domein. In die periode deed hij ruime ervaring op met de begeleiding en bijstand van zowel werkgevers als werknemers.
+
+
+          Sinds zijn inschrijving aan de balie heeft hij deze praktijk verder uitgebouwd, zowel op het vlak van juridisch advies als van geschillenbeslechting. Zijn keuze voor het arbeidsrecht is ingegeven door de menselijke en praktische dimensie ervan: arbeidsgerelateerde kwesties hebben een rechtstreekse impact op het dagelijkse leven, de bestaanszekerheid en het welzijn van de betrokkenen. 
+
+
+          Hij ziet zijn rol als die van een vertrouwenspersoon die juridische nauwkeurigheid, aandacht voor de cliënt en pragmatisme combineert.
       languages: Romain werkt in het Frans en Engels en heeft ook kennis van het
         Nederlands.
       id: romain-archalaus
