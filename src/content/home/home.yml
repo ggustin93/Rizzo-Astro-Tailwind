@@ -210,9 +210,9 @@ it:
       destination: /services/travailleurs/
     employeurs:
       title: Gestite una PMI, una micro-impresa o una start-up belga?
-      description: "Vi assistiamo in italiano su tutte le questioni di diritto del
-        lavoro: contratto di lavoro, regolamento di lavoro, licenziamento,
-        prevenzione e contenzioso."
+      description: "Vi consigliamo e vi assistiamo in italiano nella gestione di tutte
+        le vostre questioni in materia di risorse umane: contratto di lavoro,
+        regolamento aziendale, licenziamento, prevenzione e contenzioso."
       cta: I nostri servizi per i datori di lavoro
       destination: /services/employeurs/
     europeennes:
