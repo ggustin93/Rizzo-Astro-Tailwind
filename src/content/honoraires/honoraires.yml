@@ -54,7 +54,7 @@ fr:
       permettre d'économiser beaucoup d'argent. 
 
 
-      Plusieurs assureurs en Belgique proposent une assurance protection juridique qui couvre les conflits dans le cadre d'une relation de travail (Ethias, Arag, Das, Arces), que vous soyez un travailleur ou une entreprise.
+      Plusieurs assureurs en Belgique proposent une assurance protection juridique qui couvre les conflits dans le cadre d'une relation de travail (Ethias, Arag, DAS, Arces), que vous soyez un travailleur ou une entreprise.
 
 
       Vérifiez avec votre courtier ou votre assurance si vous bénéficiez d'une telle couverture ou si une telle assurance peut être souscrite et le délai d'attente.
@@ -89,7 +89,9 @@ fr:
     title: En savoir plus
     url: https://youtu.be/Y-SKuT-XqGk
   seo:
-    description: "Tarif horaire ou forfait, sans frais de dossier. Premier rendez-vous à 275 € TVAC. Rizzo & Michiels vous explique clairement le coût de notre intervention avant tout engagement."
+    description: Tarif horaire ou forfait, sans frais de dossier. Premier
+      rendez-vous à 275 € TVAC. Rizzo & Michiels vous explique clairement le
+      coût de notre intervention avant tout engagement.
 en:
   previsibilite:
     title: What our fees cover
@@ -137,14 +139,16 @@ en:
   assurance:
     title: Consider legal protection insurance
     content: >-
-      Legal Protection Insurance (or "legal defense") can save you a lot of
+      Legal expenses insurance (or ‘legal defence cover’) can save you a lot of
       money.
 
 
-      Several insurers in Belgium offer legal protection insurance that covers employment-related issues (Ethias, Arag, Das, Arces), whether you are an employee or an employer.
+      Several insurers in Belgium offer legal expenses insurance that covers disputes arising from an employment relationship (Ethias, Arag, DAS, Arces), whether you are an employee or a business.
 
 
-      If you are not currently insured, you may be eligible for coverage. Be sure to inquire about the waiting period. Insurance coverage is an excellent way to pay for legal fees!
+      Check with your broker or insurer to see if you are covered under such a policy, whether you can take out such cover, and what the waiting period is.
+       
+      In this case, all or part of your legal fees will be paid by your insurer rather than by you.
   tarifs:
     title: Rates
     travailleur: You are an employee
@@ -172,7 +176,9 @@ en:
     title: Learn more
     url: https://youtu.be/Y-SKuT-XqGk
   seo:
-    description: "Hourly rate or fixed fee, with no file-opening costs. First meeting €275, VAT included. Rizzo & Michiels clearly explains the cost of our work before any commitment."
+    description: Hourly rate or fixed fee, with no file-opening costs. First meeting
+      €275, VAT included. Rizzo & Michiels clearly explains the cost of our work
+      before any commitment.
 it:
   previsibilite:
     title: Cosa coprono i nostri onorari
@@ -260,7 +266,9 @@ it:
     title: Per saperne di più
     url: https://youtu.be/Y-SKuT-XqGk
   seo:
-    description: "Tariffa oraria o forfait, senza spese di apertura pratica. Primo appuntamento a 275 € IVA inclusa. Rizzo & Michiels vi spiega chiaramente il costo del nostro intervento prima di qualsiasi impegno."
+    description: Tariffa oraria o forfait, senza spese di apertura pratica. Primo
+      appuntamento a 275 € IVA inclusa. Rizzo & Michiels vi spiega chiaramente
+      il costo del nostro intervento prima di qualsiasi impegno.
 nl:
   previsibilite:
     title: Wat onze erelonen dekken
@@ -303,10 +311,10 @@ nl:
     title: Nood aan een eerste advies?
     points:
       - Reserveer rechtstreeks uw tijdslot via onze online agenda. Het eerste
-        gesprek wordt aangerekend aan 275 €, btw inbegrepen. Breng gerust
-        alle documenten mee die u nuttig acht (arbeidsovereenkomst,
-        briefwisseling, loonfiches, enz.), zodat wij uw situatie al tijdens dit
-        eerste gesprek concreet kunnen analyseren.
+        gesprek wordt aangerekend aan 275 €, btw inbegrepen. Breng gerust alle
+        documenten mee die u nuttig acht (arbeidsovereenkomst, briefwisseling,
+        loonfiches, enz.), zodat wij uw situatie al tijdens dit eerste gesprek
+        concreet kunnen analyseren.
   assurance:
     title: Denk aan de rechtsbijstandsverzekering
     content: >
@@ -348,4 +356,6 @@ nl:
     title: Meer weten
     url: https://youtu.be/Y-SKuT-XqGk
   seo:
-    description: "Uurtarief of forfait, zonder dossierkosten. Eerste afspraak aan 275 €, btw inbegrepen. Rizzo & Michiels legt u duidelijk uit wat onze tussenkomst kost, nog vóór u zich tot iets verbindt."
+    description: Uurtarief of forfait, zonder dossierkosten. Eerste afspraak aan 275
+      €, btw inbegrepen. Rizzo & Michiels legt u duidelijk uit wat onze
+      tussenkomst kost, nog vóór u zich tot iets verbindt.
