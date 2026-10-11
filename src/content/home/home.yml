@@ -9,7 +9,7 @@ serviceOrder:
 fr:
   expertise:
     title: Expertise & Services
-    description: Nous accompagnons les entreprises (PME, TPE et start-up) belges,
+    description: Nous accompagnons les entreprises belges (PME, TPE et start-up),
       les institutions européennes et leurs agents (fonctionnaires et agents
       contractuels), ainsi que les travailleurs salariés et indépendants, dans
       leurs problématiques quotidiennes et leurs projets liés aux ressources
@@ -17,26 +17,26 @@ fr:
     travailleurs:
       title: Vous êtes salarié et rencontrez un litige avec votre employeur ? Vous
         êtes indépendant ?
-      description: Nous vous accompagnons tout au long de votre parcours professionnel
-        que ce soit pour une question ponctuelle, la fin d’une collaboration ou
-        un litige.
+      description: "Nous vous accompagnons tout au long de votre parcours
+        professionnel : à l’embauche, pendant la collaboration, lors d'une
+        rupture de contrat ou en cas de litige."
       cta: Nos services pour travailleurs
       destination: /services/travailleurs/
     employeurs:
       title: Vous dirigez une PME, une TPE ou une start-up belge ?
-      description: "Nous vous conseillons et défendons sur toutes vos problématiques
-        RH : contrat de travail, règlement de travail, licenciement, prévention
-        et contentieux."
+      description: "Nous vous conseillons et vous défendons sur toutes vos
+        problématiques RH : contrat de travail, règlement de travail,
+        licenciement, prévention et contentieux."
       cta: Nos services pour employeurs
       destination: /services/employeurs/
     europeennes:
-      title: Vous êtes une institution européenne, fonctionnaire ou agent contractuel
-        ?
+      title: Vous êtes une institution européenne, un fonctionnaire ou un agent
+        contractuel ?
       description: Nous conseillons les institutions et agences européennes dans la
         gestion de leurs relations de travail et accompagnons les fonctionnaires
         et agents dans leurs démarches, de la négociation à la procédure
         précontentieuse et contentieuse.
-      cta: Nos services pour la fonction publique UE
+      cta: Nos services pour la fonction publique de l'UE
       destination: /services/europeennes/
     honoraires:
       title: Honoraires
@@ -60,8 +60,8 @@ fr:
     description: Rizzo & Michiels est une équipe de quatre avocats du Barreau de
       Bruxelles, tous issus de cabinets  spécialisés en droit du travail et de
       la sécurité sociale. Cette expertise, qui couvre l’ensemble des questions
-      liées aux ressources humaines est mise au service d’un accompagnement de
-      proximité, en français, néerlandais, anglais et italien.
+      liées aux ressources humaines, est mise au service d’un accompagnement de
+      proximité en français, néerlandais, anglais et italien.
     cta: Découvrir l’équipe
     imageAlt: Réunion de travail
   seo:
@@ -112,19 +112,20 @@ en:
     travailleurs:
       title: Are you an employee in a dispute with your employer? Are you
         self-employed?
-      description: We support you throughout your professional life, whether with a
-        specific question, the end of a working relationship or a dispute.
+      description: "We support you throughout your career: when you are hired, during
+        your employment, if your contract is terminated, or in the event of a
+        dispute."
       cta: Our services for employees
       destination: /services/travailleurs/
     employeurs:
-      title: Do you run a Belgian a SME, a small business or a start-up?
+      title: Do you run a Belgian company? a SME, a small business or a start-up?
       description: "We advise and represent you on all your HR issues: employment
         contracts, work rules, dismissal, prevention and litigation."
       cta: Our services for employers
       destination: /services/employeurs/
     europeennes:
-      title: Are you a European institution, an official or a member of the contract
-        staff?
+      title: Do you represent a European institution ? Are you a EU official or a
+        member of the contract staff?
       description: We advise European institutions and agencies on managing their
         employment relationships and assist officials and other staff in their
         steps, from negotiation to pre-litigation and litigation proceedings.
@@ -201,9 +202,9 @@ it:
     travailleurs:
       title: Siete un lavoratore o una lavoratrice e avete una vertenza con il vostro
         datore di lavoro? Siete un lavoratore autonomo?
-      description: Vi accompagniamo in ogni fase del vostro percorso professionale,
-        che si tratti di una questione specifica, della cessazione di una
-        collaborazione o di una vertenza.
+      description: "Vi accompagniamo lungo tutto il vostro percorso professionale:
+        all'assunzione, durante il rapporto di lavoro, in caso di cessazione del
+        contratto o di controversia."
       cta: I nostri servizi per i lavoratori
       destination: /services/travailleurs/
     employeurs:
@@ -274,8 +275,9 @@ nl:
     travailleurs:
       title: Bent u werknemer en hebt u een geschil met uw werkgever? Bent u
         zelfstandige?
-      description: Wij begeleiden u tijdens uw volledige loopbaan, of het nu gaat om
-        een specifieke vraag, het einde van een samenwerking of een geschil.
+      description: "Wij begeleiden u gedurende uw hele loopbaan: bij de
+        indiensttreding, tijdens de samenwerking, bij de beëindiging van het
+        contract of in geval van een geschil."
       cta: Onze diensten voor werknemers
       destination: /services/travailleurs/
     employeurs:
