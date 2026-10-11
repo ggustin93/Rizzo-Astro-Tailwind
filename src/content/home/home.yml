@@ -201,9 +201,9 @@ it:
     travailleurs:
       title: Siete un lavoratore o una lavoratrice e avete una vertenza con il vostro
         datore di lavoro? Siete un lavoratore autonomo?
-      description: "Vi consigliamo e difendiamo su tutte le questioni di diritto del
-        lavoro: licenziamento, discriminazione, molestie, cessazione del
-        contratto, indennità."
+      description: Vi accompagniamo in ogni fase del vostro percorso professionale,
+        che si tratti di una questione specifica, della cessazione di una
+        collaborazione o di una vertenza.
       cta: I nostri servizi per i lavoratori
       destination: /services/travailleurs/
     employeurs:
