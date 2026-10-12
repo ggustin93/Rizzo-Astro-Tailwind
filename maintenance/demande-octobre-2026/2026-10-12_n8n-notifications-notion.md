@@ -6,7 +6,7 @@
 
 ## TL;DR
 
-- Un VPS Infomaniak existe bien (`83.228.211.126`, Ubuntu 24.04), mais **aucune clé SSH de ce Mac n'y donne accès**. Ressources, Docker, services : inconnus.
+- VPS Infomaniak `83.228.211.126` (`ov-39aa85`) **accessible** : utilisateur `ubuntu`, clé `~/Desktop/VPS-infomaniak/pwablo-key.txt`. 1 vCPU, 1,9 Go de RAM (1,2 Go disponibles), **pas de swap**, 14 Go de disque libres. Docker installé, il fait déjà tourner **Umami** (statistiques, + Postgres).
 - n8n tient sur un petit VPS (300 Mo à 1 Go de RAM au repos avec SQLite). C'est faisable si le VPS a **au moins 2 Go de RAM** (1 Go avec swap, c'est limite).
 - **Pour ce seul besoin, n8n est surdimensionné** : un script cron de 30 lignes (sur le VPS) ou un workflow GitHub Actions planifié (zéro serveur) fait le même travail sans application web à exposer, sécuriser et mettre à jour.
 - **Recommandation** : si d'autres automatisations sont réellement prévues à court terme, n8n + Caddy en Docker sur le VPS (plan ci-dessous). Sinon, le script, quitte à passer à n8n plus tard. La partie Notion (intégration + partage de la base) est la même dans les deux cas.
@@ -28,9 +28,25 @@
 
 Tentatives de connexion (non interactives, `BatchMode`) refusées pour `ubuntu`, `debian`, `root`, `almalinux`, `rocky`, `pwablo`, `guillaume`, avec les clés `id_ed25519` (hello@pwablo.be), `id_ed25519.save` et `gitlab-gate-ssh` (Gate-16, dans l'agent SSH).
 
-### Inconnu (à lire dans le Manager Infomaniak ou après connexion)
+### Inventaire après connexion (12/10/2026, lecture seule)
 
-RAM, vCPU, disque, offre exacte (VPS Lite, VPS Cloud ou Public Cloud), utilisateur de connexion, clé SSH attendue, Docker installé ou non, reverse proxy (nginx/Caddy/Traefik), certificats TLS, services qui tournent, domaines pointant vers l'IP.
+Connexion : `ssh -i ~/Desktop/VPS-infomaniak/pwablo-key.txt ubuntu@83.228.211.126` (clé RSA sans phrase de passe, `sudo` sans mot de passe).
+
+| Élément | Valeur |
+|---|---|
+| Système | Ubuntu 24.04.4 LTS, noyau 6.8, en ligne depuis 66 jours, charge ~0,05 |
+| CPU / RAM | 1 vCPU, 1,9 Go (688 Mo utilisés, 1,2 Go disponibles), **swap 0** |
+| Disque | 19 Go, 4,8 Go utilisés |
+| Docker | 29.1.3 ; conteneurs `umami-umami-1` (219 Mo, port **3000 publié sur 0.0.0.0**) et `umami-db-1` (Postgres 15, 21 Mo), dans `~/umami` |
+| Ports à l'écoute | 22 (SSH), 3000 (Umami) ; rien sur 80/443 (d'où le timeout constaté) |
+| Pare-feu | `ufw` inactif ; le filtrage vient du firewall du Manager Infomaniak |
+| Divers | `unattended-upgrades` actif, Python 3.12.3, pas de crontab, `/srv` et `/opt` vides |
+
+**Conséquence** : n8n (300 Mo à 1 Go) tient à côté d'Umami, mais il faut d'abord ajouter 2 Go de swap (6.1). Le script cron tient sans rien changer (Python déjà là).
+
+### Ce qui reste inconnu (à lire dans le Manager Infomaniak)
+
+Offre exacte et prix, règles du firewall Manager (le port 3000 d'Umami est-il ouvert ?), domaines pointant vers l'IP.
 
 ### Comment se connecter
 
@@ -42,7 +58,8 @@ RAM, vCPU, disque, offre exacte (VPS Lite, VPS Cloud ou Public Cloud), utilisate
 Host vps-pwablo
     HostName 83.228.211.126
     User ubuntu
-    IdentityFile ~/.ssh/id_ed25519
+    IdentityFile ~/Desktop/VPS-infomaniak/pwablo-key.txt
+    IdentitiesOnly yes
 ```
 
 4. Inventaire en lecture seule :
@@ -313,7 +330,7 @@ Le nom réel du volume est donné par `docker volume ls`. Conserver `N8N_ENCRYPT
 
 ## 9. Questions ouvertes pour Guillaume
 
-1. Quelle offre exacte et combien de RAM sur le VPS `83.228.211.126` (`ov-39aa85`) ? Avec quel utilisateur et quelle clé tu t'y connectais ? Sert-il déjà à quelque chose ?
+1. ~~RAM, utilisateur, clé, usage actuel~~ : réglé (section 1). Reste : déplacer la clé du Bureau vers `~/.ssh/` et la sauvegarder dans le gestionnaire de mots de passe ?
 2. Quelles autres automatisations n8n sont prévues concrètement (Twenty → Accountable, relances, etc.) ? S'il n'y en a pas dans les 3 prochains mois, le script cron suffit.
 3. Exposer n8n publiquement (`n8n.pwablo.be`, utile pour les webhooks) ou rester derrière un tunnel SSH ?
 4. Adresse d'envoi (`notifications@pwablo.be` chez Infomaniak ou Gmail) et destinataires (toi seul, ou aussi un accusé de réception à Christine) ?
