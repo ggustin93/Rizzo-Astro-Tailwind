@@ -1,6 +1,7 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
 import { Image } from 'astro:assets';
+import { cdnImage, isExternalImage } from '../../../utils/imageHelpers.js';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getUiTranslations } from '../../../utils/ui-translations';
 import type { Locale } from '../../../config/locales';
@@ -69,16 +70,20 @@ const seoData = {
     <div class="bg-white md:my-20 p-8 rounded-lg">
 
     <header class="relative mb-12">
-      <Image 
-        src={entry.data.thumbnail}
-        alt=""
-        width={1200}
-        height={600}
-        class="w-full h-[50vh] object-cover rounded-lg"
-        loading="eager"
-        decoding="async"
-        format="avif"
-      />
+      {isExternalImage(entry.data.thumbnail) ? (
+        <Image 
+          src={entry.data.thumbnail}
+          alt=""
+          width={1200}
+          height={600}
+          class="w-full h-[50vh] object-cover rounded-lg"
+          loading="eager"
+          decoding="async"
+          format="avif"
+        />
+      ) : (
+        <img {...(await cdnImage(entry.data.thumbnail, { width: 1200, height: 600 }))} alt="" class="w-full h-[50vh] object-cover rounded-lg" loading="eager" decoding="async" />
+      )}
       <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg">
         <h1 class="text-3xl md:text-5xl font-light text-white text-center px-4">{entry.data.title}</h1>
       </div>

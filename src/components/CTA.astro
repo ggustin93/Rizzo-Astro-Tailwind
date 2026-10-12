@@ -1,5 +1,5 @@
 ---
-import { Picture } from 'astro:assets';
+import { cdnImage } from '../utils/imageHelpers.js';
 import { Mail, Calendar, Phone, ArrowUpRight, ChevronDown } from 'astro-feather-icons2';
 import { getEntry } from 'astro:content';
 import { bookableLawyers, calEmbedTarget } from '../utils/calendar.js';
@@ -67,7 +67,7 @@ const actionIcons = { email: Mail, appointment: Calendar, phone: Phone };
         </div>
       </div>
       <div class="contact-illustration">
-        <Picture src={config.contactIllustration} alt={t.illustrationAlt} class="w-full h-auto max-w-[220px] opacity-75" width="280" height="112" loading="lazy" />
+        <img {...(await cdnImage(config.contactIllustration, { width: 280, height: 112, crop: false }))} alt={t.illustrationAlt} class="w-full h-auto max-w-[220px] opacity-75" loading="lazy" decoding="async" />
       </div>
     </div>
   </section>

@@ -107,7 +107,7 @@ npx playwright test --ui  # Run tests with UI mode
 ### Component Patterns
 - **Astro Components**: Use `.astro` for static components
 - **Icons**: Import from `astro-feather-icons` or `astro-feather-icons2`
-- **Images**: Use Astro's `Picture` component for optimization
+- **Images**: CMS images (paths under `public/`) go through `cdnImage()` from `src/utils/imageHelpers.js`, which serves them via the Netlify Image CDN on Netlify builds (resize, AVIF/WebP, 2x only if the source is wide enough) and as-is locally. Spread its result on a plain `<img>`; keep Astro `Image`/`Picture` for files in `src/assets` and remote URLs. `scripts/verify-image-cdn.mjs` checks a Netlify-like build
 - **Buttons**: Use `Button.astro` component for consistency
 - **CTA Component**: `CTA.astro` dynamically iterates over the `lawyers` array from site-config.yml. Each lawyer gets their own contact card with Email, Appointment (Cal.com, conditional on valid `calendarLink`), and Phone buttons. When adding or removing lawyers, only site-config.yml needs to change.
 

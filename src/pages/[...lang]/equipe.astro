@@ -6,6 +6,7 @@ import { ArrowRight, Calendar, Phone, Mail, Users } from 'astro-feather-icons2';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { localePaths } from '../../config/locales';
 import { getTeam, profilePath } from '../../utils/team.js';
+import { cdnImage } from '../../utils/imageHelpers.js';
 import { getUiTranslations } from '../../utils/ui-translations';
 
 export const prerender = true;
@@ -50,12 +51,12 @@ const seoData = {
       </header>
       
       <div class="space-y-12 md:space-y-16">
-        {lawyersToDisplay.map((lawyer: any, index: number) => (
+        {lawyersToDisplay.map(async (lawyer: any, index: number) => (
           <div class="team-entry" id={lawyer.slug}>
             <!-- Lawyer Image -->
             <div class="team-photo">
               <a href={profilePath(lang, lawyer)} class="block rounded-lg">
-              <img src={lawyer.image} alt={lawyer.imageAlt || lawyer.name} class="portrait" width="500" height="500" loading={index === 0 ? "eager" : "lazy"} decoding="async">
+              <img {...(await cdnImage(lawyer.image, { width: 500, height: 500 }))} alt={lawyer.imageAlt || lawyer.name} class="portrait" loading={index === 0 ? "eager" : "lazy"} decoding="async">
               </a>
             </div>
             
