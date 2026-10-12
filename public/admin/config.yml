@@ -10,31 +10,6 @@ editor:
   preview: false
 
 collections:
-  # Équipe : photos et identité des membres. Même fichier que « Paramètres généraux »,
-  # mis à part pour que les photos se trouvent sans chercher.
-  - name: "equipe"
-    label: "Équipe — photos et identité"
-    files:
-      - file: "src/content/config/site-config.yml"
-        name: "equipe"
-        label: "Photos et identité de l’équipe"
-        editor:
-          preview: false
-        fields:
-          - label: "Membres de l’équipe"
-            name: "team"
-            widget: "list"
-            summary: "{{fields.name}}"
-            collapsed: false
-            hint: "L’ordre s’applique à l’accueil, à l’équipe et à la navigation dans les quatre langues."
-            fields:
-              - {label: "Identifiant stable", name: "id", widget: "string", hint: "Ne pas modifier après création ; indépendant du nom affiché."}
-              - {label: "Adresse du profil", name: "slug", widget: "string", pattern: ['^[a-z0-9]+(-[a-z0-9]+)*$', "Minuscules, chiffres et tirets"], hint: "Conserver les adresses déjà publiées."}
-              - {label: "Nom affiché", name: "name", widget: "string"}
-              - {label: "Portrait carré", name: "image", widget: "image", hint: "Accueil et page Équipe. Photo carrée, visage centré, environ 1000 × 1000 px, JPG ou WebP, moins de 400 Ko."}
-              - {label: "Portrait individuel", name: "profileImage", widget: "image", required: false, hint: "Page de profil. Photo verticale, environ 1200 × 1500 px, JPG ou WebP, moins de 500 Ko. Vide : utilise le portrait carré."}
-              - {label: "LinkedIn", name: "linkedin", widget: "string", required: false, pattern: ['^https://(www\.)?linkedin\.com/.*$|^$', "Lien LinkedIn https ou champ vide"], hint: "Lien partagé entre les quatre langues."}
-
   # Page d'accueil
   - name: "home"
     label: "Page Accueil"
@@ -128,7 +103,7 @@ collections:
                 fields:
                   - {label: "Titre", name: "title", widget: "string"}
                   - {label: "Description", name: "description", widget: "text"}
-                  - {label: "Libellé au-dessus des portraits (sans lien)", name: "cta", widget: "string", hint: "Les photos des membres se changent dans le menu « Équipe — photos et identité »."}
+                  - {label: "Libellé au-dessus des portraits (sans lien)", name: "cta", widget: "string", hint: "Les photos des membres se changent dans Page Équipe → « Membres — nom, photos, coordonnées »."}
                   - {label: "Alternative de l’illustration", name: "imageAlt", widget: "string", hint: "Le dessin lui-même se change en haut de la Page Accueil, dans « Images partagées de l’accueil » → « Illustration de l’équipe » (commun aux quatre langues)."}
 
               - {label: "Titre des articles", name: "articlesTitle", widget: "string"}
@@ -362,9 +337,42 @@ collections:
   - name: "profile"
     label: "Page Équipe"
     files:
+      # Same data file as « Paramètres généraux » (site-config.yml): each entry only
+      # declares its own keys and Decap keeps the others on save.
+      - file: "src/content/config/site-config.yml"
+        name: "membres"
+        label: "Membres — nom, photos, coordonnées (commun aux 4 langues)"
+        editor:
+          preview: false
+        fields:
+          - label: "Membres de l’équipe — nom, photos, LinkedIn"
+            name: "team"
+            widget: "list"
+            summary: "{{fields.name}}"
+            collapsed: false
+            hint: "L’ordre s’applique à l’accueil, à l’équipe et à la navigation dans les quatre langues."
+            fields:
+              - {label: "Identifiant stable", name: "id", widget: "string", hint: "Ne pas modifier après création ; indépendant du nom affiché."}
+              - {label: "Adresse du profil", name: "slug", widget: "string", pattern: ['^[a-z0-9]+(-[a-z0-9]+)*$', "Minuscules, chiffres et tirets"], hint: "Conserver les adresses déjà publiées."}
+              - {label: "Nom affiché", name: "name", widget: "string"}
+              - {label: "Portrait carré", name: "image", widget: "image", hint: "Accueil et page Équipe. Photo carrée, visage centré, environ 1000 × 1000 px, JPG ou WebP, moins de 400 Ko."}
+              - {label: "Portrait individuel", name: "profileImage", widget: "image", required: false, hint: "Page de profil. Photo verticale, environ 1200 × 1500 px, JPG ou WebP, moins de 500 Ko. Vide : utilise le portrait carré."}
+              - {label: "LinkedIn", name: "linkedin", widget: "string", required: false, pattern: ['^https://(www\.)?linkedin\.com/.*$|^$', "Lien LinkedIn https ou champ vide"], hint: "Lien partagé entre les quatre langues."}
+          - label: "Coordonnées de chaque membre"
+            name: "lawyers"
+            widget: "list"
+            summary: "{{fields.id}} — {{fields.phone}}"
+            collapsed: true
+            hint: "Téléphone, e-mail et agenda de rendez-vous. Le LinkedIn se règle dans la liste ci-dessus."
+            fields:
+              - {label: "Membre", name: "id", widget: "relation", collection: "profile", file: "membres", search_fields: ["team.*.name"], value_field: "team.*.id", display_fields: ["team.*.name"]}
+              - {label: "Téléphone", name: "phone", widget: "string", pattern: ['^\+[1-9][0-9 ]{7,20}$', "Numéro international avec + et espaces"], hint: "Exemple : +32 488 40 45 49. Affiché dans le profil et le menu Appelez-nous."}
+              - {label: "WhatsApp", name: "whatsapp", widget: "string", required: false, pattern: ['^([1-9][0-9]{7,14})?$', "Chiffres uniquement, sans + ni espaces"], hint: "Facultatif. Vide : aucun lien WhatsApp."}
+              - {label: "Email professionnel", name: "email", widget: "string", required: false, pattern: ['^([^\s@]+@[^\s@]+\.[^\s@]+)?$', "Adresse email valide ou champ vide"], hint: "À renseigner après confirmation. Vide : aucun lien email ; le téléphone reste accessible. Ne pas saisir une adresse provisoire."}
+              - {label: "Calendrier Cal.com", name: "calendarLink", widget: "string", required: false, pattern: ['^(https://cal\.com/[^\s/?#]+[^\s]*)?$', "URL https://cal.com/nom ou champ vide"], hint: "Vide : aucune commande de réservation. Romain reste joignable par ses coordonnées. Une URL valide active header, Équipe et bannière."}
       - file: "src/content/profile/profile.yml"
         name: "profile"
-        label: "Profils de l'équipe"
+        label: "Textes de la page et des profils (par langue)"
         i18n:
           structure: single_file
         fields:
@@ -382,13 +390,14 @@ collections:
                   - {label: "Description", name: "description", widget: "text", required: false}
                   - {label: "Image de partage", name: "image", widget: "image", required: false}
                   - {label: "Mots-clés", name: "keywords", widget: "list", required: false}
-              - label: "Membres de l’équipe"
+              - label: "Textes de chaque membre"
                 name: "lawyers"
                 widget: "list"
+                hint: "Textes traduits de chaque membre. Le nom, les photos, l’ordre et les coordonnées se règlent dans « Membres — nom, photos, coordonnées »."
                 summary: "{{fields.id}} — {{fields.role}}"
                 collapsed: true
                 fields:
-                  - {label: "Membre", name: "id", widget: "relation", collection: "siteConfig", file: "site-config", search_fields: ["team.*.name"], value_field: "team.*.id", display_fields: ["team.*.name"]}
+                  - {label: "Membre", name: "id", widget: "relation", collection: "profile", file: "membres", search_fields: ["team.*.name"], value_field: "team.*.id", display_fields: ["team.*.name"]}
                   - {label: "Rôle dans le cabinet", name: "role", widget: "string"}
                   - label: "Présentation sur la page Équipe"
                     name: "presentation"
@@ -763,19 +772,6 @@ collections:
             widget: "string"
             required: false
             hint: "Nom affiché dans le pied de page. L'année et le symbole © sont ajoutés automatiquement."
-          - label: "Annuaire — coordonnées individuelles"
-            name: "lawyers"
-            widget: "list"
-            summary: "{{fields.id}} — {{fields.phone}}"
-            collapsed: true
-            hint: "Partagé entre les langues. LinkedIn se règle dans Identité et portraits."
-            fields:
-              - {label: "Membre", name: "id", widget: "relation", collection: "siteConfig", file: "site-config", search_fields: ["team.*.name"], value_field: "team.*.id", display_fields: ["team.*.name"]}
-              - {label: "Téléphone", name: "phone", widget: "string", pattern: ['^\+[1-9][0-9 ]{7,20}$', "Numéro international avec + et espaces"], hint: "Exemple : +32 488 40 45 49. Affiché dans le profil et le menu Appelez-nous."}
-              - {label: "WhatsApp", name: "whatsapp", widget: "string", required: false, pattern: ['^([1-9][0-9]{7,14})?$', "Chiffres uniquement, sans + ni espaces"], hint: "Facultatif. Vide : aucun lien WhatsApp."}
-              - {label: "Email professionnel", name: "email", widget: "string", required: false, pattern: ['^([^\s@]+@[^\s@]+\.[^\s@]+)?$', "Adresse email valide ou champ vide"], hint: "À renseigner après confirmation. Vide : aucun lien email ; le téléphone reste accessible. Ne pas saisir une adresse provisoire."}
-              - {label: "Calendrier Cal.com", name: "calendarLink", widget: "string", required: false, pattern: ['^(https://cal\.com/[^\s/?#]+[^\s]*)?$', "URL https://cal.com/nom ou champ vide"], hint: "Vide : aucune commande de réservation. Romain reste joignable par ses coordonnées. Une URL valide active header, Équipe et bannière."}
-
           - label: "SEO et apparence"
             name: "seo"
             widget: "object"
