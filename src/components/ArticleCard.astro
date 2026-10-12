@@ -59,7 +59,7 @@ const articleUrl = url || `/${lang}/blog/${article.slug.split('/').pop()}`;
           decoding="async"
         />
       ) : (
-        <img {...(await cdnImage(imageProps.src, { width: imageProps.width, height: imageProps.height }))} alt={imageProps.alt} width={imageProps.width} height={imageProps.height} class={imageProps.class} loading={lazyLoad ? "lazy" : "eager"} decoding="async" />
+        <img {...(await cdnImage(imageProps.src, { width: imageProps.width, height: imageProps.height }))} alt={imageProps.alt} class={imageProps.class} loading={lazyLoad ? "lazy" : "eager"} decoding="async" />
       )}
       {article.data.categories.length > 0 && (
         <div class="absolute top-2 left-2">

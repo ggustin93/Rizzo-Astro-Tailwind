@@ -91,13 +91,12 @@ export const prerender = true;
         </div>
         <div class="hero-art">
           <img 
-            src={media.hero}
+            {...(await cdnImage(media.hero, { width: 950 }))}
+            height="750"
             alt={content.hero.imageAlt}
             class="hero-illustration"
             decoding="async" 
             loading="eager" 
-            width="950" 
-            height="750"
           />
         </div>
       </div>
@@ -152,7 +151,7 @@ export const prerender = true;
           <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
         </div>
         <div class="team-intro">
-          <img src={media.team} alt={content.profil.imageAlt} class="team-illustration" width="1200" height="600" loading="lazy" />
+          <img {...(await cdnImage(media.team, { width: 1200 }))} height="600" alt={content.profil.imageAlt} class="team-illustration" loading="lazy" />
           <p class="team-description">{content.profil.description}</p>
         </div>
         <div class="max-w-5xl mx-auto text-center">
@@ -162,7 +161,7 @@ export const prerender = true;
               const Tag = href ? 'a' : 'div';
               return (
                 <Tag href={href} class="team-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">
-                  <img {...(await cdnImage(lawyer.image, { width: 500, height: 500 }))} alt={lawyer.imageAlt || lawyer.name} width="500" height="500" loading="lazy" decoding="async"
+                  <img {...(await cdnImage(lawyer.image, { width: 500, height: 500 }))} alt={lawyer.imageAlt || lawyer.name} loading="lazy" decoding="async"
                     class="team-portrait" />
                   <div class="team-card-caption"><h3>{lawyer.name}</h3>{href && <ArrowRight aria-hidden="true" class="team-card-arrow" />}</div>
                 </Tag>

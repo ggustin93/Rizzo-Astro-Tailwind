@@ -5,6 +5,9 @@ backend:
 media_folder: "public/assets/images"
 public_folder: "/assets/images"
 
+# Decap in French, so messages like the upload limit are clear to the cabinet.
+locale: "fr"
+
 # The real preview is the staging site (staging.rizzo-michiels.be), rebuilt after each save.
 editor:
   preview: false
@@ -699,7 +702,7 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Author", name: "author", widget: "string"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image", hint: "Environ 1600 × 900 px (16:9), sujet centré car l’image est recadrée. JPG ou WebP, moins de 500 Ko.", media_library: *imageUpload}
+      - {label: "Featured Image", name: "thumbnail", widget: "image", hint: "About 1600 × 900 px (16:9), subject centred since the image is cropped. JPG or WebP, under 500 KB.", media_library: *imageUpload}
       - {label: "Read Time (in minutes)", name: "readTime", widget: "string", hint: "Enter the number of minutes, e.g. 5"}
       - label: "Categories"
         name: "categories"
@@ -721,7 +724,7 @@ collections:
       - {label: "Titolo", name: "title", widget: "string"}
       - {label: "Data di pubblicazione", name: "date", widget: "datetime"}
       - {label: "Autore", name: "author", widget: "string"}
-      - {label: "Immagine in evidenza", name: "thumbnail", widget: "image", hint: "Environ 1600 × 900 px (16:9), sujet centré car l’image est recadrée. JPG ou WebP, moins de 500 Ko.", media_library: *imageUpload}
+      - {label: "Immagine in evidenza", name: "thumbnail", widget: "image", hint: "Circa 1600 × 900 px (16:9), soggetto al centro perché l’immagine viene ritagliata. JPG o WebP, meno di 500 KB.", media_library: *imageUpload}
       - {label: "Tempo di lettura (in minuti)", name: "readTime", widget: "string", hint: "Inserisci il numero di minuti, ad esempio: 5"}
       - label: "Categorie"
         name: "categories"

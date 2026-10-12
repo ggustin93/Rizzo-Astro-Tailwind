@@ -10,12 +10,16 @@ test.describe('cdnImage', () => {
       srcset:
         '/.netlify/images?url=%2Fassets%2Fimages%2Fphoto-4370.jpg&w=600&h=750&fit=cover 1x, ' +
         '/.netlify/images?url=%2Fassets%2Fimages%2Fphoto-4370.jpg&w=1200&h=1500&fit=cover 2x',
+      width: 600,
+      height: 750,
     });
   });
 
   test('a photo too small for 2x gets no upscaled variant', async () => {
     expect(await cdnImage('/assets/images/christine-optimized.webp', { width: 500, height: 500, enabled: true })).toEqual({
       src: '/.netlify/images?url=%2Fassets%2Fimages%2Fchristine-optimized.webp&w=500&h=500&fit=cover',
+      width: 500,
+      height: 500,
     });
   });
 
@@ -37,7 +41,7 @@ test.describe('cdnImage', () => {
     ['outside Netlify (dev, preview, tests) there is no CDN', '/assets/images/photo-4370.jpg', false],
   ]) {
     test(`served as-is when ${why}`, async () => {
-      expect(await cdnImage(src, { width: 500, height: 500, enabled })).toEqual({ src });
+      expect(await cdnImage(src, { width: 500, height: 500, enabled })).toEqual({ src, width: 500, height: 500 });
     });
   }
 });

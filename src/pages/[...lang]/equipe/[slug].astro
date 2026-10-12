@@ -65,7 +65,7 @@ const portrait = await cdnImage(lawyer.profileImage, { width: 600, height: 750 }
 
       <!-- Image visible only on mobile, above title -->
       <div class="md:hidden mb-8">
-        <img {...portrait} alt={lawyer.imageAlt || lawyer.name} class="portrait" width="600" height="750" decoding="async">
+        <img {...portrait} alt={lawyer.imageAlt || lawyer.name} class="portrait" decoding="async">
       </div>
 
       <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
@@ -142,7 +142,7 @@ const portrait = await cdnImage(lawyer.profileImage, { width: 600, height: 750 }
         <!-- Image visible only on desktop -->
         <div class="hidden md:block md:w-1/3 md:sticky md:top-28">
           <div>
-            <img {...portrait} alt={lawyer.imageAlt || lawyer.name} class="portrait" width="600" height="750" decoding="async">
+            <img {...portrait} alt={lawyer.imageAlt || lawyer.name} class="portrait" decoding="async">
           </div>
         </div>
       </div>

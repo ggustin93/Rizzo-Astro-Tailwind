@@ -82,7 +82,7 @@ const seoData = {
           format="avif"
         />
       ) : (
-        <img {...(await cdnImage(entry.data.thumbnail, { width: 1200, height: 600 }))} alt="" width="1200" height="600" class="w-full h-[50vh] object-cover rounded-lg" loading="eager" decoding="async" />
+        <img {...(await cdnImage(entry.data.thumbnail, { width: 1200, height: 600 }))} alt="" class="w-full h-[50vh] object-cover rounded-lg" loading="eager" decoding="async" />
       )}
       <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg">
         <h1 class="text-3xl md:text-5xl font-light text-white text-center px-4">{entry.data.title}</h1>
