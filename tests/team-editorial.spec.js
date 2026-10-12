@@ -1,4 +1,10 @@
 import { test, expect } from '@playwright/test';
+import { readFileSync } from 'node:fs';
+import { load } from 'js-yaml';
+
+// Names are CMS-editable: read them from site-config, never hard-code them.
+const team = load(readFileSync(new URL('../src/content/config/site-config.yml', import.meta.url), 'utf8')).team;
+const nameOf = (id) => team.find((m) => m.id === id).name;
 
 test('la présentation complète de Christine est distincte de son profil', async ({ page }) => {
   await page.goto('/fr/equipe/');
@@ -15,7 +21,7 @@ for (const lang of ['fr', 'en', 'it', 'nl']) {
       ['christine-rizzo', 'Christine Rizzo', 'Reliance Littler'],
       ['stephanie-michiels', 'Stephanie Michiels', 'Fulbright'],
       ['arnaud-vanderhoeven-jacobs', 'Arnaud Vanderhoeven Jacobs', 'Castiaux & Partners'],
-      ['romain-archalaus', 'Romain Archalaüs', 'ELSA'],
+      ['romain-archalaus', nameOf('romain-archalaus'), 'ELSA'],
     ];
     await page.goto(`/${lang}/equipe/`);
     await expect(page.locator('main h2')).toHaveText(members.map(x => x[1]));
@@ -35,7 +41,7 @@ for (const lang of ['fr', 'en', 'it', 'nl']) {
 test('accueil : promesse fournie, réunion sous équipe et quatre mini-portraits', async ({ page }) => {
   await page.goto('/fr/');
   await expect(page.locator('main')).toContainText('Cabinet d’avocats en droit du travail belge et droit de la fonction publique européenne');
-  await expect(page.locator('#profil h3')).toHaveText(['Christine Rizzo','Stephanie Michiels','Arnaud Vanderhoeven Jacobs','Romain Archalaüs']);
+  await expect(page.locator('#profil h3')).toHaveText(['Christine Rizzo','Stephanie Michiels','Arnaud Vanderhoeven Jacobs',nameOf('romain-archalaus')]);
   await expect(page.locator('#profil')).toContainText('Rizzo & Michiels est une équipe de quatre avocats');
   await expect(page.locator('#profil img[alt="Réunion de travail"]')).toBeVisible();
   await expect(page.locator('#expertise img')).toHaveCount(0);
@@ -112,7 +118,7 @@ for (const lang of ['fr', 'en', 'it', 'nl']) {
     await page.keyboard.press('Enter');
     await expect(page).toHaveURL(new RegExp(`/${lang}/equipe/#romain-archalaus$`));
     const section = page.locator('#romain-archalaus');
-    await expect(section.locator('h2')).toHaveText('Romain Archalaüs');
+    await expect(section.locator('h2')).toHaveText(nameOf('romain-archalaus'));
     await expect(section).toBeInViewport();
     await expect(section.locator(`a[href="/${lang}/equipe/romain-archalaus/"]`)).toHaveCount(2);
   });
