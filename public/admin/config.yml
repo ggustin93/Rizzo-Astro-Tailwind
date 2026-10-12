@@ -10,6 +10,31 @@ editor:
   preview: false
 
 collections:
+  # Équipe : photos et identité des membres. Même fichier que « Paramètres généraux »,
+  # mis à part pour que les photos se trouvent sans chercher.
+  - name: "equipe"
+    label: "Équipe — photos et identité"
+    files:
+      - file: "src/content/config/site-config.yml"
+        name: "equipe"
+        label: "Photos et identité de l’équipe"
+        editor:
+          preview: false
+        fields:
+          - label: "Membres de l’équipe"
+            name: "team"
+            widget: "list"
+            summary: "{{fields.name}}"
+            collapsed: false
+            hint: "L’ordre s’applique à l’accueil, à l’équipe et à la navigation dans les quatre langues."
+            fields:
+              - {label: "Identifiant stable", name: "id", widget: "string", hint: "Ne pas modifier après création ; indépendant du nom affiché."}
+              - {label: "Adresse du profil", name: "slug", widget: "string", pattern: ['^[a-z0-9]+(-[a-z0-9]+)*$', "Minuscules, chiffres et tirets"], hint: "Conserver les adresses déjà publiées."}
+              - {label: "Nom affiché", name: "name", widget: "string"}
+              - {label: "Portrait carré", name: "image", widget: "image", hint: "Accueil et page Équipe. Photo carrée, visage centré, environ 1000 × 1000 px, JPG ou WebP, moins de 400 Ko."}
+              - {label: "Portrait individuel", name: "profileImage", widget: "image", required: false, hint: "Page de profil. Photo verticale, environ 1200 × 1500 px, JPG ou WebP, moins de 500 Ko. Vide : utilise le portrait carré."}
+              - {label: "LinkedIn", name: "linkedin", widget: "string", required: false, pattern: ['^https://(www\.)?linkedin\.com/.*$|^$', "Lien LinkedIn https ou champ vide"], hint: "Lien partagé entre les quatre langues."}
+
   # Page d'accueil
   - name: "home"
     label: "Page Accueil"
@@ -103,8 +128,8 @@ collections:
                 fields:
                   - {label: "Titre", name: "title", widget: "string"}
                   - {label: "Description", name: "description", widget: "text"}
-                  - {label: "Libellé au-dessus des portraits (sans lien)", name: "cta", widget: "string", hint: "Les photos de l’équipe se changent dans Paramètres généraux → « Membres de l’équipe — identité, ordre et portraits partagés » (Portrait carré et Portrait individuel)."}
-                  - {label: "Alternative de l’illustration", name: "imageAlt", widget: "string"}
+                  - {label: "Libellé au-dessus des portraits (sans lien)", name: "cta", widget: "string", hint: "Les photos des membres se changent dans le menu « Équipe — photos et identité »."}
+                  - {label: "Alternative de l’illustration", name: "imageAlt", widget: "string", hint: "Le dessin lui-même se change en haut de la Page Accueil, dans « Images partagées de l’accueil » → « Illustration de l’équipe » (commun aux quatre langues)."}
 
               - {label: "Titre des articles", name: "articlesTitle", widget: "string"}
               - {label: "Voir tous les articles", name: "viewAllArticles", widget: "string"}
@@ -723,19 +748,6 @@ collections:
             widget: "boolean"
             default: false
           
-          - label: "Membres de l’équipe — identité, ordre et portraits partagés"
-            name: "team"
-            widget: "list"
-            summary: "{{fields.name}}"
-            collapsed: true
-            hint: "L’ordre s’applique à l’accueil, à l’équipe et à la navigation dans les quatre langues."
-            fields:
-              - {label: "Identifiant stable", name: "id", widget: "string", hint: "Ne pas modifier après création ; indépendant du nom affiché."}
-              - {label: "Adresse du profil", name: "slug", widget: "string", pattern: ['^[a-z0-9]+(-[a-z0-9]+)*$', "Minuscules, chiffres et tirets"], hint: "Conserver les adresses déjà publiées."}
-              - {label: "Nom affiché", name: "name", widget: "string"}
-              - {label: "Portrait carré", name: "image", widget: "image"}
-              - {label: "Portrait individuel", name: "profileImage", widget: "image", required: false, hint: "Vide : utilise le portrait carré."}
-              - {label: "LinkedIn", name: "linkedin", widget: "string", required: false, pattern: ['^https://(www\.)?linkedin\.com/.*$|^$', "Lien LinkedIn https ou champ vide"], hint: "Lien partagé entre les quatre langues."}
           - {label: "Illustration de la bannière Contact", name: "contactIllustration", widget: "image", hint: "Image commune aux quatre langues. Alternatives dans les traductions du bloc contact."}
           - label: "Coordonnées du cabinet — adresse"
             name: "address"
