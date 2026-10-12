@@ -19,13 +19,7 @@ test('Travailleurs FR presents its sections, situations and fees link', async ({
 test('Employeurs FR presents five sections, four individual situations and fees', async ({ page }) => {
   await page.goto('/fr/services/employeurs/');
   const sections = page.locator('main section');
-  await expect(sections.locator('h2')).toHaveText([
-    'Audit – Due Diligence en droit du travail et de la sécurité sociale',
-    'Rédaction et révision de vos contrats de travail, règlement de travail et politiques RH et GDPR',
-    'Conseils – gestion de la relation individuelle de travail, du recrutement à la rupture',
-    "Négociation d'accords amiables",
-    "Défense devant les cours et tribunaux du travail et devant les inspections du travail et de l'ONSS",
-  ]);
+  await expect(sections.locator('h2')).toHaveText(services('employeurs').fr.sections.map((section) => section.title));
   await expect(sections.nth(2).locator('li')).toHaveCount(4);
   await expect(sections.nth(0)).toContainText('passif social');
   await expect(sections.nth(1)).toContainText('flexi-job');

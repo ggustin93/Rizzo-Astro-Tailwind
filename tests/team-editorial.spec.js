@@ -5,14 +5,18 @@ import { load } from 'js-yaml';
 // Names are CMS-editable: read them from site-config, never hard-code them.
 const team = load(readFileSync(new URL('../src/content/config/site-config.yml', import.meta.url), 'utf8')).team;
 const nameOf = (id) => team.find((m) => m.id === id).name;
+// Same for the copy shown on the home and team pages.
+const yml = (file) => load(readFileSync(new URL(`../src/content/${file}`, import.meta.url), 'utf8')).fr;
+const christine = yml('profile/profile.yml').lawyers.find((l) => l.id === 'christine-rizzo');
+const homeFr = yml('home/home.yml');
 
 test('la présentation complète de Christine est distincte de son profil', async ({ page }) => {
   await page.goto('/fr/equipe/');
-  await expect(page.locator('main')).toContainText("Elle copréside la Commission Bien-être psychosociale");
-  await expect(page.locator('main')).toContainText("l'Association des Juristes Praticiens du Droit Social");
+  // Last paragraph of the full presentation (commission + association memberships).
+  await expect(page.locator('main')).toContainText(christine.presentation[0].split(/\n\s*\n/).at(-1).trim());
   await page.locator('main a[href="/fr/equipe/christine-rizzo/"] img').click();
   await expect(page.locator('main')).not.toContainText('Je suis actuellement membre');
-  await expect(page.locator('main')).toContainText('2025-2027');
+  await expect(page.locator('main')).toContainText(christine.careerPath[1].year);
 });
 
 for (const lang of ['fr', 'en', 'it', 'nl']) {
@@ -40,13 +44,13 @@ for (const lang of ['fr', 'en', 'it', 'nl']) {
 
 test('accueil : promesse fournie, réunion sous équipe et quatre mini-portraits', async ({ page }) => {
   await page.goto('/fr/');
-  await expect(page.locator('main')).toContainText('Cabinet d’avocats en droit du travail belge et droit de la fonction publique européenne');
+  await expect(page.locator('main')).toContainText(homeFr.hero.subtitle);
   await expect(page.locator('#profil h3')).toHaveText(['Christine Rizzo','Stephanie Michiels','Arnaud Vanderhoeven Jacobs',nameOf('romain-archalaus')]);
-  await expect(page.locator('#profil')).toContainText('Rizzo & Michiels est une équipe de quatre avocats');
-  await expect(page.locator('#profil img[alt="Réunion de travail"]')).toBeVisible();
+  await expect(page.locator('#profil')).toContainText(homeFr.profil.description.slice(0, 50));
+  await expect(page.locator(`#profil img[alt="${homeFr.profil.imageAlt}"]`)).toBeVisible();
   await expect(page.locator('#expertise img')).toHaveCount(0);
   await expect(page.locator('#profil a')).toHaveCount(5);
-  await expect(page.locator('#profil a[href="/fr/equipe/"]')).toHaveText(/Découvrir l’équipe/);
+  await expect(page.locator('#profil a[href="/fr/equipe/"]')).toContainText(homeFr.profil.cta);
   await page.locator('#profil a[href="/fr/equipe/#romain-archalaus"] img').click();
   await expect(page).toHaveURL(/\/fr\/equipe\/#romain-archalaus$/);
   await page.goBack();
