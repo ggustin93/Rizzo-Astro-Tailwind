@@ -21,7 +21,7 @@ graph TD
     SCHEMA -->|feeds| BUILD["Astro Build<br/>SSG"]
     BUILD -->|deploys| NETLIFY["Netlify<br/>Static hosting"]
 
-    YAML --> CONFIG["site-config.yml<br/>Single source of truth<br/>(contact, lawyers array)"]
+    YAML --> CONFIG["site-config.yml<br/>Single source of truth<br/>(contact, team & lawyers)"]
     YAML --> BLOG["blog/{lang}/*.md"]
     YAML --> PAGES["page collections<br/>home, travailleurs,<br/>employeurs, europeennes…"]
     YAML --> I18N["ui-translations/{lang}.yml<br/>Interface strings"]

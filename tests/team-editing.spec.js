@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { content, team } from './helpers';
+import { content, profileOf, team } from './helpers';
 
 // Names and order come from site-config, as rewritten by the verification script.
 const names = team().map((m) => m.name);
@@ -20,8 +20,7 @@ if (process.env.TEAM_EDITING) {
       await expect(page.locator('main h2')).toHaveText(names);
       await page.goto(`/${lang}/equipe/christine-rizzo/`);
       await expect(page.locator('main h1')).toHaveText('Christine — recette');
-      const christineProfile = content('profile/profile.yml')[lang].lawyers.find((l) => l.id === 'christine-rizzo');
-      await expect(page.locator('main')).toContainText(christineProfile.careerPath[0].event);
+      for (const { event } of profileOf(lang, 'christine-rizzo').careerPath ?? []) await expect(page.locator('main')).toContainText(event);
       const graph = JSON.parse(await page.locator('script[type="application/ld+json"]').first().textContent())['@graph'];
       const people = graph.filter(node => node['@type'] === 'Person');
       expect(people).toHaveLength(4);

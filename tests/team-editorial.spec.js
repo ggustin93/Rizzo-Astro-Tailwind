@@ -1,12 +1,10 @@
 import { test, expect } from '@playwright/test';
-import { content, nameOf, team } from './helpers';
+import { content, nameOf, profileOf, team } from './helpers';
 
 // Names and copy are CMS-editable: read them from the content, never hard-code them.
 const yml = (file) => content(file).fr;
 const christine = yml('profile/profile.yml').lawyers.find((l) => l.id === 'christine-rizzo');
 const homeFr = yml('home/home.yml');
-// A member's localized profile entry (career, publications) as the cabinet wrote it.
-const profileOf = (lang, id) => content('profile/profile.yml')[lang].lawyers.find((l) => l.id === id);
 
 test('la présentation complète de Christine est distincte de son profil', async ({ page }) => {
   await page.goto('/fr/equipe/');
@@ -19,17 +17,18 @@ test('la présentation complète de Christine est distincte de son profil', asyn
 
 for (const lang of ['fr', 'en', 'it', 'nl']) {
   test(`${lang} : quatre profils intégraux, LinkedIn et navigation`, async ({ page, request }) => {
-    // Roster order, names and career lines come from the CMS (site-config + profile).
-    const members = team().map((m) => [m.slug, m.name, profileOf(lang, m.id).careerPath[0].event]);
+    // Roster order, names and careers come from the CMS (site-config + profile).
+    const members = team().map((m) => [m.slug, m.name, (profileOf(lang, m.id).careerPath ?? []).map((c) => c.event)]);
     await page.goto(`/${lang}/equipe/`);
     await expect(page.locator('main h2')).toHaveText(members.map(x => x[1]));
-    for (const [slug, name, career] of members) {
+    for (const [slug, name, careers] of members) {
       await expect(page.locator(`main a[href="/${lang}/equipe/${slug}/"]`)).toHaveCount(2);
       const response = await request.get(`/${lang}/equipe/${slug}/`);
       expect(response.status()).toBe(200);
       await page.goto(`/${lang}/equipe/${slug}/`);
       await expect(page.locator('main h1')).toHaveText(name);
-      await expect(page.locator('main')).toContainText(career);
+      // Every career line, so one member's page can't pass with another's career.
+      for (const event of careers) await expect(page.locator('main')).toContainText(event);
       await expect(page.getByRole('link', { name: 'LinkedIn', exact: true })).toBeVisible();
       await page.goto(`/${lang}/equipe/`);
     }
@@ -74,13 +73,14 @@ for (const lang of ['fr','en','it','nl']) {
 for (const lang of ['fr','en','it','nl']) {
   test(`${lang} : contributions et références bibliographiques complètes`, async ({ page }) => {
     await page.goto(`/${lang}/equipe/arnaud-vanderhoeven-jacobs/`);
-    for (const { title } of profileOf(lang, 'arnaud-vanderhoeven-jacobs').publications) {
+    for (const { title } of profileOf(lang, 'arnaud-vanderhoeven-jacobs').publications ?? []) {
       await expect(page.locator('main')).toContainText(title.trim());
     }
     await page.goto(`/${lang}/equipe/romain-archalaus/`);
     const heading={fr:'Publications',en:'Publications',it:'Pubblicazioni',nl:'Publicaties'}[lang];
     await expect(page.locator('main').getByRole('heading',{name:heading,exact:true})).toBeVisible();
-    await expect(page.locator('main')).toContainText(profileOf(lang, 'romain-archalaus').publicationsIntro.trim());
+    const intro = profileOf(lang, 'romain-archalaus').publicationsIntro?.trim();
+    if (intro) await expect(page.locator('main')).toContainText(intro);
   });
 }
 

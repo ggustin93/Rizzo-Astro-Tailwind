@@ -13,6 +13,8 @@ export const ctaLabel = (lang: string, type: string): string =>
 /** Shared team roster (names, order, portraits) as the cabinet edits it in the CMS. */
 export const team = (): any[] => content('config/site-config.yml').team;
 export const nameOf = (id: string): string => team().find((m) => m.id === id).name;
+/** A member's translated profile entry (role, career, publications) from profile.yml. */
+export const profileOf = (lang: string, id: string): any => content('profile/profile.yml')[lang].lawyers.find((l) => l.id === id);
 
 export const BASE_URL = process.env.BASE_URL || 'http://localhost:4321';
 

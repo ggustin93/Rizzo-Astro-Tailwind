@@ -22,8 +22,12 @@ test('Employeurs FR presents its sections, situations and fees', async ({ page }
   const expected = services('employeurs').fr.sections;
   // Each section shows the start of its CMS text; the situations section lists every situation.
   for (const [i, section] of expected.entries()) {
-    if (section.situations) await expect(sections.nth(i).locator('li')).toHaveCount(section.situations.length);
-    else await expect(sections.nth(i)).toContainText(section.description.split(/\s+/).slice(0, 8).join(' '));
+    const opening = (text) => text.split(/\s+/).slice(0, 8).join(' ');
+    if (section.description) await expect(sections.nth(i)).toContainText(opening(section.description));
+    if (section.situations) {
+      await expect(sections.nth(i).locator('li')).toHaveCount(section.situations.length);
+      await expect(sections.nth(i)).toContainText(opening(section.situations[0].question));
+    }
   }
   await expect(page.locator('main a[href="/fr/honoraires/"]')).toBeVisible();
 });
