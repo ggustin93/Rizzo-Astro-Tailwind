@@ -103,7 +103,7 @@ collections:
                 fields:
                   - {label: "Titre", name: "title", widget: "string"}
                   - {label: "Description", name: "description", widget: "text"}
-                  - {label: "Libellé au-dessus des portraits (sans lien)", name: "cta", widget: "string"}
+                  - {label: "Libellé au-dessus des portraits (sans lien)", name: "cta", widget: "string", hint: "Les photos de l’équipe se changent dans Paramètres généraux → Membres de l’équipe (Portrait carré et Portrait individuel)."}
                   - {label: "Alternative de l’illustration", name: "imageAlt", widget: "string"}
 
               - {label: "Titre des articles", name: "articlesTitle", widget: "string"}

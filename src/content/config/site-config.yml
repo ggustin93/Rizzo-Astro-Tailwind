@@ -38,8 +38,8 @@ team:
   - id: christine-rizzo
     slug: christine-rizzo
     name: Christine Rizzo
-    image: /assets/images/christine-optimized.webp
-    profileImage: /assets/images/christine-optimized.webp
+    image: /assets/images/christine-2026-optimized.webp
+    profileImage: /assets/images/christine-2026-portrait.webp
     linkedin: https://www.linkedin.com/in/chrizzo11/
   - id: stephanie-michiels
     slug: stephanie-michiels
@@ -50,10 +50,12 @@ team:
   - id: arnaud-vanderhoeven-jacobs
     slug: arnaud-vanderhoeven-jacobs
     name: Arnaud Vanderhoeven Jacobs
-    image: /assets/images/team-placeholder.svg
+    image: /assets/images/arnaud-optimized.webp
+    profileImage: /assets/images/arnaud-portrait.webp
     linkedin: https://www.linkedin.com/in/arnaud-vanderhoeven-jacobs-a21a84b8/
   - id: romain-archalaus
     slug: romain-archalaus
     name: Romain Archalaüs
-    image: /assets/images/team-placeholder.svg
+    image: /assets/images/romain-optimized.webp
+    profileImage: /assets/images/romain-portrait.webp
     linkedin: https://www.linkedin.com/in/romain-archala%C3%BCs/
