@@ -91,8 +91,7 @@ export const prerender = true;
         </div>
         <div class="hero-art">
           <img 
-            {...(await cdnImage(media.hero, { width: 950 }))}
-            height="750"
+            {...(await cdnImage(media.hero, { width: 950, height: 750, crop: false }))}
             alt={content.hero.imageAlt}
             class="hero-illustration"
             decoding="async" 
@@ -151,7 +150,7 @@ export const prerender = true;
           <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
         </div>
         <div class="team-intro">
-          <img {...(await cdnImage(media.team, { width: 1200 }))} height="600" alt={content.profil.imageAlt} class="team-illustration" loading="lazy" />
+          <img {...(await cdnImage(media.team, { width: 1200, height: 600, crop: false }))} alt={content.profil.imageAlt} class="team-illustration" loading="lazy" />
           <p class="team-description">{content.profil.description}</p>
         </div>
         <div class="max-w-5xl mx-auto text-center">

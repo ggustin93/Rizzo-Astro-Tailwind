@@ -29,6 +29,14 @@ test.describe('cdnImage', () => {
     );
   });
 
+  test('an illustration keeps its whole image but still declares its display size', async () => {
+    expect(await cdnImage('/assets/images/equipe.png', { width: 1200, height: 600, crop: false, enabled: true })).toEqual({
+      src: '/.netlify/images?url=%2Fassets%2Fimages%2Fequipe.png&w=1200',
+      width: 1200,
+      height: 600,
+    });
+  });
+
   test('file names with spaces or accents survive', async () => {
     expect((await cdnImage('/assets/images/Photo équipe.jpg', { width: 500, enabled: true })).src).toBe(
       '/.netlify/images?url=%2Fassets%2Fimages%2FPhoto%20%C3%A9quipe.jpg&w=500',

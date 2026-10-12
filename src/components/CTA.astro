@@ -67,7 +67,7 @@ const actionIcons = { email: Mail, appointment: Calendar, phone: Phone };
         </div>
       </div>
       <div class="contact-illustration">
-        <img {...(await cdnImage(config.contactIllustration, { width: 280 }))} height="112" alt={t.illustrationAlt} class="w-full h-auto max-w-[220px] opacity-75" loading="lazy" decoding="async" />
+        <img {...(await cdnImage(config.contactIllustration, { width: 280, height: 112, crop: false }))} alt={t.illustrationAlt} class="w-full h-auto max-w-[220px] opacity-75" loading="lazy" decoding="async" />
       </div>
     </div>
   </section>
