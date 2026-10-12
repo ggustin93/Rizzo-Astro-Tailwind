@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { content, nameOf, team } from './helpers';
+import { content, nameOf, profileOf, team } from './helpers';
 
 // Names and copy are CMS-editable: read them from the content, never hard-code them.
 const yml = (file) => content(file).fr;
@@ -17,21 +17,18 @@ test('la présentation complète de Christine est distincte de son profil', asyn
 
 for (const lang of ['fr', 'en', 'it', 'nl']) {
   test(`${lang} : quatre profils intégraux, LinkedIn et navigation`, async ({ page, request }) => {
-    const members = [
-      ['christine-rizzo', nameOf('christine-rizzo'), 'Reliance Littler'],
-      ['stephanie-michiels', nameOf('stephanie-michiels'), 'Fulbright'],
-      ['arnaud-vanderhoeven-jacobs', nameOf('arnaud-vanderhoeven-jacobs'), 'Castiaux & Partners'],
-      ['romain-archalaus', nameOf('romain-archalaus'), 'ELSA'],
-    ];
+    // Roster order, names and careers come from the CMS (site-config + profile).
+    const members = team().map((m) => [m.slug, m.name, (profileOf(lang, m.id).careerPath ?? []).map((c) => c.event)]);
     await page.goto(`/${lang}/equipe/`);
     await expect(page.locator('main h2')).toHaveText(members.map(x => x[1]));
-    for (const [slug, name, career] of members) {
+    for (const [slug, name, careers] of members) {
       await expect(page.locator(`main a[href="/${lang}/equipe/${slug}/"]`)).toHaveCount(2);
       const response = await request.get(`/${lang}/equipe/${slug}/`);
       expect(response.status()).toBe(200);
       await page.goto(`/${lang}/equipe/${slug}/`);
       await expect(page.locator('main h1')).toHaveText(name);
-      await expect(page.locator('main')).toContainText(career);
+      // Every career line, so one member's page can't pass with another's career.
+      for (const event of careers) await expect(page.locator('main')).toContainText(event);
       await expect(page.getByRole('link', { name: 'LinkedIn', exact: true })).toBeVisible();
       await page.goto(`/${lang}/equipe/`);
     }
@@ -76,13 +73,14 @@ for (const lang of ['fr','en','it','nl']) {
 for (const lang of ['fr','en','it','nl']) {
   test(`${lang} : contributions et références bibliographiques complètes`, async ({ page }) => {
     await page.goto(`/${lang}/equipe/arnaud-vanderhoeven-jacobs/`);
-    await expect(page.locator('main')).toContainText('Tome 2. La preuve du motif grave et ses particularités');
-    await expect(page.locator('main')).toContainText('Tome 3. Les différents cas d’espèce du motif grave');
-    await expect(page.locator('main')).toContainText('Tome 1. Evolution, aspects techniques et applications diverses');
+    for (const { title } of profileOf(lang, 'arnaud-vanderhoeven-jacobs').publications ?? []) {
+      await expect(page.locator('main')).toContainText(title.trim());
+    }
     await page.goto(`/${lang}/equipe/romain-archalaus/`);
     const heading={fr:'Publications',en:'Publications',it:'Pubblicazioni',nl:'Publicaties'}[lang];
     await expect(page.locator('main').getByRole('heading',{name:heading,exact:true})).toBeVisible();
-    await expect(page.locator('main')).toContainText('Le contrat de travail : aspects théoriques et pratiques');
+    const intro = profileOf(lang, 'romain-archalaus').publicationsIntro?.trim();
+    if (intro) await expect(page.locator('main')).toContainText(intro);
   });
 }
 

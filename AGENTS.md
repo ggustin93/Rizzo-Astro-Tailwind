@@ -49,7 +49,7 @@ npx playwright test --ui  # Run tests with UI mode
 - **Languages**: Multilingual YAML files under `src/content/`
 - **Schema Validation**: Zod schemas in `src/content/config.ts` (source of truth)
 - **Centralized Config**: All global contact info in `src/content/config/site-config.yml`
-- **Lawyers Array**: `site-config.yml` contains a `lawyers` array with entries for each lawyer (name, email, phone, calendarLink). Components iterate over this array to display per-lawyer contact information dynamically.
+- **Team and Lawyers**: `site-config.yml` holds two lists keyed by a stable member `id`: `team` (display name, square and profile portraits, LinkedIn, order) and `lawyers` (phone, WhatsApp, e-mail, `calendarLink`). Both are edited in the CMS under « Page Équipe → Membres — nom, photos, coordonnées (commun aux quatre langues) »; translated texts live in `profile.yml`. Components iterate over these lists to display per-member information dynamically.
 - **Single Source of Truth**: Contact info must always be pulled from site-config.yml
 
 ### Routing Architecture
@@ -109,7 +109,7 @@ npx playwright test --ui  # Run tests with UI mode
 - **Icons**: Import from `astro-feather-icons` or `astro-feather-icons2`
 - **Images**: CMS images (paths under `public/`) go through `cdnImage()` from `src/utils/imageHelpers.js`, which serves them via the Netlify Image CDN on Netlify builds (resize, AVIF/WebP, 2x only if the source is wide enough) and as-is locally. Spread its result on a plain `<img>`; keep Astro `Image`/`Picture` for files in `src/assets` and remote URLs. `scripts/verify-image-cdn.mjs` checks a Netlify-like build
 - **Buttons**: Use `Button.astro` component for consistency
-- **CTA Component**: `CTA.astro` dynamically iterates over the `lawyers` array from site-config.yml. Each lawyer gets their own contact card with Email, Appointment (Cal.com, conditional on valid `calendarLink`), and Phone buttons. When adding or removing lawyers, only site-config.yml needs to change.
+- **CTA Component**: `CTA.astro` renders the contact actions from ui-translations (`cta.actions`: e-mail, appointment, phone); the appointment and phone actions list the members from the `lawyers` array (appointment only for a valid `calendarLink`). Adding or removing a member only touches site-config.yml (CMS: « Page Équipe → Membres »).
 
 ### Testing Requirements
 - E2E tests with Playwright in `tests/` directory
@@ -138,7 +138,7 @@ Edit `src/content/config/site-config.yml` - changes propagate site-wide
 Edit `src/content/navigation/site-navigation.yml` for all languages
 
 ### Add or Modify a Lawyer
-Edit the `lawyers` array in `src/content/config/site-config.yml`. Each entry requires `name`, `email`, `phone`, and optionally `calendarLink` (Cal.com URL). The CTA component and other lawyer-aware components will automatically pick up the changes.
+Edit the member in the CMS under « Page Équipe → Membres — nom, photos, coordonnées (commun aux quatre langues) », or directly in `src/content/config/site-config.yml`: `team` holds `id`, `slug`, `name`, `image`, optional `profileImage` and `linkedin`; `lawyers` holds the same `id` with `phone`, optional `whatsapp`, `email` and `calendarLink` (Cal.com URL). Add the member's translated texts in `profile.yml` (« Textes de la page et des profils »). The CTA component and other member-aware components pick up the changes automatically.
 
 ### Run SEO Validation
 ```bash
