@@ -1,9 +1,8 @@
 import { test, expect } from '@playwright/test';
-import { readFileSync } from 'node:fs';
-import { load } from 'js-yaml';
+import { content } from './helpers';
 
 // The cabinet edits this copy in the CMS: read expectations from the content, never hard-code them.
-const services = (audience) => load(readFileSync(new URL(`../src/content/${audience}/${audience}.yml`, import.meta.url), 'utf8'));
+const services = (audience) => content(`${audience}/${audience}.yml`);
 
 test('Travailleurs FR presents its sections, situations and fees link', async ({ page }) => {
   const { sections: expected } = services('travailleurs').fr;

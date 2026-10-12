@@ -1,12 +1,8 @@
 import { test, expect } from '@playwright/test';
-import { readFileSync } from 'node:fs';
-import { load } from 'js-yaml';
+import { content, nameOf, team } from './helpers';
 
-// Names are CMS-editable: read them from site-config, never hard-code them.
-const team = load(readFileSync(new URL('../src/content/config/site-config.yml', import.meta.url), 'utf8')).team;
-const nameOf = (id) => team.find((m) => m.id === id).name;
-// Same for the copy shown on the home and team pages.
-const yml = (file) => load(readFileSync(new URL(`../src/content/${file}`, import.meta.url), 'utf8')).fr;
+// Names and copy are CMS-editable: read them from the content, never hard-code them.
+const yml = (file) => content(file).fr;
 const christine = yml('profile/profile.yml').lawyers.find((l) => l.id === 'christine-rizzo');
 const homeFr = yml('home/home.yml');
 
@@ -22,9 +18,9 @@ test('la présentation complète de Christine est distincte de son profil', asyn
 for (const lang of ['fr', 'en', 'it', 'nl']) {
   test(`${lang} : quatre profils intégraux, LinkedIn et navigation`, async ({ page, request }) => {
     const members = [
-      ['christine-rizzo', 'Christine Rizzo', 'Reliance Littler'],
-      ['stephanie-michiels', 'Stephanie Michiels', 'Fulbright'],
-      ['arnaud-vanderhoeven-jacobs', 'Arnaud Vanderhoeven Jacobs', 'Castiaux & Partners'],
+      ['christine-rizzo', nameOf('christine-rizzo'), 'Reliance Littler'],
+      ['stephanie-michiels', nameOf('stephanie-michiels'), 'Fulbright'],
+      ['arnaud-vanderhoeven-jacobs', nameOf('arnaud-vanderhoeven-jacobs'), 'Castiaux & Partners'],
       ['romain-archalaus', nameOf('romain-archalaus'), 'ELSA'],
     ];
     await page.goto(`/${lang}/equipe/`);
@@ -45,7 +41,7 @@ for (const lang of ['fr', 'en', 'it', 'nl']) {
 test('accueil : promesse fournie, réunion sous équipe et quatre mini-portraits', async ({ page }) => {
   await page.goto('/fr/');
   await expect(page.locator('main')).toContainText(homeFr.hero.subtitle);
-  await expect(page.locator('#profil h3')).toHaveText(['Christine Rizzo','Stephanie Michiels','Arnaud Vanderhoeven Jacobs',nameOf('romain-archalaus')]);
+  await expect(page.locator('#profil h3')).toHaveText(team().map((m) => m.name));
   await expect(page.locator('#profil')).toContainText(homeFr.profil.description.slice(0, 50));
   await expect(page.locator(`#profil img[alt="${homeFr.profil.imageAlt}"]`)).toBeVisible();
   await expect(page.locator('#expertise img')).toHaveCount(0);
@@ -64,7 +60,7 @@ for (const lang of ['fr','en','it','nl']) {
     await expect(link).toBeFocused();
     await page.keyboard.press('Enter');
     await expect(page).toHaveURL(new RegExp(`/${lang}/equipe/arnaud-vanderhoeven-jacobs/$`));
-    await expect(page.locator('main h1')).toHaveText('Arnaud Vanderhoeven Jacobs');
+    await expect(page.locator('main h1')).toHaveText(nameOf('arnaud-vanderhoeven-jacobs'));
     await page.goto(`/${lang}/`);
     await page.locator('#profil').scrollIntoViewIfNeeded();
     for (const img of await page.locator('#profil img').all()) {

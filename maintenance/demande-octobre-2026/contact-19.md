@@ -4,12 +4,12 @@ Implémentation locale sur `feat/oct-2026-romain-nl-seo`, à partir de `592f329`
 
 ## Réglages pour le cabinet
 
-Dans Decap, Configuration du site :
+Dans Decap, Configuration → Paramètres généraux (coordonnées du cabinet) et Page Équipe → « Membres — nom, photos, coordonnées (commun aux quatre langues) » (coordonnées individuelles) :
 
 - **Coordonnées du cabinet** : adresse commune et email général. La zone « Nos bureaux », les pages légales et les données structurées utilisent ces réglages. L’email général sert à l’action « Email avec documents ».
-- **Annuaire — coordonnées individuelles** : choisir le membre grâce à son identité stable. Téléphone obligatoire, email professionnel et WhatsApp facultatifs. Un email vide masque uniquement ce lien ; ne pas saisir une adresse factice. Les numéros confirmés sont conservés pour Christine et Stephanie et ajoutés pour Arnaud et Romain.
+- **Coordonnées de chaque membre** : choisir le membre grâce à son identité stable. Téléphone obligatoire, email professionnel et WhatsApp facultatifs. Un email vide masque uniquement ce lien ; ne pas saisir une adresse factice. Les numéros confirmés sont conservés pour Christine et Stephanie et ajoutés pour Arnaud et Romain.
 - **Calendrier Cal.com** : vider le champ retire les commandes dans le header, l’Équipe et la bannière ; renseigner une URL Cal.com valide les rétablit. Romain n’a pas de calendrier. Son lien Contact mène aux coordonnées de son profil.
-- **Identité et portraits** : LinkedIn est saisi une seule fois par membre, partagé entre les langues.
+- **Membres de l’équipe — nom, photos, LinkedIn** : LinkedIn est saisi une seule fois par membre, partagé entre les langues.
 - **Afficher le formulaire de contact** : masque aussi les accès Message des bannières et les liens Formulaire du menu. Les autres contacts restent disponibles.
 - **Illustration de la bannière Contact** : média commun aux langues.
 

@@ -103,8 +103,8 @@ collections:
                 fields:
                   - {label: "Titre", name: "title", widget: "string"}
                   - {label: "Description", name: "description", widget: "text"}
-                  - {label: "Libellé au-dessus des portraits (sans lien)", name: "cta", widget: "string", hint: "Les photos des membres se changent dans Page Équipe → « Membres — nom, photos, coordonnées »."}
-                  - {label: "Alternative de l’illustration", name: "imageAlt", widget: "string", hint: "Le dessin lui-même se change en haut de la Page Accueil, dans « Images partagées de l’accueil » → « Illustration de l’équipe » (commun aux quatre langues)."}
+                  - {label: "Libellé au-dessus des portraits (sans lien)", name: "cta", widget: "string", hint: "Les photos des membres se changent dans Page Équipe → « Membres — nom, photos, coordonnées (commun aux quatre langues) »."}
+                  - {label: "Alternative de l’illustration", name: "imageAlt", widget: "string", hint: "Le dessin lui-même se change tout en haut de la Page Accueil, avant le bloc Français : « Images partagées de l’accueil » → « Illustration de l’équipe » (commun aux quatre langues)."}
 
               - {label: "Titre des articles", name: "articlesTitle", widget: "string"}
               - {label: "Voir tous les articles", name: "viewAllArticles", widget: "string"}
@@ -341,7 +341,7 @@ collections:
       # declares its own keys and Decap keeps the others on save.
       - file: "src/content/config/site-config.yml"
         name: "membres"
-        label: "Membres — nom, photos, coordonnées (commun aux 4 langues)"
+        label: "Membres — nom, photos, coordonnées (commun aux quatre langues)"
         editor:
           preview: false
         fields:
@@ -368,7 +368,7 @@ collections:
               - {label: "Membre", name: "id", widget: "relation", collection: "profile", file: "membres", search_fields: ["team.*.name"], value_field: "team.*.id", display_fields: ["team.*.name"]}
               - {label: "Téléphone", name: "phone", widget: "string", pattern: ['^\+[1-9][0-9 ]{7,20}$', "Numéro international avec + et espaces"], hint: "Exemple : +32 488 40 45 49. Affiché dans le profil et le menu Appelez-nous."}
               - {label: "WhatsApp", name: "whatsapp", widget: "string", required: false, pattern: ['^([1-9][0-9]{7,14})?$', "Chiffres uniquement, sans + ni espaces"], hint: "Facultatif. Vide : aucun lien WhatsApp."}
-              - {label: "Email professionnel", name: "email", widget: "string", required: false, pattern: ['^([^\s@]+@[^\s@]+\.[^\s@]+)?$', "Adresse email valide ou champ vide"], hint: "À renseigner après confirmation. Vide : aucun lien email ; le téléphone reste accessible. Ne pas saisir une adresse provisoire."}
+              - {label: "E-mail professionnel", name: "email", widget: "string", required: false, pattern: ['^([^\s@]+@[^\s@]+\.[^\s@]+)?$', "Adresse email valide ou champ vide"], hint: "À renseigner après confirmation. Vide : aucun lien email ; le téléphone reste accessible. Ne pas saisir une adresse provisoire."}
               - {label: "Calendrier Cal.com", name: "calendarLink", widget: "string", required: false, pattern: ['^(https://cal\.com/[^\s/?#]+[^\s]*)?$', "URL https://cal.com/nom ou champ vide"], hint: "Vide : aucune commande de réservation. Romain reste joignable par ses coordonnées. Une URL valide active header, Équipe et bannière."}
       - file: "src/content/profile/profile.yml"
         name: "profile"
@@ -393,7 +393,7 @@ collections:
               - label: "Textes de chaque membre"
                 name: "lawyers"
                 widget: "list"
-                hint: "Textes traduits de chaque membre. Le nom, les photos, l’ordre et les coordonnées se règlent dans « Membres — nom, photos, coordonnées »."
+                hint: "Textes traduits de chaque membre. Le nom, les photos, l’ordre et les coordonnées se règlent dans « Membres — nom, photos, coordonnées (commun aux quatre langues) »."
                 summary: "{{fields.id}} — {{fields.role}}"
                 collapsed: true
                 fields:
@@ -405,7 +405,7 @@ collections:
                     hint: "Texte intégral, indépendant de la biographie individuelle et de l’accueil."
                     field: {label: "Paragraphe", name: "paragraph", widget: "text"}
                   - {label: "Titre", name: "title", widget: "string", required: false, hint: "Facultatif. Vide : aucun sous-titre sous le nom."}
-                  - {label: "Alternative du portrait", name: "imageAlt", widget: "string", required: false, hint: "Vide : utilise le nom du membre."}
+                  - {label: "Alternative du portrait", name: "imageAlt", widget: "string", required: false, hint: "Description du portrait pour les lecteurs d’écran, dans cette langue. Vide : utilise le nom du membre. Le portrait lui-même se change dans « Membres — nom, photos, coordonnées (commun aux quatre langues) »."}
                   - label: "Biographie"
                     name: "bio"
                     widget: "list"
