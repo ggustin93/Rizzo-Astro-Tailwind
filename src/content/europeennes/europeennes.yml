@@ -90,18 +90,16 @@ fr:
         statutaire
     servicesTitle: Nos services
     services:
-      - icon: BriefCase
+      - icon: CheckSquare
         text: Analyse de votre situation professionnelle et de vos droits
-      - icon: Handshake
-        text: Conseils stratégiques avant toute démarche
+      - icon: BriefCase
+        text: Conseils stratégiques avant toute démarche formelle
       - icon: FileText
-        text: Rédaction des demandes (art. 90 §1 du statut), demandes d’assistance (art.
-          24 du statut), réclamations (art. 90 §2 du statut)
-      - icon: Handshake
-        text: "Assistance dans les procédures administratives internes et les procédures
-          contentieuses devant la Cour de justice de l’Union européenne "
+        text: Rédaction des demandes (art. 90 §1 du statut), demandes d’assistance (art. 24 du statut) et réclamations (art. 90 §2 du statut)
       - icon: Shield
-        text: Défense devant les juridictions compétentes
+        text: Assistance et défense dans les procédures administratives internes et les procédures contentieuses devant la Cour de justice de l’Union européenne
+      - icon: Handshake
+        text: Négociation de solutions confidentielles
   ctaText: En savoir plus sur les tarifs
   seo:
     title: Droit du travail · Institutions européennes | Rizzo & Michiels
@@ -210,12 +208,9 @@ en:
       - icon: BriefCase
         text: Strategic advice before any formal step
       - icon: FileText
-        text: Drafting requests (art. 90(1) of the Staff Regulations), requests for
-          assistance (art. 24 of the Staff Regulations), and complaints (art.
-          90(2) of the Staff Regulations)
+        text: Drafting requests (art. 90(1) of the Staff Regulations), requests for assistance (art. 24 of the Staff Regulations), and complaints (art. 90(2) of the Staff Regulations)
       - icon: Shield
-        text: "Assistance in internal administrative procedures and litigation before
-          the Court of Justice of the European Union "
+        text: Assistance and defence in internal administrative procedures and litigation before the Court of Justice of the European Union
       - icon: Handshake
         text: Negotiation of confidential solutions
   ctaText: Find out more about fees
@@ -327,12 +322,11 @@ it:
       - icon: BriefCase
         text: Consulenza strategica prima di intraprendere qualsiasi iniziativa formale
       - icon: FileText
-        text: Redazione di richieste (art. 90, par. 1 dello Statuto), richieste di
-          assistenza (art. 24 dello Statuto) e reclami (art. 90, par. 2 dello
-          Statuto)
+        text: Redazione di richieste (art. 90, par. 1 dello Statuto), richieste di assistenza (art. 24 dello Statuto) e reclami (art. 90, par. 2 dello Statuto)
       - icon: Shield
-        text: Assistenza nelle procedure amministrative interne e nel contenzioso
-          dinanzi alla Corte di giustizia dell’Unione europea
+        text: Assistenza e difesa nelle procedure amministrative interne e nel contenzioso dinanzi alla Corte di giustizia dell’Unione europea
+      - icon: Handshake
+        text: Negoziazione di soluzioni riservate
   ctaText: Scopri di più sulle tariffe
   seo:
     title: Servizi legali per le istituzioni europee | Rizzo & Michiels Avvocati
@@ -440,19 +434,16 @@ nl:
       - Bescherming van persoonsgegevens (AVG) in de statutaire relatie
     servicesTitle: Onze diensten
     services:
-      - icon: BriefCase
+      - icon: CheckSquare
         text: Analyse van uw professionele situatie en van uw rechten
-      - icon: Handshake
-        text: Strategisch advies vóór elke stap
+      - icon: BriefCase
+        text: Strategisch advies vóór elke formele stap
       - icon: FileText
-        text: Opstellen van verzoeken (art. 90 §1 van het Statuut), verzoeken om
-          bijstand (art. 24 van het Statuut), klachten (art. 90 §2 van het
-          Statuut)
-      - icon: Handshake
-        text: "Bijstand in de interne administratieve procedures en in de contentieuze
-          procedures voor het Hof van Justitie van de Europese Unie "
+        text: Opstellen van verzoeken (art. 90, lid 1, van het Statuut), verzoeken om bijstand (art. 24 van het Statuut) en klachten (art. 90, lid 2, van het Statuut)
       - icon: Shield
-        text: Verdediging voor de bevoegde rechtscolleges
+        text: Bijstand en verdediging in interne administratieve procedures en in geschillen voor het Hof van Justitie van de Europese Unie
+      - icon: Handshake
+        text: Onderhandeling over vertrouwelijke oplossingen
   ctaText: Meer weten over de tarieven
   seo:
     title: Arbeidsrecht · Europese instellingen | Rizzo & Michiels

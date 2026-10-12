@@ -1,21 +1,27 @@
 import { test, expect } from '@playwright/test';
+import { content, nameOf, team } from './helpers';
+
+// Names and copy are CMS-editable: read them from the content, never hard-code them.
+const yml = (file) => content(file).fr;
+const christine = yml('profile/profile.yml').lawyers.find((l) => l.id === 'christine-rizzo');
+const homeFr = yml('home/home.yml');
 
 test('la présentation complète de Christine est distincte de son profil', async ({ page }) => {
   await page.goto('/fr/equipe/');
-  await expect(page.locator('main')).toContainText("Elle copréside la Commission Bien-être psychosociale");
-  await expect(page.locator('main')).toContainText("l'Association des Juristes Praticiens du Droit Social");
+  // Last paragraph of the full presentation (commission + association memberships).
+  await expect(page.locator('main')).toContainText(christine.presentation[0].split(/\n\s*\n/).at(-1).trim());
   await page.locator('main a[href="/fr/equipe/christine-rizzo/"] img').click();
   await expect(page.locator('main')).not.toContainText('Je suis actuellement membre');
-  await expect(page.locator('main')).toContainText('2025-2027');
+  await expect(page.locator('main')).toContainText(christine.careerPath[1].year);
 });
 
 for (const lang of ['fr', 'en', 'it', 'nl']) {
   test(`${lang} : quatre profils intégraux, LinkedIn et navigation`, async ({ page, request }) => {
     const members = [
-      ['christine-rizzo', 'Christine Rizzo', 'Reliance Littler'],
-      ['stephanie-michiels', 'Stephanie Michiels', 'Fulbright'],
-      ['arnaud-vanderhoeven-jacobs', 'Arnaud Vanderhoeven Jacobs', 'Castiaux & Partners'],
-      ['romain-archalaus', 'Romain Archalaüs', 'ELSA'],
+      ['christine-rizzo', nameOf('christine-rizzo'), 'Reliance Littler'],
+      ['stephanie-michiels', nameOf('stephanie-michiels'), 'Fulbright'],
+      ['arnaud-vanderhoeven-jacobs', nameOf('arnaud-vanderhoeven-jacobs'), 'Castiaux & Partners'],
+      ['romain-archalaus', nameOf('romain-archalaus'), 'ELSA'],
     ];
     await page.goto(`/${lang}/equipe/`);
     await expect(page.locator('main h2')).toHaveText(members.map(x => x[1]));
@@ -34,13 +40,13 @@ for (const lang of ['fr', 'en', 'it', 'nl']) {
 
 test('accueil : promesse fournie, réunion sous équipe et quatre mini-portraits', async ({ page }) => {
   await page.goto('/fr/');
-  await expect(page.locator('main')).toContainText('Cabinet d’avocats en droit du travail belge et droit de la fonction publique européenne');
-  await expect(page.locator('#profil h3')).toHaveText(['Christine Rizzo','Stephanie Michiels','Arnaud Vanderhoeven Jacobs','Romain Archalaüs']);
-  await expect(page.locator('#profil')).toContainText('Rizzo & Michiels est une équipe de quatre avocats');
-  await expect(page.locator('#profil img[alt="Réunion de travail"]')).toBeVisible();
+  await expect(page.locator('main')).toContainText(homeFr.hero.subtitle);
+  await expect(page.locator('#profil h3')).toHaveText(team().map((m) => m.name));
+  await expect(page.locator('#profil')).toContainText(homeFr.profil.description.slice(0, 50));
+  await expect(page.locator(`#profil img[alt="${homeFr.profil.imageAlt}"]`)).toBeVisible();
   await expect(page.locator('#expertise img')).toHaveCount(0);
   await expect(page.locator('#profil a')).toHaveCount(5);
-  await expect(page.locator('#profil a[href="/fr/equipe/"]')).toHaveText(/Découvrir l’équipe/);
+  await expect(page.locator('#profil a[href="/fr/equipe/"]')).toContainText(homeFr.profil.cta);
   await page.locator('#profil a[href="/fr/equipe/#romain-archalaus"] img').click();
   await expect(page).toHaveURL(/\/fr\/equipe\/#romain-archalaus$/);
   await page.goBack();
@@ -54,7 +60,7 @@ for (const lang of ['fr','en','it','nl']) {
     await expect(link).toBeFocused();
     await page.keyboard.press('Enter');
     await expect(page).toHaveURL(new RegExp(`/${lang}/equipe/arnaud-vanderhoeven-jacobs/$`));
-    await expect(page.locator('main h1')).toHaveText('Arnaud Vanderhoeven Jacobs');
+    await expect(page.locator('main h1')).toHaveText(nameOf('arnaud-vanderhoeven-jacobs'));
     await page.goto(`/${lang}/`);
     await page.locator('#profil').scrollIntoViewIfNeeded();
     for (const img of await page.locator('#profil img').all()) {
@@ -112,7 +118,7 @@ for (const lang of ['fr', 'en', 'it', 'nl']) {
     await page.keyboard.press('Enter');
     await expect(page).toHaveURL(new RegExp(`/${lang}/equipe/#romain-archalaus$`));
     const section = page.locator('#romain-archalaus');
-    await expect(section.locator('h2')).toHaveText('Romain Archalaüs');
+    await expect(section.locator('h2')).toHaveText(nameOf('romain-archalaus'));
     await expect(section).toBeInViewport();
     await expect(section.locator(`a[href="/${lang}/equipe/romain-archalaus/"]`)).toHaveCount(2);
   });

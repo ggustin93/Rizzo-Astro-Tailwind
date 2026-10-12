@@ -1,15 +1,10 @@
 import { test, expect } from '@playwright/test';
-import { readFileSync } from 'node:fs';
-import { load } from 'js-yaml';
-import { BASE_URL, languages } from './helpers';
+import { BASE_URL, content, languages } from './helpers';
 
 test.describe('European Institutions Service Page', () => {
-  const expectedTitles: Record<string, string> = {
-    fr: 'Fonctionnaires et institutions',
-    en: 'EU institutions and staff members',
-    it: 'Istituzioni e agenzie europee',
-    nl: 'Ambtenaren en instellingen van de Europese Unie',
-  };
+  // h1 comes from the CMS content, which the cabinet edits.
+  const europeennes = content('europeennes/europeennes.yml');
+  const expectedTitles: Record<string, string> = Object.fromEntries(languages.map((lang) => [lang, europeennes[lang].title]));
 
   for (const lang of languages) {
     test(`should load europeennes page for /${lang}/`, async ({ page }) => {
@@ -37,7 +32,7 @@ test.describe('European Institutions Service Page', () => {
 
 test.describe('Homepage Expertise Grid', () => {
   // Titles come from the CMS content, which the cabinet edits.
-  const home: any = load(readFileSync(new URL('../src/content/home/home.yml', import.meta.url), 'utf8'));
+  const home = content('home/home.yml');
   const expertiseBlocks = Object.fromEntries(languages.map((lang) => [lang, {
     employeurs: home[lang].expertise.employeurs.title,
     travailleurs: home[lang].expertise.travailleurs.title,

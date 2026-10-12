@@ -21,7 +21,9 @@ try {
   const christine = data.config.team.find(member => member.id === 'christine-rizzo');
   christine.name = 'Christine — recette';
   data.config.team.reverse();
-  data.config.team.find(member => member.id === 'romain-archalaus').image = '/assets/images/christine-optimized.webp';
+  const romain = data.config.team.find(member => member.id === 'romain-archalaus');
+  romain.image = '/assets/images/christine-optimized.webp';
+  delete romain.profileImage; // empty individual portrait falls back to the square one
   data.home.portraitLinks = 'profiles';
   data.home.fr.hero.description = 'Texte FR de recette';
   data.home.nl.hero.description = 'Nederlandse controletekst';

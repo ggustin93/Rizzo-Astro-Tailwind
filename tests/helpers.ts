@@ -10,6 +10,10 @@ export const content = (file: string): any => load(readFileSync(new URL(`../src/
 export const ctaLabel = (lang: string, type: string): string =>
   content('ui-translations/ui-translations.yml')[lang].cta.actions.find((a) => a.type === type).label;
 
+/** Shared team roster (names, order, portraits) as the cabinet edits it in the CMS. */
+export const team = (): any[] => content('config/site-config.yml').team;
+export const nameOf = (id: string): string => team().find((m) => m.id === id).name;
+
 export const BASE_URL = process.env.BASE_URL || 'http://localhost:4321';
 
 /**

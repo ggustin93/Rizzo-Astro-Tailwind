@@ -49,8 +49,8 @@ Seams confirmés par Guillaume : build Astro/typecheck, Playwright sur productio
 
 | Réglage | Emplacement |
 | --- | --- |
-| Renommer, réordonner, remplacer un portrait ou LinkedIn | Configuration → Paramètres généraux → Membres de l’équipe |
-| Présentations, rôle, titre, parcours, langues et publications | Page Équipe → langue → Membres de l’équipe |
+| Renommer, réordonner, remplacer un portrait ou LinkedIn | Page Équipe → Membres — nom, photos, coordonnées (commun aux quatre langues) → Membres de l’équipe — nom, photos, LinkedIn |
+| Présentations, rôle, titre, parcours, langues et publications | Page Équipe → Textes de la page et des profils (par langue) → langue → Textes de chaque membre |
 | Biographie individuelle facultative | Même membre → Biographie ; une liste vide ne publie aucun paragraphe |
 | Conférences et publications | Même membre ; listes vides masquées, introduction des publications indépendante (contribution de Romain) |
 | SEO de la liste / du profil | Référencement de la page Équipe / SEO du membre |
