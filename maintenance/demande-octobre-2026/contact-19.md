@@ -6,11 +6,10 @@ Implémentation locale sur `feat/oct-2026-romain-nl-seo`, à partir de `592f329`
 
 Dans Decap, Configuration → Paramètres généraux (coordonnées du cabinet) et Page Équipe → « Membres — nom, photos, coordonnées (commun aux quatre langues) » (coordonnées individuelles) :
 
-- **Coordonnées du cabinet** : adresse commune et email général. La zone « Nos bureaux », les pages légales et les données structurées utilisent ces réglages. L’email général sert à l’action « Email avec documents ».
-- **Coordonnées de chaque membre** : choisir le membre grâce à son identité stable. Téléphone obligatoire, email professionnel et WhatsApp facultatifs. Un email vide masque uniquement ce lien ; ne pas saisir une adresse factice. Les numéros confirmés sont conservés pour Christine et Stephanie et ajoutés pour Arnaud et Romain.
+- **Coordonnées du cabinet** : adresse commune et e-mail général. La zone « Nos bureaux », les pages légales et les données structurées utilisent ces réglages. L’e-mail général sert à l’action « E-mail » de la bannière.
+- **Coordonnées de chaque membre** : choisir le membre grâce à son identité stable. Téléphone obligatoire, e-mail professionnel et WhatsApp facultatifs. Un e-mail vide masque uniquement ce lien ; ne pas saisir une adresse factice. Les numéros confirmés sont conservés pour Christine et Stephanie et ajoutés pour Arnaud et Romain.
 - **Calendrier Cal.com** : vider le champ retire les commandes dans le header, l’Équipe et la bannière ; renseigner une URL Cal.com valide les rétablit. Romain n’a pas de calendrier. Son lien Contact mène aux coordonnées de son profil.
 - **Membres de l’équipe — nom, photos, LinkedIn** : LinkedIn est saisi une seule fois par membre, partagé entre les langues.
-- **Afficher le formulaire de contact** : masque aussi les accès Message des bannières et les liens Formulaire du menu. Les autres contacts restent disponibles.
 - **Illustration de la bannière Contact** : média commun aux langues.
 
 Dans Traductions de l’interface, pour chaque langue : **Bloc contact** permet de modifier titre, alternative de l’image, libellé Contact individuel, libellés des quatre actions et leur ordre. Chaque type doit apparaître exactement une fois. Les destinations sont calculées depuis les réglages centraux. Les anciens champs EMAIL/RDV/APPEL/Réserver et les menus footer téléphones/emails sont retirés. Le titre « Nos bureaux » reste dans Navigation → Pied de page. Les textes du formulaire et de sa page de succès restent dans leurs sections de traduction.

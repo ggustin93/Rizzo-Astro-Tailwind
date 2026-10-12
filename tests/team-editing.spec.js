@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { team } from './helpers';
+import { content, team } from './helpers';
 
 // Names and order come from site-config, as rewritten by the verification script.
 const names = team().map((m) => m.name);
@@ -14,13 +14,14 @@ if (process.env.TEAM_EDITING) {
       await expect(page.locator('#profil h3')).toHaveText(names);
       await expect(page.locator(`#profil a[href="/${lang}/equipe/christine-rizzo/"]`)).toContainText('Christine — recette');
       await expect(page.locator(`#profil a[href="/${lang}/equipe/romain-archalaus/"] img`)).toHaveAttribute('src', '/assets/images/christine-optimized.webp');
-      const promises = {fr:'Texte FR de recette',nl:'Nederlandse controletekst',en:'We advise and represent you with expertise and commitment.',it:'Vi consigliamo e vi difendiamo con competenza e impegno.'};
-      await expect(page.locator('main')).toContainText(promises[lang]);
+      // fr/nl promises are rewritten by the verification script; en/it come from the CMS as is.
+      await expect(page.locator('main')).toContainText(content('home/home.yml')[lang].hero.description);
       await page.goto(`/${lang}/equipe/`);
       await expect(page.locator('main h2')).toHaveText(names);
       await page.goto(`/${lang}/equipe/christine-rizzo/`);
       await expect(page.locator('main h1')).toHaveText('Christine — recette');
-      await expect(page.locator('main')).toContainText('Reliance Littler');
+      const christineProfile = content('profile/profile.yml')[lang].lawyers.find((l) => l.id === 'christine-rizzo');
+      await expect(page.locator('main')).toContainText(christineProfile.careerPath[0].event);
       const graph = JSON.parse(await page.locator('script[type="application/ld+json"]').first().textContent())['@graph'];
       const people = graph.filter(node => node['@type'] === 'Person');
       expect(people).toHaveLength(4);

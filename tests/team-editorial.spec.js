@@ -5,6 +5,8 @@ import { content, nameOf, team } from './helpers';
 const yml = (file) => content(file).fr;
 const christine = yml('profile/profile.yml').lawyers.find((l) => l.id === 'christine-rizzo');
 const homeFr = yml('home/home.yml');
+// A member's localized profile entry (career, publications) as the cabinet wrote it.
+const profileOf = (lang, id) => content('profile/profile.yml')[lang].lawyers.find((l) => l.id === id);
 
 test('la présentation complète de Christine est distincte de son profil', async ({ page }) => {
   await page.goto('/fr/equipe/');
@@ -17,12 +19,8 @@ test('la présentation complète de Christine est distincte de son profil', asyn
 
 for (const lang of ['fr', 'en', 'it', 'nl']) {
   test(`${lang} : quatre profils intégraux, LinkedIn et navigation`, async ({ page, request }) => {
-    const members = [
-      ['christine-rizzo', nameOf('christine-rizzo'), 'Reliance Littler'],
-      ['stephanie-michiels', nameOf('stephanie-michiels'), 'Fulbright'],
-      ['arnaud-vanderhoeven-jacobs', nameOf('arnaud-vanderhoeven-jacobs'), 'Castiaux & Partners'],
-      ['romain-archalaus', nameOf('romain-archalaus'), 'ELSA'],
-    ];
+    // Roster order, names and career lines come from the CMS (site-config + profile).
+    const members = team().map((m) => [m.slug, m.name, profileOf(lang, m.id).careerPath[0].event]);
     await page.goto(`/${lang}/equipe/`);
     await expect(page.locator('main h2')).toHaveText(members.map(x => x[1]));
     for (const [slug, name, career] of members) {
@@ -76,13 +74,13 @@ for (const lang of ['fr','en','it','nl']) {
 for (const lang of ['fr','en','it','nl']) {
   test(`${lang} : contributions et références bibliographiques complètes`, async ({ page }) => {
     await page.goto(`/${lang}/equipe/arnaud-vanderhoeven-jacobs/`);
-    await expect(page.locator('main')).toContainText('Tome 2. La preuve du motif grave et ses particularités');
-    await expect(page.locator('main')).toContainText('Tome 3. Les différents cas d’espèce du motif grave');
-    await expect(page.locator('main')).toContainText('Tome 1. Evolution, aspects techniques et applications diverses');
+    for (const { title } of profileOf(lang, 'arnaud-vanderhoeven-jacobs').publications) {
+      await expect(page.locator('main')).toContainText(title.trim());
+    }
     await page.goto(`/${lang}/equipe/romain-archalaus/`);
     const heading={fr:'Publications',en:'Publications',it:'Pubblicazioni',nl:'Publicaties'}[lang];
     await expect(page.locator('main').getByRole('heading',{name:heading,exact:true})).toBeVisible();
-    await expect(page.locator('main')).toContainText('Le contrat de travail : aspects théoriques et pratiques');
+    await expect(page.locator('main')).toContainText(profileOf(lang, 'romain-archalaus').publicationsIntro.trim());
   });
 }
 

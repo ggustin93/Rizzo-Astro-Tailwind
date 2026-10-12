@@ -15,16 +15,16 @@ test('Travailleurs FR presents its sections, situations and fees link', async ({
   await expect(page.locator('main a[href="/fr/honoraires/"]')).toBeVisible();
 });
 
-test('Employeurs FR presents five sections, four individual situations and fees', async ({ page }) => {
+test('Employeurs FR presents its sections, situations and fees', async ({ page }) => {
   await page.goto('/fr/services/employeurs/');
   const sections = page.locator('main section');
   await expect(sections.locator('h2')).toHaveText(services('employeurs').fr.sections.map((section) => section.title));
-  await expect(sections.nth(2).locator('li')).toHaveCount(4);
-  await expect(sections.nth(0)).toContainText('passif social');
-  await expect(sections.nth(1)).toContainText('flexi-job');
-  await expect(sections.nth(2)).toContainText('éventuelles procédures spéciales de licenciement applicables');
-  await expect(sections.nth(3)).toContainText("dans l'intérêt de l'entreprise comme du travailleur");
-  await expect(sections.nth(4)).toContainText('Nous vous accompagnons et défendons vos intérêts');
+  const expected = services('employeurs').fr.sections;
+  // Each section shows the start of its CMS text; the situations section lists every situation.
+  for (const [i, section] of expected.entries()) {
+    if (section.situations) await expect(sections.nth(i).locator('li')).toHaveCount(section.situations.length);
+    else await expect(sections.nth(i)).toContainText(section.description.split(/\s+/).slice(0, 8).join(' '));
+  }
   await expect(page.locator('main a[href="/fr/honoraires/"]')).toBeVisible();
 });
 
