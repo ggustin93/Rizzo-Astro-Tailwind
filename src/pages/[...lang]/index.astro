@@ -6,6 +6,7 @@ import CTA from '../../components/CTA.astro';
 import { ChevronDown, Briefcase, User, FileText, Globe, ArrowRight } from 'astro-feather-icons2';
 import { getArticles } from '../../utils/articles';
 import { getTeam, profilePath, teamSectionPath } from '../../utils/team.js';
+import { cdnImage } from '../../utils/imageHelpers.js';
 import ArticleCard from '../../components/ArticleCard.astro';
 import Button from '../../components/Button.astro';
 // Import des images locales
@@ -156,12 +157,12 @@ export const prerender = true;
         </div>
         <div class="max-w-5xl mx-auto text-center">
           <div class="team-grid">
-            {lawyersWithImages.map(lawyer => {
+            {lawyersWithImages.map(async lawyer => {
               const href = { profiles: profilePath(currentLang, lawyer), team: teamSectionPath(currentLang, lawyer) }[portraitLinks];
               const Tag = href ? 'a' : 'div';
               return (
                 <Tag href={href} class="team-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">
-                  <img src={lawyer.image} alt={lawyer.imageAlt || lawyer.name} width="500" height="500" loading="lazy" decoding="async"
+                  <img {...(await cdnImage(lawyer.image, { width: 500, height: 500 }))} alt={lawyer.imageAlt || lawyer.name} width="500" height="500" loading="lazy" decoding="async"
                     class="team-portrait" />
                   <div class="team-card-caption"><h3>{lawyer.name}</h3>{href && <ArrowRight aria-hidden="true" class="team-card-arrow" />}</div>
                 </Tag>

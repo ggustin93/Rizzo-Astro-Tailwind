@@ -24,8 +24,8 @@ collections:
             name: "media"
             widget: "object"
             fields:
-              - {label: "Illustration d’en-tête", name: "hero", widget: "image"}
-              - {label: "Illustration de l’équipe", name: "team", widget: "image"}
+              - {label: "Illustration d’en-tête", name: "hero", widget: "image", hint: "SVG de préférence ; sinon PNG ou WebP d’environ 1600 px de large, moins de 300 Ko.", media_library: &imageUpload {config: {max_file_size: 5000000}}}
+              - {label: "Illustration de l’équipe", name: "team", widget: "image", hint: "SVG de préférence ; sinon PNG ou WebP d’environ 1600 px de large, moins de 300 Ko.", media_library: *imageUpload}
           - label: "Liens des mini-portraits"
             name: "portraitLinks"
             widget: "select"
@@ -116,7 +116,7 @@ collections:
                   - {label: "Titre", name: "title", widget: "string"}
                   - {label: "Description", name: "description", widget: "text"}
                   - {label: "Mots-clés", name: "keywords", widget: "list"}
-                  - {label: "Image", name: "image", widget: "image"}
+                  - {label: "Image", name: "image", widget: "image", hint: "Partage sur les réseaux sociaux : 1200 × 630 px, JPG, moins de 300 Ko.", media_library: *imageUpload}
 
           - label: "English"
             name: "en"
@@ -193,7 +193,7 @@ collections:
                 fields:
                   - {label: "Titre SEO", name: "title", widget: "string", pattern: ['\S', "Le titre SEO est obligatoire."]}
                   - {label: "Description SEO", name: "description", widget: "text", pattern: ['^(?=[\s\S]*\S)[\s\S]{1,320}$', "Description obligatoire, maximum 320 caractères."]}
-                  - {label: "Image de partage", name: "image", widget: "image", required: false, hint: "Si vide, utilise l'image commune du site. Les médias existants sont conservés."}
+                  - {label: "Image de partage", name: "image", widget: "image", required: false, hint: "Partage sur les réseaux sociaux : 1200 × 630 px, JPG, moins de 300 Ko. Si vide, utilise l'image commune du site. Les médias existants sont conservés.", media_library: *imageUpload}
                   - {label: "Alternative textuelle de l'image", name: "imageAlt", widget: "string", required: false, hint: "Décrivez l'image dans cette langue. Si vide, utilise le titre de la page."}
                   - label: "Mots-clés SEO"
                     name: "keywords"
@@ -314,7 +314,7 @@ collections:
                 fields:
                   - {label: "Titre SEO", name: "title", widget: "string", required: false}
                   - {label: "Description SEO", name: "description", widget: "text", required: false, pattern: ['^.{0,320}$', "La description idéale fait 155-160 caractères (max 320)"], hint: "Description pour le SEO - idéalement 155-160 caractères (max 320)"}
-                  - {label: "Image SEO", name: "image", widget: "image", required: false}
+                  - {label: "Image SEO", name: "image", widget: "image", required: false, hint: "Partage sur les réseaux sociaux : 1200 × 630 px, JPG, moins de 300 Ko.", media_library: *imageUpload}
                   - label: "Mots-clés SEO"
                     name: "keywords"
                     widget: "list"
@@ -355,8 +355,8 @@ collections:
               - {label: "Identifiant stable", name: "id", widget: "string", hint: "Ne pas modifier après création ; indépendant du nom affiché."}
               - {label: "Adresse du profil", name: "slug", widget: "string", pattern: ['^[a-z0-9]+(-[a-z0-9]+)*$', "Minuscules, chiffres et tirets"], hint: "Conserver les adresses déjà publiées."}
               - {label: "Nom affiché", name: "name", widget: "string"}
-              - {label: "Portrait carré", name: "image", widget: "image", hint: "Accueil et page Équipe. Photo carrée, visage centré, environ 1000 × 1000 px, JPG ou WebP, moins de 400 Ko."}
-              - {label: "Portrait individuel", name: "profileImage", widget: "image", required: false, hint: "Page de profil. Photo verticale, environ 1200 × 1500 px, JPG ou WebP, moins de 500 Ko. Vide : utilise le portrait carré."}
+              - {label: "Portrait carré", name: "image", widget: "image", hint: "Accueil et page Équipe. Photo carrée, visage centré, environ 1000 × 1000 px, JPG ou WebP, moins de 400 Ko.", media_library: *imageUpload}
+              - {label: "Portrait individuel", name: "profileImage", widget: "image", required: false, hint: "Page de profil. Photo verticale, environ 1200 × 1500 px, JPG ou WebP, moins de 500 Ko. Vide : utilise le portrait carré.", media_library: *imageUpload}
               - {label: "LinkedIn", name: "linkedin", widget: "string", required: false, pattern: ['^https://(www\.)?linkedin\.com/.*$|^$', "Lien LinkedIn https ou champ vide"], hint: "Lien partagé entre les quatre langues."}
           - label: "Coordonnées de chaque membre"
             name: "lawyers"
@@ -388,7 +388,7 @@ collections:
                 fields:
                   - {label: "Titre", name: "title", widget: "string", required: false}
                   - {label: "Description", name: "description", widget: "text", required: false}
-                  - {label: "Image de partage", name: "image", widget: "image", required: false}
+                  - {label: "Image de partage", name: "image", widget: "image", required: false, hint: "Partage sur les réseaux sociaux : 1200 × 630 px, JPG, moins de 300 Ko.", media_library: *imageUpload}
                   - {label: "Mots-clés", name: "keywords", widget: "list", required: false}
               - label: "Textes de chaque membre"
                 name: "lawyers"
@@ -454,7 +454,7 @@ collections:
                     fields:
                       - {label: "Titre SEO", name: "title", widget: "string", required: false}
                       - {label: "Description SEO", name: "description", widget: "text", required: false, pattern: ['^.{0,320}$', "La description idéale fait 155-160 caractères (max 320)"]}
-                      - {label: "Image SEO", name: "image", widget: "image", required: false}
+                      - {label: "Image SEO", name: "image", widget: "image", required: false, hint: "Partage sur les réseaux sociaux : 1200 × 630 px, JPG, moins de 300 Ko.", media_library: *imageUpload}
                       - label: "Mots-clés SEO"
                         name: "keywords"
                         widget: "list"
@@ -663,7 +663,7 @@ collections:
       - {label: "Titre", name: "title", widget: "string"}
       - {label: "Date de publication", name: "date", widget: "datetime"}
       - {label: "Auteur", name: "author", widget: "string"}
-      - {label: "Image à la une", name: "thumbnail", widget: "image"}
+      - {label: "Image à la une", name: "thumbnail", widget: "image", hint: "Environ 1600 × 900 px (16:9), sujet centré car l’image est recadrée. JPG ou WebP, moins de 500 Ko.", media_library: *imageUpload}
       - {label: "Temps de lecture (en minutes)", name: "readTime", widget: "string", hint: "Entrez le nombre de minutes, par exemple: 5"}
       - label: "Catégories"
         name: "categories"
@@ -699,7 +699,7 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Author", name: "author", widget: "string"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image", hint: "Environ 1600 × 900 px (16:9), sujet centré car l’image est recadrée. JPG ou WebP, moins de 500 Ko.", media_library: *imageUpload}
       - {label: "Read Time (in minutes)", name: "readTime", widget: "string", hint: "Enter the number of minutes, e.g. 5"}
       - label: "Categories"
         name: "categories"
@@ -721,7 +721,7 @@ collections:
       - {label: "Titolo", name: "title", widget: "string"}
       - {label: "Data di pubblicazione", name: "date", widget: "datetime"}
       - {label: "Autore", name: "author", widget: "string"}
-      - {label: "Immagine in evidenza", name: "thumbnail", widget: "image"}
+      - {label: "Immagine in evidenza", name: "thumbnail", widget: "image", hint: "Environ 1600 × 900 px (16:9), sujet centré car l’image est recadrée. JPG ou WebP, moins de 500 Ko.", media_library: *imageUpload}
       - {label: "Tempo di lettura (in minuti)", name: "readTime", widget: "string", hint: "Inserisci il numero di minuti, ad esempio: 5"}
       - label: "Categorie"
         name: "categories"
@@ -757,7 +757,7 @@ collections:
             widget: "boolean"
             default: false
           
-          - {label: "Illustration de la bannière Contact", name: "contactIllustration", widget: "image", hint: "Image commune aux quatre langues. Alternatives dans les traductions du bloc contact."}
+          - {label: "Illustration de la bannière Contact", name: "contactIllustration", widget: "image", hint: "SVG de préférence ; sinon PNG ou WebP d’environ 1600 px de large, moins de 300 Ko. Image commune aux quatre langues. Alternatives dans les traductions du bloc contact.", media_library: *imageUpload}
           - label: "Coordonnées du cabinet — adresse"
             name: "address"
             widget: "string"
@@ -785,9 +785,10 @@ collections:
               - label: "Image principale pour les réseaux sociaux"
                 name: "defaultSocialImage"
                 widget: "image"
+                media_library: *imageUpload
                 required: false
                 default: "/assets/images/default-social-image.png"
-                hint: "Image qui apparaîtra lorsque votre site est partagé sur les réseaux sociaux (format recommandé: 1200x630px)"
+                hint: "Image affichée quand le site est partagé sur les réseaux sociaux : 1200 × 630 px, JPG, moins de 300 Ko."
                 media_folder: "public"
                 public_folder: "/"
               
