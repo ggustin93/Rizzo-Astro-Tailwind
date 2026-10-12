@@ -368,7 +368,7 @@ collections:
               - {label: "Membre", name: "id", widget: "relation", collection: "profile", file: "membres", search_fields: ["team.*.name"], value_field: "team.*.id", display_fields: ["team.*.name"]}
               - {label: "Téléphone", name: "phone", widget: "string", pattern: ['^\+[1-9][0-9 ]{7,20}$', "Numéro international avec + et espaces"], hint: "Exemple : +32 488 40 45 49. Affiché dans le profil et le menu Appelez-nous."}
               - {label: "WhatsApp", name: "whatsapp", widget: "string", required: false, pattern: ['^([1-9][0-9]{7,14})?$', "Chiffres uniquement, sans + ni espaces"], hint: "Facultatif. Vide : aucun lien WhatsApp."}
-              - {label: "E-mail professionnel", name: "email", widget: "string", required: false, pattern: ['^([^\s@]+@[^\s@]+\.[^\s@]+)?$', "Adresse email valide ou champ vide"], hint: "À renseigner après confirmation. Vide : aucun lien email ; le téléphone reste accessible. Ne pas saisir une adresse provisoire."}
+              - {label: "E-mail professionnel", name: "email", widget: "string", required: false, pattern: ['^([^\s@]+@[^\s@]+\.[^\s@]+)?$', "Adresse e-mail valide ou champ vide"], hint: "À renseigner après confirmation. Vide : aucun lien e-mail ; le téléphone reste accessible. Ne pas saisir une adresse provisoire."}
               - {label: "Calendrier Cal.com", name: "calendarLink", widget: "string", required: false, pattern: ['^(https://cal\.com/[^\s/?#]+[^\s]*)?$', "URL https://cal.com/nom ou champ vide"], hint: "Vide : aucune commande de réservation. Romain reste joignable par ses coordonnées. Une URL valide active header, Équipe et bannière."}
       - file: "src/content/profile/profile.yml"
         name: "profile"
@@ -762,10 +762,10 @@ collections:
             name: "address"
             widget: "string"
             hint: "Adresse commune aux quatre langues, affichée dans Nos bureaux."
-          - label: "Coordonnées du cabinet — email général"
+          - label: "Coordonnées du cabinet — e-mail général"
             name: "cabinetEmail"
             widget: "string"
-            pattern: ['^[^\s@]+@[^\s@]+\.[^\s@]+$', "Adresse email valide"]
+            pattern: ['^[^\s@]+@[^\s@]+\.[^\s@]+$', "Adresse e-mail valide"]
             hint: "Adresse publique pour les documents. Activation et réception à vérifier dans le ticket messagerie avant publication ; ne configure pas Netlify."
           - label: "Texte du copyright"
             name: "copyrightText"

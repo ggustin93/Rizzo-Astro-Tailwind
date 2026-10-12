@@ -3,6 +3,8 @@ import { team } from './helpers';
 
 // Names and order come from site-config, as rewritten by the verification script.
 const names = team().map((m) => m.name);
+// The script reverses the roster and renames Christine: prove both reached the site.
+if (process.env.TEAM_EDITING && names.at(-1) !== 'Christine — recette') throw new Error('verify-team-editing.mjs fixture not applied');
 
 // Run only through scripts/verify-team-editing.mjs, which restores the source files.
 if (process.env.TEAM_EDITING) {
