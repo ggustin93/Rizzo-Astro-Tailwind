@@ -165,7 +165,7 @@ collections:
                 default: []
                 collapsed: true
                 summary: "{{fields.title}}"
-                hint: "Glissez les rubriques pour changer leur ordre. Les textes de cette langue restent indépendants des autres langues et publics."
+                hint: "Glissez les rubriques pour changer leur ordre. Chaque public a ses propres rubriques. Gardez le même nombre de rubriques dans les 4 langues : une rubrique ajoutée ou retirée ici doit l’être aussi dans les autres langues."
                 fields:
                   - {label: "Titre de la rubrique", name: "title", widget: "string", pattern: ['\S', "Le titre est obligatoire."]}
                   - {label: "Description (facultative)", name: "description", widget: "text", required: false, hint: "Une description seule suffit ; aucune question artificielle n'est nécessaire."}
@@ -176,7 +176,7 @@ collections:
                     default: []
                     collapsed: true
                     summary: "{{fields.question}}"
-                    hint: "Chaque situation comporte une question et une réponse. Glissez pour réordonner."
+                    hint: "Chaque situation comporte une question et une réponse. Glissez pour réordonner. Gardez le même nombre de situations dans les 4 langues : une situation ajoutée ou retirée ici doit l’être aussi dans les autres langues."
                     fields:
                       - {label: "Question", name: "question", widget: "text", pattern: ['\S', "Renseignez la question ou retirez cette situation."]}
                       - {label: "Réponse", name: "answer", widget: "text", pattern: ['\S', "Renseignez la réponse ou retirez cette situation."]}
@@ -279,18 +279,21 @@ collections:
                     name: "accompagnement"
                     widget: "list"
                     summary: "{{fields.title}}"
+                    hint: "Gardez le même nombre de sous-titres dans les 4 langues : un sous-titre ajouté ou retiré ici doit l’être aussi dans les autres langues."
                     fields:
                       - {label: "Sous-titre", name: "title", widget: "string"}
                       - label: "Éléments"
                         name: "items"
                         widget: "list"
+                        hint: "Gardez le même nombre d’éléments dans les 4 langues : un élément ajouté ou retiré ici doit l’être aussi dans les autres langues."
                         field: {label: "Élément", name: "item", widget: "string"}
                   - {label: "Titre services", name: "servicesTitle", widget: "string"}
                   - label: "Services"
                     name: "services"
                     widget: "list"
+                    hint: "Gardez le même nombre de services dans les 4 langues : un service ajouté ou retiré ici doit l’être aussi dans les autres langues."
                     fields:
-                      - {label: "Icône", name: "icon", widget: "select", options: ["Search", "FileText", "Handshake", "BriefCase", "Shield"]}
+                      - {label: "Icône", name: "icon", widget: "select", options: ["CheckSquare", "BriefCase", "FileText", "Shield", "Handshake"]}
                       - {label: "Texte", name: "text", widget: "string"}
               - label: "Section Fonctionnaires"
                 name: "fonctionnaires"
@@ -302,13 +305,15 @@ collections:
                   - label: "Accompagnement"
                     name: "accompagnement"
                     widget: "list"
+                    hint: "Gardez le même nombre d’éléments dans les 4 langues : un élément ajouté ou retiré ici doit l’être aussi dans les autres langues."
                     field: {label: "Élément", name: "item", widget: "string"}
                   - {label: "Titre services", name: "servicesTitle", widget: "string"}
                   - label: "Services"
                     name: "services"
                     widget: "list"
+                    hint: "Gardez le même nombre de services dans les 4 langues : un service ajouté ou retiré ici doit l’être aussi dans les autres langues."
                     fields:
-                      - {label: "Icône", name: "icon", widget: "select", options: ["Search", "FileText", "Handshake", "BriefCase", "Shield"]}
+                      - {label: "Icône", name: "icon", widget: "select", options: ["CheckSquare", "BriefCase", "FileText", "Shield", "Handshake"]}
                       - {label: "Texte", name: "text", widget: "string"}
               - {label: "Texte du bouton CTA", name: "ctaText", widget: "string"}
               - label: "SEO"

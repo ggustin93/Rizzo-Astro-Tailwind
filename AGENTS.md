@@ -155,6 +155,7 @@ Active maintenance logs are kept in `maintenance/demande-octobre-2026/checklist.
 
 For known issues, past incidents, and their root causes, see `maintenance/troubleshoot.md` (if it exists). Key known pitfalls:
 - **Netlify DNS migration**: `rizzo-michiels.be` was migrated from Infomaniak DNS to Netlify DNS (April 2026) to enable automatic alias redirects at CDN level and fix the GSC "Change of Address" double-hop issue. The cross-domain `netlify.toml` redirect rules can be removed once Netlify DNS is fully propagated and the single-hop redirect is confirmed.
+- **Lists per language**: the CMS edits each language separately, so a point added or removed in one language does not reach the others (RM-25). `tests/content-consistency.spec.js` checks list lengths on the service pages; when changing content, only touch the fields the cabinet's request names and check `git log` for their own recent CMS edits first.
 - **DNSSEC**: Must be disabled at the registrar before migrating NS to Netlify (Netlify DNS does not support DNSSEC). Failure to do so breaks resolution for DNSSEC-validating resolvers.
 
 ## Project Constraints
