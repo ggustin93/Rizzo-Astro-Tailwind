@@ -107,7 +107,7 @@ npx playwright test --ui  # Run tests with UI mode
 ### Component Patterns
 - **Astro Components**: Use `.astro` for static components
 - **Icons**: Import from `astro-feather-icons` or `astro-feather-icons2`
-- **Images**: CMS images (paths under `public/`) go through `cdnImage()` from `src/utils/imageHelpers.js`, which serves them via the Netlify Image CDN on Netlify builds (resize, AVIF/WebP, 2x only if the source is wide enough) and as-is locally. Spread its result on a plain `<img>`; keep Astro `Image`/`Picture` for files in `src/assets` and remote URLs. `scripts/verify-image-cdn.mjs` checks a Netlify-like build
+- **Images**: CMS images (paths under `public/`) go through `cdnImage()` from `src/utils/imageHelpers.js`, which serves them via the Netlify Image CDN on Netlify builds (resize, AVIF/WebP, 2x only if the source is wide enough) and as-is locally. Spread its result on a plain `<img>`; keep Astro `Image`/`Picture` for files in `src/assets` and remote URLs. `scripts/verify-image-cdn.mjs` checks a Netlify-like build; `scripts/verify-cms-photo.mjs` replays the cabinet's photo change end to end in a real Decap CMS (local backend on a scratch copy): over-5 MB refusal, upload and publish of a member portrait, then the team page on a Netlify-like build
 - **Buttons**: Use `Button.astro` component for consistency
 - **CTA Component**: `CTA.astro` renders the contact actions from ui-translations (`cta.actions`: e-mail, appointment, phone); the appointment and phone actions list the members from the `lawyers` array (appointment only for a valid `calendarLink`). Adding or removing a member only touches site-config.yml (CMS: « Page Équipe → Membres »).
 
