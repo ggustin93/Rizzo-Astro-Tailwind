@@ -16,6 +16,10 @@ export const nameOf = (id: string): string => team().find((m) => m.id === id).na
 /** A member's translated profile entry (role, career, publications) from profile.yml. */
 export const profileOf = (lang: string, id: string): any => content('profile/profile.yml')[lang].lawyers.find((l) => l.id === id);
 
+/** Netlify Image CDN URL of a CMS photo resized and cropped to w × h (#42). */
+export const resized = (path: string, w: number, h: number): string =>
+  `/.netlify/images?url=${encodeURIComponent(path)}&w=${w}&h=${h}&fit=cover`;
+
 export const BASE_URL = process.env.BASE_URL || 'http://localhost:4321';
 
 /**

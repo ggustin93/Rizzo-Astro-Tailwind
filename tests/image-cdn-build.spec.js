@@ -1,13 +1,12 @@
 import { test, expect } from '@playwright/test';
 import { readFileSync } from 'node:fs';
-import { content, team } from './helpers';
+import { content, team, resized } from './helpers';
 
 // Run only through scripts/verify-image-cdn.mjs, which builds the site as Netlify does (NETLIFY=true).
 const dist = process.env.IMAGE_CDN_DIST;
 // Attribute values come back HTML-escaped (&#38; or &amp;): compare plain URLs.
 const html = (page) => readFileSync(`${dist}/${page}/index.html`, 'utf8').replace(/&#38;|&amp;/g, '&');
 const imgFor = (page, path) => html(page).match(new RegExp(`<img[^>]*url=${encodeURIComponent(path).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[^>]*>`))?.[0];
-const resized = (path, w, h) => `/.netlify/images?url=${encodeURIComponent(path)}&w=${w}&h=${h}&fit=cover`;
 
 if (dist) {
   test.describe('CMS photos go through the Netlify Image CDN (#42)', () => {
