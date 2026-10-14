@@ -26,7 +26,7 @@ async function sourceWidth(src) {
 /**
  * Serve a CMS image through the Netlify Image CDN (#42): resized to its display size,
  * cropped when a height is given, and converted to AVIF/WebP for the browser.
- * A 2x variant is offered only when the source is wide enough, never upscaled.
+ * A high-density variant (up to 2x) uses whatever the source has beyond the display size, never upscaled.
  * SVG, remote URLs and builds outside Netlify (dev, preview, tests) keep the original file.
  * Returns <img> attributes, display width and height included.
  * @param {string} src
@@ -37,6 +37,11 @@ export async function cdnImage(src, { width, height, crop = true, enabled = onNe
   if (!enabled || !src || isExternalImage(src) || /\.svg$/i.test(src)) return { src, width, height };
   const cropHeight = crop ? height : undefined;
   const image = { src: cdnUrl(src, width, cropHeight), width, height };
-  if ((await sourceWidth(src)) >= width * 2) image.srcset = `${image.src} 1x, ${cdnUrl(src, width * 2, cropHeight && cropHeight * 2)} 2x`;
+  // High-density variant up to 2x, as large as the source allows (never upscaled).
+  const density = Math.min(2, Math.floor(((await sourceWidth(src)) / width) * 100) / 100);
+  if (density > 1) {
+    const w = Math.round(width * density);
+    image.srcset = `${image.src} 1x, ${cdnUrl(src, w, cropHeight && Math.round(cropHeight * density))} ${density}x`;
+  }
   return image;
 }

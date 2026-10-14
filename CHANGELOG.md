@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Fixed
+- **Blurry team portraits on high-density screens**: the portraits of Christine, Arnaud and Romain were stored at display size (500 px square, 533 px portrait), so the Image CDN never offered a sharper variant and re-encoded an already compressed file. They are re-exported from the cabinet's originals (RM-24) at up to 2x, same framing, and `cdnImage()` now offers a high-density variant as large as the source allows (e.g. 1.46x) instead of only an exact 2x. Stephanie's portraits stay as they are until a higher-resolution original is available.
+
 ## [2026-10-14]
 
 Production release (`release: 2026-10-14`, `7ad14f2e`): the October 2026 work (cabinet requests RM-1 to RM-12 and RM-17 to RM-27, Dutch locale, four-member team, staging workflow, Image CDN). Entries from « SVG sprite system » down were already live before this release but had never been versioned.

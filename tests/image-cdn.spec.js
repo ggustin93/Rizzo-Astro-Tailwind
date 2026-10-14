@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { cdnImage } from '../src/utils/imageHelpers.js';
 
 // #42: CMS uploads are served resized by the Netlify Image CDN, never as the raw upload.
-// Fixtures are real files in public/: photo-4370.jpg is 2462 × 3080, christine-optimized.webp 500 × 500.
+// Fixtures are real files in public/: photo-4370.jpg is 2462 × 3080, romain-portrait.webp 880 × 1321, smichiels-optimized.webp 500 × 500.
 test.describe('cdnImage', () => {
   test('a large CMS photo is resized and cropped, with a 2x variant for sharp screens', async () => {
     expect(await cdnImage('/assets/images/photo-4370.jpg', { width: 600, height: 750, enabled: true })).toEqual({
@@ -15,9 +15,16 @@ test.describe('cdnImage', () => {
     });
   });
 
-  test('a photo too small for 2x gets no upscaled variant', async () => {
-    expect(await cdnImage('/assets/images/christine-optimized.webp', { width: 500, height: 500, enabled: true })).toEqual({
-      src: '/.netlify/images?url=%2Fassets%2Fimages%2Fchristine-optimized.webp&w=500&h=500&fit=cover',
+  test('a photo between 1x and 2x gets a high-density variant as large as the source allows', async () => {
+    expect((await cdnImage('/assets/images/romain-portrait.webp', { width: 600, height: 750, enabled: true })).srcset).toBe(
+      '/.netlify/images?url=%2Fassets%2Fimages%2Fromain-portrait.webp&w=600&h=750&fit=cover 1x, ' +
+        '/.netlify/images?url=%2Fassets%2Fimages%2Fromain-portrait.webp&w=876&h=1095&fit=cover 1.46x',
+    );
+  });
+
+  test('a photo no wider than its display size gets no upscaled variant', async () => {
+    expect(await cdnImage('/assets/images/smichiels-optimized.webp', { width: 500, height: 500, enabled: true })).toEqual({
+      src: '/.netlify/images?url=%2Fassets%2Fimages%2Fsmichiels-optimized.webp&w=500&h=500&fit=cover',
       width: 500,
       height: 500,
     });
