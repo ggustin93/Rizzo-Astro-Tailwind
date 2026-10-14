@@ -160,7 +160,7 @@ export const prerender = true;
               const Tag = href ? 'a' : 'div';
               return (
                 <Tag href={href} class="team-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">
-                  <img {...(await cdnImage(lawyer.image, { width: 500, height: 500 }))} alt={lawyer.imageAlt || lawyer.name} loading="lazy" decoding="async"
+                  <img {...(await cdnImage(lawyer.image, { width: 250, height: 250 }))} alt={lawyer.imageAlt || lawyer.name} loading="lazy" decoding="async"
                     class="team-portrait" />
                   <div class="team-card-caption"><h3>{lawyer.name}</h3>{href && <ArrowRight aria-hidden="true" class="team-card-arrow" />}</div>
                 </Tag>

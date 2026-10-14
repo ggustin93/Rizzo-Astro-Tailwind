@@ -12,14 +12,15 @@ const onNetlify = process.env.NETLIFY === 'true';
 const cdnUrl = (src, width, height) =>
   `/.netlify/images?url=${encodeURIComponent(src)}&w=${width}` + (height ? `&h=${height}&fit=cover` : '');
 
-// Width of a file in public/, or 0 when it can't be read (missing, unsupported).
+// Size of a file in public/, or 0 × 0 when it can't be read (missing, unsupported).
 // Builds run from the project root; this module is bundled elsewhere, so no import.meta.url.
-async function sourceWidth(src) {
+async function sourceSize(src) {
   try {
-    return (await sharp(join(process.cwd(), 'public', src)).metadata()).width ?? 0;
+    const { width = 0, height = 0 } = await sharp(join(process.cwd(), 'public', src)).metadata();
+    return { width, height };
   } catch {
-    console.warn(`[cdnImage] cannot read public${src}: served without 2x variant`);
-    return 0;
+    console.warn(`[cdnImage] cannot read public${src}: served without high-density variant`);
+    return { width: 0, height: 0 };
   }
 }
 
@@ -37,11 +38,12 @@ export async function cdnImage(src, { width, height, crop = true, enabled = onNe
   if (!enabled || !src || isExternalImage(src) || /\.svg$/i.test(src)) return { src, width, height };
   const cropHeight = crop ? height : undefined;
   const image = { src: cdnUrl(src, width, cropHeight), width, height };
-  // High-density variant up to 2x, as large as the source allows (never upscaled).
-  const density = Math.min(2, Math.floor(((await sourceWidth(src)) / width) * 100) / 100);
+  const source = await sourceSize(src);
+  const room = Math.min(source.width / width, cropHeight ? source.height / cropHeight : Infinity);
+  const density = Math.min(2, Math.floor(room * 100) / 100);
   if (density > 1) {
-    const w = Math.round(width * density);
-    image.srcset = `${image.src} 1x, ${cdnUrl(src, w, cropHeight && Math.round(cropHeight * density))} ${density}x`;
+    const dense = cdnUrl(src, Math.round(width * density), cropHeight && Math.round(cropHeight * density));
+    image.srcset = `${image.src} 1x, ${dense} ${density}x`;
   }
   return image;
 }

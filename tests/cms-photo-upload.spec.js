@@ -92,7 +92,7 @@ if (repo) {
       execFileSync('npx', ['astro', 'build', '--outDir', 'dist-netlify'], { cwd: repo, env: { ...process.env, NETLIFY: 'true' }, stdio: 'pipe' });
       const html = readFileSync(`${repo}/dist-netlify/fr/equipe/index.html`, 'utf8').replace(/&#38;|&amp;/g, '&');
       expect(existsSync(`${repo}/dist-netlify${photoPath}`), 'source photo shipped for the CDN').toBe(true);
-      expect(html).toContain(`src="${resized(photoPath, 500, 500)}"`);
+      expect(html).toContain(`src="${resized(photoPath, 352, 352)}"`);
     });
   });
 }
