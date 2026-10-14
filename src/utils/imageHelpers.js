@@ -9,8 +9,10 @@ export function isExternalImage(src){
 // Netlify sets NETLIFY=true on every build it runs (production, branch deploys, previews).
 const onNetlify = process.env.NETLIFY === 'true';
 
+// Cropped images are photos (portraits, thumbnails): quality 85 instead of the CDN default 75,
+// which visibly smoothed faces. Illustrations keep the default.
 const cdnUrl = (src, width, height) =>
-  `/.netlify/images?url=${encodeURIComponent(src)}&w=${width}` + (height ? `&h=${height}&fit=cover` : '');
+  `/.netlify/images?url=${encodeURIComponent(src)}&w=${width}` + (height ? `&h=${height}&fit=cover&q=85` : '');
 
 // Size of a file in public/, or 0 × 0 when it can't be read (missing, unsupported).
 // Builds run from the project root; this module is bundled elsewhere, so no import.meta.url.
