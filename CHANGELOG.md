@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [2026-10-14]
+
+Production release (`release: 2026-10-14`, `7ad14f2e`): the October 2026 work (cabinet requests RM-1 to RM-12 and RM-17 to RM-27, Dutch locale, four-member team, staging workflow, Image CDN). Entries from « SVG sprite system » down were already live before this release but had never been versioned.
+
 ### Added
 - **End-to-end check of the CMS photo path**: `scripts/verify-cms-photo.mjs` runs a real Decap CMS (decap-server local backend) on a scratch copy of the repo and replays what the cabinet does in « Page Équipe → Membres »: a photo over 5 MB is refused with « Le fichier est trop volumineux. »; a 4.7 MB photo uploaded as Romain's square portrait lands in `public/assets/images` and changes only that field in `site-config.yml`; a Netlify-like build then serves it on the team page through the Image CDN (500 × 500). Not part of `npm test` (about 15 s, needs network for decap-server); the CDN itself is only exercised on a real deploy.
 - **Permanent staging at `staging.rizzo-michiels.be`**: long-lived `staging` branch (Netlify branch subdomain). The client reviews the next version there and edits content through `/admin/`, whose commits land on `staging`. Only `main` and `staging` remain; dead branches were deleted and Netlify deploys only these two.
