@@ -10,14 +10,14 @@ export async function getContactInfo() {
   }
 
   // Use the primary lawyer (Christine Rizzo) for contact info utility
-  const primaryLawyer = lawyers.find((lawyer) => lawyer.name === "Christine Rizzo") || lawyers[0];
+  const primaryLawyer = lawyers.find((lawyer) => lawyer.id === "christine-rizzo") || lawyers[0];
 
   // L'objet retourné est maintenant directement basé sur la configuration globale.
   // La logique de traduction spécifique à l'adresse est gérée ici.
   return {
     phone: primaryLawyer.phone,
     whatsapp: primaryLawyer.whatsapp,
-    email: primaryLawyer.email,
+    email: siteConfigEntry.data.cabinetEmail,
     linkedin: primaryLawyer.linkedin,
     address: address // L'adresse de base est en français
   };

@@ -1,47 +1,39 @@
 // middleware.js - Redirection de la racine vers la version française par défaut
 // Format compatible avec Astro et Vercel
 
+import { LOCALE_PATTERN, DEFAULT_LOCALE } from './config/locales';
+
+const DEFAULT_HOME = `/${DEFAULT_LOCALE}/`;
+
 // Fonction principale du middleware Astro
 export function onRequest({ request }, next) {
   const url = new URL(request.url);
-  
-  // Si on est à la racine exacte, rediriger vers /fr/
+
+  // Si on est à la racine exacte, rediriger vers la langue par défaut
   if (url.pathname === '/' || url.pathname === '') {
-    // On vérifie que ce n'est pas déjà une URL avec langue (fr/en/it)
-    // Cela évite d'interférer avec le changement de langue
     return new Response('', {
       status: 302,
       headers: {
-        'Location': '/fr/',
+        'Location': DEFAULT_HOME,
         'Cache-Control': 'no-cache, no-store, must-revalidate'
       }
     });
   }
-  
-  // Ne pas interférer avec les URL qui ont déjà un code de langue
-  if (url.pathname.match(/^\/(fr|en|it)(?:\/|$)/)) {
-    return next(); // On laisse passer ces URL sans modification
-  }
-  
-  // Sinon, continuer normalement
+
+  // Toute autre URL (y compris celles déjà préfixées d'une langue) passe telle quelle.
   return next();
 }
 
 // Compatibilité Vercel Edge Middleware si nécessaire
 export default function middleware(request) {
   const url = new URL(request.url);
-  
-  // Si on est à la racine exacte, rediriger vers /fr/
+
+  // Si on est à la racine exacte, rediriger vers la langue par défaut
   if (url.pathname === '/' || url.pathname === '') {
-    return Response.redirect(new URL('/fr/', request.url), 302);
+    return Response.redirect(new URL(DEFAULT_HOME, request.url), 302);
   }
-  
-  // Ne pas interférer avec les URL qui ont déjà un code de langue
-  if (url.pathname.match(/^\/(fr|en|it)(?:\/|$)/)) {
-    return; // On laisse passer ces URL sans modification
-  }
-  
-  // Sinon, continuer normalement
+
+  // Toute autre URL (y compris celles déjà préfixées d'une langue) passe telle quelle.
   return;
 }
 
@@ -50,6 +42,6 @@ export const config = {
   matcher: [
     // Uniquement sur la racine exacte ou sur les chemins qui ne commencent pas déjà par un code de langue
     '/',
-    '/((?!fr|en|it).*)'
+    `/((?!${LOCALE_PATTERN}).*)`
   ]
-}; 
+};

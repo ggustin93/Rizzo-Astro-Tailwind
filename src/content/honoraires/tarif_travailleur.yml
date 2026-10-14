@@ -166,3 +166,58 @@ it:
         - Il mio diritto al congedo parentale, credito di tempo, ecc.
         - Le condizioni del mio telelavoro
         - ecc.
+nl:
+  title: Erelonen en tarieven
+  backLinkText: Terug naar de erelonen
+  contactText: Voor meer informatie over onze tarieven of voor een persoonlijke
+    offerte kunt u gerust contact met ons opnemen.
+  contactButton: Contacteer ons
+  includedServicesTitle: "Inbegrepen diensten:"
+  includedServicesDefault: "Inbegrepen diensten: op aanvraag, afgestemd op uw specifieke situatie."
+  services:
+    - title: "Mijn ontslag: betwisten - onderhandelen"
+      icon: Briefcase
+      description: Minnelijke onderhandeling en/of procedure wegens dringende reden,
+        onrechtmatig, discriminerend of kennelijk onredelijk ontslag
+      pricing: 290 € excl. btw / maand + 10% van het resultaat
+      details:
+        - Bedrag betaalbaar gedurende 24 maanden (hetzij 6.960 € excl. btw).
+        - Facturatie van de gepresteerde uren tegen het overeengekomen uurtarief
+          bij een minnelijk akkoord tussen de partijen.
+        - Het resultaatsereloon wordt berekend op alle netto bedragen die worden
+          verkregen ingevolge een akkoord of een rechterlijke beslissing. Het is
+          eveneens onderworpen aan btw.
+        - Een eventueel hoger beroep is niet inbegrepen.
+        - De btw bedraagt 21%.
+      services:
+        - Analyse van het dossier
+        - Berekening van de vergoedingen
+        - Onderhandeling van een akkoord
+        - Opstellen of nazien van de dading
+        - Inleiden van de procedure
+        - Opstellen van de conclusies
+        - Pleidooien
+        - Nazicht van de uitdiensttredingsdocumenten
+        - Opvolging van de uitvoering
+        - Contacten met de tegenpartij en de rechtbank
+    - title: Mijn opzeggingsvergoeding berekenen
+      icon: FileText
+      pricing: FORFAIT 130 € excl. btw (btw 21%)
+      services:
+        - Analyse van de stukken
+        - Berekening van de opzeggingsvergoeding
+        - Raming van het nettobedrag
+    - title: Nazien
+      icon: Check
+      pricing:
+        - "Uurtarief: 125 € excl. btw"
+        - Forfait op aanvraag (btw 21%)
+      services:
+        - Mijn arbeidsovereenkomst
+        - Mijn concurrentiebeding
+        - De wijziging van mijn overeenkomst
+        - Mijn statuut
+        - Mijn ontslagbrief en de duur van mijn opzeggingstermijn
+        - Mijn recht op ouderschapsverlof, tijdskrediet, ...
+        - De voorwaarden van mijn telewerk
+        - enz.

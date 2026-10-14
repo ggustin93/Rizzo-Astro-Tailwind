@@ -1,36 +1,32 @@
 # E2E Tests
 
-This directory contains End-to-End (E2E) tests for the website, powered by Playwright. These tests simulate real user interactions to verify that critical functionality and content are working as expected after changes have been made.
+Playwright tests for the website. Specs read the copy the cabinet can edit from `src/content/*.yml` through `tests/helpers.ts`, never hard-coded.
 
 ## Setup
 
-Before running the tests, you need to install Playwright and its browser dependencies.
+```bash
+npm install
+npx playwright install   # Chromium and WebKit (mobile-safari project)
+```
 
-1.  **Install Playwright:**
-    ```bash
-    npm install -D @playwright/test
-    ```
+## Running the tests
 
-2.  **Install Browsers:**
-    ```bash
-    npx playwright install
-    ```
+```bash
+npm test                                  # builds, previews on :4321, runs every spec
+npx playwright test tests/<file>          # one spec
+BASE_URL=https://staging.rizzo-michiels.be npx playwright test   # against a deployed site
+```
 
-## Running the Tests
+Playwright starts `npm run build && npm run preview` itself (reusing a server already on :4321).
 
-1.  **Start the development server:**
-    The tests require the Astro development server to be running.
-    ```bash
-    npm run dev
-    ```
+## Checks outside `npm test`
 
-2.  **Run the Playwright test suite:**
-    Open a *new* terminal window and run the following command:
-    ```bash
-    npx playwright test
-    ```
-    Playwright will execute all files ending in `.spec.ts` inside the `tests/` directory.
+Two scripts run specs that are skipped in `npm test`, because they need their own build or servers:
 
-## Current Test Suites
+- `node scripts/verify-image-cdn.mjs`: builds the site as Netlify does (`NETLIFY=true`) and checks that CMS photos are served resized by the Netlify Image CDN (`image-cdn-build.spec.js`).
+- `node scripts/verify-cms-photo.mjs`: replays the cabinet's photo change in a real Decap CMS (decap-server local backend, loopback only) on a scratch copy of the repo: a photo over 5 MB is refused, a 4.7 MB photo becomes a member's portrait and changes only that field, then the team page serves it through the Image CDN (`cms-photo-upload.spec.js`). About 15 s; needs network the first time to fetch decap-server.
 
-*   `contact-info.spec.ts`: Verifies that the contact information (email, phone, address) is displayed correctly and consistently across the Contact page, Footer, and all Legal pages, pulling from the single source of truth (`site-config.yml`).
+## Guards worth knowing
+
+- `content-consistency.spec.js`: lists on the EU institutions, workers and employers pages must have the same number of points in FR/EN/IT/NL (SEO keywords excluded). The CMS edits each language separately, which is how RM-25 happened.
+- `cms-images.spec.js`: every CMS image field has format advice and the 5 MB upload limit.

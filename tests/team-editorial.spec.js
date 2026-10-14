@@ -1,0 +1,123 @@
+import { test, expect } from '@playwright/test';
+import { content, nameOf, profileOf, team } from './helpers';
+
+// Names and copy are CMS-editable: read them from the content, never hard-code them.
+const yml = (file) => content(file).fr;
+const christine = yml('profile/profile.yml').lawyers.find((l) => l.id === 'christine-rizzo');
+const homeFr = yml('home/home.yml');
+
+test('la présentation complète de Christine est distincte de son profil', async ({ page }) => {
+  await page.goto('/fr/equipe/');
+  // Last paragraph of the full presentation (commission + association memberships).
+  await expect(page.locator('main')).toContainText(christine.presentation[0].split(/\n\s*\n/).at(-1).trim());
+  await page.locator('main a[href="/fr/equipe/christine-rizzo/"] img').click();
+  await expect(page.locator('main')).not.toContainText('Je suis actuellement membre');
+  await expect(page.locator('main')).toContainText(christine.careerPath[1].year);
+});
+
+for (const lang of ['fr', 'en', 'it', 'nl']) {
+  test(`${lang} : quatre profils intégraux, LinkedIn et navigation`, async ({ page, request }) => {
+    // Roster order, names and careers come from the CMS (site-config + profile).
+    const members = team().map((m) => [m.slug, m.name, (profileOf(lang, m.id).careerPath ?? []).map((c) => c.event)]);
+    await page.goto(`/${lang}/equipe/`);
+    await expect(page.locator('main h2')).toHaveText(members.map(x => x[1]));
+    for (const [slug, name, careers] of members) {
+      await expect(page.locator(`main a[href="/${lang}/equipe/${slug}/"]`)).toHaveCount(2);
+      const response = await request.get(`/${lang}/equipe/${slug}/`);
+      expect(response.status()).toBe(200);
+      await page.goto(`/${lang}/equipe/${slug}/`);
+      await expect(page.locator('main h1')).toHaveText(name);
+      // Every career line, so one member's page can't pass with another's career.
+      for (const event of careers) await expect(page.locator('main')).toContainText(event);
+      await expect(page.getByRole('link', { name: 'LinkedIn', exact: true })).toBeVisible();
+      await page.goto(`/${lang}/equipe/`);
+    }
+  });
+}
+
+test('accueil : promesse fournie, réunion sous équipe et quatre mini-portraits', async ({ page }) => {
+  await page.goto('/fr/');
+  await expect(page.locator('main')).toContainText(homeFr.hero.subtitle);
+  await expect(page.locator('#profil h3')).toHaveText(team().map((m) => m.name));
+  await expect(page.locator('#profil')).toContainText(homeFr.profil.description.slice(0, 50));
+  await expect(page.locator(`#profil img[alt="${homeFr.profil.imageAlt}"]`)).toBeVisible();
+  await expect(page.locator('#expertise img')).toHaveCount(0);
+  await expect(page.locator('#profil a')).toHaveCount(5);
+  await expect(page.locator('#profil a[href="/fr/equipe/"]')).toContainText(homeFr.profil.cta);
+  await page.locator('#profil a[href="/fr/equipe/#romain-archalaus"] img').click();
+  await expect(page).toHaveURL(/\/fr\/equipe\/#romain-archalaus$/);
+  await page.goBack();
+});
+
+for (const lang of ['fr','en','it','nl']) {
+  test(`${lang} : parcours équipe au clavier et médias accessibles`, async ({ page, isMobile }) => {
+    await page.goto(`/${lang}/equipe/`);
+    const link=page.locator(`main a.profile-link[href="/${lang}/equipe/arnaud-vanderhoeven-jacobs/"]`);
+    await link.focus();
+    await expect(link).toBeFocused();
+    await page.keyboard.press('Enter');
+    await expect(page).toHaveURL(new RegExp(`/${lang}/equipe/arnaud-vanderhoeven-jacobs/$`));
+    await expect(page.locator('main h1')).toHaveText(nameOf('arnaud-vanderhoeven-jacobs'));
+    await page.goto(`/${lang}/`);
+    await page.locator('#profil').scrollIntoViewIfNeeded();
+    for (const img of await page.locator('#profil img').all()) {
+      await img.scrollIntoViewIfNeeded();
+      await expect(img).toBeVisible();
+      await expect.poll(()=>img.evaluate(el=>el.complete && el.naturalWidth>0)).toBe(true);
+    }
+    expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBe(true);
+    if (isMobile) await expect(page.locator('#profil h3')).toHaveCount(4);
+  });
+}
+
+for (const lang of ['fr','en','it','nl']) {
+  test(`${lang} : contributions et références bibliographiques complètes`, async ({ page }) => {
+    await page.goto(`/${lang}/equipe/arnaud-vanderhoeven-jacobs/`);
+    for (const { title } of profileOf(lang, 'arnaud-vanderhoeven-jacobs').publications ?? []) {
+      await expect(page.locator('main')).toContainText(title.trim());
+    }
+    await page.goto(`/${lang}/equipe/romain-archalaus/`);
+    const heading={fr:'Publications',en:'Publications',it:'Pubblicazioni',nl:'Publicaties'}[lang];
+    await expect(page.locator('main').getByRole('heading',{name:heading,exact:true})).toBeVisible();
+    const intro = profileOf(lang, 'romain-archalaus').publicationsIntro?.trim();
+    if (intro) await expect(page.locator('main')).toContainText(intro);
+  });
+}
+
+// #29: a CMS paragraph break must become its own <p>, not a collapsed newline.
+test('la présentation de Christine s’affiche en paragraphes distincts', async ({ page }) => {
+  await page.goto('/fr/equipe/');
+  const paragraphs = page.locator('#christine-rizzo .team-text > p');
+  await expect(paragraphs).toHaveCount(4);
+  await expect(paragraphs.nth(1)).toHaveText(/^Gestion de la relation de travail/);
+});
+
+for (const lang of ['fr', 'en', 'it', 'nl']) {
+  test(`${lang} : chaque présentation est rendue en plusieurs paragraphes, sans saut de ligne résiduel`, async ({ page }) => {
+    const slugs = ['christine-rizzo', 'stephanie-michiels', 'arnaud-vanderhoeven-jacobs', 'romain-archalaus'];
+    for (const path of ['', ...slugs.map(slug => `${slug}/`)]) {
+      await page.goto(`/${lang}/equipe/${path}`);
+      const texts = await page.locator('main p').allTextContents();
+      expect(texts.filter(text => text.trim().includes('\n'))).toEqual([]);
+    }
+    await page.goto(`/${lang}/equipe/`);
+    for (const slug of slugs) {
+      expect(await page.locator(`#${slug} .team-text > p`).count()).toBeGreaterThan(1);
+    }
+  });
+}
+
+// #30: home portraits open the person's section of the team page.
+for (const lang of ['fr', 'en', 'it', 'nl']) {
+  test(`${lang} : un portrait de l’accueil mène à sa section de la page Équipe, au clavier`, async ({ page }) => {
+    await page.goto(`/${lang}/`);
+    const portrait = page.locator(`#profil a[href="/${lang}/equipe/#romain-archalaus"]`);
+    await portrait.focus();
+    await page.keyboard.press('Enter');
+    await expect(page).toHaveURL(new RegExp(`/${lang}/equipe/#romain-archalaus$`));
+    const section = page.locator('#romain-archalaus');
+    await expect(section.locator('h2')).toHaveText(nameOf('romain-archalaus'));
+    await expect(section).toBeInViewport();
+    await expect(section.locator(`a[href="/${lang}/equipe/romain-archalaus/"]`)).toHaveCount(2);
+  });
+}

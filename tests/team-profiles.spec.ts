@@ -1,0 +1,68 @@
+import { test, expect } from '@playwright/test';
+import { BASE_URL, ctaLabel, languages, lawyers as profiles } from './helpers';
+
+// Issue #8: profile pages come from one slug-driven route, but the public URLs
+// visitors and search engines already know must not move.
+
+test.describe('Team profile routes', () => {
+  for (const lang of languages) {
+    for (const profile of profiles) {
+      test(`/${lang}/equipe/${profile.slug} still resolves`, async ({ page }) => {
+        const response = await page.goto(`${BASE_URL}/${lang}/equipe/${profile.slug}/`);
+        expect(response?.status()).toBe(200);
+
+        await expect(page.locator('main h1')).toContainText(profile.name);
+        // Career timeline is part of the shared canvas: assert a real entry, not
+        // a substring that any page would satisfy.
+        await expect(page.locator('main h2').first()).toBeVisible();
+        await expect(page.locator('main')).toContainText(profile.careerEntry);
+        // Back-link returns to the team listing in the same language.
+        await expect(page.locator(`main a[href="/${lang}/equipe/"]`).first()).toBeVisible();
+      });
+    }
+
+    test(`/${lang}/equipe links to every profile`, async ({ page }) => {
+      await page.goto(`${BASE_URL}/${lang}/equipe/`);
+      for (const profile of profiles) {
+        await expect(
+          page.locator(`main a[href="/${lang}/equipe/${profile.slug}/"]`)
+        ).toHaveCount(2);
+      }
+    });
+  }
+
+  // Issue #27: profiles get a booking link (WhatsApp was dropped), only for
+  // members with a cal.com agenda. The exact URL is CMS-editable, so only its
+  // shape is asserted.
+  const agendas = [
+    { slug: 'christine-rizzo', bookable: true },
+    { slug: 'stephanie-michiels', bookable: true },
+    { slug: 'arnaud-vanderhoeven-jacobs', bookable: true },
+    { slug: 'romain-archalaus', bookable: false },
+  ];
+  for (const lang of languages) {
+    for (const { slug, bookable } of agendas) {
+      test(`/${lang}/equipe/${slug} ${bookable ? 'offers' : 'omits'} booking`, async ({ page }) => {
+        await page.goto(`${BASE_URL}/${lang}/equipe/${slug}/`);
+        const booking = page.locator('#coordonnees a[data-cal-link]');
+        if (!bookable) {
+          await expect(booking).toHaveCount(0);
+          return;
+        }
+        await expect(booking).toHaveCount(1);
+        await expect(booking).toHaveAttribute('data-cal-link', /\S/);
+        await expect(booking).toHaveAttribute('href', /^https:\/\/cal\.com\/\S/);
+        await expect(booking).toContainText(ctaLabel(lang, 'appointment'));
+      });
+    }
+  }
+
+  test('empty sections are omitted from the profile canvas', async ({ page }) => {
+    // Stephanie has `conferences: []` but a non-empty publications list.
+    await page.goto(`${BASE_URL}/fr/equipe/stephanie-michiels/`);
+    const main = page.locator('main');
+    await expect(main.getByRole('heading', { level: 2, name: /^Parcours$/ })).toHaveCount(1);
+    await expect(main.getByRole('heading', { level: 2, name: /^Publications$/ })).toHaveCount(1);
+    await expect(main.getByRole('heading', { level: 2, name: /^Conférences$/ })).toHaveCount(0);
+  });
+});

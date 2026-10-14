@@ -1,110 +1,181 @@
+# Every string the interface renders, keyed by locale.
+#
+# The schema in src/content/config.ts is built from LOCALES, so adding a
+# language to src/config/locales.ts without adding its block here fails the
+# build instead of silently serving French (issue #15).
+
 fr:
   readMore: "Lire la suite"
-  viewAllArticles: "Voir tous les articles"
-  contactCta: "Prendre rendez-vous"
-  navigation: "Navigation"
-  legalPages: "Pages légales"
-  ecoDesignPwablo: "Eco-design & Pwablo"
   blogTitle: "Articles"
   noArticles: "Aucun article trouvé."
   allCategories: "Toutes catégories"
-  ctaTitle: "Une question en droit du travail?"
-  ctaSubtitle: "Contactez-moi. Je suis à votre écoute."
-  takeAppointment: "Prendre RDV"
-  call: "Appeler"
-  whatsapp: "WhatsApp"
-  email: "Email"
-  learnMore: "En savoir plus"
-  additionalTranslations:
-    activePage: "Page active"
-    submit: "Soumettre"
-    cancel: "Annuler"
-    search: "Rechercher"
-    close: "Fermer"
-    menu: "Menu"
-    backToTop: "Retour en haut"
-    share: "Partager"
-    readingTime: "Temps de lecture"
-    minutes: "minutes"
-    publishedOn: "Publié le"
-    categories: "Catégories"
-    nextArticle: "Article suivant"
-    previousArticle: "Article précédent"
-    relatedArticles: "Articles similaires"
-    lastUpdated: "Dernière mise à jour"
-    contactMe: "Me contacter"
-    bookAppointment: "Réserver un rendez-vous"
+  header:
+    bookWith: "Prendre rendez-vous avec"
+  cta:
+    title: Contactez-nous
+    illustrationAlt: Illustration de contact
+    contactLabel: Contact
+    actions:
+      - type: email
+        label: E-mail
+      - type: appointment
+        label: Prendre rendez-vous
+      - type: phone
+        label: Appelez-nous
+  blog:
+    seoTitle: "Blog | Rizzo & Michiels, avocats en droit du travail à Bruxelles"
+    seoDescription: "Découvrez les derniers articles sur le droit du travail en Belgique. Conseils juridiques, analyses et actualités par les avocats de Rizzo & Michiels."
+    seoKeywords:
+      - "blog droit du travail"
+      - "articles juridiques Belgique"
+      - "conseils avocat emploi"
+      - "actualités droit social"
+      - "Christine Rizzo blog"
+    backToArticles: "← Retour aux articles"
+    keyPoints: "Points clés :"
+    readTime: "temps de lecture"
+  team:
+    title: "L'équipe"
+    viewProfile: "Découvrir le profil complet"
+    backToTeam: "Retour à l'équipe"
+    languages: "Langues"
+    career: "Parcours"
+    conferences: "Conférences"
+    publications: "Publications"
+    inCollaborationWith: "En collaboration avec"
+  notFound:
+    title: "Page non trouvée - 404"
+    message: "La page que vous recherchez n'existe pas ou a été déplacée."
+    backHome: "Retour à l'accueil"
 
 en:
   readMore: "Read more"
-  viewAllArticles: "View all articles"
-  contactCta: "Book an appointment"
-  navigation: "Navigation"
-  legalPages: "Legal pages"
-  ecoDesignPwablo: "Eco-design & Pwablo"
   blogTitle: "Blog Posts"
   noArticles: "No articles found."
   allCategories: "All categories"
-  ctaTitle: "Do you have a question about labor law?"
-  ctaSubtitle: "Contact me. I'm here to listen."
-  takeAppointment: "Schedule Appointment"
-  call: "Call"
-  whatsapp: "WhatsApp"
-  email: "Email"
-  learnMore: "Learn more"
-  additionalTranslations:
-    activePage: "Active page"
-    submit: "Submit"
-    cancel: "Cancel"
-    search: "Search"
-    close: "Close"
-    menu: "Menu"
-    backToTop: "Back to top"
-    share: "Share"
-    readingTime: "Reading time"
-    minutes: "minutes"
-    publishedOn: "Published on"
-    categories: "Categories"
-    nextArticle: "Next article"
-    previousArticle: "Previous article"
-    relatedArticles: "Related articles"
-    lastUpdated: "Last updated"
-    contactMe: "Contact me"
-    bookAppointment: "Book an appointment"
+  header:
+    bookWith: "Book an appointment with"
+  cta:
+    title: Contact us
+    illustrationAlt: Contact illustration
+    contactLabel: Contact
+    actions:
+      - type: email
+        label: Email
+      - type: appointment
+        label: Book an appointment
+      - type: phone
+        label: Call us
+  blog:
+    seoTitle: "Blog | Rizzo & Michiels, Employment Lawyers in Brussels"
+    seoDescription: "Explore the latest articles on Belgian employment law. Legal advice, analysis, and news by the lawyers of Rizzo & Michiels."
+    seoKeywords:
+      - "employment law blog"
+      - "legal articles Belgium"
+      - "labor lawyer advice"
+      - "social law news"
+      - "Christine Rizzo blog"
+    backToArticles: "← Back to articles"
+    keyPoints: "Key points:"
+    readTime: "read time"
+  team:
+    title: "The Team"
+    viewProfile: "View full profile"
+    backToTeam: "Back to team"
+    languages: "Languages"
+    career: "Career"
+    conferences: "Conferences"
+    publications: "Publications"
+    inCollaborationWith: "In collaboration with"
+  notFound:
+    title: "Page not found - 404"
+    message: "The page you are looking for doesn't exist or has been moved."
+    backHome: "Back to home"
 
 it:
   readMore: "Leggi di più"
-  viewAllArticles: "Vedi tutti gli articoli"
-  contactCta: "Prenota un appuntamento"
-  navigation: "Navigazione"
-  legalPages: "Pagine legali"
-  ecoDesignPwablo: "Eco-design & Pwablo"
   blogTitle: "Articoli"
   noArticles: "Nessun articolo trovato."
   allCategories: "Tutte le categorie"
-  ctaTitle: "Hai una domanda sul diritto del lavoro?"
-  ctaSubtitle: "Contattami. Sono qui per ascoltarti."
-  takeAppointment: "Prendere Appuntamento"
-  call: "Chiamare"
-  whatsapp: "WhatsApp"
-  email: "Email"
-  learnMore: "Scopri di più"
-  additionalTranslations:
-    activePage: "Pagina attiva"
-    submit: "Inviare"
-    cancel: "Annulla"
-    search: "Cerca"
-    close: "Chiudi"
-    menu: "Menu"
-    backToTop: "Torna in cima"
-    share: "Condividi"
-    readingTime: "Tempo di lettura"
-    minutes: "minuti"
-    publishedOn: "Pubblicato il"
-    categories: "Categorie"
-    nextArticle: "Articolo successivo"
-    previousArticle: "Articolo precedente"
-    relatedArticles: "Articoli correlati"
-    lastUpdated: "Ultimo aggiornamento"
-    contactMe: "Contattami"
-    bookAppointment: "Prenota un appuntamento" 
+  header:
+    bookWith: "Prenota un appuntamento con"
+  cta:
+    title: Contattaci
+    illustrationAlt: Illustrazione di contatto
+    contactLabel: Contatto
+    actions:
+      - type: email
+        label: E-mail
+      - type: appointment
+        label: Prendi un appuntamento
+      - type: phone
+        label: Chiamateci
+  blog:
+    seoTitle: "Blog | Rizzo & Michiels, avvocati del lavoro a Bruxelles"
+    seoDescription: "Scopri gli ultimi articoli sul diritto del lavoro in Belgio. Consigli legali, analisi e notizie degli avvocati di Rizzo & Michiels."
+    seoKeywords:
+      - "blog diritto del lavoro"
+      - "articoli legali Belgio"
+      - "consigli avvocato impiego"
+      - "notizie diritto sociale"
+      - "Christine Rizzo blog"
+    backToArticles: "← Torna agli articoli"
+    keyPoints: "Punti chiave:"
+    readTime: "tempo di lettura"
+  team:
+    title: "Il Team"
+    viewProfile: "Scopri il profilo completo"
+    backToTeam: "Torna al team"
+    languages: "Lingue"
+    career: "Percorso"
+    conferences: "Conferenze"
+    publications: "Pubblicazioni"
+    inCollaborationWith: "In collaborazione con"
+  notFound:
+    title: "Pagina non trovata - 404"
+    message: "La pagina che stai cercando non esiste o è stata spostata."
+    backHome: "Torna alla home"
+
+nl:
+  readMore: "Lees verder"
+  blogTitle: "Artikels"
+  noArticles: "Geen artikel gevonden."
+  allCategories: "Alle categorieën"
+  header:
+    bookWith: "Maak een afspraak met"
+  cta:
+    title: Contacteer ons
+    illustrationAlt: Contactillustratie
+    contactLabel: Contact
+    actions:
+      - type: email
+        label: E-mail
+      - type: appointment
+        label: Afspraak maken
+      - type: phone
+        label: Bel ons
+  blog:
+    seoTitle: "Blog | Rizzo & Michiels, advocaten arbeidsrecht in Brussel"
+    seoDescription: "Ontdek de laatste artikels over het Belgische arbeidsrecht. Juridisch advies, analyses en nieuws door de advocaten van Rizzo & Michiels."
+    seoKeywords:
+      - "blog arbeidsrecht"
+      - "juridische artikels België"
+      - "advies advocaat arbeid"
+      - "nieuws sociaal recht"
+      - "Christine Rizzo blog"
+    backToArticles: "← Terug naar de artikels"
+    keyPoints: "Kernpunten:"
+    readTime: "leestijd"
+  team:
+    title: "Het team"
+    viewProfile: "Het volledige profiel ontdekken"
+    backToTeam: "Terug naar het team"
+    languages: "Talen"
+    career: "Loopbaan"
+    conferences: "Conferenties"
+    publications: "Publicaties"
+    inCollaborationWith: "In samenwerking met"
+  notFound:
+    title: "Pagina niet gevonden - 404"
+    message: "De pagina die u zoekt bestaat niet of werd verplaatst."
+    backHome: "Terug naar de homepagina"

@@ -1,15 +1,10 @@
 import { test, expect } from '@playwright/test';
-
-const BASE_URL = process.env.BASE_URL || 'http://localhost:4321';
-
-const languages = ['fr', 'en', 'it'];
+import { BASE_URL, content, languages } from './helpers';
 
 test.describe('European Institutions Service Page', () => {
-  const expectedTitles: Record<string, string> = {
-    fr: 'Institutions et agences européennes',
-    en: 'European institutions and agencies',
-    it: 'Istituzioni e agenzie europee',
-  };
+  // h1 comes from the CMS content, which the cabinet edits.
+  const europeennes = content('europeennes/europeennes.yml');
+  const expectedTitles: Record<string, string> = Object.fromEntries(languages.map((lang) => [lang, europeennes[lang].title]));
 
   for (const lang of languages) {
     test(`should load europeennes page for /${lang}/`, async ({ page }) => {
@@ -26,31 +21,23 @@ test.describe('European Institutions Service Page', () => {
       await expect(page.locator('#agences')).toBeVisible();
       await expect(page.locator('#fonctionnaires')).toBeVisible();
 
-      // CTA links to honoraires exist (one per section)
-      const ctaLinks = page.locator(`a[href="/${lang}/honoraires"]`);
+      // CTA links to honoraires exist (one per section). Scoped to <main>: the
+      // header nav has its own /honoraires link, hidden on mobile viewports.
+      const ctaLinks = page.locator(`main a[href="/${lang}/honoraires"]`);
+      await expect(ctaLinks).toHaveCount(2);
       await expect(ctaLinks.first()).toBeVisible();
     });
   }
 });
 
 test.describe('Homepage Expertise Grid', () => {
-  const expertiseBlocks: Record<string, { employeurs: string; travailleurs: string; europeennes: string }> = {
-    fr: {
-      employeurs: 'Vous êtes une entreprise',
-      travailleurs: 'Vous êtes un.e travailleur·euse',
-      europeennes: 'Institutions européennes',
-    },
-    en: {
-      employeurs: 'You are an employer',
-      travailleurs: 'You are an employee',
-      europeennes: 'European Institutions',
-    },
-    it: {
-      employeurs: 'Aziende',
-      travailleurs: 'Lavoratori',
-      europeennes: 'Istituzioni europee',
-    },
-  };
+  // Titles come from the CMS content, which the cabinet edits.
+  const home = content('home/home.yml');
+  const expertiseBlocks = Object.fromEntries(languages.map((lang) => [lang, {
+    employeurs: home[lang].expertise.employeurs.title,
+    travailleurs: home[lang].expertise.travailleurs.title,
+    europeennes: home[lang].expertise.europeennes.title,
+  }]));
 
   for (const lang of languages) {
     test(`should show 3 expertise blocks in correct order for /${lang}/`, async ({ page }) => {
@@ -74,9 +61,9 @@ test.describe('Homepage Expertise Grid', () => {
       await expect(blocks.nth(2)).toContainText(titles.europeennes);
 
       // Links to service pages exist
-      await expect(expertiseSection.locator(`a[href="/${lang}/services/employeurs"]`)).toBeVisible();
-      await expect(expertiseSection.locator(`a[href="/${lang}/services/travailleurs"]`)).toBeVisible();
-      await expect(expertiseSection.locator(`a[href="/${lang}/services/europeennes"]`)).toBeVisible();
+      await expect(expertiseSection.locator(`a[href="/${lang}/services/employeurs/"]`)).toBeVisible();
+      await expect(expertiseSection.locator(`a[href="/${lang}/services/travailleurs/"]`)).toBeVisible();
+      await expect(expertiseSection.locator(`a[href="/${lang}/services/europeennes/"]`)).toBeVisible();
     });
   }
 });
@@ -98,9 +85,10 @@ test.describe('Honoraires Intro Block Removed from Homepage', () => {
 
 test.describe('Navigation Dropdown - European Institutions Link', () => {
   const navLabels: Record<string, string> = {
-    fr: 'INSTITUTIONS EUROPÉENNES',
-    en: 'EUROPEAN INSTITUTIONS',
-    it: 'ISTITUZIONI EUROPEE',
+    fr: 'FONCTIONNAIRES & INSTITUTIONS UE',
+    en: 'EU OFFICIALS & INSTITUTIONS',
+    it: 'FUNZIONARI & ISTITUZIONI UE',
+    nl: 'AMBTENAREN & EU-INSTELLINGEN',
   };
 
   for (const lang of languages) {

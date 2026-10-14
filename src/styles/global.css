@@ -122,3 +122,12 @@
     }
   }
 }
+:root {
+  --worker-brand: #068d9d;
+  --worker-ink: #067383;
+  --employer-brand: #53599a;
+  --europe-brand: #2b6cb0;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

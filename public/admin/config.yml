@@ -5,6 +5,13 @@ backend:
 media_folder: "public/assets/images"
 public_folder: "/assets/images"
 
+# Decap in French, so messages like the upload limit are clear to the cabinet.
+locale: "fr"
+
+# The real preview is the staging site (staging.rizzo-michiels.be), rebuilt after each save.
+editor:
+  preview: false
+
 collections:
   # Page d'accueil
   - name: "home"
@@ -16,6 +23,28 @@ collections:
         i18n:
           structure: single_file
         fields:
+          - label: "Images partagées de l’accueil"
+            name: "media"
+            widget: "object"
+            fields:
+              - {label: "Illustration d’en-tête", name: "hero", widget: "image", hint: "SVG de préférence ; sinon PNG ou WebP d’environ 1600 px de large, moins de 300 Ko.", media_library: &imageUpload {config: {max_file_size: 5000000}}}
+              - {label: "Illustration de l’équipe", name: "team", widget: "image", hint: "SVG de préférence ; sinon PNG ou WebP d’environ 1600 px de large, moins de 300 Ko.", media_library: *imageUpload}
+          - label: "Liens des mini-portraits"
+            name: "portraitLinks"
+            widget: "select"
+            default: "team"
+            hint: "Les portraits peuvent ouvrir la section de la personne sur la page Équipe (d’où le profil complet reste accessible) ou directement son profil individuel."
+            options:
+              - {label: "Sans lien", value: "none"}
+              - {label: "Vers les profils", value: "profiles"}
+              - {label: "Vers la section de la page Équipe", value: "team"}
+          - label: "Ordre des parcours Services"
+            name: "serviceOrder"
+            widget: "list"
+            min: 3
+            max: 3
+            hint: "Chaque parcours doit apparaître une seule fois. Ordre commun aux quatre langues."
+            field: {label: "Parcours", name: "service", widget: "select", options: ["employeurs", "travailleurs", "europeennes"]}
           - label: "Français"
             name: "fr"
             widget: "object"
@@ -27,7 +56,8 @@ collections:
                   - {label: "Titre", name: "title", widget: "string"}
                   - {label: "Sous-titre", name: "subtitle", widget: "string"}
                   - {label: "Description", name: "description", widget: "text"}
-                  - {label: "CTA", name: "cta", widget: "string"}
+                  - {label: "Libellé vers les services", name: "more", widget: "string"}
+                  - {label: "Alternative de l’illustration", name: "imageAlt", widget: "string"}
               
               - label: "Expertise"
                 name: "expertise"
@@ -41,21 +71,24 @@ collections:
                     fields:
                       - {label: "Titre", name: "title", widget: "string"}
                       - {label: "Description", name: "description", widget: "text"}
-                      - {label: "CTA", name: "cta", widget: "string"}
+                      - {label: "Libellé du lien", name: "cta", widget: "string"}
+                      - {label: "Destination", name: "destination", widget: "select", options: ["/services/employeurs/", "/services/travailleurs/", "/services/europeennes/", "/contact/"]}
                   - label: "Employeurs"
                     name: "employeurs"
                     widget: "object"
                     fields:
                       - {label: "Titre", name: "title", widget: "string"}
                       - {label: "Description", name: "description", widget: "text"}
-                      - {label: "CTA", name: "cta", widget: "string"}
+                      - {label: "Libellé du lien", name: "cta", widget: "string"}
+                      - {label: "Destination", name: "destination", widget: "select", options: ["/services/employeurs/", "/services/travailleurs/", "/services/europeennes/", "/contact/"]}
                   - label: "Institutions Européennes"
                     name: "europeennes"
                     widget: "object"
                     fields:
                       - {label: "Titre", name: "title", widget: "string"}
                       - {label: "Description", name: "description", widget: "text"}
-                      - {label: "CTA", name: "cta", widget: "string"}
+                      - {label: "Libellé du lien", name: "cta", widget: "string"}
+                      - {label: "Destination", name: "destination", widget: "select", options: ["/services/employeurs/", "/services/travailleurs/", "/services/europeennes/", "/contact/"]}
                   - label: "Honoraires"
                     name: "honoraires"
                     widget: "object"
@@ -73,7 +106,8 @@ collections:
                 fields:
                   - {label: "Titre", name: "title", widget: "string"}
                   - {label: "Description", name: "description", widget: "text"}
-                  - {label: "CTA", name: "cta", widget: "string"}
+                  - {label: "Libellé au-dessus des portraits (sans lien)", name: "cta", widget: "string", hint: "Les photos des membres se changent dans Page Équipe → « Membres — nom, photos, coordonnées (commun aux quatre langues) »."}
+                  - {label: "Alternative de l’illustration", name: "imageAlt", widget: "string", hint: "Le dessin lui-même se change tout en haut de la Page Accueil, avant le bloc Français : « Images partagées de l’accueil » → « Illustration de l’équipe » (commun aux quatre langues)."}
 
               - {label: "Titre des articles", name: "articlesTitle", widget: "string"}
               - {label: "Voir tous les articles", name: "viewAllArticles", widget: "string"}
@@ -85,7 +119,7 @@ collections:
                   - {label: "Titre", name: "title", widget: "string"}
                   - {label: "Description", name: "description", widget: "text"}
                   - {label: "Mots-clés", name: "keywords", widget: "list"}
-                  - {label: "Image", name: "image", widget: "string"}
+                  - {label: "Image", name: "image", widget: "image", hint: "Partage sur les réseaux sociaux : 1200 × 630 px, JPG, moins de 300 Ko.", media_library: *imageUpload}
 
           - label: "English"
             name: "en"
@@ -93,6 +127,10 @@ collections:
             fields: *homeFields
           - label: "Italiano"
             name: "it"
+            widget: "object"
+            fields: *homeFields
+          - label: "Nederlands"
+            name: "nl"
             widget: "object"
             fields: *homeFields
 
@@ -103,46 +141,83 @@ collections:
       - file: "src/content/travailleurs/travailleurs.yml"
         name: "travailleurs"
         label: "Contenu de la page Travailleurs"
-        i18n:
-          structure: single_file
         fields:
           - label: "Français"
             name: "fr"
             widget: "object"
-            fields: &travailleursFields
-              - {label: "Titre", name: "title", widget: "string"}
-              - label: "Questions"
-                name: "questions"
+            collapsed: true
+            fields: &belgianServicesFields
+              - {label: "Titre de la page", name: "title", widget: "string", pattern: ['\S', "Le titre est obligatoire."]}
+              - {label: "Introduction (facultative)", name: "description", widget: "text", required: false}
+              - {label: "Titre des services", name: "servicesTitle", widget: "string", pattern: ['\S', "Le titre est obligatoire."]}
+              - label: "Affichage des situations"
+                name: "situationsDisplay"
+                widget: "select"
+                default: "expanded"
+                hint: "Les questions restent visibles. En accordéons, chaque réponse s’ouvre au clic ou au clavier."
+                options:
+                  - {label: "Tout déplié", value: "expanded"}
+                  - {label: "Accordéons", value: "accordion"}
+              - label: "Rubriques"
+                name: "sections"
                 widget: "list"
-                field: {label: Question, name: question, widget: "string"}
-              - {label: "Titre des services", name: "servicesTitle", widget: "string"}
-              - label: "Services"
-                name: "services"
-                widget: "list"
+                required: false
+                default: []
+                collapsed: true
+                summary: "{{fields.title}}"
+                hint: "Glissez les rubriques pour changer leur ordre. Chaque public a ses propres rubriques. Gardez le même nombre de rubriques dans les 4 langues : une rubrique ajoutée ou retirée ici doit l’être aussi dans les autres langues."
                 fields:
-                  - {label: "Icône", name: "icon", widget: "select", options: ["BriefCase", "Shield", "FileText", "Handshake"]}
-                  - {label: "Texte", name: "text", widget: "string"}
-              - {label: "Texte du bouton CTA", name: "ctaText", widget: "string"}
-              - label: "SEO"
+                  - {label: "Titre de la rubrique", name: "title", widget: "string", pattern: ['\S', "Le titre est obligatoire."]}
+                  - {label: "Description (facultative)", name: "description", widget: "text", required: false, hint: "Une description seule suffit ; aucune question artificielle n'est nécessaire."}
+                  - label: "Situations (facultatives)"
+                    name: "situations"
+                    widget: "list"
+                    required: false
+                    default: []
+                    collapsed: true
+                    summary: "{{fields.question}}"
+                    hint: "Chaque situation comporte une question et une réponse. Glissez pour réordonner. Gardez le même nombre de situations dans les 4 langues : une situation ajoutée ou retirée ici doit l’être aussi dans les autres langues."
+                    fields:
+                      - {label: "Question", name: "question", widget: "text", pattern: ['\S', "Renseignez la question ou retirez cette situation."]}
+                      - {label: "Réponse", name: "answer", widget: "text", pattern: ['\S', "Renseignez la réponse ou retirez cette situation."]}
+              - {label: "Libellé du lien tarifs", name: "ctaText", widget: "string", pattern: ['\S', "Le libellé est obligatoire."]}
+              - label: "Destination du lien"
+                name: "ctaDestination"
+                widget: "select"
+                default: "honoraires"
+                options:
+                  - {label: "Honoraires", value: "honoraires"}
+                  - {label: "Contact", value: "contact"}
+                hint: "La destination s'ouvre automatiquement dans la langue de la page."
+              - label: "Référencement et aperçu de partage"
                 name: "seo"
                 widget: "object"
+                collapsed: true
                 fields:
-                  - {label: "Titre SEO", name: "title", widget: "string", required: false}
-                  - {label: "Description SEO", name: "description", widget: "text", required: false, pattern: ['^.{0,320}$', "La description idéale fait 155-160 caractères (max 320)"], hint: "Description pour le SEO - idéalement 155-160 caractères (max 320)"}
-                  - {label: "Image SEO", name: "image", widget: "image", required: false}
+                  - {label: "Titre SEO", name: "title", widget: "string", pattern: ['\S', "Le titre SEO est obligatoire."]}
+                  - {label: "Description SEO", name: "description", widget: "text", pattern: ['^(?=[\s\S]*\S)[\s\S]{1,320}$', "Description obligatoire, maximum 320 caractères."]}
+                  - {label: "Image de partage", name: "image", widget: "image", required: false, hint: "Partage sur les réseaux sociaux : 1200 × 630 px, JPG, moins de 300 Ko. Si vide, utilise l'image commune du site. Les médias existants sont conservés.", media_library: *imageUpload}
+                  - {label: "Alternative textuelle de l'image", name: "imageAlt", widget: "string", required: false, hint: "Décrivez l'image dans cette langue. Si vide, utilise le titre de la page."}
                   - label: "Mots-clés SEO"
                     name: "keywords"
                     widget: "list"
                     required: false
-                    field: {label: "Mot-clé", name: keyword, widget: string}
-          - label: "English"
+                    field: {label: "Mot-clé", name: "keyword", widget: "string", pattern: ['\S', "Renseignez ou retirez le mot-clé."]}
+          - label: "Anglais"
             name: "en"
             widget: "object"
-            fields: *travailleursFields
-          - label: "Italiano"
+            collapsed: true
+            fields: *belgianServicesFields
+          - label: "Italien"
             name: "it"
             widget: "object"
-            fields: *travailleursFields
+            collapsed: true
+            fields: *belgianServicesFields
+          - label: "Néerlandais"
+            name: "nl"
+            widget: "object"
+            collapsed: true
+            fields: *belgianServicesFields
 
   - name: "employeurs"
     label: "Page Employeurs"
@@ -150,46 +225,27 @@ collections:
       - file: "src/content/employeurs/employeurs.yml"
         name: "employeurs"
         label: "Contenu de la page Employeurs"
-        i18n:
-          structure: single_file
         fields:
           - label: "Français"
             name: "fr"
             widget: "object"
-            fields: &employeursFields
-              - {label: "Titre", name: "title", widget: "string"}
-              - label: "Questions"
-                name: "questions"
-                widget: "list"
-                field: {label: Question, name: question, widget: "string"}
-              - {label: "Titre des prestations", name: "servicesTitle", widget: "string"}
-              - label: "Prestations"
-                name: "services"
-                widget: "list"
-                fields:
-                  - {label: "Icône", name: "icon", widget: "select", options: ["FileText", "UserPlus", "Shield", "Search", "Handshake"]}
-                  - {label: "Texte", name: "text", widget: "string"}
-              - {label: "Texte du bouton CTA", name: "ctaText", widget: "string"}
-              - label: "SEO"
-                name: "seo"
-                widget: "object"
-                fields:
-                  - {label: "Titre SEO", name: "title", widget: "string", required: false}
-                  - {label: "Description SEO", name: "description", widget: "text", required: false, pattern: ['^.{0,320}$', "La description idéale fait 155-160 caractères (max 320)"], hint: "Description pour le SEO - idéalement 155-160 caractères (max 320)"}
-                  - {label: "Image SEO", name: "image", widget: "image", required: false}
-                  - label: "Mots-clés SEO"
-                    name: "keywords"
-                    widget: "list"
-                    required: false
-                    field: {label: "Mot-clé", name: keyword, widget: string}
-          - label: "English"
+            collapsed: true
+            fields: *belgianServicesFields
+          - label: "Anglais"
             name: "en"
             widget: "object"
-            fields: *employeursFields
-          - label: "Italiano"
+            collapsed: true
+            fields: *belgianServicesFields
+          - label: "Italien"
             name: "it"
             widget: "object"
-            fields: *employeursFields
+            collapsed: true
+            fields: *belgianServicesFields
+          - label: "Néerlandais"
+            name: "nl"
+            widget: "object"
+            collapsed: true
+            fields: *belgianServicesFields
 
   # Page Institutions Européennes
   - name: "europeennes"
@@ -223,18 +279,21 @@ collections:
                     name: "accompagnement"
                     widget: "list"
                     summary: "{{fields.title}}"
+                    hint: "Gardez le même nombre de sous-titres dans les 4 langues : un sous-titre ajouté ou retiré ici doit l’être aussi dans les autres langues."
                     fields:
                       - {label: "Sous-titre", name: "title", widget: "string"}
                       - label: "Éléments"
                         name: "items"
                         widget: "list"
+                        hint: "Gardez le même nombre d’éléments dans les 4 langues : un élément ajouté ou retiré ici doit l’être aussi dans les autres langues."
                         field: {label: "Élément", name: "item", widget: "string"}
                   - {label: "Titre services", name: "servicesTitle", widget: "string"}
                   - label: "Services"
                     name: "services"
                     widget: "list"
+                    hint: "Gardez le même nombre de services dans les 4 langues : un service ajouté ou retiré ici doit l’être aussi dans les autres langues."
                     fields:
-                      - {label: "Icône", name: "icon", widget: "select", options: ["Search", "FileText", "Handshake", "BriefCase", "Shield"]}
+                      - {label: "Icône", name: "icon", widget: "select", options: ["CheckSquare", "BriefCase", "FileText", "Shield", "Handshake"]}
                       - {label: "Texte", name: "text", widget: "string"}
               - label: "Section Fonctionnaires"
                 name: "fonctionnaires"
@@ -246,13 +305,15 @@ collections:
                   - label: "Accompagnement"
                     name: "accompagnement"
                     widget: "list"
+                    hint: "Gardez le même nombre d’éléments dans les 4 langues : un élément ajouté ou retiré ici doit l’être aussi dans les autres langues."
                     field: {label: "Élément", name: "item", widget: "string"}
                   - {label: "Titre services", name: "servicesTitle", widget: "string"}
                   - label: "Services"
                     name: "services"
                     widget: "list"
+                    hint: "Gardez le même nombre de services dans les 4 langues : un service ajouté ou retiré ici doit l’être aussi dans les autres langues."
                     fields:
-                      - {label: "Icône", name: "icon", widget: "select", options: ["Search", "FileText", "Handshake", "BriefCase", "Shield"]}
+                      - {label: "Icône", name: "icon", widget: "select", options: ["CheckSquare", "BriefCase", "FileText", "Shield", "Handshake"]}
                       - {label: "Texte", name: "text", widget: "string"}
               - {label: "Texte du bouton CTA", name: "ctaText", widget: "string"}
               - label: "SEO"
@@ -261,7 +322,7 @@ collections:
                 fields:
                   - {label: "Titre SEO", name: "title", widget: "string", required: false}
                   - {label: "Description SEO", name: "description", widget: "text", required: false, pattern: ['^.{0,320}$', "La description idéale fait 155-160 caractères (max 320)"], hint: "Description pour le SEO - idéalement 155-160 caractères (max 320)"}
-                  - {label: "Image SEO", name: "image", widget: "image", required: false}
+                  - {label: "Image SEO", name: "image", widget: "image", required: false, hint: "Partage sur les réseaux sociaux : 1200 × 630 px, JPG, moins de 300 Ko.", media_library: *imageUpload}
                   - label: "Mots-clés SEO"
                     name: "keywords"
                     widget: "list"
@@ -275,41 +336,89 @@ collections:
             name: "it"
             widget: "object"
             fields: *europeennesFields
+          - label: "Nederlands"
+            name: "nl"
+            widget: "object"
+            fields: *europeennesFields
 
   # Page Équipe
   - name: "profile"
     label: "Page Équipe"
     files:
-      - file: "src/content/profile/profile.yml"
-        name: "profile"
-        label: "Profils de l'équipe"
-        i18n:
-          structure: single_file
+      # Same data file as « Paramètres généraux » (site-config.yml): each entry only
+      # declares its own keys and Decap keeps the others on save.
+      - file: "src/content/config/site-config.yml"
+        name: "membres"
+        label: "Membres — nom, photos, coordonnées (commun aux quatre langues)"
+        editor:
+          preview: false
         fields:
-          # Images centralisées - upload une seule fois pour toutes les langues
-          - label: "Photos de l'équipe (partagées entre toutes les langues)"
-            name: "teamImages"
+          - label: "Membres de l’équipe — nom, photos, LinkedIn"
+            name: "team"
             widget: "list"
             summary: "{{fields.name}}"
             collapsed: false
-            hint: "Téléchargez les photos ici une seule fois. Elles seront automatiquement utilisées pour toutes les langues."
+            hint: "L’ordre s’applique à l’accueil, à l’équipe et à la navigation dans les quatre langues."
             fields:
-              - {label: "Nom de l'avocate", name: "name", widget: "string", hint: "Doit correspondre exactement au nom utilisé dans les profils"}
-              - {label: "Photo", name: "image", widget: "image"}
+              - {label: "Identifiant stable", name: "id", widget: "string", hint: "Ne pas modifier après création ; indépendant du nom affiché."}
+              - {label: "Adresse du profil", name: "slug", widget: "string", pattern: ['^[a-z0-9]+(-[a-z0-9]+)*$', "Minuscules, chiffres et tirets"], hint: "Conserver les adresses déjà publiées."}
+              - {label: "Nom affiché", name: "name", widget: "string"}
+              - {label: "Portrait carré", name: "image", widget: "image", hint: "Accueil et page Équipe. Photo carrée, visage centré, environ 1000 × 1000 px, JPG ou WebP, moins de 400 Ko.", media_library: *imageUpload}
+              - {label: "Portrait individuel", name: "profileImage", widget: "image", required: false, hint: "Page de profil. Photo verticale, environ 1200 × 1500 px, JPG ou WebP, moins de 500 Ko. Vide : utilise le portrait carré.", media_library: *imageUpload}
+              - {label: "LinkedIn", name: "linkedin", widget: "string", required: false, pattern: ['^https://(www\.)?linkedin\.com/.*$|^$', "Lien LinkedIn https ou champ vide"], hint: "Lien partagé entre les quatre langues."}
+          - label: "Coordonnées de chaque membre"
+            name: "lawyers"
+            widget: "list"
+            summary: "{{fields.id}} — {{fields.phone}}"
+            collapsed: true
+            hint: "Téléphone, e-mail et agenda de rendez-vous. Le LinkedIn se règle dans la liste ci-dessus."
+            fields:
+              - {label: "Membre", name: "id", widget: "relation", collection: "profile", file: "membres", search_fields: ["team.*.name"], value_field: "team.*.id", display_fields: ["team.*.name"]}
+              - {label: "Téléphone", name: "phone", widget: "string", pattern: ['^\+[1-9][0-9 ]{7,20}$', "Numéro international avec + et espaces"], hint: "Exemple : +32 488 40 45 49. Affiché dans le profil et le menu Appelez-nous."}
+              - {label: "WhatsApp", name: "whatsapp", widget: "string", required: false, pattern: ['^([1-9][0-9]{7,14})?$', "Chiffres uniquement, sans + ni espaces"], hint: "Facultatif. Vide : aucun lien WhatsApp."}
+              - {label: "E-mail professionnel", name: "email", widget: "string", required: false, pattern: ['^([^\s@]+@[^\s@]+\.[^\s@]+)?$', "Adresse e-mail valide ou champ vide"], hint: "À renseigner après confirmation. Vide : aucun lien e-mail ; le téléphone reste accessible. Ne pas saisir une adresse provisoire."}
+              - {label: "Calendrier Cal.com", name: "calendarLink", widget: "string", required: false, pattern: ['^(https://cal\.com/[^\s/?#]+[^\s]*)?$', "URL https://cal.com/nom ou champ vide"], hint: "Vide : aucune commande de réservation. Romain reste joignable par ses coordonnées. Une URL valide active header, Équipe et bannière."}
+      - file: "src/content/profile/profile.yml"
+        name: "profile"
+        label: "Textes de la page et des profils (par langue)"
+        i18n:
+          structure: single_file
+        fields:
           - label: "Français"
             name: "fr"
             widget: "object"
             fields: &profileFields
-              - label: "Avocates"
+              - label: "Référencement de la page Équipe"
+                name: "seo"
+                widget: "object"
+                required: false
+                collapsed: true
+                fields:
+                  - {label: "Titre", name: "title", widget: "string", required: false}
+                  - {label: "Description", name: "description", widget: "text", required: false}
+                  - {label: "Image de partage", name: "image", widget: "image", required: false, hint: "Partage sur les réseaux sociaux : 1200 × 630 px, JPG, moins de 300 Ko.", media_library: *imageUpload}
+                  - {label: "Mots-clés", name: "keywords", widget: "list", required: false}
+              - label: "Textes de chaque membre"
                 name: "lawyers"
                 widget: "list"
-                summary: "{{fields.name}} - {{fields.title}}"
+                hint: "Textes traduits de chaque membre. Le nom, les photos, l’ordre et les coordonnées se règlent dans « Membres — nom, photos, coordonnées (commun aux quatre langues) »."
+                summary: "{{fields.id}} — {{fields.role}}"
+                collapsed: true
                 fields:
-                  - {label: "Nom", name: "name", widget: "string", hint: "Doit correspondre au nom dans 'Photos de l'équipe' pour lier l'image"}
-                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Membre", name: "id", widget: "relation", collection: "profile", file: "membres", search_fields: ["team.*.name"], value_field: "team.*.id", display_fields: ["team.*.name"]}
+                  - {label: "Rôle dans le cabinet", name: "role", widget: "string"}
+                  - label: "Présentation sur la page Équipe"
+                    name: "presentation"
+                    widget: "list"
+                    hint: "Texte intégral, indépendant de la biographie individuelle et de l’accueil."
+                    field: {label: "Paragraphe", name: "paragraph", widget: "text"}
+                  - {label: "Titre", name: "title", widget: "string", required: false, hint: "Facultatif. Vide : aucun sous-titre sous le nom."}
+                  - {label: "Alternative du portrait", name: "imageAlt", widget: "string", required: false, hint: "Description du portrait pour les lecteurs d’écran, dans cette langue. Vide : utilise le nom du membre. Le portrait lui-même se change dans « Membres — nom, photos, coordonnées (commun aux quatre langues) »."}
                   - label: "Biographie"
                     name: "bio"
                     widget: "list"
+                    required: false
+                    default: []
                     field: {label: "Paragraphe", name: "paragraph", widget: "text"}
                   - label: "Langues"
                     name: "languages"
@@ -317,16 +426,26 @@ collections:
                   - label: "Parcours"
                     name: "careerPath"
                     widget: "list"
+                    required: false
+                    default: []
+                    collapsed: true
                     fields:
                       - {label: "Année", name: "year", widget: "string"}
                       - {label: "Événement", name: "event", widget: "string"}
                   - label: "Conférences"
                     name: "conferences"
                     widget: "list"
+                    required: false
+                    default: []
+                    collapsed: true
                     field: {label: "Conférence", name: "conference", widget: "text"}
+                  - {label: "Introduction des publications", name: "publicationsIntro", widget: "text", required: false}
                   - label: "Publications"
                     name: "publications"
                     widget: "list"
+                    required: false
+                    default: []
+                    collapsed: true
                     fields:
                       - {label: "Date", name: "date", widget: "string"}
                       - {label: "Titre", name: "title", widget: "string"}
@@ -334,6 +453,7 @@ collections:
                       - label: "Co-auteurs"
                         name: "coAuthors"
                         widget: "list"
+                        required: false
                         field: {label: "Auteur", name: "author", widget: "string"}
                   - label: "SEO"
                     name: "seo"
@@ -342,7 +462,7 @@ collections:
                     fields:
                       - {label: "Titre SEO", name: "title", widget: "string", required: false}
                       - {label: "Description SEO", name: "description", widget: "text", required: false, pattern: ['^.{0,320}$', "La description idéale fait 155-160 caractères (max 320)"]}
-                      - {label: "Image SEO", name: "image", widget: "string", required: false}
+                      - {label: "Image SEO", name: "image", widget: "image", required: false, hint: "Partage sur les réseaux sociaux : 1200 × 630 px, JPG, moins de 300 Ko.", media_library: *imageUpload}
                       - label: "Mots-clés SEO"
                         name: "keywords"
                         widget: "list"
@@ -354,6 +474,10 @@ collections:
             fields: *profileFields
           - label: "Italiano"
             name: "it"
+            widget: "object"
+            fields: *profileFields
+          - label: "Nederlands"
+            name: "nl"
             widget: "object"
             fields: *profileFields
 
@@ -378,19 +502,7 @@ collections:
                 widget: "object"
                 fields:
                   - {label: "Titre", name: "title", widget: "string"}
-                  - {label: "Points", name: "points", widget: "list"}
-              - label: "Prévisibilité"
-                name: "previsibilite"
-                widget: "object"
-                fields:
-                  - {label: "Titre", name: "title", widget: "string"}
-                  - {label: "Contenu complet", name: "full_content", widget: "markdown", required: false}
-              - label: "Assurance"
-                name: "assurance"
-                widget: "object"
-                fields:
-                  - {label: "Titre", name: "title", widget: "string"}
-                  - {label: "Contenu", name: "content", widget: "text"}
+                  - {label: "Points", name: "points", widget: "list", field: {label: "Point", name: "point", widget: "text"}}
               - label: "Exemples de formules forfaitaires"
                 name: "forfaits"
                 widget: "object"
@@ -418,18 +530,40 @@ collections:
                         fields:
                           - {label: "Description", name: "description", widget: "string"}
                           - {label: "Prix", name: "prix", widget: "string"}
+              - label: "Prévisibilité"
+                name: "previsibilite"
+                widget: "object"
+                fields:
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Contenu complet", name: "full_content", widget: "markdown", required: false}
+              - label: "Assurance"
+                name: "assurance"
+                widget: "object"
+                fields:
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Contenu", name: "content", widget: "text"}
               - label: "Aide juridique"
                 name: "aideJuridique"
                 widget: "object"
                 fields:
                   - {label: "Titre", name: "title", widget: "string", default: "Aide juridique"}
                   - {label: "Contenu", name: "content", widget: "markdown"}
+              - label: "SEO"
+                name: "seo"
+                widget: "object"
+                required: false
+                fields:
+                  - {label: "Description SEO", name: "description", widget: "text", required: false, pattern: ['^.{0,320}$', "La description idéale fait 155-160 caractères (max 320)"], hint: "Texte affiché sous le titre dans Google. Vide : le sous-titre de la page est utilisé."}
           - label: "English"
             name: "en"
             widget: "object"
             fields: *honorairesFields
           - label: "Italiano"
             name: "it"
+            widget: "object"
+            fields: *honorairesFields
+          - label: "Nederlands"
+            name: "nl"
             widget: "object"
             fields: *honorairesFields
 
@@ -462,6 +596,10 @@ collections:
             name: "it"
             widget: "object"
             fields: *legalFields
+          - label: "Nederlands"
+            name: "nl"
+            widget: "object"
+            fields: *legalFields
 
       - file: "src/content/legal/privacy.yml"
         name: "privacy-policy"
@@ -486,6 +624,10 @@ collections:
             fields: *privacyFields
           - label: "Italiano"
             name: "it"
+            widget: "object"
+            fields: *privacyFields
+          - label: "Nederlands"
+            name: "nl"
             widget: "object"
             fields: *privacyFields
 
@@ -514,6 +656,10 @@ collections:
             name: "it"
             widget: "object"
             fields: *legalInfoFields
+          - label: "Nederlands"
+            name: "nl"
+            widget: "object"
+            fields: *legalInfoFields
 
   # Collection Blog
   - &blogCollection
@@ -525,7 +671,7 @@ collections:
       - {label: "Titre", name: "title", widget: "string"}
       - {label: "Date de publication", name: "date", widget: "datetime"}
       - {label: "Auteur", name: "author", widget: "string"}
-      - {label: "Image à la une", name: "thumbnail", widget: "image"}
+      - {label: "Image à la une", name: "thumbnail", widget: "image", hint: "Environ 1600 × 900 px (16:9), sujet centré car l’image est recadrée. JPG ou WebP, moins de 500 Ko.", media_library: *imageUpload}
       - {label: "Temps de lecture (en minutes)", name: "readTime", widget: "string", hint: "Entrez le nombre de minutes, par exemple: 5"}
       - label: "Catégories"
         name: "categories"
@@ -561,7 +707,7 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Author", name: "author", widget: "string"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image", hint: "About 1600 × 900 px (16:9), subject centred since the image is cropped. JPG or WebP, under 500 KB.", media_library: *imageUpload}
       - {label: "Read Time (in minutes)", name: "readTime", widget: "string", hint: "Enter the number of minutes, e.g. 5"}
       - label: "Categories"
         name: "categories"
@@ -583,7 +729,7 @@ collections:
       - {label: "Titolo", name: "title", widget: "string"}
       - {label: "Data di pubblicazione", name: "date", widget: "datetime"}
       - {label: "Autore", name: "author", widget: "string"}
-      - {label: "Immagine in evidenza", name: "thumbnail", widget: "image"}
+      - {label: "Immagine in evidenza", name: "thumbnail", widget: "image", hint: "Circa 1600 × 900 px (16:9), soggetto al centro perché l’immagine viene ritagliata. JPG o WebP, meno di 500 KB.", media_library: *imageUpload}
       - {label: "Tempo di lettura (in minuti)", name: "readTime", widget: "string", hint: "Inserisci il numero di minuti, ad esempio: 5"}
       - label: "Categorie"
         name: "categories"
@@ -596,6 +742,11 @@ collections:
         name: "keywords"
         hint: "Opzionale. Aggiungi parole chiave rilevanti per il SEO."
       - {label: "Contenuto", name: "body", widget: "markdown"}
+
+  - <<: *blogCollection
+    name: "blog-nl"
+    label: "Blog NL"
+    folder: "src/content/blog/nl"
 
   # Configuration du site
   - name: "siteConfig"
@@ -614,57 +765,21 @@ collections:
             widget: "boolean"
             default: false
           
-          - label: "Afficher le formulaire de contact"
-            name: "showContactForm"
-            widget: "boolean"
-            default: true
-            hint: "Active ou désactive le formulaire de contact sur la page Contact"
-          
-          - label: "Équipe d'avocates"
-            name: "lawyers"
-            widget: "list"
-            summary: "{{fields.name}} - {{fields.email}}"
-            collapsed: false
-            description: >
-              Informations de contact pour chaque avocate du cabinet.
-              Ces informations apparaîtront partout sur le site (header, footer, page contact, etc.).
-            fields:
-              - label: "Nom"
-                name: "name"
-                widget: "string"
-                hint: "Nom complet de l'avocate"
-              
-              - label: "Numéro de téléphone"
-                name: "phone"
-                widget: "string"
-                hint: "Format international recommandé avec espaces (ex: +32 488 40 45 49)"
-              
-              - label: "Numéro WhatsApp"
-                name: "whatsapp"
-                widget: "string"
-                hint: "Numéro sans espaces ni + pour WhatsApp (ex: 32488404549)"
-              
-              - label: "Adresse email"
-                name: "email"
-                widget: "string"
-                hint: "Adresse email professionnelle"
-              
-              - label: "Profil LinkedIn"
-                name: "linkedin"
-                widget: "string"
-                hint: "URL complète du profil LinkedIn"
-              
-              - label: "Lien calendrier Cal.com"
-                name: "calendarLink"
-                widget: "string"
-                hint: "URL complète du calendrier Cal.com (ex: https://cal.com/username/meeting)"
-                required: false
-              
-              - label: "Adresse du cabinet"
-                name: "address"
-                widget: "string"
-                hint: "Adresse complète du cabinet"
-          
+          - {label: "Illustration de la bannière Contact", name: "contactIllustration", widget: "image", hint: "SVG de préférence ; sinon PNG ou WebP d’environ 1600 px de large, moins de 300 Ko. Image commune aux quatre langues. Alternatives dans les traductions du bloc contact.", media_library: *imageUpload}
+          - label: "Coordonnées du cabinet — adresse"
+            name: "address"
+            widget: "string"
+            hint: "Adresse commune aux quatre langues, affichée dans Nos bureaux."
+          - label: "Coordonnées du cabinet — e-mail général"
+            name: "cabinetEmail"
+            widget: "string"
+            pattern: ['^[^\s@]+@[^\s@]+\.[^\s@]+$', "Adresse e-mail valide"]
+            hint: "Adresse publique pour les documents. Activation et réception à vérifier dans le ticket messagerie avant publication ; ne configure pas Netlify."
+          - label: "Texte du copyright"
+            name: "copyrightText"
+            widget: "string"
+            required: false
+            hint: "Nom affiché dans le pied de page. L'année et le symbole © sont ajoutés automatiquement."
           - label: "SEO et apparence"
             name: "seo"
             widget: "object"
@@ -678,9 +793,10 @@ collections:
               - label: "Image principale pour les réseaux sociaux"
                 name: "defaultSocialImage"
                 widget: "image"
+                media_library: *imageUpload
                 required: false
                 default: "/assets/images/default-social-image.png"
-                hint: "Image qui apparaîtra lorsque votre site est partagé sur les réseaux sociaux (format recommandé: 1200x630px)"
+                hint: "Image affichée quand le site est partagé sur les réseaux sociaux : 1200 × 630 px, JPG, moins de 300 Ko."
                 media_folder: "public"
                 public_folder: "/"
               
@@ -688,7 +804,7 @@ collections:
                 name: "siteDescription"
                 widget: "text"
                 required: false
-                default: "Christine Rizzo - Avocate en droit du travail à Bruxelles. Expertise pour employeurs et travailleurs."
+                default: "Rizzo & Michiels, cabinet d'avocats à Bruxelles en droit du travail belge et droit de la fonction publique européenne. Une équipe de quatre avocats."
                 pattern: ['^.{0,320}$', "La description idéale fait 155-160 caractères (max 320)"]
                 hint: "Description générale du site pour le référencement - idéalement 155-160 caractères (max 320)"
 
@@ -696,7 +812,7 @@ collections:
                 name: "siteName"
                 widget: "string" 
                 required: false
-                default: "Christine Rizzo - Avocate"
+                default: "Rizzo & Michiels"
                 hint: "Nom qui apparaîtra dans les métadonnées et les partages sur réseaux sociaux"
               
               - label: "URL du site"
@@ -735,10 +851,10 @@ collections:
                           - {label: "Libellé", name: "label", widget: "string"}
                           - {label: "URL", name: "url", widget: "string"}
                         hint: "Ajouter des éléments au sous-menu (seulement si Sous-menu est activé)"
-                  - label: "Texte du bouton Contact"
+                  - label: "Texte du bouton Prendre rendez-vous"
                     name: "contactButtonText"
                     widget: "string"
-                    default: "ME CONTACTER"
+                    default: "PRENDRE RENDEZ-VOUS"
 
               - label: "Footer"
                 name: "footer"
@@ -748,10 +864,14 @@ collections:
                     name: "menuTitle"
                     widget: "string"
                     default: "Menu"
-                  - label: "Titre de la section Contact"
+                  - label: "Titre de la section Bureaux"
                     name: "contactTitle"
                     widget: "string"
-                    default: "Contact"
+                    default: "Nos bureaux"
+                  - label: "Libellé du lien Google Maps"
+                    name: "mapLinkLabel"
+                    widget: "string"
+                    default: "Ouvrir dans Google Maps"
                   - label: "Liens légaux"
                     name: "legalLinks"
                     widget: "list"
@@ -772,11 +892,6 @@ collections:
                       - {label: "Texte Pwablo", name: "pwabloText", widget: "string", default: "Design by Pwablo", readonly: true}
                       - {label: "URL Pwablo", name: "pwabloUrl", widget: "string", default: "https://pwablo.be", readonly: true}
                     hint: "Ces champs sont réservés à l'agence Pwablo et ne peuvent pas être modifiés."
-                  - label: "Texte du copyright"
-                    name: "copyrightText"
-                    widget: "string"
-                    default: "Christine Rizzo"
-                    hint: "Entrez le nom ou l'entité pour le copyright. L'année et le symbole © sont ajoutés automatiquement."
 
           - label: "English"
             name: "en"
@@ -785,6 +900,10 @@ collections:
 
           - label: "Italiano"
             name: "it"
+            widget: "object"
+            fields: *navigationFields
+          - label: "Nederlands"
+            name: "nl"
             widget: "object"
             fields: *navigationFields
       
@@ -799,32 +918,71 @@ collections:
             widget: "object"
             fields: &uiTranslationsFields
               - {label: "Lire la suite", name: "readMore", widget: "string", default: "Lire la suite"}
-              - {label: "Voir tous les articles", name: "viewAllArticles", widget: "string", default: "Voir tous les articles"}
-              - {label: "Prendre rendez-vous", name: "contactCta", widget: "string", default: "Prendre rendez-vous"}
-              - {label: "Navigation", name: "navigation", widget: "string", default: "Navigation"}
-              - {label: "Pages légales", name: "legalPages", widget: "string", default: "Pages légales"}
-              - {label: "Eco-design & Pwablo", name: "ecoDesignPwablo", widget: "string", default: "Eco-design & Pwablo"}
-              - {label: "Copyright", name: "copyright", widget: "string", default: "© 2024 Christine Rizzo"}
               - {label: "Titre du blog", name: "blogTitle", widget: "string", default: "Articles"}
               - {label: "Aucun article trouvé", name: "noArticles", widget: "string", default: "Aucun article trouvé."}
               - {label: "Toutes catégories", name: "allCategories", widget: "string", default: "Toutes catégories"}
-              - {label: "Titre CTA", name: "ctaTitle", widget: "string", default: "Une question en droit du travail?"}
-              - {label: "Sous-titre CTA", name: "ctaSubtitle", widget: "string", default: "Contactez-moi. Je suis à votre écoute."}
-              - {label: "Prendre RDV", name: "takeAppointment", widget: "string", default: "Prendre RDV"}
-              - {label: "Appeler", name: "call", widget: "string", default: "Appeler"}
-              - {label: "WhatsApp", name: "whatsapp", widget: "string", default: "WhatsApp"}
-              - {label: "Email", name: "email", widget: "string", default: "Email"}
-              - {label: "En savoir plus", name: "learnMore", widget: "string", default: "En savoir plus"}
-              - label: "Autres traductions"
-                name: "additionalTranslations"
+              - label: "En-tête"
+                name: "header"
                 widget: "object"
                 collapsed: true
                 fields:
-                  - {label: "Page active", name: "activePage", widget: "string", default: "Page active"}
-                  - {label: "Soumettre", name: "submit", widget: "string", default: "Soumettre"}
-                  - {label: "Annuler", name: "cancel", widget: "string", default: "Annuler"}
-                  - {label: "Rechercher", name: "search", widget: "string", default: "Rechercher"}
-                  - {label: "Fermer", name: "close", widget: "string", default: "Fermer"}
+                  - {label: "Prendre rendez-vous avec", name: "bookWith", widget: "string", default: "Prendre rendez-vous avec", hint: "Précède le nom de l'avocate dans le menu de réservation."}
+              - label: "Bloc contact (CTA)"
+                name: "cta"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - {label: "Titre", name: "title", widget: "string", default: "Contactez-nous"}
+                  - {label: "Alternative de l’illustration", name: "illustrationAlt", widget: "string", required: false, default: ""}
+                  - {label: "Contact individuel sans calendrier", name: "contactLabel", widget: "string"}
+                  - label: "Actions de contact"
+                    name: "actions"
+                    widget: "list"
+                    min: 3
+                    max: 3
+                    summary: "{{fields.label}} ({{fields.type}})"
+                    hint: "Une action de chaque type. Réordonner librement ; destinations issues des coordonnées centrales."
+                    fields:
+                      - label: "Type d’action"
+                        name: "type"
+                        widget: "select"
+                        options:
+                          - {label: "E-mail du cabinet", value: "email"}
+                          - {label: "Rendez-vous — calendriers", value: "appointment"}
+                          - {label: "Appelez-nous — annuaire", value: "phone"}
+                      - {label: "Libellé", name: "label", widget: "string"}
+              - label: "Blog"
+                name: "blog"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - {label: "Titre SEO", name: "seoTitle", widget: "string", default: "Blog | Rizzo & Michiels, avocats en droit du travail à Bruxelles"}
+                  - {label: "Description SEO", name: "seoDescription", widget: "text", default: "Découvrez les derniers articles sur le droit du travail en Belgique."}
+                  - {label: "Mots-clés SEO", name: "seoKeywords", widget: "list", field: {label: "Mot-clé", name: "keyword", widget: "string"}}
+                  - {label: "Retour aux articles", name: "backToArticles", widget: "string", default: "← Retour aux articles"}
+                  - {label: "Points clés", name: "keyPoints", widget: "string", default: "Points clés :"}
+                  - {label: "Temps de lecture", name: "readTime", widget: "string", default: "temps de lecture"}
+              - label: "Équipe"
+                name: "team"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - {label: "Titre", name: "title", widget: "string", default: "L'équipe"}
+                  - {label: "Voir le profil", name: "viewProfile", widget: "string", default: "Découvrir le profil complet"}
+                  - {label: "Retour à l'équipe", name: "backToTeam", widget: "string", default: "Retour à l'équipe"}
+                  - {label: "Langues", name: "languages", widget: "string", default: "Langues"}
+                  - {label: "Parcours", name: "career", widget: "string", default: "Parcours"}
+                  - {label: "Conférences", name: "conferences", widget: "string", default: "Conférences"}
+                  - {label: "Publications", name: "publications", widget: "string", default: "Publications"}
+                  - {label: "En collaboration avec", name: "inCollaborationWith", widget: "string", default: "En collaboration avec"}
+              - label: "Page 404"
+                name: "notFound"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - {label: "Titre", name: "title", widget: "string", default: "Page non trouvée - 404"}
+                  - {label: "Message", name: "message", widget: "string", default: "La page que vous recherchez n'existe pas ou a été déplacée."}
+                  - {label: "Retour à l'accueil", name: "backHome", widget: "string", default: "Retour à l'accueil"}
 
           - label: "English"
             name: "en"
@@ -835,3 +993,7 @@ collections:
             name: "it"
             widget: "object"
             fields: *uiTranslationsFields 
+          - label: "Nederlands"
+            name: "nl"
+            widget: "object"
+            fields: *uiTranslationsFields

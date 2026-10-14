@@ -20,14 +20,10 @@ fr:
         dropdownItems:
           - label: VUE D'ENSEMBLE
             url: /fr/equipe
-          - label: CHRISTINE RIZZO
-            url: /fr/equipe/christine-rizzo
-          - label: STEPHANIE MICHIELS
-            url: /fr/equipe/stephanie-michiels
       - label: HONORAIRES
         url: /fr/honoraires
         hasDropdown: false
-    contactButtonText: NOUS CONTACTER
+    contactButtonText: PRENDRE RENDEZ-VOUS
   footer:
     legalLinks:
       - label: Mentions légales
@@ -41,7 +37,8 @@ fr:
     pwablo:
       pwabloText: Design by Pwablo
       pwabloUrl: https://pwablo.be
-    contactTitle: Contact
+    contactTitle: "Nos bureaux"
+    mapLinkLabel: "Ouvrir dans Google Maps"
     menuTitle: Menu
     ecoDesignText: Score d'éco-conception
     menuLinks:
@@ -77,14 +74,10 @@ en:
         dropdownItems:
           - label: OVERVIEW
             url: /en/equipe
-          - label: CHRISTINE RIZZO
-            url: /en/equipe/christine-rizzo
-          - label: STEPHANIE MICHIELS
-            url: /en/equipe/stephanie-michiels
       - label: FEES
         url: /en/honoraires
         hasDropdown: false
-    contactButtonText: CONTACT US
+    contactButtonText: BOOK AN APPOINTMENT
   footer:
     legalLinks:
       - label: Legal Notice
@@ -98,7 +91,8 @@ en:
     pwablo:
       pwabloText: Design by Pwablo
       pwabloUrl: https://pwablo.be
-    contactTitle: Contact
+    contactTitle: "Our office"
+    mapLinkLabel: "Open in Google Maps"
     menuTitle: Menu
     ecoDesignText: Eco-design Score
     menuLinks:
@@ -134,19 +128,15 @@ it:
         dropdownItems:
           - label: PANORAMICA
             url: /it/equipe
-          - label: CHRISTINE RIZZO
-            url: /it/equipe/christine-rizzo
-          - label: STEPHANIE MICHIELS
-            url: /it/equipe/stephanie-michiels
       - label: ONORARI
         url: /it/honoraires
         hasDropdown: false
-    contactButtonText: CONTATTACI
+    contactButtonText: PRENDI UN APPUNTAMENTO
   footer:
     legalLinks:
       - label: Note legali
         url: /it/legal/notice
-      - label: Politica sulla riservatezza
+      - label: Politica sulla privacy
         url: /it/legal/privacy
       - label: Info legali & CGV
         url: /it/legal/informations-legales
@@ -155,7 +145,8 @@ it:
     pwablo:
       pwabloText: Design di Pwablo
       pwabloUrl: https://pwablo.be
-    contactTitle: Contatto
+    contactTitle: "Il nostro studio"
+    mapLinkLabel: "Apri in Google Maps"
     menuTitle: Menu
     ecoDesignText: Punteggio di eco-design
     menuLinks:
@@ -169,3 +160,57 @@ it:
         url: /it/honoraires
       - label: CONTATTO
         url: /it/contact
+nl:
+  header:
+    mainLinks:
+      - label: HOME
+        url: /nl
+        hasDropdown: false
+      - label: DIENSTEN
+        url: /nl#expertise
+        hasDropdown: true
+        dropdownItems:
+          - label: VOOR WERKGEVERS
+            url: /nl/services/employeurs
+          - label: VOOR WERKNEMERS
+            url: /nl/services/travailleurs
+          - label: AMBTENAREN & EU-INSTELLINGEN
+            url: /nl/services/europeennes
+      - label: HET TEAM
+        url: /nl/equipe
+        hasDropdown: true
+        dropdownItems:
+          - label: OVERZICHT
+            url: /nl/equipe
+      - label: ERELONEN
+        url: /nl/honoraires
+        hasDropdown: false
+    contactButtonText: AFSPRAAK MAKEN
+  footer:
+    legalLinks:
+      - label: Wettelijke vermeldingen
+        url: /nl/legal/notice
+      - label: Privacybeleid
+        url: /nl/legal/privacy
+      - label: Juridische info & AV
+        url: /nl/legal/informations-legales
+    ecoDesignUrl: https://www.websitecarbon.com/website/rizzo-michiels-be-fr/
+    ecoDesignTitle: Ecologische website
+    pwablo:
+      pwabloText: Design by Pwablo
+      pwabloUrl: https://pwablo.be
+    contactTitle: "Ons kantoor"
+    mapLinkLabel: "Openen in Google Maps"
+    menuTitle: Menu
+    ecoDesignText: Ecodesignscore
+    menuLinks:
+      - label: HOME
+        url: /nl
+      - label: DIENSTEN
+        url: /nl#expertise
+      - label: HET TEAM
+        url: /nl/equipe
+      - label: ERELONEN
+        url: /nl/honoraires
+      - label: CONTACT
+        url: /nl/contact

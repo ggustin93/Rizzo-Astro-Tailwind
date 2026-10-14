@@ -21,7 +21,7 @@ graph TD
     SCHEMA -->|feeds| BUILD["Astro Build<br/>SSG"]
     BUILD -->|deploys| NETLIFY["Netlify<br/>Static hosting"]
 
-    YAML --> CONFIG["site-config.yml<br/>Single source of truth<br/>(contact, lawyers array)"]
+    YAML --> CONFIG["site-config.yml<br/>Single source of truth<br/>(contact, team & lawyers)"]
     YAML --> BLOG["blog/{lang}/*.md"]
     YAML --> PAGES["page collections<br/>home, travailleurs,<br/>employeurs, europeennes…"]
     YAML --> I18N["ui-translations/{lang}.yml<br/>Interface strings"]
@@ -59,7 +59,7 @@ npm run preview   # preview dist/ locally
 
 ### Update contact information or lawyer details
 
-Edit `src/content/config/site-config.yml`. The `lawyers` array drives the CTA component — add, remove, or update entries there. Each entry accepts `name`, `email`, `phone`, and an optional `calendarLink` (Cal.com URL). No component changes are needed.
+Edit the member in the CMS under « Page Équipe → Membres — nom, photos, coordonnées (commun aux quatre langues) », or in `src/content/config/site-config.yml`: `team` (name, portraits, LinkedIn, order) and `lawyers` (phone, e-mail, optional `calendarLink` Cal.com URL), linked by a stable `id`. The CTA component reads them; translated texts live in `profile.yml`.
 
 ### Add a blog article
 

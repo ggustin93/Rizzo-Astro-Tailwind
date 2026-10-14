@@ -1,17 +1,19 @@
 ---
 import { getEntry, getDataEntryById } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { LOCALES } from '../../config/locales';
 import CTA from '../../components/CTA.astro';
-import { ChevronDown, Briefcase, User, FileText } from 'astro-feather-icons2';
-import { Calendar } from 'astro-feather-icons';
+import { ChevronDown, Briefcase, User, FileText, Globe, ArrowRight } from 'astro-feather-icons2';
 import { getArticles } from '../../utils/articles';
+import { getTeam, profilePath, teamSectionPath } from '../../utils/team.js';
+import { cdnImage } from '../../utils/imageHelpers.js';
 import ArticleCard from '../../components/ArticleCard.astro';
 import Button from '../../components/Button.astro';
 // Import des images locales
-import heroImage from '../../assets/images/hero_image_wbg.svg';
-import illustrationServices from '../../assets/images/illustration_services.svg';
 
-const supportedLanguages = ['fr', 'en', 'it'] as const;
+
+
+const supportedLanguages = LOCALES;
 type SupportedLanguage = typeof supportedLanguages[number];
 
 export interface Props {
@@ -19,7 +21,7 @@ export interface Props {
 }
 
 export async function getStaticPaths() {
-  return ['fr', 'en', 'it'].map(lang => ({
+  return LOCALES.map(lang => ({
     params: { lang },
     props: { currentLang: lang as SupportedLanguage }
   }));
@@ -41,24 +43,13 @@ if (!homeEntry) {
   throw new Error("Home entry not found! Make sure you have a `home.yml` file in `src/content/home`.");
 }
 const content = homeEntry.data[currentLang] || homeEntry.data['fr'];
+const { media, portraitLinks, serviceOrder } = homeEntry.data;
+const serviceColors = { employeurs: 'service-employer', travailleurs: 'service-worker', europeennes: 'service-europe' };
+const serviceIcons = { employeurs: Briefcase, travailleurs: User, europeennes: Globe };
 
-// Récupérer les données des profils pour les photos CMS
-const profileEntry = await getDataEntryById('profile', 'profile');
-if (!profileEntry) {
-  throw new Error("Profile entry not found! Make sure you have a `profile.yml` file in `src/content/profile`.");
-}
-const profileData = profileEntry.data[currentLang] || profileEntry.data['fr'];
-const teamImages = profileEntry.data.teamImages || [];
-
-// Mapper les photos aux avocates par nom
-const lawyers = profileData.lawyers || [];
-const lawyersWithImages = lawyers.map(lawyer => {
-  const imageData = teamImages.find(img => img.name === lawyer.name);
-  return {
-    ...lawyer,
-    image: imageData ? imageData.image : null
-  };
-});
+// Les avocates, leurs photos et leurs slugs sont résolus centralement pour que
+// les liens de la home ne puissent pas diverger des routes de [slug].astro.
+const lawyersWithImages = await getTeam(currentLang);
 
 // Récupérer la configuration du site
 const siteConfigEntry = await getEntry('config', 'site-config');
@@ -81,41 +72,30 @@ export const prerender = true;
 
 <BaseLayout title={title} description={description} keywords={keywords} image={image} lang={currentLang}>  
   <div class="full-bleed bg-white bg-svg-pattern">
-    <section class="py-6 md:py-10 relative">
-      <div class="container mx-auto px-4 flex flex-col items-center md:flex-row md:items-center md:justify-between">
-        <div class="w-full md:w-1/2 text-center md:text-left">
-          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-2 md:mb-3 text-gray-800 leading-tight">{content.hero.title.replace(' et ', ' & ')}</h1>
-          <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-3 md:mb-4 text-accent font-light leading-snug">{content.hero.subtitle}</h2>
-          <p class="mb-5 md:mb-6 text-base md:text-lg text-dark-gray max-w-xl mx-auto md:mx-0 font-light leading-relaxed">{content.hero.description}</p>
-          <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start space-y-3 sm:space-y-0 sm:space-x-4">
+    <section class="home-hero">
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <h1 class="hero-title">{content.hero.title}</h1>
+          <h2 class="hero-subtitle">{content.hero.subtitle}</h2>
+          <p class="hero-description">{content.hero.description}</p>
+          <div class="hero-actions">
             <Button 
-              href={`/${currentLang}/contact`}
-              text={content.hero.cta}
               variant="primary"
-              icon={Calendar}
-              iconPosition="left"
-              ariaLabel="Prendre rendez-vous"
-              class="bg-accent text-white font-medium hover:bg-travailleur text-center justify-center"
-            />
-            <Button 
-              variant="secondary"
               icon={ChevronDown}
-              onClick="document.getElementById('expertise').scrollIntoView({behavior: 'smooth'})"
-              class="border-gray-400 hover:bg-beige hover:text-gray-900 text-center justify-center"
+              href="#expertise"
+              class="hero-cta"
             >
-              <span class="whitespace-nowrap">{content.expertise.travailleurs.cta}</span>
+              <span class="whitespace-nowrap">{content.hero.more}</span>
             </Button>
           </div>
         </div>
-        <div class="w-full md:w-1/2 flex justify-center md:justify-end mt-6 md:mt-0">
+        <div class="hero-art">
           <img 
-            src={heroImage.src} 
-            alt="Christine Rizzo et Stephanie Michiels"
-            class="w-full h-auto max-w-sm md:max-w-xl object-contain" 
+            {...(await cdnImage(media.hero, { width: 950, height: 750, crop: false }))}
+            alt={content.hero.imageAlt}
+            class="hero-illustration"
             decoding="async" 
             loading="eager" 
-            width="950" 
-            height="750"
           />
         </div>
       </div>
@@ -127,8 +107,7 @@ export const prerender = true;
       <div class="container px-4">
         <div class="flex items-center mb-4 md:mb-6 justify-center">
           <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
-          <h2 class="text-xl sm:text-2xl font-light text-gray-600 mx-6 md:mx-10 uppercase text-center flex items-center">
-            <Briefcase class="w-5 h-5 md:w-6 md:h-6 mr-2 md:mr-3 text-travailleur" />
+          <h2 class="text-2xl sm:text-3xl font-light text-gray-800 mx-4 md:mx-8 text-center flex items-center">
             {content.expertise.title}
           </h2>
           <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
@@ -139,117 +118,64 @@ export const prerender = true;
         </p> 
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-0">
-          <!-- BLOC 1 : EMPLOYEURS -->
-          <div class="bg-employeur p-4 md:p-6 rounded-lg text-white flex flex-col justify-between">
-            <div>
-              <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">{content.expertise.employeurs.title}</h3>
-              <p class="text-base md:text-lg font-light mb-4">{content.expertise.employeurs.description}</p>
-            </div>
-            <Button
-              href={`/${currentLang}/services/employeurs`}
-              text={`${content.expertise.employeurs.cta} →`}
-              variant="secondary"
-              class="self-end bg-white text-gray-900 hover:bg-transparent hover:text-white border-white"
-            />
-          </div>
-          <!-- BLOC 2 : TRAVAILLEURS -->
-          <div class="bg-travailleur p-4 md:p-6 rounded-lg text-white flex flex-col justify-between">
-            <div>
-              <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">{content.expertise.travailleurs.title}</h3>
-              <p class="text-base md:text-lg font-light mb-4">{content.expertise.travailleurs.description}</p>
-            </div>
-            <Button
-              href={`/${currentLang}/services/travailleurs`}
-              text={`${content.expertise.travailleurs.cta} →`}
-              variant="secondary"
-              class="self-end bg-white text-gray-900 hover:bg-transparent hover:text-white border-white"
-            />
-          </div>
-          <!-- BLOC 3 : INSTITUTIONS EUROPÉENNES -->
-          <div class="bg-europeenne p-4 md:p-6 rounded-lg text-white flex flex-col justify-between">
-            <div>
-              <h3 class="text-lg md:text-xl font-semibold mb-1 md:mb-2">{content.expertise.europeennes.title}</h3>
-              {content.expertise.europeennes.subtitle && (
-                <p class="text-xs md:text-sm font-light opacity-75 mb-3 uppercase tracking-wide">{content.expertise.europeennes.subtitle}</p>
-              )}
-              <p class="text-base md:text-lg font-light mb-4">{content.expertise.europeennes.description}</p>
-            </div>
-            <Button
-              href={`/${currentLang}/services/europeennes`}
-              text={`${content.expertise.europeennes.cta} →`}
-              variant="secondary"
-              class="self-end bg-white text-gray-900 hover:bg-transparent hover:text-white border-white"
-            />
-          </div>
+          {serviceOrder.map(key => {
+            const service = content.expertise[key];
+            const ServiceIcon = serviceIcons[key];
+            return (
+              <div class={`service-card ${serviceColors[key]} p-6 md:p-8 rounded-lg flex flex-col justify-between`}>
+                <div>
+                  <ServiceIcon aria-hidden="true" title="" class="service-icon w-8 h-8 mb-6" />
+                  <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">{service.title}</h3>
+                  <p class="text-base md:text-lg font-light mb-4">{service.description}</p>
+                </div>
+                <Button href={`/${currentLang}${service.destination}`} text={service.cta} icon={ArrowRight} variant="secondary"
+                  class="self-start mt-4 border-current hover:bg-beige" />
+              </div>
+            );
+          })}
         </div>
 
-        <img 
-          src={illustrationServices.src} 
-          alt="Illustration des services" 
-          class="w-full max-w-3xl md:max-w-4xl mx-auto mb-8"
-          width="1200"
-        />
-        
       </div>
     </section>
   </div>
   
   <div class="full-bleed bg-white">
-    <section id="profil" class="py-16 md:py-24 bg-svg-pattern">
+    <section id="profil" class="team-section">
       <div class="container mx-auto px-4">
         <div class="flex items-center mb-6 md:mb-8 lg:mb-12 justify-center">
           <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
-          <h2 class="text-xl sm:text-2xl font-light text-gray-600 mx-6 md:mx-10 uppercase text-center flex items-center">
-            <User class="w-5 h-5 md:w-6 md:h-6 mr-2 md:mr-3 text-travailleur" />
+          <h2 class="text-2xl sm:text-3xl font-light text-gray-800 mx-4 md:mx-8 text-center flex items-center">
             {content.profil.title}
           </h2>
           <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
         </div>
-        <div class="max-w-2xl mx-auto">
-          <!-- Photo montage of both lawyers using CMS images -->
-          <div class="grid grid-cols-2 gap-4 md:gap-6 mb-8">
-            {lawyersWithImages.map((lawyer) => (
-              <div class="text-center">
-                <a href={`/${currentLang}/equipe/${lawyer.name.toLowerCase().replace(' ', '-')}`} class="block group">
-                  <div class="aspect-square overflow-hidden rounded-lg shadow-lg mb-3 border border-gray-900 relative max-w-[200px] md:max-w-[250px] mx-auto">
-                    {lawyer.image ? (
-                      <img 
-                        src={lawyer.image} 
-                        alt={lawyer.name} 
-                        class="w-full h-full object-cover object-center transition-all duration-300 group-hover:scale-105" 
-                        decoding="async" 
-                        loading="lazy" 
-                        height="500"
-                        width="500" 
-                      />
-                    ) : (
-                      <div class="w-full h-full bg-gray-200 flex items-center justify-center">
-                        <span class="text-gray-500">Photo à venir</span>
-                      </div>
-                    )}
-                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
-                  </div>
-                  <h3 class="text-base md:text-lg font-semibold text-travailleur group-hover:text-travailleur/80 transition-colors">{lawyer.name}</h3>
-                </a>
-              </div>
-            ))}
+        <div class="team-intro">
+          <img {...(await cdnImage(media.team, { width: 1200, height: 600, crop: false }))} alt={content.profil.imageAlt} class="team-illustration" loading="lazy" />
+          <p class="team-description">{content.profil.description}</p>
+        </div>
+        <div class="max-w-5xl mx-auto text-center">
+          <div class="team-grid">
+            {lawyersWithImages.map(async lawyer => {
+              const href = { profiles: profilePath(currentLang, lawyer), team: teamSectionPath(currentLang, lawyer) }[portraitLinks];
+              const Tag = href ? 'a' : 'div';
+              return (
+                <Tag href={href} class="team-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">
+                  <img {...(await cdnImage(lawyer.image, { width: 500, height: 500 }))} alt={lawyer.imageAlt || lawyer.name} loading="lazy" decoding="async"
+                    class="team-portrait" />
+                  <div class="team-card-caption"><h3>{lawyer.name}</h3>{href && <ArrowRight aria-hidden="true" class="team-card-arrow" />}</div>
+                </Tag>
+              );
+            })}
           </div>
-          <!-- Description and CTA -->
-          <div class="text-center">
-            <p class="text-dark-gray text-base md:text-lg font-light leading-relaxed mb-6 max-w-3xl mx-auto">{content.profil.description}</p>
-            <Button
-                href={`/${currentLang}/equipe`}
-                text={`${content.profil.cta} →`}
-                variant="secondary"
-                class="uppercase text-sm font-light hover:text-gray-900"
-              />
+          <div class="text-center mt-10">
+            <Button href={`/${currentLang}/equipe/`} text={`${content.profil.cta} →`} ariaLabel={content.profil.cta} variant="secondary" class="uppercase text-sm font-light hover:text-gray-900" />
           </div>
         </div>
       </div>
     </section>
   </div>
 
-  <CTA lang={currentLang} uiTranslations={uiTranslations} />
+  <CTA />
 
   {showArticlesSection && (
     <div id="articles" class="full-bleed bg-beige">
@@ -257,7 +183,7 @@ export const prerender = true;
         <div class="container mx-auto px-4">
           <div class="flex items-center mb-6 md:mb-8 lg:mb-12 justify-center">
             <div class="flex-grow h-px bg-gray-300 max-w-xs"></div>
-            <h2 class="text-xl sm:text-2xl font-light text-gray-600 mx-6 md:mx-10 uppercase text-center flex items-center">
+            <h2 class="text-2xl sm:text-3xl font-light text-gray-800 mx-4 md:mx-8 text-center flex items-center">
               <FileText class="w-5 h-5 md:w-6 md:h-6 mr-2 md:mr-3 text-travailleur" />
               {content.articlesTitle}
             </h2>
@@ -289,16 +215,91 @@ export const prerender = true;
 
 </BaseLayout>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const scrollBtn = document.querySelector('.scroll-btn');
-    if (scrollBtn) {
-      scrollBtn.addEventListener('click', () => {
-        const servicesSection = document.getElementById('services');
-        if (servicesSection) {
-          servicesSection.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    }
-  });
-</script>
+<style>
+  .team-section { padding-block: clamp(2.5rem, 5vw, 4rem); }
+  .team-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.8fr); align-items: center; gap: 2rem; max-width: 64rem; margin: 0 auto 2rem; }
+  .team-illustration { width: 100%; height: auto; margin: 0 auto; }
+  /* Compensate for the illustration's internal whitespace, aligning the visible artwork with the cards. */
+  @media (min-width: 768px) {
+    .team-illustration { transform: translateX(-7%) scale(1.12); }
+  }
+  .team-description { font-size: 1.125rem; line-height: 1.75; font-weight: 300; color: #333; text-align: left; }
+
+  .team-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; text-align: left; }
+  .team-card { display: flex; flex-direction: column; min-width: 0; background: #faf6f1; border: 1px solid #e8e1d9; border-radius: 16px; overflow: hidden; text-decoration: none; transition: border-color .2s, box-shadow .2s; }
+  a.team-card:hover { border-color: #c5b99f; box-shadow: 0 6px 20px rgba(38,57,82,.08); }
+  .team-portrait { aspect-ratio: 1 / 1; width: 100%; object-fit: cover; }
+  .team-card-caption { display: flex; align-items: center; justify-content: space-between; gap: .6rem; padding: 1rem; flex: 1; border-top: 3px solid #ffcc33; }
+  .team-card-caption h3 { font-size: 1rem; line-height: 1.4; font-weight: 500; color: #263952; }
+  .team-card-caption :global(.team-card-arrow) { width: 18px; height: 18px; flex-shrink: 0; color: #087b8a; }
+  @media (max-width: 767px) {
+    .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .85rem; }
+    .team-intro { grid-template-columns: minmax(0, 1fr); gap: .5rem; margin-bottom: 1.5rem; }
+    .team-illustration { max-width: 17rem; }
+    .team-description { font-size: 1rem; line-height: 1.65; text-align: center; }
+    .team-card-caption { padding: .8rem .65rem; }
+    .team-card-caption h3 { font-size: .9375rem; }
+    .team-card-caption :global(.team-card-arrow) { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { .team-card { transition: none; } }
+
+  .home-hero { padding-block: clamp(2.5rem, 5vw, 5rem); }
+  .hero-layout { display: grid; align-items: center; gap: 2.5rem; }
+  .hero-copy { min-width: 0; }
+  .hero-title { color: #263952; font-size: clamp(2rem, 3.6vw, 3.25rem); font-weight: 400; line-height: 1.12; letter-spacing: -.025em; margin-bottom: 1.5rem; }
+  .hero-subtitle { color: #333; font-size: clamp(1.5rem, 2.5vw, 2.25rem); font-weight: 400; line-height: 1.35; text-wrap: balance; max-width: 27ch; }
+  .hero-subtitle::after { content: ""; display: block; width: 4rem; height: 4px; background: #ffcc33; border-radius: 2px; margin-block: 1.5rem; }
+  .hero-description { color: #4b5158; max-width: 47ch; font-size: 1.0625rem; line-height: 1.75; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.75rem; }
+  .hero-actions :global(a) { min-height: 44px; padding: .7rem 1.1rem; border-radius: .5rem; }
+  .hero-actions :global(.hero-cta) { background: var(--worker-ink); border-color: var(--worker-ink); color: white; }
+  .hero-actions :global(.hero-cta:hover) { background: #055f6b; }
+  .hero-art { display: flex; justify-content: center; }
+  .hero-illustration { width: 100%; height: auto; max-width: 32rem; object-fit: contain; }
+  @media (min-width: 1024px) {
+    .hero-layout { grid-template-columns: 1.1fr 1fr; gap: clamp(2rem, 5vw, 5rem); }
+  }
+  @media (min-width: 640px) and (max-width: 1023px) {
+    .home-hero { padding-block: 2.5rem 3rem; }
+    .hero-layout { grid-template-columns: minmax(0, 1.35fr) minmax(0, .85fr); gap: 1.75rem; }
+    .hero-title { font-size: clamp(1.65rem, 3.6vw, 2.25rem); margin-bottom: 1rem; }
+    .hero-subtitle { font-size: clamp(1.2rem, 2.5vw, 1.6rem); line-height: 1.4; text-wrap: pretty; }
+    .hero-subtitle::after { width: 3rem; margin-block: 1rem; height: 3px; }
+    .hero-description { font-size: .96rem; line-height: 1.65; }
+    .hero-actions { gap: .65rem; margin-top: 1.25rem; }
+    .hero-actions :global(a) { font-size: .75rem; padding: .7rem .8rem; }
+    .hero-illustration { max-width: 18rem; }
+    #expertise .grid { gap: 1rem; }
+    .service-card { padding: 1.2rem; }
+    .service-card h3 { font-size: 1.05rem; }
+    .service-card p { font-size: .95rem; }
+    .service-card .service-icon { margin-bottom: 1rem; }
+  }
+  @media (max-width: 639px) {
+    .home-hero { padding-block: 1.75rem 2rem; }
+    .hero-layout { gap: 1rem; }
+    .hero-copy { text-align: center; }
+    .hero-subtitle, .hero-description { margin-inline: auto; }
+    .hero-subtitle::after { margin-inline: auto; }
+    .hero-actions { width: 100%; max-width: 22rem; margin-inline: auto; }
+    .hero-title { font-size: clamp(1.6rem, 6.7vw, 2rem); margin-bottom: .85rem; }
+    .hero-subtitle { font-size: clamp(1.15rem, 4.9vw, 1.45rem); line-height: 1.45; max-width: 32ch; text-wrap: pretty; }
+    .hero-subtitle::after { width: 2.75rem; height: 3px; margin-block: 1rem; }
+    .hero-description { max-width: 40ch; font-size: 1rem; line-height: 1.65; }
+    .hero-actions { display: grid; grid-template-columns: minmax(0, 1fr); gap: .65rem; margin-top: 1.25rem; }
+    .hero-actions :global(a) { min-width: 0; min-height: 48px; padding: .75rem .5rem; font-size: .8125rem; line-height: 1.35; text-align: center; }
+    .hero-actions :global(span) { white-space: nowrap; }
+    .hero-actions :global(svg) { width: 16px; height: 16px; flex-shrink: 0; }
+    .hero-illustration { max-width: 13.2rem; }
+  }
+  #profil a img { transition: opacity .15s; }
+  #profil a:hover img { opacity: .85; }
+  .service-card { background: white; border: 1px solid #e0e3e5; border-top: 4px solid var(--service-color); color: #333; }
+  .service-employer { --service-color: var(--employer-brand); }
+  .service-worker { --service-color: var(--worker-brand); }
+  .service-europe { --service-color: var(--europe-brand); }
+  .service-card h3 { color: #263952; line-height: 1.4; }
+  .service-icon { color: var(--service-color); }
+  #expertise { scroll-margin-top: 6rem; }
+  :global(main a:focus-visible), :global(main button:focus-visible) { outline: 2px solid var(--worker-ink); outline-offset: 4px; }
+</style>

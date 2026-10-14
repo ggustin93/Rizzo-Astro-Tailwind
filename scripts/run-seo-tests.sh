@@ -14,16 +14,26 @@
 # ==============================================================================
 
 # --- Configuration ---
-BASE_URL="https://rizzo-michiels.be"
-# Add page paths to this array to include them in the tests.
-PAGES_TO_TEST=(
-  "/fr/"
-  "/en/"
-  "/it/"
-  "/fr/contact/"
-  "/en/contact/"
-  "/it/contact/"
-)
+# Override to point the suite at a deploy preview or a local build, e.g.
+#   BASE_URL=https://deploy-preview-42--site.netlify.app ./scripts/run-seo-tests.sh
+BASE_URL="${BASE_URL:-https://rizzo-michiels.be}"
+# Canonical URLs and the robots.txt sitemap entry always point at production,
+# even when the pages are served from a preview host — that is correct SEO, so
+# they are checked against this fixed origin rather than against BASE_URL.
+CANONICAL_BASE="https://rizzo-michiels.be"
+# Locales come from the single source of truth (src/config/locales.ts) so that
+# shipping a new language extends this suite without editing it (issue #11).
+LOCALES=($(sed -n "s/.*LOCALES = \[\(.*\)\] as const.*/\1/p" \
+  "$(dirname "$0")/../src/config/locales.ts" | tr -d "' " | tr ',' ' '))
+if [ ${#LOCALES[@]} -eq 0 ]; then
+  echo "Could not read LOCALES from src/config/locales.ts" >&2
+  exit 1
+fi
+# Every locale's home page and contact page.
+PAGES_TO_TEST=()
+for locale in "${LOCALES[@]}"; do
+  PAGES_TO_TEST+=("/${locale}/" "/${locale}/contact/")
+done
 
 # User-Agents
 UA_GOOGLEBOT="Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
@@ -106,6 +116,7 @@ test_meta_robots() {
 
 test_canonical_tag() {
   local url=$1
+  local expected="${url/#$BASE_URL/$CANONICAL_BASE}"
   # Pre-process HTML to put each tag on a new line
   local html_content=$(curl -s "$url" | sed 's/>/>\n/g')
   
@@ -121,10 +132,10 @@ test_canonical_tag() {
   # Use awk for more robust parsing of the href attribute.
   local href=$(echo "$canonical_tags" | awk -F'href=' '{print $2}' | awk -F'"' '{print $2}')
   
-  if [ "$href" == "$url" ]; then
+  if [ "$href" == "$expected" ]; then
     print_pass "Canonical URL matches page URL: $href"
   else
-    print_fail "Canonical URL mismatch. Found: $href, Expected: $url"
+    print_fail "Canonical URL mismatch. Found: $href, Expected: $expected"
   fi
 }
 
@@ -132,15 +143,17 @@ test_hreflang_tags() {
   local url=$1
   local html_content=$(curl -s "$url")
   
-  # Assuming 3 languages: fr, en, it
-  local fr_ok=$(echo "$html_content" | grep -i 'hreflang="fr"' | wc -l)
-  local en_ok=$(echo "$html_content" | grep -i 'hreflang="en"' | wc -l)
-  local it_ok=$(echo "$html_content" | grep -i 'hreflang="it"' | wc -l)
+  local missing=""
+  for locale in "${LOCALES[@]}"; do
+    if ! echo "$html_content" | grep -qi "hreflang=\"${locale}\""; then
+      missing="${missing} ${locale}"
+    fi
+  done
 
-  if [ "$fr_ok" -gt 0 ] && [ "$en_ok" -gt 0 ] && [ "$it_ok" -gt 0 ]; then
-    print_pass "Found hreflang tags for fr, en, it"
+  if [ -z "$missing" ]; then
+    print_pass "Found hreflang tags for ${LOCALES[*]}"
   else
-    print_fail "Missing one or more hreflang tags (fr:$fr_ok, en:$en_ok, it:$it_ok)"
+    print_fail "Missing hreflang tags for:${missing}"
   fi
 }
 
@@ -162,10 +175,67 @@ test_robots_txt() {
     print_pass "Found 'Allow: /'"
   fi
 
-  if ! echo "$content" | grep -q "Sitemap: ${BASE_URL}/sitemap-index.xml"; then
+  if ! echo "$content" | grep -q "Sitemap: ${CANONICAL_BASE}/sitemap-index.xml"; then
     print_fail "Missing or incorrect Sitemap URL"
   else
     print_pass "Found correct Sitemap URL"
+  fi
+}
+
+test_llms_txt() {
+  local url="${BASE_URL}/llms.txt"
+  print_header "Testing File: $url"
+
+  local headers=$(curl -s -o /dev/null -D - -w '%{http_code}' "$url")
+  if ! echo "$headers" | grep -qi "^content-type: text/plain"; then
+    print_fail "llms.txt is not served as text/plain"
+  else
+    print_pass "llms.txt is served as text/plain"
+  fi
+
+  local content=$(curl -s "$url")
+  if echo "$content" | grep -q "droit du travail"; then
+    print_pass "llms.txt summarises the firm"
+  else
+    print_fail "llms.txt is missing the firm summary"
+  fi
+}
+
+test_ai_crawler_rules() {
+  local content=$(curl -s "${BASE_URL}/robots.txt")
+  print_header "Testing AI crawler rules"
+
+  for bot in GPTBot OAI-SearchBot ClaudeBot PerplexityBot; do
+    if echo "$content" | grep -q "User-agent: ${bot}"; then
+      print_pass "Explicit rule for ${bot}"
+    else
+      print_fail "No explicit rule for ${bot}"
+    fi
+  done
+}
+
+test_json_ld() {
+  local url=$1
+  local content=$(curl -s "$url")
+
+  if ! echo "$content" | grep -q 'application/ld+json'; then
+    print_fail "No JSON-LD block found"
+    return
+  fi
+
+  # Extract the JSON-LD payload and check the two node types we publish.
+  local payload=$(echo "$content" | tr -d '\n' | grep -o '<script type="application/ld+json">[^<]*' | head -1)
+
+  if echo "$payload" | grep -q '"LegalService"'; then
+    print_pass "JSON-LD declares the firm as a LegalService"
+  else
+    print_fail "JSON-LD is missing the LegalService node"
+  fi
+
+  if echo "$payload" | grep -q '"Person"'; then
+    print_pass "JSON-LD declares at least one Person"
+  else
+    print_fail "JSON-LD is missing Person nodes"
   fi
 }
 
@@ -182,6 +252,8 @@ main() {
   
   # --- Site-wide File Tests ---
   test_robots_txt
+  test_ai_crawler_rules
+  test_llms_txt
   test_sitemap
   
   # --- Page-specific Tests ---
@@ -193,6 +265,7 @@ main() {
     test_meta_robots "$url" "$UA_BINGBOT" "Bingbot"
     test_canonical_tag "$url"
     test_hreflang_tags "$url"
+    test_json_ld "$url"
   done
   
   echo -e "\n${COLOR_BOLD}All tests completed.${COLOR_RESET}"

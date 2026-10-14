@@ -1,0 +1,151 @@
+---
+import '../../../styles/editorial.css';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import MemberContactCard from '../../../components/MemberContactCard.astro';
+import { ChevronLeft, Briefcase, Globe, Mic, BookOpen } from 'astro-feather-icons2';
+import { LOCALES } from '../../../config/locales';
+import { getTeam } from '../../../utils/team.js';
+import { cdnImage } from '../../../utils/imageHelpers.js';
+import { getUiTranslations } from '../../../utils/ui-translations';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const perLocale = await Promise.all(
+    LOCALES.map(async (lang) =>
+      (await getTeam(lang)).map((lawyer) => ({
+        params: { lang, slug: lawyer.slug },
+        props: { lawyer }
+      }))
+    )
+  );
+  return perLocale.flat();
+}
+
+const { lang } = Astro.params;
+const { lawyer } = Astro.props as { lawyer: any };
+
+const ui = await getUiTranslations(lang);
+const t = ui.team;
+const appointmentLabel = ui.cta.actions.find(action => action.type === 'appointment')?.label;
+
+const seoData = {
+  title: lawyer.seo?.title || lawyer.name,
+  description:
+    lawyer.seo?.description ||
+    `${lawyer.name}, avocate au Barreau de Bruxelles en droit du travail. Expertise pour entreprises et travailleurs.`,
+  image: lawyer.seo?.image || lawyer.profileImage,
+  keywords:
+    lawyer.seo?.keywords?.join(', ') ||
+    `${lawyer.name}, avocat droit du travail, Bruxelles`
+};
+const portrait = await cdnImage(lawyer.profileImage, { width: 600, height: 750 });
+---
+
+<BaseLayout
+  title={seoData.title}
+  description={seoData.description}
+  image={seoData.image}
+  keywords={seoData.keywords}
+  lang={lang}
+>
+  <div class="editorial-page">
+    <div class="max-w-6xl mx-auto px-4 py-8 md:py-12">
+
+      <!-- Back to team link -->
+      <div class="mb-6">
+        <a
+          href={`/${lang}/equipe/`}
+          class="inline-flex items-center text-gray-500 hover:text-gray-700 transition-colors duration-300 text-sm"
+        >
+          <ChevronLeft aria-hidden="true" title="" class="w-4 h-4 mr-1" />
+          <span>{t.backToTeam}</span>
+        </a>
+      </div>
+
+      <!-- Image visible only on mobile, above title -->
+      <div class="md:hidden mb-8">
+        <img {...portrait} alt={lawyer.imageAlt || lawyer.name} class="portrait" decoding="async">
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+        <div class="w-full md:w-2/3">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-light text-employeur mb-2">{lawyer.name}</h1>
+          {lawyer.title && <p class="text-xl md:text-2xl text-gray-600 mb-4">{lawyer.title}</p>}
+
+          {lawyer.role && <p class="text-gray-600 mb-4">{lawyer.role}</p>}
+
+          <MemberContactCard lawyer={lawyer} appointmentLabel={appointmentLabel} bookWith={ui.header.bookWith} />
+
+          <div class="space-y-4 md:space-y-6">
+            {lawyer.bio && lawyer.bio.map((paragraph: string) => (
+              <p class="text-sm md:text-base text-dark-gray">{paragraph}</p>
+            ))}
+          </div>
+
+          <div class="space-y-6 md:space-y-8 mt-6 md:mt-8">
+            {lawyer.careerPath && lawyer.careerPath.length > 0 && (
+              <div class="profile-section">
+                <h2 class="text-lg md:text-xl font-semibold text-black mb-2 md:mb-3"><Briefcase aria-hidden="true" title="" />{t.career}</h2>
+                <ul class="profile-timeline space-y-2 mb-4 md:mb-6">
+                  {lawyer.careerPath.map((item: any) => (
+                    <li class="flex flex-col sm:flex-row">
+                      <span class="font-semibold text-employeur sm:w-24 flex-shrink-0">{item.year}</span>
+                      <span class="text-sm md:text-base text-dark-gray">{item.event}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {lawyer.languages && (
+              <div class="profile-section">
+                <h2 class="text-lg md:text-xl font-semibold text-black mb-2 md:mb-3"><Globe aria-hidden="true" title="" />{t.languages}</h2>
+                <p class="text-sm md:text-base text-dark-gray mb-4 md:mb-6">{lawyer.languages}</p>
+              </div>
+            )}
+
+            {lawyer.conferences && lawyer.conferences.length > 0 && (
+              <div class="profile-section">
+                <h2 class="text-lg md:text-xl font-semibold text-black mb-2 md:mb-4"><Mic aria-hidden="true" title="" />{t.conferences}</h2>
+                <ul class="space-y-2 mb-6 md:mb-8">
+                  {lawyer.conferences.map((conf: string) => (
+                    <li class="text-sm md:text-base text-dark-gray flex items-start">
+                      <span class="text-employeur mr-2 text-2xl md:text-4xl">•</span>
+                      <span>{conf}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {(lawyer.publicationsIntro || lawyer.publications.length > 0) && (
+              <div class="profile-section">
+                <h2 class="text-lg md:text-xl font-semibold text-black mb-2 md:mb-3"><BookOpen aria-hidden="true" title="" />{t.publications}</h2>
+                {lawyer.publicationsIntro && <p class="text-dark-gray mb-4">{lawyer.publicationsIntro}</p>}
+                <ul class="space-y-3">
+                  {lawyer.publications.map((pub: any) => (
+                    <li class="text-sm md:text-base text-dark-gray flex items-start">
+                      <span class="text-employeur mr-2 text-2xl md:text-4xl">•</span>
+                      <div>
+                        <span>{pub.date}:</span> "{pub.title}", {pub.publisher}
+                        {pub.coAuthors?.length > 0 && <span class="italic"> ({t.inCollaborationWith} {pub.coAuthors.join(', ')})</span>}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <!-- Image visible only on desktop -->
+        <div class="hidden md:block md:w-1/3 md:sticky md:top-28">
+          <div>
+            <img {...portrait} alt={lawyer.imageAlt || lawyer.name} class="portrait" decoding="async">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

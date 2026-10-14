@@ -1,0 +1,85 @@
+---
+import { getEntry } from 'astro:content';
+import { LOCALES } from '../config/locales';
+import { isValidCalendarLink } from '../utils/calendar.js';
+import { getContactInfo } from '../utils/contact-info.js';
+import { getTeam, profilePath } from '../utils/team.js';
+
+export interface Props {
+  lang: string;
+  siteUrl: string;
+}
+
+const { lang, siteUrl } = Astro.props;
+
+const siteConfigEntry = await getEntry('config', 'site-config');
+const { seo } = siteConfigEntry?.data ?? {};
+
+// The firm's advertised contact is resolved by getContactInfo(), not by taking
+// lawyers[0] — reordering the array must not change the cabinet's public identity.
+const contact = await getContactInfo();
+
+// Job titles are per-locale, so they come from the team content rather than a
+// hardcoded French string on every language's pages.
+const team = await getTeam(lang);
+
+
+// "Chaussée de Waterloo 1151, 1180 Bruxelles" -> street / postal code / city.
+// The address is a single free-text field in site-config (its single source of
+// truth); schema.org wants the parts separately.
+const fullAddress = contact.address ?? '';
+const [streetAddress = fullAddress, locality = ''] = fullAddress
+  .split(',')
+  .map((part) => part.trim());
+const localityMatch = locality.match(/^(\d{4})\s+(.+)$/);
+
+const firmId = `${siteUrl}/#firm`;
+
+// One node per firm, so @id and url stay constant across every page. A page-specific
+// url here would make all pages emit conflicting values for the same @id.
+const firm = {
+  '@type': 'LegalService',
+  '@id': firmId,
+  name: seo?.siteName,
+  description: seo?.siteDescription,
+  url: `${siteUrl}/`,
+  areaServed: 'BE',
+  inLanguage: [...LOCALES],
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress,
+    postalCode: localityMatch?.[1] ?? '',
+    addressLocality: localityMatch?.[2] ?? locality,
+    addressCountry: 'BE'
+  },
+  telephone: contact.phone,
+  email: contact.email,
+  knowsLanguage: [...LOCALES]
+};
+
+const people = team.map((lawyer) => {
+  const contact = lawyer.contact;
+  return {
+    '@type': 'Person',
+    '@id': `${siteUrl}/#${lawyer.id}`,
+    name: lawyer.name,
+    jobTitle: lawyer.title || lawyer.role,
+    url: `${siteUrl}${profilePath(lang, lawyer)}`,
+    image: new URL(lawyer.profileImage, siteUrl).href,
+    ...(contact?.email ? { email: contact.email } : {}),
+    ...(contact?.phone ? { telephone: contact.phone } : {}),
+    worksFor: { '@id': firmId },
+    ...(lawyer.linkedin ? { sameAs: [lawyer.linkedin] } : {}),
+    ...(isValidCalendarLink(contact?.calendarLink)
+      ? { potentialAction: { '@type': 'ScheduleAction', target: contact.calendarLink } }
+      : {})
+  };
+});
+
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [{ ...firm, employee: people.map((person) => ({ '@id': person['@id'] })) }, ...people]
+};
+---
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(graph)} />

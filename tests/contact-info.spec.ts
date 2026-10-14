@@ -1,32 +1,25 @@
 import { test, expect } from '@playwright/test';
 
-const BASE_URL = process.env.BASE_URL || 'http://localhost:4321';
+import { BASE_URL, languages, lawyers as roster, address } from './helpers';
 
 const lawyers = {
-  christine: {
-    email: 'christine@rizzoavocate.be',
-    phone: '+32 488 40 45 49',
-  },
-  stephanie: {
-    email: 'stephanie@michielsavocate.be',
-    phone: '+32 498 50 29 01',
-  },
+  christine: roster[0],
+  stephanie: roster[1],
 };
 
-const address = 'Chaussée de Waterloo 1151';
+// Legal pages expose the firm's shared editor mailbox, not a lawyer's personal address.
+const editorEmail = 'info@rizzo-michiels.be';
 
 test.describe('Contact Information Verification', () => {
 
   test.describe('Contact Page', () => {
-    const languages = ['fr', 'en', 'it'];
     for (const lang of languages) {
       test(`should display correct info on /${lang}/contact`, async ({ page }) => {
         await page.goto(`${BASE_URL}/${lang}/contact`);
 
         // Check for both lawyers' contact info
-        await expect(page.locator('body')).toContainText(lawyers.christine.email);
+        await expect(page.locator('body')).toContainText(editorEmail);
         await expect(page.locator('body')).toContainText(lawyers.christine.phone);
-        await expect(page.locator('body')).toContainText(lawyers.stephanie.email);
         await expect(page.locator('body')).toContainText(lawyers.stephanie.phone);
       });
     }
@@ -36,8 +29,11 @@ test.describe('Contact Information Verification', () => {
     await page.goto(`${BASE_URL}/fr/`);
 
     const footer = page.locator('footer');
-    await expect(footer).toContainText(lawyers.christine.email);
-    await expect(footer).toContainText(lawyers.christine.phone);
+    // Phones and emails live in the CTA above; the footer only shows the office.
+    await expect(footer.locator('a[href^="mailto:"]')).toHaveCount(0);
+    await expect(footer.locator('a[href^="tel:"]')).toHaveCount(0);
+    await expect(footer.getByRole('heading', { name: 'Nos bureaux', exact: true })).toBeVisible();
+    await expect(footer.getByRole('link', { name: /Ouvrir dans Google Maps/ })).toHaveAttribute('href', /google\.com\/maps/);
     // Check for address parts to be resilient to formatting
     await expect(footer).toContainText(address);
     await expect(footer).toContainText('1180 Bruxelles');
@@ -56,7 +52,7 @@ test.describe('Contact Information Verification', () => {
 
         // Target the specific main content area of the legal pages
         const mainContent = page.locator('div.bg-white > main');
-        await expect(mainContent).toContainText(lawyers.christine.email);
+        await expect(mainContent).toContainText(editorEmail);
         await expect(mainContent).toContainText(lawyers.christine.phone);
         await expect(mainContent).toContainText(address);
       });

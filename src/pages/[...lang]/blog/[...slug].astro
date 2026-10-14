@@ -1,9 +1,10 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
 import { Image } from 'astro:assets';
+import { cdnImage, isExternalImage } from '../../../utils/imageHelpers.js';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-
-type Language = 'fr' | 'it' | 'en';
+import { getUiTranslations } from '../../../utils/ui-translations';
+import type { Locale } from '../../../config/locales';
 
 // Récupérer la configuration du site
 const siteConfigEntry = await getEntry('config', 'site-config');
@@ -17,7 +18,7 @@ export async function getStaticPaths() {
   const blogEntries = await getCollection('blog');
 
   return blogEntries.map(entry => {
-    const [lang, ...slugParts] = entry.slug.split('/');
+    const [lang, ...slugParts] = entry.slug.split('/') as [Locale, ...string[]];
     return {
       params: { lang, slug: slugParts.join('/') },
       props: { entry, lang },
@@ -28,13 +29,7 @@ export async function getStaticPaths() {
 const { entry, lang } = Astro.props;
 const { Content } = await entry.render();
 
-const translations = {
-  fr: { backToArticles: "← Retour aux articles", keyPoints: "Points clés :", readTime: "temps de lecture" },
-  en: { backToArticles: "← Back to articles", keyPoints: "Key points:", readTime: "read time" },
-  it: { backToArticles: "← Torna agli articoli", keyPoints: "Punti chiave:", readTime: "tempo di lettura" }
-};
-
-const t = translations[lang as Language];
+const t = (await getUiTranslations(lang)).blog;
 
 // Function to generate LinkedIn share text
 function generateLinkedInShareText(title: string, url: string) {
@@ -75,16 +70,20 @@ const seoData = {
     <div class="bg-white md:my-20 p-8 rounded-lg">
 
     <header class="relative mb-12">
-      <Image 
-        src={entry.data.thumbnail}
-        alt=""
-        width={1200}
-        height={600}
-        class="w-full h-[50vh] object-cover rounded-lg"
-        loading="eager"
-        decoding="async"
-        format="avif"
-      />
+      {isExternalImage(entry.data.thumbnail) ? (
+        <Image 
+          src={entry.data.thumbnail}
+          alt=""
+          width={1200}
+          height={600}
+          class="w-full h-[50vh] object-cover rounded-lg"
+          loading="eager"
+          decoding="async"
+          format="avif"
+        />
+      ) : (
+        <img {...(await cdnImage(entry.data.thumbnail, { width: 1200, height: 600 }))} alt="" class="w-full h-[50vh] object-cover rounded-lg" loading="eager" decoding="async" />
+      )}
       <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg">
         <h1 class="text-3xl md:text-5xl font-light text-white text-center px-4">{entry.data.title}</h1>
       </div>

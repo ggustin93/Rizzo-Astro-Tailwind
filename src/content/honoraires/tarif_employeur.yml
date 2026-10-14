@@ -273,3 +273,79 @@ it:
       details:
         - (IVA 21%)
       services: []
+nl:
+  title: Diensten en tarieven voor werkgevers
+  backLinkText: Terug naar de erelonen
+  contactText: Voor meer informatie over de tarieven of voor een persoonlijke
+    offerte kunt u gerust contact met mij opnemen.
+  contactButton: Contacteer mij
+  includedServicesTitle: "Inbegrepen diensten:"
+  includedServicesDefault: "Inbegrepen diensten: op aanvraag, afgestemd op uw specifieke situatie."
+  services:
+    - title: Onbeperkt advies
+      icon: FileText
+      pricing: Abonnement op aanvraag
+      details: []
+      services:
+        - "Voor al uw dagelijkse vragen, bijvoorbeeld:"
+        - Een overeenkomst of een beleid opstellen of nazien
+        - Een ontslag voorbereiden en de risico's inschatten
+        - Flexibele werktijden invoeren
+        - Telewerk of het recht op deconnectie in de onderneming organiseren
+        - Een (langdurige) afwezigheid beheren
+        - Inspecties en geschillen niet inbegrepen
+    - title: Audit - Due diligence-verslag
+      icon: FileText
+      pricing: FORFAIT op aanvraag
+      details:
+        - naargelang het aantal medewerkers
+        - (btw 21%)
+      services:
+        - Analyse van het dossier
+        - Q&A
+        - Opstellen van het verslag
+        - Samenvatting red flags
+    - title: Arbeidsovereenkomst
+      icon: FileText
+      pricing: FORFAIT 800 € excl. btw
+      details: []
+      services: []
+    - title: Arbeidsreglement
+      icon: Shield
+      pricing: FORFAIT 1500 € excl. btw
+      details:
+        - (btw 21%)
+      services: []
+    - title: Ontslag
+      icon: Briefcase
+      pricing: FORFAIT 725 € excl. btw
+      details:
+        - Dringende reden 1000 € excl. btw
+        - (btw 21%)
+      services:
+        - Analyse van de stukken
+        - Berekening van de opzeggingsvergoeding
+        - Raming van de werkgeverskost
+        - Berekening van de financiële risico's bij een geschil
+        - Opstellen van de brieven
+        - Nazicht van de uitdiensttredingsdocumenten
+    - title: "Ontslag: onderhandeling - geschil"
+      icon: Briefcase
+      description: Minnelijke onderhandeling en/of procedure wegens dringende reden,
+        onrechtmatig, discriminerend of kennelijk onredelijk ontslag
+      pricing: 6000 € excl. btw
+      details:
+        - mini = 4000 € excl. btw
+        - maxi = 8000 € excl. btw
+        - (btw 21%)
+      services:
+        - Analyse van het dossier
+        - Berekening van de vergoedingen
+        - Onderhandeling van een akkoord (coaching indien u zelf rechtstreeks
+          onderhandelt)
+        - Opstellen of nazien van de dading
+        - Opstellen van de conclusies
+        - Pleidooien
+        - Nazicht van de uitdiensttredingsdocumenten
+        - Opvolging van de uitvoering
+        - Contacten met de tegenpartij en de rechtbank

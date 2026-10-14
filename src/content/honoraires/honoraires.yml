@@ -1,33 +1,52 @@
 fr:
   previsibilite:
-    title: "Prévisibilité "
+    title: Ce que couvrent nos honoraires
     full_content: >-
-      Ne pas savoir combien va coûter l'intervention de votre avocat.e peut être
-      une source d'inquiétude. 
-
-      Nous vous proposons nos prestations soit à un tarif horaire soit, dans certains cas, à un tarif forfaitaire fixe "tout compris" augmenté le cas échéant d'un honoraire de résultat. 
+      **Prestations visibles et invisibles**
 
 
-      Si nous choisissons de travailler ensemble sur base d'un tarif horaire, nos prestations vous sont facturées chaque mois, au fur et à mesure des prestations.
+      Nos honoraires rémunèrent l'ensemble des prestations accomplies dans le cadre de votre dossier. Certaines sont directement visibles : les réunions, les plaidoiries, la rédaction de conclusions ou de courriers. D'autres, tout aussi indispensables, le sont moins : l'étude approfondie du dossier, les recherches juridiques, les échanges avec les parties adverses, les démarches administratives, la préparation des pièces, le temps d'attente aux audiences.
 
 
-      Il n'y a pas de frais de dossier ou de bureau.
+      **Votre rôle dans la maîtrise des coûts** 
 
 
-      Les frais liés à l'intervention de tiers (huissiers, experts, traducteurs, avocats spécialisés dans d'autres domaines) ou les frais de justice (droits de greffe) sont refacturés au prix coûtant ou directement payables au tiers intervenant.
+      Pour maîtriser vos coûts, nous vous invitons à transmettre des documents complets et structurés, à regrouper vos questions dans la mesure du possible, et à répondre rapidement à nos demandes. Une collaboration fluide accélère le traitement de votre dossier et optimise le temps facturable.
+
+
+      **L'IA au service de votre dossier** 
+
+
+      Nous utilisons des outils d'intelligence artificielle (notamment JEF, outil spécialisé pour les avocats belges, ainsi que d'autres outils comme Claude ou ChatGPT, toujours de manière anonymisée) pour gagner en efficacité sans jamais déléguer le raisonnement juridique.
+
+
+      Concrètement, cela se traduit par une meilleure réactivité, des délais de traitement réduits et un rapport qualité-prix optimisé pour vous. Notre expertise juridique reste au cœur de chaque décision : l'IA est un outil, le jugement de l'avocat est irremplaçable.
+
+
+      De votre côté, un message court et ciblé reste toujours le plus efficace, qu'il soit rédigé par vous ou avec l'aide d'un outil IA. Pensez à vérifier que les points soulevés n'ont pas déjà reçu une réponse avant d'envoyer : cela accélère le traitement de votre dossier et maîtrise vos honoraires.
   forfaits:
-    title: Besoin d'un premier avis ?
-    intro: Consultez nos disponibilités directement sur notre calendrier en ligne et
-      réservez votre créneau. Le premier rendez-vous est facturé 275 € TVAC.
-      N'hésitez pas à apporter tous les documents que vous jugez utiles pour
-      cette première rencontre.
+    title: Transparence & prévisibilité
+    intro: >-
+      Les modalités de calcul de nos honoraires vous sont communiquées par écrit
+      avant le début de notre intervention.
+
+
+      Nous travaillons soit à un tarif horaire — facturé mensuellement, au fur et à mesure des prestations — soit, dans certains cas, à un forfait fixe "tout compris", augmenté le cas échéant d'un honoraire de résultat. Il n'y a pas de frais de dossier ni de frais de bureau. Un détail des prestations accomplies est joint à chaque facture. 
+
+
+      Nous demandons régulièrement des provisions au cours du dossier, afin d'assurer un suivi financier transparent et d'éviter l'accumulation de montants importants en fin de mission.
+
+
+      Les frais liés à l'intervention de tiers (huissiers, experts, traducteurs) ou les frais de justice sont refacturés au prix coûtant ou directement payables au tiers concerné.
     exemples: []
   transparence:
-    title: Transparence
+    title: Besoin d'un premier avis ?
     points:
-      - Les modalités de calcul de nos honoraires ainsi que les conditions de
-        notre intervention vous sont communiquées par écrit avant le début de
-        notre intervention.
+      - >-
+        Le premier rendez-vous est facturé 275 € TVAC. 
+
+
+        Réservez directement votre créneau via notre calendrier en ligne. N'hésitez pas à apporter tous les documents que vous jugez utiles (contrat de travail, correspondances, fiches de paie, etc.) pour que nous puissions analyser votre situation concrètement dès ce premier échange.
   assurance:
     title: Pensez à l'assurance protection juridique
     content: >
@@ -35,10 +54,10 @@ fr:
       permettre d'économiser beaucoup d'argent. 
 
 
-      Plusieurs assureurs en Belgique proposent une assurance protection juridique qui couvre les conflits dans le cadre d'une relation de travail (Ethias, Arag, Das, Arces), que vous soyez un.e travailleur.euse ou une entreprise.
+      Plusieurs assureurs en Belgique proposent une assurance protection juridique qui couvre les conflits dans le cadre d'une relation de travail (Ethias, Arag, DAS, Arces), que vous soyez un travailleur ou une entreprise.
 
 
-      Vérifiez avec votre courtier ou votre assurance si vous êtes couverts ou si une telle assurance peut être souscrite et le délai d'attente.
+      Vérifiez avec votre courtier ou votre assurance si vous bénéficiez d'une telle couverture ou si une telle assurance peut être souscrite et le délai d'attente.
        
       Dans ce cas, tout ou une partie de vos frais d'avocat seront payés par votre assurance et non par vous.
   tarifs:
@@ -51,70 +70,91 @@ fr:
       L'aide juridique permet à toute personne de bénéficier d'une première
       consultation juridique gratuite (aide juridique de 1ère ligne). Elle
       permet également à certaines catégories de personnes de bénéficier de
-      l'assistance gratuite d'un.e avocat.e pour le traitement d'un dossier dans
-      toutes les matières juridiques (aide juridique de 2ème ligne). Ces
-      avocat.e.s sont volontaires et fournissent les mêmes services que dans le
-      cadre d'une aide juridique payante : conseil, assistance et représentation
-      dans le cadre d'une procédure judiciaire, administrative ou dans le cadre
-      d'une médiation, introduction d'un recours…
+      l'assistance gratuite d'un avocat pour le traitement d'un dossier dans
+      toutes les matières juridiques (aide juridique de 2ème ligne). Ces avocats
+      sont volontaires et fournissent les mêmes services que dans le cadre d'une
+      aide juridique payante : conseil, assistance et représentation dans le
+      cadre d'une procédure judiciaire, administrative ou dans le cadre d'une
+      médiation, introduction d'un recours…
 
 
       Si vous souhaitez vous renseigner ou vérifier si vous remplissez les conditions pour bénéficier de l'aide juridique de 2ème ligne, nous vous invitons à consulter le site [Avocats.be](http://Avocats.be) ou le site du bureau d'aide juridique de votre région (pour [Bruxelles](https://www.bajbruxelles.be/)).
 
 
-      Si vous remplissez les conditions pour bénéficier de l'aide juridique de 2ème ligne mais que vous souhaitez y renoncer et solliciter mon intervention en dehors de ce cadre, le formulaire téléchargeable [ici](https://docs.google.com/document/d/1342gFQP0Wfvejg3RrRpynr_0xgowMhOHl3XHTDWqWA4/edit?tab=t.0#heading=h.xth8kae1d4z1) devra nous être remis signé.
-  subtitle: Les honoraires de l'avocat constituent la contrepartie du travail
-    qu'il accomplit pour vous.
+      Si vous remplissez les conditions pour bénéficier de l'aide juridique de 2ème ligne mais que vous souhaitez y renoncer et solliciter notre intervention en dehors de ce cadre, nous vous soumettrons un formulaire de renonciation à signer.
+  subtitle: Une relation de confiance commence par une tarification claire. Voici
+    comment nous travaillons.
   title: Honoraires
   video:
     title: En savoir plus
     url: https://youtu.be/Y-SKuT-XqGk
+  seo:
+    description: Tarif horaire ou forfait, sans frais de dossier. Premier
+      rendez-vous à 275 € TVAC. Rizzo & Michiels vous explique clairement le
+      coût de notre intervention avant tout engagement.
 en:
   previsibilite:
-    title: Predictability
+    title: What our fees cover
     full_content: >-
-      Not knowing how much your lawyer's intervention will cost can be a source
-      of concern.
-
-      We offer our services at an hourly rate or, in certain cases, at a fixed, all-inclusive rate. Therefore, you know exactly what you will pay per month and in total.
-
-
-      If we choose to work together on an hourly rate basis, our services are billed to you each month as the work progresses.
+      Our fees cover all the work carried out on your matter. Some of it is
+      directly visible: meetings, court hearings, drafting submissions or
+      letters. Other work, just as essential, is less visible: in-depth study of
+      the file, legal research, exchanges with the opposing parties,
+      administrative formalities, preparing documents, waiting time at hearings.
 
 
-      There are no file or office fees.
+      To keep your costs under control, we invite you to send complete and well-organised documents, to group your questions together where possible, and to respond promptly to our requests. Smooth collaboration speeds up the handling of your matter and optimises billable time.
 
 
-      Costs related to third-party interventions (bailiffs, experts, translators, lawyers specialized in other fields) or court fees (registry fees) are invoiced at cost or directly payable to the intervening third party.
+      We use artificial intelligence tools (in particular JEF, a tool designed for Belgian lawyers, as well as other tools such as Claude or ChatGPT, always with anonymised data) to work more efficiently, without ever delegating legal reasoning.
+
+
+      In practice, this means greater responsiveness, shorter turnaround times and better value for money for you. Our legal expertise remains at the heart of every decision: AI is a tool, a lawyer's judgement is irreplaceable.
+
+
+      On your side, a short and focused message is always the most effective, whether you write it yourself or with the help of an AI tool. Please check that the points you raise have not already been answered before sending: this speeds up the handling of your matter and keeps your fees under control.
   forfaits:
-    title: Need a first opinion?
-    intro: Check our availability directly on our online calendar and book your
-      slot. The first meeting is billed at €275, VAT included. Feel free to
-      bring any documents you consider useful for this first meeting.
+    title: Transparency & predictability
+    intro: >-
+      The way our fees are calculated is communicated to you in writing before
+      we begin working on your matter.
+
+
+      We work either at an hourly rate, billed monthly as the work progresses, or, in certain cases, at a fixed "all-inclusive" fee, plus a success fee where applicable. There are no file-opening or office fees. A breakdown of the work carried out is attached to each invoice.
+
+
+      We regularly request advance payments during the matter, to ensure transparent financial follow-up and to avoid large amounts building up at the end of the engagement.
+
+
+      Costs related to the involvement of third parties (bailiffs, experts, translators) and court costs are re-invoiced at cost or are payable directly to the third party concerned.
     exemples: []
   transparence:
-    title: Transparency
+    title: Need a first opinion?
     points:
-      - The terms and conditions for calculating our fees and the conditions of
-        our services will be provided to you in writing before we begin our
-        work.
+      - Book your slot directly via our online calendar. The first meeting is
+        billed at €275, VAT included. Feel free to bring any documents you
+        consider useful (employment contract, correspondence, payslips, etc.) so
+        that we can analyse your situation in concrete terms from this first
+        meeting.
   assurance:
     title: Consider legal protection insurance
     content: >-
-      Legal Protection Insurance (or "legal defense") can save you a lot of
+      Legal expenses insurance (or ‘legal defence cover’) can save you a lot of
       money.
 
 
-      Several insurers in Belgium offer legal protection insurance that covers employment-related issues (Ethias, Arag, Das, Arces), whether you are an employee or an employer.
+      Several insurers in Belgium offer legal expenses insurance that covers disputes arising from an employment relationship (Ethias, Arag, DAS, Arces), whether you are an employee or a business.
 
 
-      If you are not currently insured, you may be eligible for coverage. Be sure to inquire about the waiting period. Insurance coverage is an excellent way to pay for legal fees!
+      Check with your broker or insurer to see if you are covered under such a policy, whether you can take out such cover, and what the waiting period is.
+       
+      In this case, all or part of your legal fees will be paid by your insurer rather than by you.
   tarifs:
     title: Rates
     travailleur: You are an employee
     employeur: You are an employer
   aideJuridique:
-    title: Free legal aid (pro bono)
+    title: Free legal aid (pro deo)
     content: >-
       Legal aid allows everyone to benefit from a free initial legal
       consultation (first-line legal aid). It also allows qualified individuals
@@ -129,50 +169,65 @@ en:
       If you would like to find out more or check whether you qualify for second-line legal aid, please consult the [Avocats.be](http://Avocats.be) website or the website of the legal aid bureau in your region (for [Brussels](https://www.bajbruxelles.be/)).
 
 
-      For individuals meeting the conditions for second line legal aid, you may request my assistance outside of this framework. Please  complete the waiver form [here](https://docs.google.com/document/d/1342gFQP0Wfvejg3RrRpynr_0xgowMhOHl3XHTDWqWA4/edit?tab=t.0#heading=h.xth8kae1d4z1), 
-
-      sign, and return to us.
-  subtitle: The lawyer's fees are the compensation for the legal services rendered
-    for you.
+      If you meet the eligibility requirements for second-line legal aid but wish to waive your entitlement and engage our services outside this scheme, we will provide you with a waiver form to sign.
+  subtitle: A relationship of trust starts with clear pricing. Here is how we work.
   title: Fees
   video:
     title: Learn more
     url: https://youtu.be/Y-SKuT-XqGk
+  seo:
+    description: Hourly rate or fixed fee, with no file-opening costs. First meeting
+      €275, VAT included. Rizzo & Michiels clearly explains the cost of our work
+      before any commitment.
 it:
   previsibilite:
-    title: Prevedibilità
+    title: Cosa coprono i nostri onorari
     full_content: >-
-      Non sapere quanto costerà l'intervento del vostro avvocato può essere
-      fonte di preoccupazione.
-
-      Vi proponiamo i nostri servizi a una tariffa oraria o, in certi casi, forfettaria fissa "tutto incluso".
-
-      Sapete quindi esattamente quanto pagherete al mese e quanto pagherete in totale.
-
-
-      Se scegliamo di lavorare insieme sulla base di una tariffa oraria, le nostre prestazioni vi vengono fatturate ogni mese, man mano che vengono eseguite.
+      I nostri onorari remunerano l'insieme delle prestazioni svolte nell'ambito
+      della vostra pratica. Alcune sono direttamente visibili: le riunioni, le
+      udienze, la redazione di memorie o di lettere. Altre, altrettanto
+      indispensabili, lo sono meno: lo studio approfondito della pratica, le
+      ricerche giuridiche, gli scambi con le controparti, le pratiche
+      amministrative, la preparazione dei documenti, i tempi di attesa alle
+      udienze.
 
 
-      Non ci sono spese amministrative.
+      Per contenere i costi, vi invitiamo a trasmetterci documenti completi e ordinati, a raggruppare per quanto possibile le vostre domande e a rispondere rapidamente alle nostre richieste. Una collaborazione fluida accelera la gestione della vostra pratica e ottimizza il tempo fatturabile.
 
 
-      I costi relativi all'intervento di terzi (ufficiali giudiziari, esperti, traduttori, avvocati specializzati in altri settori) o le spese giudiziarie (diritti di cancelleria) vengono rifatturati al costo o sono direttamente pagabili al terzo interveniente.
+      Utilizziamo strumenti di intelligenza artificiale (in particolare JEF, strumento specializzato per gli avvocati belgi, oltre ad altri strumenti come Claude o ChatGPT, sempre in forma anonimizzata) per guadagnare in efficienza senza mai delegare il ragionamento giuridico.
+
+
+      In concreto, ciò si traduce in una maggiore reattività, tempi di gestione ridotti e un miglior rapporto qualità-prezzo per voi. La nostra competenza giuridica resta al centro di ogni decisione: l'IA è uno strumento, il giudizio dell'avvocato è insostituibile.
+
+
+      Da parte vostra, un messaggio breve e mirato resta sempre il più efficace, che sia scritto da voi o con l'aiuto di uno strumento di IA. Prima di inviarlo, verificate che i punti sollevati non abbiano già ricevuto risposta: ciò accelera la gestione della vostra pratica e contiene i vostri onorari.
   forfaits:
-    title: Ha bisogno di un primo parere?
-    intro: Consulti le nostre disponibilità direttamente sul nostro calendario
-      online e prenoti il suo appuntamento. Il primo incontro è fatturato 275 €
-      IVA inclusa. Non esiti a portare tutti i documenti che ritiene utili per
-      questo primo incontro.
+    title: Trasparenza e prevedibilità
+    intro: >-
+      Le modalità di calcolo dei nostri onorari vi vengono comunicate per
+      iscritto prima dell'inizio del nostro intervento.
+
+
+      Lavoriamo a tariffa oraria, fatturata mensilmente man mano che le prestazioni vengono svolte, oppure, in alcuni casi, a forfait fisso "tutto compreso", eventualmente maggiorato di un onorario di risultato. Non ci sono spese di apertura pratica né spese d'ufficio. A ogni fattura è allegato il dettaglio delle prestazioni svolte.
+
+
+      Nel corso della pratica chiediamo regolarmente degli acconti, per garantire un monitoraggio finanziario trasparente ed evitare l'accumulo di importi elevati alla fine dell'incarico.
+
+
+      Le spese legate all'intervento di terzi (ufficiali giudiziari, periti, traduttori) e le spese di giustizia sono rifatturate al prezzo di costo o pagabili direttamente al terzo interessato.
     exemples: []
   transparence:
-    title: Trasparenza
+    title: Avete bisogno di un primo parere?
     points:
-      - Le modalità di calcolo dei nostri onorari e le condizioni del nostro
-        intervento vi saranno comunicate per iscritto prima dell'inizio del
-        nostro intervento.
+      - Prenotate direttamente il vostro appuntamento tramite il nostro
+        calendario online. Il primo incontro è fatturato 275 € IVA inclusa. Non
+        esitate a portare tutti i documenti che ritenete utili (contratto di
+        lavoro, corrispondenza, buste paga, ecc.) affinché possiamo analizzare
+        concretamente la vostra situazione fin da questo primo incontro.
   assurance:
     title: Pensate all'assicurazione di protezione giuridica
-    content: >
+    content: >-
       L'assicurazione di Protezione Giuridica (o "difesa in giudizio") può farvi
       risparmiare molto denaro.
 
@@ -188,7 +243,7 @@ it:
     travailleur: Sei un lavoratore
     employeur: Sei un datore di lavoro
   aideJuridique:
-    title: Assistenza legale (pro bono)
+    title: Patrocinio a spese dello Stato - Assistenza pro deo
     content: >-
       L'assistenza legale permette a chiunque di beneficiare di una prima
       consulenza legale gratuita (assistenza legale di 1° livello). Permette
@@ -204,10 +259,103 @@ it:
       Se desiderate informarvi o verificare se soddisfate le condizioni per beneficiare dell'assistenza legale di 2° livello, vi invitiamo a consultare il sito [Avocats.be](http://Avocats.be) o il sito dell'ufficio di assistenza legale della vostra regione (per [Bruxelles](https://www.bajbruxelles.be/)).
 
 
-      Se soddisfate le condizioni per beneficiare dell'assistenza legale di 2° livello ma desiderate rinunciarvi e richiedere il mio intervento al di fuori di questo quadro, il modulo scaricabile [qui](https://docs.google.com/document/d/1342gFQP0Wfvejg3RrRpynr_0xgowMhOHl3XHTDWqWA4/edit?tab=t.0#heading=h.xth8kae1d4z1) dovrà essermci consegnato firmato.
-  subtitle: Gli onorari dell'avvocato costituiscono il compenso per il lavoro
-    svolto per voi.
+      Se possedete i requisiti per beneficiare del patrocinio a spese dello Stato, ma desiderate rinunciarvi e avvalervi della nostra assistenza al di fuori di tale regime, vi sottoporremo un modulo di rinuncia da firmare.
+  subtitle: Un rapporto di fiducia inizia con tariffe chiare. Ecco come lavoriamo.
   title: Onorari
   video:
     title: Per saperne di più
     url: https://youtu.be/Y-SKuT-XqGk
+  seo:
+    description: Tariffa oraria o forfait, senza spese di apertura pratica. Primo
+      appuntamento a 275 € IVA inclusa. Rizzo & Michiels vi spiega chiaramente
+      il costo del nostro intervento prima di qualsiasi impegno.
+nl:
+  previsibilite:
+    title: Wat onze erelonen dekken
+    full_content: >-
+      Onze erelonen vergoeden alle prestaties die in het kader van uw dossier
+      worden verricht. Sommige zijn rechtstreeks zichtbaar: vergaderingen,
+      pleidooien, het opstellen van conclusies of brieven. Andere, even
+      onmisbaar, zijn minder zichtbaar: de grondige studie van het dossier,
+      juridisch opzoekingswerk, de contacten met de tegenpartijen,
+      administratieve stappen, het voorbereiden van de stukken, de wachttijd op
+      zittingen.
+
+
+      Om uw kosten te beheersen, vragen wij u volledige en gestructureerde documenten te bezorgen, uw vragen zoveel mogelijk te bundelen en snel op onze verzoeken te reageren. Een vlotte samenwerking versnelt de behandeling van uw dossier en optimaliseert de factureerbare tijd.
+
+
+      Wij gebruiken tools op basis van artificiële intelligentie (met name JEF, een tool speciaal voor Belgische advocaten, en andere tools zoals Claude of ChatGPT, steeds geanonimiseerd) om efficiënter te werken, zonder ooit het juridische denkwerk uit handen te geven.
+
+
+      Concreet betekent dit voor u een grotere reactiesnelheid, kortere behandelingstermijnen en een betere prijs-kwaliteitverhouding. Onze juridische expertise blijft de kern van elke beslissing: AI is een hulpmiddel, het oordeel van de advocaat is onvervangbaar.
+
+
+      Van uw kant blijft een kort en gericht bericht altijd het meest efficiënt, of u het nu zelf schrijft of met behulp van een AI-tool. Controleer vóór het verzenden of de aangehaalde punten nog niet werden beantwoord: dat versnelt de behandeling van uw dossier en houdt uw erelonen onder controle.
+  forfaits:
+    title: Transparantie & voorspelbaarheid
+    intro: >-
+      De berekeningswijze van onze erelonen wordt u schriftelijk meegedeeld vóór
+      de aanvang van onze tussenkomst.
+
+
+      Wij werken ofwel tegen een uurtarief, maandelijks gefactureerd naarmate de prestaties worden verricht, ofwel, in bepaalde gevallen, tegen een vast forfait "alles inbegrepen", in voorkomend geval verhoogd met een resultaatsereloon. Er zijn geen dossier- of kantoorkosten. Bij elke factuur wordt een overzicht van de verrichte prestaties gevoegd.
+
+
+      In de loop van het dossier vragen wij regelmatig provisies, om een transparante financiële opvolging te verzekeren en te vermijden dat zich op het einde van de opdracht hoge bedragen opstapelen.
+
+
+      Kosten verbonden aan de tussenkomst van derden (gerechtsdeurwaarders, deskundigen, vertalers) en gerechtskosten worden tegen kostprijs doorgerekend of zijn rechtstreeks aan de betrokken derde verschuldigd.
+    exemples: []
+  transparence:
+    title: Nood aan een eerste advies?
+    points:
+      - Reserveer rechtstreeks uw tijdslot via onze online agenda. Het eerste
+        gesprek wordt aangerekend aan 275 €, btw inbegrepen. Breng gerust alle
+        documenten mee die u nuttig acht (arbeidsovereenkomst, briefwisseling,
+        loonfiches, enz.), zodat wij uw situatie al tijdens dit eerste gesprek
+        concreet kunnen analyseren.
+  assurance:
+    title: Denk aan de rechtsbijstandsverzekering
+    content: >
+      De rechtsbijstandsverzekering (of « verdediging in rechte ») kan u veel
+      geld besparen.
+
+
+      Verschillende verzekeraars in België bieden een rechtsbijstandsverzekering aan die geschillen in het kader van een arbeidsrelatie dekt (Ethias, Arag, Das, Arces), of u nu werknemer of onderneming bent.
+
+
+      Ga bij uw makelaar of verzekeraar na of u gedekt bent, dan wel of een dergelijke verzekering kan worden afgesloten, en welke wachttijd geldt.
+
+      In dat geval worden uw advocatenkosten geheel of gedeeltelijk door uw verzekering betaald en niet door u.
+  tarifs:
+    title: Tarieven
+    travailleur: U bent werknemer
+    employeur: U bent werkgever
+  aideJuridique:
+    title: Juridische bijstand (pro deo)
+    content: >-
+      De juridische bijstand stelt eenieder in staat een eerste gratis
+      juridische consultatie te krijgen (eerstelijnsbijstand). Zij stelt
+      bepaalde categorieën van personen eveneens in staat kosteloos te worden
+      bijgestaan door een advocaat voor de behandeling van een dossier in alle
+      rechtstakken (tweedelijnsbijstand). Deze advocaten treden vrijwillig op en
+      leveren dezelfde diensten als in het kader van een betalende
+      dienstverlening: advies, bijstand en vertegenwoordiging in het kader van
+      een gerechtelijke of administratieve procedure of in het kader van een
+      bemiddeling, het instellen van een beroep…
+
+
+      Wenst u zich te informeren of na te gaan of u voldoet aan de voorwaarden voor tweedelijnsbijstand, dan nodigen wij u uit de website [Avocats.be](http://Avocats.be) te raadplegen of die van het bureau voor juridische bijstand van uw regio (voor [Brussel](https://www.bajbruxelles.be/)).
+
+
+      Indien u in aanmerking komt voor juridische tweedelijnsbijstand, maar hiervan afstand wenst te doen en een beroep wilt doen op onze diensten buiten dit stelsel, zullen wij u een te ondertekenen afstandsverklaring bezorgen.
+  subtitle: Een vertrouwensrelatie begint met duidelijke tarieven. Zo werken wij.
+  title: Erelonen
+  video:
+    title: Meer weten
+    url: https://youtu.be/Y-SKuT-XqGk
+  seo:
+    description: Uurtarief of forfait, zonder dossierkosten. Eerste afspraak aan 275
+      €, btw inbegrepen. Rizzo & Michiels legt u duidelijk uit wat onze
+      tussenkomst kost, nog vóór u zich tot iets verbindt.

@@ -1,3 +1,4 @@
+import { isLocale } from '../config/locales';
 import { navigate } from 'astro:transitions/client';
 
 export function initLanguagePicker() {
@@ -8,7 +9,6 @@ export function initLanguagePicker() {
     if (!newLang) return;
 
     const currentPath = window.location.pathname;
-    const supportedLanguages = ['fr', 'en', 'it'];
 
     if (currentPath.startsWith(`/${newLang}/`) || (currentPath === `/${newLang}`)) {
       return;
@@ -19,7 +19,7 @@ export function initLanguagePicker() {
 
     if (currentPath === '/' || pathParts.length === 0) {
       newPath = `/${newLang}/`;
-    } else if (supportedLanguages.includes(pathParts[0])) {
+    } else if (isLocale(pathParts[0])) {
       newPath = `/${newLang}/${pathParts.slice(1).join('/')}`;
     } else {
       newPath = `/${newLang}/${pathParts.join('/')}`;
