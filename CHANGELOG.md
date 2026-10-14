@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Fixed
+- **Blurry team portraits on high-density screens**: the portraits of Christine, Arnaud and Romain were stored at display size (500 px square, 533 px portrait), so the Image CDN never offered a sharper variant and re-encoded an already compressed file. They are re-exported from the cabinet's originals (RM-24) at up to 2x, same framing, and `cdnImage()` now offers a high-density variant as large as the source allows (e.g. 1.46x) instead of only an exact 2x, capped by the source height when cropping. Home cards and team portraits now ask the CDN for their real display size (250 px and 352 px instead of 500 px), so sharper portraits do not cost more bytes. Images served by the CDN are encoded at quality 85 instead of its default 75, which smoothed faces (about +8 KB per Retina portrait); SVG illustrations are not affected. Stephanie's portraits stay as they are until a higher-resolution original is available.
+
+## [2026-10-14]
+
+Production release (`release: 2026-10-14`, `7ad14f2e`): the October 2026 work (cabinet requests RM-1 to RM-12 and RM-17 to RM-27, Dutch locale, four-member team, staging workflow, Image CDN). Entries from « SVG sprite system » down were already live before this release but had never been versioned.
+
 ### Added
 - **End-to-end check of the CMS photo path**: `scripts/verify-cms-photo.mjs` runs a real Decap CMS (decap-server local backend) on a scratch copy of the repo and replays what the cabinet does in « Page Équipe → Membres »: a photo over 5 MB is refused with « Le fichier est trop volumineux. »; a 4.7 MB photo uploaded as Romain's square portrait lands in `public/assets/images` and changes only that field in `site-config.yml`; a Netlify-like build then serves it on the team page through the Image CDN (500 × 500). Not part of `npm test` (about 15 s, needs network for decap-server); the CDN itself is only exercised on a real deploy.
 - **Permanent staging at `staging.rizzo-michiels.be`**: long-lived `staging` branch (Netlify branch subdomain). The client reviews the next version there and edits content through `/admin/`, whose commits land on `staging`. Only `main` and `staging` remain; dead branches were deleted and Netlify deploys only these two.

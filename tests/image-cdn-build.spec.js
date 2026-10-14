@@ -12,9 +12,10 @@ if (dist) {
   test.describe('CMS photos go through the Netlify Image CDN (#42)', () => {
     for (const member of team()) {
       test(`${member.name}: home, team and profile portraits are resized`, () => {
-        for (const page of ['fr', 'fr/equipe']) {
+        // Display sizes: home card about 241 px wide, team portrait capped at 22rem.
+        for (const [page, size] of [['fr', 250], ['fr/equipe', 352]]) {
           const img = imgFor(page, member.image);
-          expect(img, `${page}: portrait of ${member.name}`).toContain(`src="${resized(member.image, 500, 500)}"`);
+          expect(img, `${page}: portrait of ${member.name}`).toContain(`src="${resized(member.image, size, size)}"`);
         }
         const portrait = member.profileImage || member.image;
         expect(imgFor(`fr/equipe/${member.slug}`, portrait)).toContain(`src="${resized(portrait, 600, 750)}"`);
