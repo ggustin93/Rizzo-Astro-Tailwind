@@ -146,56 +146,73 @@ it:
     description: Consulenza legale specializzata in diritto del lavoro per aziende a
       Bruxelles. Difesa e assistenza personalizzata.
   sections:
-    - title: Audit – Due diligence in diritto del lavoro e della sicurezza sociale
-      description: "Sei in fase di acquisizione, fusione o ristrutturazione e vuoi
-        valutare i rischi in materia di lavoro e sicurezza sociale della società
-        interessata? Realizziamo un audit completo: analisi dei contratti di
-        lavoro, conformità alle normative sul lavoro e sulla sicurezza sociale,
-        identificazione dei rischi (falsi lavoratori autonomi, contenziosi in
-        corso, passività in materia di lavoro e sicurezza sociale) e redazione
-        del rapporto di due diligence destinato al team che segue l'operazione o
-        ai tuoi consulenti finanziari."
+    - title: Audit Acquisizioni – Due diligence in diritto del lavoro e della
+        sicurezza sociale
+      description: Sta valutando un'acquisizione, una fusione o una ristrutturazione e
+        desidera verificare i rischi in materia di diritto del lavoro e
+        sicurezza sociale della società interessata? Effettuiamo audit completi
+        che comprendono l'analisi dei contratti di lavoro, la verifica della
+        conformità alla normativa applicabile, l'individuazione dei principali
+        rischi (falsi lavoratori autonomi, contenziosi in corso, passività in
+        materia di lavoro e sicurezza sociale) e la redazione di un rapporto di
+        due diligence destinato al team incaricato dell'operazione o ai Suoi
+        consulenti finanziari
     - title: Redazione e revisione dei contratti di lavoro, del regolamento di lavoro
         e delle politiche HR e GDPR
-      description: Vuoi rendere giuridicamente sicuri i tuoi contratti di lavoro, il
-        regolamento di lavoro o le politiche HR? Redigiamo e aggiorniamo i
-        contratti di lavoro (a tempo indeterminato, determinato, per studenti,
-        autonomi, flexi-job), il regolamento di lavoro, le politiche HR
-        (rimborso spese, IT, telelavoro, disconnessione) e le politiche di
-        trattamento dei dati personali (GDPR).
+      description: Desidera garantire la conformità giuridica dei Suoi contratti di
+        lavoro, del regolamento di lavoro o delle Sue politiche HR? Redigiamo e
+        aggiorniamo contratti di lavoro a tempo indeterminato e determinato,
+        contratti per studenti, contratti di collaborazione autonoma e contratti
+        flexi-job, nonché regolamenti di lavoro e politiche HR relative, tra
+        l'altro, al rimborso delle spese, all'utilizzo degli strumenti
+        informatici, al telelavoro e al diritto alla disconnessione. La
+        assistiamo inoltre nella predisposizione e nell'aggiornamento delle
+        politiche in materia di protezione dei dati personali, nel rispetto del
+        GDPR.
     - title: Consulenza – Gestione del rapporto di lavoro individuale, dall'assunzione
         alla cessazione
       situations:
-        - question: Stai assumendo il tuo primo dipendente in Belgio o vuoi strutturare un
-            pacchetto retributivo con bonus?
-          answer: Ti consigliamo fin dalla prima assunzione e durante tutta l'evoluzione
-            dei tuoi collaboratori all'interno dell'azienda.
-        - question: "Uno dei tuoi dipendenti è inabile al lavoro da lungo tempo o rientra
-            dopo un burnout: come gestire l'assenza e il reinserimento?"
-          answer: Ti affianchiamo nella gestione dell'assenza di lunga durata e, se del
-            caso, nel reinserimento dopo tale assenza.
-        - question: Devi licenziare un dipendente — con preavviso, indennità sostitutiva,
-            fine di un contratto a termine o risoluzione consensuale?
-          answer: Ti consigliamo sulla cessazione del contratto, sulle tutele contro il
-            licenziamento e sulle eventuali procedure speciali di licenziamento
-            applicabili.
-        - question: Un dipendente denuncia una situazione di discriminazione o molestie
-            nella tua azienda, oppure vuoi introdurre una politica di
-            prevenzione dei rischi psicosociali?
-          answer: Ti consigliamo sulla gestione della situazione individuale e ti
-            affianchiamo nell'introduzione di misure di prevenzione e nelle
-            relative procedure (procedura interna, persona di fiducia,
-            consulente per la prevenzione).
+        - question: "Sta assumendo il Suo primo dipendente in Belgio o desidera
+            strutturare un pacchetto retributivo che includa bonus e altri
+            incentivi? La assistiamo fin dalla prima assunzione e "
+          answer: La accompagniamo in tutte le fasi del rapporto di lavoro, tenendo conto
+            dell'evoluzione delle esigenze aziendali e della crescita dei Suoi
+            collaboratori.
+        - question: "Uno dei Suoi dipendenti è assente da lungo tempo per motivi di salute
+            o si appresta a rientrare al lavoro dopo un burnout? "
+          answer: La assistiamo nella gestione delle assenze di lunga durata e, ove
+            opportuno, nell'organizzazione del percorso di reinserimento
+            professionale, nel rispetto degli obblighi di legge e delle esigenze
+            dell'azienda e del lavoratore.
+        - question: "Deve procedere al licenziamento di un dipendente, con preavviso o
+            mediante il pagamento di un'indennità sostitutiva, alla cessazione
+            di un contratto a tempo determinato o alla risoluzione consensuale
+            del rapporto di lavoro? "
+          answer: La assistiamo nella scelta e nell'attuazione della modalità di
+            cessazione più appropriata, valutando i rischi giuridici, le tutele
+            applicabili contro il licenziamento e le eventuali procedure
+            speciali da rispettare.
+        - question: "Un dipendente ha segnalato una situazione di discriminazione o
+            molestia all'interno della Sua azienda oppure desidera introdurre
+            una politica di prevenzione dei rischi psicosociali? "
+          answer: La assistiamo nella gestione delle singole situazioni e nella
+            definizione e attuazione delle misure di prevenzione appropriate,
+            comprese le procedure interne e il coinvolgimento delle figure
+            competenti, quali la persona di fiducia e il consulente per la
+            prevenzione.
     - title: Negoziazione di accordi transattivi
-      description: Vuoi evitare un procedimento giudiziario lungo e incerto con un
-        dipendente? Privilegiamo, quando possibile, una risoluzione negoziata e
-        rapida delle controversie nell'interesse sia dell'azienda sia del
+      description: Desidera evitare un procedimento giudiziario lungo, costoso e
+        dall'esito incerto con un dipendente? Privilegiamo, ove possibile, la
+        ricerca di soluzioni negoziate e rapide, attraverso la conclusione di
+        accordi transattivi che tengano conto degli interessi dell'azienda e del
         lavoratore.
-    - title: Difesa davanti ai tribunali e alle corti del lavoro e alle ispezioni del
-        lavoro e dell'ONSS
-      description: Un ex dipendente contesta il licenziamento, oppure ricevi un
-        controllo dell'ispettorato sociale o dell'ONSS? Ti affianchiamo e
-        difendiamo i tuoi interessi nell'ambito di queste procedure.
+    - title: Assistenza e difesa dinanzi ai tribunali del lavoro e agli organi
+        ispettivi
+      description: Un ex dipendente contesta il licenziamento oppure la Sua azienda è
+        oggetto di un'ispezione sociale o di un controllo da parte dell'ONSS? La
+        assistiamo e difendiamo i Suoi interessi nell'ambito dei procedimenti
+        giudiziari e amministrativi, anche dinanzi ai tribunali del lavoro e
+        agli organi di ispezione competenti.
   ctaDestination: honoraires
 nl:
   title: Begeleiding en verdediging van ondernemingen
