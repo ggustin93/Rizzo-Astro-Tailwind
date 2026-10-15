@@ -207,16 +207,16 @@ it:
             rispetto.
     - title: Status professionale
       situations:
-        - question: Il tuo status non è chiaro? Pensi di essere un falso lavoratore
+        - question: Il Suo status non è chiaro? Pensa di essere un falso lavoratore
             autonomo?
           answer: Analizziamo i criteri di subordinazione e, se necessario, presentiamo
-            una domanda alla Commissione amministrativa per la regolamentazione
-            del rapporto di lavoro o un'azione di riqualificazione davanti al
-            tribunale del lavoro.
-        - question: Sei vittima di un infortunio sul lavoro?
-          answer: Verifichiamo il riconoscimento dell'infortunio da parte
-            dell'assicuratore obbligatorio contro gli infortuni sul lavoro e ti
-            difendiamo in caso di rifiuto o di sottovalutazione dell'indennizzo.
+            un’istanza alla Commissione amministrativa per la regolamentazione
+            del rapporto di lavoro o promuoviamo un’azione di riqualificazione
+            davanti al tribunale del lavoro.
+        - question: Ha subito un infortunio sul lavoro?
+          answer: Verifichiamo il riconoscimento dell’infortunio da parte
+            dell’assicuratore obbligatorio (assureur-loi) e La difendiamo in
+            caso di rifiuto o di indennizzo insufficiente.
     - title: Quadri, dirigenti
       situations:
         - question: Stai negoziando una posizione di quadro o dirigente? Vuoi far
