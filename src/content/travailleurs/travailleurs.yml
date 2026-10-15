@@ -219,15 +219,15 @@ it:
             caso di rifiuto o di indennizzo insufficiente.
     - title: Quadri, dirigenti
       situations:
-        - question: Stai negoziando una posizione di quadro o dirigente? Vuoi far
-            esaminare la tua clausola di non concorrenza, il tuo pacchetto di
-            retribuzione variabile (bonus, stock option, warrant) o la tua
+        - question: Sta negoziando una posizione di quadro o dirigente? Desidera far
+            esaminare la Sua clausola di non concorrenza, il Suo pacchetto di
+            retribuzione variabile (bonus, stock option, warrant) o la Sua
             clausola di garanzia della retribuzione?
           answer: Analizziamo e negoziamo queste clausole e ne difendiamo la validità o
-            l'applicazione in caso di controversia (non concorrenza contestata,
+            l’applicazione in caso di controversia (non concorrenza contestata,
             bonus differiti rimessi in discussione dopo un licenziamento).
-        - question: Sei un dirigente e ti viene proposta un'indennità di uscita negoziata?
-          answer: Valutiamo l'offerta e negoziamo le condizioni della tua uscita.
+        - question: È un dirigente e Le viene proposta una buonuscita negoziata?
+          answer: Valutiamo l’offerta e negoziamo le condizioni della Sua uscita.
     - title: Negoziazione o difesa in giudizio
       description: In base alla tua situazione, privilegiamo, quando possibile, una
         risoluzione rapida e negoziata della controversia con il tuo datore di
