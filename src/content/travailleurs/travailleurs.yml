@@ -177,35 +177,34 @@ it:
   sections:
     - title: Contratto, risoluzione e fine della collaborazione
       situations:
-        - question: Vuoi far esaminare il tuo contratto di lavoro prima di firmarlo?
+        - question: Vuole far esaminare il Suo contratto di lavoro prima di firmarlo?
           answer: Analizziamo le clausole (retribuzione, bonus, non concorrenza, ecc.) e
-            ti consigliamo sui tuoi diritti e obblighi.
-        - question: Il tuo datore di lavoro ti propone una risoluzione consensuale, ma non
-            sai se sia nel tuo interesse?
-          answer: Valutiamo l'offerta e definiamo insieme a te come negoziare condizioni
+            La consigliamo sui Suoi diritti e obblighi.
+        - question: Il Suo datore di lavoro Le propone una risoluzione consensuale, ma non
+            sa se sia nel Suo interesse?
+          answer: Valutiamo l'offerta e definiamo insieme come negoziare condizioni
             migliori.
-        - question: Vuoi dimetterti?
-          answer: Ti informiamo sul preavviso da rispettare e sulle conseguenze delle
+        - question: Vuole dimettersi?
+          answer: La informiamo sul preavviso da rispettare e sulle conseguenze delle
             dimissioni.
-        - question: Vuoi contestare il tuo licenziamento (per un motivo manifestamente
-            irragionevole, abusivo o discriminatorio) o verificare la tua
-            indennità sostitutiva del preavviso?
-          answer: Analizziamo i motivi addotti e promuoviamo un'azione davanti al
-            tribunale del lavoro se puoi avere diritto a un indennizzo.
+        - question: Vuole contestare un licenziamento (per un motivo manifestamente
+            irragionevole, abusivo o discriminatorio) o verificare il calcolo
+            dell’indennità sostitutiva del preavviso?
+          answer: Analizziamo i motivi addotti e, qualora Lei possa avere diritto a un
+            indennizzo, promuoviamo un’azione davanti al tribunale del lavoro.
     - title: Discriminazione, molestie e benessere sul lavoro
       situations:
-        - question: Sei vittima di discriminazione o molestie? Vieni emarginato a causa di
-            un burnout?
-          answer: Ti ascoltiamo e ti indirizziamo prima verso le opportune procedure
-            interne (consulente per la prevenzione, persona di fiducia), ti
-            consigliamo sulle possibilità a tua disposizione e, se necessario,
-            raccogliamo le prove, ci rivolgiamo all'auditorato del lavoro o
-            avviamo un procedimento se puoi avere diritto a un indennizzo.
-        - question: Le tue condizioni di lavoro sono cambiate durante o dopo una
-            gravidanza? Desideri usufruire del credito di tempo o del congedo
+        - question: È vittima di discriminazione o molestie? Subisce un’emarginazione a
+            causa di un burnout?
+          answer: La orientiamo anzitutto verso le procedure interne previste (consulente
+            per la prevenzione, persona di fiducia) e, se necessario, ci
+            rivolgiamo alla Procura del lavoro (auditorat du travail) o avviamo
+            un’azione giudiziaria.
+        - question: Le sono state modificate le condizioni di lavoro durante o dopo una
+            gravidanza? Desidera richiedere il credito di tempo o il congedo
             parentale?
-          answer: Ti consigliamo sui tuoi diritti e ti difendiamo se non vengono
-            rispettati.
+          answer: La informiamo sui Suoi diritti e La difendiamo in caso di mancato
+            rispetto.
     - title: Status professionale
       situations:
         - question: Il tuo status non è chiaro? Pensi di essere un falso lavoratore
