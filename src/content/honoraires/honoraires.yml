@@ -183,61 +183,67 @@ it:
   previsibilite:
     title: Cosa coprono i nostri onorari
     full_content: >-
-      I nostri onorari remunerano l'insieme delle prestazioni svolte nell'ambito
-      della vostra pratica. Alcune sono direttamente visibili: le riunioni, le
-      udienze, la redazione di memorie o di lettere. Altre, altrettanto
-      indispensabili, lo sono meno: lo studio approfondito della pratica, le
-      ricerche giuridiche, gli scambi con le controparti, le pratiche
-      amministrative, la preparazione dei documenti, i tempi di attesa alle
-      udienze.
+      #### Prestazioni visibili e meno visibili
 
 
-      Per contenere i costi, vi invitiamo a trasmetterci documenti completi e ordinati, a raggruppare per quanto possibile le vostre domande e a rispondere rapidamente alle nostre richieste. Una collaborazione fluida accelera la gestione della vostra pratica e ottimizza il tempo fatturabile.
+      I nostri onorari coprono tutte le attività svolte nell'ambito della Sua pratica. Alcune sono immediatamente percepibili, come gli incontri, le udienze, la redazione di atti difensivi e di corrispondenza. Altre, altrettanto essenziali, sono meno visibili: l'esame approfondito del fascicolo, le ricerche giuridiche, gli scambi con la controparte, gli adempimenti amministrativi, la preparazione della documentazione e i tempi di attesa in udienza.
 
 
-      Utilizziamo strumenti di intelligenza artificiale (in particolare JEF, strumento specializzato per gli avvocati belgi, oltre ad altri strumenti come Claude o ChatGPT, sempre in forma anonimizzata) per guadagnare in efficienza senza mai delegare il ragionamento giuridico.
+      #### Come contribuire a contenere i costi
 
 
-      In concreto, ciò si traduce in una maggiore reattività, tempi di gestione ridotti e un miglior rapporto qualità-prezzo per voi. La nostra competenza giuridica resta al centro di ogni decisione: l'IA è uno strumento, il giudizio dell'avvocato è insostituibile.
+      Per contenere i costi della Sua pratica, La invitiamo a trasmetterci documenti completi e ben organizzati, a raggruppare, ove possibile, le Sue domande e a rispondere tempestivamente alle nostre richieste. Una collaborazione efficace facilita la gestione del fascicolo e consente di limitare il tempo dedicato alle attività fatturabili.
 
 
-      Da parte vostra, un messaggio breve e mirato resta sempre il più efficace, che sia scritto da voi o con l'aiuto di uno strumento di IA. Prima di inviarlo, verificate che i punti sollevati non abbiano già ricevuto risposta: ciò accelera la gestione della vostra pratica e contiene i vostri onorari.
+      #### L'intelligenza artificiale al servizio della Sua pratica
+
+
+      Ci avvaliamo di strumenti di intelligenza artificiale, tra cui JEF, una soluzione specializzata per gli avvocati belgi, nonché strumenti come Claude e ChatGPT, utilizzati previa anonimizzazione dei dati. Questi strumenti ci consentono di lavorare con maggiore efficienza, senza mai delegare all'intelligenza artificiale l'analisi e il ragionamento giuridico.
+
+
+      In concreto, il loro utilizzo ci permette di rispondere più rapidamente, ridurre i tempi di gestione delle pratiche e migliorare il rapporto tra qualità del servizio e costi. La competenza giuridica rimane al centro di ogni intervento: l'intelligenza artificiale è uno strumento di supporto, mentre la valutazione professionale dell'avvocato resta insostituibile.
+
+
+      Anche da parte Sua, comunicazioni brevi e mirate contribuiscono a una gestione più efficiente della pratica, indipendentemente dal fatto che siano redatte personalmente o con l'ausilio di strumenti di intelligenza artificiale. Prima di inviare un messaggio, La invitiamo a verificare che le questioni sollevate non abbiano già ricevuto risposta. Ciò permette di evitare scambi superflui, accelerare la gestione della pratica e contenere gli onorari.
   forfaits:
-    title: Trasparenza e prevedibilità
+    title: Trasparenza
     intro: >-
-      Le modalità di calcolo dei nostri onorari vi vengono comunicate per
+      Le modalità di calcolo dei nostri onorari Le vengono comunicate per
       iscritto prima dell'inizio del nostro intervento.
 
 
-      Lavoriamo a tariffa oraria, fatturata mensilmente man mano che le prestazioni vengono svolte, oppure, in alcuni casi, a forfait fisso "tutto compreso", eventualmente maggiorato di un onorario di risultato. Non ci sono spese di apertura pratica né spese d'ufficio. A ogni fattura è allegato il dettaglio delle prestazioni svolte.
+      Lavoriamo a tariffa oraria, con fatturazione mensile delle prestazioni man mano che vengono svolte, oppure, in determinati casi, a forfait fisso «tutto compreso», eventualmente maggiorato di un onorario di risultato. Non applichiamo spese di apertura della pratica né spese d'ufficio. Ogni fattura è accompagnata dal dettaglio delle prestazioni svolte.
 
 
-      Nel corso della pratica chiediamo regolarmente degli acconti, per garantire un monitoraggio finanziario trasparente ed evitare l'accumulo di importi elevati alla fine dell'incarico.
+      Nel corso della pratica, Le chiediamo regolarmente il versamento di acconti, al fine di garantire un monitoraggio finanziario trasparente ed evitare l'accumulo di importi elevati alla conclusione dell'incarico.
 
 
-      Le spese legate all'intervento di terzi (ufficiali giudiziari, periti, traduttori) e le spese di giustizia sono rifatturate al prezzo di costo o pagabili direttamente al terzo interessato.
+      Le spese relative all'intervento di terzi (ufficiali giudiziari, periti, traduttori), così come le spese giudiziarie, vengono riaddebitate al costo effettivo oppure pagate direttamente al terzo interessato.
     exemples: []
   transparence:
-    title: Avete bisogno di un primo parere?
+    title: Desidera un primo parere?
     points:
-      - Prenotate direttamente il vostro appuntamento tramite il nostro
-        calendario online. Il primo incontro è fatturato 275 € IVA inclusa. Non
-        esitate a portare tutti i documenti che ritenete utili (contratto di
-        lavoro, corrispondenza, buste paga, ecc.) affinché possiamo analizzare
-        concretamente la vostra situazione fin da questo primo incontro.
+      - >-
+        Consulti le disponibilità direttamente sul nostro calendario online e
+        prenoti il Suo appuntamento. Il primo colloquio è fatturato 275 € IVA
+        inclusa.
+
+
+        Non esiti a portare con sé tutti i documenti che ritiene utili (contratto di lavoro, corrispondenza, buste paga, ecc.), così da consentirci di esaminare concretamente la Sua situazione fin dal primo incontro.
   assurance:
-    title: Pensate all'assicurazione di protezione giuridica
+    title: Valuti l'assicurazione di tutela legale
     content: >-
-      L'assicurazione di Protezione Giuridica (o "difesa in giudizio") può farvi
-      risparmiare molto denaro.
+      Un'assicurazione di tutela legale, detta anche «assicurazione di difesa in
+      giudizio», può consentirLe di risparmiare somme considerevoli.
 
 
-      Diversi assicuratori in Belgio offrono un'assicurazione di protezione giuridica che copre i conflitti nell'ambito di un rapporto di lavoro (Ethias, Arag, Das, Arces), sia che siate lavoratori o datori di lavoro.
+      Diversi assicuratori operanti in Belgio, tra cui Ethias, Arag, DAS e ARCES, propongono polizze che coprono le controversie nell'ambito di un rapporto di lavoro, sia per i lavoratori sia per i datori di lavoro.
 
 
-      Verificate con il vostro broker o assicuratore se siete coperti o se tale assicurazione può essere sottoscritta e il periodo di attesa.
-       
-      In questo caso, tutti o parte dei vostri onorari legali saranno pagati dalla vostra assicurazione e non da voi.
+      Le consigliamo di verificare con il Suo intermediario assicurativo o con la Sua compagnia se dispone già di una copertura applicabile alla Sua situazione, se sia possibile sottoscriverne una e quale sia l'eventuale periodo di carenza.
+
+
+      Se la Sua polizza copre la controversia, l'assicurazione potrà farsi carico di tutti o di parte degli onorari legali, evitando che tali costi ricadano interamente su di Lei.
   tarifs:
     title: Tariffe
     travailleur: Sei un lavoratore
@@ -245,21 +251,21 @@ it:
   aideJuridique:
     title: Patrocinio a spese dello Stato - Assistenza pro deo
     content: >-
-      L'assistenza legale permette a chiunque di beneficiare di una prima
-      consulenza legale gratuita (assistenza legale di 1° livello). Permette
-      inoltre a determinate categorie di persone di beneficiare dell'assistenza
-      gratuita di un avvocato per il trattamento di un caso in tutte le materie
-      legali (assistenza legale di 2° livello). Questi avvocati sono volontari.
-      Forniscono ai loro clienti gli stessi servizi che nel contesto
-      dell'assistenza legale a pagamento: consulenza, assistenza e
-      rappresentanza nel contesto di un procedimento giudiziario, amministrativo
-      o nell'ambito di una mediazione, presentazione di un ricorso, ecc.
+      L'assistenza legale consente a chiunque di beneficiare di una prima
+      consulenza giuridica gratuita (*assistenza legale di prima linea*).
+      Inoltre, determinate categorie di persone possono beneficiare, in base ai
+      requisiti previsti, dell'assistenza gratuita di un avvocato per la
+      gestione di una pratica in qualsiasi ambito giuridico (*assistenza legale
+      di seconda linea*).
 
 
-      Se desiderate informarvi o verificare se soddisfate le condizioni per beneficiare dell'assistenza legale di 2° livello, vi invitiamo a consultare il sito [Avocats.be](http://Avocats.be) o il sito dell'ufficio di assistenza legale della vostra regione (per [Bruxelles](https://www.bajbruxelles.be/)).
+      Gli avvocati che prestano assistenza legale operano su base volontaria e offrono gli stessi servizi previsti nell'ambito di un incarico retribuito: consulenza, assistenza e rappresentanza in procedimenti giudiziari o amministrativi, nell'ambito di una mediazione, nella presentazione di un ricorso e in altre attività connesse alla pratica.
 
 
-      Se possedete i requisiti per beneficiare del patrocinio a spese dello Stato, ma desiderate rinunciarvi e avvalervi della nostra assistenza al di fuori di tale regime, vi sottoporremo un modulo di rinuncia da firmare.
+      Se desidera ottenere maggiori informazioni o verificare se possiede i requisiti per beneficiare dell'assistenza legale di seconda linea, La invitiamo a consultare il sito di Avocats.be oppure quello dell'Ufficio di assistenza legale competente per la Sua regione, ad esempio [l'Ufficio di assistenza legale di Bruxelles](https://www.bajbruxelles.be/).
+
+
+      Se possiede i requisiti per beneficiare dell'assistenza legale di seconda linea, ma desidera rinunciarvi per avvalersi della nostra assistenza al di fuori di tale regime, Le sottoporremo un modulo di rinuncia da firmare.
   subtitle: Un rapporto di fiducia inizia con tariffe chiare. Ecco come lavoriamo.
   title: Onorari
   video:
