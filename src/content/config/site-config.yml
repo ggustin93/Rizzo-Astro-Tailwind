@@ -1,13 +1,13 @@
 sectionsVisibility: false
-allowIndexing: true
+cabinetEmail: info@rizzo-michiels.be
 lawyers:
   - phone: +32 488 40 45 49
-    whatsapp: ''
+    whatsapp: ""
     email: christine@rizzoavocate.be
     calendarLink: https://cal.com/c.rizzo-avocat.be/rendez-vous?duration=15
     id: christine-rizzo
   - phone: +32 498 50 29 01
-    whatsapp: ''
+    whatsapp: ""
     email: stephanie@michielsavocate.be
     calendarLink: https://cal.com/stephanie-michiels-v76dvl
     id: stephanie-michiels
@@ -18,17 +18,17 @@ lawyers:
   - id: romain-archalaus
     phone: +32 495 69 31 91
     email: romain@archalausavocat.be
-    calendarLink: ''
+    calendarLink: ""
 contactIllustration: /assets/images/illustration_cta_2.svg
-cabinetEmail: info@rizzo-michiels.be
-address: Chaussée de Waterloo 1151, 1180 Bruxelles
 copyrightText: C. Rizzo & S. Michiels
+address: Chaussée de Waterloo 1151, 1180 Bruxelles
+allowIndexing: true
 seo:
   siteUrl: https://rizzo-michiels.be
   siteName: Rizzo & Michiels
-  siteDescription: >-
-    Rizzo & Michiels, cabinet d'avocats à Bruxelles en droit du travail belge et
-    droit de la fonction publique européenne. Une équipe de quatre avocats.
+  siteDescription: Rizzo & Michiels, cabinet d'avocats à Bruxelles en droit du
+    travail belge et droit de la fonction publique européenne. Une équipe de
+    quatre avocats.
   defaultSocialImage: /default-social-image.jpg
   favicon: /favicon.ico
   faviconPng32: /favicon-32x32.png
@@ -44,8 +44,8 @@ team:
   - id: stephanie-michiels
     slug: stephanie-michiels
     name: Stephanie Michiels
-    image: /assets/images/smichiels-optimized.webp
-    profileImage: /assets/images/smichiels-portrait.webp
+    image: /assets/images/1000074746.png
+    profileImage: /assets/images/1000074746.png
     linkedin: https://www.linkedin.com/in/stephanie-michiels-/
   - id: arnaud-vanderhoeven-jacobs
     slug: arnaud-vanderhoeven-jacobs
