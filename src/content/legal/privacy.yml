@@ -84,6 +84,8 @@ en:
 
         Telephone: %%PHONES%%
 
+        E-mail: [info@rizzo-michiels.be](info@rizzo-michiels.be)
+
         Company registration number: 1034.645.352
     - title: Personal data processed
       text: >-
@@ -144,6 +146,8 @@ it:
 
         Telefono: %%PHONES%%
 
+        E-mail: [info@rizzo-michiels.be](info@rizzo-michiels.be)
+
         Numero di registrazione: 1034.645.352
     - title: Dati personali trattati
       text: >-
@@ -201,12 +205,12 @@ nl:
         de BV RIZZO & MICHIELS in samenwerking met Guillaume Gustin, vanuit een verantwoorde benadering die de privacy van de gebruikers respecteert. Onze aanpak is gebaseerd op de eerbiediging van de persoonlijke levenssfeer en een minimaal gebruik van gegevens, overeenkomstig de beginselen van verantwoord digitaal ontwerp.
     - title: Identiteit en contactgegevens van de verwerkingsverantwoordelijke
       text: >-
-        
-        RIZZO & MICHIELS BV vertegenwoordigd door Mr. Christine Rizzo en Mr. Stephanie Michiels\
+        RIZZO & MICHIELS BV vertegenwoordigd door Mr. Christine Rizzo en Mr.
+        Stephanie Michiels\
 
         Adres: %%ADDRESS%%\
 
-        E-mail: %%EMAIL%%\
+        E-mail: [info@rizzo-michiels.be](info@rizzo-michiels.be)\
 
         KBO-nr.: 1034.645.352
 
