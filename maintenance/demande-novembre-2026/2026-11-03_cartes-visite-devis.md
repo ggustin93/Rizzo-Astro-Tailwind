@@ -10,9 +10,9 @@ J'ai regardé le projet transmis par Romain. Les fichiers exportés depuis Canva
 
 Pour la préparation des 4 cartes, je compte environ 3h30 de travail, soit 260 € HT. Pour l'impression, je compare les prix de trois imprimeurs avant de commander : 100 cartes recto verso par personne sur un papier mat de 400 g, livrées au cabinet. Je l'estime à environ 100 € HT pour les quatre, ce qui ferait 360 € HT au total.
 
-Je peux commencer vendredi et vous envoyer deux propositions en PDF : une version fidèle au projet, aux couleurs du site, et une variante plus graphique, avec une bande de couleur en bas de carte. Vous me faites part de vos remarques (un tour de corrections est compris), et je ne passe commande qu'après votre accord.
+Je vous enverrai ensuite deux propositions en PDF : une version fidèle au projet, aux couleurs du site, et une variante plus graphique, avec une bande de couleur en bas de carte. Vous me faites part de vos remarques (un tour de corrections est compris), et je ne passe commande qu'après votre accord.
 
-Si cela vous convient, un petit « ok » suffit pour que je me lance.
+Si cela vous convient, je peux y regarder dès vendredi.
 
 À bientôt,
 Guillaume
