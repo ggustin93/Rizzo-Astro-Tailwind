@@ -6,23 +6,23 @@ Bonjour Christine, bonjour Stephanie,
 
 Merci pour votre message. Je m'occupe volontiers de vos cartes de visite.
 
-Je pars du projet transmis par Romain (même mise en page, mêmes textes) et je le reconstruis en Synonym dans des fichiers prêts pour l'imprimeur : les fichiers exportés depuis Canva ne permettent pas de changer la police.
+Je pars du projet transmis par Romain (même mise en page, mêmes textes) et je le reconstruis en Synonym dans des fichiers prêts pour l'imprimeur, car les fichiers exportés depuis Canva ne permettent pas de changer la police.
 
 ## Estimation
-**Préparation des 4 cartes : 260 € HT** (environ 3h30 : reconstruction, contrôles d'impression, épreuve et un tour de corrections).
-**Impression : 100 € HT**, pour 100 cartes recto verso par personne sur papier mat 400 g, chez Printdeal (imprimeur belge, livraison incluse). Le tarif actuel est de 86 € HT pour les 4 commandes ; l'arrondi couvre un éventuel ajustement de prix ou de papier.
+La préparation des 4 cartes représente environ 3h30, soit 260 € HT.
+
+L'impression est prévue chez Printdeal, un imprimeur belge, livraison incluse : 100 cartes recto verso par personne sur papier mat 400 g. Le tarif actuel est de 86 € HT pour les 4 commandes ; je compte 100 € HT pour couvrir un éventuel ajustement de prix ou de papier. Passer de 50 à 100 cartes ne coûte que 1,50 € HT de plus par personne.
+
 **Total : 360 € HT**, impression comprise.
 
-Pour un papier très épais (600 g, MOO), comptez environ 550 € HT au total. Je vous confirmerai le prix exact avant toute commande.
-
-À titre indicatif, 100 cartes ne coûtent que 1,50 € HT de plus que 50 par personne.
+Pour un papier très épais (600 g, chez MOO), comptez environ 550 € HT au total. Je vous confirmerai le prix exact avant toute commande.
 
 ## Déroulement
-1. Je commence vendredi et vous envoie les épreuves en PDF : une version fidèle au projet, aux couleurs du site, et une variante plus épurée.
-2. Vous me transmettez vos remarques (un tour de corrections est compris).
-3. Je passe commande après votre accord écrit ; les cartes sont livrées au cabinet.
+1. Je commence vendredi et vous envoie deux épreuves en PDF : une version fidèle au projet, aux couleurs du site, et une variante plus épurée.
+2. Vous me transmettez vos remarques ; un tour de corrections est compris.
+3. Je passe commande après votre accord écrit, et les cartes sont livrées au cabinet.
 
-Si cette proposition vous convient, une simple confirmation par retour de mail suffit pour que je démarre.
+Si cette proposition vous convient, une confirmation par retour de mail suffit pour que je démarre.
 
 Bien à vous,
 
@@ -48,3 +48,4 @@ Guillaume
 - 04/11 : version finale, plus professionnelle, après l'avis de trois experts UX (rédaction claire, architecture de décision, lecture sur mobile). Studio Infanti et le détail technique sont retirés. L'estimation est précisée (260 € HT, environ 3h30 ; impression 100 € HT pour un tarif réel de 86 € HT). Une seule confirmation suffit. Début vendredi 06/11, avec deux épreuves : version fidèle aux couleurs du site et variante épurée (prototype /impeccable). L'option légère (Canva) n'est plus proposée, gardée en réserve à 75 € HT + impression.
 - Simulation Printdeal (navigateur Orca, 04/11) : 85 × 55, papier couché mat 400 g, recto verso 4/4, coins droits, livraison normale gratuite. 25 ex. : 19,20 € ; 50 ex. : 20,00 € ; 100 ex. : 21,50 € ; 250 ex. : 26,75 € HT. Vistaprint : 250 cartes standard à 15,99 € TTC (promo), minimum 100. MOO Luxe : 74 € les 100, 600 g, format de coupe 84 × 55, TVA non précisée.
 - Prototypes : scratchpad `cartes/proto/` (christine-origine, christine-site, christine-impeccable ; HTML/CSS, export PDF avec Chromium, webfont Synonym Regular du repo, à remplacer par l'OTF Fontshare).
+- 04/11 : passe humanizer sur la version finale. Les étiquettes en gras de l'estimation deviennent des phrases ; seul le total reste en gras. Le détail des 3h30, qui répétait le déroulement, est retiré. L'écart 50/100 cartes est rapproché de l'impression. « simple » et « à titre indicatif » sont supprimés.
