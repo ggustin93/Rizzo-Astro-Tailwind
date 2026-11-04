@@ -17,12 +17,14 @@ Synonym ne prend pas exactement la même place que la police actuelle : quelques
 • La commande chez l'imprimeur, une fois l'épreuve validée par écrit, et la livraison au cabinet.
 
 ## Prix
-**Préparation des 4 cartes : 240 € HT** (40 € HT par personne qui s'ajouterait plus tard).
+**Préparation des 4 cartes : 260 € HT** (40 € HT par personne qui s'ajouterait plus tard).
 **Impression** : je la commande et vous la refacture au prix coûtant. Pour 100 cartes par personne sur un papier mat épais, comptez environ 15 à 35 € HT par personne chez un imprimeur belge en ligne ; pour un rendu plus luxueux (papier très épais), environ 75 € par personne. Les couleurs imprimées peuvent varier légèrement par rapport à l'écran.
 
 A priori, 100 cartes coûtent à peine plus que 50 chez un imprimeur classique : je vous conseille donc 100 exemplaires.
 
-Si la personne qui a réalisé le projet préfère faire elle-même le changement de police dans Canva, c'est aussi possible : je vérifierai alors simplement les fichiers et m'occuperai de l'impression (85 € HT).
+Si la personne qui a réalisé le projet préfère faire elle-même le changement de police dans Canva, c'est aussi possible : je vérifierai alors simplement les fichiers et m'occuperai de l'impression (75 € HT).
+
+Si vous hésitez sur le papier, je peux vous faire envoyer des échantillons avant de commander ; les 4 cartes partent ensuite en une seule commande.
 
 Deux questions pour lancer la commande :
 1. 100 cartes par personne vous conviennent-elles ?
@@ -42,7 +44,8 @@ Guillaume
 - Police : Synonym officielle sur Fontshare (ITF Free Font License, impression commerciale OK). La webfont du repo vient d'OnlineWebFonts (licence floue) : à remplacer éventuellement, dans une autre demande.
 - Couleurs du site proposées sur l'épreuve : #263952, #068D9D, #FFCC33, #53599A (au lieu de #1a3060, #3a8cbc, #ecb82a, #4262b4 dans Canva).
 - Prix relevés le 03/11 : Printdeal à partir de 13,99 € HTVA les 500 cartes ; MOO Luxe à 42 € les 50 et 74 € les 100 ; OvernightPrints premium à partir de 19,46 € TTC les 100. CarteVisite.be écarté (livraison en France seulement). Graphistes belges : 130 à 350 € pour une carte. Guillaume : 85 € HT/h.
-- Impression refacturée au prix coûtant, sans marge. Option légère à 85 € HT si l'auteure du projet change elle-même la police dans Canva.
+- Impression refacturée au prix coûtant, sans marge. Option légère à 75 € HT si l'auteure du projet change elle-même la police dans Canva.
 - 04/11 : mail revu après l'avis de trois experts (graphiste print, relation client, pricing freelance). Ils sont d'accord pour annoncer le travail, mais en écrivant « reconstruire à l'identique » plutôt que « refaire ». « Refaire » vexerait l'auteure, ouvrirait la porte à une refonte et ferait paraître 240 € cher pour « juste une police ». Ajouts : référence Studio Infanti, petits écarts annoncés sur l'épreuve, un seul tour de corrections avec les remarques groupées, accord écrit avant la commande, couleurs imprimées qui varient de l'écran. Écartés : « basse définition » (faux, le monogramme est à environ 560 ppp), « Synonym plus large » (non mesuré), le nom de Clémentine (le cabinet ne la nomme pas).
 - Méthode prévue : un gabarit HTML/CSS alimenté par site-config, export PDF avec Playwright, puis conversion CMJN avec Ghostscript. Les SVG ne sont pas éditables (texte vectorisé, logo et icônes en images).
 - Point ouvert : l'imprimeur utilisé pour Studio Infanti. S'il a donné satisfaction, il devient la recommandation principale.
+- 04/11 : tarification. Forfait de 260 € HT pour la préparation (calcul interne : environ 3,5 h à 75 € HT/h ; 75 € parce que ce n'est pas le cœur de métier). Le taux horaire n'est volontairement pas écrit dans le mail : il ne doit pas contredire les 85 € HT/h hors forfait annoncés à Christine en avril. Option légère à 75 € HT (environ 1 h). Personne supplémentaire : 40 € HT. Impression : une seule commande pour les 4, avec des échantillons de papier si elles hésitent (pas de commande test pour Christine seule : deux frais de port, plus de délai, et un risque d'écart de teinte entre lots).
