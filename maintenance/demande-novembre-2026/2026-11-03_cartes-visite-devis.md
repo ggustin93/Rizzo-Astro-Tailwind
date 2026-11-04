@@ -18,7 +18,7 @@ Synonym ne prend pas exactement la même place que la police actuelle, donc quel
 
 ## Prix
 Tout compris, pour les 4 cartes et 100 exemplaires par personne sur un papier mat épais : **360 € HT**. Ce montant couvre la préparation (260 € HT) et l'impression (environ 100 € HT), que je commande directement.
-Avec un papier plus épais, au toucher plus marqué : **560 € HT** au total.
+Avec un papier très épais (600 g, haut de gamme) : environ **550 € HT** au total. Je vous confirmerai le prix exact avant de commander.
 
 Si la personne qui a réalisé le projet préfère changer elle-même la police dans Canva, c'est aussi possible : je vérifierai alors les fichiers et m'occuperai de l'impression, pour **175 € HT** impression comprise.
 
@@ -48,3 +48,4 @@ Guillaume
 - 04/11 : relecture anti-IA (liaisons « d'ailleurs », « donc » retirées, répétitions de « à l'identique » et des marges allégées, « vectoriel » expliqué). Phrase sur Canva rendue exacte : seuls les SVG ont le texte vectorisé, le PDF incorpore Poppins, mais un export Canva ne permet de toute façon pas de changer la police. Le conseil des 100 cartes et l'offre d'échantillons sont intégrés aux deux questions.
 - 04/11 : prix tout compris. Guillaume achète l'impression et l'inclut dans le devis : 360 € HT (260 € de préparation + environ 100 € d'impression pour 4 × 100 cartes mat épais), 560 € HT avec papier luxueux (environ 300 € chez MOO Luxe), 175 € HT pour l'option légère (75 € + impression). Prix relevés le 04/11 pour 100 cartes recto verso, livraison gratuite en Belgique : Printoclock 350 g dès 16 € HT, Printdeal 300 g 21,50 € HT, Helloprint 340 g 16,79 € HT. Une commande par carte (4 fichiers différents). L'arrondi absorbe les écarts de configuration, sans marge cachée. Début des travaux annoncé pour samedi 07/11.
 - 04/11 : passe humanizer. « légèrement » n'apparaît plus deux fois ; l'avertissement sur les couleurs imprimées rejoint la phrase sur l'épreuve ; le gras de la section Prix ne porte plus que sur les montants ; « version plus luxueuse » devient « version plus épaisse », un mot plus concret.
+- 04/11 : option haut de gamme revérifiée chez MOO Luxe : 600 g, 74 € les 100, recto verso inclus, un design différent possible par carte dans un même paquet. TVA comprise ou non : non indiqué. Livraison vers la Belgique : à calculer. Format de coupe : 84 × 55 mm (et non 85 × 55), donc fichiers à adapter si cette option est retenue. Le « 560 € HT » ferme devient « environ 550 € HT, prix exact confirmé avant commande ».
