@@ -1,32 +1,28 @@
 # Mail à Christine et Stephanie : devis cartes de visite
 
-À : christine@rizzoavocate.be, cc stephanie@michielsavocate.be. Objet : « Cartes de visite : devis ». Envoyé par Guillaume (page mail-link).
+À : christine@rizzoavocate.be, cc stephanie@michielsavocate.be. Objet : « Cartes de visite : proposition et estimation ». Envoyé par Guillaume (page mail-link).
 
 Bonjour Christine, bonjour Stephanie,
 
-Merci pour votre message. Oui, je m'en occupe volontiers. J'ai récemment préparé et fait imprimer les cartes de visite de Studio Infanti.
+Merci pour votre message. Je m'occupe volontiers de vos cartes de visite.
 
-J'ai regardé le projet transmis par Romain : il est soigné, et je le garde comme modèle (même mise en page, mêmes textes). Dans les fichiers exportés depuis Canva, les textes ne sont plus modifiables : la police ne peut pas être changée directement. Je vais donc reconstruire les cartes à l'identique dans un fichier prêt pour l'impression, avec le logo et les icônes du site, nets à toutes les tailles (en vectoriel).
+Je pars du projet transmis par Romain (même mise en page, mêmes textes) et je le reconstruis en Synonym dans des fichiers prêts pour l'imprimeur : les fichiers exportés depuis Canva ne permettent pas de changer la police.
 
-Synonym ne prend pas exactement la même place que la police actuelle, donc quelques détails bougeront, et j'éloignerai un peu du bord les noms les plus longs (Romain et Arnaud). Je vous proposerai aussi une version aux couleurs exactes du site. Vous comparerez le tout sur une épreuve en PDF ; gardez en tête que les couleurs imprimées varient un peu par rapport à l'écran. La commande ne part qu'après votre accord écrit.
+## Estimation
+**Préparation des 4 cartes : 260 € HT** (environ 3h30 : reconstruction, contrôles d'impression, épreuve et un tour de corrections).
+**Impression : 100 € HT**, pour 100 cartes recto verso par personne sur papier mat 400 g, chez Printdeal (imprimeur belge, livraison incluse). Le tarif actuel est de 86 € HT pour les 4 commandes ; l'arrondi couvre un éventuel ajustement de prix ou de papier.
+**Total : 360 € HT**, impression comprise.
 
-## Ce qui est compris
-• Les 4 cartes recto verso en Synonym, avec la version officielle de la police (gratuite, y compris pour l'impression).
-• Des fichiers conformes aux exigences de l'imprimeur : marges de sécurité, fond perdu et couleurs d'impression.
-• Une épreuve en PDF, avec un tour de corrections (idéalement, vos remarques regroupées dans un seul mail).
-• La commande chez l'imprimeur et la livraison au cabinet.
+Pour un papier très épais (600 g, MOO), comptez environ 550 € HT au total. Je vous confirmerai le prix exact avant toute commande.
 
-## Prix
-Tout compris, pour les 4 cartes et 100 exemplaires par personne sur un papier mat épais : **360 € HT**. Ce montant couvre la préparation (260 € HT) et l'impression (environ 100 € HT), que je commande directement.
-Avec un papier très épais (600 g, haut de gamme) : environ **550 € HT** au total. Je vous confirmerai le prix exact avant de commander.
+À titre indicatif, 100 cartes ne coûtent que 1,50 € HT de plus que 50 par personne.
 
-Si la personne qui a réalisé le projet préfère changer elle-même la police dans Canva, c'est aussi possible : je vérifierai alors les fichiers et m'occuperai de l'impression, pour **175 € HT** impression comprise.
+## Déroulement
+1. Je commence vendredi et vous envoie les épreuves en PDF : une version fidèle au projet, aux couleurs du site, et une variante plus épurée.
+2. Vous me transmettez vos remarques (un tour de corrections est compris).
+3. Je passe commande après votre accord écrit ; les cartes sont livrées au cabinet.
 
-Deux questions avant de lancer la commande :
-1. 100 cartes par personne vous conviennent-elles ? A priori, elles coûtent à peine plus que 50 chez un imprimeur classique.
-2. Préférez-vous le papier mat classique ou la version plus épaisse ? Si vous hésitez, je peux vous faire envoyer des échantillons.
-
-Si cela vous convient, je m'y mets ce samedi et vous envoie l'épreuve dans la foulée.
+Si cette proposition vous convient, une simple confirmation par retour de mail suffit pour que je démarre.
 
 Bien à vous,
 
@@ -49,3 +45,6 @@ Guillaume
 - 04/11 : prix tout compris. Guillaume achète l'impression et l'inclut dans le devis : 360 € HT (260 € de préparation + environ 100 € d'impression pour 4 × 100 cartes mat épais), 560 € HT avec papier luxueux (environ 300 € chez MOO Luxe), 175 € HT pour l'option légère (75 € + impression). Prix relevés le 04/11 pour 100 cartes recto verso, livraison gratuite en Belgique : Printoclock 350 g dès 16 € HT, Printdeal 300 g 21,50 € HT, Helloprint 340 g 16,79 € HT. Une commande par carte (4 fichiers différents). L'arrondi absorbe les écarts de configuration, sans marge cachée. Début des travaux annoncé pour samedi 07/11.
 - 04/11 : passe humanizer. « légèrement » n'apparaît plus deux fois ; l'avertissement sur les couleurs imprimées rejoint la phrase sur l'épreuve ; le gras de la section Prix ne porte plus que sur les montants ; « version plus luxueuse » devient « version plus épaisse », un mot plus concret.
 - 04/11 : option haut de gamme revérifiée chez MOO Luxe : 600 g, 74 € les 100, recto verso inclus, un design différent possible par carte dans un même paquet. TVA comprise ou non : non indiqué. Livraison vers la Belgique : à calculer. Format de coupe : 84 × 55 mm (et non 85 × 55), donc fichiers à adapter si cette option est retenue. Le « 560 € HT » ferme devient « environ 550 € HT, prix exact confirmé avant commande ».
+- 04/11 : version finale, plus professionnelle, après l'avis de trois experts UX (rédaction claire, architecture de décision, lecture sur mobile). Studio Infanti et le détail technique sont retirés. L'estimation est précisée (260 € HT, environ 3h30 ; impression 100 € HT pour un tarif réel de 86 € HT). Une seule confirmation suffit. Début vendredi 06/11, avec deux épreuves : version fidèle aux couleurs du site et variante épurée (prototype /impeccable). L'option légère (Canva) n'est plus proposée, gardée en réserve à 75 € HT + impression.
+- Simulation Printdeal (navigateur Orca, 04/11) : 85 × 55, papier couché mat 400 g, recto verso 4/4, coins droits, livraison normale gratuite. 25 ex. : 19,20 € ; 50 ex. : 20,00 € ; 100 ex. : 21,50 € ; 250 ex. : 26,75 € HT. Vistaprint : 250 cartes standard à 15,99 € TTC (promo), minimum 100. MOO Luxe : 74 € les 100, 600 g, format de coupe 84 × 55, TVA non précisée.
+- Prototypes : scratchpad `cartes/proto/` (christine-origine, christine-site, christine-impeccable ; HTML/CSS, export PDF avec Chromium, webfont Synonym Regular du repo, à remplacer par l'OTF Fontshare).
