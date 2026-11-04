@@ -1,28 +1,20 @@
 # Mail à Christine et Stephanie : devis cartes de visite
 
-À : christine@rizzoavocate.be, cc stephanie@michielsavocate.be. Objet : « Cartes de visite : proposition et estimation ». Envoyé par Guillaume (page mail-link).
+À : christine@rizzoavocate.be, cc stephanie@michielsavocate.be. Objet : « Cartes de visite ». Envoyé par Guillaume (page mail-link).
 
 Bonjour Christine, bonjour Stephanie,
 
-Merci pour votre message. Je m'occupe volontiers de vos cartes de visite.
+Merci pour votre message, je m'occupe volontiers de vos cartes de visite.
 
-Je pars du projet transmis par Romain (même mise en page, mêmes textes) et je le reconstruis en Synonym dans des fichiers prêts pour l'imprimeur, car les fichiers exportés depuis Canva ne permettent pas de changer la police.
+J'ai regardé le projet transmis par Romain. Comme les fichiers exportés depuis Canva ne permettent pas de changer la police, je vais le reconstruire en Synonym, avec la même mise en page et les mêmes textes, dans des fichiers prêts pour l'imprimeur.
 
-## Estimation
-La préparation des 4 cartes représente environ 3h30, soit 260 € HT.
+Pour la préparation des 4 cartes, je compte environ 3h30, soit 260 € HT. Pour l'impression, je vous propose Printdeal, un imprimeur belge en ligne : 100 cartes recto verso par personne sur un papier mat de 400 g, livrées au cabinet. Leur tarif actuel est de 86 € HT pour les quatre ; je compte 100 € HT pour garder un peu de marge si le prix ou le papier change. Cela fait **360 € HT au total**, impression comprise.
 
-L'impression est prévue chez Printdeal, un imprimeur belge, livraison incluse : 100 cartes recto verso par personne sur papier mat 400 g. Le tarif actuel est de 86 € HT pour les 4 commandes ; je compte 100 € HT pour couvrir un éventuel ajustement de prix ou de papier. Passer de 50 à 100 cartes ne coûte que 1,50 € HT de plus par personne.
+Si vous préférez un papier plus épais (600 g, chez MOO), il faut compter environ 550 € HT au total ; je vous confirmerai le prix exact avant de commander. Et pour info, 100 cartes ne coûtent que 1,50 € HT de plus que 50.
 
-**Total : 360 € HT**, impression comprise.
+Je peux commencer vendredi. Je vous enverrai alors deux propositions en PDF : une version fidèle au projet, aux couleurs du site, et une variante un peu plus épurée. Vous me faites part de vos remarques (un tour de corrections est compris), et je ne passe commande qu'après votre accord.
 
-Pour un papier très épais (600 g, chez MOO), comptez environ 550 € HT au total. Je vous confirmerai le prix exact avant toute commande.
-
-## Déroulement
-1. Je commence vendredi et vous envoie deux épreuves en PDF : une version fidèle au projet, aux couleurs du site, et une variante plus épurée.
-2. Vous me transmettez vos remarques ; un tour de corrections est compris.
-3. Je passe commande après votre accord écrit, et les cartes sont livrées au cabinet.
-
-Si cette proposition vous convient, une confirmation par retour de mail suffit pour que je démarre.
+Si cela vous convient, une petite confirmation suffit pour que je me lance.
 
 Bien à vous,
 
@@ -49,3 +41,4 @@ Guillaume
 - Simulation Printdeal (navigateur Orca, 04/11) : 85 × 55, papier couché mat 400 g, recto verso 4/4, coins droits, livraison normale gratuite. 25 ex. : 19,20 € ; 50 ex. : 20,00 € ; 100 ex. : 21,50 € ; 250 ex. : 26,75 € HT. Vistaprint : 250 cartes standard à 15,99 € TTC (promo), minimum 100. MOO Luxe : 74 € les 100, 600 g, format de coupe 84 × 55, TVA non précisée.
 - Prototypes : scratchpad `cartes/proto/` (christine-origine, christine-site, christine-impeccable ; HTML/CSS, export PDF avec Chromium, webfont Synonym Regular du repo, à remplacer par l'OTF Fontshare).
 - 04/11 : passe humanizer sur la version finale. Les étiquettes en gras de l'estimation deviennent des phrases ; seul le total reste en gras. Le détail des 3h30, qui répétait le déroulement, est retiré. L'écart 50/100 cartes est rapproché de l'impression. « simple » et « à titre indicatif » sont supprimés.
+- 04/11 : version plus naturelle, à la demande de Guillaume. Prose sans intertitres ni liste numérotée, seul le total en gras, objet « Cartes de visite ». Contenu inchangé.
