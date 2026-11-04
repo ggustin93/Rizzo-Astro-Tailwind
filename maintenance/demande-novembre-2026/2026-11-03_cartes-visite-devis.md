@@ -8,7 +8,7 @@ Merci pour votre message, je m'occupe volontiers de vos cartes de visite.
 
 J'ai regardé le projet transmis par Romain. Comme les fichiers exportés depuis Canva ne permettent pas de changer la police, je vais le reconstruire en Synonym, avec la même mise en page et les mêmes textes, dans des fichiers prêts pour l'imprimeur.
 
-Pour la préparation des 4 cartes, je compte environ 3h30, soit 260 € HT. Pour l'impression, je compare deux ou trois imprimeurs en ligne et je commande chez le meilleur : 100 cartes recto verso par personne sur un papier mat de 400 g, livrées au cabinet. Les tarifs actuels tournent autour de 90 € HT pour les quatre ; je compte 100 € HT pour garder un peu de marge. Cela fait **360 € HT au total**, impression comprise.
+Pour la préparation des 4 cartes, je compte environ 3h30, soit 260 € HT. Pour l'impression, je compare deux ou trois imprimeurs en ligne et je commande chez le meilleur : 100 cartes recto verso par personne sur un papier mat de 400 g, livrées au cabinet. J'estime l'impression à environ 100 € HT pour les quatre, soit **environ 360 € HT au total**.
 
 Si vous préférez un papier plus épais (600 g), il faut compter environ 550 € HT au total ; je vous confirmerai le prix exact avant de commander. Et pour info, 100 cartes ne coûtent que 1,50 € HT de plus que 50.
 
@@ -43,3 +43,4 @@ Guillaume
 - 04/11 : passe humanizer sur la version finale. Les étiquettes en gras de l'estimation deviennent des phrases ; seul le total reste en gras. Le détail des 3h30, qui répétait le déroulement, est retiré. L'écart 50/100 cartes est rapproché de l'impression. « simple » et « à titre indicatif » sont supprimés.
 - 04/11 : version plus naturelle, à la demande de Guillaume. Prose sans intertitres ni liste numérotée, seul le total en gras, objet « Cartes de visite ». Contenu inchangé.
 - 04/11 : l'imprimeur n'est plus nommé, puisque Guillaume commande lui-même. Le mail dit qu'il compare deux ou trois imprimeurs (Printdeal 86 € HT, Vistaprint, Helloprint ou Printoclock). MOO n'est plus nommé pour l'option 600 g. Le nom de l'imprimeur retenu sera donné à la commande ou sur demande.
+- 04/11 : l'impression est présentée comme une estimation (« environ 100 € HT », total « environ 360 € HT »), sans détail des tarifs relevés. Tarif réel relevé : 86 € HT chez Printdeal.
