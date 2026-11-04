@@ -4,31 +4,27 @@
 
 Bonjour Christine, bonjour Stephanie,
 
-Merci pour votre message. Oui, je m'en occupe volontiers : j'ai d'ailleurs récemment préparé et fait imprimer les cartes de visite de Studio Infanti.
+Merci pour votre message. Oui, je m'en occupe volontiers. J'ai récemment préparé et fait imprimer les cartes de visite de Studio Infanti.
 
-J'ai regardé le projet transmis par Romain : il est soigné et je le garde comme modèle (même mise en page, mêmes textes). Dans le fichier Canva, les textes sont figés en dessins, si bien que la police ne peut pas être changée directement. Je vais donc reconstruire les cartes à l'identique dans un fichier prêt pour l'impression, en Synonym, avec le logo et les icônes du site en vectoriel et des marges de sécurité autour des noms les plus longs (Romain et Arnaud).
+J'ai regardé le projet transmis par Romain : il est soigné, et je le garde comme modèle (même mise en page, mêmes textes). Dans les fichiers exportés depuis Canva, les textes ne sont plus modifiables : la police ne peut pas être changée directement. Je vais donc reconstruire les cartes à l'identique dans un fichier prêt pour l'impression, avec le logo et les icônes du site, nets à toutes les tailles (en vectoriel).
 
-Synonym ne prend pas exactement la même place que la police actuelle : quelques détails bougeront donc légèrement. Je vous proposerai aussi, en option, une version aux couleurs exactes du site, pour que les cartes et le site se répondent. Vous comparerez le tout sur une épreuve en PDF, et rien ne part chez l'imprimeur sans votre accord écrit.
+Synonym ne prend pas exactement la même place que la police actuelle : quelques détails bougeront légèrement, et j'éloignerai un peu du bord les noms les plus longs (Romain et Arnaud). Je vous proposerai aussi une version aux couleurs exactes du site. Vous comparerez le tout sur une épreuve en PDF, et rien ne part chez l'imprimeur sans votre accord écrit.
 
 ## Ce qui est compris
-• Les 4 cartes recto verso reconstruites à l'identique en Synonym, avec la version officielle de la police (gratuite, y compris pour l'impression).
-• Des fichiers prêts pour l'imprimeur : marges de sécurité, fond perdu et couleurs d'impression.
+• Les 4 cartes recto verso en Synonym, avec la version officielle de la police (gratuite, y compris pour l'impression).
+• Des fichiers conformes aux exigences de l'imprimeur : marges de sécurité, fond perdu et couleurs d'impression.
 • Une épreuve en PDF, avec un tour de corrections (idéalement, vos remarques regroupées dans un seul mail).
-• La commande chez l'imprimeur, une fois l'épreuve validée par écrit, et la livraison au cabinet.
+• La commande chez l'imprimeur et la livraison au cabinet.
 
 ## Prix
 **Préparation des 4 cartes : 260 € HT** (40 € HT par personne qui s'ajouterait plus tard).
-**Impression** : je la commande et vous la refacture au prix coûtant. Pour 100 cartes par personne sur un papier mat épais, comptez environ 15 à 35 € HT par personne chez un imprimeur belge en ligne ; pour un rendu plus luxueux (papier très épais), environ 75 € par personne. Les couleurs imprimées peuvent varier légèrement par rapport à l'écran.
+**Impression** : je la commande et vous la refacture au prix coûtant. Pour 100 cartes par personne sur un papier mat épais, comptez environ 15 à 35 € HT par personne chez un imprimeur belge en ligne ; pour un papier plus luxueux, environ 75 € HT par personne. Les couleurs imprimées peuvent varier légèrement par rapport à l'écran.
 
-A priori, 100 cartes coûtent à peine plus que 50 chez un imprimeur classique : je vous conseille donc 100 exemplaires.
+Si la personne qui a réalisé le projet préfère changer elle-même la police dans Canva, c'est aussi possible : je vérifierai alors simplement les fichiers et m'occuperai de l'impression (75 € HT).
 
-Si la personne qui a réalisé le projet préfère faire elle-même le changement de police dans Canva, c'est aussi possible : je vérifierai alors simplement les fichiers et m'occuperai de l'impression (75 € HT).
-
-Si vous hésitez sur le papier, je peux vous faire envoyer des échantillons avant de commander ; les 4 cartes partent ensuite en une seule commande.
-
-Deux questions pour lancer la commande :
-1. 100 cartes par personne vous conviennent-elles ?
-2. Préférez-vous le papier mat classique ou la version plus luxueuse ?
+Deux questions avant de lancer la commande :
+1. 100 cartes par personne vous conviennent-elles ? A priori, elles coûtent à peine plus que 50 chez un imprimeur classique.
+2. Préférez-vous le papier mat classique ou la version plus luxueuse ? Si vous hésitez, je peux vous faire envoyer des échantillons.
 
 Si cela vous convient, je m'y mets dès ce week-end et vous envoie l'épreuve dans la foulée.
 
@@ -49,3 +45,4 @@ Guillaume
 - Méthode prévue : un gabarit HTML/CSS alimenté par site-config, export PDF avec Playwright, puis conversion CMJN avec Ghostscript. Les SVG ne sont pas éditables (texte vectorisé, logo et icônes en images).
 - Point ouvert : l'imprimeur utilisé pour Studio Infanti. S'il a donné satisfaction, il devient la recommandation principale.
 - 04/11 : tarification. Forfait de 260 € HT pour la préparation (calcul interne : environ 3,5 h à 75 € HT/h ; 75 € parce que ce n'est pas le cœur de métier). Le taux horaire n'est volontairement pas écrit dans le mail : la grille interne d'avril (forfait maintenance) retenait 85 € HT/h hors forfait ; on ne sait pas si ce taux a été communiqué à Christine (à vérifier dans les mails envoyés). Option légère à 75 € HT (environ 1 h). Personne supplémentaire : 40 € HT. Impression : une seule commande pour les 4, avec des échantillons de papier si elles hésitent (pas de commande test pour Christine seule : deux frais de port, plus de délai, et un risque d'écart de teinte entre lots).
+- 04/11 : relecture anti-IA (liaisons « d'ailleurs », « donc » retirées, répétitions de « à l'identique » et des marges allégées, « vectoriel » expliqué). Phrase sur Canva rendue exacte : seuls les SVG ont le texte vectorisé, le PDF incorpore Poppins, mais un export Canva ne permet de toute façon pas de changer la police. Le conseil des 100 cartes et l'offre d'échantillons sont intégrés aux deux questions.
