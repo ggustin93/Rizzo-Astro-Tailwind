@@ -12,7 +12,7 @@ Pour la préparation des 4 cartes, je compte 3h30, soit 260 € HT. Pour l'impre
 
 Si vous préférez un papier plus épais (600 g), comptez plutôt 550 € HT au total, prix exact confirmé avant de commander. Pour info, 100 cartes coûtent à peine plus que 50.
 
-Je peux commencer vendredi et vous envoyer deux propositions en PDF : une version fidèle au projet, aux couleurs du site, et une variante un peu plus épurée. Vous me faites part de vos remarques (un tour de corrections est compris), et je ne passe commande qu'après votre accord.
+Je peux commencer vendredi et vous envoyer deux propositions en PDF : une version fidèle au projet, aux couleurs du site, et une variante plus graphique, avec une bande de couleur en bas de carte. Vous me faites part de vos remarques (un tour de corrections est compris), et je ne passe commande qu'après votre accord.
 
 Si cela vous convient, une petite confirmation suffit pour que je me lance.
 
@@ -45,3 +45,4 @@ Guillaume
 - 04/11 : l'imprimeur n'est plus nommé, puisque Guillaume commande lui-même. Le mail dit qu'il compare deux ou trois imprimeurs (Printdeal 86 € HT, Vistaprint, Helloprint ou Printoclock). MOO n'est plus nommé pour l'option 600 g. Le nom de l'imprimeur retenu sera donné à la commande ou sur demande.
 - 04/11 : l'impression est présentée comme une estimation (« environ 100 € HT », total « environ 360 € HT »), sans détail des tarifs relevés. Tarif réel relevé : 86 € HT chez Printdeal.
 - 04/11 : passe humanizer. « environ » passe de cinq occurrences à une seule (l'impression, qui est la vraie estimation). « chez le meilleur » est retiré, les deux phrases du vendredi fusionnées, « il faut compter » allégé.
+- 04/11 : « variante plus épurée » remplacé par « variante plus graphique, avec une bande de couleur en bas de carte ». La variante /impeccable allège les icônes et la typographie, mais sa bande tricolore à fond perdu l'affirme davantage : « épurée » était inexact. À corriger d'ici vendredi : la bande ne fait que 2,2 mm visibles. Avec une tolérance de coupe d'environ ±1 mm, sa hauteur varierait d'une carte à l'autre (1,2 à 3,2 mm). La passer à 4 ou 5 mm visibles, ou l'éloigner du bord comme un filet.
