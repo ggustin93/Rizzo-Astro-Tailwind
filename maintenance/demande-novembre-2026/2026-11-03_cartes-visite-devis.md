@@ -8,7 +8,7 @@ Merci pour votre message. Oui, je m'en occupe volontiers. J'ai récemment prépa
 
 J'ai regardé le projet transmis par Romain : il est soigné, et je le garde comme modèle (même mise en page, mêmes textes). Dans les fichiers exportés depuis Canva, les textes ne sont plus modifiables : la police ne peut pas être changée directement. Je vais donc reconstruire les cartes à l'identique dans un fichier prêt pour l'impression, avec le logo et les icônes du site, nets à toutes les tailles (en vectoriel).
 
-Synonym ne prend pas exactement la même place que la police actuelle : quelques détails bougeront légèrement, et j'éloignerai un peu du bord les noms les plus longs (Romain et Arnaud). Je vous proposerai aussi une version aux couleurs exactes du site. Vous comparerez le tout sur une épreuve en PDF, et rien ne part chez l'imprimeur sans votre accord écrit.
+Synonym ne prend pas exactement la même place que la police actuelle, donc quelques détails bougeront, et j'éloignerai un peu du bord les noms les plus longs (Romain et Arnaud). Je vous proposerai aussi une version aux couleurs exactes du site. Vous comparerez le tout sur une épreuve en PDF ; gardez en tête que les couleurs imprimées varient un peu par rapport à l'écran. La commande ne part qu'après votre accord écrit.
 
 ## Ce qui est compris
 • Les 4 cartes recto verso en Synonym, avec la version officielle de la police (gratuite, y compris pour l'impression).
@@ -17,15 +17,14 @@ Synonym ne prend pas exactement la même place que la police actuelle : quelques
 • La commande chez l'imprimeur et la livraison au cabinet.
 
 ## Prix
-**Tout compris : 360 € HT**, pour les 4 cartes et 100 exemplaires par personne sur un papier mat épais. Ce prix comprend la préparation (260 € HT) et l'impression (environ 100 € HT), que je commande directement.
-**Papier plus luxueux** (plus épais, au toucher plus marqué) : 560 € HT au total.
-Les couleurs imprimées peuvent varier légèrement par rapport à l'écran.
+Tout compris, pour les 4 cartes et 100 exemplaires par personne sur un papier mat épais : **360 € HT**. Ce montant couvre la préparation (260 € HT) et l'impression (environ 100 € HT), que je commande directement.
+Avec un papier plus épais, au toucher plus marqué : **560 € HT** au total.
 
-Si la personne qui a réalisé le projet préfère changer elle-même la police dans Canva, c'est aussi possible : je vérifierai alors simplement les fichiers et m'occuperai de l'impression (175 € HT, impression comprise).
+Si la personne qui a réalisé le projet préfère changer elle-même la police dans Canva, c'est aussi possible : je vérifierai alors les fichiers et m'occuperai de l'impression, pour **175 € HT** impression comprise.
 
 Deux questions avant de lancer la commande :
 1. 100 cartes par personne vous conviennent-elles ? A priori, elles coûtent à peine plus que 50 chez un imprimeur classique.
-2. Préférez-vous le papier mat classique ou la version plus luxueuse ? Si vous hésitez, je peux vous faire envoyer des échantillons.
+2. Préférez-vous le papier mat classique ou la version plus épaisse ? Si vous hésitez, je peux vous faire envoyer des échantillons.
 
 Si cela vous convient, je m'y mets ce samedi et vous envoie l'épreuve dans la foulée.
 
@@ -48,3 +47,4 @@ Guillaume
 - 04/11 : tarification. Forfait de 260 € HT pour la préparation (calcul interne : environ 3,5 h à 75 € HT/h ; 75 € parce que ce n'est pas le cœur de métier). Le taux horaire n'est volontairement pas écrit dans le mail : la grille interne d'avril (forfait maintenance) retenait 85 € HT/h hors forfait ; on ne sait pas si ce taux a été communiqué à Christine (à vérifier dans les mails envoyés). Option légère à 75 € HT (environ 1 h). Personne supplémentaire : 40 € HT. Impression : une seule commande pour les 4, avec des échantillons de papier si elles hésitent (pas de commande test pour Christine seule : deux frais de port, plus de délai, et un risque d'écart de teinte entre lots).
 - 04/11 : relecture anti-IA (liaisons « d'ailleurs », « donc » retirées, répétitions de « à l'identique » et des marges allégées, « vectoriel » expliqué). Phrase sur Canva rendue exacte : seuls les SVG ont le texte vectorisé, le PDF incorpore Poppins, mais un export Canva ne permet de toute façon pas de changer la police. Le conseil des 100 cartes et l'offre d'échantillons sont intégrés aux deux questions.
 - 04/11 : prix tout compris. Guillaume achète l'impression et l'inclut dans le devis : 360 € HT (260 € de préparation + environ 100 € d'impression pour 4 × 100 cartes mat épais), 560 € HT avec papier luxueux (environ 300 € chez MOO Luxe), 175 € HT pour l'option légère (75 € + impression). Prix relevés le 04/11 pour 100 cartes recto verso, livraison gratuite en Belgique : Printoclock 350 g dès 16 € HT, Printdeal 300 g 21,50 € HT, Helloprint 340 g 16,79 € HT. Une commande par carte (4 fichiers différents). L'arrondi absorbe les écarts de configuration, sans marge cachée. Début des travaux annoncé pour samedi 07/11.
+- 04/11 : passe humanizer. « légèrement » n'apparaît plus deux fois ; l'avertissement sur les couleurs imprimées rejoint la phrase sur l'épreuve ; le gras de la section Prix ne porte plus que sur les montants ; « version plus luxueuse » devient « version plus épaisse », un mot plus concret.
