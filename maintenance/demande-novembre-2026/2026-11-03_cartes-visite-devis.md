@@ -2,22 +2,19 @@
 
 À : christine@rizzoavocate.be, cc stephanie@michielsavocate.be. Objet : « Cartes de visite ». Envoyé par Guillaume (page mail-link).
 
-Bonjour Christine, bonjour Stephanie,
+Hello Christine, hello Stephanie,
 
-Merci pour votre message, je m'occupe volontiers de vos cartes de visite.
+Merci pour votre message. Oui, avec plaisir : je viens justement d'en faire pour un autre client.
 
-J'ai regardé le projet transmis par Romain. Comme les fichiers exportés depuis Canva ne permettent pas de changer la police, je vais le reconstruire en Synonym, avec la même mise en page et les mêmes textes, dans des fichiers prêts pour l'imprimeur.
+J'ai regardé le projet transmis par Romain. Les fichiers exportés depuis Canva ne permettent pas de changer la police, donc je vais reconstruire le modèle de mon côté en Synonym, avec la même mise en page et les mêmes textes, dans des fichiers prêts pour l'imprimeur.
 
-Pour la préparation des 4 cartes, je compte 3h30, soit 260 € HT. Pour l'impression, je compare deux ou trois imprimeurs en ligne avant de commander : 100 cartes recto verso par personne sur un papier mat de 400 g, livrées au cabinet. Je l'estime à environ 100 € HT pour les quatre, ce qui fait **360 € HT au total**.
-
-Si vous préférez un papier plus épais (600 g), comptez plutôt 550 € HT au total, prix exact confirmé avant de commander. Pour info, 100 cartes coûtent à peine plus que 50.
+Pour la préparation des 4 cartes, je compte environ 3h30 de travail, soit 260 € HT. Pour l'impression, je compare les prix de trois imprimeurs avant de commander : 100 cartes recto verso par personne sur un papier mat de 400 g, livrées au cabinet. Je l'estime à environ 100 € HT pour les quatre, ce qui ferait 360 € HT au total.
 
 Je peux commencer vendredi et vous envoyer deux propositions en PDF : une version fidèle au projet, aux couleurs du site, et une variante plus graphique, avec une bande de couleur en bas de carte. Vous me faites part de vos remarques (un tour de corrections est compris), et je ne passe commande qu'après votre accord.
 
-Si cela vous convient, une petite confirmation suffit pour que je me lance.
+Si cela vous convient, un petit « ok » suffit pour que je me lance.
 
-Bien à vous,
-
+À bientôt,
 Guillaume
 
 ---
@@ -46,3 +43,4 @@ Guillaume
 - 04/11 : l'impression est présentée comme une estimation (« environ 100 € HT », total « environ 360 € HT »), sans détail des tarifs relevés. Tarif réel relevé : 86 € HT chez Printdeal.
 - 04/11 : passe humanizer. « environ » passe de cinq occurrences à une seule (l'impression, qui est la vraie estimation). « chez le meilleur » est retiré, les deux phrases du vendredi fusionnées, « il faut compter » allégé.
 - 04/11 : « variante plus épurée » remplacé par « variante plus graphique, avec une bande de couleur en bas de carte ». La variante /impeccable allège les icônes et la typographie, mais sa bande tricolore à fond perdu l'affirme davantage : « épurée » était inexact. À corriger d'ici vendredi : la bande ne fait que 2,2 mm visibles. Avec une tolérance de coupe d'environ ±1 mm, sa hauteur varierait d'une carte à l'autre (1,2 à 3,2 mm). La passer à 4 ou 5 mm visibles, ou l'éloigner du bord comme un filet.
+- 04/11 : version de Guillaume peaufinée. « Hello » est gardé (Christine tutoie dans sa demande : « dans tes cordes »). Le participe « l'ayant fait » est remplacé, le double « avec » retiré. « 3 à 4h, soit 260 € » devient « environ 3h30, soit 260 € HT », pour que la durée corresponde au montant ; « HT » est ajouté. « Je vous propose de comparer » devient « je compare », puisque c'est Guillaume qui compare. Une phrase d'appel à l'action remplace « Je reste disponible », qui doublait la formule de fin. L'option 600 g et l'écart 50/100 restent retirés : ils sont gardés en réserve pour la réponse.
