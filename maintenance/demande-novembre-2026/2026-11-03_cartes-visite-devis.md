@@ -8,11 +8,11 @@ Merci pour votre message, je m'occupe volontiers de vos cartes de visite.
 
 J'ai regardé le projet transmis par Romain. Comme les fichiers exportés depuis Canva ne permettent pas de changer la police, je vais le reconstruire en Synonym, avec la même mise en page et les mêmes textes, dans des fichiers prêts pour l'imprimeur.
 
-Pour la préparation des 4 cartes, je compte environ 3h30, soit 260 € HT. Pour l'impression, je compare deux ou trois imprimeurs en ligne et je commande chez le meilleur : 100 cartes recto verso par personne sur un papier mat de 400 g, livrées au cabinet. J'estime l'impression à environ 100 € HT pour les quatre, soit **environ 360 € HT au total**.
+Pour la préparation des 4 cartes, je compte 3h30, soit 260 € HT. Pour l'impression, je compare deux ou trois imprimeurs en ligne avant de commander : 100 cartes recto verso par personne sur un papier mat de 400 g, livrées au cabinet. Je l'estime à environ 100 € HT pour les quatre, ce qui fait **360 € HT au total**.
 
-Si vous préférez un papier plus épais (600 g), il faut compter environ 550 € HT au total ; je vous confirmerai le prix exact avant de commander. Et pour info, 100 cartes coûtent à peine plus que 50.
+Si vous préférez un papier plus épais (600 g), comptez plutôt 550 € HT au total, prix exact confirmé avant de commander. Pour info, 100 cartes coûtent à peine plus que 50.
 
-Je peux commencer vendredi. Je vous enverrai alors deux propositions en PDF : une version fidèle au projet, aux couleurs du site, et une variante un peu plus épurée. Vous me faites part de vos remarques (un tour de corrections est compris), et je ne passe commande qu'après votre accord.
+Je peux commencer vendredi et vous envoyer deux propositions en PDF : une version fidèle au projet, aux couleurs du site, et une variante un peu plus épurée. Vous me faites part de vos remarques (un tour de corrections est compris), et je ne passe commande qu'après votre accord.
 
 Si cela vous convient, une petite confirmation suffit pour que je me lance.
 
@@ -44,3 +44,4 @@ Guillaume
 - 04/11 : version plus naturelle, à la demande de Guillaume. Prose sans intertitres ni liste numérotée, seul le total en gras, objet « Cartes de visite ». Contenu inchangé.
 - 04/11 : l'imprimeur n'est plus nommé, puisque Guillaume commande lui-même. Le mail dit qu'il compare deux ou trois imprimeurs (Printdeal 86 € HT, Vistaprint, Helloprint ou Printoclock). MOO n'est plus nommé pour l'option 600 g. Le nom de l'imprimeur retenu sera donné à la commande ou sur demande.
 - 04/11 : l'impression est présentée comme une estimation (« environ 100 € HT », total « environ 360 € HT »), sans détail des tarifs relevés. Tarif réel relevé : 86 € HT chez Printdeal.
+- 04/11 : passe humanizer. « environ » passe de cinq occurrences à une seule (l'impression, qui est la vraie estimation). « chez le meilleur » est retiré, les deux phrases du vendredi fusionnées, « il faut compter » allégé.
