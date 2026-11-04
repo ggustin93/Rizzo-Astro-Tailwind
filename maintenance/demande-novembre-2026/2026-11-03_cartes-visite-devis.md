@@ -8,9 +8,9 @@ Merci pour votre message, je m'occupe volontiers de vos cartes de visite.
 
 J'ai regardé le projet transmis par Romain. Comme les fichiers exportés depuis Canva ne permettent pas de changer la police, je vais le reconstruire en Synonym, avec la même mise en page et les mêmes textes, dans des fichiers prêts pour l'imprimeur.
 
-Pour la préparation des 4 cartes, je compte environ 3h30, soit 260 € HT. Pour l'impression, je vous propose Printdeal, un imprimeur belge en ligne : 100 cartes recto verso par personne sur un papier mat de 400 g, livrées au cabinet. Leur tarif actuel est de 86 € HT pour les quatre ; je compte 100 € HT pour garder un peu de marge si le prix ou le papier change. Cela fait **360 € HT au total**, impression comprise.
+Pour la préparation des 4 cartes, je compte environ 3h30, soit 260 € HT. Pour l'impression, je compare deux ou trois imprimeurs en ligne et je commande chez le meilleur : 100 cartes recto verso par personne sur un papier mat de 400 g, livrées au cabinet. Les tarifs actuels tournent autour de 90 € HT pour les quatre ; je compte 100 € HT pour garder un peu de marge. Cela fait **360 € HT au total**, impression comprise.
 
-Si vous préférez un papier plus épais (600 g, chez MOO), il faut compter environ 550 € HT au total ; je vous confirmerai le prix exact avant de commander. Et pour info, 100 cartes ne coûtent que 1,50 € HT de plus que 50.
+Si vous préférez un papier plus épais (600 g), il faut compter environ 550 € HT au total ; je vous confirmerai le prix exact avant de commander. Et pour info, 100 cartes ne coûtent que 1,50 € HT de plus que 50.
 
 Je peux commencer vendredi. Je vous enverrai alors deux propositions en PDF : une version fidèle au projet, aux couleurs du site, et une variante un peu plus épurée. Vous me faites part de vos remarques (un tour de corrections est compris), et je ne passe commande qu'après votre accord.
 
@@ -42,3 +42,4 @@ Guillaume
 - Prototypes : scratchpad `cartes/proto/` (christine-origine, christine-site, christine-impeccable ; HTML/CSS, export PDF avec Chromium, webfont Synonym Regular du repo, à remplacer par l'OTF Fontshare).
 - 04/11 : passe humanizer sur la version finale. Les étiquettes en gras de l'estimation deviennent des phrases ; seul le total reste en gras. Le détail des 3h30, qui répétait le déroulement, est retiré. L'écart 50/100 cartes est rapproché de l'impression. « simple » et « à titre indicatif » sont supprimés.
 - 04/11 : version plus naturelle, à la demande de Guillaume. Prose sans intertitres ni liste numérotée, seul le total en gras, objet « Cartes de visite ». Contenu inchangé.
+- 04/11 : l'imprimeur n'est plus nommé, puisque Guillaume commande lui-même. Le mail dit qu'il compare deux ou trois imprimeurs (Printdeal 86 € HT, Vistaprint, Helloprint ou Printoclock). MOO n'est plus nommé pour l'option 600 g. Le nom de l'imprimeur retenu sera donné à la commande ou sur demande.
