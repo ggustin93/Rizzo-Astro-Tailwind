@@ -10,7 +10,7 @@ J'ai regardé le projet transmis par Romain. Les fichiers exportés depuis Canva
 
 Pour la préparation des 4 cartes, je compte environ 3h30 de travail, soit 260 €. Pour l'impression, je compare les prix de trois imprimeurs avant de commander : 100 cartes recto verso par personne sur un papier mat de 400 g, livrées au cabinet. Je l'estime à environ 110 € pour les quatre, ce qui ferait 370 € au total, sans TVA en plus (je suis sous le régime de franchise).
 
-Je vous enverrai ensuite deux versions en PDF : l'une fidèle au projet, aux couleurs du site, l'autre plus graphique, avec une bande de couleur en bas de carte. Vous me dites ce que vous en pensez, j'ajuste si besoin, et je passe commande dès que vous me donnez votre feu vert.
+Je vous enverrai ensuite deux versions en PDF : l'une fidèle au projet, aux couleurs du site, l'autre plus graphique, avec une bande de couleur en bas de carte. Sur base de vos retours, j'ajuste si besoin, puis je passe commande dès que vous me donnez votre feu vert.
 
 Si cela vous convient, je peux y regarder dès vendredi.
 
