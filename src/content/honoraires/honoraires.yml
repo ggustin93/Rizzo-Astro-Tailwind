@@ -31,13 +31,16 @@ fr:
       avant le début de notre intervention.
 
 
-      Nous travaillons soit à un tarif horaire — facturé mensuellement, au fur et à mesure des prestations — soit, dans certains cas, à un forfait fixe "tout compris", augmenté le cas échéant d'un honoraire de résultat. Il n'y a pas de frais de dossier ni de frais de bureau. Un détail des prestations accomplies est joint à chaque facture. 
+      Nous travaillons soit à un tarif horaire — facturé mensuellement, au fur et à mesure des prestations — soit, dans certains cas, à un forfait fixe "tout compris", augmenté le cas échéant d'un honoraire de résultat. Il n'y a pas de frais de dossier ni de frais de bureau. Un détail des prestations accomplies est joint à chaque facture. Nous travaillons soit à un tarif horaire, soit, dans certains cas, à un forfait fixe augmenté d’un honoraire de résultat. Nos factures sont établies mensuellement et sont payables intégralement à l’échéance.
 
 
-      Nous demandons régulièrement des provisions au cours du dossier, afin d'assurer un suivi financier transparent et d'éviter l'accumulation de montants importants en fin de mission.
+      Notre intervention débute à la réception d’une provision. Des provisions complémentaires peuvent être demandées en cours de dossier, afin d’assurer un suivi financier transparent.
 
 
       Les frais liés à l'intervention de tiers (huissiers, experts, traducteurs) ou les frais de justice sont refacturés au prix coûtant ou directement payables au tiers concerné.
+
+
+      Notre cabinet n’est pas inscrit dans le système de l’aide juridique de deuxième ligne et n’intervient donc pas dans ce cadre. Si vous pensez pouvoir en bénéficier, vous trouverez les conditions et la procédure sur le site d'Avocats.be et auprès du Bureau d’aide juridique le plus proche de votre domicile.
     exemples: []
   transparence:
     title: Besoin d'un premier avis ?
@@ -65,23 +68,11 @@ fr:
     travailleur: Vous êtes un travailleur
     employeur: Vous êtes un employeur
   aideJuridique:
-    title: Aide juridique (pro deo)
-    content: >-
-      L'aide juridique permet à toute personne de bénéficier d'une première
-      consultation juridique gratuite (aide juridique de 1ère ligne). Elle
-      permet également à certaines catégories de personnes de bénéficier de
-      l'assistance gratuite d'un avocat pour le traitement d'un dossier dans
-      toutes les matières juridiques (aide juridique de 2ème ligne). Ces avocats
-      sont volontaires et fournissent les mêmes services que dans le cadre d'une
-      aide juridique payante : conseil, assistance et représentation dans le
-      cadre d'une procédure judiciaire, administrative ou dans le cadre d'une
-      médiation, introduction d'un recours…
-
-
-      Si vous souhaitez vous renseigner ou vérifier si vous remplissez les conditions pour bénéficier de l'aide juridique de 2ème ligne, nous vous invitons à consulter le site [Avocats.be](http://Avocats.be) ou le site du bureau d'aide juridique de votre région (pour [Bruxelles](https://www.bajbruxelles.be/)).
-
-
-      Si vous remplissez les conditions pour bénéficier de l'aide juridique de 2ème ligne mais que vous souhaitez y renoncer et solliciter notre intervention en dehors de ce cadre, nous vous soumettrons un formulaire de renonciation à signer.
+    title: Aide juridique
+    content: Notre cabinet n’est pas inscrit dans le système de l’aide juridique de
+      deuxième ligne et n’intervient donc pas dans ce cadre. Si vous pensez
+      pouvoir en bénéficier, vous trouverez les conditions et la procédure sur
+      Avocats.be et auprès du Bureau d’aide juridique de Bruxelles.
   subtitle: Une relation de confiance commence par une tarification claire. Voici
     comment nous travaillons.
   title: Honoraires
