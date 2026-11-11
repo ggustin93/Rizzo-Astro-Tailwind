@@ -25,13 +25,13 @@ fr:
 
       De votre côté, un message court et ciblé reste toujours le plus efficace, qu'il soit rédigé par vous ou avec l'aide d'un outil IA. Pensez à vérifier que les points soulevés n'ont pas déjà reçu une réponse avant d'envoyer : cela accélère le traitement de votre dossier et maîtrise vos honoraires.
   forfaits:
-    title: Transparence & prévisibilité
+    title: Transparence
     intro: >-
       Les modalités de calcul de nos honoraires vous sont communiquées par écrit
       avant le début de notre intervention.
 
 
-      Nous travaillons soit à un tarif horaire — facturé mensuellement, au fur et à mesure des prestations — soit, dans certains cas, à un forfait fixe "tout compris", augmenté le cas échéant d'un honoraire de résultat. Il n'y a pas de frais de dossier ni de frais de bureau. Un détail des prestations accomplies est joint à chaque facture. Nous travaillons soit à un tarif horaire, soit, dans certains cas, à un forfait fixe augmenté d’un honoraire de résultat. Nos factures sont établies mensuellement et sont payables intégralement à l’échéance.
+      Nous travaillons soit à un tarif horaire, soit, dans certains cas, à un forfait fixe augmenté d’un honoraire de résultat. Nos factures sont établies mensuellement et sont payables intégralement à l’échéance. 
 
 
       Notre intervention débute à la réception d’une provision. Des provisions complémentaires peuvent être demandées en cours de dossier, afin d’assurer un suivi financier transparent.
@@ -105,19 +105,22 @@ en:
 
       On your side, a short and focused message is always the most effective, whether you write it yourself or with the help of an AI tool. Please check that the points you raise have not already been answered before sending: this speeds up the handling of your matter and keeps your fees under control.
   forfaits:
-    title: Transparency & predictability
+    title: Transparency
     intro: >-
-      The way our fees are calculated is communicated to you in writing before
-      we begin working on your matter.
+      The method used to calculate our fees will be communicated to you in
+      writing before we begin work.
 
 
-      We work either at an hourly rate, billed monthly as the work progresses, or, in certain cases, at a fixed "all-inclusive" fee, plus a success fee where applicable. There are no file-opening or office fees. A breakdown of the work carried out is attached to each invoice.
+      We work either at an hourly rate or, in some cases, on a fixed fee plus a success fee. Our invoices are issued monthly and are payable in full on the due date.
 
 
-      We regularly request advance payments during the matter, to ensure transparent financial follow-up and to avoid large amounts building up at the end of the engagement.
+      Our work begins upon receipt of a retainer. Additional retainers may be requested as the matter progresses, to ensure transparent financial follow-up.
 
 
-      Costs related to the involvement of third parties (bailiffs, experts, translators) and court costs are re-invoiced at cost or are payable directly to the third party concerned.
+      Costs relating to third-party involvement (bailiffs, experts, translators) or court costs are re-invoiced at cost or are payable directly to the third party concerned.
+
+
+      Our firm is not registered in the second-line legal aid system and therefore does not act under it. If you think you may be eligible, you will find the conditions and procedure on the Avocats.be website and from the Legal Aid Office (Bureau d’aide juridique) nearest to your home.
     exemples: []
   transparence:
     title: Need a first opinion?
@@ -145,22 +148,11 @@ en:
     travailleur: You are an employee
     employeur: You are an employer
   aideJuridique:
-    title: Free legal aid (pro deo)
-    content: >-
-      Legal aid allows everyone to benefit from a free initial legal
-      consultation (first-line legal aid). It also allows qualified individuals
-      to benefit from the free assistance of a lawyer for the handling of a case
-      in all legal matters (second-line legal aid). These lawyers are
-      volunteers. They provide their clients with the same services as in the
-      context of paid legal aid: advice, assistance and representation in the
-      context of judicial or administrative proceedings or in the context of
-      mediation, filing of appeals, etc.
-
-
-      If you would like to find out more or check whether you qualify for second-line legal aid, please consult the [Avocats.be](http://Avocats.be) website or the website of the legal aid bureau in your region (for [Brussels](https://www.bajbruxelles.be/)).
-
-
-      If you meet the eligibility requirements for second-line legal aid but wish to waive your entitlement and engage our services outside this scheme, we will provide you with a waiver form to sign.
+    title: legal aid (pro deo)
+    content: Our firm is not registered in the second-line legal aid system and
+      therefore does not act under it. If you think you may be eligible, you
+      will find the conditions and procedure on the Avocats.be website and from
+      the Legal Aid Office (Bureau d’aide juridique) nearest to your home.
   subtitle: A relationship of trust starts with clear pricing. Here is how we work.
   title: Fees
   video:
@@ -200,16 +192,19 @@ it:
     title: Trasparenza
     intro: >-
       Le modalità di calcolo dei nostri onorari Le vengono comunicate per
-      iscritto prima dell'inizio del nostro intervento.
+      iscritto prima dell’inizio del nostro intervento.
 
 
-      Lavoriamo a tariffa oraria, con fatturazione mensile delle prestazioni man mano che vengono svolte, oppure, in determinati casi, a forfait fisso «tutto compreso», eventualmente maggiorato di un onorario di risultato. Non applichiamo spese di apertura della pratica né spese d'ufficio. Ogni fattura è accompagnata dal dettaglio delle prestazioni svolte.
+      Lavoriamo o a tariffa oraria o, in alcuni casi, a forfait fisso, maggiorato da un compenso a risultato. Le nostre fatture sono emesse mensilmente e sono pagabili integralmente alla scadenza.
 
 
-      Nel corso della pratica, Le chiediamo regolarmente il versamento di acconti, al fine di garantire un monitoraggio finanziario trasparente ed evitare l'accumulo di importi elevati alla conclusione dell'incarico.
+      Il nostro intervento inizia al ricevimento di un acconto. Possono essere richiesti acconti supplementari nel corso della pratica, al fine di garantire un monitoraggio finanziario trasparente.
 
 
-      Le spese relative all'intervento di terzi (ufficiali giudiziari, periti, traduttori), così come le spese giudiziarie, vengono riaddebitate al costo effettivo oppure pagate direttamente al terzo interessato.
+      Le spese legate all’intervento di terzi (ufficiali giudiziari, periti, traduttori) o le spese giudiziarie sono rifatturate al prezzo di costo o sono pagabili direttamente al terzo interessato.
+
+
+      Il nostro studio non interviene nell'ambito del patrocinio a spese dello Stato - assistenza pro deo. Se ritiene di poterne beneficiare, troverà le condizioni e la procedura sul sito di Avocats.be e presso l’Ufficio di assistenza legale (Bureau d’aide juridique) più vicino al suo domicilio.
     exemples: []
   transparence:
     title: Desidera un primo parere?
@@ -241,22 +236,11 @@ it:
     employeur: Sei un datore di lavoro
   aideJuridique:
     title: Patrocinio a spese dello Stato - Assistenza pro deo
-    content: >-
-      L'assistenza legale consente a chiunque di beneficiare di una prima
-      consulenza giuridica gratuita (*assistenza legale di prima linea*).
-      Inoltre, determinate categorie di persone possono beneficiare, in base ai
-      requisiti previsti, dell'assistenza gratuita di un avvocato per la
-      gestione di una pratica in qualsiasi ambito giuridico (*assistenza legale
-      di seconda linea*).
-
-
-      Gli avvocati che prestano assistenza legale operano su base volontaria e offrono gli stessi servizi previsti nell'ambito di un incarico retribuito: consulenza, assistenza e rappresentanza in procedimenti giudiziari o amministrativi, nell'ambito di una mediazione, nella presentazione di un ricorso e in altre attività connesse alla pratica.
-
-
-      Se desidera ottenere maggiori informazioni o verificare se possiede i requisiti per beneficiare dell'assistenza legale di seconda linea, La invitiamo a consultare il sito di Avocats.be oppure quello dell'Ufficio di assistenza legale competente per la Sua regione, ad esempio [l'Ufficio di assistenza legale di Bruxelles](https://www.bajbruxelles.be/).
-
-
-      Se possiede i requisiti per beneficiare dell'assistenza legale di seconda linea, ma desidera rinunciarvi per avvalersi della nostra assistenza al di fuori di tale regime, Le sottoporremo un modulo di rinuncia da firmare.
+    content: Il nostro studio non interviene nell'ambito del patrocinio a spese
+      dello Stato - assistenza pro deo. Se ritiene di poterne beneficiare,
+      troverà le condizioni e la procedura sul sito di Avocats.be e presso
+      l’Ufficio di assistenza legale (Bureau d’aide juridique) più vicino al suo
+      domicilio.
   subtitle: Un rapporto di fiducia inizia con tariffe chiare. Ecco come lavoriamo.
   title: Onorari
   video:
@@ -290,19 +274,22 @@ nl:
 
       Van uw kant blijft een kort en gericht bericht altijd het meest efficiënt, of u het nu zelf schrijft of met behulp van een AI-tool. Controleer vóór het verzenden of de aangehaalde punten nog niet werden beantwoord: dat versnelt de behandeling van uw dossier en houdt uw erelonen onder controle.
   forfaits:
-    title: Transparantie & voorspelbaarheid
+    title: Transparantie
     intro: >-
-      De berekeningswijze van onze erelonen wordt u schriftelijk meegedeeld vóór
-      de aanvang van onze tussenkomst.
+      De berekeningswijze van ons erelonen wordt u vóór de aanvang van onze
+      tussenkomst schriftelijk meegedeeld.
 
 
-      Wij werken ofwel tegen een uurtarief, maandelijks gefactureerd naarmate de prestaties worden verricht, ofwel, in bepaalde gevallen, tegen een vast forfait "alles inbegrepen", in voorkomend geval verhoogd met een resultaatsereloon. Er zijn geen dossier- of kantoorkosten. Bij elke factuur wordt een overzicht van de verrichte prestaties gevoegd.
+      Wij werken ofwel tegen een uurtarief, ofwel in bepaalde gevallen tegen een vast bedrag, verhoogd met een resultaatsgebonden ereloon. Onze facturen worden maandelijks opgesteld en zijn volledig betaalbaar op de vervaldag.
 
 
-      In de loop van het dossier vragen wij regelmatig provisies, om een transparante financiële opvolging te verzekeren en te vermijden dat zich op het einde van de opdracht hoge bedragen opstapelen.
+      Onze tussenkomst vangt aan bij ontvangst van een provisie. In de loop van het dossier kunnen bijkomende provisies worden gevraagd, om een transparante financiële opvolging te verzekeren.
 
 
-      Kosten verbonden aan de tussenkomst van derden (gerechtsdeurwaarders, deskundigen, vertalers) en gerechtskosten worden tegen kostprijs doorgerekend of zijn rechtstreeks aan de betrokken derde verschuldigd.
+      De kosten verbonden aan de tussenkomst van derden (gerechtsdeurwaarders, deskundigen, vertalers) of de gerechtskosten worden doorgerekend tegen kostprijs of zijn rechtstreeks betaalbaar aan de betrokken derde.
+
+
+      Ons kantoor is niet aangesloten bij het systeem van juridische tweedelijnsbijstand en treedt dus niet op in dat kader. Indien u denkt hiervoor in aanmerking te komen, vindt u de voorwaarden en de procedure op de website van Avocats.be en bij het Bureau voor juridische bijstand dat het dichtst bij uw woonplaats gelegen is.
     exemples: []
   transparence:
     title: Nood aan een eerste advies?
@@ -330,23 +317,12 @@ nl:
     travailleur: U bent werknemer
     employeur: U bent werkgever
   aideJuridique:
-    title: Juridische bijstand (pro deo)
-    content: >-
-      De juridische bijstand stelt eenieder in staat een eerste gratis
-      juridische consultatie te krijgen (eerstelijnsbijstand). Zij stelt
-      bepaalde categorieën van personen eveneens in staat kosteloos te worden
-      bijgestaan door een advocaat voor de behandeling van een dossier in alle
-      rechtstakken (tweedelijnsbijstand). Deze advocaten treden vrijwillig op en
-      leveren dezelfde diensten als in het kader van een betalende
-      dienstverlening: advies, bijstand en vertegenwoordiging in het kader van
-      een gerechtelijke of administratieve procedure of in het kader van een
-      bemiddeling, het instellen van een beroep…
-
-
-      Wenst u zich te informeren of na te gaan of u voldoet aan de voorwaarden voor tweedelijnsbijstand, dan nodigen wij u uit de website [Avocats.be](http://Avocats.be) te raadplegen of die van het bureau voor juridische bijstand van uw regio (voor [Brussel](https://www.bajbruxelles.be/)).
-
-
-      Indien u in aanmerking komt voor juridische tweedelijnsbijstand, maar hiervan afstand wenst te doen en een beroep wilt doen op onze diensten buiten dit stelsel, zullen wij u een te ondertekenen afstandsverklaring bezorgen.
+    title: Juridische bijstand
+    content: Ons kantoor is niet aangesloten bij het systeem van juridische
+      tweedelijnsbijstand en treedt dus niet op in dat kader. Indien u denkt
+      hiervoor in aanmerking te komen, vindt u de voorwaarden en de procedure op
+      de website van Avocats.be en bij het Bureau voor juridische bijstand dat
+      het dichtst bij uw woonplaats gelegen is.
   subtitle: Een vertrouwensrelatie begint met duidelijke tarieven. Zo werken wij.
   title: Erelonen
   video:
