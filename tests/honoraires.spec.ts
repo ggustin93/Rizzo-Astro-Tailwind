@@ -26,3 +26,13 @@ for (const lang of languages) {
     }
   });
 }
+
+// #53: the cabinet removed the « Aide juridique » block. Its last titles, frozen here since the CMS field is gone.
+const removedLegalAidTitles = { fr: 'Aide juridique', en: 'legal aid (pro deo)', it: 'Patrocinio a spese dello Stato', nl: 'Juridische bijstand' };
+
+for (const lang of languages) {
+  test(`${lang}: honoraires no longer shows the « Aide juridique » block (#53)`, async ({ page }) => {
+    await page.goto(`${BASE_URL}/${lang}/honoraires/`);
+    await expect(page.locator('main main h2', { hasText: removedLegalAidTitles[lang] })).toHaveCount(0);
+  });
+}

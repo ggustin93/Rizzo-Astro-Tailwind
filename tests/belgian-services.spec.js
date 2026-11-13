@@ -32,28 +32,17 @@ test('Employeurs FR presents its sections, situations and fees', async ({ page }
   await expect(page.locator('main a[href="/fr/honoraires/"]')).toBeVisible();
 });
 
-const translatedHeadings = {
-  en: {
-    travailleurs: 'Contract, termination and end of collaboration',
-    employeurs: 'Audit – Due diligence in labour and social security law',
-  },
-  it: {
-    travailleurs: 'Contratto, risoluzione e fine della collaborazione',
-    employeurs: 'Audit – Due diligence in diritto del lavoro e della sicurezza sociale',
-  },
-  nl: {
-    travailleurs: 'Overeenkomst, beëindiging en einde van de samenwerking',
-    employeurs: 'Audit – Due diligence inzake arbeidsrecht en sociale zekerheid',
-  },
-};
-for (const [lang, headings] of Object.entries(translatedHeadings)) {
-  for (const [audience, heading] of Object.entries(headings)) {
+// Translations must keep the French structure (same sections and situations); headings come from each language's CMS copy.
+const situationCount = (sections) => sections.reduce((count, section) => count + (section.situations?.length ?? 0), 0);
+for (const lang of ['en', 'it', 'nl']) {
+  for (const audience of ['travailleurs', 'employeurs']) {
     test(`${audience} ${lang} offers the complete translated service structure`, async ({ page }) => {
+      const { fr, [lang]: translated } = services(audience);
       await page.goto(`/${lang}/services/${audience}/`);
       const sections = page.locator('main section');
-      await expect(sections).toHaveCount(5);
-      await expect(sections.first().locator('h2')).toHaveText(heading);
-      await expect(sections.locator('li')).toHaveCount(audience === 'travailleurs' ? 10 : 4);
+      await expect(sections).toHaveCount(fr.sections.length);
+      await expect(sections.locator('h2')).toHaveText(translated.sections.map((section) => section.title));
+      await expect(sections.locator('li')).toHaveCount(situationCount(fr.sections));
       await expect(page.locator('main')).not.toContainText('Nous vous');
       await expect(page.locator(`main a[href="/${lang}/honoraires/"]`)).toBeVisible();
     });

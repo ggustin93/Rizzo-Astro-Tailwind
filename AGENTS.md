@@ -170,6 +170,8 @@ For known issues, past incidents, and their root causes, see `maintenance/troubl
 
 Issues live in GitHub Issues for `ggustin93/Rizzo-Astro-Tailwind` (`gh` CLI). See `docs/agents/issue-tracker.md`.
 
+**The repo and its issues are public.** Never put sensitive data in issues, comments, commits or committed files: prices, quotes, invoicing, VAT status or numbers, hourly rates, client e-mails or messages, third parties' names, internal notes. GitHub keeps every edit of an issue visible, so a later cleanup is not enough. Commercial and client-communication notes go to the private folder `~/Documents/PWABLO/Rizzo-Michiels/` (outside git), and issues only reference them ("suivi hors GitHub").
+
 ### Triage labels
 
 Canonical five: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`. See `docs/agents/triage-labels.md`.
