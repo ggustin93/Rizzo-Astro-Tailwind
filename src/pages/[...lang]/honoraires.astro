@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getDataEntryById, getEntry } from 'astro:content';
-import { FileText, Briefcase, User, Shield, HelpCircle, YouTube, Users as UsersIcon, Calendar, Clock, Check, DollarSign, Award, Info, ChevronDown } from 'astro-feather-icons2';
+import { FileText, Briefcase, User, Shield, HelpCircle, YouTube, Users as UsersIcon, Calendar, Clock, Check, DollarSign, Award, ChevronDown } from 'astro-feather-icons2';
 import { localePaths } from '../../config/locales';
 import { Marked } from 'marked';
 import { bookableLawyers, calEmbedTarget } from '../../utils/calendar.js';
@@ -48,8 +48,7 @@ const iconMap = {
   Clock,
   Check,
   DollarSign,
-  Award,
-  Info
+  Award
 };
 
 function getYouTubeID(url: string) {
@@ -184,7 +183,7 @@ function getYouTubeID(url: string) {
       </div>
     </section>
 
-    <section class="mb-8 md:mb-16">
+    <section>
       <h2 class="text-xl md:text-2xl font-light mb-4 md:mb-6 text-black flex items-center">
         <Shield class="w-5 h-5 md:w-6 md:h-6 mr-2 text-employeur" />
         {content.assurance.title}
@@ -225,18 +224,6 @@ function getYouTubeID(url: string) {
             )}
           </div>
         </div>
-      </div>
-    </section>
-
-
-    <section class="mb-8 md:mb-12">
-      <h2 class="text-xl md:text-2xl font-light mb-4 md:mb-6 text-black flex items-center">
-        <Info class="w-5 h-5 md:w-6 md:h-6 mr-2 text-employeur" />
-        {content.aideJuridique.title}
-      </h2>
-      
-      <div class="bg-gray-50 p-4 md:p-8 rounded-lg">
-        <div class="text-dark-gray text-sm md:text-base prose max-w-none" set:html={md.parse(content.aideJuridique.content)} />
       </div>
     </section>
   </main>

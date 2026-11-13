@@ -67,12 +67,6 @@ fr:
     title: Tarifs
     travailleur: Vous êtes un travailleur
     employeur: Vous êtes un employeur
-  aideJuridique:
-    title: Aide juridique
-    content: Notre cabinet n’est pas inscrit dans le système de l’aide juridique de
-      deuxième ligne et n’intervient donc pas dans ce cadre. Si vous pensez
-      pouvoir en bénéficier, vous trouverez les conditions et la procédure sur
-      Avocats.be et auprès du Bureau d’aide juridique de Bruxelles.
   subtitle: Une relation de confiance commence par une tarification claire. Voici
     comment nous travaillons.
   title: Honoraires
@@ -147,12 +141,6 @@ en:
     title: Rates
     travailleur: You are an employee
     employeur: You are an employer
-  aideJuridique:
-    title: legal aid (pro deo)
-    content: Our firm is not registered in the second-line legal aid system and
-      therefore does not act under it. If you think you may be eligible, you
-      will find the conditions and procedure on the Avocats.be website and from
-      the Legal Aid Office (Bureau d’aide juridique) nearest to your home.
   subtitle: A relationship of trust starts with clear pricing. Here is how we work.
   title: Fees
   video:
@@ -234,13 +222,6 @@ it:
     title: Tariffe
     travailleur: Sei un lavoratore
     employeur: Sei un datore di lavoro
-  aideJuridique:
-    title: Patrocinio a spese dello Stato - Assistenza pro deo
-    content: Il nostro studio non interviene nell'ambito del patrocinio a spese
-      dello Stato - assistenza pro deo. Se ritiene di poterne beneficiare,
-      troverà le condizioni e la procedura sul sito di Avocats.be e presso
-      l’Ufficio di assistenza legale (Bureau d’aide juridique) più vicino al suo
-      domicilio.
   subtitle: Un rapporto di fiducia inizia con tariffe chiare. Ecco come lavoriamo.
   title: Onorari
   video:
@@ -316,13 +297,6 @@ nl:
     title: Tarieven
     travailleur: U bent werknemer
     employeur: U bent werkgever
-  aideJuridique:
-    title: Juridische bijstand
-    content: Ons kantoor is niet aangesloten bij het systeem van juridische
-      tweedelijnsbijstand en treedt dus niet op in dat kader. Indien u denkt
-      hiervoor in aanmerking te komen, vindt u de voorwaarden en de procedure op
-      de website van Avocats.be en bij het Bureau voor juridische bijstand dat
-      het dichtst bij uw woonplaats gelegen is.
   subtitle: Een vertrouwensrelatie begint met duidelijke tarieven. Zo werken wij.
   title: Erelonen
   video:
